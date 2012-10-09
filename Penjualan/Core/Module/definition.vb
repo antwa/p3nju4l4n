@@ -1,5 +1,6 @@
 ﻿Module definition
 
+
     ' struktur
     Public Structure STRUK_APP
         Dim Version As String
