@@ -182,38 +182,6 @@
     </Compile>
     <Compile Include="Form\0. Pengguna\pengguna\rcd_level.vb" />
     <Compile Include="Form\0. Pengguna\pengguna\rcd_user.vb" />
-    <Compile Include="Form\1. Pengguna\pengguna\frm_my_password.Designer.vb">
-      <DependentUpon>frm_my_password.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Form\1. Pengguna\pengguna\frm_my_password.vb">
-    </Compile>
-    <Compile Include="Form\1. Pengguna\pengguna\frm_userlevel_add.Designer.vb">
-      <DependentUpon>frm_userlevel_add.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Form\1. Pengguna\pengguna\frm_userlevel_add.vb">
-    </Compile>
-    <Compile Include="Form\1. Pengguna\pengguna\frm_userlevel_edit.Designer.vb">
-      <DependentUpon>frm_userlevel_edit.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Form\1. Pengguna\pengguna\frm_userlevel_edit.vb">
-    </Compile>
-    <Compile Include="Form\1. Pengguna\pengguna\frm_user_add.Designer.vb">
-      <DependentUpon>frm_user_add.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Form\1. Pengguna\pengguna\frm_user_add.vb">
-    </Compile>
-    <Compile Include="Form\1. Pengguna\pengguna\frm_user_edit.Designer.vb">
-      <DependentUpon>frm_user_edit.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Form\1. Pengguna\pengguna\frm_user_edit.vb">
-    </Compile>
-    <Compile Include="Form\1. Pengguna\pengguna\frm_user_list.Designer.vb">
-      <DependentUpon>frm_user_list.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Form\1. Pengguna\pengguna\frm_user_list.vb">
-    </Compile>
-    <Compile Include="Form\1. Pengguna\pengguna\rcd_level.vb" />
-    <Compile Include="Form\1. Pengguna\pengguna\rcd_user.vb" />
     <Compile Include="Form\2. Data Master\barang jadi\frm_barangjadi_add.Designer.vb">
       <DependentUpon>frm_barangjadi_add.vb</DependentUpon>
     </Compile>
@@ -282,30 +250,6 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\0. Pengguna\pengguna\frm_user_list.resx">
-      <DependentUpon>frm_user_list.vb</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form\1. Pengguna\pengguna\frm_my_password.resx">
-      <DependentUpon>frm_my_password.vb</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form\1. Pengguna\pengguna\frm_userlevel_add.resx">
-      <DependentUpon>frm_userlevel_add.vb</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form\1. Pengguna\pengguna\frm_userlevel_edit.resx">
-      <DependentUpon>frm_userlevel_edit.vb</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form\1. Pengguna\pengguna\frm_user_add.resx">
-      <DependentUpon>frm_user_add.vb</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form\1. Pengguna\pengguna\frm_user_edit.resx">
-      <DependentUpon>frm_user_edit.vb</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form\1. Pengguna\pengguna\frm_user_list.resx">
       <DependentUpon>frm_user_list.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
