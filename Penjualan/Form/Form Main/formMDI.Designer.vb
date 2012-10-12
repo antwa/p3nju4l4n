@@ -26,15 +26,17 @@ Partial Class formMDI
         Me.CPengguna_ListPengguna = New DevExpress.XtraBars.BarButtonItem
         Me.CPengguna_KataSandiku = New DevExpress.XtraBars.BarButtonItem
         Me.BarSubItem28 = New DevExpress.XtraBars.BarSubItem
+        Me.cSetup_merk = New DevExpress.XtraBars.BarButtonItem
         Me.cSetup_kategori = New DevExpress.XtraBars.BarButtonItem
+        Me.cSetup_size = New DevExpress.XtraBars.BarButtonItem
         Me.cSetup_jenis = New DevExpress.XtraBars.BarButtonItem
         Me.cSetup_datawilayah = New DevExpress.XtraBars.BarButtonItem
         Me.cSetup_kodeakun = New DevExpress.XtraBars.BarButtonItem
         Me.cMaster_ = New DevExpress.XtraBars.BarSubItem
-        Me.cMaster_pegawai = New DevExpress.XtraBars.BarButtonItem
-        Me.cMaster_spg = New DevExpress.XtraBars.BarButtonItem
         Me.cMaster_customerbarang = New DevExpress.XtraBars.BarButtonItem
         Me.cMaster_supplierbarang = New DevExpress.XtraBars.BarButtonItem
+        Me.cMaster_pegawai = New DevExpress.XtraBars.BarButtonItem
+        Me.cMaster_spg = New DevExpress.XtraBars.BarButtonItem
         Me.cMaster_barangjadi = New DevExpress.XtraBars.BarButtonItem
         Me.cMaster_formulaharga = New DevExpress.XtraBars.BarButtonItem
         Me.cTransaksi_ = New DevExpress.XtraBars.BarSubItem
@@ -156,7 +158,6 @@ Partial Class formMDI
         Me.DefaultLookAndFeel1 = New DevExpress.LookAndFeel.DefaultLookAndFeel(Me.components)
         Me.XtraTabbedMdiManager1 = New DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(Me.components)
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.cSetup_merk = New DevExpress.XtraBars.BarButtonItem
         CType(Me.BarManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XtraTabbedMdiManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -169,9 +170,9 @@ Partial Class formMDI
         Me.BarManager1.DockControls.Add(Me.barDockControlLeft)
         Me.BarManager1.DockControls.Add(Me.barDockControlRight)
         Me.BarManager1.Form = Me
-        Me.BarManager1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.BarButtonItem1, Me.BarSubItem1, Me.cMaster_, Me.CPengguna_ListPengguna, Me.cMaster_pegawai, Me.CMaster_ListBahan, Me.BarSubItem3, Me.BarButtonItem5, Me.CPengguna_KataSandiku, Me.BarButtonItem7, Me.sts_waktu, Me.sts_tanggal, Me.sts_status, Me.CMaster_ListArtikel, Me.BarSubItem4, Me.CBahan_POBahan, Me.CBahan_TerimaBahan, Me.CBahan_ReturBahan, Me.BarSubItem5, Me.BarSubItem6, Me.CProses_ListWorksheet, Me.CProses_TambahWorkSheet, Me.BarSubItem7, Me.CProses_SJK_Cutting, Me.CProses_SJM_Cutting, Me.BarSubItem8, Me.CProses_SJK_Sablon, Me.CProses_SJM_Sablon, Me.BarSubItem9, Me.CProses_SJK_Bordir, Me.CProses_SJM_Bordir, Me.BarSubItem10, Me.CProses_SJK_Produksi, Me.CProses_SJM_Produksi, Me.BarSubItem11, Me.CProses_SJK_QC, Me.CProses_SJM_QC, Me.BarSubItem12, Me.CProses_SJK_Kancing, Me.CProses_SJM_Kancing, Me.BarSubItem13, Me.CProses_SJK_Steam, Me.CProses_SJM_Steam, Me.BarSubItem14, Me.CProses_SJK_Perbaikan, Me.CProses_SJM_Perbaikan, Me.BarSubItem15, Me.CProses_SJM_Gudang, Me.BarSubItem16, Me.CPO_BuatCMT, Me.CPO_SuratJalanPO, Me.CPO_PenerimaanPO, Me.CPO_ReturPO, Me.BarSubItem17, Me.BarSubItem18, Me.BarSubItem19, Me.BarSubItem20, Me.CHP_Posting_Hutang, Me.CHP_Posting_Lainnya, Me.CHP_Posting_Piutang, Me.CHP_Pembayaran_Hutang, Me.CHP_Pembayaran_Piutang, Me.CHP_Laporan_hutang, Me.CHP_Laporan_Piutang, Me.BarSubItem21, Me.BarSubItem22, Me.CLAP_KartuKontrol, Me.CLAP_WorkSheet, Me.CLAP_SJKeluar, Me.CLAP_SJMasuk, Me.CLAP_PO, Me.CLAP_Bahan, Me.CLAP_HPP, Me.CPO_ListCMT, Me.CPO_PenerimaanReturPO, Me.cMaster_spg, Me.cSetup_datawilayah, Me.cMaster_customerbarang, Me.cMaster_supplierbarang, Me.cMaster_barangjadi, Me.cMaster_formulaharga, Me.cSetup_kodeakun, Me.BarButtonItem11, Me.cTransaksi_, Me.cTransaksi_penerimaanbarang, Me.cTransaksi_returbelibarang, Me.cTransaksi_rencanadistribusi, Me.cTransaksi_targetpenjualan, Me.cTransaksi_so, Me.cTransaksi_do, Me.cTransaksi_suratjalan, Me.cTransaksi_konsinyasi_sekunder, Me.cTransaksi_konsinyasi_primer, Me.cTransaksi_retur_jualputus, Me.cTransaksi_retur_jualkonsinyasi, Me.BarButtonItem23, Me.cLaporan_, Me.cLaporan_penerimaanbarang, Me.cLaporan_so, Me.cLaporan_do, Me.cLaporan_stokkonsinyasi, Me.cLaporan_konsinyasi_sekunder, Me.cLaporan_konsinyasi_primer, Me.cLaporan_targetpenjualan, Me.cLaporan_kartustok_barang, Me.cLaporan_retur_penjualan, Me.cHP_, Me.cHP_lap_hutang, Me.cHP_lap_piutang, Me.cHP_kartu_piutang, Me.BarButtonItem36, Me.BarSubItem26, Me.BarButtonItem37, Me.BarButtonItem38, Me.BarButtonItem39, Me.BarButtonItem40, Me.BarSubItem27, Me.BarSubItem28, Me.cSetup_kategori, Me.cSetup_jenis, Me.cPersediaan_, Me.cTransaksi_faktur_konsinyasi, Me.cPersediaan_customer, Me.cPersediaan_gudang, Me.cLaporan_labarugi, Me.BarButtonItem47, Me.cSetup_merk})
+        Me.BarManager1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.BarButtonItem1, Me.BarSubItem1, Me.cMaster_, Me.CPengguna_ListPengguna, Me.cMaster_pegawai, Me.CMaster_ListBahan, Me.BarSubItem3, Me.BarButtonItem5, Me.CPengguna_KataSandiku, Me.BarButtonItem7, Me.sts_waktu, Me.sts_tanggal, Me.sts_status, Me.CMaster_ListArtikel, Me.BarSubItem4, Me.CBahan_POBahan, Me.CBahan_TerimaBahan, Me.CBahan_ReturBahan, Me.BarSubItem5, Me.BarSubItem6, Me.CProses_ListWorksheet, Me.CProses_TambahWorkSheet, Me.BarSubItem7, Me.CProses_SJK_Cutting, Me.CProses_SJM_Cutting, Me.BarSubItem8, Me.CProses_SJK_Sablon, Me.CProses_SJM_Sablon, Me.BarSubItem9, Me.CProses_SJK_Bordir, Me.CProses_SJM_Bordir, Me.BarSubItem10, Me.CProses_SJK_Produksi, Me.CProses_SJM_Produksi, Me.BarSubItem11, Me.CProses_SJK_QC, Me.CProses_SJM_QC, Me.BarSubItem12, Me.CProses_SJK_Kancing, Me.CProses_SJM_Kancing, Me.BarSubItem13, Me.CProses_SJK_Steam, Me.CProses_SJM_Steam, Me.BarSubItem14, Me.CProses_SJK_Perbaikan, Me.CProses_SJM_Perbaikan, Me.BarSubItem15, Me.CProses_SJM_Gudang, Me.BarSubItem16, Me.CPO_BuatCMT, Me.CPO_SuratJalanPO, Me.CPO_PenerimaanPO, Me.CPO_ReturPO, Me.BarSubItem17, Me.BarSubItem18, Me.BarSubItem19, Me.BarSubItem20, Me.CHP_Posting_Hutang, Me.CHP_Posting_Lainnya, Me.CHP_Posting_Piutang, Me.CHP_Pembayaran_Hutang, Me.CHP_Pembayaran_Piutang, Me.CHP_Laporan_hutang, Me.CHP_Laporan_Piutang, Me.BarSubItem21, Me.BarSubItem22, Me.CLAP_KartuKontrol, Me.CLAP_WorkSheet, Me.CLAP_SJKeluar, Me.CLAP_SJMasuk, Me.CLAP_PO, Me.CLAP_Bahan, Me.CLAP_HPP, Me.CPO_ListCMT, Me.CPO_PenerimaanReturPO, Me.cMaster_spg, Me.cSetup_datawilayah, Me.cMaster_customerbarang, Me.cMaster_supplierbarang, Me.cMaster_barangjadi, Me.cMaster_formulaharga, Me.cSetup_kodeakun, Me.BarButtonItem11, Me.cTransaksi_, Me.cTransaksi_penerimaanbarang, Me.cTransaksi_returbelibarang, Me.cTransaksi_rencanadistribusi, Me.cTransaksi_targetpenjualan, Me.cTransaksi_so, Me.cTransaksi_do, Me.cTransaksi_suratjalan, Me.cTransaksi_konsinyasi_sekunder, Me.cTransaksi_konsinyasi_primer, Me.cTransaksi_retur_jualputus, Me.cTransaksi_retur_jualkonsinyasi, Me.BarButtonItem23, Me.cLaporan_, Me.cLaporan_penerimaanbarang, Me.cLaporan_so, Me.cLaporan_do, Me.cLaporan_stokkonsinyasi, Me.cLaporan_konsinyasi_sekunder, Me.cLaporan_konsinyasi_primer, Me.cLaporan_targetpenjualan, Me.cLaporan_kartustok_barang, Me.cLaporan_retur_penjualan, Me.cHP_, Me.cHP_lap_hutang, Me.cHP_lap_piutang, Me.cHP_kartu_piutang, Me.BarButtonItem36, Me.BarSubItem26, Me.BarButtonItem37, Me.BarButtonItem38, Me.BarButtonItem39, Me.BarButtonItem40, Me.BarSubItem27, Me.BarSubItem28, Me.cSetup_kategori, Me.cSetup_jenis, Me.cPersediaan_, Me.cTransaksi_faktur_konsinyasi, Me.cPersediaan_customer, Me.cPersediaan_gudang, Me.cLaporan_labarugi, Me.BarButtonItem47, Me.cSetup_merk, Me.cSetup_size})
         Me.BarManager1.MainMenu = Me.Bar2
-        Me.BarManager1.MaxItemId = 129
+        Me.BarManager1.MaxItemId = 130
         '
         'Bar2
         '
@@ -209,14 +210,26 @@ Partial Class formMDI
         '
         Me.BarSubItem28.Caption = "Setup"
         Me.BarSubItem28.Id = 118
-        Me.BarSubItem28.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.cSetup_merk), New DevExpress.XtraBars.LinkPersistInfo(Me.cSetup_kategori), New DevExpress.XtraBars.LinkPersistInfo(Me.cSetup_jenis), New DevExpress.XtraBars.LinkPersistInfo(Me.cSetup_datawilayah), New DevExpress.XtraBars.LinkPersistInfo(Me.cSetup_kodeakun)})
+        Me.BarSubItem28.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.cSetup_merk), New DevExpress.XtraBars.LinkPersistInfo(Me.cSetup_kategori), New DevExpress.XtraBars.LinkPersistInfo(Me.cSetup_size), New DevExpress.XtraBars.LinkPersistInfo(Me.cSetup_jenis), New DevExpress.XtraBars.LinkPersistInfo(Me.cSetup_datawilayah), New DevExpress.XtraBars.LinkPersistInfo(Me.cSetup_kodeakun)})
         Me.BarSubItem28.Name = "BarSubItem28"
+        '
+        'cSetup_merk
+        '
+        Me.cSetup_merk.Caption = "Merk"
+        Me.cSetup_merk.Id = 128
+        Me.cSetup_merk.Name = "cSetup_merk"
         '
         'cSetup_kategori
         '
         Me.cSetup_kategori.Caption = "Kategori Barang Jadi"
         Me.cSetup_kategori.Id = 119
         Me.cSetup_kategori.Name = "cSetup_kategori"
+        '
+        'cSetup_size
+        '
+        Me.cSetup_size.Caption = "Size Barang"
+        Me.cSetup_size.Id = 129
+        Me.cSetup_size.Name = "cSetup_size"
         '
         'cSetup_jenis
         '
@@ -240,20 +253,8 @@ Partial Class formMDI
         '
         Me.cMaster_.Caption = "Data Master"
         Me.cMaster_.Id = 2
-        Me.cMaster_.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.cMaster_customerbarang), New DevExpress.XtraBars.LinkPersistInfo(Me.cMaster_supplierbarang), New DevExpress.XtraBars.LinkPersistInfo(Me.cMaster_pegawai, True), New DevExpress.XtraBars.LinkPersistInfo(Me.cMaster_spg), New DevExpress.XtraBars.LinkPersistInfo(Me.cMaster_barangjadi, True), New DevExpress.XtraBars.LinkPersistInfo(Me.cMaster_formulaharga)})
+        Me.cMaster_.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.cMaster_customerbarang), New DevExpress.XtraBars.LinkPersistInfo(Me.cMaster_supplierbarang), New DevExpress.XtraBars.LinkPersistInfo(Me.cMaster_pegawai, True), New DevExpress.XtraBars.LinkPersistInfo(Me.cMaster_barangjadi, True), New DevExpress.XtraBars.LinkPersistInfo(Me.cMaster_formulaharga)})
         Me.cMaster_.Name = "cMaster_"
-        '
-        'cMaster_pegawai
-        '
-        Me.cMaster_pegawai.Caption = "Pegawai"
-        Me.cMaster_pegawai.Id = 4
-        Me.cMaster_pegawai.Name = "cMaster_pegawai"
-        '
-        'cMaster_spg
-        '
-        Me.cMaster_spg.Caption = "SPG"
-        Me.cMaster_spg.Id = 76
-        Me.cMaster_spg.Name = "cMaster_spg"
         '
         'cMaster_customerbarang
         '
@@ -266,6 +267,18 @@ Partial Class formMDI
         Me.cMaster_supplierbarang.Caption = "Supplier Barang Jadi"
         Me.cMaster_supplierbarang.Id = 79
         Me.cMaster_supplierbarang.Name = "cMaster_supplierbarang"
+        '
+        'cMaster_pegawai
+        '
+        Me.cMaster_pegawai.Caption = "Pegawai"
+        Me.cMaster_pegawai.Id = 4
+        Me.cMaster_pegawai.Name = "cMaster_pegawai"
+        '
+        'cMaster_spg
+        '
+        Me.cMaster_spg.Caption = "SPG"
+        Me.cMaster_spg.Id = 76
+        Me.cMaster_spg.Name = "cMaster_spg"
         '
         'cMaster_barangjadi
         '
@@ -1025,12 +1038,6 @@ Partial Class formMDI
         Me.Timer1.Enabled = True
         Me.Timer1.Interval = 500
         '
-        'cSetup_merk
-        '
-        Me.cSetup_merk.Caption = "Merk"
-        Me.cSetup_merk.Id = 128
-        Me.cSetup_merk.Name = "cSetup_merk"
-        '
         'formMDI
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1186,4 +1193,5 @@ Partial Class formMDI
     Friend WithEvents cLaporan_labarugi As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents BarButtonItem47 As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents cSetup_merk As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents cSetup_size As DevExpress.XtraBars.BarButtonItem
 End Class

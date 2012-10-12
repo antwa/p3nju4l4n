@@ -3,7 +3,7 @@
     Private Sub HakAkses()
 
         ' User
-        CPengguna_ListPengguna.Enabled = Auth.canAccess(frm_user_list.Name)
+        'CPengguna_ListPengguna.Enabled = Auth.canAccess(frm_user_list.Name)
 
 
     End Sub
