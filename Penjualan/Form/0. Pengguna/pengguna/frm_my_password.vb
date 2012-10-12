@@ -2,6 +2,7 @@
 
     Dim oldPassword As String
 
+	
     Public Sub initData()
         Db.FlushCache()
         Db.Selects("*")
