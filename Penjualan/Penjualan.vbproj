@@ -144,41 +144,73 @@
     <Compile Include="Core\Module\Helper.vb" />
     <Compile Include="Core\Module\Inisialitation.vb" />
     <Compile Include="Core\Module\Prosedur.vb" />
+    <Compile Include="Form\0. Pengguna\pengguna\frm_my_password.Designer.vb">
+      <DependentUpon>frm_my_password.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\0. Pengguna\pengguna\frm_my_password.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\0. Pengguna\pengguna\frm_userlevel_add.Designer.vb">
+      <DependentUpon>frm_userlevel_add.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\0. Pengguna\pengguna\frm_userlevel_add.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\0. Pengguna\pengguna\frm_userlevel_edit.Designer.vb">
+      <DependentUpon>frm_userlevel_edit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\0. Pengguna\pengguna\frm_userlevel_edit.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\0. Pengguna\pengguna\frm_user_add.Designer.vb">
+      <DependentUpon>frm_user_add.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\0. Pengguna\pengguna\frm_user_add.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\0. Pengguna\pengguna\frm_user_edit.Designer.vb">
+      <DependentUpon>frm_user_edit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\0. Pengguna\pengguna\frm_user_edit.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\0. Pengguna\pengguna\frm_user_list.Designer.vb">
+      <DependentUpon>frm_user_list.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\0. Pengguna\pengguna\frm_user_list.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\0. Pengguna\pengguna\rcd_level.vb" />
+    <Compile Include="Form\0. Pengguna\pengguna\rcd_user.vb" />
     <Compile Include="Form\1. Pengguna\pengguna\frm_my_password.Designer.vb">
       <DependentUpon>frm_my_password.vb</DependentUpon>
     </Compile>
     <Compile Include="Form\1. Pengguna\pengguna\frm_my_password.vb">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form\1. Pengguna\pengguna\frm_userlevel_add.Designer.vb">
       <DependentUpon>frm_userlevel_add.vb</DependentUpon>
     </Compile>
     <Compile Include="Form\1. Pengguna\pengguna\frm_userlevel_add.vb">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form\1. Pengguna\pengguna\frm_userlevel_edit.Designer.vb">
       <DependentUpon>frm_userlevel_edit.vb</DependentUpon>
     </Compile>
     <Compile Include="Form\1. Pengguna\pengguna\frm_userlevel_edit.vb">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form\1. Pengguna\pengguna\frm_user_add.Designer.vb">
       <DependentUpon>frm_user_add.vb</DependentUpon>
     </Compile>
     <Compile Include="Form\1. Pengguna\pengguna\frm_user_add.vb">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form\1. Pengguna\pengguna\frm_user_edit.Designer.vb">
       <DependentUpon>frm_user_edit.vb</DependentUpon>
     </Compile>
     <Compile Include="Form\1. Pengguna\pengguna\frm_user_edit.vb">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form\1. Pengguna\pengguna\frm_user_list.Designer.vb">
       <DependentUpon>frm_user_list.vb</DependentUpon>
     </Compile>
     <Compile Include="Form\1. Pengguna\pengguna\frm_user_list.vb">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form\1. Pengguna\pengguna\rcd_level.vb" />
     <Compile Include="Form\1. Pengguna\pengguna\rcd_user.vb" />
@@ -229,6 +261,30 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Form\0. Pengguna\pengguna\frm_my_password.resx">
+      <DependentUpon>frm_my_password.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\0. Pengguna\pengguna\frm_userlevel_add.resx">
+      <DependentUpon>frm_userlevel_add.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\0. Pengguna\pengguna\frm_userlevel_edit.resx">
+      <DependentUpon>frm_userlevel_edit.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\0. Pengguna\pengguna\frm_user_add.resx">
+      <DependentUpon>frm_user_add.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\0. Pengguna\pengguna\frm_user_edit.resx">
+      <DependentUpon>frm_user_edit.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\0. Pengguna\pengguna\frm_user_list.resx">
+      <DependentUpon>frm_user_list.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\1. Pengguna\pengguna\frm_my_password.resx">
       <DependentUpon>frm_my_password.vb</DependentUpon>
       <SubType>Designer</SubType>
@@ -328,6 +384,12 @@
     <Content Include="industry128.ico" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Form\1. Setup\data wilayah\" />
+    <Folder Include="Form\1. Setup\jenis harga\" />
+    <Folder Include="Form\1. Setup\kategori barang\" />
+    <Folder Include="Form\1. Setup\kode akun\" />
+    <Folder Include="Form\1. Setup\merk\" />
+    <Folder Include="Form\1. Setup\size barang\" />
     <Folder Include="Form\3. Transaksi\" />
     <Folder Include="Form\4. Laporan\" />
     <Folder Include="Form\5. Hutang Piutang\" />

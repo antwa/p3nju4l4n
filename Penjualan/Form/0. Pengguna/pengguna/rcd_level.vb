@@ -8,6 +8,7 @@
     Dim v As Boolean
     Dim group As String
 
+
     Public Sub New(ByVal kd_menu As String, ByVal nama_menu As String, ByVal a As Boolean, ByVal i As Boolean, ByVal u As Boolean, ByVal d As Boolean, ByVal v As Boolean, ByVal group As String)
         Me.kd_menu = kd_menu
         Me.nama_menu = nama_menu
