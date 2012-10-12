@@ -1,1 +1,1 @@
-Server=KIMOCHI\SQLEXPRESS;Database=penjualan;Trusted_Connection=True;Pooling=false;
+Server=UZUMAKI-PC\SQLEXPRESS;Database=penjualan;Trusted_Connection=True;Pooling=false;
