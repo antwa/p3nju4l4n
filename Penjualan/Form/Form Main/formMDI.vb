@@ -53,4 +53,12 @@
     Private Sub BarButtonItem48_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles cSetup_merk.ItemClick
 
     End Sub
+
+    Private Sub cTransaksi_penerimaanbarang_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles cTransaksi_penerimaanbarang.ItemClick
+        LoadFormToTab(frm_penerimaanbarang)
+    End Sub
+
+    Private Sub cTransaksi_returbelibarang_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles cTransaksi_returbelibarang.ItemClick
+        LoadFormToTab(frm_retur_penerimaanbarang)
+    End Sub
 End Class
