@@ -36,7 +36,6 @@ Partial Class formMDI
         Me.cMaster_customerbarang = New DevExpress.XtraBars.BarButtonItem
         Me.cMaster_supplierbarang = New DevExpress.XtraBars.BarButtonItem
         Me.cMaster_pegawai = New DevExpress.XtraBars.BarButtonItem
-        Me.cMaster_spg = New DevExpress.XtraBars.BarButtonItem
         Me.cMaster_barangjadi = New DevExpress.XtraBars.BarButtonItem
         Me.cMaster_formulaharga = New DevExpress.XtraBars.BarButtonItem
         Me.cTransaksi_ = New DevExpress.XtraBars.BarSubItem
@@ -152,6 +151,7 @@ Partial Class formMDI
         Me.CLAP_HPP = New DevExpress.XtraBars.BarButtonItem
         Me.BarSubItem22 = New DevExpress.XtraBars.BarSubItem
         Me.CLAP_Bahan = New DevExpress.XtraBars.BarButtonItem
+        Me.cMaster_spg = New DevExpress.XtraBars.BarButtonItem
         Me.BarButtonItem11 = New DevExpress.XtraBars.BarButtonItem
         Me.BarButtonItem23 = New DevExpress.XtraBars.BarButtonItem
         Me.BarButtonItem36 = New DevExpress.XtraBars.BarButtonItem
@@ -273,12 +273,6 @@ Partial Class formMDI
         Me.cMaster_pegawai.Caption = "Pegawai"
         Me.cMaster_pegawai.Id = 4
         Me.cMaster_pegawai.Name = "cMaster_pegawai"
-        '
-        'cMaster_spg
-        '
-        Me.cMaster_spg.Caption = "SPG"
-        Me.cMaster_spg.Id = 76
-        Me.cMaster_spg.Name = "cMaster_spg"
         '
         'cMaster_barangjadi
         '
@@ -1005,6 +999,12 @@ Partial Class formMDI
         Me.CLAP_Bahan.Caption = "Bahan Baku"
         Me.CLAP_Bahan.Id = 72
         Me.CLAP_Bahan.Name = "CLAP_Bahan"
+        '
+        'cMaster_spg
+        '
+        Me.cMaster_spg.Caption = "SPG"
+        Me.cMaster_spg.Id = 76
+        Me.cMaster_spg.Name = "cMaster_spg"
         '
         'BarButtonItem11
         '
