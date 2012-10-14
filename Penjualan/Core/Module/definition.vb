@@ -17,7 +17,8 @@
     Public Auth As cls_authentication
 
     ' constanta
-    Public Const C_PENERIMAAN_BARANG As String = "Penerimaan Barang Jadi"
-    Public Const C_RETUR_PENERIMAAN_BARANG As String = "Retur Penerimaan Barang"
+    Public Const C_PENERIMAAN_BARANG As Integer = 1 ' Penerimaan barang jadi
+    Public Const C_RETUR_PENERIMAAN_BARANG As Integer = 2 ' retur penerimaan barang jadi
+    Public Const C_SALES_ORDER As Integer = 3 ' sales order
 
 End Module

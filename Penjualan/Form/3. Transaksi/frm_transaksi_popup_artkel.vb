@@ -45,6 +45,27 @@
                     .GridControl1.Refresh()
                 End With
 
+            Case C_SALES_ORDER                          '========================================================# 
+                With frm_sales_order
+                    '# cek list, takut ada yg sama (^-^)
+                    For i = 0 To .rcd_list.Count - 1
+                        If .rcd_list.Item(i).kode_barangjadi = row("kode_barangjadi") Then
+                            MsgBox("Kode Atikel : " & row("kode_barangjadi") & " , sudah diinput. Ganti dengan yang lain", MsgBoxStyle.Exclamation, "Pesan")
+                            Exit Sub
+                        End If
+                    Next
+
+                    '# ambil harga
+                    'Me.Visible = False
+                    frm_transaksi_popup_harga.parameter1 = C_SALES_ORDER
+                    frm_transaksi_popup_harga.kode_barangjadi = row("kode_barangjadi")
+                    frm_transaksi_popup_harga.nama = row("nama")
+                    frm_transaksi_popup_harga.stok = row("stok")
+                    frm_transaksi_popup_harga.ShowDialog(Me)
+
+                    '.rcd_list.Add(New rcd_penerimaanbarang(row("kode_barangjadi"), row("nama"), 0))
+                    '.GridControl1.Refresh()
+                End With
 
         End Select
 

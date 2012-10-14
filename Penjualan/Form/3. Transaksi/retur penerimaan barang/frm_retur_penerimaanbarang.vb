@@ -133,6 +133,7 @@
             Db.SetField("tanggal", tanggal.DateTime.ToString("yyyy-MM-dd HH:mm:ss"))
             Db.SetField("kode_supplier_barang", lbl_kode_supplier.Text)
             Db.SetField("nomor_terima", nomor_terima.Text)
+            Db.SetField("username", Auth.Username)
 
             Connection.TRANS_ADD(Db.GetQueryString)
 

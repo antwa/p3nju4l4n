@@ -61,4 +61,8 @@
     Private Sub cTransaksi_returbelibarang_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles cTransaksi_returbelibarang.ItemClick
         LoadFormToTab(frm_retur_penerimaanbarang)
     End Sub
+
+    Private Sub cTransaksi_so_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles cTransaksi_so.ItemClick
+        LoadFormToTab(frm_sales_order)
+    End Sub
 End Class

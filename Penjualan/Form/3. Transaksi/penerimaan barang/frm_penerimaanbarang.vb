@@ -87,6 +87,7 @@
             Db.SetField("tanggal", tanggal.DateTime.ToString("yyyy-MM-dd HH:mm:ss"))
             Db.SetField("kode_supplier_barang", vkode_supplier)
             Db.SetField("no_suratjalan", no_suratjalan.EditValue)
+            Db.SetField("username", Auth.Username)
 
             Connection.TRANS_ADD(Db.GetQueryString)
 
