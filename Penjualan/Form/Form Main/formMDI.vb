@@ -65,4 +65,8 @@
     Private Sub cTransaksi_so_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles cTransaksi_so.ItemClick
         LoadFormToTab(frm_sales_order)
     End Sub
+
+    Private Sub cTransaksi_do_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles cTransaksi_do.ItemClick
+        LoadFormToTab(frm_delivery_order)
+    End Sub
 End Class

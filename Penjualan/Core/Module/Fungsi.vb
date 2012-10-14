@@ -23,6 +23,11 @@
                 Db.From("tbl_salesorder")
                 Db.OrderBy("no_so", cls_database.sorting.Descending)
 
+            Case C_DELIVERY_ORDER               '=======================================================================
+                Db.Selects("TOP 1 no_do AS nomor")
+                Db.From("tbl_deliveryorder")
+                Db.OrderBy("no_do", cls_database.sorting.Descending)
+
         End Select
 
 

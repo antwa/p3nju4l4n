@@ -97,7 +97,7 @@
     End Sub
 
     Public Sub Where(ByVal statment As String)
-        str_where = statment
+        str_where &= " " & statment & " "
     End Sub
 
     Public Sub Where_Between(ByVal field As String, _
@@ -114,6 +114,24 @@
         Else
             'str_where &= " " & op_logic & " " & field & " BETWEEN convert(datetime,'" & value1 & "',103) AND convert(datetime,'" & value2 & "',103)"
             str_where &= " " & op_logic & " " & field & " BETWEEN '" & value1 & "' AND '" & value2 & "'"
+        End If
+
+    End Sub
+
+    Public Sub Where_BetweenDate(ByVal field As String, _
+                     ByVal value1 As String, _
+                     ByVal value2 As String, _
+                     Optional ByVal op_logic As String = "AND")
+
+        value1 = Replace(value1, "'", "''", , , vbTextCompare)
+        value2 = Replace(value2, "'", "''", , , vbTextCompare)
+
+        If Len(str_where) <= 0 Then
+            'str_where = "WHERE " & field & " BETWEEN convert(datetime,'" & value1 & "',103) AND convert(datetime,'" & value2 & "',103)"
+            str_where = "WHERE " & field & " BETWEEN '" & value1 & " 00:00:00" & "' AND '" & value2 & " 23:59:59" & "'"
+        Else
+            'str_where &= " " & op_logic & " " & field & " BETWEEN convert(datetime,'" & value1 & "',103) AND convert(datetime,'" & value2 & "',103)"
+            str_where &= " " & op_logic & " " & field & " BETWEEN '" & value1 & " 00:00:00" & "' AND '" & value2 & " 23:59:59" & "'"
         End If
 
     End Sub
