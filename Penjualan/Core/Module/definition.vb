@@ -20,5 +20,6 @@
     Public Const C_PENERIMAAN_BARANG As Integer = 1 ' Penerimaan barang jadi
     Public Const C_RETUR_PENERIMAAN_BARANG As Integer = 2 ' retur penerimaan barang jadi
     Public Const C_SALES_ORDER As Integer = 3 ' sales order
+    Public Const C_DELIVERY_ORDER As Integer = 4 ' delivery order
 
 End Module

@@ -199,6 +199,20 @@
     <Compile Include="Form\2. Data Master\barang jadi\frm_barangjadi_list.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Form\3. Transaksi\delivery order\frm_delivery_order.Designer.vb">
+      <DependentUpon>frm_delivery_order.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\3. Transaksi\delivery order\frm_delivery_order.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\3. Transaksi\delivery order\frm_delivery_order_satu.Designer.vb">
+      <DependentUpon>frm_delivery_order_satu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\3. Transaksi\delivery order\frm_delivery_order_satu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\3. Transaksi\delivery order\rcd_delivery_order.vb" />
+    <Compile Include="Form\3. Transaksi\delivery order\rcd_delivery_order_satu.vb" />
     <Compile Include="Form\3. Transaksi\frm_transaksi_popup_harga.Designer.vb">
       <DependentUpon>frm_transaksi_popup_harga.vb</DependentUpon>
     </Compile>
@@ -297,6 +311,14 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\2. Data Master\barang jadi\frm_barangjadi_list.resx">
       <DependentUpon>frm_barangjadi_list.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\3. Transaksi\delivery order\frm_delivery_order.resx">
+      <DependentUpon>frm_delivery_order.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\3. Transaksi\delivery order\frm_delivery_order_satu.resx">
+      <DependentUpon>frm_delivery_order_satu.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\3. Transaksi\frm_transaksi_popup_harga.resx">

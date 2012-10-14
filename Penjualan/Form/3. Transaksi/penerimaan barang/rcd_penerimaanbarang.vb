@@ -1,10 +1,16 @@
 ﻿Public Class rcd_penerimaanbarang
+
     Dim mkode_barangjadi As String
     Dim mNama As String
     Dim mQty As Integer
     Dim mKeterangan As String
 
-    Public Sub New(ByVal kode_barangjadi As String, ByVal nama As String, ByVal qty As Integer)
+    Public Sub New( _
+                    ByVal kode_barangjadi As String, _
+                    ByVal nama As String, _
+                    ByVal qty As Integer _
+                    )
+
         Me.mkode_barangjadi = kode_barangjadi
         Me.mNama = nama
         Me.mQty = qty
