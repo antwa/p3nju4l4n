@@ -1,5 +1,29 @@
 ﻿Module Prosedur
 
+
+    ' Prosedur generateColumnGrid ini tidak penting, abaikan saja (tapi jangan dihapus)
+    Public Sub generateColumnGrid(ByVal col As DevExpress.XtraGrid.Views.Grid.GridView)
+        Dim i As Integer
+        Dim str As String = ""
+
+        '# caption
+        For i = 0 To col.Columns.Count - 1
+            str &= col.Name & ".Columns(""" & col.Columns(i).FieldName & """).Caption = """"" & vbCrLf
+        Next
+        str &= vbCrLf
+
+        '# width
+        For i = 0 To col.Columns.Count - 1
+            str &= col.Name & ".Columns(""" & col.Columns(i).FieldName & """).Width = " & col.Columns(i).Width & vbCrLf
+        Next
+        str &= vbCrLf
+
+        My.Computer.Clipboard.SetText(str)
+        MsgBox("data sudah di salin ke clipboard....")
+
+    End Sub
+
+
     Public Sub Load_SupplierBarang(ByRef lookup As DevExpress.XtraEditors.LookUpEdit)
         'init lookup
         Db.FlushCache()

@@ -145,7 +145,7 @@ Partial Class frm_delivery_order
         Me.GroupControl2.Controls.Add(Me.rd_tujuan)
         Me.GroupControl2.Location = New System.Drawing.Point(269, 12)
         Me.GroupControl2.Name = "GroupControl2"
-        Me.GroupControl2.Size = New System.Drawing.Size(448, 129)
+        Me.GroupControl2.Size = New System.Drawing.Size(462, 129)
         Me.GroupControl2.TabIndex = 30
         Me.GroupControl2.Text = "Tujuan"
         '
@@ -200,7 +200,7 @@ Partial Class frm_delivery_order
         Me.GridControl1.Location = New System.Drawing.Point(12, 147)
         Me.GridControl1.MainView = Me.GridView1
         Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.Size = New System.Drawing.Size(705, 205)
+        Me.GridControl1.Size = New System.Drawing.Size(719, 179)
         Me.GridControl1.TabIndex = 32
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
@@ -217,7 +217,7 @@ Partial Class frm_delivery_order
         'cmd_cancel_do
         '
         Me.cmd_cancel_do.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.cmd_cancel_do.Location = New System.Drawing.Point(12, 358)
+        Me.cmd_cancel_do.Location = New System.Drawing.Point(12, 332)
         Me.cmd_cancel_do.Name = "cmd_cancel_do"
         Me.cmd_cancel_do.Size = New System.Drawing.Size(81, 24)
         Me.cmd_cancel_do.TabIndex = 35
@@ -226,7 +226,7 @@ Partial Class frm_delivery_order
         'cmd_detail
         '
         Me.cmd_detail.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.cmd_detail.Location = New System.Drawing.Point(99, 358)
+        Me.cmd_detail.Location = New System.Drawing.Point(99, 332)
         Me.cmd_detail.Name = "cmd_detail"
         Me.cmd_detail.Size = New System.Drawing.Size(81, 24)
         Me.cmd_detail.TabIndex = 34
@@ -235,7 +235,7 @@ Partial Class frm_delivery_order
         'cmd_input_satu
         '
         Me.cmd_input_satu.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.cmd_input_satu.Location = New System.Drawing.Point(186, 358)
+        Me.cmd_input_satu.Location = New System.Drawing.Point(186, 332)
         Me.cmd_input_satu.Name = "cmd_input_satu"
         Me.cmd_input_satu.Size = New System.Drawing.Size(97, 24)
         Me.cmd_input_satu.TabIndex = 36
@@ -244,7 +244,7 @@ Partial Class frm_delivery_order
         'cmd_input_n
         '
         Me.cmd_input_n.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.cmd_input_n.Location = New System.Drawing.Point(289, 358)
+        Me.cmd_input_n.Location = New System.Drawing.Point(289, 332)
         Me.cmd_input_n.Name = "cmd_input_n"
         Me.cmd_input_n.Size = New System.Drawing.Size(120, 24)
         Me.cmd_input_n.TabIndex = 37
@@ -253,7 +253,7 @@ Partial Class frm_delivery_order
         'CheckEdit1
         '
         Me.CheckEdit1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.CheckEdit1.Location = New System.Drawing.Point(415, 363)
+        Me.CheckEdit1.Location = New System.Drawing.Point(415, 337)
         Me.CheckEdit1.Name = "CheckEdit1"
         Me.CheckEdit1.Properties.Caption = "Check/Uncheck All"
         Me.CheckEdit1.Size = New System.Drawing.Size(113, 19)
@@ -261,8 +261,8 @@ Partial Class frm_delivery_order
         '
         'cmd_print
         '
-        Me.cmd_print.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.cmd_print.Location = New System.Drawing.Point(623, 358)
+        Me.cmd_print.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.cmd_print.Location = New System.Drawing.Point(629, 332)
         Me.cmd_print.Name = "cmd_print"
         Me.cmd_print.Size = New System.Drawing.Size(102, 24)
         Me.cmd_print.TabIndex = 39
@@ -272,7 +272,7 @@ Partial Class frm_delivery_order
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(729, 394)
+        Me.ClientSize = New System.Drawing.Size(743, 368)
         Me.Controls.Add(Me.cmd_print)
         Me.Controls.Add(Me.CheckEdit1)
         Me.Controls.Add(Me.cmd_input_n)
