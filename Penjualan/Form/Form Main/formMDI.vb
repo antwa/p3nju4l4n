@@ -69,4 +69,8 @@
     Private Sub cTransaksi_do_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles cTransaksi_do.ItemClick
         LoadFormToTab(frm_delivery_order)
     End Sub
+
+    Private Sub cTransaksi_suratjalan_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles cTransaksi_suratjalan.ItemClick
+        LoadFormToTab(frm_surat_jalan)
+    End Sub
 End Class
