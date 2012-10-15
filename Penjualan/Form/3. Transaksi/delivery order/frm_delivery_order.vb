@@ -20,8 +20,7 @@
         Db.Selects("a.tgl_so, a.no_so, a.kode_customer, b.nama, a.total_qty, a.total_value, b.prioritas")
         Db.From("tbl_salesorder a")
         Db.Join("tbl_customer b", "b.kode_customer = a.kode_customer")
-        Db.Where("a.status", "0")
-        Db.Where("a.status", "3", "=", "OR")
+        Db.Where(" WHERE (a.status = '0' OR a.status = '3') ")
         Db.Where("a.sistem_jual", sistem_jual.EditValue)
 
         Db.Where_BetweenDate("a.tgl_so", tgl_dari.DateTime.ToString("yyyy-MM-dd"), tgl_sampai.DateTime.ToString("yyyy-MM-dd"))
@@ -84,16 +83,36 @@
     End Sub
 
     Private Sub cmd_input_satu_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_input_satu.Click
-        'Try
-        Dim i As Integer = 0
-        Dim row As System.Data.DataRow = GridView1.GetDataRow(GridView1.FocusedRowHandle)
-        
-        frm_delivery_order_satu.p_no_so = rcd_list.Item(GridView1.FocusedRowHandle).no_so
-        frm_delivery_order_satu.ShowDialog(Me)
+        Try
+            Dim i As Integer = 0
+            Dim row As System.Data.DataRow = GridView1.GetDataRow(GridView1.FocusedRowHandle)
 
-        'Catch ex As Exception
+            frm_delivery_order_satu.p_no_so = rcd_list.Item(GridView1.FocusedRowHandle).no_so
+            frm_delivery_order_satu.ShowDialog(Me)
 
-        'End Try
+        Catch ex As Exception
+
+        End Try
     End Sub
 
+    Private Sub cmd_detail_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_detail.Click
+        Try
+            Dim i As Integer = 0
+            Dim row As System.Data.DataRow = GridView1.GetDataRow(GridView1.FocusedRowHandle)
+
+            frm_delivery_order_detail.p_no_so = rcd_list.Item(GridView1.FocusedRowHandle).no_so
+            frm_delivery_order_detail.ShowDialog(Me)
+
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub GridControl1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GridControl1.Click
+
+    End Sub
+
+    Private Sub GridControl1_DoubleClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles GridControl1.DoubleClick
+        cmd_detail_Click(sender, e)
+    End Sub
 End Class
