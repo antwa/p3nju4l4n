@@ -191,8 +191,13 @@
             query &= "    SET stok = stok + " & rcd_list.Item(i).qty & " "
             query &= "    WHERE kode_customer = '" & kode_customer & "' AND kode_barangjadi = '" & rcd_list.Item(i).kode_barangjadi & "' "
             query &= " ELSE "
+            query &= "   BEGIN "
             query &= "    INSERT INTO tbl_persediaan_customer ([kode_customer],[kode_barangjadi],[kode_jenis_harga],[kode_hargajual],[diskon],[stok]) "
-            query &= "    VALUES ('" & kode_customer & "', '" & rcd_list.Item(i).kode_barangjadi & "', '1', '" & rcd_list.Item(i).kode_hargajual & "', '0', '" & rcd_list.Item(i).qty & "')"
+            query &= "    VALUES ('" & kode_customer & "', '" & rcd_list.Item(i).kode_barangjadi & "', '1', '" & rcd_list.Item(i).kode_hargajual & "', '0', '" & rcd_list.Item(i).qty & "');"
+
+            query &= "    INSERT INTO tbl_histori_hargacustomer ([tanggal],[kode_customer],[kode_barangjadi],[kode_jenis_harga],[kode_hargajual],[diskon]) "
+            query &= "    VALUES ('" & tgl_surat.DateTime.ToString("yyyy-MM-dd HH:mm:ss") & "', '" & kode_customer & "', '" & rcd_list.Item(i).kode_barangjadi & "', '1', '" & rcd_list.Item(i).kode_hargajual & "', '0'); "
+            query &= "   END "
             query &= "; "
 
             Connection.TRANS_ADD(query)
