@@ -10,6 +10,7 @@
 
     Public APP As STRUK_APP
    
+   
     ' class
     Public Validation As New cls_validation
     Public Connection As New cls_connection_sqlserver
