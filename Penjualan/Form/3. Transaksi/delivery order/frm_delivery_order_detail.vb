@@ -47,7 +47,7 @@
             Dim row As System.Data.DataRow = GridView1.GetDataRow(0)
 
             tgl_so.Text = row("tgl_so")
-            no_so.Text = row("no_so")
+            no_so.Text = p_no_so
             lbl_alamat.Text = row("alamat")
             lbl_kota.Text = row("kota")
             lbl_mall.Text = row("mall")

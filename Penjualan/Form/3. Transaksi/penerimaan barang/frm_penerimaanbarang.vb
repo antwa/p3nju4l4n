@@ -46,6 +46,7 @@
     End Sub
 
     Private Sub cmd_cari_artikel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_cari_artikel.Click
+        frm_transaksi_popup_artkel.Dispose()
         frm_transaksi_popup_artkel.parameter1 = C_PENERIMAAN_BARANG
         frm_transaksi_popup_artkel.ShowDialog(Me)
     End Sub

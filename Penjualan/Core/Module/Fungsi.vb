@@ -33,6 +33,16 @@
                 Db.From("tbl_suratjalan")
                 Db.OrderBy("no_surat", cls_database.sorting.Descending)
 
+            Case C_KONSINYASI_PRIMER            '=======================================================================
+                Db.Selects("TOP 1 no_penjualan AS nomor")
+                Db.From("tbl_konsinyasiprimer")
+                Db.OrderBy("no_penjualan", cls_database.sorting.Descending)
+
+            Case C_FAKTUR_KONSINYASI            '=======================================================================
+                Db.Selects("TOP 1 no_faktur AS nomor")
+                Db.From("tbl_fakturkonsinyasi")
+                Db.OrderBy("no_faktur", cls_database.sorting.Descending)
+
         End Select
 
 

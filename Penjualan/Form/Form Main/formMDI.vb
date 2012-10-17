@@ -73,4 +73,16 @@
     Private Sub cTransaksi_suratjalan_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles cTransaksi_suratjalan.ItemClick
         LoadFormToTab(frm_surat_jalan)
     End Sub
+
+    Private Sub cTransaksi_konsinyasi_sekunder_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles cTransaksi_konsinyasi_sekunder.ItemClick
+        LoadFormToTab(frm_konsinyasi_sekunder)
+    End Sub
+
+    Private Sub cTransaksi_konsinyasi_primer_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles cTransaksi_konsinyasi_primer.ItemClick
+        LoadFormToTab(frm_konsinyasi_primer)
+    End Sub
+
+    Private Sub cTransaksi_faktur_konsinyasi_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles cTransaksi_faktur_konsinyasi.ItemClick
+        LoadFormToTab(frm_faktur_konsinyasi)
+    End Sub
 End Class
