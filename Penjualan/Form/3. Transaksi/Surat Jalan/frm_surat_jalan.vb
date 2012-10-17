@@ -183,7 +183,7 @@
             Connection.TRANS_ADD(Db.GetQueryString)
 
             '# insert ato update ke persediaan customer
-            '  jika sudah ada update, jika belum ada insert
+            '  jika sudah ada update stok customer, jika belum ada insert ke table persediaan customer dan insert ke table histori harga jual customer
             '------------------------------------------
             query = ""
             query &= " IF EXISTS (SELECT * FROM tbl_persediaan_customer WHERE kode_customer = '" & kode_customer & "' AND kode_barangjadi = '" & rcd_list.Item(i).kode_barangjadi & "') "
@@ -196,7 +196,7 @@
             query &= "    VALUES ('" & kode_customer & "', '" & rcd_list.Item(i).kode_barangjadi & "', '1', '" & rcd_list.Item(i).kode_hargajual & "', '0', '" & rcd_list.Item(i).qty & "');"
 
             query &= "    INSERT INTO tbl_histori_hargacustomer ([tanggal],[kode_customer],[kode_barangjadi],[kode_jenis_harga],[kode_hargajual],[diskon]) "
-            query &= "    VALUES ('" & tgl_surat.DateTime.ToString("yyyy-MM-dd HH:mm:ss") & "', '" & kode_customer & "', '" & rcd_list.Item(i).kode_barangjadi & "', '1', '" & rcd_list.Item(i).kode_hargajual & "', '0'); "
+            query &= "    VALUES ('" & tgl_surat.DateTime.ToString("yyyy-MM-dd 00:00:00") & "', '" & kode_customer & "', '" & rcd_list.Item(i).kode_barangjadi & "', '1', '" & rcd_list.Item(i).kode_hargajual & "', '0'); "
             query &= "   END "
             query &= "; "
 

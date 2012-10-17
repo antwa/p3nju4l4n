@@ -14,7 +14,7 @@
             Case C_SALES_ORDER
                 With frm_sales_order
                     .rcd_list.Add(New rcd_sales_order(Me.kode_barangjadi, Me.nama, row("kode_hargajual"), row("harga"), Me.stok))
-                    .GridControl1.Refresh()
+                    .GridView1.RefreshData()
                 End With
 
         End Select
