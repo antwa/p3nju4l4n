@@ -59,4 +59,38 @@
         lookup.ItemIndex = 0
     End Sub
 
+    Public Sub Load_Merk(ByRef lookup As DevExpress.XtraEditors.LookUpEdit)
+        'init lookup
+        Db.FlushCache()
+        Db.Selects("a.kode_merk, a.merk")
+        Db.From("tbl_merk a")
+
+        lookup.Properties.DataSource = Connection.ExecuteToDataTable(Db.GetQueryString)
+        lookup.Properties.DisplayMember = "merk"
+        lookup.Properties.ValueMember = "kode_merk"
+        lookup.Properties.PopulateColumns()
+        lookup.Properties.Columns(0).Caption = "Kode"
+        lookup.Properties.Columns(1).Caption = "Nama"
+        lookup.Properties.Columns(0).Width = 20
+        lookup.Properties.Columns(1).Width = 100
+        lookup.ItemIndex = 0
+    End Sub
+
+    Public Sub Load_KategoriBarang(ByRef lookup As DevExpress.XtraEditors.LookUpEdit)
+        'init lookup
+        Db.FlushCache()
+        Db.Selects("a.kode_kategori, a.kategori")
+        Db.From("tbl_kategori_barang a")
+
+        lookup.Properties.DataSource = Connection.ExecuteToDataTable(Db.GetQueryString)
+        lookup.Properties.DisplayMember = "kategori"
+        lookup.Properties.ValueMember = "kode_kategori"
+        lookup.Properties.PopulateColumns()
+        lookup.Properties.Columns(0).Caption = "Kode"
+        lookup.Properties.Columns(1).Caption = "Kategori"
+        lookup.Properties.Columns(0).Width = 20
+        lookup.Properties.Columns(1).Width = 100
+        lookup.ItemIndex = 0
+    End Sub
+
 End Module

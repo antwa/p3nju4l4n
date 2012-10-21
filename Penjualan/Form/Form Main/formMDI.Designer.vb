@@ -253,7 +253,7 @@ Partial Class formMDI
         '
         Me.cMaster_.Caption = "Data Master"
         Me.cMaster_.Id = 2
-        Me.cMaster_.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.cMaster_customerbarang), New DevExpress.XtraBars.LinkPersistInfo(Me.cMaster_supplierbarang), New DevExpress.XtraBars.LinkPersistInfo(Me.cMaster_pegawai, True), New DevExpress.XtraBars.LinkPersistInfo(Me.cMaster_barangjadi, True), New DevExpress.XtraBars.LinkPersistInfo(Me.cMaster_formulaharga)})
+        Me.cMaster_.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.cMaster_customerbarang), New DevExpress.XtraBars.LinkPersistInfo(Me.cMaster_supplierbarang), New DevExpress.XtraBars.LinkPersistInfo(Me.cMaster_pegawai, True), New DevExpress.XtraBars.LinkPersistInfo(Me.cMaster_barangjadi, True)})
         Me.cMaster_.Name = "cMaster_"
         '
         'cMaster_customerbarang

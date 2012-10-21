@@ -28,4 +28,5 @@
     Public Const C_KONSINYASI_PRIMER As Integer = 7 ' konsinyasi primer
     Public Const C_FAKTUR_KONSINYASI As Integer = 8 ' faktur konsinyasi
 
+
 End Module

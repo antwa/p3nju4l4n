@@ -85,4 +85,8 @@
     Private Sub cTransaksi_faktur_konsinyasi_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles cTransaksi_faktur_konsinyasi.ItemClick
         LoadFormToTab(frm_faktur_konsinyasi)
     End Sub
+
+    Private Sub cMaster_barangjadi_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles cMaster_barangjadi.ItemClick
+        LoadFormToTab(frm_barangjadi_list)
+    End Sub
 End Class
