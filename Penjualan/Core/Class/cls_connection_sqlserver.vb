@@ -44,36 +44,58 @@ Public Class cls_connection_sqlserver
     End Sub
 
     Public Function ExecuteToDataTable(ByVal Query As String) As DataTable
+        ''@ Code dibawah ini sementara tidak dipakai
+        'If openConnection() Then
+        '    Try
+        '        Cmd = New SqlClient.SqlCommand(Query, Me.Cnt)
+        '        Cmd.CommandType = CommandType.Text
+        '        DA = New SqlClient.SqlDataAdapter
+        '        DA.SelectCommand = Cmd
+
+        '        DS = New DataSet
+        '        DA.Fill(DS)
+
+        '        DT = DS.Tables(0)
+
+        '        ' return
+        '        ExecuteToDataTable = DT
+        '    Catch ex As Exception
+        '        MsgBox("ExecuteToDataTable Failed...!!" & vbCrLf & ex.Message, MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Access Failed")
+        '        ExecuteToDataTable = Nothing
+        '    End Try
+        'Else
+        '    ExecuteToDataTable = Nothing
+        'End If
+
+        'DT = Nothing
+        'DS = Nothing
+        'DA = Nothing
+        'Cmd = Nothing
+
+        'closeConnection()
 
         If openConnection() Then
             Try
+
                 Cmd = New SqlClient.SqlCommand(Query, Me.Cnt)
-                Cmd.CommandType = CommandType.Text
-                DA = New SqlClient.SqlDataAdapter
-                DA.SelectCommand = Cmd
+                Read = Cmd.ExecuteReader
 
-                DS = New DataSet
-                DA.Fill(DS)
+                Dim DatTable As New DataTable
+                DatTable.Load(Read)
 
-                DT = DS.Tables(0)
+                ExecuteToDataTable = DatTable
 
-                ' return
-                ExecuteToDataTable = DT
             Catch ex As Exception
-                MsgBox("ExecuteToDataTable Failed...!!" & vbCrLf & ex.Message, MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Access Failed")
+                MsgBox("ExecuteToDataReader Failed...!!" & vbCrLf & ex.Message, MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Access Failed")
                 ExecuteToDataTable = Nothing
             End Try
         Else
             ExecuteToDataTable = Nothing
         End If
 
-        DT = Nothing
-        DS = Nothing
-        DA = Nothing
         Cmd = Nothing
 
         closeConnection()
-
     End Function
 
     Public Function ExecuteToDataReader(ByVal Query As String) As SqlClient.SqlDataReader

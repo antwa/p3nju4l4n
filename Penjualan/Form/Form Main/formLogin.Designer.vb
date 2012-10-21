@@ -33,7 +33,7 @@ Partial Class formLogin
         '
         'cmd_login
         '
-        Me.cmd_login.Location = New System.Drawing.Point(125, 156)
+        Me.cmd_login.Location = New System.Drawing.Point(300, 160)
         Me.cmd_login.LookAndFeel.SkinName = "Caramel"
         Me.cmd_login.Name = "cmd_login"
         Me.cmd_login.Size = New System.Drawing.Size(94, 25)
@@ -43,7 +43,7 @@ Partial Class formLogin
         'txt_username
         '
         Me.txt_username.EditValue = ""
-        Me.txt_username.Location = New System.Drawing.Point(12, 75)
+        Me.txt_username.Location = New System.Drawing.Point(187, 79)
         Me.txt_username.Name = "txt_username"
         Me.txt_username.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_username.Properties.Appearance.Options.UseFont = True
@@ -55,7 +55,7 @@ Partial Class formLogin
         '
         Me.LabelControl1.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelControl1.Appearance.ForeColor = System.Drawing.Color.White
-        Me.LabelControl1.Location = New System.Drawing.Point(12, 55)
+        Me.LabelControl1.Location = New System.Drawing.Point(187, 59)
         Me.LabelControl1.Name = "LabelControl1"
         Me.LabelControl1.Size = New System.Drawing.Size(59, 14)
         Me.LabelControl1.TabIndex = 2
@@ -65,7 +65,7 @@ Partial Class formLogin
         '
         Me.LabelControl2.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelControl2.Appearance.ForeColor = System.Drawing.Color.White
-        Me.LabelControl2.Location = New System.Drawing.Point(12, 109)
+        Me.LabelControl2.Location = New System.Drawing.Point(187, 113)
         Me.LabelControl2.Name = "LabelControl2"
         Me.LabelControl2.Size = New System.Drawing.Size(59, 14)
         Me.LabelControl2.TabIndex = 4
@@ -74,7 +74,7 @@ Partial Class formLogin
         'txt_password
         '
         Me.txt_password.EditValue = ""
-        Me.txt_password.Location = New System.Drawing.Point(12, 129)
+        Me.txt_password.Location = New System.Drawing.Point(187, 133)
         Me.txt_password.Name = "txt_password"
         Me.txt_password.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_password.Properties.Appearance.Options.UseFont = True
@@ -85,17 +85,17 @@ Partial Class formLogin
         '
         'LabelControl3
         '
-        Me.LabelControl3.Appearance.Font = New System.Drawing.Font("Verdana", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl3.Appearance.Font = New System.Drawing.Font("Tahoma", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelControl3.Appearance.ForeColor = System.Drawing.Color.White
         Me.LabelControl3.Location = New System.Drawing.Point(12, 12)
         Me.LabelControl3.Name = "LabelControl3"
-        Me.LabelControl3.Size = New System.Drawing.Size(163, 25)
+        Me.LabelControl3.Size = New System.Drawing.Size(256, 25)
         Me.LabelControl3.TabIndex = 6
-        Me.LabelControl3.Text = "Login Aplikasi"
+        Me.LabelControl3.Text = "Login Aplikasi Penjualan"
         '
         'SimpleButton1
         '
-        Me.SimpleButton1.Location = New System.Drawing.Point(12, 180)
+        Me.SimpleButton1.Location = New System.Drawing.Point(21, 100)
         Me.SimpleButton1.Name = "SimpleButton1"
         Me.SimpleButton1.Size = New System.Drawing.Size(86, 27)
         Me.SimpleButton1.TabIndex = 7
@@ -107,7 +107,7 @@ Partial Class formLogin
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImageLayoutStore = System.Windows.Forms.ImageLayout.Tile
         Me.BackgroundImageStore = CType(resources.GetObject("$this.BackgroundImageStore"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(406, 225)
+        Me.ClientSize = New System.Drawing.Size(406, 192)
         Me.Controls.Add(Me.SimpleButton1)
         Me.Controls.Add(Me.LabelControl3)
         Me.Controls.Add(Me.LabelControl2)

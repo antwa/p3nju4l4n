@@ -59,6 +59,32 @@
 
     End Function
 
+    Public Function getNomorUrut_Barang(ByVal kode_merk As String) As String
+        Dim rcd As SqlClient.SqlDataReader
+        Dim nomor As Integer
+
+        Db.FlushCache()
+
+        Db.Selects("TOP 1 kode_barangjadi AS nomor")
+        Db.From("tbl_barangjadi")
+        Db.Where("kode_merk", kode_merk)
+        Db.OrderBy("kode_barangjadi", cls_database.sorting.Descending)
+
+        rcd = Connection.ExecuteToDataReader(Db.GetQueryString)
+
+        If rcd.HasRows Then
+            rcd.Read()
+            nomor = CInt(rcd.Item("nomor").ToString.Substring(2, 3)) + 1
+            Return Format(CInt(nomor), "000")
+        Else
+            Return Format(CInt(1), "000")
+        End If
+
+    End Function
+
+    Public Function getValueFromLookup(ByVal lookup As DevExpress.XtraEditors.LookUpEdit) As String
+        Return lookup.Properties.GetKeyValueByDisplayText(lookup.Text)
+    End Function
 
     Public Function Terbilang(ByVal nilai As Long) As String
         Dim bilangan As String() = {"", "satu", "dua", "tiga", "empat", "lima", _

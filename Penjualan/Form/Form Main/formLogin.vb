@@ -82,25 +82,19 @@
     End Sub
 
     Private Sub SimpleButton1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SimpleButton1.Click
-        'Db.FlushCache()
-        'Db.Selects("Convert(varchar, CK_TANGGAL, 111) AS Tanggal")
-        'Db.From("PRO_CUTTING_KELUAR")
+        Db.FlushCache()
+        Db.Selects("*")
+        Db.From("sys_user")
 
-        'Connection.ExecuteToDataReader(Db.GetQueryString)
+        Dim count As Integer
+        Dim i As Integer
+        Dim rcd As DataTable = Connection.ExecuteToDataTable(Db.GetQueryString)
 
-        'If Connection.Read.HasRows Then
-        '    Connection.Read.Read()
-        '    MsgBox(Connection.Read.Item("Tanggal").ToString)
-        'End If
-
-        'Dim dt1 As Date = "12/08/2012"
-        'Dim dt2 As Date = "06/09/2012"
-
-        'If dt1 < dt2 Then
-        '    MsgBox("kecil")
-        'End If
-
-        frm_uji_coba.Show()
+        If rcd.Rows.Count > 0 Then
+            For i = 0 To rcd.Rows.Count - 1
+                MsgBox("Count : " & rcd.Rows.Count & vbCrLf & "Username : " & rcd.Rows(i).Item(2))
+            Next
+        End If
 
     End Sub
 

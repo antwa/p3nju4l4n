@@ -108,11 +108,15 @@ Public Class cls_validation
 
 
     Private Function isRequired(ByVal strParam As String) As Boolean
-        If strParam.Length > 0 Or strParam <> vbNullString Then
-            Return True
-        Else
+        Try
+            If strParam.Length > 0 Or strParam <> vbNullString Then
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As Exception
             Return False
-        End If
+        End Try
     End Function
 
     Private Function isEmail(ByVal strParam As String) As Boolean
