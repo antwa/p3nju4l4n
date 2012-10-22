@@ -562,22 +562,22 @@ Partial Class formMDI
         '
         Me.barDockControlBottom.CausesValidation = False
         Me.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.barDockControlBottom.Location = New System.Drawing.Point(0, 341)
-        Me.barDockControlBottom.Size = New System.Drawing.Size(711, 29)
+        Me.barDockControlBottom.Location = New System.Drawing.Point(0, 343)
+        Me.barDockControlBottom.Size = New System.Drawing.Size(711, 27)
         '
         'barDockControlLeft
         '
         Me.barDockControlLeft.CausesValidation = False
         Me.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left
         Me.barDockControlLeft.Location = New System.Drawing.Point(0, 25)
-        Me.barDockControlLeft.Size = New System.Drawing.Size(0, 316)
+        Me.barDockControlLeft.Size = New System.Drawing.Size(0, 318)
         '
         'barDockControlRight
         '
         Me.barDockControlRight.CausesValidation = False
         Me.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right
         Me.barDockControlRight.Location = New System.Drawing.Point(711, 25)
-        Me.barDockControlRight.Size = New System.Drawing.Size(0, 316)
+        Me.barDockControlRight.Size = New System.Drawing.Size(0, 318)
         '
         'BarButtonItem1
         '
