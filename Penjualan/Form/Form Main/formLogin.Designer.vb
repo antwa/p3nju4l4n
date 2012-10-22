@@ -42,7 +42,7 @@ Partial Class formLogin
         '
         'txt_username
         '
-        Me.txt_username.EditValue = ""
+        Me.txt_username.EditValue = "admin"
         Me.txt_username.Location = New System.Drawing.Point(187, 79)
         Me.txt_username.Name = "txt_username"
         Me.txt_username.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -73,7 +73,7 @@ Partial Class formLogin
         '
         'txt_password
         '
-        Me.txt_password.EditValue = ""
+        Me.txt_password.EditValue = "admin"
         Me.txt_password.Location = New System.Drawing.Point(187, 133)
         Me.txt_password.Name = "txt_password"
         Me.txt_password.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
