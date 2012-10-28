@@ -143,7 +143,6 @@
         Validation.clearRules()
         Validation.addRules(nama.Text, "Nama", "required")
         Validation.addRules(harga_pokok.EditValue, "Harga Pokok", "required|numeric")
-        Validation.addRules(harga_beli.EditValue, "Harga Beli", "required|numeric")
 
         If Validation.isValid Then
 
@@ -177,7 +176,6 @@
                     Db.SetField("nama", nama.Text)
                     Db.SetField("kode_kategori", getValueFromLookup(kode_kategori))
                     Db.SetField("harga_pokok", harga_pokok.EditValue)
-                    Db.SetField("harga_beli", harga_beli.EditValue)
                     Db.SetField("kode_size", rcd_list.Item(i).kode_size)
                     Db.SetField("gambar", lbl_filename.Text)
                     Db.SetField("keterangan", keterangan.Text)

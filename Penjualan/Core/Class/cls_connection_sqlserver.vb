@@ -2,7 +2,7 @@
 
 Public Class cls_connection_sqlserver
 
-    Private strConnection As String
+    Public strConnection As String
 
     Public Cnt As SqlClient.SqlConnection
     Private Cmd As SqlClient.SqlCommand

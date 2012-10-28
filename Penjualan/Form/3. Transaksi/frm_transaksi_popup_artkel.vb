@@ -7,11 +7,10 @@
 
         If parameter1 = C_KONSINYASI_SEKUNDER Or parameter1 = C_KONSINYASI_PRIMER Then
             Db.FlushCache()
-            Db.Selects("a.kode_barangjadi, b.nama, c.jenis, a.stok, a.kode_hargajual, d.harga, a.diskon")
+            Db.Selects("a.kode_barangjadi, b.nama, c.jenis, a.stok")
             Db.From("tbl_persediaan_customer a")
             Db.Join("tbl_barangjadi b", "b.kode_barangjadi = a.kode_barangjadi")
             Db.Join("tbl_jenis_hargabarang c", "c.kode_jenis_harga = a.kode_jenis_harga")
-            Db.Join("tbl_hargajual d", "d.kode_hargajual = a.kode_hargajual")
             Db.Where("a.kode_customer", kode_customer)
 
             If txt_search.Text <> vbNullString Then
@@ -23,13 +22,8 @@
             With GridView1
                 .Columns("kode_barangjadi").Caption = "Kode Artikel"
                 .Columns("nama").Caption = "Nama"
-                .Columns("stok").Caption = "Stok"
                 .Columns("jenis").Caption = "Jenis"
-                .Columns("kode_hargajual").Visible = False
-                .Columns("harga").Caption = "Harga (Rp.)"
-                .Columns("diskon").Caption = "Diskon (%)"
-
-                FormatColumnNumeric(.Columns("harga"))
+                .Columns("stok").Caption = "Stok"
             End With
 
         Else
@@ -58,6 +52,7 @@
     Sub addArtikel()
         Dim i As Integer = 0
         Dim row As System.Data.DataRow = GridView1.GetDataRow(GridView1.FocusedRowHandle)
+        Dim rcd As SqlClient.SqlDataReader
 
         Select Case parameter1
 
@@ -87,15 +82,24 @@
                     Next
 
                     '# ambil harga
-                    'Me.Visible = False
-                    frm_transaksi_popup_harga.parameter1 = C_SALES_ORDER
-                    frm_transaksi_popup_harga.kode_barangjadi = row("kode_barangjadi")
-                    frm_transaksi_popup_harga.nama = row("nama")
-                    frm_transaksi_popup_harga.stok = row("stok")
-                    frm_transaksi_popup_harga.ShowDialog(Me)
+                    ' load harga
+                    Db.FlushCache()
+                    Db.Selects("kode_hargajual, kode_template_harga, harga")
+                    Db.From("tbl_hargajual")
+                    Db.Where("kode_barangjadi", row("kode_barangjadi"))
+                    Db.Where("kode_template_harga", .kode_customer.GetColumnValue("kode_template_harga"))
 
-                    '.rcd_list.Add(New rcd_penerimaanbarang(row("kode_barangjadi"), row("nama"), 0))
-                    '.GridView1.RefreshData()
+                    rcd = Connection.ExecuteToDataReader(Db.GetQueryString)
+
+                    If rcd.HasRows Then
+                        rcd.Read()
+                        .rcd_list.Add(New rcd_sales_order(row("kode_barangjadi"), row("nama"), rcd.Item("kode_hargajual").ToString, rcd.Item("harga").ToString, row("stok")))
+                    Else
+                        .rcd_list.Add(New rcd_sales_order(row("kode_barangjadi"), row("nama"), 0, 0, row("stok")))
+                    End If
+
+                    .GridView1.RefreshData()
+
                 End With
 
             Case C_KONSINYASI_SEKUNDER                  '========================================================# 
@@ -112,14 +116,13 @@
                     .rcd_list.Add(New rcd_konsinyasi_sekunder(1, row("kode_barangjadi"), _
                                                               row("nama"), _
                                                               row("stok"), _
-                                                              row("kode_hargajual"), _
-                                                              row("harga"), _
-                                                              row("diskon")))
+                                                              0, _
+                                                              0, _
+                                                              0))
                     '# ambil harga yg ditetapkan
                     Db.FlushCache()
-                    Db.Selects("TOP 1 a.kode_hargajual, b.harga, a.diskon")
+                    Db.Selects("TOP 1 a.harga, a.diskon")
                     Db.From("tbl_histori_hargacustomer a")
-                    Db.Join("tbl_hargajual b", "b.kode_hargajual = a.kode_hargajual")
                     Db.Where("a.kode_barangjadi", row("kode_barangjadi"))
                     Db.Where("a.kode_customer", kode_customer)
                     Db.Where("a.tanggal", .tgl_transaksi.DateTime.ToString("yyyy-MM-dd HH:mm:ss"), "<=", "AND")
@@ -130,11 +133,17 @@
 
                     If rc.HasRows Then
                         rc.Read()
-                        .rcd_list.Item(lastrow).kode_hargajual2 = rc.Item("kode_hargajual").ToString
+                        .rcd_list.Item(lastrow).harga = rc.Item("harga").ToString
+                        .rcd_list.Item(lastrow).diskon = rc.Item("diskon").ToString
+
+                        '.rcd_list.Item(lastrow).kode_hargajual2 = rc.Item("kode_hargajual").ToString
                         .rcd_list.Item(lastrow).harga2 = rc.Item("harga").ToString
                         .rcd_list.Item(lastrow).diskon2 = rc.Item("diskon").ToString
                     Else
-                        .rcd_list.Item(lastrow).kode_hargajual2 = 0
+                        .rcd_list.Item(lastrow).harga = 0
+                        .rcd_list.Item(lastrow).diskon = 0
+
+                        '.rcd_list.Item(lastrow).kode_hargajual2 = rc.Item("kode_hargajual").ToString
                         .rcd_list.Item(lastrow).harga2 = 0
                         .rcd_list.Item(lastrow).diskon2 = 0
                     End If
@@ -143,11 +152,63 @@
                 End With
 
             Case C_KONSINYASI_PRIMER
-                frm_konsinyasi_primer_isian.Dispose()
-                frm_konsinyasi_primer_isian.kode_barangjadi = row("kode_barangjadi")
-                frm_konsinyasi_primer_isian.nama = row("nama")
-                frm_konsinyasi_primer_isian.kode_customer = kode_customer
-                frm_konsinyasi_primer_isian.ShowDialog(Me)
+                With frm_konsinyasi_primer
+                    .rcd_list.Add(New rcd_konsinyasi_primer(.tgl_terbit.DateTime, _
+                                                    row("kode_barangjadi"), _
+                                                    row("nama"), _
+                                                    0, _
+                                                    0, _
+                                                    0, _
+                                                    0, _
+                                                    0))
+
+                    '# ambil harga yg ditetapkan
+                    Db.FlushCache()
+                    Db.Selects("TOP 1 a.harga, a.diskon")
+                    Db.From("tbl_histori_hargacustomer a")
+                    Db.Where("a.kode_barangjadi", row("kode_barangjadi"))
+                    Db.Where("a.kode_customer", kode_customer)
+                    Db.Where("a.tanggal", .tgl_terbit.DateTime.ToString("yyyy-MM-dd HH:mm:ss"), "<=", "AND")
+                    Db.OrderBy("a.tanggal", cls_database.sorting.Descending)
+
+                    Dim rc As SqlClient.SqlDataReader = Connection.ExecuteToDataReader(Db.GetQueryString)
+                    Dim lastrow As Integer = .rcd_list.Count - 1
+
+                    If rc.HasRows Then
+                        rc.Read()
+                        .rcd_list.Item(lastrow).harga = rc.Item("harga").ToString
+                        .rcd_list.Item(lastrow).diskon = rc.Item("diskon").ToString
+
+                        '.rcd_list.Item(lastrow).kode_hargajual2 = rc.Item("kode_hargajual").ToString
+                        .rcd_list.Item(lastrow).harga2 = rc.Item("harga").ToString
+                        .rcd_list.Item(lastrow).diskon2 = rc.Item("diskon").ToString
+                    Else
+                        .rcd_list.Item(lastrow).harga = 0
+                        .rcd_list.Item(lastrow).diskon = 0
+
+                        '.rcd_list.Item(lastrow).kode_hargajual2 = rc.Item("kode_hargajual").ToString
+                        .rcd_list.Item(lastrow).harga2 = 0
+                        .rcd_list.Item(lastrow).diskon2 = 0
+                    End If
+
+                    .rcd_list.Item(lastrow).sebelum_disc_acara = IIf(.sebelum_disc_acara.EditValue = "1", True, False)
+
+                    .rcd_list.Item(lastrow).disc_acara = .disc_acara.Text
+                    .rcd_list.Item(lastrow).disc_acara_kita = .disc_acara_kita.Text
+                    .rcd_list.Item(lastrow).disc_acara_toko = .disc_acara_toko.Text
+
+                    .rcd_list.Item(lastrow).margin_toko = .margin_toko.Text
+                    .rcd_list.Item(lastrow).margin_konsumen = .margin_konsumen.Text
+
+                    .rcd_list.Item(lastrow).Sumary()
+                    .GridView1.RefreshData()
+                End With
+
+                'frm_konsinyasi_primer_isian.Dispose()
+                'frm_konsinyasi_primer_isian.kode_barangjadi = row("kode_barangjadi")
+                'frm_konsinyasi_primer_isian.nama = row("nama")
+                'frm_konsinyasi_primer_isian.kode_customer = kode_customer
+                'frm_konsinyasi_primer_isian.ShowDialog(Me)
 
         End Select
 

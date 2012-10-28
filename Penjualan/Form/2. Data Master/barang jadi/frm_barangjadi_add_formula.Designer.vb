@@ -53,7 +53,6 @@ Partial Class frm_barangjadi_add_formula
         Me.GridView1.OptionsCustomization.AllowGroup = False
         Me.GridView1.OptionsCustomization.AllowSort = False
         Me.GridView1.OptionsView.ColumnAutoWidth = False
-        Me.GridView1.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Bottom
         Me.GridView1.OptionsView.ShowGroupPanel = False
         '
         'cmd_simpan

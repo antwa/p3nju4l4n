@@ -89,4 +89,8 @@
     Private Sub cMaster_barangjadi_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles cMaster_barangjadi.ItemClick
         LoadFormToTab(frm_barangjadi_list)
     End Sub
+
+    Private Sub cTransaksi_retur_jualputus_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles cTransaksi_retur_jualputus.ItemClick
+
+    End Sub
 End Class

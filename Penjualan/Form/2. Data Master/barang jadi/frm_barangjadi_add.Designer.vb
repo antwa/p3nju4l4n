@@ -44,8 +44,6 @@ Partial Class frm_barangjadi_add
         Me.LabelControl8 = New DevExpress.XtraEditors.LabelControl
         Me.harga_pokok = New DevExpress.XtraEditors.TextEdit
         Me.LabelControl9 = New DevExpress.XtraEditors.LabelControl
-        Me.harga_beli = New DevExpress.XtraEditors.TextEdit
-        Me.LabelControl10 = New DevExpress.XtraEditors.LabelControl
         Me.LabelControl11 = New DevExpress.XtraEditors.LabelControl
         Me.keterangan = New DevExpress.XtraEditors.MemoEdit
         Me.cmd_simpan = New DevExpress.XtraEditors.SimpleButton
@@ -66,7 +64,6 @@ Partial Class frm_barangjadi_add
         CType(Me.pct_gambar.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nama.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.harga_pokok.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.harga_beli.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.keterangan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -323,28 +320,10 @@ Partial Class frm_barangjadi_add
         Me.LabelControl9.TabIndex = 59
         Me.LabelControl9.Text = "Harga Pokok"
         '
-        'harga_beli
-        '
-        Me.harga_beli.Location = New System.Drawing.Point(475, 345)
-        Me.harga_beli.Name = "harga_beli"
-        Me.harga_beli.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.harga_beli.Properties.Appearance.Options.UseFont = True
-        Me.harga_beli.Size = New System.Drawing.Size(133, 21)
-        Me.harga_beli.TabIndex = 62
-        '
-        'LabelControl10
-        '
-        Me.LabelControl10.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl10.Location = New System.Drawing.Point(389, 348)
-        Me.LabelControl10.Name = "LabelControl10"
-        Me.LabelControl10.Size = New System.Drawing.Size(53, 14)
-        Me.LabelControl10.TabIndex = 61
-        Me.LabelControl10.Text = "Harga Beli"
-        '
         'LabelControl11
         '
         Me.LabelControl11.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl11.Location = New System.Drawing.Point(391, 377)
+        Me.LabelControl11.Location = New System.Drawing.Point(389, 347)
         Me.LabelControl11.Name = "LabelControl11"
         Me.LabelControl11.Size = New System.Drawing.Size(63, 14)
         Me.LabelControl11.TabIndex = 63
@@ -352,9 +331,9 @@ Partial Class frm_barangjadi_add
         '
         'keterangan
         '
-        Me.keterangan.Location = New System.Drawing.Point(475, 372)
+        Me.keterangan.Location = New System.Drawing.Point(475, 345)
         Me.keterangan.Name = "keterangan"
-        Me.keterangan.Size = New System.Drawing.Size(274, 75)
+        Me.keterangan.Size = New System.Drawing.Size(274, 102)
         Me.keterangan.TabIndex = 64
         '
         'cmd_simpan
@@ -388,8 +367,6 @@ Partial Class frm_barangjadi_add
         Me.Controls.Add(Me.cmd_cancel)
         Me.Controls.Add(Me.keterangan)
         Me.Controls.Add(Me.LabelControl11)
-        Me.Controls.Add(Me.harga_beli)
-        Me.Controls.Add(Me.LabelControl10)
         Me.Controls.Add(Me.harga_pokok)
         Me.Controls.Add(Me.LabelControl9)
         Me.Controls.Add(Me.nama)
@@ -420,7 +397,6 @@ Partial Class frm_barangjadi_add
         CType(Me.pct_gambar.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.nama.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.harga_pokok.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.harga_beli.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.keterangan.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -450,8 +426,6 @@ Partial Class frm_barangjadi_add
     Friend WithEvents cmd_browse As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents harga_pokok As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LabelControl9 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents harga_beli As DevExpress.XtraEditors.TextEdit
-    Friend WithEvents LabelControl10 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl11 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents keterangan As DevExpress.XtraEditors.MemoEdit
     Friend WithEvents cmd_simpan As DevExpress.XtraEditors.SimpleButton

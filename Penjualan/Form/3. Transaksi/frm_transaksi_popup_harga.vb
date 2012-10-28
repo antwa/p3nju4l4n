@@ -4,6 +4,7 @@
     Public kode_barangjadi As String
     Public nama As String
     Public stok As Integer
+    Public row As Integer
 
     Sub addArtikel()
         Dim i As Integer = 0
@@ -13,7 +14,8 @@
 
             Case C_SALES_ORDER
                 With frm_sales_order
-                    .rcd_list.Add(New rcd_sales_order(Me.kode_barangjadi, Me.nama, row("kode_hargajual"), row("harga"), Me.stok))
+                    .rcd_list.Item(0).kode_hargajual = row("kode_hargajual")
+                    .rcd_list.Item(0).harga = row("harga")
                     .GridView1.RefreshData()
                 End With
 
@@ -28,8 +30,9 @@
 
         ' load harga
         Db.FlushCache()
-        Db.Selects("kode_hargajual, nama_harga, harga")
-        Db.From("tbl_hargajual")
+        Db.Selects("a.kode_hargajual, b.nama_harga, a.harga")
+        Db.From("tbl_hargajual a")
+        Db.Join("tbl_template_hargajual b", "b.kode_template_harga = a.kode_template_harga")
         Db.Where("kode_barangjadi", kode_barangjadi)
 
         GridControl1.DataSource = Connection.ExecuteToDataTable(Db.GetQueryString)
