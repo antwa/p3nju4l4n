@@ -2,7 +2,7 @@
 
     Public Sub loadData()
         Db.FlushCache()
-        Db.Selects("a.kode_barangjadi, a.nama, b.kategori, a.harga_pokok, a.harga_beli, a.keterangan")
+        Db.Selects("a.kode_barangjadi, a.nama, b.kategori, a.harga_pokok, a.keterangan")
         Db.From("tbl_barangjadi a")
         Db.Join("tbl_kategori_barang b", "b.kode_kategori = a.kode_kategori")
 
@@ -18,19 +18,15 @@
         GridView1.Columns("nama").Caption = "Nama"
         GridView1.Columns("kategori").Caption = "Kategori"
         GridView1.Columns("harga_pokok").Caption = "Harga Pokok (Rp.)"
-        GridView1.Columns("harga_beli").Caption = "Harga Beli (Rp.)"
         GridView1.Columns("keterangan").Caption = "Keterangan"
 
         GridView1.Columns("kode_barangjadi").Width = 140
         GridView1.Columns("nama").Width = 190
         GridView1.Columns("kategori").Width = 160
         GridView1.Columns("harga_pokok").Width = 100
-        GridView1.Columns("harga_beli").Width = 100
         GridView1.Columns("keterangan").Width = 300
 
         FormatColumnNumeric(GridView1.Columns("harga_pokok"))
-        FormatColumnNumeric(GridView1.Columns("harga_beli"))
-
 
     End Sub
 

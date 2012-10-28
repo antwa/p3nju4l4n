@@ -29,8 +29,8 @@ Partial Class formMDI
         Me.cSetup_merk = New DevExpress.XtraBars.BarButtonItem
         Me.cSetup_kategori = New DevExpress.XtraBars.BarButtonItem
         Me.cSetup_size = New DevExpress.XtraBars.BarButtonItem
-        Me.cSetup_jenis = New DevExpress.XtraBars.BarButtonItem
         Me.cSetup_datawilayah = New DevExpress.XtraBars.BarButtonItem
+        Me.BarButtonItem2 = New DevExpress.XtraBars.BarButtonItem
         Me.cSetup_kodeakun = New DevExpress.XtraBars.BarButtonItem
         Me.cMaster_ = New DevExpress.XtraBars.BarSubItem
         Me.cMaster_customerbarang = New DevExpress.XtraBars.BarButtonItem
@@ -48,22 +48,31 @@ Partial Class formMDI
         Me.cTransaksi_konsinyasi_sekunder = New DevExpress.XtraBars.BarButtonItem
         Me.cTransaksi_konsinyasi_primer = New DevExpress.XtraBars.BarButtonItem
         Me.cTransaksi_faktur_konsinyasi = New DevExpress.XtraBars.BarButtonItem
+        Me.cTransaksi_faktur_global = New DevExpress.XtraBars.BarButtonItem
         Me.cTransaksi_retur_jualputus = New DevExpress.XtraBars.BarButtonItem
         Me.cTransaksi_retur_jualkonsinyasi = New DevExpress.XtraBars.BarButtonItem
         Me.cPersediaan_ = New DevExpress.XtraBars.BarSubItem
+        Me.BarSubItem2 = New DevExpress.XtraBars.BarSubItem
         Me.cPersediaan_stok_customer = New DevExpress.XtraBars.BarButtonItem
+        Me.BarSubItem23 = New DevExpress.XtraBars.BarSubItem
         Me.cPersediaan_gudang = New DevExpress.XtraBars.BarButtonItem
+        Me.cPersediaan_lap_kartustok = New DevExpress.XtraBars.BarButtonItem
+        Me.cPenggajian_ = New DevExpress.XtraBars.BarSubItem
+        Me.cPenggajian_input = New DevExpress.XtraBars.BarButtonItem
+        Me.cPenggajian_rekap = New DevExpress.XtraBars.BarButtonItem
         Me.cLaporan_ = New DevExpress.XtraBars.BarSubItem
         Me.cLaporan_penerimaanbarang = New DevExpress.XtraBars.BarButtonItem
         Me.cLaporan_so = New DevExpress.XtraBars.BarButtonItem
         Me.cLaporan_do = New DevExpress.XtraBars.BarButtonItem
-        Me.cLaporan_stokkonsinyasi = New DevExpress.XtraBars.BarButtonItem
+        Me.cLaporan_suratjalan = New DevExpress.XtraBars.BarButtonItem
         Me.cLaporan_konsinyasi_sekunder = New DevExpress.XtraBars.BarButtonItem
         Me.cLaporan_konsinyasi_primer = New DevExpress.XtraBars.BarButtonItem
         Me.cLaporan_targetpenjualan = New DevExpress.XtraBars.BarButtonItem
-        Me.cLaporan_kartustok_barang = New DevExpress.XtraBars.BarButtonItem
+        Me.cLaporan_retur_pembelian = New DevExpress.XtraBars.BarButtonItem
         Me.cLaporan_retur_penjualan = New DevExpress.XtraBars.BarButtonItem
         Me.cLaporan_labarugi = New DevExpress.XtraBars.BarButtonItem
+        Me.cLaporan_penjualan_mingguan = New DevExpress.XtraBars.BarButtonItem
+        Me.cLaporan_penjualan_bulanan = New DevExpress.XtraBars.BarButtonItem
         Me.cHP_ = New DevExpress.XtraBars.BarSubItem
         Me.cHP_lap_hutang = New DevExpress.XtraBars.BarButtonItem
         Me.cHP_lap_piutang = New DevExpress.XtraBars.BarButtonItem
@@ -154,22 +163,13 @@ Partial Class formMDI
         Me.cMaster_formulaharga = New DevExpress.XtraBars.BarButtonItem
         Me.BarButtonItem11 = New DevExpress.XtraBars.BarButtonItem
         Me.BarButtonItem23 = New DevExpress.XtraBars.BarButtonItem
+        Me.cLaporan_stokkonsinyasi = New DevExpress.XtraBars.BarButtonItem
+        Me.cLaporan_kartustok_barang = New DevExpress.XtraBars.BarButtonItem
         Me.BarButtonItem36 = New DevExpress.XtraBars.BarButtonItem
+        Me.cSetup_jenis = New DevExpress.XtraBars.BarButtonItem
         Me.DefaultLookAndFeel1 = New DevExpress.LookAndFeel.DefaultLookAndFeel(Me.components)
         Me.XtraTabbedMdiManager1 = New DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(Me.components)
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.BarButtonItem2 = New DevExpress.XtraBars.BarButtonItem
-        Me.cPenggajian_ = New DevExpress.XtraBars.BarSubItem
-        Me.cPenggajian_input = New DevExpress.XtraBars.BarButtonItem
-        Me.cPenggajian_rekap = New DevExpress.XtraBars.BarButtonItem
-        Me.cLaporan_suratjalan = New DevExpress.XtraBars.BarButtonItem
-        Me.cLaporan_retur_pembelian = New DevExpress.XtraBars.BarButtonItem
-        Me.cLaporan_penjualan_mingguan = New DevExpress.XtraBars.BarButtonItem
-        Me.cLaporan_penjualan_bulanan = New DevExpress.XtraBars.BarButtonItem
-        Me.cTransaksi_faktur_global = New DevExpress.XtraBars.BarButtonItem
-        Me.BarSubItem2 = New DevExpress.XtraBars.BarSubItem
-        Me.BarSubItem23 = New DevExpress.XtraBars.BarSubItem
-        Me.cPersediaan_lap_kartustok = New DevExpress.XtraBars.BarButtonItem
         CType(Me.BarManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XtraTabbedMdiManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -243,17 +243,17 @@ Partial Class formMDI
         Me.cSetup_size.Id = 129
         Me.cSetup_size.Name = "cSetup_size"
         '
-        'cSetup_jenis
-        '
-        Me.cSetup_jenis.Caption = "Jenis Harga Barang Jadi"
-        Me.cSetup_jenis.Id = 120
-        Me.cSetup_jenis.Name = "cSetup_jenis"
-        '
         'cSetup_datawilayah
         '
         Me.cSetup_datawilayah.Caption = "Data Wilayah"
         Me.cSetup_datawilayah.Id = 77
         Me.cSetup_datawilayah.Name = "cSetup_datawilayah"
+        '
+        'BarButtonItem2
+        '
+        Me.BarButtonItem2.Caption = "Template Harga Jual"
+        Me.BarButtonItem2.Id = 130
+        Me.BarButtonItem2.Name = "BarButtonItem2"
         '
         'cSetup_kodeakun
         '
@@ -359,6 +359,12 @@ Partial Class formMDI
         Me.cTransaksi_faktur_konsinyasi.Id = 123
         Me.cTransaksi_faktur_konsinyasi.Name = "cTransaksi_faktur_konsinyasi"
         '
+        'cTransaksi_faktur_global
+        '
+        Me.cTransaksi_faktur_global.Caption = "Faktur Global Pergroup"
+        Me.cTransaksi_faktur_global.Id = 138
+        Me.cTransaksi_faktur_global.Name = "cTransaksi_faktur_global"
+        '
         'cTransaksi_retur_jualputus
         '
         Me.cTransaksi_retur_jualputus.Caption = "Retur Jual Putus"
@@ -378,17 +384,56 @@ Partial Class formMDI
         Me.cPersediaan_.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.BarSubItem2), New DevExpress.XtraBars.LinkPersistInfo(Me.BarSubItem23)})
         Me.cPersediaan_.Name = "cPersediaan_"
         '
+        'BarSubItem2
+        '
+        Me.BarSubItem2.Caption = "Customer"
+        Me.BarSubItem2.Id = 139
+        Me.BarSubItem2.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.cPersediaan_stok_customer)})
+        Me.BarSubItem2.Name = "BarSubItem2"
+        '
         'cPersediaan_stok_customer
         '
         Me.cPersediaan_stok_customer.Caption = "Stok Customer"
         Me.cPersediaan_stok_customer.Id = 124
         Me.cPersediaan_stok_customer.Name = "cPersediaan_stok_customer"
         '
+        'BarSubItem23
+        '
+        Me.BarSubItem23.Caption = "Gudang"
+        Me.BarSubItem23.Id = 140
+        Me.BarSubItem23.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.cPersediaan_gudang), New DevExpress.XtraBars.LinkPersistInfo(Me.cPersediaan_lap_kartustok)})
+        Me.BarSubItem23.Name = "BarSubItem23"
+        '
         'cPersediaan_gudang
         '
         Me.cPersediaan_gudang.Caption = "Gudang"
         Me.cPersediaan_gudang.Id = 125
         Me.cPersediaan_gudang.Name = "cPersediaan_gudang"
+        '
+        'cPersediaan_lap_kartustok
+        '
+        Me.cPersediaan_lap_kartustok.Caption = "Lap. Kartu Stok"
+        Me.cPersediaan_lap_kartustok.Id = 141
+        Me.cPersediaan_lap_kartustok.Name = "cPersediaan_lap_kartustok"
+        '
+        'cPenggajian_
+        '
+        Me.cPenggajian_.Caption = "Penggajian"
+        Me.cPenggajian_.Id = 131
+        Me.cPenggajian_.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.cPenggajian_input), New DevExpress.XtraBars.LinkPersistInfo(Me.cPenggajian_rekap)})
+        Me.cPenggajian_.Name = "cPenggajian_"
+        '
+        'cPenggajian_input
+        '
+        Me.cPenggajian_input.Caption = "Input Penggajian"
+        Me.cPenggajian_input.Id = 132
+        Me.cPenggajian_input.Name = "cPenggajian_input"
+        '
+        'cPenggajian_rekap
+        '
+        Me.cPenggajian_rekap.Caption = "Rekap Gaji"
+        Me.cPenggajian_rekap.Id = 133
+        Me.cPenggajian_rekap.Name = "cPenggajian_rekap"
         '
         'cLaporan_
         '
@@ -415,11 +460,11 @@ Partial Class formMDI
         Me.cLaporan_do.Id = 100
         Me.cLaporan_do.Name = "cLaporan_do"
         '
-        'cLaporan_stokkonsinyasi
+        'cLaporan_suratjalan
         '
-        Me.cLaporan_stokkonsinyasi.Caption = "Lap. Stok Konsinyasi"
-        Me.cLaporan_stokkonsinyasi.Id = 101
-        Me.cLaporan_stokkonsinyasi.Name = "cLaporan_stokkonsinyasi"
+        Me.cLaporan_suratjalan.Caption = "Lap. Surat Jalan"
+        Me.cLaporan_suratjalan.Id = 134
+        Me.cLaporan_suratjalan.Name = "cLaporan_suratjalan"
         '
         'cLaporan_konsinyasi_sekunder
         '
@@ -439,11 +484,11 @@ Partial Class formMDI
         Me.cLaporan_targetpenjualan.Id = 104
         Me.cLaporan_targetpenjualan.Name = "cLaporan_targetpenjualan"
         '
-        'cLaporan_kartustok_barang
+        'cLaporan_retur_pembelian
         '
-        Me.cLaporan_kartustok_barang.Caption = "Lap. Kartu Stok Barang Jadi"
-        Me.cLaporan_kartustok_barang.Id = 105
-        Me.cLaporan_kartustok_barang.Name = "cLaporan_kartustok_barang"
+        Me.cLaporan_retur_pembelian.Caption = "Lap. Retur Pembelian"
+        Me.cLaporan_retur_pembelian.Id = 135
+        Me.cLaporan_retur_pembelian.Name = "cLaporan_retur_pembelian"
         '
         'cLaporan_retur_penjualan
         '
@@ -456,6 +501,18 @@ Partial Class formMDI
         Me.cLaporan_labarugi.Caption = "Lap. Laba Rugi"
         Me.cLaporan_labarugi.Id = 126
         Me.cLaporan_labarugi.Name = "cLaporan_labarugi"
+        '
+        'cLaporan_penjualan_mingguan
+        '
+        Me.cLaporan_penjualan_mingguan.Caption = "Lap. Penjualan Mingguan"
+        Me.cLaporan_penjualan_mingguan.Id = 136
+        Me.cLaporan_penjualan_mingguan.Name = "cLaporan_penjualan_mingguan"
+        '
+        'cLaporan_penjualan_bulanan
+        '
+        Me.cLaporan_penjualan_bulanan.Caption = "Lap. Penjualan Bulanan"
+        Me.cLaporan_penjualan_bulanan.Id = 137
+        Me.cLaporan_penjualan_bulanan.Name = "cLaporan_penjualan_bulanan"
         '
         'cHP_
         '
@@ -568,22 +625,22 @@ Partial Class formMDI
         '
         Me.barDockControlBottom.CausesValidation = False
         Me.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.barDockControlBottom.Location = New System.Drawing.Point(0, 396)
-        Me.barDockControlBottom.Size = New System.Drawing.Size(725, 27)
+        Me.barDockControlBottom.Location = New System.Drawing.Point(0, 394)
+        Me.barDockControlBottom.Size = New System.Drawing.Size(725, 29)
         '
         'barDockControlLeft
         '
         Me.barDockControlLeft.CausesValidation = False
         Me.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left
         Me.barDockControlLeft.Location = New System.Drawing.Point(0, 25)
-        Me.barDockControlLeft.Size = New System.Drawing.Size(0, 371)
+        Me.barDockControlLeft.Size = New System.Drawing.Size(0, 369)
         '
         'barDockControlRight
         '
         Me.barDockControlRight.CausesValidation = False
         Me.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right
         Me.barDockControlRight.Location = New System.Drawing.Point(725, 25)
-        Me.barDockControlRight.Size = New System.Drawing.Size(0, 371)
+        Me.barDockControlRight.Size = New System.Drawing.Size(0, 369)
         '
         'BarButtonItem1
         '
@@ -1030,11 +1087,29 @@ Partial Class formMDI
         Me.BarButtonItem23.Id = 96
         Me.BarButtonItem23.Name = "BarButtonItem23"
         '
+        'cLaporan_stokkonsinyasi
+        '
+        Me.cLaporan_stokkonsinyasi.Caption = "Lap. Stok Konsinyasi"
+        Me.cLaporan_stokkonsinyasi.Id = 101
+        Me.cLaporan_stokkonsinyasi.Name = "cLaporan_stokkonsinyasi"
+        '
+        'cLaporan_kartustok_barang
+        '
+        Me.cLaporan_kartustok_barang.Caption = "Lap. Kartu Stok Barang Jadi"
+        Me.cLaporan_kartustok_barang.Id = 105
+        Me.cLaporan_kartustok_barang.Name = "cLaporan_kartustok_barang"
+        '
         'BarButtonItem36
         '
         Me.BarButtonItem36.Caption = "Kartu Hutang Barang Jadi"
         Me.BarButtonItem36.Id = 111
         Me.BarButtonItem36.Name = "BarButtonItem36"
+        '
+        'cSetup_jenis
+        '
+        Me.cSetup_jenis.Caption = "Jenis Harga Barang Jadi"
+        Me.cSetup_jenis.Id = 120
+        Me.cSetup_jenis.Name = "cSetup_jenis"
         '
         'DefaultLookAndFeel1
         '
@@ -1049,81 +1124,6 @@ Partial Class formMDI
         '
         Me.Timer1.Enabled = True
         Me.Timer1.Interval = 500
-        '
-        'BarButtonItem2
-        '
-        Me.BarButtonItem2.Caption = "Template Harga Jual"
-        Me.BarButtonItem2.Id = 130
-        Me.BarButtonItem2.Name = "BarButtonItem2"
-        '
-        'cPenggajian_
-        '
-        Me.cPenggajian_.Caption = "Penggajian"
-        Me.cPenggajian_.Id = 131
-        Me.cPenggajian_.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.cPenggajian_input), New DevExpress.XtraBars.LinkPersistInfo(Me.cPenggajian_rekap)})
-        Me.cPenggajian_.Name = "cPenggajian_"
-        '
-        'cPenggajian_input
-        '
-        Me.cPenggajian_input.Caption = "Input Penggajian"
-        Me.cPenggajian_input.Id = 132
-        Me.cPenggajian_input.Name = "cPenggajian_input"
-        '
-        'cPenggajian_rekap
-        '
-        Me.cPenggajian_rekap.Caption = "Rekap Gaji"
-        Me.cPenggajian_rekap.Id = 133
-        Me.cPenggajian_rekap.Name = "cPenggajian_rekap"
-        '
-        'cLaporan_suratjalan
-        '
-        Me.cLaporan_suratjalan.Caption = "Lap. Surat Jalan"
-        Me.cLaporan_suratjalan.Id = 134
-        Me.cLaporan_suratjalan.Name = "cLaporan_suratjalan"
-        '
-        'cLaporan_retur_pembelian
-        '
-        Me.cLaporan_retur_pembelian.Caption = "Lap. Retur Pembelian"
-        Me.cLaporan_retur_pembelian.Id = 135
-        Me.cLaporan_retur_pembelian.Name = "cLaporan_retur_pembelian"
-        '
-        'cLaporan_penjualan_mingguan
-        '
-        Me.cLaporan_penjualan_mingguan.Caption = "Lap. Penjualan Mingguan"
-        Me.cLaporan_penjualan_mingguan.Id = 136
-        Me.cLaporan_penjualan_mingguan.Name = "cLaporan_penjualan_mingguan"
-        '
-        'cLaporan_penjualan_bulanan
-        '
-        Me.cLaporan_penjualan_bulanan.Caption = "Lap. Penjualan Bulanan"
-        Me.cLaporan_penjualan_bulanan.Id = 137
-        Me.cLaporan_penjualan_bulanan.Name = "cLaporan_penjualan_bulanan"
-        '
-        'cTransaksi_faktur_global
-        '
-        Me.cTransaksi_faktur_global.Caption = "Faktur Global Pergroup"
-        Me.cTransaksi_faktur_global.Id = 138
-        Me.cTransaksi_faktur_global.Name = "cTransaksi_faktur_global"
-        '
-        'BarSubItem2
-        '
-        Me.BarSubItem2.Caption = "Customer"
-        Me.BarSubItem2.Id = 139
-        Me.BarSubItem2.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.cPersediaan_stok_customer)})
-        Me.BarSubItem2.Name = "BarSubItem2"
-        '
-        'BarSubItem23
-        '
-        Me.BarSubItem23.Caption = "Gudang"
-        Me.BarSubItem23.Id = 140
-        Me.BarSubItem23.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.cPersediaan_gudang), New DevExpress.XtraBars.LinkPersistInfo(Me.cPersediaan_lap_kartustok)})
-        Me.BarSubItem23.Name = "BarSubItem23"
-        '
-        'cPersediaan_lap_kartustok
-        '
-        Me.cPersediaan_lap_kartustok.Caption = "Lap. Kartu Stok"
-        Me.cPersediaan_lap_kartustok.Id = 141
-        Me.cPersediaan_lap_kartustok.Name = "cPersediaan_lap_kartustok"
         '
         'formMDI
         '

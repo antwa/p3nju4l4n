@@ -54,16 +54,23 @@
         End Set
     End Property
 
-    Public ReadOnly Property kode_hargajual() As Integer
+    Public Property kode_hargajual() As Integer
         Get
             Return mkode_hargajual
         End Get
+        Set(ByVal value As Integer)
+            mkode_hargajual = value
+        End Set
     End Property
 
-    Public ReadOnly Property harga() As Integer
+    Public Property harga() As Integer
         Get
             Return mharga
         End Get
+        Set(ByVal value As Integer)
+            mharga = value
+            Call sumary()
+        End Set
     End Property
 
     Public ReadOnly Property total() As Integer

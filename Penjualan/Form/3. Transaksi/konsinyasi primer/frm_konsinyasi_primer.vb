@@ -84,7 +84,7 @@
         GridView1.Columns("netto").Caption = "Netto"
 
         GridView1.Columns("no").Width = 30
-        GridView1.Columns("tgl_transaksi").Width = 75
+        GridView1.Columns("tgl_transaksi").Width = 100
         GridView1.Columns("kode_barangjadi").Width = 100
         GridView1.Columns("nama").Width = 100
         GridView1.Columns("qty").Width = 50
@@ -122,6 +122,7 @@
         For i = 0 To GridView1.Columns.Count - 1
             GridView1.Columns.Item(i).OptionsColumn.AllowEdit = False
         Next
+        GridView1.Columns("tgl_transaksi").OptionsColumn.AllowEdit = True
         GridView1.Columns("qty").OptionsColumn.AllowEdit = True
         GridView1.Columns("harga").OptionsColumn.AllowEdit = True
         GridView1.Columns("diskon").OptionsColumn.AllowEdit = True
@@ -393,5 +394,51 @@
         End If
 
         
+    End Sub
+
+    Private Sub GridView1_CellValueChanged(ByVal sender As Object, ByVal e As DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs) Handles GridView1.CellValueChanged
+        GridView1.RefreshData()
+    End Sub
+
+    Private Sub GridView1_CellValueChanging(ByVal sender As Object, ByVal e As DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs) Handles GridView1.CellValueChanging
+        If e.Column.FieldName = "tgl_transaksi" Then
+
+            Dim CurRow As Integer = e.RowHandle
+            Dim rc As SqlClient.SqlDataReader
+            Dim tgl As DateTime = e.Value
+
+            '# ambil harga yg ditetapkan
+            Db.FlushCache()
+            Db.Selects("TOP 1 a.harga, a.diskon")
+            Db.From("tbl_histori_hargacustomer a")
+            Db.Where("a.kode_barangjadi", rcd_list.Item(CurRow).kode_barangjadi)
+            Db.Where("a.kode_customer", getValueFromLookup(kode_customer))
+            Db.Where("a.tanggal", tgl.ToString("yyyy-MM-dd HH:mm:ss"), "<=", "AND")
+            Db.OrderBy("a.tanggal", cls_database.sorting.Descending)
+
+            rc = Connection.ExecuteToDataReader(Db.GetQueryString)
+
+            If rc.HasRows Then
+                rc.Read()
+                rcd_list.Item(CurRow).harga = rc.Item("harga").ToString
+                rcd_list.Item(CurRow).diskon = rc.Item("diskon").ToString
+
+                '.rcd_list.Item(lastrow).kode_hargajual2 = rc.Item("kode_hargajual").ToString
+                rcd_list.Item(CurRow).harga2 = rc.Item("harga").ToString
+                rcd_list.Item(CurRow).diskon2 = rc.Item("diskon").ToString
+            Else
+                rcd_list.Item(CurRow).harga = 0
+                rcd_list.Item(CurRow).diskon = 0
+
+                '.rcd_list.Item(lastrow).kode_hargajual2 = rc.Item("kode_hargajual").ToString
+                rcd_list.Item(CurRow).harga2 = 0
+                rcd_list.Item(CurRow).diskon2 = 0
+            End If
+
+            rcd_list.Item(CurRow).Sumary()
+
+        End If
+
+        GridView1.RefreshData()
     End Sub
 End Class

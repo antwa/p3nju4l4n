@@ -1,6 +1,18 @@
-﻿Public Class frm_sales_order 
+﻿Imports DevExpress.XtraGrid.Views.Grid.ViewInfo
+
+Public Class frm_sales_order
 
     Public rcd_list As System.ComponentModel.BindingList(Of rcd_sales_order)
+
+    Sub reIndex()
+        If rcd_list.Count > 0 Then
+            sistem_jual.Properties.ReadOnly = True
+            kode_customer.Properties.ReadOnly = True
+        Else
+            sistem_jual.Properties.ReadOnly = False
+            kode_customer.Properties.ReadOnly = False
+        End If
+    End Sub
 
     Sub initComponent()
 
@@ -39,6 +51,13 @@
         GridView1.Columns("total").Summary.Clear()
         GridView1.Columns("total").Summary.Add(DevExpress.Data.SummaryItemType.Sum, "total", "{0:n0}")
 
+        ' desable cell
+        For i = 0 To GridView1.Columns.Count - 1
+            GridView1.Columns.Item(i).OptionsColumn.AllowEdit = False
+        Next
+        GridView1.Columns.Item(2).OptionsColumn.AllowEdit = True
+        GridView1.Columns.Item(6).OptionsColumn.AllowEdit = True
+
         tgl_so.DateTime = Now
         tgl_kirim.DateTime = Now
         tgl_rinciandist.DateTime = Now
@@ -59,6 +78,7 @@
         Dim row As Integer = GridView1.FocusedRowHandle
         Try
             rcd_list.RemoveAt(row)
+            Call reIndex()
         Catch ex As Exception
 
         End Try
@@ -72,6 +92,7 @@
         frm_transaksi_popup_artkel.Dispose()
         frm_transaksi_popup_artkel.parameter1 = C_SALES_ORDER
         frm_transaksi_popup_artkel.ShowDialog(Me)
+        Call reIndex()
     End Sub
 
     Private Sub cmd_simpan_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_simpan.Click
@@ -96,7 +117,7 @@
             Exit Sub
         End If
 
-        
+
         '# START TRANSAKSI
         Connection.TRANS_START()
 
@@ -136,6 +157,7 @@
         If Connection.TRANS_SUCCESS Then
             MsgBox("Data berhasil disimpan...", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Pesan")
             Call initComponent()
+            Call reIndex()
         Else
             MsgBox(Connection.TRANS_MESSAGE) ' transaksi gagal dan secara otomatis akan di rollback
         End If
@@ -143,4 +165,29 @@
     End Sub
 
 
+    Private Sub kode_customer_EditValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles kode_customer.EditValueChanged
+        'MsgBox(kode_customer.GetColumnValue("kode_template_harga"))
+    End Sub
+
+    Private Sub GridControl1_MouseDoubleClick(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles GridControl1.MouseDoubleClick
+        Try
+            Dim row As Integer = GridView1.FocusedRowHandle
+            Dim ghi As GridHitInfo = GridView1.CalcHitInfo(e.Location)
+
+            If ghi.Column.FieldName = "harga" Then
+                frm_transaksi_popup_harga.Dispose()
+                frm_transaksi_popup_harga.parameter1 = C_SALES_ORDER
+                frm_transaksi_popup_harga.kode_barangjadi = rcd_list.Item(row).kode_barangjadi
+                frm_transaksi_popup_harga.nama = rcd_list.Item(row).nama
+                frm_transaksi_popup_harga.row = row
+                frm_transaksi_popup_harga.ShowDialog(Me)
+            End If
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub GridControl1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GridControl1.Click
+
+    End Sub
 End Class
