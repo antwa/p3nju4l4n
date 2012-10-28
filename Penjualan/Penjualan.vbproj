@@ -278,6 +278,12 @@
     <Compile Include="Form\3. Transaksi\penerimaan barang\rcd_penerimaanbarang.vb">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Form\3. Transaksi\penerimaan barang\rpt_penerimaanbarang.Designer.vb">
+      <DependentUpon>rpt_penerimaanbarang.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\3. Transaksi\penerimaan barang\rpt_penerimaanbarang.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Form\3. Transaksi\retur penerimaan barang\frm_retur_penerimaanbarang.Designer.vb">
       <DependentUpon>frm_retur_penerimaanbarang.vb</DependentUpon>
     </Compile>
@@ -304,6 +310,12 @@
     </Compile>
     <Compile Include="Form\3. Transaksi\Surat Jalan\rcd_surat_jalan.vb">
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Form\4. Laporan\FormReportControl.Designer.vb">
+      <DependentUpon>FormReportControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\4. Laporan\FormReportControl.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form\Form Main\formLogin.Designer.vb">
       <DependentUpon>formLogin.vb</DependentUpon>
@@ -416,6 +428,10 @@
       <DependentUpon>frm_penerimaanbarang.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form\3. Transaksi\penerimaan barang\rpt_penerimaanbarang.resx">
+      <DependentUpon>rpt_penerimaanbarang.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\3. Transaksi\retur penerimaan barang\frm_retur_penerimaanbarang.resx">
       <DependentUpon>frm_retur_penerimaanbarang.vb</DependentUpon>
       <SubType>Designer</SubType>
@@ -426,6 +442,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\3. Transaksi\Surat Jalan\frm_surat_jalan.resx">
       <DependentUpon>frm_surat_jalan.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\4. Laporan\FormReportControl.resx">
+      <DependentUpon>FormReportControl.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\Form Main\formLogin.resx">
@@ -504,7 +524,9 @@
     <Folder Include="Form\2. Data Master\customer\" />
     <Folder Include="Form\2. Data Master\pegawai\" />
     <Folder Include="Form\2. Data Master\supplier barang\" />
-    <Folder Include="Form\4. Laporan\" />
+    <Folder Include="Form\4. Laporan\delivery order\" />
+    <Folder Include="Form\4. Laporan\penerimaan barang\" />
+    <Folder Include="Form\4. Laporan\sales order\" />
     <Folder Include="Form\5. Hutang Piutang\" />
     <Folder Include="Form\6. Kas dan Bank\" />
     <Folder Include="Form\7. Utility\" />

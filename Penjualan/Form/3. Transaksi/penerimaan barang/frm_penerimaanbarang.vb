@@ -111,7 +111,22 @@
 
             '# COMMITE TRANSAKSI
             If Connection.TRANS_SUCCESS Then
-                MsgBox("Data berhasil disimpan...", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Pesan")
+                'MsgBox("Data berhasil disimpan...", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Pesan")
+
+                Dim rpt As New rpt_penerimaanbarang
+                rpt.BindingSource1.DataSource = rcd_list
+                rpt.nomor_terima.Text = "Nomor : " & nomor_terima.Text
+                rpt.tanggal.Text = tanggal.DateTime.ToString("dd/MM/yyy")
+                rpt.kode_supplier_barang.Text = kode_supplier_barang.Text
+                rpt.no_suratjalan.Text = no_suratjalan.Text
+                rpt.CreateDocument()
+
+                Dim fc As New FormReportControl
+                fc.Text = "Print Bukti Penerimaan Barang"
+                fc.PrintControl1.PrintingSystem = rpt.PrintingSystem
+                fc.Height = 600
+                fc.ShowDialog(Me)
+
                 Call initComponent()
             Else
                 MsgBox(Connection.TRANS_MESSAGE) ' transaksi gagal dan secara otomatis akan di rollback
