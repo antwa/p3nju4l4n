@@ -20,7 +20,8 @@
         Db.Selects("a.tgl_so, a.no_so, a.kode_customer, b.nama, a.total_qty, a.total_value, b.prioritas")
         Db.From("tbl_salesorder a")
         Db.Join("tbl_customer b", "b.kode_customer = a.kode_customer")
-        Db.Where(" WHERE (a.status = '0' OR a.status = '3') ")
+        'Db.Where(" WHERE (a.status = '0' OR a.status = '3') ")
+        Db.Where(" WHERE (a.status = '0') ")
         Db.Where("a.sistem_jual", sistem_jual.EditValue)
 
         Db.Where_BetweenDate("a.tgl_so", tgl_dari.DateTime.ToString("yyyy-MM-dd"), tgl_sampai.DateTime.ToString("yyyy-MM-dd"))
