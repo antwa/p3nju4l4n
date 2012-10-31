@@ -54,7 +54,7 @@
             rcd_list.Clear()
 
             Db.FlushCache()
-            Db.Selects("a.nomor_terima, a.tanggal, b.kode_barangjadi, c.nama, b.qty, c.harga_beli, a.kode_supplier_barang, d.nama as nama_supplier")
+            Db.Selects("a.nomor_terima, a.tanggal, b.kode_barangjadi, c.nama, b.qty, c.harga_pokok, a.kode_supplier_barang, d.nama as nama_supplier")
             Db.From("tbl_penerimaanbarang a")
             Db.Join("tbl_penerimaanbarang_detail b", "b.nomor_terima = a.nomor_terima")
             Db.Join("tbl_barangjadi c", "c.kode_barangjadi = b.kode_barangjadi")
@@ -69,9 +69,10 @@
                         rcd_list.Add(New rcd_retur_penerimaanbarang(.Item("kode_barangjadi").ToString, _
                                                                     .Item("nama"), _
                                                                     .Item("qty").ToString, _
-                                                                    .Item("harga_beli").ToString))
+                                                                    .Item("harga_pokok").ToString))
 
-                        lbl_tanggal_terima.Text = .Item("tanggal").ToString
+                        Dim tgl As Date = .Item("tanggal").ToString
+                        lbl_tanggal_terima.Text = tgl.ToString("dd/MM/yyy")
                         lbl_kode_supplier.Text = .Item("kode_supplier_barang").ToString
                         lbl_nama_supplier.Text = .Item("nama_supplier").ToString
                     End While
@@ -157,7 +158,22 @@
 
             '# COMMITE TRANSAKSI
             If Connection.TRANS_SUCCESS Then
-                MsgBox("Data berhasil disimpan...", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Pesan")
+                'MsgBox("Data berhasil disimpan...", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Pesan")
+                Dim rpt As New rpt_retur_penerimaanbarang
+                rpt.BindingSource1.DataSource = rcd_list
+                rpt.nomor_retur.Text = "Nomor : " & nomor_retur.Text
+                rpt.tanggal.Text = tanggal.DateTime.ToString("dd/MM/yyy")
+                rpt.lbl_nama_supplier.Text = lbl_nama_supplier.Text
+                rpt.nomor_terima.Text = nomor_terima.Text
+                rpt.lbl_tanggal_terima.Text = lbl_tanggal_terima.Text
+                rpt.CreateDocument()
+
+                Dim fc As New FormReportControl
+                fc.Text = "Print Bukti Retur Barang"
+                fc.PrintControl1.PrintingSystem = rpt.PrintingSystem
+                fc.Height = 600
+                fc.ShowDialog(Me)
+
                 Call initComponent()
             Else
                 MsgBox(Connection.TRANS_MESSAGE, MsgBoxStyle.Exclamation) ' transaksi gagal dan secara otomatis akan di rollback

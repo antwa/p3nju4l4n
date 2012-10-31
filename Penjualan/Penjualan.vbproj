@@ -293,6 +293,12 @@
     <Compile Include="Form\3. Transaksi\retur penerimaan barang\rcd_retur_penerimaanbarang.vb">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Form\3. Transaksi\retur penerimaan barang\rpt_retur_penerimaanbarang.Designer.vb">
+      <DependentUpon>rpt_retur_penerimaanbarang.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\3. Transaksi\retur penerimaan barang\rpt_retur_penerimaanbarang.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Form\3. Transaksi\sales order\frm_sales_order.Designer.vb">
       <DependentUpon>frm_sales_order.vb</DependentUpon>
     </Compile>
@@ -333,6 +339,12 @@
       <DependentUpon>frm_uji_coba.vb</DependentUpon>
     </Compile>
     <Compile Include="Form\Form Main\frm_uji_coba.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Form Main\frm_uji_coba2.Designer.vb">
+      <DependentUpon>frm_uji_coba2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Form Main\frm_uji_coba2.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -436,6 +448,10 @@
       <DependentUpon>frm_retur_penerimaanbarang.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form\3. Transaksi\retur penerimaan barang\rpt_retur_penerimaanbarang.resx">
+      <DependentUpon>rpt_retur_penerimaanbarang.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\3. Transaksi\sales order\frm_sales_order.resx">
       <DependentUpon>frm_sales_order.vb</DependentUpon>
       <SubType>Designer</SubType>
@@ -458,6 +474,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\Form Main\frm_uji_coba.resx">
       <DependentUpon>frm_uji_coba.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Form Main\frm_uji_coba2.resx">
+      <DependentUpon>frm_uji_coba2.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\licenses.licx" />
