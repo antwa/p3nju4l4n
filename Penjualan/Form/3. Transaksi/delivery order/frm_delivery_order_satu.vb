@@ -178,9 +178,34 @@
 
         '# COMMITE TRANSAKSI
         If Connection.TRANS_SUCCESS Then
-            MsgBox("Data berhasil disimpan...", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Pesan")
+            '# Print
+            'ambil informasi customer
+            Db.FlushCache()
+            Db.Selects("a.nama, b.kota, a.mall, a.alamat")
+            Db.From("tbl_customer a")
+            Db.Join("tbl_kota b", "b.kode_kota = a.kode_kota")
+            Db.Where("a.kode_customer", kode_customer)
 
-            '#PRINT
+            Dim rcustomer As SqlClient.SqlDataReader = Connection.ExecuteToDataReader(Db.GetQueryString)
+            rcustomer.Read()
+
+            Dim rpt As New rpt_delivery_order_satu
+            rpt.BindingSource1.DataSource = rcd_list
+            rpt.no_do.Text = "Nomor : " & no_do.Text
+            rpt.tgl_do.Text = tgl_do.DateTime.ToString("dd/MM/yyy")
+            rpt.no_so.Text = no_so.Text
+
+            rpt.nama.Text = rcustomer.Item("nama").ToString
+            rpt.alamat.Text = rcustomer.Item("alamat").ToString
+            rpt.mall.Text = rcustomer.Item("mall").ToString
+            rpt.kota.Text = rcustomer.Item("kota").ToString
+            rpt.CreateDocument()
+
+            Dim fc As New FormReportControl
+            fc.Text = "Print Delivery Order"
+            fc.PrintControl1.PrintingSystem = rpt.PrintingSystem
+            fc.Height = 600
+            fc.ShowDialog(Me)
 
             frm_delivery_order.loadData()
             Me.Close()

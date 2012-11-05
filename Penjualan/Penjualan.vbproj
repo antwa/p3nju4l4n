@@ -212,6 +212,12 @@
     <Compile Include="Form\3. Transaksi\delivery order\frm_delivery_order.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Form\3. Transaksi\delivery order\frm_delivery_order_banyak.Designer.vb">
+      <DependentUpon>frm_delivery_order_banyak.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\3. Transaksi\delivery order\frm_delivery_order_banyak.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form\3. Transaksi\delivery order\frm_delivery_order_detail.Designer.vb">
       <DependentUpon>frm_delivery_order_detail.vb</DependentUpon>
     </Compile>
@@ -227,8 +233,21 @@
     <Compile Include="Form\3. Transaksi\delivery order\rcd_delivery_order.vb">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Form\3. Transaksi\delivery order\rcd_delivery_order_banyak.vb" />
     <Compile Include="Form\3. Transaksi\delivery order\rcd_delivery_order_satu.vb">
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Form\3. Transaksi\delivery order\rpt_delivery_order_banyak.Designer.vb">
+      <DependentUpon>rpt_delivery_order_banyak.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\3. Transaksi\delivery order\rpt_delivery_order_banyak.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Form\3. Transaksi\delivery order\rpt_delivery_order_satu.Designer.vb">
+      <DependentUpon>rpt_delivery_order_satu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\3. Transaksi\delivery order\rpt_delivery_order_satu.vb">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Form\3. Transaksi\faktur konsinyasi\frm_faktur_konsinyasi.Designer.vb">
       <DependentUpon>frm_faktur_konsinyasi.vb</DependentUpon>
@@ -307,6 +326,12 @@
     </Compile>
     <Compile Include="Form\3. Transaksi\sales order\rcd_sales_order.vb">
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Form\3. Transaksi\sales order\rpt_sales_order.Designer.vb">
+      <DependentUpon>rpt_sales_order.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\3. Transaksi\sales order\rpt_sales_order.vb">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Form\3. Transaksi\Surat Jalan\frm_surat_jalan.Designer.vb">
       <DependentUpon>frm_surat_jalan.vb</DependentUpon>
@@ -404,12 +429,24 @@
       <DependentUpon>frm_delivery_order.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form\3. Transaksi\delivery order\frm_delivery_order_banyak.resx">
+      <DependentUpon>frm_delivery_order_banyak.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\3. Transaksi\delivery order\frm_delivery_order_detail.resx">
       <DependentUpon>frm_delivery_order_detail.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\3. Transaksi\delivery order\frm_delivery_order_satu.resx">
       <DependentUpon>frm_delivery_order_satu.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\3. Transaksi\delivery order\rpt_delivery_order_banyak.resx">
+      <DependentUpon>rpt_delivery_order_banyak.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\3. Transaksi\delivery order\rpt_delivery_order_satu.resx">
+      <DependentUpon>rpt_delivery_order_satu.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\3. Transaksi\faktur konsinyasi\frm_faktur_konsinyasi.resx">
@@ -456,6 +493,10 @@
       <DependentUpon>frm_sales_order.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form\3. Transaksi\sales order\rpt_sales_order.resx">
+      <DependentUpon>rpt_sales_order.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\3. Transaksi\Surat Jalan\frm_surat_jalan.resx">
       <DependentUpon>frm_surat_jalan.vb</DependentUpon>
       <SubType>Designer</SubType>
@@ -496,6 +537,7 @@
     </None>
     <None Include="My Project\DataSources\rcd_bordir_keluar.datasource" />
     <None Include="My Project\DataSources\rcd_cutting_keluar.datasource" />
+    <None Include="My Project\DataSources\rcd_delivery_order_banyak.datasource" />
     <None Include="My Project\DataSources\rcd_level.datasource" />
     <None Include="My Project\DataSources\rcd_level1.datasource" />
     <None Include="My Project\DataSources\rcd_po_bb.datasource" />

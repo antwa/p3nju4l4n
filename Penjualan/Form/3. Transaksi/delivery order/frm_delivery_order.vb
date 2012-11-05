@@ -88,6 +88,7 @@
             Dim i As Integer = 0
             Dim row As System.Data.DataRow = GridView1.GetDataRow(GridView1.FocusedRowHandle)
 
+            frm_delivery_order_satu.Dispose()
             frm_delivery_order_satu.p_no_so = rcd_list.Item(GridView1.FocusedRowHandle).no_so
             frm_delivery_order_satu.ShowDialog(Me)
 
@@ -115,5 +116,15 @@
 
     Private Sub GridControl1_DoubleClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles GridControl1.DoubleClick
         cmd_detail_Click(sender, e)
+    End Sub
+
+    Private Sub cmd_input_n_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_input_n.Click
+        Try
+            frm_delivery_order_banyak.Dispose()
+            frm_delivery_order_banyak.sistem_jual = sistem_jual.EditValue
+            frm_delivery_order_banyak.ShowDialog(Me)
+        Catch ex As Exception
+
+        End Try
     End Sub
 End Class
