@@ -96,7 +96,6 @@ Public Class frm_sales_order
     End Sub
 
     Private Sub cmd_simpan_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_simpan.Click
-
         Dim vkode_customer As String = kode_customer.Properties.GetKeyValueByDisplayText(kode_customer.Text)
         Dim i As Integer
 
@@ -155,7 +154,34 @@ Public Class frm_sales_order
 
         '# COMMITE TRANSAKSI
         If Connection.TRANS_SUCCESS Then
-            MsgBox("Data berhasil disimpan...", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Pesan")
+
+            'ambil informasi customer
+            Db.FlushCache()
+            Db.Selects("a.nama, b.kota, a.mall, a.alamat")
+            Db.From("tbl_customer a")
+            Db.Join("tbl_kota b", "b.kode_kota = a.kode_kota")
+            Db.Where("a.kode_customer", getValueFromLookup(kode_customer))
+
+            Dim rcustomer As SqlClient.SqlDataReader = Connection.ExecuteToDataReader(Db.GetQueryString)
+            rcustomer.Read()
+
+            Dim rpt As New rpt_sales_order
+            rpt.BindingSource1.DataSource = rcd_list
+            rpt.no_so.Text = "Nomor : " & no_so.Text
+            rpt.tgl_rinciandist.Text = tgl_rinciandist.DateTime.ToString("dd/MM/yyy")
+            rpt.tgl_kirim.Text = tgl_kirim.DateTime.ToString("dd/MM/yyy")
+            rpt.nama.Text = rcustomer.Item("nama").ToString
+            rpt.alamat.Text = rcustomer.Item("alamat").ToString
+            rpt.mall.Text = rcustomer.Item("mall").ToString
+            rpt.kota.Text = rcustomer.Item("kota").ToString
+            rpt.CreateDocument()
+
+            Dim fc As New FormReportControl
+            fc.Text = "Print Sales Order"
+            fc.PrintControl1.PrintingSystem = rpt.PrintingSystem
+            fc.Height = 600
+            fc.ShowDialog(Me)
+
             Call initComponent()
             Call reIndex()
         Else
