@@ -5,7 +5,9 @@
     
     Sub initGrid()
 
-        If parameter1 = C_KONSINYASI_SEKUNDER Or parameter1 = C_KONSINYASI_PRIMER Then
+        If parameter1 = C_KONSINYASI_SEKUNDER Or parameter1 = C_KONSINYASI_PRIMER Or _
+           parameter1 = C_RETUR_JUAL_KONSINYASI Then
+
             Db.FlushCache()
             Db.Selects("a.kode_barangjadi, b.nama, c.jenis, a.stok")
             Db.From("tbl_persediaan_customer a")
@@ -209,6 +211,40 @@
                 'frm_konsinyasi_primer_isian.nama = row("nama")
                 'frm_konsinyasi_primer_isian.kode_customer = kode_customer
                 'frm_konsinyasi_primer_isian.ShowDialog(Me)
+
+            Case C_RETUR_JUAL_KONSINYASI
+                With frm_retur_jual_konsinyasi
+                    '# cek list, takut ada yg sama (^-^)
+                    For i = 0 To .rcd_list.Count - 1
+                        If .rcd_list.Item(i).kode_barangjadi = row("kode_barangjadi") Then
+                            MsgBox("Kode Atikel : " & row("kode_barangjadi") & " , sudah diinput. Ganti dengan yang lain", MsgBoxStyle.Exclamation, "Pesan")
+                            Exit Sub
+                        End If
+                    Next
+
+                    '# insert to list
+                    .rcd_list.Add(New rcd_retur_jual_konsinyasi(1, row("kode_barangjadi"), row("nama"), row("stok"), 0, 0, 0, ""))
+                    '# ambil harga yg ditetapkan
+                    Db.FlushCache()
+                    Db.Selects("TOP 1 a.harga, a.diskon")
+                    Db.From("tbl_histori_hargacustomer a")
+                    Db.Where("a.kode_barangjadi", row("kode_barangjadi"))
+                    Db.Where("a.kode_customer", kode_customer)
+                    Db.Where("a.tanggal", .tgl_retur.DateTime.ToString("yyyy-MM-dd HH:mm:ss"), "<=", "AND")
+                    Db.OrderBy("a.tanggal", cls_database.sorting.Descending)
+
+                    Dim rc As SqlClient.SqlDataReader = Connection.ExecuteToDataReader(Db.GetQueryString)
+                    Dim lastrow As Integer = .rcd_list.Count - 1
+
+                    If rc.HasRows Then
+                        rc.Read()
+                        .rcd_list.Item(lastrow).harga = rc.Item("harga").ToString
+                    Else
+                        .rcd_list.Item(lastrow).harga = 0
+                    End If
+
+                    .GridView1.RefreshData()
+                End With
 
         End Select
 

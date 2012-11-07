@@ -27,6 +27,7 @@
     Public Const C_KONSINYASI_SEKUNDER As Integer = 6 ' penjualan konsinyasi sekunder
     Public Const C_KONSINYASI_PRIMER As Integer = 7 ' konsinyasi primer
     Public Const C_FAKTUR_KONSINYASI As Integer = 8 ' faktur konsinyasi
+    Public Const C_RETUR_JUAL_KONSINYASI As Integer = 9
 
 
 End Module

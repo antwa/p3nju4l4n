@@ -43,6 +43,11 @@
                 Db.From("tbl_fakturkonsinyasi")
                 Db.OrderBy("no_faktur", cls_database.sorting.Descending)
 
+            Case C_RETUR_JUAL_KONSINYASI
+                Db.Selects("TOP 1 no_retur AS nomor")
+                Db.From("tbl_retur_konsinyasi")
+                Db.OrderBy("no_retur", cls_database.sorting.Descending)
+
         End Select
 
 
