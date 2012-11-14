@@ -18,6 +18,7 @@
             Connection.initConnection(strConect)
         Else
             MsgBox("Tidak ada pengaturan ke Database!" & vbCrLf & vbCrLf & "Lakukan pengaturan ke database", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Psean")
+            End
         End If
 
     End Sub
