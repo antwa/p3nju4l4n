@@ -91,7 +91,7 @@
     End Sub
 
     Private Sub cTransaksi_retur_jualputus_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles cTransaksi_retur_jualputus.ItemClick
-
+        LoadFormToTab(frm_retur_jual_putus)
     End Sub
 
     Private Sub cTransaksi_retur_jualkonsinyasi_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles cTransaksi_retur_jualkonsinyasi.ItemClick

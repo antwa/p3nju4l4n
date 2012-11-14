@@ -246,6 +246,25 @@
                     .GridView1.RefreshData()
                 End With
 
+            Case C_RETUR_JUAL_PUTUS
+                With frm_retur_jual_putus
+                    '# cek list, takut ada yg sama (^-^)
+                    'For i = 0 To .rcd_list.Count - 1
+                    '    If .rcd_list.Item(i).kode_barangjadi = row("kode_barangjadi") Then
+                    '        MsgBox("Kode Atikel : " & row("kode_barangjadi") & " , sudah diinput. Ganti dengan yang lain", MsgBoxStyle.Exclamation, "Pesan")
+                    '        Exit Sub
+                    '    End If
+                    'Next
+
+                    frm_retur_jual_putus_popup_faktur.Dispose()
+                    frm_retur_jual_putus_popup_faktur.kode_barangjadi = row("kode_barangjadi")
+                    frm_retur_jual_putus_popup_faktur.kode_customer = kode_customer
+                    frm_retur_jual_putus_popup_faktur.ShowDialog(Me)
+
+                    If frm_retur_jual_putus_popup_faktur.Kembali = True Then Exit Sub
+
+                End With
+
         End Select
 
         Me.Close()
