@@ -2,6 +2,9 @@
 
     Public parameter1 As String
     Public kode_customer As String
+
+    Public txt_artikel As DevExpress.XtraEditors.TextEdit
+    Public lbl_nama_artikel As DevExpress.XtraEditors.LabelControl
     
     Sub initGrid()
 
@@ -264,6 +267,14 @@
                     If frm_retur_jual_putus_popup_faktur.Kembali = True Then Exit Sub
 
                 End With
+
+            Case C_GETARTIKEL
+                txt_artikel.Text = row("kode_barangjadi")
+                Try
+                    lbl_nama_artikel.Text = row("nama")
+                Catch ex As Exception
+
+                End Try
 
         End Select
 

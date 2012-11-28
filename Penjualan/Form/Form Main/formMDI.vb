@@ -97,4 +97,8 @@
     Private Sub cTransaksi_retur_jualkonsinyasi_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles cTransaksi_retur_jualkonsinyasi.ItemClick
         LoadFormToTab(frm_retur_jual_konsinyasi)
     End Sub
+
+    Private Sub cPersediaan_lap_kartustok_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles cPersediaan_lap_kartustok.ItemClick
+        LoadFormToTab(frm_kartu_stok_gudang)
+    End Sub
 End Class

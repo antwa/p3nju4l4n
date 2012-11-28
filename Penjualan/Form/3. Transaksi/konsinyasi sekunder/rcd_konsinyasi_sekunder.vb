@@ -71,9 +71,10 @@
         Set(ByVal value As Integer)
             If value > Me.stok Then
                 MsgBox("Qty tidak boleh lebih dari stok!", MsgBoxStyle.Exclamation)
+                Me.mqty = 0
+            Else
+                Me.mqty = value
             End If
-
-            Me.mqty = value
 
             Call sumary()
         End Set

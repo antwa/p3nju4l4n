@@ -154,6 +154,18 @@
                 Db.Query(" UPDATE tbl_persediaan_gudang set stok = stok - " & rcd_list.Item(i).qty & _
                          " WHERE kode_barangjadi = '" & rcd_list.Item(i).kode_barangjadi & "'")
                 Connection.TRANS_ADD(Db.GetQueryString)
+
+                '# insert ke kartu stok
+                Db.FlushCache()
+                Db.Insert("tbl_kartustok_gudang")
+                Db.SetField("kode_barangjadi", rcd_list.Item(i).kode_barangjadi)
+                Db.SetField("tanggal", tanggal.DateTime.ToString("yyyy-MM-dd HH:mm:ss"))
+                Db.SetField("referensi", "No. Retur : " & nomor_retur.Text)
+                Db.SetField("deskripsi", "Retur Penerimaan barang : " & nomor_terima.Text)
+                Db.SetField("masuk", "0")
+                Db.SetField("keluar", rcd_list.Item(i).qty)
+                Connection.TRANS_ADD(Db.GetQueryString)
+
             Next
 
             '# COMMITE TRANSAKSI

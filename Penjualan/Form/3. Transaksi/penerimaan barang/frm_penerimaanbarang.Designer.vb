@@ -57,7 +57,7 @@ Partial Class frm_penerimaanbarang
         Me.LabelControl4.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelControl4.Location = New System.Drawing.Point(12, 69)
         Me.LabelControl4.Name = "LabelControl4"
-        Me.LabelControl4.Size = New System.Drawing.Size(44, 14)
+        Me.LabelControl4.Size = New System.Drawing.Size(43, 14)
         Me.LabelControl4.TabIndex = 25
         Me.LabelControl4.Text = "Supplier"
         '
@@ -87,7 +87,7 @@ Partial Class frm_penerimaanbarang
         Me.LabelControl1.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelControl1.Location = New System.Drawing.Point(12, 15)
         Me.LabelControl1.Name = "LabelControl1"
-        Me.LabelControl1.Size = New System.Drawing.Size(102, 14)
+        Me.LabelControl1.Size = New System.Drawing.Size(103, 14)
         Me.LabelControl1.TabIndex = 27
         Me.LabelControl1.Text = "Nomor Penerimaan"
         '
