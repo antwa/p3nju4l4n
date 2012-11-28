@@ -3,6 +3,7 @@
     Public rcd_list As System.ComponentModel.BindingList(Of rcd_surat_jalan)
 
     Dim kode_customer As String
+    Dim sistem_jual As String
 
     Sub initComponent()
         rcd_list = New System.ComponentModel.BindingList(Of rcd_surat_jalan)
@@ -36,6 +37,13 @@
             GridView1.Columns.Item(i).OptionsColumn.AllowEdit = False
         Next
         GridView1.Columns.Item("keterangan").OptionsColumn.AllowEdit = True
+
+        ' sumary
+        ' Create summary
+        GridView1.Columns("qty").Summary.Clear()
+        GridView1.Columns("qty").Summary.Add(DevExpress.Data.SummaryItemType.Sum, "qty", "{0:n0}")
+        GridView1.Columns("total").Summary.Clear()
+        GridView1.Columns("total").Summary.Add(DevExpress.Data.SummaryItemType.Sum, "total", "{0:n0}")
 
         tgl_surat.DateTime = Now
         no_surat.Text = getNomorUrut(C_SURAT_JALAN)
@@ -72,7 +80,7 @@
         '# Get Data
         Db.FlushCache()
         Db.Selects("a.no_so, b.kode_barangjadi, c.nama AS nama_barangjadi, b.qty, b.kode_hargajual, d.harga ")
-        Db.Selects("a.kode_customer, e.nama AS nama_customer, e.alamat, f.kota, e.mall")
+        Db.Selects("a.kode_customer, e.sistem_jual, e.nama AS nama_customer, e.alamat, f.kota, e.mall")
         Db.From("tbl_deliveryorder a")
         Db.Join("tbl_deliveryorder_detail b", "b.no_do = a.no_do")
         Db.Join("tbl_barangjadi c", "c.kode_barangjadi = b.kode_barangjadi")
@@ -96,6 +104,7 @@
 
                     no_so.Text = .Item("no_so").ToString
                     kode_customer = .Item("kode_customer").ToString
+                    sistem_jual = .Item("sistem_jual").ToString
 
                     lbl_alamat.Text = .Item("alamat").ToString
                     lbl_kota.Text = .Item("kota").ToString
@@ -182,27 +191,64 @@
 
             Connection.TRANS_ADD(Db.GetQueryString)
 
-            '# insert ato update ke persediaan customer
-            '  jika sudah ada update stok customer, jika belum ada insert ke table persediaan customer dan insert ke table histori harga jual customer
-            '------------------------------------------
-            query = ""
-            query &= " IF EXISTS (SELECT * FROM tbl_persediaan_customer WHERE kode_customer = '" & kode_customer & "' AND kode_barangjadi = '" & rcd_list.Item(i).kode_barangjadi & "') "
-            query &= "    UPDATE tbl_persediaan_customer "
-            query &= "    SET stok = stok + " & rcd_list.Item(i).qty & " "
-            query &= "    WHERE kode_customer = '" & kode_customer & "' AND kode_barangjadi = '" & rcd_list.Item(i).kode_barangjadi & "' "
-            query &= " ELSE "
-            query &= "   BEGIN "
-            query &= "    INSERT INTO tbl_persediaan_customer ([kode_customer],[kode_barangjadi],[stok],[kode_jenis_harga]) "
-            query &= "    VALUES ('" & kode_customer & "', '" & rcd_list.Item(i).kode_barangjadi & "', '" & rcd_list.Item(i).qty & "', '1');"
+            If sistem_jual = "1" Then
+                '# insert ato update ke persediaan customer
+                '  jika sudah ada update stok customer, jika belum ada insert ke table persediaan customer dan insert ke table histori harga jual customer
+                '------------------------------------------
+                query = ""
+                query &= " IF EXISTS (SELECT * FROM tbl_persediaan_customer WHERE kode_customer = '" & kode_customer & "' AND kode_barangjadi = '" & rcd_list.Item(i).kode_barangjadi & "') "
+                query &= "    UPDATE tbl_persediaan_customer "
+                query &= "    SET stok = stok + " & rcd_list.Item(i).qty & " "
+                query &= "    WHERE kode_customer = '" & kode_customer & "' AND kode_barangjadi = '" & rcd_list.Item(i).kode_barangjadi & "' "
+                query &= " ELSE "
+                query &= "   BEGIN "
+                query &= "    INSERT INTO tbl_persediaan_customer ([kode_customer],[kode_barangjadi],[stok],[kode_jenis_harga]) "
+                query &= "    VALUES ('" & kode_customer & "', '" & rcd_list.Item(i).kode_barangjadi & "', '" & rcd_list.Item(i).qty & "', '1');"
 
-            query &= "    INSERT INTO tbl_histori_hargacustomer ([tanggal],[kode_customer],[kode_barangjadi],[harga],[diskon]) "
-            query &= "    VALUES ('" & tgl_surat.DateTime.ToString("yyyy-MM-dd 00:00:00") & "', '" & kode_customer & "', '" & rcd_list.Item(i).kode_barangjadi & "', '" & rcd_list.Item(i).harga & "', '0'); "
-            query &= "   END "
-            query &= "; "
+                query &= "    INSERT INTO tbl_histori_hargacustomer ([tanggal],[kode_customer],[kode_barangjadi],[harga],[diskon]) "
+                query &= "    VALUES ('" & tgl_surat.DateTime.ToString("yyyy-MM-dd 00:00:00") & "', '" & kode_customer & "', '" & rcd_list.Item(i).kode_barangjadi & "', '" & rcd_list.Item(i).harga & "', '0'); "
+                query &= "   END "
+                query &= "; "
 
-            Connection.TRANS_ADD(query)
+                Connection.TRANS_ADD(query)
 
+                '# insert ke kartu stok
+                Db.FlushCache()
+                Db.Insert("tbl_kartustok_gudang")
+                Db.SetField("kode_barangjadi", rcd_list.Item(i).kode_barangjadi)
+                Db.SetField("tanggal", tgl_surat.DateTime.ToString("yyyy-MM-dd HH:mm:ss"))
+                Db.SetField("referensi", "No. Surat Jalan : " & no_surat.Text)
+                Db.SetField("deskripsi", "Kirim ke : " & lbl_nama.Text)
+                Db.SetField("masuk", "0")
+                Db.SetField("keluar", rcd_list.Item(i).qty)
+                Connection.TRANS_ADD(Db.GetQueryString)
+
+            End If
         Next
+
+        '# jika jual putus maka langsung input invoice
+        '-----------------------------------------------------------------------------------------------------
+        If sistem_jual = "2" Then
+            '# get nomor faktur
+            Dim no_faktur As String = getNomorUrut(C_FAKTUR_KONSINYASI)
+
+            frm_invoice_jualputus.Dispose()
+            frm_invoice_jualputus.kode_customer = Me.kode_customer
+            frm_invoice_jualputus.GridControl1.DataSource = Me.rcd_list
+            frm_invoice_jualputus.no_faktur.Text = no_faktur
+            frm_invoice_jualputus.no_suratjalan.Text = Me.no_surat.Text
+            frm_invoice_jualputus.tgl_jatuhtempo.DateTime = DateAdd(DateInterval.Month, 3, Now)
+            frm_invoice_jualputus.total.Text = Me.GridView1.Columns("total").Summary.Item(0).SummaryValue
+
+            frm_invoice_jualputus.lbl_nama.Text = Me.lbl_nama.Text
+            frm_invoice_jualputus.lbl_alamat.Text = Me.lbl_alamat.Text
+            frm_invoice_jualputus.lbl_mall.Text = Me.lbl_mall.Text
+            frm_invoice_jualputus.lbl_kota.Text = Me.lbl_kota.Text
+
+            frm_invoice_jualputus.initComponent()
+            frm_invoice_jualputus.ShowDialog(Me)
+        End If
+        '-----------------------------------------------------------------------------------------------------
 
         If Connection.TRANS_SUCCESS Then
             MsgBox("Data berhasil disimpan...", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Pesan")

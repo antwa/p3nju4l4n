@@ -165,6 +165,17 @@
             query &= " WHERE kode_barangjadi = '" & rcd_list.Item(i).kode_barangjadi & "'"
             Connection.TRANS_ADD(query)
 
+            '# insert ke kartu stok
+            Db.FlushCache()
+            Db.Insert("tbl_kartustok_gudang")
+            Db.SetField("kode_barangjadi", rcd_list.Item(i).kode_barangjadi)
+            Db.SetField("tanggal", tgl_retur.DateTime.ToString("yyyy-MM-dd HH:mm:ss"))
+            Db.SetField("referensi", "No. Retur : " & no_retur.Text)
+            Db.SetField("deskripsi", "Retur dari " & lbl_nama.Text)
+            Db.SetField("masuk", rcd_list.Item(i).jml_retur)
+            Db.SetField("keluar", "0")
+            Connection.TRANS_ADD(Db.GetQueryString)
+
         Next
 
 

@@ -57,4 +57,30 @@
         frm_barangjadi_add.ShowDialog(Me)
         Call Me.loadData()
     End Sub
+
+    Private Sub cmd_edit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_edit.Click
+        Try
+            Dim row As System.Data.DataRow = GridView1.GetDataRow(GridView1.FocusedRowHandle)
+
+            frm_barangjadi_edit.Dispose()
+            frm_barangjadi_edit.initData(row("kode_barangjadi"))
+            frm_barangjadi_edit.ShowDialog(Me)
+
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub cmd_formula_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_formula.Click
+        Try
+            Dim row As System.Data.DataRow = GridView1.GetDataRow(GridView1.FocusedRowHandle)
+
+            frm_barangjadi_edit_formula.Dispose()
+            frm_barangjadi_edit_formula.initData(row("kode_barangjadi"), row("nama"))
+            frm_barangjadi_edit_formula.ShowDialog(Me)
+
+        Catch ex As Exception
+
+        End Try
+    End Sub
 End Class

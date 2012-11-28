@@ -406,7 +406,7 @@ Partial Class formMDI
         '
         'cPersediaan_gudang
         '
-        Me.cPersediaan_gudang.Caption = "Gudang"
+        Me.cPersediaan_gudang.Caption = "Stok Gudang"
         Me.cPersediaan_gudang.Id = 125
         Me.cPersediaan_gudang.Name = "cPersediaan_gudang"
         '

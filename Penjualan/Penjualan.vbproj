@@ -199,6 +199,18 @@
     <Compile Include="Form\2. Data Master\barang jadi\frm_barangjadi_add_formula.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Form\2. Data Master\barang jadi\frm_barangjadi_edit.Designer.vb">
+      <DependentUpon>frm_barangjadi_edit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\2. Data Master\barang jadi\frm_barangjadi_edit.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\2. Data Master\barang jadi\frm_barangjadi_edit_formula.Designer.vb">
+      <DependentUpon>frm_barangjadi_edit_formula.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\2. Data Master\barang jadi\frm_barangjadi_edit_formula.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form\2. Data Master\barang jadi\frm_barangjadi_list.Designer.vb">
       <DependentUpon>frm_barangjadi_list.vb</DependentUpon>
     </Compile>
@@ -206,6 +218,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form\2. Data Master\barang jadi\rcd_barangjadi_add.vb" />
+    <Compile Include="Form\2. Data Master\barang jadi\rcd_barangjadi_edit_formula.vb" />
     <Compile Include="Form\2. Data Master\supplier barang\frm_supplier_barang_add.Designer.vb">
       <DependentUpon>frm_supplier_barang_add.vb</DependentUpon>
     </Compile>
@@ -371,6 +384,12 @@
     <Compile Include="Form\3. Transaksi\sales order\rpt_sales_order.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Form\3. Transaksi\Surat Jalan\frm_invoice_jualputus.Designer.vb">
+      <DependentUpon>frm_invoice_jualputus.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\3. Transaksi\Surat Jalan\frm_invoice_jualputus.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form\3. Transaksi\Surat Jalan\frm_surat_jalan.Designer.vb">
       <DependentUpon>frm_surat_jalan.vb</DependentUpon>
     </Compile>
@@ -386,6 +405,13 @@
     <Compile Include="Form\4. Laporan\FormReportControl.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Form\8. Persediaan\kartu stok gudang\frm_kartu_stok_gudang.Designer.vb">
+      <DependentUpon>frm_kartu_stok_gudang.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\8. Persediaan\kartu stok gudang\frm_kartu_stok_gudang.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\8. Persediaan\kartu stok gudang\rcd_kartu_stok_gudang.vb" />
     <Compile Include="Form\Form Main\formLogin.Designer.vb">
       <DependentUpon>formLogin.vb</DependentUpon>
     </Compile>
@@ -457,6 +483,14 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\2. Data Master\barang jadi\frm_barangjadi_add_formula.resx">
       <DependentUpon>frm_barangjadi_add_formula.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\2. Data Master\barang jadi\frm_barangjadi_edit.resx">
+      <DependentUpon>frm_barangjadi_edit.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\2. Data Master\barang jadi\frm_barangjadi_edit_formula.resx">
+      <DependentUpon>frm_barangjadi_edit_formula.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\2. Data Master\barang jadi\frm_barangjadi_list.resx">
@@ -559,12 +593,20 @@
       <DependentUpon>rpt_sales_order.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form\3. Transaksi\Surat Jalan\frm_invoice_jualputus.resx">
+      <DependentUpon>frm_invoice_jualputus.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\3. Transaksi\Surat Jalan\frm_surat_jalan.resx">
       <DependentUpon>frm_surat_jalan.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\4. Laporan\FormReportControl.resx">
       <DependentUpon>FormReportControl.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\8. Persediaan\kartu stok gudang\frm_kartu_stok_gudang.resx">
+      <DependentUpon>frm_kartu_stok_gudang.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\Form Main\formLogin.resx">
@@ -653,6 +695,8 @@
     <Folder Include="Form\5. Hutang Piutang\" />
     <Folder Include="Form\6. Kas dan Bank\" />
     <Folder Include="Form\7. Utility\" />
+    <Folder Include="Form\8. Persediaan\stok customer\" />
+    <Folder Include="Form\8. Persediaan\stok gudang\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -21,6 +21,12 @@ Partial Class frm_supplier_barang_add
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_supplier_barang_add))
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl
+        Me.LabelControl5 = New DevExpress.XtraEditors.LabelControl
+        Me.txt_plafon_debet = New DevExpress.XtraEditors.TextEdit
+        Me.LabelControl4 = New DevExpress.XtraEditors.LabelControl
+        Me.txt_jatuh_tempobayar = New DevExpress.XtraEditors.TextEdit
+        Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl
+        Me.txt_telp2 = New DevExpress.XtraEditors.TextEdit
         Me.LabelControl15 = New DevExpress.XtraEditors.LabelControl
         Me.txt_kota = New DevExpress.XtraEditors.TextEdit
         Me.LabelControl8 = New DevExpress.XtraEditors.LabelControl
@@ -33,25 +39,19 @@ Partial Class frm_supplier_barang_add
         Me.txt_noktp = New DevExpress.XtraEditors.TextEdit
         Me.LabelControl18 = New DevExpress.XtraEditors.LabelControl
         Me.txt_nik = New DevExpress.XtraEditors.TextEdit
-        Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl
-        Me.txt_telp2 = New DevExpress.XtraEditors.TextEdit
-        Me.LabelControl4 = New DevExpress.XtraEditors.LabelControl
-        Me.txt_jatuh_tempobayar = New DevExpress.XtraEditors.TextEdit
-        Me.LabelControl5 = New DevExpress.XtraEditors.LabelControl
-        Me.txt_plafon_debet = New DevExpress.XtraEditors.TextEdit
         Me.cmd_simpan = New DevExpress.XtraEditors.SimpleButton
         Me.cmd_batal = New DevExpress.XtraEditors.SimpleButton
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
+        CType(Me.txt_plafon_debet.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txt_jatuh_tempobayar.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txt_telp2.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txt_kota.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txt_fax.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txt_telp1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txt_alamat.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txt_noktp.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txt_nik.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txt_telp2.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txt_jatuh_tempobayar.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txt_plafon_debet.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupControl1
@@ -78,6 +78,63 @@ Partial Class frm_supplier_barang_add
         Me.GroupControl1.Name = "GroupControl1"
         Me.GroupControl1.Size = New System.Drawing.Size(529, 339)
         Me.GroupControl1.TabIndex = 34
+        '
+        'LabelControl5
+        '
+        Me.LabelControl5.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl5.Location = New System.Drawing.Point(26, 305)
+        Me.LabelControl5.Name = "LabelControl5"
+        Me.LabelControl5.Size = New System.Drawing.Size(71, 14)
+        Me.LabelControl5.TabIndex = 60
+        Me.LabelControl5.Text = "Plafon Debet"
+        '
+        'txt_plafon_debet
+        '
+        Me.txt_plafon_debet.EditValue = ""
+        Me.txt_plafon_debet.Location = New System.Drawing.Point(160, 298)
+        Me.txt_plafon_debet.Name = "txt_plafon_debet"
+        Me.txt_plafon_debet.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_plafon_debet.Properties.Appearance.Options.UseFont = True
+        Me.txt_plafon_debet.Size = New System.Drawing.Size(164, 21)
+        Me.txt_plafon_debet.TabIndex = 59
+        '
+        'LabelControl4
+        '
+        Me.LabelControl4.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl4.Location = New System.Drawing.Point(26, 278)
+        Me.LabelControl4.Name = "LabelControl4"
+        Me.LabelControl4.Size = New System.Drawing.Size(106, 14)
+        Me.LabelControl4.TabIndex = 58
+        Me.LabelControl4.Text = "Jatuh Tempo Bayar"
+        '
+        'txt_jatuh_tempobayar
+        '
+        Me.txt_jatuh_tempobayar.EditValue = ""
+        Me.txt_jatuh_tempobayar.Location = New System.Drawing.Point(160, 271)
+        Me.txt_jatuh_tempobayar.Name = "txt_jatuh_tempobayar"
+        Me.txt_jatuh_tempobayar.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_jatuh_tempobayar.Properties.Appearance.Options.UseFont = True
+        Me.txt_jatuh_tempobayar.Size = New System.Drawing.Size(69, 21)
+        Me.txt_jatuh_tempobayar.TabIndex = 57
+        '
+        'LabelControl1
+        '
+        Me.LabelControl1.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl1.Location = New System.Drawing.Point(26, 224)
+        Me.LabelControl1.Name = "LabelControl1"
+        Me.LabelControl1.Size = New System.Drawing.Size(56, 14)
+        Me.LabelControl1.TabIndex = 56
+        Me.LabelControl1.Text = "Telepon 2"
+        '
+        'txt_telp2
+        '
+        Me.txt_telp2.EditValue = ""
+        Me.txt_telp2.Location = New System.Drawing.Point(161, 217)
+        Me.txt_telp2.Name = "txt_telp2"
+        Me.txt_telp2.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_telp2.Properties.Appearance.Options.UseFont = True
+        Me.txt_telp2.Size = New System.Drawing.Size(164, 21)
+        Me.txt_telp2.TabIndex = 55
         '
         'LabelControl15
         '
@@ -195,63 +252,6 @@ Partial Class frm_supplier_barang_add
         Me.txt_nik.Size = New System.Drawing.Size(163, 21)
         Me.txt_nik.TabIndex = 33
         '
-        'LabelControl1
-        '
-        Me.LabelControl1.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl1.Location = New System.Drawing.Point(26, 224)
-        Me.LabelControl1.Name = "LabelControl1"
-        Me.LabelControl1.Size = New System.Drawing.Size(56, 14)
-        Me.LabelControl1.TabIndex = 56
-        Me.LabelControl1.Text = "Telepon 2"
-        '
-        'txt_telp2
-        '
-        Me.txt_telp2.EditValue = ""
-        Me.txt_telp2.Location = New System.Drawing.Point(161, 217)
-        Me.txt_telp2.Name = "txt_telp2"
-        Me.txt_telp2.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_telp2.Properties.Appearance.Options.UseFont = True
-        Me.txt_telp2.Size = New System.Drawing.Size(164, 21)
-        Me.txt_telp2.TabIndex = 55
-        '
-        'LabelControl4
-        '
-        Me.LabelControl4.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl4.Location = New System.Drawing.Point(26, 278)
-        Me.LabelControl4.Name = "LabelControl4"
-        Me.LabelControl4.Size = New System.Drawing.Size(106, 14)
-        Me.LabelControl4.TabIndex = 58
-        Me.LabelControl4.Text = "Jatuh Tempo Bayar"
-        '
-        'txt_jatuh_tempobayar
-        '
-        Me.txt_jatuh_tempobayar.EditValue = ""
-        Me.txt_jatuh_tempobayar.Location = New System.Drawing.Point(160, 271)
-        Me.txt_jatuh_tempobayar.Name = "txt_jatuh_tempobayar"
-        Me.txt_jatuh_tempobayar.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_jatuh_tempobayar.Properties.Appearance.Options.UseFont = True
-        Me.txt_jatuh_tempobayar.Size = New System.Drawing.Size(69, 21)
-        Me.txt_jatuh_tempobayar.TabIndex = 57
-        '
-        'LabelControl5
-        '
-        Me.LabelControl5.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl5.Location = New System.Drawing.Point(26, 305)
-        Me.LabelControl5.Name = "LabelControl5"
-        Me.LabelControl5.Size = New System.Drawing.Size(71, 14)
-        Me.LabelControl5.TabIndex = 60
-        Me.LabelControl5.Text = "Plafon Debet"
-        '
-        'txt_plafon_debet
-        '
-        Me.txt_plafon_debet.EditValue = ""
-        Me.txt_plafon_debet.Location = New System.Drawing.Point(160, 298)
-        Me.txt_plafon_debet.Name = "txt_plafon_debet"
-        Me.txt_plafon_debet.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_plafon_debet.Properties.Appearance.Options.UseFont = True
-        Me.txt_plafon_debet.Size = New System.Drawing.Size(164, 21)
-        Me.txt_plafon_debet.TabIndex = 59
-        '
         'cmd_simpan
         '
         Me.cmd_simpan.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -285,15 +285,15 @@ Partial Class frm_supplier_barang_add
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)
         Me.GroupControl1.PerformLayout()
+        CType(Me.txt_plafon_debet.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txt_jatuh_tempobayar.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txt_telp2.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txt_kota.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txt_fax.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txt_telp1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txt_alamat.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txt_noktp.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txt_nik.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txt_telp2.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txt_jatuh_tempobayar.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txt_plafon_debet.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

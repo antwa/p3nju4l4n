@@ -20,7 +20,6 @@ Partial Class frm_retur_penerimaanbarang
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.cmd_simpan = New DevExpress.XtraEditors.SimpleButton
-        Me.cmd_cancel = New DevExpress.XtraEditors.SimpleButton
         Me.GridControl1 = New DevExpress.XtraGrid.GridControl
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView
         Me.nomor_terima = New DevExpress.XtraEditors.TextEdit
@@ -40,6 +39,7 @@ Partial Class frm_retur_penerimaanbarang
         Me.LabelControl5 = New DevExpress.XtraEditors.LabelControl
         Me.LabelControl4 = New DevExpress.XtraEditors.LabelControl
         Me.cmd_hapus_baris = New DevExpress.XtraEditors.SimpleButton
+        Me.cmd_cancel = New DevExpress.XtraEditors.SimpleButton
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nomor_terima.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -58,15 +58,6 @@ Partial Class frm_retur_penerimaanbarang
         Me.cmd_simpan.Size = New System.Drawing.Size(97, 24)
         Me.cmd_simpan.TabIndex = 48
         Me.cmd_simpan.Text = "Simpan"
-        '
-        'cmd_cancel
-        '
-        Me.cmd_cancel.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.cmd_cancel.Location = New System.Drawing.Point(609, 309)
-        Me.cmd_cancel.Name = "cmd_cancel"
-        Me.cmd_cancel.Size = New System.Drawing.Size(97, 24)
-        Me.cmd_cancel.TabIndex = 47
-        Me.cmd_cancel.Text = "Cancel"
         '
         'GridControl1
         '
@@ -258,6 +249,15 @@ Partial Class frm_retur_penerimaanbarang
         Me.cmd_hapus_baris.TabIndex = 50
         Me.cmd_hapus_baris.Text = "Hapus"
         '
+        'cmd_cancel
+        '
+        Me.cmd_cancel.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.cmd_cancel.Location = New System.Drawing.Point(609, 309)
+        Me.cmd_cancel.Name = "cmd_cancel"
+        Me.cmd_cancel.Size = New System.Drawing.Size(97, 24)
+        Me.cmd_cancel.TabIndex = 47
+        Me.cmd_cancel.Text = "Cancel"
+        '
         'frm_retur_penerimaanbarang
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -290,7 +290,6 @@ Partial Class frm_retur_penerimaanbarang
 
     End Sub
     Friend WithEvents cmd_simpan As DevExpress.XtraEditors.SimpleButton
-    Friend WithEvents cmd_cancel As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents GridControl1 As DevExpress.XtraGrid.GridControl
     Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents nomor_terima As DevExpress.XtraEditors.TextEdit
@@ -310,4 +309,5 @@ Partial Class frm_retur_penerimaanbarang
     Friend WithEvents lbl_kode_supplier As DevExpress.XtraEditors.LabelControl
     Friend WithEvents lbl_tanggal_terima As DevExpress.XtraEditors.LabelControl
     Friend WithEvents cmd_hapus_baris As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents cmd_cancel As DevExpress.XtraEditors.SimpleButton
 End Class

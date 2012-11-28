@@ -155,8 +155,8 @@ Public Class cls_connection_sqlserver
         TR_LIST.Add(Query)
     End Sub
 
-    Public Function TRANS_SUCCESS()
-       
+    Public Function TRANS_SUCCESS() As Boolean
+
         If openConnection() Then
 
             Dim command As SqlCommand = Cnt.CreateCommand()
