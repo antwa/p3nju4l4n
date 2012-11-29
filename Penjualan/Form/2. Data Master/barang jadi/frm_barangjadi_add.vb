@@ -221,4 +221,8 @@
     Private Sub cmd_cancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_cancel.Click
         Me.Close()
     End Sub
+
+    Private Sub no_urut_EditValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles no_urut.EditValueChanged
+
+    End Sub
 End Class
