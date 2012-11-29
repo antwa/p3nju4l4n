@@ -44,7 +44,7 @@ Partial Class frm_barangjadi_list
         Me.GridControl1.Location = New System.Drawing.Point(12, 35)
         Me.GridControl1.MainView = Me.GridView1
         Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.Size = New System.Drawing.Size(692, 250)
+        Me.GridControl1.Size = New System.Drawing.Size(716, 250)
         Me.GridControl1.TabIndex = 0
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
@@ -59,7 +59,7 @@ Partial Class frm_barangjadi_list
         '
         Me.cmd_refresh.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cmd_refresh.Image = CType(resources.GetObject("cmd_refresh.Image"), System.Drawing.Image)
-        Me.cmd_refresh.Location = New System.Drawing.Point(306, 291)
+        Me.cmd_refresh.Location = New System.Drawing.Point(330, 291)
         Me.cmd_refresh.Name = "cmd_refresh"
         Me.cmd_refresh.Size = New System.Drawing.Size(95, 26)
         Me.cmd_refresh.TabIndex = 20
@@ -69,7 +69,7 @@ Partial Class frm_barangjadi_list
         '
         Me.cmd_hapus.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cmd_hapus.Image = CType(resources.GetObject("cmd_hapus.Image"), System.Drawing.Image)
-        Me.cmd_hapus.Location = New System.Drawing.Point(609, 291)
+        Me.cmd_hapus.Location = New System.Drawing.Point(633, 291)
         Me.cmd_hapus.Name = "cmd_hapus"
         Me.cmd_hapus.Size = New System.Drawing.Size(95, 26)
         Me.cmd_hapus.TabIndex = 19
@@ -79,7 +79,7 @@ Partial Class frm_barangjadi_list
         '
         Me.cmd_edit.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cmd_edit.Image = CType(resources.GetObject("cmd_edit.Image"), System.Drawing.Image)
-        Me.cmd_edit.Location = New System.Drawing.Point(508, 291)
+        Me.cmd_edit.Location = New System.Drawing.Point(532, 291)
         Me.cmd_edit.Name = "cmd_edit"
         Me.cmd_edit.Size = New System.Drawing.Size(95, 26)
         Me.cmd_edit.TabIndex = 18
@@ -89,7 +89,7 @@ Partial Class frm_barangjadi_list
         '
         Me.cmd_tambah.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cmd_tambah.Image = CType(resources.GetObject("cmd_tambah.Image"), System.Drawing.Image)
-        Me.cmd_tambah.Location = New System.Drawing.Point(407, 291)
+        Me.cmd_tambah.Location = New System.Drawing.Point(431, 291)
         Me.cmd_tambah.Name = "cmd_tambah"
         Me.cmd_tambah.Size = New System.Drawing.Size(95, 26)
         Me.cmd_tambah.TabIndex = 17
@@ -141,7 +141,7 @@ Partial Class frm_barangjadi_list
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(716, 329)
+        Me.ClientSize = New System.Drawing.Size(740, 329)
         Me.Controls.Add(Me.cmd_cari)
         Me.Controls.Add(Me.search)
         Me.Controls.Add(Me.LabelControl1)

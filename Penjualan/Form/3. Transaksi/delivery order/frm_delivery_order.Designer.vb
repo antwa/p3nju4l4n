@@ -60,7 +60,7 @@ Partial Class frm_delivery_order
         Me.LabelControl3.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelControl3.Location = New System.Drawing.Point(5, 28)
         Me.LabelControl3.Name = "LabelControl3"
-        Me.LabelControl3.Size = New System.Drawing.Size(21, 14)
+        Me.LabelControl3.Size = New System.Drawing.Size(20, 14)
         Me.LabelControl3.TabIndex = 26
         Me.LabelControl3.Text = "Dari"
         '
@@ -81,7 +81,7 @@ Partial Class frm_delivery_order
         Me.LabelControl1.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelControl1.Location = New System.Drawing.Point(5, 55)
         Me.LabelControl1.Name = "LabelControl1"
-        Me.LabelControl1.Size = New System.Drawing.Size(39, 14)
+        Me.LabelControl1.Size = New System.Drawing.Size(38, 14)
         Me.LabelControl1.TabIndex = 28
         Me.LabelControl1.Text = "Sampai"
         '
@@ -173,7 +173,7 @@ Partial Class frm_delivery_order
         Me.LabelControl6.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelControl6.Location = New System.Drawing.Point(141, 57)
         Me.LabelControl6.Name = "LabelControl6"
-        Me.LabelControl6.Size = New System.Drawing.Size(50, 14)
+        Me.LabelControl6.Size = New System.Drawing.Size(52, 14)
         Me.LabelControl6.TabIndex = 42
         Me.LabelControl6.Text = "Customer"
         '
