@@ -156,8 +156,7 @@
     End Sub
 
     Private Sub cmd_cancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_cancel.Click
-        generateColumnGrid(GridView1)
-        'Me.Close()
+        Me.Close()
     End Sub
 
     Private Sub cmd_load_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_load.Click

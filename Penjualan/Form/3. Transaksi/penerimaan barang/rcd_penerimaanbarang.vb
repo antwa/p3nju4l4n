@@ -5,6 +5,10 @@
     Dim mQty As Integer
     Dim mKeterangan As String
 
+    Public Sub New()
+
+    End Sub
+
     Public Sub New( _
                     ByVal kode_barangjadi As String, _
                     ByVal nama As String, _
@@ -16,16 +20,22 @@
         Me.mQty = qty
     End Sub
 
-    Public ReadOnly Property kode_barangjadi() As String
+    Public Property kode_barangjadi() As String
         Get
             Return Me.mkode_barangjadi
         End Get
+        Set(ByVal value As String)
+            Me.mkode_barangjadi = value
+        End Set
     End Property
 
-    Public ReadOnly Property nama() As String
+    Public Property nama() As String
         Get
             Return Me.mNama
         End Get
+        Set(ByVal value As String)
+            Me.mNama = value
+        End Set
     End Property
 
     Public Property qty() As Integer

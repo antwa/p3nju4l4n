@@ -19,7 +19,7 @@
             Db.Where("a.kode_customer", kode_customer)
 
             If txt_search.Text <> vbNullString Then
-                Db.Where("WHERE a.kode_barangjadi LIKE '%" & txt_search.Text & "%'")
+                Db.Where(" AND a.kode_barangjadi LIKE '%" & txt_search.Text & "%'")
             End If
 
             GridControl1.DataSource = Connection.ExecuteToDataTable(Db.GetQueryString)
@@ -39,7 +39,7 @@
             Db.Join("tbl_kategori_barang c", "a.kode_kategori = c.kode_kategori")
 
             If txt_search.Text <> vbNullString Then
-                Db.Where("WHERE a.kode_barangjadi LIKE '%" & txt_search.Text & "%'")
+                Db.Where(" AND a.kode_barangjadi LIKE '%" & txt_search.Text & "%'")
             End If
 
             GridControl1.DataSource = Connection.ExecuteToDataTable(Db.GetQueryString)
@@ -55,6 +55,12 @@
     End Sub
 
     Sub addArtikel()
+
+        If GridView1.RowCount <= 0 Then
+            MsgBox("Tidak terdapat artikel!", MsgBoxStyle.Exclamation)
+            Exit Sub
+        End If
+
         Dim i As Integer = 0
         Dim row As System.Data.DataRow = GridView1.GetDataRow(GridView1.FocusedRowHandle)
         Dim rcd As SqlClient.SqlDataReader
@@ -71,8 +77,13 @@
                         End If
                     Next
 
+                    '# delete list row new item
+                    .rcd_list.RemoveAt(.rcd_list.Count - 1)
+
                     '# insert to list
                     .rcd_list.Add(New rcd_penerimaanbarang(row("kode_barangjadi"), row("nama"), 0))
+
+                    .rcd_list.Add(New rcd_penerimaanbarang)
                     .GridView1.RefreshData()
                 End With
 
@@ -86,6 +97,9 @@
                         End If
                     Next
 
+                    '# delete list row new item
+                    .rcd_list.RemoveAt(.rcd_list.Count - 1)
+
                     '# ambil harga
                     ' load harga
                     Db.FlushCache()
@@ -98,11 +112,12 @@
 
                     If rcd.HasRows Then
                         rcd.Read()
-                        .rcd_list.Add(New rcd_sales_order(row("kode_barangjadi"), row("nama"), rcd.Item("kode_hargajual").ToString, rcd.Item("harga").ToString, row("stok")))
+                        .rcd_list.Add(New rcd_sales_order(1, row("kode_barangjadi"), row("nama"), rcd.Item("kode_hargajual").ToString, rcd.Item("harga").ToString, row("stok")))
                     Else
-                        .rcd_list.Add(New rcd_sales_order(row("kode_barangjadi"), row("nama"), 0, 0, row("stok")))
+                        .rcd_list.Add(New rcd_sales_order(1, row("kode_barangjadi"), row("nama"), 0, 0, row("stok")))
                     End If
 
+                    .rcd_list.Add(New rcd_sales_order)
                     .GridView1.RefreshData()
 
                 End With
@@ -110,15 +125,18 @@
             Case C_KONSINYASI_SEKUNDER                  '========================================================# 
                 With frm_konsinyasi_sekunder
                     '# cek list, takut ada yg sama (^-^)
-                    For i = 0 To .rcd_list.Count - 1
-                        If .rcd_list.Item(i).kode_barangjadi = row("kode_barangjadi") Then
-                            MsgBox("Kode Atikel : " & row("kode_barangjadi") & " , sudah diinput. Ganti dengan yang lain", MsgBoxStyle.Exclamation, "Pesan")
-                            Exit Sub
-                        End If
-                    Next
+                    'For i = 0 To .rcd_list.Count - 1
+                    '    If .rcd_list.Item(i).kode_barangjadi = row("kode_barangjadi") Then
+                    '        MsgBox("Kode Atikel : " & row("kode_barangjadi") & " , sudah diinput. Ganti dengan yang lain", MsgBoxStyle.Exclamation, "Pesan")
+                    '        Exit Sub
+                    '    End If
+                    'Next
+
+                    '# delete list row new item
+                    .rcd_list.RemoveAt(.rcd_list.Count - 1)
 
                     '# insert to list
-                    .rcd_list.Add(New rcd_konsinyasi_sekunder(1, row("kode_barangjadi"), _
+                    .rcd_list.Add(New rcd_konsinyasi_sekunder(1, Now, row("kode_barangjadi"), _
                                                               row("nama"), _
                                                               row("stok"), _
                                                               0, _
@@ -130,7 +148,7 @@
                     Db.From("tbl_histori_hargacustomer a")
                     Db.Where("a.kode_barangjadi", row("kode_barangjadi"))
                     Db.Where("a.kode_customer", kode_customer)
-                    Db.Where("a.tanggal", .tgl_transaksi.DateTime.ToString("yyyy-MM-dd HH:mm:ss"), "<=", "AND")
+                    Db.Where("a.tanggal", Now.ToString("yyyy-MM-dd HH:mm:ss"), "<=", "AND")
                     Db.OrderBy("a.tanggal", cls_database.sorting.Descending)
 
                     Dim rc As SqlClient.SqlDataReader = Connection.ExecuteToDataReader(Db.GetQueryString)
@@ -153,11 +171,16 @@
                         .rcd_list.Item(lastrow).diskon2 = 0
                     End If
 
+                    .rcd_list.Add(New rcd_konsinyasi_sekunder)
                     .GridView1.RefreshData()
                 End With
 
             Case C_KONSINYASI_PRIMER
                 With frm_konsinyasi_primer
+
+                    '# delete list row new item
+                    .rcd_list.RemoveAt(.rcd_list.Count - 1)
+
                     .rcd_list.Add(New rcd_konsinyasi_primer(.tgl_terbit.DateTime, _
                                                     row("kode_barangjadi"), _
                                                     row("nama"), _
@@ -206,6 +229,8 @@
                     .rcd_list.Item(lastrow).margin_konsumen = .margin_konsumen.Text
 
                     .rcd_list.Item(lastrow).Sumary()
+
+                    .rcd_list.Add(New rcd_konsinyasi_primer)
                     .GridView1.RefreshData()
                 End With
 

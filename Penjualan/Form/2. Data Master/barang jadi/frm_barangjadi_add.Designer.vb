@@ -75,7 +75,7 @@ Partial Class frm_barangjadi_add
         Me.kode_merk.Properties.Appearance.Options.UseFont = True
         Me.kode_merk.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.kode_merk.Size = New System.Drawing.Size(167, 21)
-        Me.kode_merk.TabIndex = 45
+        Me.kode_merk.TabIndex = 0
         '
         'LabelControl6
         '
@@ -142,7 +142,7 @@ Partial Class frm_barangjadi_add
         Me.bulan_produksi.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.bulan_produksi.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor
         Me.bulan_produksi.Size = New System.Drawing.Size(121, 21)
-        Me.bulan_produksi.TabIndex = 52
+        Me.bulan_produksi.TabIndex = 3
         '
         'tahun_produksi
         '
@@ -153,7 +153,7 @@ Partial Class frm_barangjadi_add
         Me.tahun_produksi.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.tahun_produksi.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor
         Me.tahun_produksi.Size = New System.Drawing.Size(121, 21)
-        Me.tahun_produksi.TabIndex = 51
+        Me.tahun_produksi.TabIndex = 1
         '
         'kode_kategori
         '
@@ -163,7 +163,7 @@ Partial Class frm_barangjadi_add
         Me.kode_kategori.Properties.Appearance.Options.UseFont = True
         Me.kode_kategori.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.kode_kategori.Size = New System.Drawing.Size(156, 21)
-        Me.kode_kategori.TabIndex = 50
+        Me.kode_kategori.TabIndex = 2
         '
         'LabelControl2
         '
@@ -272,7 +272,7 @@ Partial Class frm_barangjadi_add
         Me.cmd_browse.Location = New System.Drawing.Point(5, 221)
         Me.cmd_browse.Name = "cmd_browse"
         Me.cmd_browse.Size = New System.Drawing.Size(97, 19)
-        Me.cmd_browse.TabIndex = 59
+        Me.cmd_browse.TabIndex = 4
         Me.cmd_browse.Text = "Browse"
         '
         'pct_gambar
@@ -291,7 +291,7 @@ Partial Class frm_barangjadi_add
         Me.nama.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.nama.Properties.Appearance.Options.UseFont = True
         Me.nama.Size = New System.Drawing.Size(274, 21)
-        Me.nama.TabIndex = 57
+        Me.nama.TabIndex = 5
         '
         'LabelControl8
         '
@@ -309,7 +309,7 @@ Partial Class frm_barangjadi_add
         Me.harga_pokok.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.harga_pokok.Properties.Appearance.Options.UseFont = True
         Me.harga_pokok.Size = New System.Drawing.Size(133, 21)
-        Me.harga_pokok.TabIndex = 60
+        Me.harga_pokok.TabIndex = 6
         '
         'LabelControl9
         '
@@ -334,7 +334,7 @@ Partial Class frm_barangjadi_add
         Me.keterangan.Location = New System.Drawing.Point(475, 345)
         Me.keterangan.Name = "keterangan"
         Me.keterangan.Size = New System.Drawing.Size(274, 102)
-        Me.keterangan.TabIndex = 64
+        Me.keterangan.TabIndex = 7
         '
         'cmd_simpan
         '
@@ -342,7 +342,7 @@ Partial Class frm_barangjadi_add
         Me.cmd_simpan.Location = New System.Drawing.Point(549, 461)
         Me.cmd_simpan.Name = "cmd_simpan"
         Me.cmd_simpan.Size = New System.Drawing.Size(97, 24)
-        Me.cmd_simpan.TabIndex = 66
+        Me.cmd_simpan.TabIndex = 8
         Me.cmd_simpan.Text = "Simpan"
         '
         'cmd_cancel
@@ -351,7 +351,7 @@ Partial Class frm_barangjadi_add
         Me.cmd_cancel.Location = New System.Drawing.Point(652, 461)
         Me.cmd_cancel.Name = "cmd_cancel"
         Me.cmd_cancel.Size = New System.Drawing.Size(97, 24)
-        Me.cmd_cancel.TabIndex = 65
+        Me.cmd_cancel.TabIndex = 9
         Me.cmd_cancel.Text = "Cancel"
         '
         'OpenFileDialog1

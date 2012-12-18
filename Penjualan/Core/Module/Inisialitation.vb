@@ -2,7 +2,7 @@
 
     Public Sub init_aplikasi()
 
-        APP.Version = "1.0"
+        APP.Version = "1.1"
 
         APP.PATH_APP = My.Application.Info.DirectoryPath.ToString & "\"
         APP.PATH_IMG_BARANG = My.Application.Info.DirectoryPath.ToString & "\IMG_BARANG_JADI\"

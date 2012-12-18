@@ -14,7 +14,7 @@ Public Class frm_barangjadi_edit_formula
 
         '# get data harga
         Db.FlushCache()
-        Db.Selects("a.kode_hargajual, b.nama_harga, a.harga")
+        Db.Selects("a.kode_hargajual, a.kode_template_harga, b.nama_harga, a.harga")
         Db.From("tbl_hargajual a")
         Db.Join("tbl_template_hargajual b", "b.kode_template_harga = a.kode_template_harga")
         Db.Where("kode_barangjadi", kode_barangjadi)
@@ -25,7 +25,7 @@ Public Class frm_barangjadi_edit_formula
         If rcd.HasRows Then
             With rcd
                 While .Read
-                    rcd_list.Add(New rcd_barangjadi_edit_formula(.Item("kode_hargajual").ToString, .Item("nama_harga").ToString, .Item("harga").ToString))
+                    rcd_list.Add(New rcd_barangjadi_edit_formula(.Item("kode_hargajual").ToString, .Item("kode_template_harga").ToString, .Item("nama_harga").ToString, .Item("harga").ToString))
                 End While
             End With
         End If
@@ -33,10 +33,12 @@ Public Class frm_barangjadi_edit_formula
         GridControl1.DataSource = rcd_list
 
         'GridView1.Columns("kode_hargajual").Caption = "Kode"
+        GridView1.Columns("kode_template_harga").Caption = "No."
         GridView1.Columns("nama_harga").Caption = "Nama Harga"
         GridView1.Columns("harga").Caption = "Harga (Rp.)"
 
         GridView1.Columns("kode_hargajual").Width = 45
+        GridView1.Columns("kode_template_harga").Width = "45"
         GridView1.Columns("nama_harga").Width = 200
         GridView1.Columns("harga").Width = 100
 
@@ -78,6 +80,10 @@ Public Class frm_barangjadi_edit_formula
         Else
             MsgBox(Connection.TRANS_MESSAGE, MsgBoxStyle.Exclamation)
         End If
+
+    End Sub
+
+    Private Sub frm_barangjadi_edit_formula_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
     End Sub
 End Class

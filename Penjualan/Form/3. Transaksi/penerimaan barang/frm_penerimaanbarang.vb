@@ -1,4 +1,7 @@
-﻿Public Class frm_penerimaanbarang
+﻿Imports DevExpress.XtraGrid
+Imports DevExpress.XtraGrid.Views.Grid
+
+Public Class frm_penerimaanbarang
 
     Public rcd_list As System.ComponentModel.BindingList(Of rcd_penerimaanbarang)
 
@@ -8,6 +11,7 @@
         nomor_terima.EditValue = getNomorUrut(C_PENERIMAAN_BARANG)
 
         rcd_list = New System.ComponentModel.BindingList(Of rcd_penerimaanbarang)
+        rcd_list.Add(New rcd_penerimaanbarang)
 
         GridControl1.DataSource = rcd_list
         GridView1.Columns.Item(0).Caption = "Kode Artikel"
@@ -34,8 +38,11 @@
 
     Private Sub cmd_hapus_baris_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_hapus_baris.Click
         Dim row As Integer = GridView1.FocusedRowHandle
+        Dim rowNewItem As Integer = rcd_list.Count - 1
         Try
-            rcd_list.RemoveAt(row)
+            If row <> rowNewItem Then
+                rcd_list.RemoveAt(row)
+            End If
         Catch ex As Exception
 
         End Try
@@ -57,7 +64,7 @@
         Dim i As Integer
 
         '# Cek Grid
-        If GridView1.RowCount = 0 Then
+        If GridView1.RowCount <= 1 Then
             MsgBox("Masukan Artikel Terlebih Dulu", MsgBoxStyle.Critical, "Artikel Belum Diisi")
             Exit Sub
         End If
@@ -92,7 +99,7 @@
 
             Connection.TRANS_ADD(Db.GetQueryString)
 
-            For i = 0 To rcd_list.Count - 1
+            For i = 0 To rcd_list.Count - 2
                 '# insert to table tbl_penerimaanbarang_detail
                 Db.FlushCache()
                 Db.Insert("tbl_penerimaanbarang_detail")
@@ -125,6 +132,9 @@
             If Connection.TRANS_SUCCESS Then
                 'MsgBox("Data berhasil disimpan...", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Pesan")
 
+                '# delete row new item
+                rcd_list.RemoveAt(rcd_list.Count - 1)
+
                 Dim rpt As New rpt_penerimaanbarang
                 rpt.BindingSource1.DataSource = rcd_list
                 rpt.nomor_terima.Text = "Nomor : " & nomor_terima.Text
@@ -149,4 +159,60 @@
         End If
 
     End Sub
+
+    Private Sub GridControl1_EditorKeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles GridControl1.EditorKeyPress
+        Dim grid As GridControl = CType(sender, GridControl)
+        GridView1_KeyPress(grid.FocusedView, e)
+    End Sub
+
+    Private Sub GridView1_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles GridView1.KeyPress
+        Dim view As GridView = CType(sender, GridView)
+        Dim row As Integer = view.FocusedRowHandle
+        Dim rowItemNew As Integer = rcd_list.Count - 1
+
+        If view.FocusedColumn.FieldName = "kode_barangjadi" And row <> rowItemNew Then
+            e.Handled = True
+            Exit Sub
+        End If
+
+        If Asc(e.KeyChar) = 13 Then
+            Select Case view.FocusedColumn.FieldName
+                Case "kode_barangjadi"
+                    Dim tmp_kode_barangjadi As String = rcd_list.Item(row).kode_barangjadi
+                    tmp_kode_barangjadi = tmp_kode_barangjadi.Replace(".", vbNullString)
+                    If tmp_kode_barangjadi.Length < 6 Then
+                        MsgBox("Masukan kode dengan benar!", MsgBoxStyle.Exclamation)
+                    Else
+                        tmp_kode_barangjadi = tmp_kode_barangjadi.Substring(0, 1) & "." & tmp_kode_barangjadi.Substring(1, 3) & "." & tmp_kode_barangjadi.Substring(4, 2)
+
+                        '# get barang jadi
+                        Db.FlushCache()
+                        Db.Selects("a.kode_barangjadi, a.nama")
+                        Db.From("tbl_barangjadi a")
+                        Db.Where(" WHERE a.kode_barangjadi LIKE '" & tmp_kode_barangjadi & "%'")
+
+                        Dim dt1 As DataTable = Connection.ExecuteToDataTable(Db.GetQueryString)
+
+                        If dt1.Rows.Count > 0 Then
+                            rcd_list.Item(row).kode_barangjadi = dt1.Rows(0).Item("kode_barangjadi").ToString
+                            rcd_list.Item(row).nama = dt1.Rows(0).Item("nama").ToString
+
+                            '# refres data
+                            rcd_list.Add(New rcd_penerimaanbarang)
+                            setFocusCell(GridView1, row, "qty")
+                            GridView1.RefreshData()
+                        Else
+                            MsgBox("Tidak terdapat kode barang '" & tmp_kode_barangjadi & "'", MsgBoxStyle.Exclamation)
+                        End If
+                    End If
+
+                Case "qty"
+                    If row < rowItemNew Then
+                        setFocusCell(GridView1, row + 1, "kode_barangjadi")
+                    End If
+            End Select
+        End If
+    End Sub
+
+
 End Class

@@ -35,7 +35,7 @@
     End Sub
 
     Private Sub cmd_hapus_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_hapus.Click
-        generateColumnGrid(GridView1)
+
     End Sub
 
     Private Sub search_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles search.KeyPress

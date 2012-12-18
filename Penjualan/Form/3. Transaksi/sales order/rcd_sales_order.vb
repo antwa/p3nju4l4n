@@ -1,20 +1,26 @@
 ﻿Public Class rcd_sales_order
 
+    Dim mno As Integer
     Dim mkode_barangjadi As String
     Dim mnama As String
     Dim mqty As Integer
     Dim mkode_hargajual As Integer
     Dim mharga As Integer
     Dim mtotal As Integer
-    Dim mketerangan As String
+    Dim mketerangan As String = " "
     Dim mstok As Integer
 
-    Public Sub New(ByVal kode_barangjadi As String, _
+    Public Sub New()
+
+    End Sub
+
+    Public Sub New(ByVal no As Integer, ByVal kode_barangjadi As String, _
                    ByVal nama As String, _
                    ByVal kode_hargajual As Integer, _
                    ByVal harga As Integer, _
                    ByVal stok As Integer)
 
+        mno = no
         mkode_barangjadi = kode_barangjadi
         mnama = nama
         mqty = 0
@@ -26,16 +32,31 @@
         Call sumary()
     End Sub
 
-    Public ReadOnly Property kode_barangjadi() As String
+    Public Property no() As Integer
+        Get
+            Return Me.mno
+        End Get
+        Set(ByVal value As Integer)
+            Me.mno = value
+        End Set
+    End Property
+
+    Public Property kode_barangjadi() As String
         Get
             Return mkode_barangjadi
         End Get
+        Set(ByVal value As String)
+            Me.mkode_barangjadi = value
+        End Set
     End Property
 
-    Public ReadOnly Property nama() As String
+    Public Property nama() As String
         Get
             Return mnama
         End Get
+        Set(ByVal value As String)
+            Me.mnama = value
+        End Set
     End Property
 
     Public Property qty() As Integer
@@ -73,10 +94,13 @@
         End Set
     End Property
 
-    Public ReadOnly Property total() As Integer
+    Public Property total() As Integer
         Get
             Return mtotal
         End Get
+        Set(ByVal value As Integer)
+            Me.mtotal = value
+        End Set
     End Property
 
     Public Property keterangan() As String
@@ -88,10 +112,13 @@
         End Set
     End Property
 
-    Public ReadOnly Property stok() As Integer
+    Public Property stok() As Integer
         Get
             Return mstok
         End Get
+        Set(ByVal value As Integer)
+            Me.mstok = value
+        End Set
     End Property
 
     Sub sumary()

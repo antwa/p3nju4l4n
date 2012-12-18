@@ -21,6 +21,8 @@
     End Sub
 
     Private Sub formMDI_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+
+        Me.Text = "Aplikasi Penjualan Version : " & APP.Version
         sts_status.Caption = "Login Sebagai : " & Auth.NamaAkses
         sts_tanggal.Caption = FormatDateTime(Now, DateFormat.LongDate)
         sts_waktu.Caption = FormatDateTime(Now, DateFormat.LongTime)
@@ -51,7 +53,7 @@
     End Sub
 
     Private Sub BarButtonItem48_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles cSetup_merk.ItemClick
-
+        LoadFormToTab(frm_merk_list)
     End Sub
 
     Private Sub cTransaksi_penerimaanbarang_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles cTransaksi_penerimaanbarang.ItemClick
@@ -100,5 +102,17 @@
 
     Private Sub cPersediaan_lap_kartustok_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles cPersediaan_lap_kartustok.ItemClick
         LoadFormToTab(frm_kartu_stok_gudang)
+    End Sub
+
+    Private Sub cSetup_kategori_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles cSetup_kategori.ItemClick
+        LoadFormToTab(frm_kategoribarang_list)
+    End Sub
+
+    Private Sub cSetup_size_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles cSetup_size.ItemClick
+        LoadFormToTab(frm_size_list)
+    End Sub
+
+    Private Sub BarButtonItem2_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem2.ItemClick
+
     End Sub
 End Class

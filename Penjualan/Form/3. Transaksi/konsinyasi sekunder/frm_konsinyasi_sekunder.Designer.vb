@@ -26,14 +26,10 @@ Partial Class frm_konsinyasi_sekunder
         Me.GridControl1 = New DevExpress.XtraGrid.GridControl
         Me.GridView1 = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridView
         Me.GridBand1 = New DevExpress.XtraGrid.Views.BandedGrid.GridBand
-        Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl
-        Me.tgl_transaksi = New DevExpress.XtraEditors.DateEdit
         Me.kode_customer = New DevExpress.XtraEditors.LookUpEdit
         Me.LabelControl6 = New DevExpress.XtraEditors.LabelControl
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.tgl_transaksi.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.tgl_transaksi.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.kode_customer.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -78,10 +74,10 @@ Partial Class frm_konsinyasi_sekunder
         Me.GridControl1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
                     Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GridControl1.Location = New System.Drawing.Point(12, 66)
+        Me.GridControl1.Location = New System.Drawing.Point(12, 36)
         Me.GridControl1.MainView = Me.GridView1
         Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.Size = New System.Drawing.Size(659, 208)
+        Me.GridControl1.Size = New System.Drawing.Size(659, 238)
         Me.GridControl1.TabIndex = 40
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
@@ -103,30 +99,9 @@ Partial Class frm_konsinyasi_sekunder
         Me.GridBand1.Caption = "GridBand1"
         Me.GridBand1.Name = "GridBand1"
         '
-        'LabelControl3
-        '
-        Me.LabelControl3.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl3.Location = New System.Drawing.Point(12, 15)
-        Me.LabelControl3.Name = "LabelControl3"
-        Me.LabelControl3.Size = New System.Drawing.Size(43, 14)
-        Me.LabelControl3.TabIndex = 37
-        Me.LabelControl3.Text = "Tanggal"
-        '
-        'tgl_transaksi
-        '
-        Me.tgl_transaksi.EditValue = Nothing
-        Me.tgl_transaksi.Location = New System.Drawing.Point(80, 12)
-        Me.tgl_transaksi.Name = "tgl_transaksi"
-        Me.tgl_transaksi.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tgl_transaksi.Properties.Appearance.Options.UseFont = True
-        Me.tgl_transaksi.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.tgl_transaksi.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton})
-        Me.tgl_transaksi.Size = New System.Drawing.Size(167, 21)
-        Me.tgl_transaksi.TabIndex = 36
-        '
         'kode_customer
         '
-        Me.kode_customer.Location = New System.Drawing.Point(80, 39)
+        Me.kode_customer.Location = New System.Drawing.Point(80, 9)
         Me.kode_customer.Name = "kode_customer"
         Me.kode_customer.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.kode_customer.Properties.Appearance.Options.UseFont = True
@@ -137,7 +112,7 @@ Partial Class frm_konsinyasi_sekunder
         'LabelControl6
         '
         Me.LabelControl6.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl6.Location = New System.Drawing.Point(12, 42)
+        Me.LabelControl6.Location = New System.Drawing.Point(12, 12)
         Me.LabelControl6.Name = "LabelControl6"
         Me.LabelControl6.Size = New System.Drawing.Size(52, 14)
         Me.LabelControl6.TabIndex = 45
@@ -155,14 +130,10 @@ Partial Class frm_konsinyasi_sekunder
         Me.Controls.Add(Me.cmd_hapus_baris)
         Me.Controls.Add(Me.cmd_cari_artikel)
         Me.Controls.Add(Me.GridControl1)
-        Me.Controls.Add(Me.LabelControl3)
-        Me.Controls.Add(Me.tgl_transaksi)
         Me.Name = "frm_konsinyasi_sekunder"
         Me.Text = "Input Konsinyasi Sekunder"
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.tgl_transaksi.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.tgl_transaksi.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.kode_customer.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -173,8 +144,6 @@ Partial Class frm_konsinyasi_sekunder
     Friend WithEvents cmd_hapus_baris As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents cmd_cari_artikel As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents GridControl1 As DevExpress.XtraGrid.GridControl
-    Friend WithEvents LabelControl3 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents tgl_transaksi As DevExpress.XtraEditors.DateEdit
     Friend WithEvents kode_customer As DevExpress.XtraEditors.LookUpEdit
     Friend WithEvents LabelControl6 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.BandedGrid.BandedGridView

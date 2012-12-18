@@ -23,6 +23,19 @@
 
     End Sub
 
+    Public Sub setFocusCell(ByVal Gridview1 As DevExpress.XtraGrid.Views.BandedGrid.BandedGridView, ByVal Row As Integer, ByVal Column As String)
+        Gridview1.FocusedRowHandle = Row
+        'Gridview1.FocusedColumn = Gridview1.VisibleColumns(Column)
+        Gridview1.FocusedColumn = Gridview1.Columns(Column)
+        Gridview1.ShowEditor()
+    End Sub
+
+    Public Sub setFocusCell(ByVal Gridview1 As DevExpress.XtraGrid.Views.Grid.GridView, ByVal Row As Integer, ByVal Column As String)
+        Gridview1.FocusedRowHandle = Row
+        'Gridview1.FocusedColumn = Gridview1.VisibleColumns(Column)
+        Gridview1.FocusedColumn = Gridview1.Columns(Column)
+        Gridview1.ShowEditor()
+    End Sub
 
     Public Sub Load_SupplierBarang(ByRef lookup As DevExpress.XtraEditors.LookUpEdit)
         'init lookup
@@ -96,5 +109,8 @@
         lookup.Properties.Columns(1).Width = 100
         lookup.ItemIndex = 0
     End Sub
+
+
+
 
 End Module
