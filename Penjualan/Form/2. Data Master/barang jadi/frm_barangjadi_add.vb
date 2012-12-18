@@ -81,6 +81,7 @@
 
     Private Sub frm_barangjadi_add_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Call Me.initComponent()
+        kode_merk.Focus()
     End Sub
 
     Private Sub kode_merk_EditValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles kode_merk.EditValueChanged
@@ -163,7 +164,7 @@
                 If rcd_list.Item(i).cheked = True Then
                     kode_barangjadi = getValueFromLookup(kode_merk) & "." & _
                                         no_urut.Text & "." & _
-                                        rcd_list.Item(i).kode_size & "." & _
+                                        Format(rcd_list.Item(i).kode_size, "00") & "." & _
                                         tahun_produksi.Text.Substring(2, 2) & "." & _
                                         getValueFromLookup(kode_kategori) & "." & _
                                         CStr(bulan_produksi.SelectedIndex + 1)

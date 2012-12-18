@@ -1,4 +1,7 @@
-﻿Public Class frm_konsinyasi_sekunder 
+﻿Imports DevExpress.XtraGrid
+Imports DevExpress.XtraGrid.Views.Grid
+
+Public Class frm_konsinyasi_sekunder
 
     Public rcd_list As System.ComponentModel.BindingList(Of rcd_konsinyasi_sekunder)
 
@@ -8,12 +11,12 @@
             rcd_list.Item(i - 1).no = i
         Next
 
-        If rcd_list.Count > 0 Then
+        rcd_list.Item(rcd_list.Count - 1).no = 0
+
+        If rcd_list.Count > 1 Then
             kode_customer.Properties.ReadOnly = True
-            tgl_transaksi.Properties.ReadOnly = True
         Else
             kode_customer.Properties.ReadOnly = False
-            tgl_transaksi.Properties.ReadOnly = False
         End If
 
         GridView1.RefreshData()
@@ -22,17 +25,19 @@
     Public Sub initComponent()
         Dim i As Integer
 
-        tgl_transaksi.DateTime = Now
         Load_Customer(kode_customer, 1)
-
 
         rcd_list = New System.ComponentModel.BindingList(Of rcd_konsinyasi_sekunder)
         GridControl1.DataSource = rcd_list
+
+        '# new row
+        rcd_list.Add(New rcd_konsinyasi_sekunder)
 
         Call reIndex()
 
         '# atur grid
         GridView1.Columns("no").Caption = "No."
+        GridView1.Columns("tgl_transaksi").Caption = "Tanggal"
         GridView1.Columns("kode_barangjadi").Caption = "Kode"
         GridView1.Columns("nama").Caption = "Nama"
         GridView1.Columns("stok").Caption = "Stok"
@@ -45,6 +50,7 @@
         GridView1.Columns("keterangan").Caption = "Keterangan"
 
         GridView1.Columns("no").Width = 50
+        GridView1.Columns("tgl_transaksi").Width = 90
         GridView1.Columns("kode_barangjadi").Width = 115
         GridView1.Columns("nama").Width = 130
         GridView1.Columns("stok").Width = 60
@@ -69,6 +75,8 @@
         For i = 0 To GridView1.Columns.Count - 1
             GridView1.Columns.Item(i).OptionsColumn.AllowEdit = False
         Next
+        GridView1.Columns("tgl_transaksi").OptionsColumn.AllowEdit = True
+        GridView1.Columns("kode_barangjadi").OptionsColumn.AllowEdit = True
         GridView1.Columns("qty").OptionsColumn.AllowEdit = True
         GridView1.Columns("harga").OptionsColumn.AllowEdit = True
         GridView1.Columns("diskon").OptionsColumn.AllowEdit = True
@@ -120,6 +128,7 @@
         '# add column to band
         ' Artikel
         BArtikel.Columns.Add(GridView1.Columns("no"))
+        BArtikel.Columns.Add(GridView1.Columns("tgl_transaksi"))
         BArtikel.Columns.Add(GridView1.Columns("kode_barangjadi"))
         BArtikel.Columns.Add(GridView1.Columns("nama"))
         BArtikel.Columns.Add(GridView1.Columns("stok"))
@@ -154,13 +163,15 @@
 
     Private Sub cmd_hapus_baris_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_hapus_baris.Click
         Dim row As Integer = GridView1.FocusedRowHandle
+        Dim rowNewItem As Integer = rcd_list.Count - 1
         Try
-            rcd_list.RemoveAt(row)
-            Call reIndex()
+            If row <> rowNewItem Then
+                rcd_list.RemoveAt(row)
+                Call reIndex()
+            End If
         Catch ex As Exception
 
         End Try
-
     End Sub
 
     Private Sub cmd_simpan_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_simpan.Click
@@ -169,7 +180,7 @@
         Dim Query As String
 
         '# Cek Grid
-        If GridView1.RowCount = 0 Then
+        If GridView1.RowCount <= 1 Then
             MsgBox("Masukan Artikel Terlebih Dulu", MsgBoxStyle.Critical, "Artikel Belum Diisi")
             Exit Sub
         End If
@@ -177,11 +188,11 @@
         '# START TRANSAKSI
         Connection.TRANS_START()
 
-        For i = 0 To rcd_list.Count - 1
+        For i = 0 To rcd_list.Count - 2
             '# insert to table tbl_konsinyasisekunder
             Db.FlushCache()
             Db.Insert("tbl_konsinyasisekunder")
-            Db.SetField("tgl_transaksi", tgl_transaksi.DateTime.ToString("yyyy-MM-dd HH:mm:ss"))
+            Db.SetField("tgl_transaksi", rcd_list.Item(i).tgl_transaksi.ToString("yyyy-MM-dd HH:mm:ss"))
             Db.SetField("kode_customer", vkode_customer)
             Db.SetField("kode_barangjadi", rcd_list.Item(i).kode_barangjadi)
             Db.SetField("qty", rcd_list.Item(i).qty)
@@ -214,11 +225,123 @@
 
     End Sub
 
-    Private Sub GridControl1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GridControl1.Click
+    Private Sub GridView1_CellValueChanging(ByVal sender As Object, ByVal e As DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs) Handles GridView1.CellValueChanging
+        If e.Column.FieldName = "tgl_transaksi" Then
+            Dim Row As Integer = e.RowHandle
+            Dim tgl As DateTime = e.Value
 
+            '# ambil harga yg ditetapkan
+            Db.FlushCache()
+            Db.Selects("TOP 1 a.harga, a.diskon")
+            Db.From("tbl_histori_hargacustomer a")
+            Db.Where("a.kode_barangjadi", rcd_list.Item(row).kode_barangjadi)
+            Db.Where("a.kode_customer", getValueFromLookup(kode_customer))
+            Db.Where("a.tanggal", tgl.ToString("yyyy-MM-dd HH:mm:ss"), "<=", "AND")
+            Db.OrderBy("a.tanggal", cls_database.sorting.Descending)
+
+            Dim dt2 As DataTable = Connection.ExecuteToDataTable(Db.GetQueryString)
+            If dt2.Rows.Count > 0 Then
+                rcd_list.Item(row).harga = dt2.Rows(0).Item("harga").ToString
+                rcd_list.Item(row).diskon = dt2.Rows(0).Item("diskon").ToString
+                rcd_list.Item(row).harga2 = dt2.Rows(0).Item("harga").ToString
+                rcd_list.Item(row).diskon2 = dt2.Rows(0).Item("diskon").ToString
+            Else
+                rcd_list.Item(row).harga = 0
+                rcd_list.Item(row).diskon = 0
+                rcd_list.Item(row).harga2 = 0
+                rcd_list.Item(row).diskon2 = 0
+            End If
+
+            '# refres data
+            'setFocusCell(GridView1, Row, "qty")
+            rcd_list.Item(Row).sumary()
+            GridView1.RefreshData()
+
+        End If
     End Sub
 
-    Private Sub GridView1_CellValueChanged(ByVal sender As Object, ByVal e As DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs) Handles GridView1.CellValueChanged
+    Private Sub GridControl1_EditorKeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles GridControl1.EditorKeyPress
+        Dim grid As GridControl = CType(sender, GridControl)
+        GridView1_KeyPress(grid.FocusedView, e)
+    End Sub
+
+    Private Sub GridView1_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles GridView1.KeyPress
+        Dim view As GridView = CType(sender, GridView)
+        Dim row As Integer = view.FocusedRowHandle
+        Dim rowItemNew As Integer = rcd_list.Count - 1
+
+        If view.FocusedColumn.FieldName = "kode_barangjadi" And row <> rowItemNew Then
+            e.Handled = True
+            Exit Sub
+        End If
+
+        If Asc(e.KeyChar) = 13 Then
+            Select Case view.FocusedColumn.FieldName
+                Case "kode_barangjadi"
+                    Dim tmp_kode_barangjadi As String = rcd_list.Item(row).kode_barangjadi
+                    tmp_kode_barangjadi = tmp_kode_barangjadi.Replace(".", vbNullString)
+                    If tmp_kode_barangjadi.Length < 6 Then
+                        MsgBox("Masukan kode dengan benar!", MsgBoxStyle.Exclamation)
+                    Else
+                        tmp_kode_barangjadi = tmp_kode_barangjadi.Substring(0, 1) & "." & tmp_kode_barangjadi.Substring(1, 3) & "." & tmp_kode_barangjadi.Substring(4, 2)
+
+                        '# get barang jadi
+                        Db.FlushCache()
+                        Db.Selects("a.kode_barangjadi, b.nama, c.jenis, a.stok")
+                        Db.From("tbl_persediaan_customer a")
+                        Db.Join("tbl_barangjadi b", "b.kode_barangjadi = a.kode_barangjadi")
+                        Db.Join("tbl_jenis_hargabarang c", "c.kode_jenis_harga = a.kode_jenis_harga")
+                        Db.Where("a.kode_customer", getValueFromLookup(kode_customer))
+                        Db.Where(" AND a.kode_barangjadi LIKE '" & tmp_kode_barangjadi & "%'")
+
+                        Dim dt1 As DataTable = Connection.ExecuteToDataTable(Db.GetQueryString)
+
+                        If dt1.Rows.Count > 0 Then
+                            rcd_list.Item(row).kode_barangjadi = dt1.Rows(0).Item("kode_barangjadi").ToString
+                            rcd_list.Item(row).nama = dt1.Rows(0).Item("nama").ToString
+                            rcd_list.Item(row).stok = dt1.Rows(0).Item("stok").ToString
+
+                            '# ambil harga yg ditetapkan
+                            Db.FlushCache()
+                            Db.Selects("TOP 1 a.harga, a.diskon")
+                            Db.From("tbl_histori_hargacustomer a")
+                            Db.Where("a.kode_barangjadi", rcd_list.Item(row).kode_barangjadi)
+                            Db.Where("a.kode_customer", getValueFromLookup(kode_customer))
+                            Db.Where("a.tanggal", rcd_list.Item(row).tgl_transaksi.ToString("yyyy-MM-dd HH:mm:ss"), "<=", "AND")
+                            Db.OrderBy("a.tanggal", cls_database.sorting.Descending)
+
+                            Dim dt2 As DataTable = Connection.ExecuteToDataTable(Db.GetQueryString)
+                            If dt2.Rows.Count > 0 Then
+                                rcd_list.Item(row).harga = dt2.Rows(0).Item("harga").ToString
+                                rcd_list.Item(row).diskon = dt2.Rows(0).Item("diskon").ToString
+                                rcd_list.Item(row).harga2 = dt2.Rows(0).Item("harga").ToString
+                                rcd_list.Item(row).diskon2 = dt2.Rows(0).Item("diskon").ToString
+                            Else
+                                rcd_list.Item(row).harga = 0
+                                rcd_list.Item(row).diskon = 0
+                                rcd_list.Item(row).harga2 = 0
+                                rcd_list.Item(row).diskon2 = 0
+                            End If
+
+                            '# refres data
+                            rcd_list.Add(New rcd_konsinyasi_sekunder)
+                            Call Me.reIndex()
+                            setFocusCell(GridView1, row, "qty")
+                            GridView1.RefreshData()
+                        Else
+                            MsgBox("Tidak terdapat kode barang '" & tmp_kode_barangjadi & "'", MsgBoxStyle.Exclamation)
+                        End If
+                    End If
+
+                Case "qty"
+                    If row < rowItemNew Then
+                        setFocusCell(GridView1, row + 1, "kode_barangjadi")
+                    End If
+            End Select
+        End If
+    End Sub
+
+    Private Sub GridControl1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GridControl1.Click
 
     End Sub
 End Class

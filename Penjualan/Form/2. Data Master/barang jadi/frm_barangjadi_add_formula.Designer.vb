@@ -109,6 +109,7 @@ Partial Class frm_barangjadi_add_formula
         Me.cmd_hapus_baris.Size = New System.Drawing.Size(97, 24)
         Me.cmd_hapus_baris.TabIndex = 54
         Me.cmd_hapus_baris.Text = "Hapus"
+        Me.cmd_hapus_baris.Visible = False
         '
         'frm_barangjadi_add_formula
         '
@@ -125,7 +126,7 @@ Partial Class frm_barangjadi_add_formula
         Me.Controls.Add(Me.GridControl1)
         Me.Name = "frm_barangjadi_add_formula"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Formula Harga Jual"
+        Me.Text = "Tambah Formula Harga Jual"
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.kode_barangjadi.Properties, System.ComponentModel.ISupportInitialize).EndInit()

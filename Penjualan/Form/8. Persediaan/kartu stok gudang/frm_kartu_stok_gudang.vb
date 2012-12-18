@@ -47,7 +47,7 @@
     End Sub
 
     Private Sub frm_kartu_stok_gudang_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        tgl_dari.DateTime = Now
+        tgl_dari.DateTime = DateAdd(DateInterval.Month, -3, Now)
         tgl_sampai.DateTime = Now
 
         rcd_list = New System.ComponentModel.BindingList(Of rcd_kartu_stok_gudang)
@@ -81,8 +81,8 @@
         GridView1.Columns("keluar").Summary.Clear()
         GridView1.Columns("keluar").Summary.Add(DevExpress.Data.SummaryItemType.Sum, "keluar", "{0:n0}")
 
-        GridView1.Columns("saldo").Summary.Clear()
-        GridView1.Columns("saldo").Summary.Add(DevExpress.Data.SummaryItemType.Sum, "saldo", "{0:n0}")
+        'GridView1.Columns("saldo").Summary.Clear()
+        'GridView1.Columns("saldo").Summary.Add(DevExpress.Data.SummaryItemType.Sum, "saldo", "{0:n0}")
 
     End Sub
 

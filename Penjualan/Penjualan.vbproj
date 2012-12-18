@@ -188,60 +188,6 @@
     <Compile Include="Form\0. Pengguna\pengguna\rcd_user.vb">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Form\1. Setup\data wilayah\frm_group_add.Designer.vb">
-      <DependentUpon>frm_group_add.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Form\1. Setup\data wilayah\frm_group_add.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form\1. Setup\data wilayah\frm_group_edit.Designer.vb">
-      <DependentUpon>frm_group_edit.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Form\1. Setup\data wilayah\frm_group_edit.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form\1. Setup\data wilayah\frm_kota_add.Designer.vb">
-      <DependentUpon>frm_kota_add.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Form\1. Setup\data wilayah\frm_kota_add.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form\1. Setup\data wilayah\frm_kota_edit.Designer.vb">
-      <DependentUpon>frm_kota_edit.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Form\1. Setup\data wilayah\frm_kota_edit.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form\1. Setup\data wilayah\frm_provinsi_add.Designer.vb">
-      <DependentUpon>frm_provinsi_add.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Form\1. Setup\data wilayah\frm_provinsi_add.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form\1. Setup\data wilayah\frm_provinsi_edit.Designer.vb">
-      <DependentUpon>frm_provinsi_edit.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Form\1. Setup\data wilayah\frm_provinsi_edit.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form\1. Setup\data wilayah\frm_wilayah_list.Designer.vb">
-      <DependentUpon>frm_wilayah_list.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Form\1. Setup\data wilayah\frm_wilayah_list.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form\1. Setup\data wilayah\frm_zona_add.Designer.vb">
-      <DependentUpon>frm_zona_add.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Form\1. Setup\data wilayah\frm_zona_add.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form\1. Setup\data wilayah\frm_zona_edit.Designer.vb">
-      <DependentUpon>frm_zona_edit.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Form\1. Setup\data wilayah\frm_zona_edit.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Form\1. Setup\jenis harga\frm_jenisharga_add.Designer.vb">
       <DependentUpon>frm_jenisharga_add.vb</DependentUpon>
     </Compile>
@@ -603,34 +549,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\0. Pengguna\pengguna\frm_user_list.resx">
       <DependentUpon>frm_user_list.vb</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form\1. Setup\data wilayah\frm_group_add.resx">
-      <DependentUpon>frm_group_add.vb</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form\1. Setup\data wilayah\frm_group_edit.resx">
-      <DependentUpon>frm_group_edit.vb</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form\1. Setup\data wilayah\frm_kota_add.resx">
-      <DependentUpon>frm_kota_add.vb</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form\1. Setup\data wilayah\frm_provinsi_add.resx">
-      <DependentUpon>frm_provinsi_add.vb</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form\1. Setup\data wilayah\frm_provinsi_edit.resx">
-      <DependentUpon>frm_provinsi_edit.vb</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form\1. Setup\data wilayah\frm_zona_add.resx">
-      <DependentUpon>frm_zona_add.vb</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form\1. Setup\data wilayah\frm_zona_edit.resx">
-      <DependentUpon>frm_zona_edit.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\1. Setup\jenis harga\frm_jenisharga_add.resx">

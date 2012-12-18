@@ -1,7 +1,7 @@
 ﻿Public Class rcd_konsinyasi_primer
 
     Dim mno As Integer
-    Dim mtgl_transaksi As Date
+    Dim mtgl_transaksi As DateTime = Now
     Dim mkode_barangjadi As String
     Dim mnama As String
     Dim mqty As Integer = 0
@@ -23,6 +23,10 @@
     Dim mmargin_konsumen As Integer = 0
 
     Dim xtotal As Integer
+
+    Public Sub New()
+
+    End Sub
 
     Public Sub New( _
         ByVal tgl_transaksi As Date, _
@@ -202,6 +206,13 @@
         End Get
         Set(ByVal value As Integer)
             Me.mdisc_acara = value
+            Try
+                mdisc_acara_kita = mdisc_acara / 2
+                mdisc_acara_toko = mdisc_acara - mdisc_acara_kita
+            Catch ex As Exception
+
+            End Try
+            Call Sumary()
         End Set
     End Property
 
@@ -211,6 +222,18 @@
         End Get
         Set(ByVal value As Integer)
             Me.mdisc_acara_kita = value
+            Try
+                If mdisc_acara_kita > mdisc_acara Then
+                    'MsgBox("Disc acara tidak boleh lebih kecil", MsgBoxStyle.Exclamation)
+                    mdisc_acara_kita = mdisc_acara
+                End If
+
+                mdisc_acara_toko = mdisc_acara - mdisc_acara_kita
+
+            Catch ex As Exception
+
+            End Try
+            Call Sumary()
         End Set
     End Property
 
@@ -220,6 +243,7 @@
         End Get
         Set(ByVal value As Integer)
             Me.mdisc_acara_toko = value
+            Call Sumary()
         End Set
     End Property
 
@@ -229,6 +253,7 @@
         End Get
         Set(ByVal value As Integer)
             Me.mmargin_toko = value
+            Call Sumary()
         End Set
     End Property
 
@@ -238,6 +263,7 @@
         End Get
         Set(ByVal value As Integer)
             Me.mmargin_konsumen = value
+            Call Sumary()
         End Set
     End Property
 

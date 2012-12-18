@@ -81,21 +81,4 @@
         End If
     End Sub
 
-    Private Sub SimpleButton1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SimpleButton1.Click
-        Db.FlushCache()
-        Db.Selects("*")
-        Db.From("sys_user")
-
-        Dim count As Integer
-        Dim i As Integer
-        Dim rcd As DataTable = Connection.ExecuteToDataTable(Db.GetQueryString)
-
-        If rcd.Rows.Count > 0 Then
-            For i = 0 To rcd.Rows.Count - 1
-                MsgBox("Count : " & rcd.Rows.Count & vbCrLf & "Username : " & rcd.Rows(i).Item(2))
-            Next
-        End If
-
-    End Sub
-
 End Class

@@ -220,6 +220,7 @@ Partial Class frm_konsinyasi_primer
         '
         'disc_acara
         '
+        Me.disc_acara.EditValue = "10"
         Me.disc_acara.Location = New System.Drawing.Point(481, 102)
         Me.disc_acara.Name = "disc_acara"
         Me.disc_acara.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -228,6 +229,7 @@ Partial Class frm_konsinyasi_primer
         Me.disc_acara.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
         Me.disc_acara.Size = New System.Drawing.Size(42, 21)
         Me.disc_acara.TabIndex = 54
+        Me.disc_acara.Visible = False
         '
         'LabelControl5
         '
@@ -237,6 +239,7 @@ Partial Class frm_konsinyasi_primer
         Me.LabelControl5.Size = New System.Drawing.Size(67, 14)
         Me.LabelControl5.TabIndex = 55
         Me.LabelControl5.Text = "Disc Acara : "
+        Me.LabelControl5.Visible = False
         '
         'LabelControl7
         '
@@ -246,9 +249,11 @@ Partial Class frm_konsinyasi_primer
         Me.LabelControl7.Size = New System.Drawing.Size(58, 14)
         Me.LabelControl7.TabIndex = 56
         Me.LabelControl7.Text = "% => Kita"
+        Me.LabelControl7.Visible = False
         '
         'disc_acara_kita
         '
+        Me.disc_acara_kita.EditValue = "5"
         Me.disc_acara_kita.Location = New System.Drawing.Point(593, 102)
         Me.disc_acara_kita.Name = "disc_acara_kita"
         Me.disc_acara_kita.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -257,6 +262,7 @@ Partial Class frm_konsinyasi_primer
         Me.disc_acara_kita.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
         Me.disc_acara_kita.Size = New System.Drawing.Size(42, 21)
         Me.disc_acara_kita.TabIndex = 57
+        Me.disc_acara_kita.Visible = False
         '
         'LabelControl8
         '
@@ -266,9 +272,11 @@ Partial Class frm_konsinyasi_primer
         Me.LabelControl8.Size = New System.Drawing.Size(52, 14)
         Me.LabelControl8.TabIndex = 58
         Me.LabelControl8.Text = "% ; Toko"
+        Me.LabelControl8.Visible = False
         '
         'disc_acara_toko
         '
+        Me.disc_acara_toko.EditValue = "5"
         Me.disc_acara_toko.Location = New System.Drawing.Point(699, 102)
         Me.disc_acara_toko.Name = "disc_acara_toko"
         Me.disc_acara_toko.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -278,6 +286,7 @@ Partial Class frm_konsinyasi_primer
         Me.disc_acara_toko.Properties.ReadOnly = True
         Me.disc_acara_toko.Size = New System.Drawing.Size(42, 21)
         Me.disc_acara_toko.TabIndex = 59
+        Me.disc_acara_toko.Visible = False
         '
         'LabelControl9
         '
@@ -287,6 +296,7 @@ Partial Class frm_konsinyasi_primer
         Me.LabelControl9.Size = New System.Drawing.Size(16, 14)
         Me.LabelControl9.TabIndex = 60
         Me.LabelControl9.Text = "% "
+        Me.LabelControl9.Visible = False
         '
         'LabelControl3
         '
@@ -297,6 +307,7 @@ Partial Class frm_konsinyasi_primer
         Me.LabelControl3.Size = New System.Drawing.Size(79, 14)
         Me.LabelControl3.TabIndex = 62
         Me.LabelControl3.Text = "Margin Toko : "
+        Me.LabelControl3.Visible = False
         '
         'margin_toko
         '
@@ -309,6 +320,7 @@ Partial Class frm_konsinyasi_primer
         Me.margin_toko.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
         Me.margin_toko.Size = New System.Drawing.Size(42, 21)
         Me.margin_toko.TabIndex = 61
+        Me.margin_toko.Visible = False
         '
         'LabelControl11
         '
@@ -319,6 +331,7 @@ Partial Class frm_konsinyasi_primer
         Me.LabelControl11.Size = New System.Drawing.Size(16, 14)
         Me.LabelControl11.TabIndex = 65
         Me.LabelControl11.Text = "% "
+        Me.LabelControl11.Visible = False
         '
         'LabelControl10
         '
@@ -329,6 +342,7 @@ Partial Class frm_konsinyasi_primer
         Me.LabelControl10.Size = New System.Drawing.Size(16, 14)
         Me.LabelControl10.TabIndex = 68
         Me.LabelControl10.Text = "% "
+        Me.LabelControl10.Visible = False
         '
         'LabelControl12
         '
@@ -339,6 +353,7 @@ Partial Class frm_konsinyasi_primer
         Me.LabelControl12.Size = New System.Drawing.Size(108, 14)
         Me.LabelControl12.TabIndex = 67
         Me.LabelControl12.Text = "Margin Konsumen : "
+        Me.LabelControl12.Visible = False
         '
         'margin_konsumen
         '
@@ -351,6 +366,7 @@ Partial Class frm_konsinyasi_primer
         Me.margin_konsumen.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
         Me.margin_konsumen.Size = New System.Drawing.Size(42, 21)
         Me.margin_konsumen.TabIndex = 66
+        Me.margin_konsumen.Visible = False
         '
         'LabelControl13
         '

@@ -19,21 +19,19 @@ Partial Class formLogin
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(formLogin))
         Me.cmd_login = New DevExpress.XtraEditors.SimpleButton
         Me.txt_username = New DevExpress.XtraEditors.TextEdit
         Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl
         Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl
         Me.txt_password = New DevExpress.XtraEditors.TextEdit
         Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl
-        Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton
         CType(Me.txt_username.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txt_password.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'cmd_login
         '
-        Me.cmd_login.Location = New System.Drawing.Point(300, 160)
+        Me.cmd_login.Location = New System.Drawing.Point(157, 173)
         Me.cmd_login.LookAndFeel.SkinName = "Caramel"
         Me.cmd_login.Name = "cmd_login"
         Me.cmd_login.Size = New System.Drawing.Size(94, 25)
@@ -43,7 +41,7 @@ Partial Class formLogin
         'txt_username
         '
         Me.txt_username.EditValue = "admin"
-        Me.txt_username.Location = New System.Drawing.Point(187, 79)
+        Me.txt_username.Location = New System.Drawing.Point(106, 78)
         Me.txt_username.Name = "txt_username"
         Me.txt_username.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_username.Properties.Appearance.Options.UseFont = True
@@ -54,8 +52,8 @@ Partial Class formLogin
         'LabelControl1
         '
         Me.LabelControl1.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl1.Appearance.ForeColor = System.Drawing.Color.White
-        Me.LabelControl1.Location = New System.Drawing.Point(187, 59)
+        Me.LabelControl1.Appearance.ForeColor = System.Drawing.Color.Black
+        Me.LabelControl1.Location = New System.Drawing.Point(106, 58)
         Me.LabelControl1.Name = "LabelControl1"
         Me.LabelControl1.Size = New System.Drawing.Size(59, 14)
         Me.LabelControl1.TabIndex = 2
@@ -64,8 +62,8 @@ Partial Class formLogin
         'LabelControl2
         '
         Me.LabelControl2.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl2.Appearance.ForeColor = System.Drawing.Color.White
-        Me.LabelControl2.Location = New System.Drawing.Point(187, 113)
+        Me.LabelControl2.Appearance.ForeColor = System.Drawing.Color.Black
+        Me.LabelControl2.Location = New System.Drawing.Point(106, 112)
         Me.LabelControl2.Name = "LabelControl2"
         Me.LabelControl2.Size = New System.Drawing.Size(59, 14)
         Me.LabelControl2.TabIndex = 4
@@ -74,7 +72,7 @@ Partial Class formLogin
         'txt_password
         '
         Me.txt_password.EditValue = "admin"
-        Me.txt_password.Location = New System.Drawing.Point(187, 133)
+        Me.txt_password.Location = New System.Drawing.Point(106, 132)
         Me.txt_password.Name = "txt_password"
         Me.txt_password.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_password.Properties.Appearance.Options.UseFont = True
@@ -86,29 +84,20 @@ Partial Class formLogin
         'LabelControl3
         '
         Me.LabelControl3.Appearance.Font = New System.Drawing.Font("Tahoma", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl3.Appearance.ForeColor = System.Drawing.Color.White
+        Me.LabelControl3.Appearance.ForeColor = System.Drawing.Color.DimGray
+        Me.LabelControl3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        Me.LabelControl3.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None
         Me.LabelControl3.Location = New System.Drawing.Point(12, 12)
         Me.LabelControl3.Name = "LabelControl3"
-        Me.LabelControl3.Size = New System.Drawing.Size(256, 25)
+        Me.LabelControl3.Size = New System.Drawing.Size(382, 25)
         Me.LabelControl3.TabIndex = 6
         Me.LabelControl3.Text = "Login Aplikasi Penjualan"
-        '
-        'SimpleButton1
-        '
-        Me.SimpleButton1.Location = New System.Drawing.Point(21, 100)
-        Me.SimpleButton1.Name = "SimpleButton1"
-        Me.SimpleButton1.Size = New System.Drawing.Size(86, 27)
-        Me.SimpleButton1.TabIndex = 7
-        Me.SimpleButton1.Text = "SimpleButton1"
         '
         'formLogin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackgroundImageLayoutStore = System.Windows.Forms.ImageLayout.Tile
-        Me.BackgroundImageStore = CType(resources.GetObject("$this.BackgroundImageStore"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(406, 192)
-        Me.Controls.Add(Me.SimpleButton1)
+        Me.ClientSize = New System.Drawing.Size(406, 210)
         Me.Controls.Add(Me.LabelControl3)
         Me.Controls.Add(Me.LabelControl2)
         Me.Controls.Add(Me.txt_password)
@@ -132,5 +121,4 @@ Partial Class formLogin
     Friend WithEvents LabelControl2 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents txt_password As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LabelControl3 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents SimpleButton1 As DevExpress.XtraEditors.SimpleButton
 End Class

@@ -2,6 +2,7 @@
     Dim xtotal As Integer
 
     Dim mno As Integer
+    Dim mtgl_transaksi As DateTime = Now
     Dim mkode_barangjadi As String
     Dim mnama As String
     Dim mstok As Integer
@@ -16,8 +17,13 @@
     Dim mbeban_spg As Integer
     Dim mketerangan As String
 
+    Public Sub New()
+
+    End Sub
+
     Public Sub New( _
         ByVal no As Integer, _
+        ByVal tgl_transaksi As DateTime, _
         ByVal kode_barangjadi As String, _
         ByVal nama As String, _
         ByVal stok As Integer, _
@@ -26,6 +32,7 @@
         ByVal diskon As Integer)
 
         Me.mno = no
+        Me.mtgl_transaksi = tgl_transaksi
         Me.mkode_barangjadi = kode_barangjadi
         Me.mnama = nama
         Me.mstok = stok
@@ -46,22 +53,41 @@
         End Set
     End Property
 
-    Public ReadOnly Property kode_barangjadi() As String
+    Public Property tgl_transaksi() As DateTime
+        Get
+            Return Me.mtgl_transaksi
+        End Get
+        Set(ByVal value As DateTime)
+            Me.mtgl_transaksi = value
+        End Set
+    End Property
+
+
+    Public Property kode_barangjadi() As String
         Get
             Return Me.mkode_barangjadi
         End Get
+        Set(ByVal value As String)
+            Me.mkode_barangjadi = value
+        End Set
     End Property
 
-    Public ReadOnly Property nama() As String
+    Public Property nama() As String
         Get
             Return Me.mnama
         End Get
+        Set(ByVal value As String)
+            Me.mnama = value
+        End Set
     End Property
 
-    Public ReadOnly Property stok() As Integer
+    Public Property stok() As Integer
         Get
             Return Me.mstok
         End Get
+        Set(ByVal value As Integer)
+            Me.mstok = value
+        End Set
     End Property
 
     Public Property qty() As Integer
@@ -80,10 +106,13 @@
         End Set
     End Property
 
-    Public ReadOnly Property kode_hargajual() As Integer
+    Public Property kode_hargajual() As Integer
         Get
             Return Me.mkode_hargajual
         End Get
+        Set(ByVal value As Integer)
+            Me.mkode_hargajual = value
+        End Set
     End Property
 
     Public Property harga() As Integer
@@ -106,10 +135,13 @@
         End Set
     End Property
 
-    Public ReadOnly Property total() As Integer
+    Public Property total() As Integer
         Get
             Return Me.mtotal
         End Get
+        Set(ByVal value As Integer)
+            Me.mtotal = value
+        End Set
     End Property
 
     Public Property kode_hargajual2() As Integer
@@ -157,7 +189,7 @@
         End Set
     End Property
 
-    Sub sumary()
+    Public Sub sumary()
         'If mdiskon > 0 Then
         xtotal = (Me.mqty * Me.mharga)
         Me.mtotal = xtotal - (xtotal * (Me.mdiskon / 100))

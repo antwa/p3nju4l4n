@@ -3,18 +3,18 @@
     
 
     Private Sub cmd_simpan_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles cmd_simpan.Click
-        '# cek kode kategori di database
-        Db.FlushCache()
-        Db.Selects("*")
-        Db.From("tbl_merk")
-        Db.Where("merk", txt_kode_merk.Text)
+        ''# cek kode kategori di database
+        'Db.FlushCache()
+        'Db.Selects("*")
+        'Db.From("tbl_merk")
+        'Db.Where("merk", txt_kode_merk.Text)
 
-        Connection.ExecuteToDataReader(Db.GetQueryString)
+        'Connection.ExecuteToDataReader(Db.GetQueryString)
 
-        If Connection.Read.HasRows Then
-            MsgBox("Sudah terdapat merk pada database!" & vbCrLf & "Ganti dengan yang lain.", MsgBoxStyle.OkOnly, "Pesan")
-            Exit Sub
-        End If
+        'If Connection.Read.HasRows Then
+        '    MsgBox("Sudah terdapat merk pada database!" & vbCrLf & "Ganti dengan yang lain.", MsgBoxStyle.OkOnly, "Pesan")
+        '    Exit Sub
+        'End If
 
         '# insert to table tbl_merk
         Db.FlushCache()

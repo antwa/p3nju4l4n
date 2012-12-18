@@ -20,6 +20,7 @@ Partial Class frm_uji_coba2
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton
+        Me.SimpleButton2 = New DevExpress.XtraEditors.SimpleButton
         Me.SuspendLayout()
         '
         'SimpleButton1
@@ -30,11 +31,20 @@ Partial Class frm_uji_coba2
         Me.SimpleButton1.TabIndex = 0
         Me.SimpleButton1.Text = "Print Multiple Report"
         '
+        'SimpleButton2
+        '
+        Me.SimpleButton2.Location = New System.Drawing.Point(12, 46)
+        Me.SimpleButton2.Name = "SimpleButton2"
+        Me.SimpleButton2.Size = New System.Drawing.Size(117, 26)
+        Me.SimpleButton2.TabIndex = 1
+        Me.SimpleButton2.Text = "SimpleButton2"
+        '
         'frm_uji_coba2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(284, 262)
+        Me.Controls.Add(Me.SimpleButton2)
         Me.Controls.Add(Me.SimpleButton1)
         Me.Name = "frm_uji_coba2"
         Me.Text = "frm_uji_coba2"
@@ -42,4 +52,5 @@ Partial Class frm_uji_coba2
 
     End Sub
     Friend WithEvents SimpleButton1 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents SimpleButton2 As DevExpress.XtraEditors.SimpleButton
 End Class
