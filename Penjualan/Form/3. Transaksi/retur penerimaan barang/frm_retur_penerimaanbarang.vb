@@ -131,7 +131,7 @@
             Db.FlushCache()
             Db.Insert("tbl_retur_penerimaanbarang")
             Db.SetField("nomor_retur", nomor_retur.Text)
-            Db.SetField("tanggal", tanggal.DateTime.ToString("yyyy-MM-dd HH:mm:ss"))
+            Db.SetField("tanggal", tanggal.DateTime)
             Db.SetField("kode_supplier_barang", lbl_kode_supplier.Text)
             Db.SetField("nomor_terima", nomor_terima.Text)
             Db.SetField("username", Auth.Username)
@@ -155,11 +155,11 @@
                          " WHERE kode_barangjadi = '" & rcd_list.Item(i).kode_barangjadi & "'")
                 Connection.TRANS_ADD(Db.GetQueryString)
 
-                '# insert ke kartu stok
+                '# insert ke kartu stok gudang
                 Db.FlushCache()
                 Db.Insert("tbl_kartustok_gudang")
                 Db.SetField("kode_barangjadi", rcd_list.Item(i).kode_barangjadi)
-                Db.SetField("tanggal", tanggal.DateTime.ToString("yyyy-MM-dd HH:mm:ss"))
+                Db.SetField("tanggal", tanggal.DateTime)
                 Db.SetField("referensi", "No. Retur : " & nomor_retur.Text)
                 Db.SetField("deskripsi", "Retur Penerimaan barang : " & nomor_terima.Text)
                 Db.SetField("masuk", "0")

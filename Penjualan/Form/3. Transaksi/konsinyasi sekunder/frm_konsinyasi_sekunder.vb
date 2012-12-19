@@ -192,7 +192,7 @@ Public Class frm_konsinyasi_sekunder
             '# insert to table tbl_konsinyasisekunder
             Db.FlushCache()
             Db.Insert("tbl_konsinyasisekunder")
-            Db.SetField("tgl_transaksi", rcd_list.Item(i).tgl_transaksi.ToString("yyyy-MM-dd HH:mm:ss"))
+            Db.SetField("tgl_transaksi", rcd_list.Item(i).tgl_transaksi)
             Db.SetField("kode_customer", vkode_customer)
             Db.SetField("kode_barangjadi", rcd_list.Item(i).kode_barangjadi)
             Db.SetField("qty", rcd_list.Item(i).qty)
@@ -207,7 +207,7 @@ Public Class frm_konsinyasi_sekunder
             '# update stok customer
             Query = ""
             Query &= " UPDATE tbl_persediaan_customer "
-            Query &= " SET stok = stok - " & rcd_list.Item(i).qty
+            Query &= " SET stok_sekunder = stok_sekunder - " & rcd_list.Item(i).qty
             Query &= " WHERE kode_customer = '" & vkode_customer & "' "
             Query &= " AND kode_barangjadi = '" & rcd_list.Item(i).kode_barangjadi & "' "
 
@@ -287,7 +287,7 @@ Public Class frm_konsinyasi_sekunder
 
                         '# get barang jadi
                         Db.FlushCache()
-                        Db.Selects("a.kode_barangjadi, b.nama, c.jenis, a.stok")
+                        Db.Selects("a.kode_barangjadi, b.nama, c.jenis, a.stok_sekunder as stok")
                         Db.From("tbl_persediaan_customer a")
                         Db.Join("tbl_barangjadi b", "b.kode_barangjadi = a.kode_barangjadi")
                         Db.Join("tbl_jenis_hargabarang c", "c.kode_jenis_harga = a.kode_jenis_harga")

@@ -8,7 +8,7 @@
 
     End Sub
 
-    Sub LoadFormToTab(ByVal MForm As DevExpress.XtraEditors.XtraForm)
+    Public Sub LoadFormToTab(ByVal MForm As DevExpress.XtraEditors.XtraForm)
         MForm.MdiParent = Me
         MForm.Show()
         MForm.Focus()
@@ -112,7 +112,7 @@
         LoadFormToTab(frm_size_list)
     End Sub
 
-    Private Sub BarButtonItem2_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem2.ItemClick
-
+    Private Sub cPersediaan_harga_customer_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles cPersediaan_harga_customer.ItemClick
+        LoadFormToTab(frm_histori_harga)
     End Sub
 End Class

@@ -119,8 +119,8 @@
     End Sub
 
     Public Sub Where_BetweenDate(ByVal field As String, _
-                     ByVal value1 As String, _
-                     ByVal value2 As String, _
+                     ByVal value1 As DateTime, _
+                     ByVal value2 As DateTime, _
                      Optional ByVal op_logic As String = "AND")
 
         value1 = Replace(value1, "'", "''", , , vbTextCompare)
@@ -128,10 +128,10 @@
 
         If Len(str_where) <= 0 Then
             'str_where = "WHERE " & field & " BETWEEN convert(datetime,'" & value1 & "',103) AND convert(datetime,'" & value2 & "',103)"
-            str_where = "WHERE " & field & " BETWEEN '" & value1 & " 00:00:00" & "' AND '" & value2 & " 23:59:59" & "'"
+            str_where = "WHERE " & field & " BETWEEN '" & value1.ToString("yyyy-MM-dd") & " 00:00:00" & "' AND '" & value2.ToString("yyyy-MM-dd") & " 23:59:59" & "'"
         Else
             'str_where &= " " & op_logic & " " & field & " BETWEEN convert(datetime,'" & value1 & "',103) AND convert(datetime,'" & value2 & "',103)"
-            str_where &= " " & op_logic & " " & field & " BETWEEN '" & value1 & " 00:00:00" & "' AND '" & value2 & " 23:59:59" & "'"
+            str_where &= " " & op_logic & " " & field & " BETWEEN '" & value1.ToString("yyyy-MM-dd") & " 00:00:00" & "' AND '" & value2.ToString("yyyy-MM-dd") & " 23:59:59" & "'"
         End If
 
     End Sub
@@ -213,6 +213,31 @@
                 
             Else
                 str_set_field = str_set_field & ", " & field & " = '" & value & "'"
+
+            End If
+        End If
+
+    End Sub
+
+    Public Sub SetField(ByVal field As String, ByVal value As DateTime)
+
+        value = Replace(value, "'", "''", , , vbTextCompare)
+
+        If operasi = "insert" Then
+            If Len(str_insert_field) <= 0 Then
+                str_insert_field &= field
+                str_insert_value &= "'" & value.ToString("yyyy-MM-dd HH:mm:ss") & "'"
+
+            Else
+                str_insert_field &= ", " & field
+                str_insert_value &= ", " & "'" & value.ToString("yyyy-MM-dd HH:mm:ss") & "'"
+            End If
+        Else
+            If Len(str_set_field) <= 0 Then
+                str_set_field = "SET " & field & " = '" & value.ToString("yyyy-MM-dd HH:mm:ss") & "'"
+
+            Else
+                str_set_field = str_set_field & ", " & field & " = '" & value.ToString("yyyy-MM-dd HH:mm:ss") & "'"
 
             End If
         End If

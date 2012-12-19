@@ -8,11 +8,34 @@
     
     Sub initGrid()
 
-        If parameter1 = C_KONSINYASI_SEKUNDER Or parameter1 = C_KONSINYASI_PRIMER Or _
+        If parameter1 = C_KONSINYASI_SEKUNDER Or _
            parameter1 = C_RETUR_JUAL_KONSINYASI Then
 
             Db.FlushCache()
-            Db.Selects("a.kode_barangjadi, b.nama, c.jenis, a.stok")
+            Db.Selects("a.kode_barangjadi, b.nama, c.jenis, a.stok_sekunder as stok")
+            Db.From("tbl_persediaan_customer a")
+            Db.Join("tbl_barangjadi b", "b.kode_barangjadi = a.kode_barangjadi")
+            Db.Join("tbl_jenis_hargabarang c", "c.kode_jenis_harga = a.kode_jenis_harga")
+            Db.Where("a.kode_customer", kode_customer)
+
+            If txt_search.Text <> vbNullString Then
+                Db.Where(" AND a.kode_barangjadi LIKE '%" & txt_search.Text & "%'")
+            End If
+
+            GridControl1.DataSource = Connection.ExecuteToDataTable(Db.GetQueryString)
+
+            With GridView1
+                .Columns("kode_barangjadi").Caption = "Kode Artikel"
+                .Columns("nama").Caption = "Nama"
+                .Columns("jenis").Caption = "Jenis"
+                .Columns("stok").Caption = "Stok"
+            End With
+
+
+        ElseIf parameter1 = C_KONSINYASI_PRIMER Then
+
+            Db.FlushCache()
+            Db.Selects("a.kode_barangjadi, b.nama, c.jenis, a.stok_primer as stok")
             Db.From("tbl_persediaan_customer a")
             Db.Join("tbl_barangjadi b", "b.kode_barangjadi = a.kode_barangjadi")
             Db.Join("tbl_jenis_hargabarang c", "c.kode_jenis_harga = a.kode_jenis_harga")

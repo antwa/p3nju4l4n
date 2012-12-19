@@ -30,7 +30,7 @@
         Db.Selects("*")
         Db.From("tbl_kartustok_gudang")
         Db.Where("kode_barangjadi", kode_barangjadi.Text)
-        Db.Where_BetweenDate("tanggal", tg_dari.ToString("yyyy-MM-dd"), tg_sampai.ToString("yyyy-MM-dd"))
+        Db.Where_BetweenDate("tanggal", tg_dari, tg_sampai)
         Db.OrderBy("tanggal", cls_database.sorting.Ascending)
 
         Dim dt2 As DataTable = Connection.ExecuteToDataTable(Db.GetQueryString)

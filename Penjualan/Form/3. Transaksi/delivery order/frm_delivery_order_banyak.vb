@@ -136,7 +136,7 @@
             Db.FlushCache()
             Db.Insert("tbl_deliveryorder")
             Db.SetField("no_do", rcd_master.Rows(i).Item("no_do"))
-            Db.SetField("tgl_do", tgl_do.DateTime.ToString("yyyy-MM-dd HH:mm:ss"))
+            Db.SetField("tgl_do", tgl_do.DateTime)
             Db.SetField("no_so", rcd_master.Rows(i).Item("no_so"))
             Db.SetField("sistem_jual", sistem_jual)
             Db.SetField("kode_customer", rcd_master.Rows(i).Item("kode_customer"))
