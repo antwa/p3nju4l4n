@@ -30,19 +30,19 @@
     End Sub
 
     Private Sub SimpleButton2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SimpleButton2.Click
-        Dim dt As New DataTable
-        dt.Columns.Add("kode", GetType(String))
-        dt.Columns.Add("qty", GetType(Integer))
+        'Dim dt As New DataTable
+        'dt.Columns.Add("kode", GetType(String))
+        'dt.Columns.Add("qty", GetType(Integer))
 
-        dt.Rows.Add(New Object() {"K001", 2})
-        dt.Rows.Add(New Object() {"K001", 3})
-        dt.Rows.Add(New Object() {"K002", 1})
-        dt.Rows.Add(New Object() {"K003", 8})
+        'dt.Rows.Add(New Object() {"K001", 2})
+        'dt.Rows.Add(New Object() {"K001", 3})
+        'dt.Rows.Add(New Object() {"K002", 1})
+        'dt.Rows.Add(New Object() {"K003", 8})
 
-        Dim qry = From x In dt Group x By x.Item("kode") Into pGroup = Group Select x.Item("kode"), qty = pGroup.Sum(Function(x) x)
+        'Dim qry = From x In dt Group x By x.Item("kode") Into pGroup = Group Select x.Item("kode"), qty = pGroup.Sum(Function(x) x)
 
-        For Each xx In qry
-            MsgBox("Kode : " & xx.kode.ToString & vbCrLf & "Qty : " & xx.qty.ToString, MsgBoxStyle.Information)
-        Next
+        'For Each xx In qry
+        '    MsgBox("Kode : " & xx.kode.ToString & vbCrLf & "Qty : " & xx.qty.ToString, MsgBoxStyle.Information)
+        'Next
     End Sub
 End Class

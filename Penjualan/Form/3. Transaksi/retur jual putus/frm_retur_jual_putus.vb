@@ -136,7 +136,7 @@
         Db.FlushCache()
         Db.Insert("tbl_retur_jualputus")
         Db.SetField("no_retur", no_retur.Text)
-        Db.SetField("tgl_retur", tgl_retur.DateTime.ToString("yyyy-MM-dd HH:mm:ss"))
+        Db.SetField("tgl_retur", tgl_retur.DateTime)
         Db.SetField("kode_customer", getValueFromLookup(kode_customer))
         Db.SetField("total_qty", GridView1.Columns("jml_retur").Summary(0).SummaryValue)
         Db.SetField("total", GridView1.Columns("total").Summary(0).SummaryValue)

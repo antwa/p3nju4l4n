@@ -486,6 +486,31 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form\8. Persediaan\kartu stok gudang\rcd_kartu_stok_gudang.vb" />
+    <Compile Include="Form\8. Persediaan\stok customer\frm_histori_harga.Designer.vb">
+      <DependentUpon>frm_histori_harga.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\8. Persediaan\stok customer\frm_histori_harga.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\8. Persediaan\stok customer\frm_histori_harga_add.Designer.vb">
+      <DependentUpon>frm_histori_harga_add.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\8. Persediaan\stok customer\frm_histori_harga_add.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\8. Persediaan\stok customer\frm_stok_customer.Designer.vb">
+      <DependentUpon>frm_stok_customer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\8. Persediaan\stok customer\frm_stok_customer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\8. Persediaan\stok customer\rcd_histori_harga_add.vb" />
+    <Compile Include="Form\8. Persediaan\stok gudang\frm_stok_gudang.Designer.vb">
+      <DependentUpon>frm_stok_gudang.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\8. Persediaan\stok gudang\frm_stok_gudang.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form\Form Main\formLogin.Designer.vb">
       <DependentUpon>formLogin.vb</DependentUpon>
     </Compile>
@@ -731,6 +756,22 @@
       <DependentUpon>frm_kartu_stok_gudang.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form\8. Persediaan\stok customer\frm_histori_harga.resx">
+      <DependentUpon>frm_histori_harga.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\8. Persediaan\stok customer\frm_histori_harga_add.resx">
+      <DependentUpon>frm_histori_harga_add.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\8. Persediaan\stok customer\frm_stok_customer.resx">
+      <DependentUpon>frm_stok_customer.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\8. Persediaan\stok gudang\frm_stok_gudang.resx">
+      <DependentUpon>frm_stok_gudang.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\Form Main\formLogin.resx">
       <DependentUpon>formLogin.vb</DependentUpon>
       <SubType>Designer</SubType>
@@ -812,8 +853,6 @@
     <Folder Include="Form\5. Hutang Piutang\" />
     <Folder Include="Form\6. Kas dan Bank\" />
     <Folder Include="Form\7. Utility\" />
-    <Folder Include="Form\8. Persediaan\stok customer\" />
-    <Folder Include="Form\8. Persediaan\stok gudang\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

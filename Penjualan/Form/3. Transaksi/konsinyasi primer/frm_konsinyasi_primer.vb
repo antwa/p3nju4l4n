@@ -397,7 +397,7 @@ Public Class frm_konsinyasi_primer
         Db.FlushCache()
         Db.Insert("tbl_konsinyasiprimer")
         Db.SetField("no_penjualan", no_penjualan.Text)
-        Db.SetField("tgl_terbit", tgl_terbit.DateTime.ToString("yyyy-MM-dd HH:mm:ss"))
+        Db.SetField("tgl_terbit", tgl_terbit.DateTime)
         Db.SetField("kode_customer", vkode_customer)
         Db.SetField("margin", sebelum_disc_acara.EditValue)
         Db.SetField("disc_acara", disc_acara.Text)
@@ -422,7 +422,7 @@ Public Class frm_konsinyasi_primer
             Db.FlushCache()
             Db.Insert("tbl_konsinyasiprimer_detail")
             Db.SetField("no_penjualan", no_penjualan.Text)
-            Db.SetField("tgl_transaksi", rcd_list.Item(i).tgl_transaksi.ToString("yyyy-MM-dd HH:mm:ss"))
+            Db.SetField("tgl_transaksi", rcd_list.Item(i).tgl_transaksi)
             Db.SetField("kode_barangjadi", rcd_list.Item(i).kode_barangjadi)
             Db.SetField("qty", rcd_list.Item(i).qty)
             Db.SetField("harga", rcd_list.Item(i).harga)
@@ -521,7 +521,7 @@ Public Class frm_konsinyasi_primer
 
                         '# get barang jadi
                         Db.FlushCache()
-                        Db.Selects("a.kode_barangjadi, b.nama, c.jenis, a.stok")
+                        Db.Selects("a.kode_barangjadi, b.nama, c.jenis, a.stok_primer as stok")
                         Db.From("tbl_persediaan_customer a")
                         Db.Join("tbl_barangjadi b", "b.kode_barangjadi = a.kode_barangjadi")
                         Db.Join("tbl_jenis_hargabarang c", "c.kode_jenis_harga = a.kode_jenis_harga")

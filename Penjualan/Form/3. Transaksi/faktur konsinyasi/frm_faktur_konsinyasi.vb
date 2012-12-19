@@ -117,7 +117,7 @@
         Db.From("tbl_konsinyasiprimer")
         Db.Where("kode_customer", kode_customer.Properties.GetKeyValueByDisplayText(kode_customer.Text))
         Db.Where("status", "0") ' statusnya yg belum dibuat faktur
-        Db.Where_BetweenDate("tgl_terbit", tgl_dari.DateTime.ToString("yyyy-MM-dd"), tgl_sampai.DateTime.ToString("yyyy-MM-dd"))
+        Db.Where_BetweenDate("tgl_terbit", tgl_dari.DateTime, tgl_sampai.DateTime)
         Db.OrderBy("no_penjualan", cls_database.sorting.Ascending)
 
         Dim rcd As SqlClient.SqlDataReader = Connection.ExecuteToDataReader(Db.GetQueryString)
@@ -200,8 +200,8 @@
         Db.FlushCache()
         Db.Insert("tbl_fakturkonsinyasi")
         Db.SetField("no_faktur", no_faktur.Text)
-        Db.SetField("tgl_terbit", tgl_terbit.DateTime.ToString("yyyy-MM-dd HH:mm:ss"))
-        Db.SetField("tgl_jatuhtempo", tgl_jatuhtempo.DateTime.ToString("yyyy-MM-dd HH:mm:ss"))
+        Db.SetField("tgl_terbit", tgl_terbit.DateTime)
+        Db.SetField("tgl_jatuhtempo", tgl_jatuhtempo.DateTime)
         Db.SetField("kode_customer", vkode_customer)
         'Db.SetField("margin_toko", )
         'Db.SetField("margin_konsumen", )
@@ -224,7 +224,7 @@
             Db.FlushCache()
             Db.Insert("tbl_fakturkonsinyasi_detail")
             Db.SetField("no_faktur", no_faktur.Text)
-            Db.SetField("tgl_konsinyasi", rcd_list.Item(i).tgl_terbit.ToString("yyyy-MM-dd HH:mm:ss"))
+            Db.SetField("tgl_konsinyasi", rcd_list.Item(i).tgl_terbit)
             Db.SetField("no_penjualan", rcd_list.Item(i).no_penjualan)
             Db.SetField("disc_acara_kita", rcd_list.Item(i).disc_acara_kita)
             Db.SetField("disc_acara_toko", rcd_list.Item(i).disc_acara_toko)

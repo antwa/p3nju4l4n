@@ -162,7 +162,7 @@
             '# mengurangi stok customer
             query = ""
             query &= " UPDATE tbl_persediaan_customer "
-            query &= " SET stok = stok - " & rcd_list.Item(i).jml_retur & " "
+            query &= " SET stok_sekunder = stok_sekunder - " & rcd_list.Item(i).jml_retur & ", stok_primer = stok_primer - " & rcd_list.Item(i).jml_retur & " "
             query &= " WHERE kode_customer = '" & getValueFromLookup(kode_customer) & "' AND kode_barangjadi = '" & rcd_list.Item(i).kode_barangjadi & "'"
             Connection.TRANS_ADD(query)
 

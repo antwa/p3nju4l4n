@@ -24,7 +24,7 @@
         Db.Where(" WHERE (a.status = '0') ")
         Db.Where("a.sistem_jual", sistem_jual.EditValue)
 
-        Db.Where_BetweenDate("a.tgl_so", tgl_dari.DateTime.ToString("yyyy-MM-dd"), tgl_sampai.DateTime.ToString("yyyy-MM-dd"))
+        Db.Where_BetweenDate("a.tgl_so", tgl_dari.DateTime, tgl_sampai.DateTime)
 
         If rd_tujuan.EditValue = 2 Then
             Db.Where("a.kode_customer", kode_customer.Properties.GetKeyValueByDisplayText(kode_customer.Text))
@@ -126,5 +126,9 @@
         Catch ex As Exception
 
         End Try
+    End Sub
+
+    Private Sub cmd_print_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_print.Click
+
     End Sub
 End Class
