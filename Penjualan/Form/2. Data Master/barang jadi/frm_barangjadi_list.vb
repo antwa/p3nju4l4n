@@ -35,7 +35,24 @@
     End Sub
 
     Private Sub cmd_hapus_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_hapus.Click
+        Try
+            Dim row As System.Data.DataRow = GridView1.GetDataRow(GridView1.FocusedRowHandle)
+            If MsgBox("Kode Artikel : " & row("kode_barangjadi") & vbCrLf & "Nama : " & row("nama") & vbCrLf & vbCrLf & _
+                      "Apakah akan menghapus artikel diatas?", MsgBoxStyle.Information + MsgBoxStyle.YesNo, "Delete Artikel") = MsgBoxResult.Yes Then
+                Db.FlushCache()
+                Db.Delete("tbl_barangjadi")
+                Db.Where("kode_barangjadi", row("kode_barangjadi"))
 
+                If Connection.ExecuteNonQuery(Db.GetQueryString) Then
+                    MsgBox("Data berhasil dihapus", MsgBoxStyle.Information)
+                    Call Me.loadData()
+                Else
+                    MsgBox("Data gagal dihapus", MsgBoxStyle.Exclamation)
+                End If
+            End If
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     Private Sub search_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles search.KeyPress

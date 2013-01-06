@@ -269,6 +269,9 @@ Partial Class frm_faktur_konsinyasi
         Me.txt_total_netto.Properties.Appearance.Options.UseFont = True
         Me.txt_total_netto.Properties.Appearance.Options.UseTextOptions = True
         Me.txt_total_netto.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.txt_total_netto.Properties.Mask.EditMask = "n0"
+        Me.txt_total_netto.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
+        Me.txt_total_netto.Properties.Mask.UseMaskAsDisplayFormat = True
         Me.txt_total_netto.Properties.ReadOnly = True
         Me.txt_total_netto.Size = New System.Drawing.Size(127, 21)
         Me.txt_total_netto.TabIndex = 78
@@ -292,6 +295,9 @@ Partial Class frm_faktur_konsinyasi
         Me.potongan_harga.Properties.Appearance.Options.UseFont = True
         Me.potongan_harga.Properties.Appearance.Options.UseTextOptions = True
         Me.potongan_harga.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.potongan_harga.Properties.Mask.EditMask = "n0"
+        Me.potongan_harga.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
+        Me.potongan_harga.Properties.Mask.UseMaskAsDisplayFormat = True
         Me.potongan_harga.Size = New System.Drawing.Size(127, 21)
         Me.potongan_harga.TabIndex = 79
         '
@@ -304,6 +310,9 @@ Partial Class frm_faktur_konsinyasi
         Me.txt_total.Properties.Appearance.Options.UseFont = True
         Me.txt_total.Properties.Appearance.Options.UseTextOptions = True
         Me.txt_total.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.txt_total.Properties.Mask.EditMask = "n0"
+        Me.txt_total.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
+        Me.txt_total.Properties.Mask.UseMaskAsDisplayFormat = True
         Me.txt_total.Properties.ReadOnly = True
         Me.txt_total.Size = New System.Drawing.Size(127, 21)
         Me.txt_total.TabIndex = 80

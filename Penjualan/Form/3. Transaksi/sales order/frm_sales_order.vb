@@ -188,11 +188,12 @@ Public Class frm_sales_order
             '# delete row new item
             rcd_list.RemoveAt(rcd_list.Count - 1)
 
+            '# Print
             Dim rpt As New rpt_sales_order
             rpt.BindingSource1.DataSource = rcd_list
             rpt.no_so.Text = "Nomor : " & no_so.Text
-            rpt.tgl_rinciandist.Text = tgl_rinciandist.DateTime.ToString("dd/MM/yyy")
-            rpt.tgl_kirim.Text = tgl_kirim.DateTime.ToString("dd/MM/yyy")
+            rpt.tgl_rinciandist.Text = tgl_rinciandist.DateTime.ToString("dd/MM/yyyy")
+            rpt.tgl_kirim.Text = tgl_kirim.DateTime.ToString("dd/MM/yyyy")
             rpt.nama.Text = rcustomer.Item("nama").ToString
             rpt.alamat.Text = rcustomer.Item("alamat").ToString
             rpt.mall.Text = rcustomer.Item("mall").ToString

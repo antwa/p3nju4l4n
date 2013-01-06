@@ -250,7 +250,25 @@
 
         '# COMMITE TRANSAKSI
         If Connection.TRANS_SUCCESS Then
-            MsgBox("Data berhasil disimpan...", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Pesan")
+            'MsgBox("Data berhasil disimpan...", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Pesan")
+
+            '# Print
+            Dim rpt As New rpt_faktur_konsinyasi_primer
+            rpt.BindingSource1.DataSource = rcd_list
+            rpt.lbl_kode_customer.Text = getValueFromLookup(kode_customer)
+            rpt.lbl_nama_customer.Text = kode_customer.Text
+            rpt.lbl_no_faktur.Text = no_faktur.Text
+            rpt.lbl_potongan.Text = potongan_deskripsi.Text & " : " & potongan_harga.EditValue
+            rpt.lbl_tanggal_terbit.Text = tgl_terbit.Text
+            rpt.CreateDocument()
+
+            Dim fc As New FormReportControl
+            fc.Text = "Print Faktur Konsinyasi"
+            fc.PrintControl1.PrintingSystem = rpt.PrintingSystem
+            fc.Height = 600
+            fc.ShowDialog(Me)
+
+
             Call initComponent()
         Else
             MsgBox(Connection.TRANS_MESSAGE) ' transaksi gagal dan secara otomatis akan di rollback

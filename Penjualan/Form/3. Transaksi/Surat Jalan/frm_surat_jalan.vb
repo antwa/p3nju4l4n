@@ -1,11 +1,13 @@
 ﻿Public Class frm_surat_jalan 
 
     Public rcd_list As System.ComponentModel.BindingList(Of rcd_surat_jalan)
+    Public rpt_multi As New DevExpress.XtraReports.UI.XtraReport
 
     Dim kode_customer As String
     Dim sistem_jual As String
 
     Sub initComponent()
+        rpt_multi = New DevExpress.XtraReports.UI.XtraReport
         rcd_list = New System.ComponentModel.BindingList(Of rcd_surat_jalan)
         GridControl1.DataSource = rcd_list
 
@@ -191,7 +193,7 @@
 
             Connection.TRANS_ADD(Db.GetQueryString)
 
-            If sistem_jual = "1" Then
+            If sistem_jual = "1" Then ' konsinyasi
                 '# insert ato update ke persediaan customer
                 '  jika sudah ada update stok customer, jika belum ada insert ke table persediaan customer dan insert ke table histori harga jual customer
                 '------------------------------------------
@@ -251,7 +253,27 @@
         '-----------------------------------------------------------------------------------------------------
 
         If Connection.TRANS_SUCCESS Then
-            MsgBox("Data berhasil disimpan...", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Pesan")
+            '# Print
+            Dim rpt As New rpt_surat_jalan
+            rpt.BindingSource1.DataSource = rcd_list
+            rpt.no_surat.Text = no_surat.Text
+            rpt.no_do.Text = no_do.Text
+            rpt.tgl_surat.Text = tgl_surat.DateTime.ToString("dd/MM/yyyy")
+            rpt.nama.Text = lbl_nama.Text
+            rpt.alamat.Text = lbl_alamat.Text
+            rpt.mall.Text = lbl_mall.Text
+            rpt.kota.Text = lbl_kota.Text
+            rpt.CreateDocument()
+
+            '#Tambahkan Page Ke Report
+            rpt_multi.Pages.AddRange(rpt.Pages)
+
+            Dim fc As New FormReportControl
+            fc.Text = IIf(sistem_jual = "1", "Print Surat Jalan", "Print Faktur dan Surat Jalan")
+            fc.PrintControl1.PrintingSystem = rpt_multi.PrintingSystem
+            fc.Height = 600
+            fc.ShowDialog(Me)
+
             Call initComponent()
         Else
             MsgBox(Connection.TRANS_MESSAGE, MsgBoxStyle.Exclamation)

@@ -19,12 +19,15 @@ Partial Class frm_stok_gudang
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_stok_gudang))
         Me.cmd_print = New DevExpress.XtraEditors.SimpleButton
         Me.cmd_excel = New DevExpress.XtraEditors.SimpleButton
         Me.GridControl1 = New DevExpress.XtraGrid.GridControl
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView
         Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl
-        Me.ComboBoxEdit1 = New DevExpress.XtraEditors.ComboBoxEdit
+        Me.chk_all_aartikel = New DevExpress.XtraEditors.CheckEdit
+        Me.stok = New DevExpress.XtraEditors.ComboBoxEdit
         Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl
         Me.cmd_cari = New DevExpress.XtraEditors.SimpleButton
         Me.LabelControl5 = New DevExpress.XtraEditors.LabelControl
@@ -37,12 +40,15 @@ Partial Class frm_stok_gudang
         Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl
         Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl
         Me.tgl_dari = New DevExpress.XtraEditors.DateEdit
-        Me.CheckEdit1 = New DevExpress.XtraEditors.CheckEdit
+        Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog
+        Me.PrintingSystem1 = New DevExpress.XtraPrinting.PrintingSystem(Me.components)
+        Me.PrintableComponentLink1 = New DevExpress.XtraPrinting.PrintableComponentLink(Me.components)
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl2.SuspendLayout()
-        CType(Me.ComboBoxEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.chk_all_aartikel.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.stok.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.kode_barangjadi.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
@@ -50,7 +56,8 @@ Partial Class frm_stok_gudang
         CType(Me.tgl_sampai.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tgl_dari.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tgl_dari.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.CheckEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PrintingSystem1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PrintableComponentLink1.ImageCollection, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'cmd_print
@@ -100,8 +107,8 @@ Partial Class frm_stok_gudang
         '
         Me.GroupControl2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupControl2.Controls.Add(Me.CheckEdit1)
-        Me.GroupControl2.Controls.Add(Me.ComboBoxEdit1)
+        Me.GroupControl2.Controls.Add(Me.chk_all_aartikel)
+        Me.GroupControl2.Controls.Add(Me.stok)
         Me.GroupControl2.Controls.Add(Me.LabelControl2)
         Me.GroupControl2.Controls.Add(Me.cmd_cari)
         Me.GroupControl2.Controls.Add(Me.LabelControl5)
@@ -113,15 +120,23 @@ Partial Class frm_stok_gudang
         Me.GroupControl2.Size = New System.Drawing.Size(438, 112)
         Me.GroupControl2.TabIndex = 39
         '
-        'ComboBoxEdit1
+        'chk_all_aartikel
         '
-        Me.ComboBoxEdit1.Location = New System.Drawing.Point(103, 85)
-        Me.ComboBoxEdit1.Name = "ComboBoxEdit1"
-        Me.ComboBoxEdit1.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBoxEdit1.Properties.Appearance.Options.UseFont = True
-        Me.ComboBoxEdit1.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.ComboBoxEdit1.Size = New System.Drawing.Size(149, 21)
-        Me.ComboBoxEdit1.TabIndex = 36
+        Me.chk_all_aartikel.Location = New System.Drawing.Point(343, 27)
+        Me.chk_all_aartikel.Name = "chk_all_aartikel"
+        Me.chk_all_aartikel.Properties.Caption = "Semua"
+        Me.chk_all_aartikel.Size = New System.Drawing.Size(59, 19)
+        Me.chk_all_aartikel.TabIndex = 37
+        '
+        'stok
+        '
+        Me.stok.Location = New System.Drawing.Point(103, 85)
+        Me.stok.Name = "stok"
+        Me.stok.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.stok.Properties.Appearance.Options.UseFont = True
+        Me.stok.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.stok.Size = New System.Drawing.Size(149, 21)
+        Me.stok.TabIndex = 36
         '
         'LabelControl2
         '
@@ -239,13 +254,22 @@ Partial Class frm_stok_gudang
         Me.tgl_dari.Size = New System.Drawing.Size(167, 21)
         Me.tgl_dari.TabIndex = 25
         '
-        'CheckEdit1
+        'PrintingSystem1
         '
-        Me.CheckEdit1.Location = New System.Drawing.Point(343, 27)
-        Me.CheckEdit1.Name = "CheckEdit1"
-        Me.CheckEdit1.Properties.Caption = "Semua"
-        Me.CheckEdit1.Size = New System.Drawing.Size(59, 19)
-        Me.CheckEdit1.TabIndex = 37
+        Me.PrintingSystem1.Links.AddRange(New Object() {Me.PrintableComponentLink1})
+        '
+        'PrintableComponentLink1
+        '
+        Me.PrintableComponentLink1.Component = Me.GridControl1
+        '
+        '
+        '
+        Me.PrintableComponentLink1.ImageCollection.ImageStream = CType(resources.GetObject("PrintableComponentLink1.ImageCollection.ImageStream"), DevExpress.Utils.ImageCollectionStreamer)
+        Me.PrintableComponentLink1.PrintingSystem = Me.PrintingSystem1
+        Me.PrintableComponentLink1.PrintingSystemBase = Me.PrintingSystem1
+        Me.PrintableComponentLink1.RtfReportHeader = "{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fnil\fcharset0 Times New R" & _
+            "oman;}}" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "\viewkind4\uc1\pard\qc\b\f0\fs24 LAPORAN STOK GUDANG\b0\fs20\par" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "$tgl_" & _
+            "dari/$tgl_sampai\par" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "\par" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "\par" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "}" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
         'frm_stok_gudang
         '
@@ -259,13 +283,14 @@ Partial Class frm_stok_gudang
         Me.Controls.Add(Me.GroupControl2)
         Me.Controls.Add(Me.GroupControl1)
         Me.Name = "frm_stok_gudang"
-        Me.Text = "frm_stok_gudang"
+        Me.Text = "Stok Gudang"
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl2.ResumeLayout(False)
         Me.GroupControl2.PerformLayout()
-        CType(Me.ComboBoxEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.chk_all_aartikel.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.stok.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.kode_barangjadi.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)
@@ -274,7 +299,8 @@ Partial Class frm_stok_gudang
         CType(Me.tgl_sampai.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.tgl_dari.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.tgl_dari.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.CheckEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PrintingSystem1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PrintableComponentLink1.ImageCollection, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -294,7 +320,10 @@ Partial Class frm_stok_gudang
     Friend WithEvents LabelControl1 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl3 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents tgl_dari As DevExpress.XtraEditors.DateEdit
-    Friend WithEvents ComboBoxEdit1 As DevExpress.XtraEditors.ComboBoxEdit
+    Friend WithEvents stok As DevExpress.XtraEditors.ComboBoxEdit
     Friend WithEvents LabelControl2 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents CheckEdit1 As DevExpress.XtraEditors.CheckEdit
+    Friend WithEvents chk_all_aartikel As DevExpress.XtraEditors.CheckEdit
+    Friend WithEvents SaveFileDialog1 As System.Windows.Forms.SaveFileDialog
+    Friend WithEvents PrintingSystem1 As DevExpress.XtraPrinting.PrintingSystem
+    Friend WithEvents PrintableComponentLink1 As DevExpress.XtraPrinting.PrintableComponentLink
 End Class

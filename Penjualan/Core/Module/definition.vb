@@ -29,7 +29,7 @@
     Public Const C_FAKTUR_KONSINYASI As Integer = 8 ' faktur konsinyasi
     Public Const C_RETUR_JUAL_KONSINYASI As Integer = 9
     Public Const C_RETUR_JUAL_PUTUS As Integer = 10
-
     Public Const C_GETARTIKEL As Integer = 11 ' untuk mengambil kode artikel dan nama artikel di frm_transaksi_popup_artkel.vb
+    Public Const C_RENCANA_DISTRIBUSI As Integer = 12
 
 End Module

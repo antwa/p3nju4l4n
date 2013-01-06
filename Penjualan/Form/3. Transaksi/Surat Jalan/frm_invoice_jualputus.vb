@@ -120,6 +120,28 @@
                 Connection.TRANS_ADD(Db.GetQueryString)
 
             Next
+
+            '# Print
+            Dim rpt As New rpt_invoice
+            rpt.BindingSource1.DataSource = .rcd_list
+            rpt.no_faktur.Text = no_faktur.Text
+            rpt.no_suratjalan.Text = no_suratjalan.Text
+            rpt.tgl_surat.Text = .tgl_surat.DateTime.ToString("dd/MM/yyyy")
+            rpt.nama.Text = lbl_nama.Text
+            rpt.alamat.Text = lbl_alamat.Text
+            rpt.mall.Text = lbl_mall.Text
+            rpt.kota.Text = lbl_kota.Text
+
+            rpt.lbl_subtotal.Text = Me.GridView1.Columns("total").Summary.Item(0).SummaryValue
+            rpt.lbl_lebihbayar.Text = lebih_bayar.Text
+            rpt.lbl_diskon.Text = diskon.Text
+            rpt.lbl_total.Text = total.Text
+
+            rpt.CreateDocument()
+
+            '#Tambahkan Page Ke Report
+            .rpt_multi.Pages.AddRange(rpt.Pages)
+
         End With
         
         Me.Close()

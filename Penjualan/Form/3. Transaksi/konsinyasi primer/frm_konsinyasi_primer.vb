@@ -510,6 +510,8 @@ Public Class frm_konsinyasi_primer
         End If
 
         If Asc(e.KeyChar) = 13 Then
+            If rcd_list.Item(row).kode_barangjadi = vbNullString Then Exit Sub
+
             Select Case view.FocusedColumn.FieldName
                 Case "kode_barangjadi"
                     Dim tmp_kode_barangjadi As String = rcd_list.Item(row).kode_barangjadi
