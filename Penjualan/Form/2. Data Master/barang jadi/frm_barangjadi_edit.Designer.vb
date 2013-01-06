@@ -133,6 +133,11 @@ Partial Class frm_barangjadi_edit
         Me.harga_pokok.Name = "harga_pokok"
         Me.harga_pokok.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.harga_pokok.Properties.Appearance.Options.UseFont = True
+        Me.harga_pokok.Properties.Appearance.Options.UseTextOptions = True
+        Me.harga_pokok.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.harga_pokok.Properties.Mask.EditMask = "n0"
+        Me.harga_pokok.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
+        Me.harga_pokok.Properties.Mask.UseMaskAsDisplayFormat = True
         Me.harga_pokok.Size = New System.Drawing.Size(133, 21)
         Me.harga_pokok.TabIndex = 60
         '

@@ -71,38 +71,61 @@
         Dim query As String
 
         '# Validasi
+        If rcd_list.Count <= 0 Then
+            MsgBox("Tidak ada data untuk ditambah!" & vbCrLf & vbCrLf & "Silakan load data terlebih dahulu", MsgBoxStyle.Exclamation)
+            Exit Sub
+        End If
 
-        Connection.TRANS_START()
-
+        ' harus ada data yg diceklis minimal satu
+        Dim cek As Integer = 0
         For i = 0 To rcd_list.Count - 1
-            If rcd_list.Item(i).checked Then
-                query = ""
-                query &= "IF EXISTS (SELECT * FROM tbl_histori_hargacustomer WHERE kode_customer = '" & rcd_list(i).kode_customer & "' AND kode_barangjadi = '" & kode_barangjadi.Text & "' AND CONVERT(varchar, tanggal, 111) = '" & tanggal.DateTime.ToString("yyyy/MM/dd") & "') "
-                query &= "	BEGIN "
-                query &= "		UPDATE tbl_histori_hargacustomer "
-                query &= "		SET harga = " & harga.EditValue & ", diskon = " & diskon.EditValue & " "
-                query &= "		WHERE kode_customer = '" & rcd_list(i).kode_customer & "' AND kode_barangjadi = '" & kode_barangjadi.Text & "' "
-                query &= "      AND CONVERT(varchar, tanggal, 111) = '" & tanggal.DateTime.ToString("yyyy/MM/dd") & "' "
-                query &= "	END "
-                query &= "ELSE "
-                query &= "	BEGIN "
-                query &= "		INSERT INTO tbl_histori_hargacustomer (tanggal, kode_customer, kode_barangjadi, harga, diskon) "
-                query &= "		VALUES "
-                query &= "		('" & tanggal.DateTime.ToString("yyyy-MM-dd") & " 00:00:00', '" & rcd_list(i).kode_customer & "', '" & kode_barangjadi.Text & "', " & harga.EditValue & ", " & diskon.EditValue & ") "
-                query &= "  END "
-
-                Connection.TRANS_ADD(query)
-
-            End If
+            If rcd_list.Item(i).checked Then cek += 1
         Next
+        If cek = 0 Then
+            MsgBox("Tidak ada data untuk disimpan!", MsgBoxStyle.Exclamation)
+            Exit Sub
+        End If
 
-        If Connection.TRANS_SUCCESS Then
-            MsgBox("Data berhasil disimpan...", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Pesan")
-            'frm_histori_harga.loadData()
-            frm_histori_harga.Focus()
-            Me.Close()
+        Validation.clearRules()
+        Validation.addRules(harga.EditValue, "Harga", "required|numeric")
+        Validation.addRules(diskon.EditValue, "Diskon", "required|numeric")
+
+        If Validation.isValid Then
+            Connection.TRANS_START()
+
+            For i = 0 To rcd_list.Count - 1
+                If rcd_list.Item(i).checked Then
+                    query = ""
+                    query &= "IF EXISTS (SELECT * FROM tbl_histori_hargacustomer WHERE kode_customer = '" & rcd_list(i).kode_customer & "' AND kode_barangjadi = '" & kode_barangjadi.Text & "' AND CONVERT(varchar, tanggal, 111) = '" & tanggal.DateTime.ToString("yyyy/MM/dd") & "') "
+                    query &= "	BEGIN "
+                    query &= "		UPDATE tbl_histori_hargacustomer "
+                    query &= "		SET harga = " & harga.EditValue & ", diskon = " & diskon.EditValue & " "
+                    query &= "		WHERE kode_customer = '" & rcd_list(i).kode_customer & "' AND kode_barangjadi = '" & kode_barangjadi.Text & "' "
+                    query &= "      AND CONVERT(varchar, tanggal, 111) = '" & tanggal.DateTime.ToString("yyyy/MM/dd") & "' "
+                    query &= "	END "
+                    query &= "ELSE "
+                    query &= "	BEGIN "
+                    query &= "		INSERT INTO tbl_histori_hargacustomer (tanggal, kode_customer, kode_barangjadi, harga, diskon) "
+                    query &= "		VALUES "
+                    query &= "		('" & tanggal.DateTime.ToString("yyyy-MM-dd") & " 00:00:00', '" & rcd_list(i).kode_customer & "', '" & kode_barangjadi.Text & "', " & harga.EditValue & ", " & diskon.EditValue & ") "
+                    query &= "  END "
+
+                    Connection.TRANS_ADD(query)
+
+                End If
+            Next
+
+            If Connection.TRANS_SUCCESS Then
+                MsgBox("Data berhasil disimpan...", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Pesan")
+                'frm_histori_harga.loadData()
+                frm_histori_harga.Focus()
+                Me.Close()
+            Else
+                MsgBox(Connection.TRANS_MESSAGE, MsgBoxStyle.Exclamation)
+            End If
+
         Else
-            MsgBox(Connection.TRANS_MESSAGE, MsgBoxStyle.Exclamation)
+            Validation.showMessage()
         End If
 
     End Sub

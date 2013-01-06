@@ -63,10 +63,10 @@ Partial Class frm_invoice_jualputus
         Me.GridControl1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
                     Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GridControl1.Location = New System.Drawing.Point(12, 120)
+        Me.GridControl1.Location = New System.Drawing.Point(12, 126)
         Me.GridControl1.MainView = Me.GridView1
         Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.Size = New System.Drawing.Size(669, 175)
+        Me.GridControl1.Size = New System.Drawing.Size(669, 169)
         Me.GridControl1.TabIndex = 42
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
@@ -233,6 +233,9 @@ Partial Class frm_invoice_jualputus
         Me.diskon.Properties.Appearance.Options.UseFont = True
         Me.diskon.Properties.Appearance.Options.UseTextOptions = True
         Me.diskon.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.diskon.Properties.Mask.EditMask = "n0"
+        Me.diskon.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
+        Me.diskon.Properties.Mask.UseMaskAsDisplayFormat = True
         Me.diskon.Size = New System.Drawing.Size(140, 21)
         Me.diskon.TabIndex = 50
         '
@@ -246,6 +249,9 @@ Partial Class frm_invoice_jualputus
         Me.lebih_bayar.Properties.Appearance.Options.UseFont = True
         Me.lebih_bayar.Properties.Appearance.Options.UseTextOptions = True
         Me.lebih_bayar.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.lebih_bayar.Properties.Mask.EditMask = "n0"
+        Me.lebih_bayar.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
+        Me.lebih_bayar.Properties.Mask.UseMaskAsDisplayFormat = True
         Me.lebih_bayar.Size = New System.Drawing.Size(140, 21)
         Me.lebih_bayar.TabIndex = 51
         '
@@ -259,6 +265,9 @@ Partial Class frm_invoice_jualputus
         Me.total.Properties.Appearance.Options.UseFont = True
         Me.total.Properties.Appearance.Options.UseTextOptions = True
         Me.total.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.total.Properties.Mask.EditMask = "n0"
+        Me.total.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
+        Me.total.Properties.Mask.UseMaskAsDisplayFormat = True
         Me.total.Properties.ReadOnly = True
         Me.total.Size = New System.Drawing.Size(140, 21)
         Me.total.TabIndex = 52

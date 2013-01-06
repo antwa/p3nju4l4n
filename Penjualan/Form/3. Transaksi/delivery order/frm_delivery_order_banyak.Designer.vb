@@ -82,7 +82,7 @@ Partial Class frm_delivery_order_banyak
         Me.cmd_simpan.Name = "cmd_simpan"
         Me.cmd_simpan.Size = New System.Drawing.Size(107, 24)
         Me.cmd_simpan.TabIndex = 39
-        Me.cmd_simpan.Text = "Simpan && Print"
+        Me.cmd_simpan.Text = "Save && Print"
         '
         'cmd_cancel
         '

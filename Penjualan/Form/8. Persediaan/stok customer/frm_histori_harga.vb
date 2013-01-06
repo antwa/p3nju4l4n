@@ -52,6 +52,7 @@
 
         FormatColumnNumeric(GridView1.Columns("harga"))
 
+        '# Grouping
         GridView1.ClearGrouping()
 
         If chk_semua_customer.Checked Then
@@ -60,6 +61,8 @@
         Else
             GridView1.Columns("kode_barangjadi").GroupIndex = 0
         End If
+
+        GridView1.ExpandAllGroups()
 
     End Sub
 

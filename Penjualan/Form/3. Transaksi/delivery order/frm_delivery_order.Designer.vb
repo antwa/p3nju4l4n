@@ -38,7 +38,6 @@ Partial Class frm_delivery_order
         Me.cmd_input_satu = New DevExpress.XtraEditors.SimpleButton
         Me.cmd_input_n = New DevExpress.XtraEditors.SimpleButton
         Me.CheckEdit1 = New DevExpress.XtraEditors.CheckEdit
-        Me.cmd_print = New DevExpress.XtraEditors.SimpleButton
         CType(Me.tgl_dari.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tgl_dari.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tgl_sampai.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -259,21 +258,11 @@ Partial Class frm_delivery_order
         Me.CheckEdit1.Size = New System.Drawing.Size(113, 19)
         Me.CheckEdit1.TabIndex = 38
         '
-        'cmd_print
-        '
-        Me.cmd_print.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.cmd_print.Location = New System.Drawing.Point(629, 332)
-        Me.cmd_print.Name = "cmd_print"
-        Me.cmd_print.Size = New System.Drawing.Size(102, 24)
-        Me.cmd_print.TabIndex = 39
-        Me.cmd_print.Text = "Print"
-        '
         'frm_delivery_order
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(743, 368)
-        Me.Controls.Add(Me.cmd_print)
         Me.Controls.Add(Me.CheckEdit1)
         Me.Controls.Add(Me.cmd_input_n)
         Me.Controls.Add(Me.cmd_input_satu)
@@ -321,6 +310,5 @@ Partial Class frm_delivery_order
     Friend WithEvents cmd_input_satu As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents cmd_input_n As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents CheckEdit1 As DevExpress.XtraEditors.CheckEdit
-    Friend WithEvents cmd_print As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents cmd_load As DevExpress.XtraEditors.SimpleButton
 End Class

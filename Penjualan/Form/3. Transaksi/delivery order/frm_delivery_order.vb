@@ -128,7 +128,25 @@
         End Try
     End Sub
 
-    Private Sub cmd_print_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_print.Click
+    Private Sub cmd_cancel_do_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_cancel_do.Click
+        Try
+            Dim row As Integer = GridView1.FocusedRowHandle
+            If MsgBox("No SO : " & rcd_list.Item(row).no_so & vbCrLf & vbCrLf & "Apakah akan menghapus No SO diatas?", MsgBoxStyle.Exclamation + MsgBoxStyle.YesNo, "Cancel SO") = MsgBoxResult.Yes Then
+                Db.FlushCache()
+                Db.Update("tbl_salesorder")
+                Db.SetField("status", "2")
+                Db.Where("no_so", rcd_list.Item(row).no_so)
 
+                If Connection.ExecuteNonQuery(Db.GetQueryString) = True Then
+                    MsgBox("Data berhasil dihapus", MsgBoxStyle.Information)
+                    Call Me.loadData()
+                Else
+                    MsgBox("Data gagal dihapus", MsgBoxStyle.Exclamation)
+                End If
+
+            End If
+        Catch ex As Exception
+
+        End Try
     End Sub
 End Class

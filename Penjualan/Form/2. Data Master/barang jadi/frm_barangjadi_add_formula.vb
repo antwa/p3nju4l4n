@@ -1,5 +1,6 @@
 ﻿Imports DevExpress.XtraGrid.Views.Base
 Imports DevExpress.XtraGrid.Views.Grid
+Imports DevExpress.XtraGrid
 
 Public Class frm_barangjadi_add_formula
 
@@ -61,7 +62,7 @@ Public Class frm_barangjadi_add_formula
         End If
 
         For i = 0 To rcd_list.Rows.Count - 1
-            
+
             '# insert to table tbl_hargajual
             Db.FlushCache()
             Db.Insert("tbl_hargajual")
@@ -76,10 +77,6 @@ Public Class frm_barangjadi_add_formula
         Me.Close()
     End Sub
 
-    Private Sub GridControl1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GridControl1.Click
-
-    End Sub
-
     Private Sub cmd_hapus_baris_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_hapus_baris.Click
         Dim row As Integer = GridView1.FocusedRowHandle
         Try
@@ -88,4 +85,26 @@ Public Class frm_barangjadi_add_formula
 
         End Try
     End Sub
+
+    Private Sub GridControl1_EditorKeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles GridControl1.EditorKeyPress
+        Dim grid As GridControl = CType(sender, GridControl)
+        GridView1_KeyPress(grid.FocusedView, e)
+    End Sub
+
+    Private Sub GridView1_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles GridView1.KeyPress
+        Dim view As GridView = CType(sender, GridView)
+        Dim row As Integer = view.FocusedRowHandle
+        
+        If Asc(e.KeyChar) = 13 Then
+            Select Case view.FocusedColumn.FieldName
+                Case "harga"
+                    If row < GridView1.RowCount - 1 Then
+                        setFocusCell(GridView1, row + 1, "harga")
+                    Else
+                        setFocusCell(GridView1, 0, "harga")
+                    End If
+            End Select
+        End If
+    End Sub
+
 End Class

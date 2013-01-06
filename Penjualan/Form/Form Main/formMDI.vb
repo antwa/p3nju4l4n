@@ -115,4 +115,16 @@
     Private Sub cPersediaan_harga_customer_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles cPersediaan_harga_customer.ItemClick
         LoadFormToTab(frm_histori_harga)
     End Sub
+
+    Private Sub cPersediaan_stok_customer_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles cPersediaan_stok_customer.ItemClick
+        LoadFormToTab(frm_stok_customer)
+    End Sub
+
+    Private Sub cTransaksi_rencanadistribusi_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles cTransaksi_rencanadistribusi.ItemClick
+        LoadFormToTab(frm_rencana_distribusi)
+    End Sub
+
+    Private Sub cPersediaan_gudang_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles cPersediaan_gudang.ItemClick
+        LoadFormToTab(frm_stok_gudang)
+    End Sub
 End Class

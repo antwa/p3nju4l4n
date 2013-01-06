@@ -190,7 +190,12 @@ Partial Class frm_histori_harga_add
         Me.harga.Name = "harga"
         Me.harga.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.harga.Properties.Appearance.Options.UseFont = True
+        Me.harga.Properties.Appearance.Options.UseTextOptions = True
+        Me.harga.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
         Me.harga.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.harga.Properties.Mask.EditMask = "n0"
+        Me.harga.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
+        Me.harga.Properties.Mask.UseMaskAsDisplayFormat = True
         Me.harga.Size = New System.Drawing.Size(144, 21)
         Me.harga.TabIndex = 87
         '
@@ -222,7 +227,12 @@ Partial Class frm_histori_harga_add
         Me.diskon.Name = "diskon"
         Me.diskon.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.diskon.Properties.Appearance.Options.UseFont = True
+        Me.diskon.Properties.Appearance.Options.UseTextOptions = True
+        Me.diskon.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
         Me.diskon.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.diskon.Properties.Mask.EditMask = "n0"
+        Me.diskon.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
+        Me.diskon.Properties.Mask.UseMaskAsDisplayFormat = True
         Me.diskon.Size = New System.Drawing.Size(63, 21)
         Me.diskon.TabIndex = 89
         '

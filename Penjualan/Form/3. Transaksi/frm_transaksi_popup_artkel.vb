@@ -4,6 +4,7 @@
     Public kode_customer As String
 
     Public txt_artikel As DevExpress.XtraEditors.TextEdit
+    Public txt_stok As DevExpress.XtraEditors.TextEdit
     Public lbl_nama_artikel As DevExpress.XtraEditors.LabelControl
     
     Sub initGrid()
@@ -320,6 +321,11 @@
                 txt_artikel.Text = row("kode_barangjadi")
                 Try
                     lbl_nama_artikel.Text = row("nama")
+                Catch ex As Exception
+
+                End Try
+                Try
+                    txt_stok.Text = row("stok")
                 Catch ex As Exception
 
                 End Try
