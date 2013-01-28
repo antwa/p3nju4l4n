@@ -146,7 +146,7 @@
                 Db.SetField("kode_barangjadi", rcd_list.Item(i).kode_barangjadi)
                 Db.SetField("qty_retur", rcd_list.Item(i).qty)
                 Db.SetField("value_retur", rcd_list.Item(i).value_retur)
-                Db.SetField("ketarangan", rcd_list.Item(i).keterangan)
+                Db.SetField("keterangan", rcd_list.Item(i).keterangan)
 
                 Connection.TRANS_ADD(Db.GetQueryString)
 

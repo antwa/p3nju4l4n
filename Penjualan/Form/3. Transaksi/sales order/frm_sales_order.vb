@@ -166,7 +166,7 @@ Public Class frm_sales_order
             Db.SetField("kode_hargajual", rcd_list.Item(i).kode_hargajual)
             Db.SetField("total", rcd_list.Item(i).total)
             Db.SetField("terkirim", "0")
-            Db.SetField("ketarangan", rcd_list.Item(i).keterangan)
+            Db.SetField("keterangan", rcd_list.Item(i).keterangan)
 
             Connection.TRANS_ADD(Db.GetQueryString)
 

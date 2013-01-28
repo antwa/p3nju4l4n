@@ -189,7 +189,7 @@
             Db.SetField("qty", rcd_list.Item(i).qty)
             Db.SetField("harga", rcd_list.Item(i).harga)
             Db.SetField("total", rcd_list.Item(i).total)
-            Db.SetField("ketarangan", rcd_list.Item(i).keterangan)
+            Db.SetField("keterangan", rcd_list.Item(i).keterangan)
 
             Connection.TRANS_ADD(Db.GetQueryString)
 
@@ -278,6 +278,10 @@
         Else
             MsgBox(Connection.TRANS_MESSAGE, MsgBoxStyle.Exclamation)
         End If
+
+    End Sub
+
+    Private Sub no_do_EditValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles no_do.EditValueChanged
 
     End Sub
 End Class

@@ -58,6 +58,10 @@
                 Db.From("tbl_rencana_distribusi")
                 Db.OrderBy("no_rencana", cls_database.sorting.Descending)
 
+            Case C_KELUAR_BARANG
+                Db.Selects("TOP 1 no_keluar AS nomor")
+                Db.From("tbl_keluar_barangjadi")
+                Db.OrderBy("no_keluar", cls_database.sorting.Descending)
         End Select
 
 

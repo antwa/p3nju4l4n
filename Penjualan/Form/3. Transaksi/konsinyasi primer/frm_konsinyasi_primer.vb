@@ -590,4 +590,8 @@ Public Class frm_konsinyasi_primer
     Private Sub GridControl1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GridControl1.Click
 
     End Sub
+
+    Private Sub kode_customer_EditValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles kode_customer.EditValueChanged
+        Call InformasiCustomer()
+    End Sub
 End Class

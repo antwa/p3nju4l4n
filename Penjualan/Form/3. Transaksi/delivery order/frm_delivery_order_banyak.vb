@@ -164,7 +164,7 @@
             Db.SetField("qty", rcd_detail.Item(i).jml_do)
             Db.SetField("kode_hargajual", rcd_detail.Item(i).kode_hargajual)
             Db.SetField("total", (rcd_detail.Item(i).jml_do * rcd_detail.Item(i).harga))
-            Db.SetField("ketarangan", rcd_detail.Item(i).keterangan)
+            Db.SetField("keterangan", rcd_detail.Item(i).keterangan)
 
             Connection.TRANS_ADD(Db.GetQueryString)
 

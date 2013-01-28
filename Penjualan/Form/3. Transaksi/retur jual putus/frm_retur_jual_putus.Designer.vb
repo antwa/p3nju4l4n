@@ -243,7 +243,7 @@ Partial Class frm_retur_jual_putus
         Me.Controls.Add(Me.LabelControl3)
         Me.Controls.Add(Me.tgl_retur)
         Me.Name = "frm_retur_jual_putus"
-        Me.Text = "Rertur Jual Konsinyasi"
+        Me.Text = "Rertur Jual Putus"
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.no_retur.Properties, System.ComponentModel.ISupportInitialize).EndInit()
