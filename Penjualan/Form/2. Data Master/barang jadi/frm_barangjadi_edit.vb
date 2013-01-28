@@ -75,7 +75,7 @@
             Db.FlushCache()
             Db.Update("tbl_barangjadi")
             Db.SetField("nama", nama.Text)
-            Db.SetField("harga_pokok", harga_pokok.Text)
+            Db.SetField("harga_pokok", harga_pokok.EditValue)
             Db.SetField("gambar", lbl_filename.Text)
             Db.SetField("keterangan", keterangan.Text)
             Db.Where("kode_barangjadi", txt_kode_barangjadi.Text)

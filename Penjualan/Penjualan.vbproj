@@ -379,6 +379,25 @@
     <Compile Include="Form\3. Transaksi\frm_transaksi_popup_harga.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Form\3. Transaksi\keluar barang\frm_keluar_barang.Designer.vb">
+      <DependentUpon>frm_keluar_barang.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\3. Transaksi\keluar barang\frm_keluar_barang.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\3. Transaksi\keluar barang\rcd_keluar_barang.vb" />
+    <Compile Include="Form\3. Transaksi\keluar barang\rpt_keluar_barang_harga.Designer.vb">
+      <DependentUpon>rpt_keluar_barang_harga.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\3. Transaksi\keluar barang\rpt_keluar_barang_harga.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Form\3. Transaksi\keluar barang\rpt_keluar_barang_non_harga.Designer.vb">
+      <DependentUpon>rpt_keluar_barang_non_harga.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\3. Transaksi\keluar barang\rpt_keluar_barang_non_harga.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Form\3. Transaksi\konsinyasi primer\frm_konsinyasi_primer.Designer.vb">
       <DependentUpon>frm_konsinyasi_primer.vb</DependentUpon>
     </Compile>
@@ -399,6 +418,19 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form\3. Transaksi\konsinyasi sekunder\rcd_konsinyasi_sekunder.vb" />
+    <Compile Include="Form\3. Transaksi\memo pengeluaran\frm_memo_pengeluaran.Designer.vb">
+      <DependentUpon>frm_memo_pengeluaran.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\3. Transaksi\memo pengeluaran\frm_memo_pengeluaran.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\3. Transaksi\memo pengeluaran\rcd_memo_pengeluaran.vb" />
+    <Compile Include="Form\3. Transaksi\memo pengeluaran\rpt_memo.Designer.vb">
+      <DependentUpon>rpt_memo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\3. Transaksi\memo pengeluaran\rpt_memo.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Form\3. Transaksi\penerimaan barang\frm_penerimaanbarang.Designer.vb">
       <DependentUpon>frm_penerimaanbarang.vb</DependentUpon>
     </Compile>
@@ -509,6 +541,12 @@
     <Compile Include="Form\4. Laporan\FormReportControl.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Form\4. Laporan\penerimaan barang\frm_lap_penerimaan_barang.Designer.vb">
+      <DependentUpon>frm_lap_penerimaan_barang.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\4. Laporan\penerimaan barang\frm_lap_penerimaan_barang.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form\8. Persediaan\kartu stok gudang\frm_kartu_stok_gudang.Designer.vb">
       <DependentUpon>frm_kartu_stok_gudang.vb</DependentUpon>
     </Compile>
@@ -540,6 +578,18 @@
       <DependentUpon>frm_stok_gudang.vb</DependentUpon>
     </Compile>
     <Compile Include="Form\8. Persediaan\stok gudang\frm_stok_gudang.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\9. Penggajian\input Gaji\frm_input_gaji_spg.Designer.vb">
+      <DependentUpon>frm_input_gaji_spg.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\9. Penggajian\input Gaji\frm_input_gaji_spg.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\9. Penggajian\Rekap Gaji\frm_rekap_gaji_spg.Designer.vb">
+      <DependentUpon>frm_rekap_gaji_spg.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\9. Penggajian\Rekap Gaji\frm_rekap_gaji_spg.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form\Form Main\formLogin.Designer.vb">
@@ -727,6 +777,18 @@
       <DependentUpon>frm_transaksi_popup_harga.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form\3. Transaksi\keluar barang\frm_keluar_barang.resx">
+      <DependentUpon>frm_keluar_barang.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\3. Transaksi\keluar barang\rpt_keluar_barang_harga.resx">
+      <DependentUpon>rpt_keluar_barang_harga.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\3. Transaksi\keluar barang\rpt_keluar_barang_non_harga.resx">
+      <DependentUpon>rpt_keluar_barang_non_harga.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\3. Transaksi\konsinyasi primer\frm_konsinyasi_primer.resx">
       <DependentUpon>frm_konsinyasi_primer.vb</DependentUpon>
       <SubType>Designer</SubType>
@@ -737,6 +799,14 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\3. Transaksi\konsinyasi sekunder\frm_konsinyasi_sekunder.resx">
       <DependentUpon>frm_konsinyasi_sekunder.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\3. Transaksi\memo pengeluaran\frm_memo_pengeluaran.resx">
+      <DependentUpon>frm_memo_pengeluaran.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\3. Transaksi\memo pengeluaran\rpt_memo.resx">
+      <DependentUpon>rpt_memo.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\3. Transaksi\penerimaan barang\frm_penerimaanbarang.resx">
@@ -803,6 +873,10 @@
       <DependentUpon>FormReportControl.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form\4. Laporan\penerimaan barang\frm_lap_penerimaan_barang.resx">
+      <DependentUpon>frm_lap_penerimaan_barang.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\8. Persediaan\kartu stok gudang\frm_kartu_stok_gudang.resx">
       <DependentUpon>frm_kartu_stok_gudang.vb</DependentUpon>
       <SubType>Designer</SubType>
@@ -821,6 +895,14 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\8. Persediaan\stok gudang\frm_stok_gudang.resx">
       <DependentUpon>frm_stok_gudang.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\9. Penggajian\input Gaji\frm_input_gaji_spg.resx">
+      <DependentUpon>frm_input_gaji_spg.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\9. Penggajian\Rekap Gaji\frm_rekap_gaji_spg.resx">
+      <DependentUpon>frm_rekap_gaji_spg.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\Form Main\formLogin.resx">
@@ -857,8 +939,10 @@
     <None Include="My Project\DataSources\rcd_cutting_keluar.datasource" />
     <None Include="My Project\DataSources\rcd_delivery_order_banyak.datasource" />
     <None Include="My Project\DataSources\rcd_faktur_konsinyasi.datasource" />
+    <None Include="My Project\DataSources\rcd_keluar_barang.datasource" />
     <None Include="My Project\DataSources\rcd_level.datasource" />
     <None Include="My Project\DataSources\rcd_level1.datasource" />
+    <None Include="My Project\DataSources\rcd_memo_pengeluaran.datasource" />
     <None Include="My Project\DataSources\rcd_po_bb.datasource" />
     <None Include="My Project\DataSources\rcd_sj_cutting.datasource" />
     <None Include="My Project\DataSources\rcd_sj_sablon.datasource" />
@@ -901,7 +985,6 @@
     <Folder Include="Form\2. Data Master\customer\" />
     <Folder Include="Form\2. Data Master\pegawai\" />
     <Folder Include="Form\4. Laporan\delivery order\" />
-    <Folder Include="Form\4. Laporan\penerimaan barang\" />
     <Folder Include="Form\4. Laporan\sales order\" />
     <Folder Include="Form\5. Hutang Piutang\" />
     <Folder Include="Form\6. Kas dan Bank\" />

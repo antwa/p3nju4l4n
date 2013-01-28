@@ -127,4 +127,24 @@
     Private Sub cPersediaan_gudang_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles cPersediaan_gudang.ItemClick
         LoadFormToTab(frm_stok_gudang)
     End Sub
+
+    Private Sub cLaporan_penerimaanbarang_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles cLaporan_penerimaanbarang.ItemClick
+        LoadFormToTab(frm_lap_penerimaan_barang)
+    End Sub
+
+    Private Sub cTransaksi_memo_pengeluaran_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles cTransaksi_memo_pengeluaran.ItemClick
+        LoadFormToTab(frm_memo_pengeluaran)
+    End Sub
+
+    Private Sub cTransaksi_pengeluaran_barangjadi_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles cTransaksi_pengeluaran_barangjadi.ItemClick
+        LoadFormToTab(frm_keluar_barang)
+    End Sub
+
+    Private Sub cPenggajian_input_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles cPenggajian_input.ItemClick
+        LoadFormToTab(frm_input_gaji_spg)
+    End Sub
+
+    Private Sub cPenggajian_rekap_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles cPenggajian_rekap.ItemClick
+        LoadFormToTab(frm_rekap_gaji_spg)
+    End Sub
 End Class

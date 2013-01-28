@@ -1,5 +1,14 @@
 ﻿Module Prosedur
 
+    '# untuk prosedur load master detail
+    Public Structure STR_MASTERDETAIL
+        Dim Tbl_Master As String
+        Dim Tbl_Detail As String
+        Dim Query_Master As String
+        Dim Query_Detail As String
+        Dim Key_Master As String
+        Dim Key_Detail As String
+    End Structure
 
     ' Prosedur generateColumnGrid ini tidak penting, abaikan saja (tapi jangan dihapus)
     Public Sub generateColumnGrid(ByVal col As DevExpress.XtraGrid.Views.Grid.GridView)
@@ -110,6 +119,38 @@
         lookup.ItemIndex = 0
     End Sub
 
+
+    Public Sub Create_MasterDetail(ByRef GridControl1 As DevExpress.XtraGrid.GridControl, ByVal Opsi As STR_MASTERDETAIL)
+        Dim Cmd As SqlClient.SqlCommand
+        Dim DA As New SqlClient.SqlDataAdapter
+        Dim DS As DataSet
+
+        '# Open Connection
+        Connection.openConnection()
+
+        Cmd = New SqlClient.SqlCommand(Opsi.Query_Master, Connection.Cnt)
+        DA = New SqlClient.SqlDataAdapter
+        DA.SelectCommand = Cmd
+
+        DS = New DataSet
+
+        DA.Fill(DS, Opsi.Tbl_Master)
+
+        Cmd.CommandText = Opsi.Query_Detail
+        DA.SelectCommand = Cmd
+
+        DA.Fill(DS, Opsi.Tbl_Detail)
+
+        'DT = DS.Tables(0)
+
+        DS.Relations.Add("Detail View" & Opsi.Tbl_Master, DS.Tables(Opsi.Tbl_Master).Columns(Opsi.Key_Master), DS.Tables(Opsi.Tbl_Detail).Columns(Opsi.Key_Detail))
+
+        GridControl1.DataMember = Opsi.Tbl_Master
+        GridControl1.DataSource = DS
+
+        '# Close Connection
+        Connection.closeConnection()
+    End Sub
 
 
 

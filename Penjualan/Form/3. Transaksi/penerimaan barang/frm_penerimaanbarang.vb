@@ -106,7 +106,7 @@ Public Class frm_penerimaanbarang
                 Db.SetField("nomor_terima", nomor_terima.EditValue)
                 Db.SetField("kode_barangjadi", rcd_list.Item(i).kode_barangjadi)
                 Db.SetField("qty", rcd_list.Item(i).qty)
-                Db.SetField("ketarangan", rcd_list.Item(i).keterangan)
+                Db.SetField("keterangan", rcd_list.Item(i).keterangan)
 
                 Connection.TRANS_ADD(Db.GetQueryString)
 
