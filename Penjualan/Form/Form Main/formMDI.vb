@@ -128,6 +128,10 @@
         LoadFormToTab(frm_stok_gudang)
     End Sub
 
+    Private Sub cMaster_pegawai_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles cMaster_pegawai.ItemClick
+        LoadFormToTab(frm_pegawai_list)
+    End Sub
+
     Private Sub cLaporan_penerimaanbarang_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles cLaporan_penerimaanbarang.ItemClick
         LoadFormToTab(frm_lap_penerimaan_barang)
     End Sub
@@ -146,5 +150,21 @@
 
     Private Sub cPenggajian_rekap_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles cPenggajian_rekap.ItemClick
         LoadFormToTab(frm_rekap_gaji_spg)
+    End Sub
+
+    Private Sub cSetup_datawilayah_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles cSetup_datawilayah.ItemClick
+        LoadFormToTab(frm_wilayah_list)
+    End Sub
+
+    Private Sub BarButtonItem2_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem2.ItemClick
+        LoadFormToTab(frm_jenisharga_list)
+    End Sub
+
+    Private Sub cMaster_supplierbarang_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles cMaster_supplierbarang.ItemClick
+        LoadFormToTab(frm_supplier_barang_list)
+    End Sub
+
+    Private Sub cMaster_customerbarang_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles cMaster_customerbarang.ItemClick
+        LoadFormToTab(frm_customer_list)
     End Sub
 End Class

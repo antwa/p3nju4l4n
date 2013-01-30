@@ -38,9 +38,9 @@ Partial Class frm_supplier_barang_edit
         Me.txt_alamat = New DevExpress.XtraEditors.MemoEdit
         Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl
         Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl
-        Me.txt_noktp = New DevExpress.XtraEditors.TextEdit
+        Me.txt_nama = New DevExpress.XtraEditors.TextEdit
         Me.LabelControl18 = New DevExpress.XtraEditors.LabelControl
-        Me.txt_nik = New DevExpress.XtraEditors.TextEdit
+        Me.txt_kode = New DevExpress.XtraEditors.TextEdit
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
         CType(Me.txt_plafon_debet.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -50,15 +50,15 @@ Partial Class frm_supplier_barang_edit
         CType(Me.txt_fax.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txt_telp1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txt_alamat.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txt_noktp.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txt_nik.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txt_nama.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txt_kode.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'cmd_simpan
         '
         Me.cmd_simpan.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cmd_simpan.Image = CType(resources.GetObject("cmd_simpan.Image"), System.Drawing.Image)
-        Me.cmd_simpan.Location = New System.Drawing.Point(484, 379)
+        Me.cmd_simpan.Location = New System.Drawing.Point(443, 360)
         Me.cmd_simpan.Name = "cmd_simpan"
         Me.cmd_simpan.Size = New System.Drawing.Size(98, 26)
         Me.cmd_simpan.TabIndex = 43
@@ -68,7 +68,7 @@ Partial Class frm_supplier_barang_edit
         '
         Me.cmd_batal.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cmd_batal.Image = CType(resources.GetObject("cmd_batal.Image"), System.Drawing.Image)
-        Me.cmd_batal.Location = New System.Drawing.Point(367, 379)
+        Me.cmd_batal.Location = New System.Drawing.Point(326, 360)
         Me.cmd_batal.Name = "cmd_batal"
         Me.cmd_batal.Size = New System.Drawing.Size(98, 26)
         Me.cmd_batal.TabIndex = 44
@@ -91,10 +91,10 @@ Partial Class frm_supplier_barang_edit
         Me.GroupControl1.Controls.Add(Me.txt_alamat)
         Me.GroupControl1.Controls.Add(Me.LabelControl3)
         Me.GroupControl1.Controls.Add(Me.LabelControl2)
-        Me.GroupControl1.Controls.Add(Me.txt_noktp)
+        Me.GroupControl1.Controls.Add(Me.txt_nama)
         Me.GroupControl1.Controls.Add(Me.LabelControl18)
-        Me.GroupControl1.Controls.Add(Me.txt_nik)
-        Me.GroupControl1.Location = New System.Drawing.Point(53, 22)
+        Me.GroupControl1.Controls.Add(Me.txt_kode)
+        Me.GroupControl1.Location = New System.Drawing.Point(12, 12)
         Me.GroupControl1.Name = "GroupControl1"
         Me.GroupControl1.Size = New System.Drawing.Size(529, 339)
         Me.GroupControl1.TabIndex = 42
@@ -241,16 +241,16 @@ Partial Class frm_supplier_barang_edit
         Me.LabelControl2.TabIndex = 38
         Me.LabelControl2.Text = "Nama"
         '
-        'txt_noktp
+        'txt_nama
         '
-        Me.txt_noktp.EditValue = ""
-        Me.txt_noktp.Location = New System.Drawing.Point(161, 62)
-        Me.txt_noktp.Name = "txt_noktp"
-        Me.txt_noktp.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_noktp.Properties.Appearance.Options.UseFont = True
-        Me.txt_noktp.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_noktp.Size = New System.Drawing.Size(190, 21)
-        Me.txt_noktp.TabIndex = 35
+        Me.txt_nama.EditValue = ""
+        Me.txt_nama.Location = New System.Drawing.Point(161, 62)
+        Me.txt_nama.Name = "txt_nama"
+        Me.txt_nama.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_nama.Properties.Appearance.Options.UseFont = True
+        Me.txt_nama.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txt_nama.Size = New System.Drawing.Size(190, 21)
+        Me.txt_nama.TabIndex = 35
         '
         'LabelControl18
         '
@@ -261,22 +261,22 @@ Partial Class frm_supplier_barang_edit
         Me.LabelControl18.TabIndex = 34
         Me.LabelControl18.Text = "Kode Supplier Barang"
         '
-        'txt_nik
+        'txt_kode
         '
-        Me.txt_nik.EditValue = ""
-        Me.txt_nik.Location = New System.Drawing.Point(161, 35)
-        Me.txt_nik.Name = "txt_nik"
-        Me.txt_nik.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_nik.Properties.Appearance.Options.UseFont = True
-        Me.txt_nik.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_nik.Size = New System.Drawing.Size(163, 21)
-        Me.txt_nik.TabIndex = 33
+        Me.txt_kode.EditValue = ""
+        Me.txt_kode.Location = New System.Drawing.Point(161, 35)
+        Me.txt_kode.Name = "txt_kode"
+        Me.txt_kode.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_kode.Properties.Appearance.Options.UseFont = True
+        Me.txt_kode.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txt_kode.Size = New System.Drawing.Size(163, 21)
+        Me.txt_kode.TabIndex = 33
         '
         'frm_supplier_barang_edit
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(652, 428)
+        Me.ClientSize = New System.Drawing.Size(550, 398)
         Me.Controls.Add(Me.cmd_simpan)
         Me.Controls.Add(Me.cmd_batal)
         Me.Controls.Add(Me.GroupControl1)
@@ -292,8 +292,8 @@ Partial Class frm_supplier_barang_edit
         CType(Me.txt_fax.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txt_telp1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txt_alamat.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txt_noktp.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txt_nik.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txt_nama.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txt_kode.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -315,7 +315,7 @@ Partial Class frm_supplier_barang_edit
     Friend WithEvents txt_alamat As DevExpress.XtraEditors.MemoEdit
     Friend WithEvents LabelControl3 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl2 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents txt_noktp As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents txt_nama As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LabelControl18 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents txt_nik As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents txt_kode As DevExpress.XtraEditors.TextEdit
 End Class
