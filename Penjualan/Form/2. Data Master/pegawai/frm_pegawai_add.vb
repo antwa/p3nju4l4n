@@ -2,6 +2,7 @@
 
 Public Class frm_pegawai_add
     Sub InitData()
+        Load_Status(lkp_status)
         Load_Jabatan(lkp_jabatan)
 
 
@@ -22,13 +23,10 @@ Public Class frm_pegawai_add
     End Sub
     Private Sub frm_pegawai_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Call InitData()
-
-
-
     End Sub
 
     Private Sub cmd_simpan_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_simpan.Click
-        '# cek kode supplier
+        '# cek kode pegawai
         Db.FlushCache()
         Db.Selects("*")
         Db.From("tbl_pegawai")
@@ -109,5 +107,9 @@ Public Class frm_pegawai_add
 
     Private Sub rdg_group_pegawai_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rdg_group_pegawai.SelectedIndexChanged
         lkp_kode_costumer.Enabled = IIf(rdg_group_pegawai.EditValue = "1", True, False)
+    End Sub
+
+    Private Sub lkp_kode_costumer_EditValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles lkp_kode_costumer.EditValueChanged
+
     End Sub
 End Class
