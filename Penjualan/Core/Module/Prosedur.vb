@@ -85,6 +85,62 @@
         lookup.ItemIndex = 0
     End Sub
 
+    Public Sub Load_SPG(ByRef lookup As DevExpress.XtraEditors.LookUpEdit, Optional ByVal kode_customer As String = vbNullString)
+        Dim i As Integer
+        If kode_customer <> vbNullString Then
+            'init lookup
+            Db.FlushCache()
+            Db.Selects("a.id_pegawai, a.nama")
+            Db.From("tbl_pegawai a")
+            Db.Where("a.[group]", "2")
+            Db.Where("a.kode_customer", kode_customer)
+
+            lookup.Properties.DataSource = Connection.ExecuteToDataTable(Db.GetQueryString)
+            lookup.Properties.DisplayMember = "nama"
+            lookup.Properties.ValueMember = "id_pegawai"
+            lookup.Properties.PopulateColumns()
+
+            lookup.Properties.Columns(0).Caption = "Kode"
+            lookup.Properties.Columns(1).Caption = "Nama SPG"
+
+            lookup.Properties.Columns(1).Width = 100
+
+            For i = 0 To lookup.Properties.Columns.Count - 1
+                lookup.Properties.Columns(i).Visible = False
+            Next
+            lookup.Properties.Columns("nama").Visible = True
+
+        Else '# ambil semua SPG
+            'init lookup
+            Db.FlushCache()
+            Db.Selects("a.id_pegawai, b.nama AS nama_customer, a.nama")
+            Db.From("tbl_pegawai a")
+            Db.Join("tbl_customer b", "b.kode_customer = a.kode_customer")
+            Db.Where("a.[group]", "2")
+
+            lookup.Properties.DataSource = Connection.ExecuteToDataTable(Db.GetQueryString)
+            lookup.Properties.DisplayMember = "nama"
+            lookup.Properties.ValueMember = "id_pegawai"
+            lookup.Properties.PopulateColumns()
+
+            lookup.Properties.Columns(0).Caption = "Kode"
+            lookup.Properties.Columns(1).Caption = "Nama Customer"
+            lookup.Properties.Columns(2).Caption = "Nama SPG"
+
+            lookup.Properties.Columns(1).Width = 100
+            lookup.Properties.Columns(2).Width = 130
+
+            For i = 0 To lookup.Properties.Columns.Count - 1
+                lookup.Properties.Columns(i).Visible = False
+            Next
+            lookup.Properties.Columns("nama").Visible = True
+            lookup.Properties.Columns("nama_customer").Visible = True
+
+        End If
+
+        lookup.ItemIndex = 0
+    End Sub
+
     Public Sub Load_Merk(ByRef lookup As DevExpress.XtraEditors.LookUpEdit)
         'init lookup
         Db.FlushCache()

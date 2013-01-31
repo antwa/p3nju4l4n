@@ -682,6 +682,26 @@
     <Compile Include="Form\9. Penggajian\Rekap Gaji\frm_rekap_gaji_spg.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Form\9. Penggajian\Rekap Gaji\rcd_rekap_gaji.vb" />
+    <Compile Include="Form\9. Penggajian\Rekap Gaji\rcd_rekap_transfer.vb" />
+    <Compile Include="Form\9. Penggajian\Rekap Gaji\rpt_rakap_transfer.Designer.vb">
+      <DependentUpon>rpt_rakap_transfer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\9. Penggajian\Rekap Gaji\rpt_rakap_transfer.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Form\9. Penggajian\Rekap Gaji\rpt_rekap_gaji.Designer.vb">
+      <DependentUpon>rpt_rekap_gaji.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\9. Penggajian\Rekap Gaji\rpt_rekap_gaji.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Form\9. Penggajian\Rekap Gaji\rpt_slip_gaji.Designer.vb">
+      <DependentUpon>rpt_slip_gaji.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\9. Penggajian\Rekap Gaji\rpt_slip_gaji.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Form\Form Main\formLogin.Designer.vb">
       <DependentUpon>formLogin.vb</DependentUpon>
     </Compile>
@@ -1055,6 +1075,18 @@
       <DependentUpon>frm_rekap_gaji_spg.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form\9. Penggajian\Rekap Gaji\rpt_rakap_transfer.resx">
+      <DependentUpon>rpt_rakap_transfer.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\9. Penggajian\Rekap Gaji\rpt_rekap_gaji.resx">
+      <DependentUpon>rpt_rekap_gaji.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\9. Penggajian\Rekap Gaji\rpt_slip_gaji.resx">
+      <DependentUpon>rpt_slip_gaji.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\Form Main\formLogin.resx">
       <DependentUpon>formLogin.vb</DependentUpon>
       <SubType>Designer</SubType>
@@ -1094,6 +1126,8 @@
     <None Include="My Project\DataSources\rcd_level1.datasource" />
     <None Include="My Project\DataSources\rcd_memo_pengeluaran.datasource" />
     <None Include="My Project\DataSources\rcd_po_bb.datasource" />
+    <None Include="My Project\DataSources\rcd_rekap_gaji.datasource" />
+    <None Include="My Project\DataSources\rcd_rekap_transfer.datasource" />
     <None Include="My Project\DataSources\rcd_sj_cutting.datasource" />
     <None Include="My Project\DataSources\rcd_sj_sablon.datasource" />
     <None Include="My Project\DataSources\rcd_sj_sablon1.datasource" />
