@@ -62,6 +62,14 @@
                 Db.Selects("TOP 1 no_keluar AS nomor")
                 Db.From("tbl_keluar_barangjadi")
                 Db.OrderBy("no_keluar", cls_database.sorting.Descending)
+
+            Case C_SLIP_GAJI
+                Db.Selects("TOP 1 no_slipgaji AS nomor")
+                Db.From("tbl_penggajian")
+                Db.OrderBy("no_slipgaji", cls_database.sorting.Descending)
+
+            Case Else
+
         End Select
 
 
@@ -131,6 +139,22 @@
         Else
             Return ""
         End If
+    End Function
+
+    Public Function getNamacustomer(ByVal kode_customer As String) As String
+        Db.FlushCache()
+        Db.Selects("nama")
+        Db.From("tbl_customer")
+        Db.Where("kode_customer", kode_customer)
+
+        Dim dt As DataTable = Connection.ExecuteToDataTable(Db.GetQueryString)
+
+        If dt.Rows.Count > 0 Then
+            Return dt.Rows(0).Item("nama")
+        Else
+            Return vbNullString
+        End If
+
     End Function
 
 End Module

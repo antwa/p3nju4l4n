@@ -22,95 +22,96 @@ Partial Class frm_input_gaji_spg
         Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl
         Me.kode_customer = New DevExpress.XtraEditors.LookUpEdit
         Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl
-        Me.LookUpEdit1 = New DevExpress.XtraEditors.LookUpEdit
+        Me.id_pegawai = New DevExpress.XtraEditors.LookUpEdit
         Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl
-        Me.tgl_terbit = New DevExpress.XtraEditors.DateEdit
+        Me.tgl_input = New DevExpress.XtraEditors.DateEdit
         Me.PictureBox1 = New System.Windows.Forms.PictureBox
         Me.LabelControl4 = New DevExpress.XtraEditors.LabelControl
-        Me.ComboBoxEdit1 = New DevExpress.XtraEditors.ComboBoxEdit
-        Me.ComboBoxEdit2 = New DevExpress.XtraEditors.ComboBoxEdit
+        Me.cmb_bulan = New DevExpress.XtraEditors.ComboBoxEdit
+        Me.cmb_tahun = New DevExpress.XtraEditors.ComboBoxEdit
         Me.LabelControl6 = New DevExpress.XtraEditors.LabelControl
-        Me.TextEdit1 = New DevExpress.XtraEditors.TextEdit
+        Me.j_hadir = New DevExpress.XtraEditors.TextEdit
         Me.LabelControl7 = New DevExpress.XtraEditors.LabelControl
         Me.LabelControl8 = New DevExpress.XtraEditors.LabelControl
-        Me.TextEdit2 = New DevExpress.XtraEditors.TextEdit
-        Me.TextEdit3 = New DevExpress.XtraEditors.TextEdit
+        Me.p_hadir = New DevExpress.XtraEditors.TextEdit
+        Me.p_lembur1 = New DevExpress.XtraEditors.TextEdit
         Me.LabelControl9 = New DevExpress.XtraEditors.LabelControl
         Me.LabelControl10 = New DevExpress.XtraEditors.LabelControl
-        Me.TextEdit4 = New DevExpress.XtraEditors.TextEdit
+        Me.j_lembur1 = New DevExpress.XtraEditors.TextEdit
         Me.LabelControl11 = New DevExpress.XtraEditors.LabelControl
-        Me.TextEdit5 = New DevExpress.XtraEditors.TextEdit
+        Me.p_lembur2 = New DevExpress.XtraEditors.TextEdit
         Me.LabelControl12 = New DevExpress.XtraEditors.LabelControl
         Me.LabelControl13 = New DevExpress.XtraEditors.LabelControl
-        Me.TextEdit6 = New DevExpress.XtraEditors.TextEdit
+        Me.j_lembur2 = New DevExpress.XtraEditors.TextEdit
         Me.LabelControl14 = New DevExpress.XtraEditors.LabelControl
-        Me.TextEdit7 = New DevExpress.XtraEditors.TextEdit
+        Me.p_bonus = New DevExpress.XtraEditors.TextEdit
         Me.LabelControl15 = New DevExpress.XtraEditors.LabelControl
         Me.LabelControl16 = New DevExpress.XtraEditors.LabelControl
-        Me.TextEdit8 = New DevExpress.XtraEditors.TextEdit
+        Me.j_bonus = New DevExpress.XtraEditors.TextEdit
         Me.LabelControl17 = New DevExpress.XtraEditors.LabelControl
         Me.LabelControl5 = New DevExpress.XtraEditors.LabelControl
-        Me.GridControl1 = New DevExpress.XtraGrid.GridControl
-        Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView
-        Me.GridView2 = New DevExpress.XtraGrid.Views.Grid.GridView
         Me.PictureBox2 = New System.Windows.Forms.PictureBox
-        Me.TextEdit9 = New DevExpress.XtraEditors.TextEdit
-        Me.TextEdit10 = New DevExpress.XtraEditors.TextEdit
-        Me.TextEdit11 = New DevExpress.XtraEditors.TextEdit
-        Me.TextEdit12 = New DevExpress.XtraEditors.TextEdit
-        Me.TextEdit13 = New DevExpress.XtraEditors.TextEdit
+        Me.total_bonus = New DevExpress.XtraEditors.TextEdit
+        Me.total_lembur2 = New DevExpress.XtraEditors.TextEdit
+        Me.total_lembur1 = New DevExpress.XtraEditors.TextEdit
+        Me.total_hadir = New DevExpress.XtraEditors.TextEdit
+        Me.total_pengembalian_jaminan = New DevExpress.XtraEditors.TextEdit
         Me.LabelControl18 = New DevExpress.XtraEditors.LabelControl
         Me.LabelControl19 = New DevExpress.XtraEditors.LabelControl
-        Me.TextEdit14 = New DevExpress.XtraEditors.TextEdit
-        Me.GridControl2 = New DevExpress.XtraGrid.GridControl
-        Me.GridView3 = New DevExpress.XtraGrid.Views.Grid.GridView
-        Me.GridView4 = New DevExpress.XtraGrid.Views.Grid.GridView
+        Me.total_insentif = New DevExpress.XtraEditors.TextEdit
         Me.LabelControl20 = New DevExpress.XtraEditors.LabelControl
         Me.PictureBox3 = New System.Windows.Forms.PictureBox
         Me.LabelControl21 = New DevExpress.XtraEditors.LabelControl
-        Me.TextEdit15 = New DevExpress.XtraEditors.TextEdit
+        Me.total_potongan_jaminan = New DevExpress.XtraEditors.TextEdit
         Me.LabelControl22 = New DevExpress.XtraEditors.LabelControl
-        Me.TextEdit16 = New DevExpress.XtraEditors.TextEdit
+        Me.total_potongan = New DevExpress.XtraEditors.TextEdit
         Me.LabelControl23 = New DevExpress.XtraEditors.LabelControl
         Me.TextEdit17 = New DevExpress.XtraEditors.TextEdit
-        Me.TextEdit18 = New DevExpress.XtraEditors.TextEdit
-        Me.TextEdit19 = New DevExpress.XtraEditors.TextEdit
+        Me.total_salah_bayar = New DevExpress.XtraEditors.TextEdit
+        Me.grand_total = New DevExpress.XtraEditors.TextEdit
         Me.LabelControl24 = New DevExpress.XtraEditors.LabelControl
-        Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton
+        Me.cmd_simpan = New DevExpress.XtraEditors.SimpleButton
+        Me.chk_semua_customer = New DevExpress.XtraEditors.CheckEdit
+        Me.gaji_pokok = New DevExpress.XtraEditors.TextEdit
+        Me.LabelControl25 = New DevExpress.XtraEditors.LabelControl
+        Me.GridControl1 = New DevExpress.XtraGrid.GridControl
+        Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView
+        Me.GridControl2 = New DevExpress.XtraGrid.GridControl
+        Me.GridView2 = New DevExpress.XtraGrid.Views.Grid.GridView
         CType(Me.kode_customer.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LookUpEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.tgl_terbit.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.tgl_terbit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.id_pegawai.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.tgl_input.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.tgl_input.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ComboBoxEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ComboBoxEdit2.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TextEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TextEdit2.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TextEdit3.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TextEdit4.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TextEdit5.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TextEdit6.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TextEdit7.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TextEdit8.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cmb_bulan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cmb_tahun.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.j_hadir.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.p_hadir.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.p_lembur1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.j_lembur1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.p_lembur2.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.j_lembur2.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.p_bonus.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.j_bonus.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.total_bonus.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.total_lembur2.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.total_lembur1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.total_hadir.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.total_pengembalian_jaminan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.total_insentif.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.total_potongan_jaminan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.total_potongan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TextEdit17.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.total_salah_bayar.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.grand_total.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.chk_semua_customer.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.gaji_pokok.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GridView2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TextEdit9.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TextEdit10.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TextEdit11.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TextEdit12.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TextEdit13.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TextEdit14.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridControl2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GridView3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GridView4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TextEdit15.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TextEdit16.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TextEdit17.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TextEdit18.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TextEdit19.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LabelControl1
@@ -118,9 +119,9 @@ Partial Class frm_input_gaji_spg
         Me.LabelControl1.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelControl1.Location = New System.Drawing.Point(12, 12)
         Me.LabelControl1.Name = "LabelControl1"
-        Me.LabelControl1.Size = New System.Drawing.Size(84, 14)
+        Me.LabelControl1.Size = New System.Drawing.Size(52, 14)
         Me.LabelControl1.TabIndex = 38
-        Me.LabelControl1.Text = "Kode Customer"
+        Me.LabelControl1.Text = "Customer"
         '
         'kode_customer
         '
@@ -141,36 +142,36 @@ Partial Class frm_input_gaji_spg
         Me.LabelControl2.TabIndex = 46
         Me.LabelControl2.Text = "Nama Spg"
         '
-        'LookUpEdit1
+        'id_pegawai
         '
-        Me.LookUpEdit1.Location = New System.Drawing.Point(116, 36)
-        Me.LookUpEdit1.Name = "LookUpEdit1"
-        Me.LookUpEdit1.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LookUpEdit1.Properties.Appearance.Options.UseFont = True
-        Me.LookUpEdit1.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.LookUpEdit1.Size = New System.Drawing.Size(200, 21)
-        Me.LookUpEdit1.TabIndex = 47
+        Me.id_pegawai.Location = New System.Drawing.Point(116, 36)
+        Me.id_pegawai.Name = "id_pegawai"
+        Me.id_pegawai.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.id_pegawai.Properties.Appearance.Options.UseFont = True
+        Me.id_pegawai.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.id_pegawai.Size = New System.Drawing.Size(200, 21)
+        Me.id_pegawai.TabIndex = 47
         '
         'LabelControl3
         '
         Me.LabelControl3.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl3.Location = New System.Drawing.Point(373, 12)
+        Me.LabelControl3.Location = New System.Drawing.Point(434, 12)
         Me.LabelControl3.Name = "LabelControl3"
         Me.LabelControl3.Size = New System.Drawing.Size(43, 14)
         Me.LabelControl3.TabIndex = 49
         Me.LabelControl3.Text = "Tanggal"
         '
-        'tgl_terbit
+        'tgl_input
         '
-        Me.tgl_terbit.EditValue = Nothing
-        Me.tgl_terbit.Location = New System.Drawing.Point(434, 9)
-        Me.tgl_terbit.Name = "tgl_terbit"
-        Me.tgl_terbit.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tgl_terbit.Properties.Appearance.Options.UseFont = True
-        Me.tgl_terbit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.tgl_terbit.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton})
-        Me.tgl_terbit.Size = New System.Drawing.Size(132, 21)
-        Me.tgl_terbit.TabIndex = 48
+        Me.tgl_input.EditValue = Nothing
+        Me.tgl_input.Location = New System.Drawing.Point(495, 9)
+        Me.tgl_input.Name = "tgl_input"
+        Me.tgl_input.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tgl_input.Properties.Appearance.Options.UseFont = True
+        Me.tgl_input.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.tgl_input.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton})
+        Me.tgl_input.Size = New System.Drawing.Size(132, 21)
+        Me.tgl_input.TabIndex = 48
         '
         'PictureBox1
         '
@@ -192,25 +193,27 @@ Partial Class frm_input_gaji_spg
         Me.LabelControl4.TabIndex = 51
         Me.LabelControl4.Text = "Periode"
         '
-        'ComboBoxEdit1
+        'cmb_bulan
         '
-        Me.ComboBoxEdit1.Location = New System.Drawing.Point(116, 72)
-        Me.ComboBoxEdit1.Name = "ComboBoxEdit1"
-        Me.ComboBoxEdit1.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBoxEdit1.Properties.Appearance.Options.UseFont = True
-        Me.ComboBoxEdit1.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.ComboBoxEdit1.Size = New System.Drawing.Size(132, 21)
-        Me.ComboBoxEdit1.TabIndex = 52
+        Me.cmb_bulan.Location = New System.Drawing.Point(116, 72)
+        Me.cmb_bulan.Name = "cmb_bulan"
+        Me.cmb_bulan.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmb_bulan.Properties.Appearance.Options.UseFont = True
+        Me.cmb_bulan.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.cmb_bulan.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor
+        Me.cmb_bulan.Size = New System.Drawing.Size(132, 21)
+        Me.cmb_bulan.TabIndex = 52
         '
-        'ComboBoxEdit2
+        'cmb_tahun
         '
-        Me.ComboBoxEdit2.Location = New System.Drawing.Point(254, 72)
-        Me.ComboBoxEdit2.Name = "ComboBoxEdit2"
-        Me.ComboBoxEdit2.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBoxEdit2.Properties.Appearance.Options.UseFont = True
-        Me.ComboBoxEdit2.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.ComboBoxEdit2.Size = New System.Drawing.Size(79, 21)
-        Me.ComboBoxEdit2.TabIndex = 54
+        Me.cmb_tahun.Location = New System.Drawing.Point(254, 72)
+        Me.cmb_tahun.Name = "cmb_tahun"
+        Me.cmb_tahun.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmb_tahun.Properties.Appearance.Options.UseFont = True
+        Me.cmb_tahun.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.cmb_tahun.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor
+        Me.cmb_tahun.Size = New System.Drawing.Size(79, 21)
+        Me.cmb_tahun.TabIndex = 54
         '
         'LabelControl6
         '
@@ -221,17 +224,20 @@ Partial Class frm_input_gaji_spg
         Me.LabelControl6.TabIndex = 55
         Me.LabelControl6.Text = "Premi Hadir"
         '
-        'TextEdit1
+        'j_hadir
         '
-        Me.TextEdit1.EditValue = "0"
-        Me.TextEdit1.Location = New System.Drawing.Point(116, 98)
-        Me.TextEdit1.Name = "TextEdit1"
-        Me.TextEdit1.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextEdit1.Properties.Appearance.Options.UseFont = True
-        Me.TextEdit1.Properties.Appearance.Options.UseTextOptions = True
-        Me.TextEdit1.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
-        Me.TextEdit1.Size = New System.Drawing.Size(40, 21)
-        Me.TextEdit1.TabIndex = 56
+        Me.j_hadir.EditValue = "0"
+        Me.j_hadir.Location = New System.Drawing.Point(116, 98)
+        Me.j_hadir.Name = "j_hadir"
+        Me.j_hadir.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.j_hadir.Properties.Appearance.Options.UseFont = True
+        Me.j_hadir.Properties.Appearance.Options.UseTextOptions = True
+        Me.j_hadir.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.j_hadir.Properties.Mask.EditMask = "n0"
+        Me.j_hadir.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
+        Me.j_hadir.Properties.Mask.UseMaskAsDisplayFormat = True
+        Me.j_hadir.Size = New System.Drawing.Size(40, 21)
+        Me.j_hadir.TabIndex = 56
         '
         'LabelControl7
         '
@@ -251,35 +257,37 @@ Partial Class frm_input_gaji_spg
         Me.LabelControl8.TabIndex = 58
         Me.LabelControl8.Text = "x Rp."
         '
-        'TextEdit2
+        'p_hadir
         '
-        Me.TextEdit2.EditValue = "0"
-        Me.TextEdit2.Location = New System.Drawing.Point(233, 98)
-        Me.TextEdit2.Name = "TextEdit2"
-        Me.TextEdit2.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextEdit2.Properties.Appearance.Options.UseFont = True
-        Me.TextEdit2.Properties.Appearance.Options.UseTextOptions = True
-        Me.TextEdit2.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
-        Me.TextEdit2.Properties.Mask.EditMask = "n0"
-        Me.TextEdit2.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
-        Me.TextEdit2.Properties.Mask.UseMaskAsDisplayFormat = True
-        Me.TextEdit2.Size = New System.Drawing.Size(100, 21)
-        Me.TextEdit2.TabIndex = 59
+        Me.p_hadir.EditValue = "0"
+        Me.p_hadir.Location = New System.Drawing.Point(233, 98)
+        Me.p_hadir.Name = "p_hadir"
+        Me.p_hadir.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.p_hadir.Properties.Appearance.Options.UseFont = True
+        Me.p_hadir.Properties.Appearance.Options.UseTextOptions = True
+        Me.p_hadir.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.p_hadir.Properties.Mask.EditMask = "n0"
+        Me.p_hadir.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
+        Me.p_hadir.Properties.Mask.UseMaskAsDisplayFormat = True
+        Me.p_hadir.Properties.ReadOnly = True
+        Me.p_hadir.Size = New System.Drawing.Size(100, 21)
+        Me.p_hadir.TabIndex = 59
         '
-        'TextEdit3
+        'p_lembur1
         '
-        Me.TextEdit3.EditValue = "0"
-        Me.TextEdit3.Location = New System.Drawing.Point(233, 122)
-        Me.TextEdit3.Name = "TextEdit3"
-        Me.TextEdit3.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextEdit3.Properties.Appearance.Options.UseFont = True
-        Me.TextEdit3.Properties.Appearance.Options.UseTextOptions = True
-        Me.TextEdit3.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
-        Me.TextEdit3.Properties.Mask.EditMask = "n0"
-        Me.TextEdit3.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
-        Me.TextEdit3.Properties.Mask.UseMaskAsDisplayFormat = True
-        Me.TextEdit3.Size = New System.Drawing.Size(100, 21)
-        Me.TextEdit3.TabIndex = 64
+        Me.p_lembur1.EditValue = "0"
+        Me.p_lembur1.Location = New System.Drawing.Point(233, 122)
+        Me.p_lembur1.Name = "p_lembur1"
+        Me.p_lembur1.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.p_lembur1.Properties.Appearance.Options.UseFont = True
+        Me.p_lembur1.Properties.Appearance.Options.UseTextOptions = True
+        Me.p_lembur1.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.p_lembur1.Properties.Mask.EditMask = "n0"
+        Me.p_lembur1.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
+        Me.p_lembur1.Properties.Mask.UseMaskAsDisplayFormat = True
+        Me.p_lembur1.Properties.ReadOnly = True
+        Me.p_lembur1.Size = New System.Drawing.Size(100, 21)
+        Me.p_lembur1.TabIndex = 64
         '
         'LabelControl9
         '
@@ -299,17 +307,20 @@ Partial Class frm_input_gaji_spg
         Me.LabelControl10.TabIndex = 62
         Me.LabelControl10.Text = "Jam"
         '
-        'TextEdit4
+        'j_lembur1
         '
-        Me.TextEdit4.EditValue = "0"
-        Me.TextEdit4.Location = New System.Drawing.Point(116, 122)
-        Me.TextEdit4.Name = "TextEdit4"
-        Me.TextEdit4.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextEdit4.Properties.Appearance.Options.UseFont = True
-        Me.TextEdit4.Properties.Appearance.Options.UseTextOptions = True
-        Me.TextEdit4.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
-        Me.TextEdit4.Size = New System.Drawing.Size(40, 21)
-        Me.TextEdit4.TabIndex = 61
+        Me.j_lembur1.EditValue = "0"
+        Me.j_lembur1.Location = New System.Drawing.Point(116, 122)
+        Me.j_lembur1.Name = "j_lembur1"
+        Me.j_lembur1.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.j_lembur1.Properties.Appearance.Options.UseFont = True
+        Me.j_lembur1.Properties.Appearance.Options.UseTextOptions = True
+        Me.j_lembur1.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.j_lembur1.Properties.Mask.EditMask = "n0"
+        Me.j_lembur1.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
+        Me.j_lembur1.Properties.Mask.UseMaskAsDisplayFormat = True
+        Me.j_lembur1.Size = New System.Drawing.Size(40, 21)
+        Me.j_lembur1.TabIndex = 61
         '
         'LabelControl11
         '
@@ -320,20 +331,21 @@ Partial Class frm_input_gaji_spg
         Me.LabelControl11.TabIndex = 60
         Me.LabelControl11.Text = "Lembur"
         '
-        'TextEdit5
+        'p_lembur2
         '
-        Me.TextEdit5.EditValue = "0"
-        Me.TextEdit5.Location = New System.Drawing.Point(233, 146)
-        Me.TextEdit5.Name = "TextEdit5"
-        Me.TextEdit5.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextEdit5.Properties.Appearance.Options.UseFont = True
-        Me.TextEdit5.Properties.Appearance.Options.UseTextOptions = True
-        Me.TextEdit5.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
-        Me.TextEdit5.Properties.Mask.EditMask = "n0"
-        Me.TextEdit5.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
-        Me.TextEdit5.Properties.Mask.UseMaskAsDisplayFormat = True
-        Me.TextEdit5.Size = New System.Drawing.Size(100, 21)
-        Me.TextEdit5.TabIndex = 69
+        Me.p_lembur2.EditValue = "0"
+        Me.p_lembur2.Location = New System.Drawing.Point(233, 146)
+        Me.p_lembur2.Name = "p_lembur2"
+        Me.p_lembur2.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.p_lembur2.Properties.Appearance.Options.UseFont = True
+        Me.p_lembur2.Properties.Appearance.Options.UseTextOptions = True
+        Me.p_lembur2.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.p_lembur2.Properties.Mask.EditMask = "n0"
+        Me.p_lembur2.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
+        Me.p_lembur2.Properties.Mask.UseMaskAsDisplayFormat = True
+        Me.p_lembur2.Properties.ReadOnly = True
+        Me.p_lembur2.Size = New System.Drawing.Size(100, 21)
+        Me.p_lembur2.TabIndex = 69
         '
         'LabelControl12
         '
@@ -349,21 +361,24 @@ Partial Class frm_input_gaji_spg
         Me.LabelControl13.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelControl13.Location = New System.Drawing.Point(162, 150)
         Me.LabelControl13.Name = "LabelControl13"
-        Me.LabelControl13.Size = New System.Drawing.Size(21, 14)
+        Me.LabelControl13.Size = New System.Drawing.Size(20, 14)
         Me.LabelControl13.TabIndex = 67
-        Me.LabelControl13.Text = "Jam"
+        Me.LabelControl13.Text = "Hari"
         '
-        'TextEdit6
+        'j_lembur2
         '
-        Me.TextEdit6.EditValue = "0"
-        Me.TextEdit6.Location = New System.Drawing.Point(116, 146)
-        Me.TextEdit6.Name = "TextEdit6"
-        Me.TextEdit6.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextEdit6.Properties.Appearance.Options.UseFont = True
-        Me.TextEdit6.Properties.Appearance.Options.UseTextOptions = True
-        Me.TextEdit6.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
-        Me.TextEdit6.Size = New System.Drawing.Size(40, 21)
-        Me.TextEdit6.TabIndex = 66
+        Me.j_lembur2.EditValue = "0"
+        Me.j_lembur2.Location = New System.Drawing.Point(116, 146)
+        Me.j_lembur2.Name = "j_lembur2"
+        Me.j_lembur2.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.j_lembur2.Properties.Appearance.Options.UseFont = True
+        Me.j_lembur2.Properties.Appearance.Options.UseTextOptions = True
+        Me.j_lembur2.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.j_lembur2.Properties.Mask.EditMask = "n0"
+        Me.j_lembur2.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
+        Me.j_lembur2.Properties.Mask.UseMaskAsDisplayFormat = True
+        Me.j_lembur2.Size = New System.Drawing.Size(40, 21)
+        Me.j_lembur2.TabIndex = 66
         '
         'LabelControl14
         '
@@ -374,20 +389,20 @@ Partial Class frm_input_gaji_spg
         Me.LabelControl14.TabIndex = 65
         Me.LabelControl14.Text = "Lembur Hari Bsr"
         '
-        'TextEdit7
+        'p_bonus
         '
-        Me.TextEdit7.EditValue = "0"
-        Me.TextEdit7.Location = New System.Drawing.Point(233, 170)
-        Me.TextEdit7.Name = "TextEdit7"
-        Me.TextEdit7.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextEdit7.Properties.Appearance.Options.UseFont = True
-        Me.TextEdit7.Properties.Appearance.Options.UseTextOptions = True
-        Me.TextEdit7.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
-        Me.TextEdit7.Properties.Mask.EditMask = "n0"
-        Me.TextEdit7.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
-        Me.TextEdit7.Properties.Mask.UseMaskAsDisplayFormat = True
-        Me.TextEdit7.Size = New System.Drawing.Size(100, 21)
-        Me.TextEdit7.TabIndex = 74
+        Me.p_bonus.EditValue = "0"
+        Me.p_bonus.Location = New System.Drawing.Point(233, 170)
+        Me.p_bonus.Name = "p_bonus"
+        Me.p_bonus.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.p_bonus.Properties.Appearance.Options.UseFont = True
+        Me.p_bonus.Properties.Appearance.Options.UseTextOptions = True
+        Me.p_bonus.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.p_bonus.Properties.Mask.EditMask = "n0"
+        Me.p_bonus.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
+        Me.p_bonus.Properties.Mask.UseMaskAsDisplayFormat = True
+        Me.p_bonus.Size = New System.Drawing.Size(100, 21)
+        Me.p_bonus.TabIndex = 74
         '
         'LabelControl15
         '
@@ -403,21 +418,24 @@ Partial Class frm_input_gaji_spg
         Me.LabelControl16.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelControl16.Location = New System.Drawing.Point(162, 173)
         Me.LabelControl16.Name = "LabelControl16"
-        Me.LabelControl16.Size = New System.Drawing.Size(21, 14)
+        Me.LabelControl16.Size = New System.Drawing.Size(18, 14)
         Me.LabelControl16.TabIndex = 72
-        Me.LabelControl16.Text = "Jam"
+        Me.LabelControl16.Text = "Pcs"
         '
-        'TextEdit8
+        'j_bonus
         '
-        Me.TextEdit8.EditValue = "0"
-        Me.TextEdit8.Location = New System.Drawing.Point(116, 170)
-        Me.TextEdit8.Name = "TextEdit8"
-        Me.TextEdit8.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextEdit8.Properties.Appearance.Options.UseFont = True
-        Me.TextEdit8.Properties.Appearance.Options.UseTextOptions = True
-        Me.TextEdit8.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
-        Me.TextEdit8.Size = New System.Drawing.Size(40, 21)
-        Me.TextEdit8.TabIndex = 71
+        Me.j_bonus.EditValue = "0"
+        Me.j_bonus.Location = New System.Drawing.Point(116, 170)
+        Me.j_bonus.Name = "j_bonus"
+        Me.j_bonus.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.j_bonus.Properties.Appearance.Options.UseFont = True
+        Me.j_bonus.Properties.Appearance.Options.UseTextOptions = True
+        Me.j_bonus.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.j_bonus.Properties.Mask.EditMask = "n0"
+        Me.j_bonus.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
+        Me.j_bonus.Properties.Mask.UseMaskAsDisplayFormat = True
+        Me.j_bonus.Size = New System.Drawing.Size(40, 21)
+        Me.j_bonus.TabIndex = 71
         '
         'LabelControl17
         '
@@ -435,34 +453,7 @@ Partial Class frm_input_gaji_spg
         Me.LabelControl5.Name = "LabelControl5"
         Me.LabelControl5.Size = New System.Drawing.Size(41, 14)
         Me.LabelControl5.TabIndex = 75
-        Me.LabelControl5.Text = "Intensif"
-        '
-        'GridControl1
-        '
-        Me.GridControl1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GridControl1.Location = New System.Drawing.Point(116, 197)
-        Me.GridControl1.MainView = Me.GridView1
-        Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.Size = New System.Drawing.Size(407, 76)
-        Me.GridControl1.TabIndex = 76
-        Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1, Me.GridView2})
-        '
-        'GridView1
-        '
-        Me.GridView1.GridControl = Me.GridControl1
-        Me.GridView1.Name = "GridView1"
-        Me.GridView1.OptionsCustomization.AllowColumnMoving = False
-        Me.GridView1.OptionsCustomization.AllowFilter = False
-        Me.GridView1.OptionsCustomization.AllowGroup = False
-        Me.GridView1.OptionsCustomization.AllowSort = False
-        Me.GridView1.OptionsView.ShowGroupPanel = False
-        Me.GridView1.OptionsView.ShowIndicator = False
-        '
-        'GridView2
-        '
-        Me.GridView2.GridControl = Me.GridControl1
-        Me.GridView2.Name = "GridView2"
+        Me.LabelControl5.Text = "Insentif"
         '
         'PictureBox2
         '
@@ -475,89 +466,89 @@ Partial Class frm_input_gaji_spg
         Me.PictureBox2.TabIndex = 77
         Me.PictureBox2.TabStop = False
         '
-        'TextEdit9
+        'total_bonus
         '
-        Me.TextEdit9.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextEdit9.EditValue = "0"
-        Me.TextEdit9.Location = New System.Drawing.Point(579, 170)
-        Me.TextEdit9.Name = "TextEdit9"
-        Me.TextEdit9.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextEdit9.Properties.Appearance.Options.UseFont = True
-        Me.TextEdit9.Properties.Appearance.Options.UseTextOptions = True
-        Me.TextEdit9.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
-        Me.TextEdit9.Properties.Mask.EditMask = "n0"
-        Me.TextEdit9.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
-        Me.TextEdit9.Properties.Mask.UseMaskAsDisplayFormat = True
-        Me.TextEdit9.Properties.ReadOnly = True
-        Me.TextEdit9.Size = New System.Drawing.Size(139, 21)
-        Me.TextEdit9.TabIndex = 81
+        Me.total_bonus.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.total_bonus.EditValue = "0"
+        Me.total_bonus.Location = New System.Drawing.Point(579, 170)
+        Me.total_bonus.Name = "total_bonus"
+        Me.total_bonus.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.total_bonus.Properties.Appearance.Options.UseFont = True
+        Me.total_bonus.Properties.Appearance.Options.UseTextOptions = True
+        Me.total_bonus.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.total_bonus.Properties.Mask.EditMask = "n0"
+        Me.total_bonus.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
+        Me.total_bonus.Properties.Mask.UseMaskAsDisplayFormat = True
+        Me.total_bonus.Properties.ReadOnly = True
+        Me.total_bonus.Size = New System.Drawing.Size(139, 21)
+        Me.total_bonus.TabIndex = 81
         '
-        'TextEdit10
+        'total_lembur2
         '
-        Me.TextEdit10.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextEdit10.EditValue = "0"
-        Me.TextEdit10.Location = New System.Drawing.Point(579, 146)
-        Me.TextEdit10.Name = "TextEdit10"
-        Me.TextEdit10.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextEdit10.Properties.Appearance.Options.UseFont = True
-        Me.TextEdit10.Properties.Appearance.Options.UseTextOptions = True
-        Me.TextEdit10.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
-        Me.TextEdit10.Properties.Mask.EditMask = "n0"
-        Me.TextEdit10.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
-        Me.TextEdit10.Properties.Mask.UseMaskAsDisplayFormat = True
-        Me.TextEdit10.Properties.ReadOnly = True
-        Me.TextEdit10.Size = New System.Drawing.Size(139, 21)
-        Me.TextEdit10.TabIndex = 80
+        Me.total_lembur2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.total_lembur2.EditValue = "0"
+        Me.total_lembur2.Location = New System.Drawing.Point(579, 146)
+        Me.total_lembur2.Name = "total_lembur2"
+        Me.total_lembur2.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.total_lembur2.Properties.Appearance.Options.UseFont = True
+        Me.total_lembur2.Properties.Appearance.Options.UseTextOptions = True
+        Me.total_lembur2.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.total_lembur2.Properties.Mask.EditMask = "n0"
+        Me.total_lembur2.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
+        Me.total_lembur2.Properties.Mask.UseMaskAsDisplayFormat = True
+        Me.total_lembur2.Properties.ReadOnly = True
+        Me.total_lembur2.Size = New System.Drawing.Size(139, 21)
+        Me.total_lembur2.TabIndex = 80
         '
-        'TextEdit11
+        'total_lembur1
         '
-        Me.TextEdit11.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextEdit11.EditValue = "0"
-        Me.TextEdit11.Location = New System.Drawing.Point(579, 122)
-        Me.TextEdit11.Name = "TextEdit11"
-        Me.TextEdit11.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextEdit11.Properties.Appearance.Options.UseFont = True
-        Me.TextEdit11.Properties.Appearance.Options.UseTextOptions = True
-        Me.TextEdit11.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
-        Me.TextEdit11.Properties.Mask.EditMask = "n0"
-        Me.TextEdit11.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
-        Me.TextEdit11.Properties.Mask.UseMaskAsDisplayFormat = True
-        Me.TextEdit11.Properties.ReadOnly = True
-        Me.TextEdit11.Size = New System.Drawing.Size(139, 21)
-        Me.TextEdit11.TabIndex = 79
+        Me.total_lembur1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.total_lembur1.EditValue = "0"
+        Me.total_lembur1.Location = New System.Drawing.Point(579, 122)
+        Me.total_lembur1.Name = "total_lembur1"
+        Me.total_lembur1.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.total_lembur1.Properties.Appearance.Options.UseFont = True
+        Me.total_lembur1.Properties.Appearance.Options.UseTextOptions = True
+        Me.total_lembur1.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.total_lembur1.Properties.Mask.EditMask = "n0"
+        Me.total_lembur1.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
+        Me.total_lembur1.Properties.Mask.UseMaskAsDisplayFormat = True
+        Me.total_lembur1.Properties.ReadOnly = True
+        Me.total_lembur1.Size = New System.Drawing.Size(139, 21)
+        Me.total_lembur1.TabIndex = 79
         '
-        'TextEdit12
+        'total_hadir
         '
-        Me.TextEdit12.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextEdit12.EditValue = "0"
-        Me.TextEdit12.Location = New System.Drawing.Point(579, 98)
-        Me.TextEdit12.Name = "TextEdit12"
-        Me.TextEdit12.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextEdit12.Properties.Appearance.Options.UseFont = True
-        Me.TextEdit12.Properties.Appearance.Options.UseTextOptions = True
-        Me.TextEdit12.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
-        Me.TextEdit12.Properties.Mask.EditMask = "n0"
-        Me.TextEdit12.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
-        Me.TextEdit12.Properties.Mask.UseMaskAsDisplayFormat = True
-        Me.TextEdit12.Properties.ReadOnly = True
-        Me.TextEdit12.Size = New System.Drawing.Size(139, 21)
-        Me.TextEdit12.TabIndex = 78
+        Me.total_hadir.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.total_hadir.EditValue = "0"
+        Me.total_hadir.Location = New System.Drawing.Point(579, 98)
+        Me.total_hadir.Name = "total_hadir"
+        Me.total_hadir.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.total_hadir.Properties.Appearance.Options.UseFont = True
+        Me.total_hadir.Properties.Appearance.Options.UseTextOptions = True
+        Me.total_hadir.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.total_hadir.Properties.Mask.EditMask = "n0"
+        Me.total_hadir.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
+        Me.total_hadir.Properties.Mask.UseMaskAsDisplayFormat = True
+        Me.total_hadir.Properties.ReadOnly = True
+        Me.total_hadir.Size = New System.Drawing.Size(139, 21)
+        Me.total_hadir.TabIndex = 78
         '
-        'TextEdit13
+        'total_pengembalian_jaminan
         '
-        Me.TextEdit13.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextEdit13.EditValue = "0"
-        Me.TextEdit13.Location = New System.Drawing.Point(579, 213)
-        Me.TextEdit13.Name = "TextEdit13"
-        Me.TextEdit13.Properties.Appearance.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextEdit13.Properties.Appearance.Options.UseFont = True
-        Me.TextEdit13.Properties.Appearance.Options.UseTextOptions = True
-        Me.TextEdit13.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
-        Me.TextEdit13.Properties.Mask.EditMask = "n0"
-        Me.TextEdit13.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
-        Me.TextEdit13.Properties.Mask.UseMaskAsDisplayFormat = True
-        Me.TextEdit13.Size = New System.Drawing.Size(139, 19)
-        Me.TextEdit13.TabIndex = 82
+        Me.total_pengembalian_jaminan.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.total_pengembalian_jaminan.EditValue = "0"
+        Me.total_pengembalian_jaminan.Location = New System.Drawing.Point(579, 213)
+        Me.total_pengembalian_jaminan.Name = "total_pengembalian_jaminan"
+        Me.total_pengembalian_jaminan.Properties.Appearance.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.total_pengembalian_jaminan.Properties.Appearance.Options.UseFont = True
+        Me.total_pengembalian_jaminan.Properties.Appearance.Options.UseTextOptions = True
+        Me.total_pengembalian_jaminan.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.total_pengembalian_jaminan.Properties.Mask.EditMask = "n0"
+        Me.total_pengembalian_jaminan.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
+        Me.total_pengembalian_jaminan.Properties.Mask.UseMaskAsDisplayFormat = True
+        Me.total_pengembalian_jaminan.Size = New System.Drawing.Size(139, 19)
+        Me.total_pengembalian_jaminan.TabIndex = 82
         '
         'LabelControl18
         '
@@ -579,51 +570,24 @@ Partial Class frm_input_gaji_spg
         Me.LabelControl19.Name = "LabelControl19"
         Me.LabelControl19.Size = New System.Drawing.Size(61, 13)
         Me.LabelControl19.TabIndex = 85
-        Me.LabelControl19.Text = "Total Intensif"
+        Me.LabelControl19.Text = "Total Insentif"
         '
-        'TextEdit14
+        'total_insentif
         '
-        Me.TextEdit14.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextEdit14.EditValue = "0"
-        Me.TextEdit14.Location = New System.Drawing.Point(579, 254)
-        Me.TextEdit14.Name = "TextEdit14"
-        Me.TextEdit14.Properties.Appearance.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextEdit14.Properties.Appearance.Options.UseFont = True
-        Me.TextEdit14.Properties.Appearance.Options.UseTextOptions = True
-        Me.TextEdit14.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
-        Me.TextEdit14.Properties.Mask.EditMask = "n0"
-        Me.TextEdit14.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
-        Me.TextEdit14.Properties.Mask.UseMaskAsDisplayFormat = True
-        Me.TextEdit14.Properties.ReadOnly = True
-        Me.TextEdit14.Size = New System.Drawing.Size(139, 19)
-        Me.TextEdit14.TabIndex = 84
-        '
-        'GridControl2
-        '
-        Me.GridControl2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GridControl2.Location = New System.Drawing.Point(116, 286)
-        Me.GridControl2.MainView = Me.GridView3
-        Me.GridControl2.Name = "GridControl2"
-        Me.GridControl2.Size = New System.Drawing.Size(407, 76)
-        Me.GridControl2.TabIndex = 87
-        Me.GridControl2.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView3, Me.GridView4})
-        '
-        'GridView3
-        '
-        Me.GridView3.GridControl = Me.GridControl2
-        Me.GridView3.Name = "GridView3"
-        Me.GridView3.OptionsCustomization.AllowColumnMoving = False
-        Me.GridView3.OptionsCustomization.AllowFilter = False
-        Me.GridView3.OptionsCustomization.AllowGroup = False
-        Me.GridView3.OptionsCustomization.AllowSort = False
-        Me.GridView3.OptionsView.ShowGroupPanel = False
-        Me.GridView3.OptionsView.ShowIndicator = False
-        '
-        'GridView4
-        '
-        Me.GridView4.GridControl = Me.GridControl2
-        Me.GridView4.Name = "GridView4"
+        Me.total_insentif.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.total_insentif.EditValue = "0"
+        Me.total_insentif.Location = New System.Drawing.Point(579, 254)
+        Me.total_insentif.Name = "total_insentif"
+        Me.total_insentif.Properties.Appearance.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.total_insentif.Properties.Appearance.Options.UseFont = True
+        Me.total_insentif.Properties.Appearance.Options.UseTextOptions = True
+        Me.total_insentif.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.total_insentif.Properties.Mask.EditMask = "n0"
+        Me.total_insentif.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
+        Me.total_insentif.Properties.Mask.UseMaskAsDisplayFormat = True
+        Me.total_insentif.Properties.ReadOnly = True
+        Me.total_insentif.Size = New System.Drawing.Size(139, 19)
+        Me.total_insentif.TabIndex = 84
         '
         'LabelControl20
         '
@@ -655,21 +619,21 @@ Partial Class frm_input_gaji_spg
         Me.LabelControl21.TabIndex = 90
         Me.LabelControl21.Text = "Potongan Jaminan Kerja"
         '
-        'TextEdit15
+        'total_potongan_jaminan
         '
-        Me.TextEdit15.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextEdit15.EditValue = "0"
-        Me.TextEdit15.Location = New System.Drawing.Point(576, 301)
-        Me.TextEdit15.Name = "TextEdit15"
-        Me.TextEdit15.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextEdit15.Properties.Appearance.Options.UseFont = True
-        Me.TextEdit15.Properties.Appearance.Options.UseTextOptions = True
-        Me.TextEdit15.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
-        Me.TextEdit15.Properties.Mask.EditMask = "n0"
-        Me.TextEdit15.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
-        Me.TextEdit15.Properties.Mask.UseMaskAsDisplayFormat = True
-        Me.TextEdit15.Size = New System.Drawing.Size(139, 20)
-        Me.TextEdit15.TabIndex = 89
+        Me.total_potongan_jaminan.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.total_potongan_jaminan.EditValue = "0"
+        Me.total_potongan_jaminan.Location = New System.Drawing.Point(576, 301)
+        Me.total_potongan_jaminan.Name = "total_potongan_jaminan"
+        Me.total_potongan_jaminan.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.total_potongan_jaminan.Properties.Appearance.Options.UseFont = True
+        Me.total_potongan_jaminan.Properties.Appearance.Options.UseTextOptions = True
+        Me.total_potongan_jaminan.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.total_potongan_jaminan.Properties.Mask.EditMask = "n0"
+        Me.total_potongan_jaminan.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
+        Me.total_potongan_jaminan.Properties.Mask.UseMaskAsDisplayFormat = True
+        Me.total_potongan_jaminan.Size = New System.Drawing.Size(139, 20)
+        Me.total_potongan_jaminan.TabIndex = 89
         '
         'LabelControl22
         '
@@ -681,22 +645,22 @@ Partial Class frm_input_gaji_spg
         Me.LabelControl22.TabIndex = 92
         Me.LabelControl22.Text = "Total Potongan"
         '
-        'TextEdit16
+        'total_potongan
         '
-        Me.TextEdit16.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextEdit16.EditValue = "0"
-        Me.TextEdit16.Location = New System.Drawing.Point(576, 341)
-        Me.TextEdit16.Name = "TextEdit16"
-        Me.TextEdit16.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextEdit16.Properties.Appearance.Options.UseFont = True
-        Me.TextEdit16.Properties.Appearance.Options.UseTextOptions = True
-        Me.TextEdit16.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
-        Me.TextEdit16.Properties.Mask.EditMask = "n0"
-        Me.TextEdit16.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
-        Me.TextEdit16.Properties.Mask.UseMaskAsDisplayFormat = True
-        Me.TextEdit16.Properties.ReadOnly = True
-        Me.TextEdit16.Size = New System.Drawing.Size(139, 20)
-        Me.TextEdit16.TabIndex = 91
+        Me.total_potongan.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.total_potongan.EditValue = "0"
+        Me.total_potongan.Location = New System.Drawing.Point(576, 341)
+        Me.total_potongan.Name = "total_potongan"
+        Me.total_potongan.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.total_potongan.Properties.Appearance.Options.UseFont = True
+        Me.total_potongan.Properties.Appearance.Options.UseTextOptions = True
+        Me.total_potongan.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.total_potongan.Properties.Mask.EditMask = "n0"
+        Me.total_potongan.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
+        Me.total_potongan.Properties.Mask.UseMaskAsDisplayFormat = True
+        Me.total_potongan.Properties.ReadOnly = True
+        Me.total_potongan.Size = New System.Drawing.Size(139, 20)
+        Me.total_potongan.TabIndex = 91
         '
         'LabelControl23
         '
@@ -721,42 +685,43 @@ Partial Class frm_input_gaji_spg
         Me.TextEdit17.Properties.Mask.EditMask = "n0"
         Me.TextEdit17.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
         Me.TextEdit17.Properties.Mask.UseMaskAsDisplayFormat = True
+        Me.TextEdit17.Properties.ReadOnly = True
         Me.TextEdit17.Size = New System.Drawing.Size(109, 21)
         Me.TextEdit17.TabIndex = 94
         '
-        'TextEdit18
+        'total_salah_bayar
         '
-        Me.TextEdit18.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextEdit18.EditValue = "0"
-        Me.TextEdit18.Location = New System.Drawing.Point(576, 368)
-        Me.TextEdit18.Name = "TextEdit18"
-        Me.TextEdit18.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextEdit18.Properties.Appearance.Options.UseFont = True
-        Me.TextEdit18.Properties.Appearance.Options.UseTextOptions = True
-        Me.TextEdit18.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
-        Me.TextEdit18.Properties.Mask.EditMask = "n0"
-        Me.TextEdit18.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
-        Me.TextEdit18.Properties.Mask.UseMaskAsDisplayFormat = True
-        Me.TextEdit18.Properties.ReadOnly = True
-        Me.TextEdit18.Size = New System.Drawing.Size(139, 20)
-        Me.TextEdit18.TabIndex = 95
+        Me.total_salah_bayar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.total_salah_bayar.EditValue = "0"
+        Me.total_salah_bayar.Location = New System.Drawing.Point(576, 368)
+        Me.total_salah_bayar.Name = "total_salah_bayar"
+        Me.total_salah_bayar.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.total_salah_bayar.Properties.Appearance.Options.UseFont = True
+        Me.total_salah_bayar.Properties.Appearance.Options.UseTextOptions = True
+        Me.total_salah_bayar.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.total_salah_bayar.Properties.Mask.EditMask = "n0"
+        Me.total_salah_bayar.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
+        Me.total_salah_bayar.Properties.Mask.UseMaskAsDisplayFormat = True
+        Me.total_salah_bayar.Properties.ReadOnly = True
+        Me.total_salah_bayar.Size = New System.Drawing.Size(139, 20)
+        Me.total_salah_bayar.TabIndex = 95
         '
-        'TextEdit19
+        'grand_total
         '
-        Me.TextEdit19.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextEdit19.EditValue = "0"
-        Me.TextEdit19.Location = New System.Drawing.Point(576, 410)
-        Me.TextEdit19.Name = "TextEdit19"
-        Me.TextEdit19.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextEdit19.Properties.Appearance.Options.UseFont = True
-        Me.TextEdit19.Properties.Appearance.Options.UseTextOptions = True
-        Me.TextEdit19.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
-        Me.TextEdit19.Properties.Mask.EditMask = "n0"
-        Me.TextEdit19.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
-        Me.TextEdit19.Properties.Mask.UseMaskAsDisplayFormat = True
-        Me.TextEdit19.Properties.ReadOnly = True
-        Me.TextEdit19.Size = New System.Drawing.Size(139, 21)
-        Me.TextEdit19.TabIndex = 96
+        Me.grand_total.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.grand_total.EditValue = "0"
+        Me.grand_total.Location = New System.Drawing.Point(576, 410)
+        Me.grand_total.Name = "grand_total"
+        Me.grand_total.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.grand_total.Properties.Appearance.Options.UseFont = True
+        Me.grand_total.Properties.Appearance.Options.UseTextOptions = True
+        Me.grand_total.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.grand_total.Properties.Mask.EditMask = "n0"
+        Me.grand_total.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
+        Me.grand_total.Properties.Mask.UseMaskAsDisplayFormat = True
+        Me.grand_total.Properties.ReadOnly = True
+        Me.grand_total.Size = New System.Drawing.Size(139, 21)
+        Me.grand_total.TabIndex = 96
         '
         'LabelControl24
         '
@@ -768,14 +733,99 @@ Partial Class frm_input_gaji_spg
         Me.LabelControl24.TabIndex = 97
         Me.LabelControl24.Text = "Total"
         '
-        'SimpleButton1
+        'cmd_simpan
         '
-        Me.SimpleButton1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.SimpleButton1.Location = New System.Drawing.Point(643, 459)
-        Me.SimpleButton1.Name = "SimpleButton1"
-        Me.SimpleButton1.Size = New System.Drawing.Size(106, 28)
-        Me.SimpleButton1.TabIndex = 98
-        Me.SimpleButton1.Text = "Simpan"
+        Me.cmd_simpan.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.cmd_simpan.Location = New System.Drawing.Point(612, 459)
+        Me.cmd_simpan.Name = "cmd_simpan"
+        Me.cmd_simpan.Size = New System.Drawing.Size(106, 28)
+        Me.cmd_simpan.TabIndex = 98
+        Me.cmd_simpan.Text = "Simpan"
+        '
+        'chk_semua_customer
+        '
+        Me.chk_semua_customer.Location = New System.Drawing.Point(322, 10)
+        Me.chk_semua_customer.Name = "chk_semua_customer"
+        Me.chk_semua_customer.Properties.Caption = "Semua"
+        Me.chk_semua_customer.Size = New System.Drawing.Size(74, 19)
+        Me.chk_semua_customer.TabIndex = 99
+        '
+        'gaji_pokok
+        '
+        Me.gaji_pokok.EditValue = "0"
+        Me.gaji_pokok.Location = New System.Drawing.Point(495, 36)
+        Me.gaji_pokok.Name = "gaji_pokok"
+        Me.gaji_pokok.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.gaji_pokok.Properties.Appearance.Options.UseFont = True
+        Me.gaji_pokok.Properties.Appearance.Options.UseTextOptions = True
+        Me.gaji_pokok.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
+        Me.gaji_pokok.Properties.Mask.EditMask = "n0"
+        Me.gaji_pokok.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
+        Me.gaji_pokok.Properties.Mask.UseMaskAsDisplayFormat = True
+        Me.gaji_pokok.Properties.ReadOnly = True
+        Me.gaji_pokok.Size = New System.Drawing.Size(132, 21)
+        Me.gaji_pokok.TabIndex = 100
+        '
+        'LabelControl25
+        '
+        Me.LabelControl25.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl25.Location = New System.Drawing.Point(434, 39)
+        Me.LabelControl25.Name = "LabelControl25"
+        Me.LabelControl25.Size = New System.Drawing.Size(40, 14)
+        Me.LabelControl25.TabIndex = 101
+        Me.LabelControl25.Text = "Gaji/Bln"
+        '
+        'GridControl1
+        '
+        Me.GridControl1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GridControl1.Location = New System.Drawing.Point(116, 197)
+        Me.GridControl1.MainView = Me.GridView1
+        Me.GridControl1.Name = "GridControl1"
+        Me.GridControl1.Size = New System.Drawing.Size(387, 74)
+        Me.GridControl1.TabIndex = 102
+        Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
+        '
+        'GridView1
+        '
+        Me.GridView1.GridControl = Me.GridControl1
+        Me.GridView1.Name = "GridView1"
+        Me.GridView1.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.[True]
+        Me.GridView1.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.[True]
+        Me.GridView1.OptionsCustomization.AllowColumnMoving = False
+        Me.GridView1.OptionsCustomization.AllowFilter = False
+        Me.GridView1.OptionsCustomization.AllowGroup = False
+        Me.GridView1.OptionsCustomization.AllowSort = False
+        Me.GridView1.OptionsView.ColumnAutoWidth = False
+        Me.GridView1.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Bottom
+        Me.GridView1.OptionsView.ShowGroupPanel = False
+        Me.GridView1.OptionsView.ShowIndicator = False
+        '
+        'GridControl2
+        '
+        Me.GridControl2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GridControl2.Location = New System.Drawing.Point(116, 284)
+        Me.GridControl2.MainView = Me.GridView2
+        Me.GridControl2.Name = "GridControl2"
+        Me.GridControl2.Size = New System.Drawing.Size(387, 74)
+        Me.GridControl2.TabIndex = 103
+        Me.GridControl2.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView2})
+        '
+        'GridView2
+        '
+        Me.GridView2.GridControl = Me.GridControl2
+        Me.GridView2.Name = "GridView2"
+        Me.GridView2.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.[True]
+        Me.GridView2.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.[True]
+        Me.GridView2.OptionsCustomization.AllowColumnMoving = False
+        Me.GridView2.OptionsCustomization.AllowFilter = False
+        Me.GridView2.OptionsCustomization.AllowGroup = False
+        Me.GridView2.OptionsCustomization.AllowSort = False
+        Me.GridView2.OptionsView.ColumnAutoWidth = False
+        Me.GridView2.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Bottom
+        Me.GridView2.OptionsView.ShowGroupPanel = False
+        Me.GridView2.OptionsView.ShowIndicator = False
         '
         'frm_input_gaji_spg
         '
@@ -786,57 +836,60 @@ Partial Class frm_input_gaji_spg
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(761, 499)
-        Me.Controls.Add(Me.SimpleButton1)
+        Me.Controls.Add(Me.GridControl2)
+        Me.Controls.Add(Me.GridControl1)
+        Me.Controls.Add(Me.LabelControl25)
+        Me.Controls.Add(Me.gaji_pokok)
+        Me.Controls.Add(Me.chk_semua_customer)
+        Me.Controls.Add(Me.cmd_simpan)
         Me.Controls.Add(Me.LabelControl24)
-        Me.Controls.Add(Me.TextEdit19)
-        Me.Controls.Add(Me.TextEdit18)
+        Me.Controls.Add(Me.grand_total)
+        Me.Controls.Add(Me.total_salah_bayar)
         Me.Controls.Add(Me.TextEdit17)
         Me.Controls.Add(Me.LabelControl23)
         Me.Controls.Add(Me.LabelControl22)
-        Me.Controls.Add(Me.TextEdit16)
+        Me.Controls.Add(Me.total_potongan)
         Me.Controls.Add(Me.LabelControl21)
-        Me.Controls.Add(Me.TextEdit15)
+        Me.Controls.Add(Me.total_potongan_jaminan)
         Me.Controls.Add(Me.PictureBox3)
-        Me.Controls.Add(Me.GridControl2)
         Me.Controls.Add(Me.LabelControl20)
         Me.Controls.Add(Me.LabelControl19)
-        Me.Controls.Add(Me.TextEdit14)
+        Me.Controls.Add(Me.total_insentif)
         Me.Controls.Add(Me.LabelControl18)
-        Me.Controls.Add(Me.TextEdit13)
-        Me.Controls.Add(Me.TextEdit9)
-        Me.Controls.Add(Me.TextEdit10)
-        Me.Controls.Add(Me.TextEdit11)
-        Me.Controls.Add(Me.TextEdit12)
+        Me.Controls.Add(Me.total_pengembalian_jaminan)
+        Me.Controls.Add(Me.total_bonus)
+        Me.Controls.Add(Me.total_lembur2)
+        Me.Controls.Add(Me.total_lembur1)
+        Me.Controls.Add(Me.total_hadir)
         Me.Controls.Add(Me.PictureBox2)
-        Me.Controls.Add(Me.GridControl1)
         Me.Controls.Add(Me.LabelControl5)
-        Me.Controls.Add(Me.TextEdit7)
+        Me.Controls.Add(Me.p_bonus)
         Me.Controls.Add(Me.LabelControl15)
         Me.Controls.Add(Me.LabelControl16)
-        Me.Controls.Add(Me.TextEdit8)
+        Me.Controls.Add(Me.j_bonus)
         Me.Controls.Add(Me.LabelControl17)
-        Me.Controls.Add(Me.TextEdit5)
+        Me.Controls.Add(Me.p_lembur2)
         Me.Controls.Add(Me.LabelControl12)
         Me.Controls.Add(Me.LabelControl13)
-        Me.Controls.Add(Me.TextEdit6)
+        Me.Controls.Add(Me.j_lembur2)
         Me.Controls.Add(Me.LabelControl14)
-        Me.Controls.Add(Me.TextEdit3)
+        Me.Controls.Add(Me.p_lembur1)
         Me.Controls.Add(Me.LabelControl9)
         Me.Controls.Add(Me.LabelControl10)
-        Me.Controls.Add(Me.TextEdit4)
+        Me.Controls.Add(Me.j_lembur1)
         Me.Controls.Add(Me.LabelControl11)
-        Me.Controls.Add(Me.TextEdit2)
+        Me.Controls.Add(Me.p_hadir)
         Me.Controls.Add(Me.LabelControl8)
         Me.Controls.Add(Me.LabelControl7)
-        Me.Controls.Add(Me.TextEdit1)
+        Me.Controls.Add(Me.j_hadir)
         Me.Controls.Add(Me.LabelControl6)
-        Me.Controls.Add(Me.ComboBoxEdit2)
-        Me.Controls.Add(Me.ComboBoxEdit1)
+        Me.Controls.Add(Me.cmb_tahun)
+        Me.Controls.Add(Me.cmb_bulan)
         Me.Controls.Add(Me.LabelControl4)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.LabelControl3)
-        Me.Controls.Add(Me.tgl_terbit)
-        Me.Controls.Add(Me.LookUpEdit1)
+        Me.Controls.Add(Me.tgl_input)
+        Me.Controls.Add(Me.id_pegawai)
         Me.Controls.Add(Me.LabelControl2)
         Me.Controls.Add(Me.kode_customer)
         Me.Controls.Add(Me.LabelControl1)
@@ -844,39 +897,39 @@ Partial Class frm_input_gaji_spg
         Me.Name = "frm_input_gaji_spg"
         Me.Text = "Input Gaji SPG"
         CType(Me.kode_customer.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LookUpEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.tgl_terbit.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.tgl_terbit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.id_pegawai.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.tgl_input.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.tgl_input.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ComboBoxEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ComboBoxEdit2.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TextEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TextEdit2.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TextEdit3.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TextEdit4.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TextEdit5.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TextEdit6.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TextEdit7.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TextEdit8.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cmb_bulan.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cmb_tahun.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.j_hadir.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.p_hadir.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.p_lembur1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.j_lembur1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.p_lembur2.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.j_lembur2.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.p_bonus.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.j_bonus.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.total_bonus.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.total_lembur2.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.total_lembur1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.total_hadir.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.total_pengembalian_jaminan.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.total_insentif.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.total_potongan_jaminan.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.total_potongan.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TextEdit17.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.total_salah_bayar.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.grand_total.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.chk_semua_customer.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.gaji_pokok.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GridView2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TextEdit9.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TextEdit10.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TextEdit11.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TextEdit12.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TextEdit13.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TextEdit14.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridControl2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GridView3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GridView4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TextEdit15.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TextEdit16.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TextEdit17.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TextEdit18.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TextEdit19.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridView2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -884,59 +937,60 @@ Partial Class frm_input_gaji_spg
     Friend WithEvents LabelControl1 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents kode_customer As DevExpress.XtraEditors.LookUpEdit
     Friend WithEvents LabelControl2 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents LookUpEdit1 As DevExpress.XtraEditors.LookUpEdit
+    Friend WithEvents id_pegawai As DevExpress.XtraEditors.LookUpEdit
     Friend WithEvents LabelControl3 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents tgl_terbit As DevExpress.XtraEditors.DateEdit
+    Friend WithEvents tgl_input As DevExpress.XtraEditors.DateEdit
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents LabelControl4 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents ComboBoxEdit1 As DevExpress.XtraEditors.ComboBoxEdit
-    Friend WithEvents ComboBoxEdit2 As DevExpress.XtraEditors.ComboBoxEdit
+    Friend WithEvents cmb_bulan As DevExpress.XtraEditors.ComboBoxEdit
+    Friend WithEvents cmb_tahun As DevExpress.XtraEditors.ComboBoxEdit
     Friend WithEvents LabelControl6 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents TextEdit1 As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents j_hadir As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LabelControl7 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl8 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents TextEdit2 As DevExpress.XtraEditors.TextEdit
-    Friend WithEvents TextEdit3 As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents p_hadir As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents p_lembur1 As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LabelControl9 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl10 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents TextEdit4 As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents j_lembur1 As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LabelControl11 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents TextEdit5 As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents p_lembur2 As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LabelControl12 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl13 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents TextEdit6 As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents j_lembur2 As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LabelControl14 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents TextEdit7 As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents p_bonus As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LabelControl15 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl16 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents TextEdit8 As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents j_bonus As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LabelControl17 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl5 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents GridControl1 As DevExpress.XtraGrid.GridControl
-    Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView
-    Friend WithEvents GridView2 As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
-    Friend WithEvents TextEdit9 As DevExpress.XtraEditors.TextEdit
-    Friend WithEvents TextEdit10 As DevExpress.XtraEditors.TextEdit
-    Friend WithEvents TextEdit11 As DevExpress.XtraEditors.TextEdit
-    Friend WithEvents TextEdit12 As DevExpress.XtraEditors.TextEdit
-    Friend WithEvents TextEdit13 As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents total_bonus As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents total_lembur2 As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents total_lembur1 As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents total_hadir As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents total_pengembalian_jaminan As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LabelControl18 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl19 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents TextEdit14 As DevExpress.XtraEditors.TextEdit
-    Friend WithEvents GridControl2 As DevExpress.XtraGrid.GridControl
-    Friend WithEvents GridView3 As DevExpress.XtraGrid.Views.Grid.GridView
-    Friend WithEvents GridView4 As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents total_insentif As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LabelControl20 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents PictureBox3 As System.Windows.Forms.PictureBox
     Friend WithEvents LabelControl21 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents TextEdit15 As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents total_potongan_jaminan As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LabelControl22 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents TextEdit16 As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents total_potongan As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LabelControl23 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents TextEdit17 As DevExpress.XtraEditors.TextEdit
-    Friend WithEvents TextEdit18 As DevExpress.XtraEditors.TextEdit
-    Friend WithEvents TextEdit19 As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents total_salah_bayar As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents grand_total As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LabelControl24 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents SimpleButton1 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents cmd_simpan As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents chk_semua_customer As DevExpress.XtraEditors.CheckEdit
+    Friend WithEvents gaji_pokok As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LabelControl25 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents GridControl1 As DevExpress.XtraGrid.GridControl
+    Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents GridControl2 As DevExpress.XtraGrid.GridControl
+    Friend WithEvents GridView2 As DevExpress.XtraGrid.Views.Grid.GridView
 End Class
