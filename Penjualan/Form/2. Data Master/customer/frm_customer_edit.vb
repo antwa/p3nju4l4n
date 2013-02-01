@@ -6,11 +6,13 @@ Public Class frm_customer_edit
     Public Sub initControl()
         Load_Kota(lkp_kota)
         Load_Zona(lkp_zona)
-        Load_Harga(lkp_harga)
+        Load_TemplateHarga(lkp_harga)
         Load_Grup(lkp_grup)
 
         rdg_sistem_jual.Properties.Items.Add(New RadioGroupItem("1", "Konsinyasi"))
         rdg_sistem_jual.Properties.Items.Add(New RadioGroupItem("2", "Putus"))
+        rdg_sistem_jual.SelectedIndex = 0
+
     End Sub
 
     Public Sub initData(ByVal kode As String)
@@ -56,6 +58,19 @@ Public Class frm_customer_edit
     End Sub
 
     Private Sub cmd_simpan_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_simpan.Click
+
+        '# validatoin
+        Db.FlushCache()
+        Db.Selects("*")
+        Db.From("tbl_customer")
+        Db.Where("kode_customer", txt_kode_customer.Text)
+
+        Dim rcd As SqlClient.SqlDataReader = Connection.ExecuteToDataReader(Db.GetQueryString)
+
+        If rcd.HasRows Then
+            MsgBox("Kode Customer '" & txt_kode_customer.Text & "' sudah terdapat dalam database!" & vbCrLf & "Ganti dengan yang lain.", MsgBoxStyle.Exclamation)
+            Exit Sub
+        End If
 
         '# Update table tbl_customer
         Db.FlushCache()

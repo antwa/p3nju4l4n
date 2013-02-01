@@ -64,7 +64,7 @@ Partial Class frm_wilayah_list
         Me.grid_list1.Location = New System.Drawing.Point(240, 57)
         Me.grid_list1.MainView = Me.GridV_kota
         Me.grid_list1.Name = "grid_list1"
-        Me.grid_list1.Size = New System.Drawing.Size(286, 278)
+        Me.grid_list1.Size = New System.Drawing.Size(286, 348)
         Me.grid_list1.TabIndex = 31
         Me.grid_list1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridV_kota})
         '
@@ -86,7 +86,7 @@ Partial Class frm_wilayah_list
         Me.grid_list2.Location = New System.Drawing.Point(760, 57)
         Me.grid_list2.MainView = Me.GridV_zona
         Me.grid_list2.Name = "grid_list2"
-        Me.grid_list2.Size = New System.Drawing.Size(222, 278)
+        Me.grid_list2.Size = New System.Drawing.Size(222, 348)
         Me.grid_list2.TabIndex = 32
         Me.grid_list2.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridV_zona})
         '
@@ -103,7 +103,7 @@ Partial Class frm_wilayah_list
         Me.grid_list4.Location = New System.Drawing.Point(12, 57)
         Me.grid_list4.MainView = Me.GridV_provinsi
         Me.grid_list4.Name = "grid_list4"
-        Me.grid_list4.Size = New System.Drawing.Size(222, 278)
+        Me.grid_list4.Size = New System.Drawing.Size(222, 348)
         Me.grid_list4.TabIndex = 34
         Me.grid_list4.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridV_provinsi})
         '
@@ -120,7 +120,7 @@ Partial Class frm_wilayah_list
         Me.grid_list3.Location = New System.Drawing.Point(532, 57)
         Me.grid_list3.MainView = Me.GridV_group
         Me.grid_list3.Name = "grid_list3"
-        Me.grid_list3.Size = New System.Drawing.Size(222, 278)
+        Me.grid_list3.Size = New System.Drawing.Size(222, 348)
         Me.grid_list3.TabIndex = 35
         Me.grid_list3.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridV_group})
         '
@@ -246,7 +246,7 @@ Partial Class frm_wilayah_list
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(915, 340)
+        Me.ClientSize = New System.Drawing.Size(1049, 410)
         Me.Controls.Add(Me.GroupControl4)
         Me.Controls.Add(Me.GroupControl3)
         Me.Controls.Add(Me.GroupControl2)
@@ -256,7 +256,7 @@ Partial Class frm_wilayah_list
         Me.Controls.Add(Me.grid_list2)
         Me.Controls.Add(Me.grid_list1)
         Me.Name = "frm_wilayah_list"
-        Me.Text = "frm_wilayah_list"
+        Me.Text = "Wilayah"
         CType(Me.grid_list1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridV_kota, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.grid_list2, System.ComponentModel.ISupportInitialize).EndInit()

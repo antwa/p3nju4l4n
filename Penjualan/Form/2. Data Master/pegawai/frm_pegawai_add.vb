@@ -1,26 +1,27 @@
 ﻿Imports DevExpress.XtraEditors.Controls
 
 Public Class frm_pegawai_add
+
     Sub InitData()
-        Load_Status(lkp_status)
+
+        'Load_Status(lkp_status)
         Load_Jabatan(lkp_jabatan)
-
-
-        rdg_jk.Properties.Items.Add(New RadioGroupItem("1", "Laki - Laki"))
-        rdg_jk.Properties.Items.Add(New RadioGroupItem("2", "Perempuan"))
-
-
-
         Load_Customer(lkp_kode_costumer, "1")
 
-        Load_Jabatan(lkp_jabatan)
+        rdg_jk.Properties.Items.Add(New RadioGroupItem("L", "Laki - Laki"))
+        rdg_jk.Properties.Items.Add(New RadioGroupItem("P", "Perempuan"))
+        rdg_jk.SelectedIndex = 0
+
+        rdg_statusKaryawan.Properties.Items.Add(New RadioGroupItem("1", "Karyawan Tetap"))
+        rdg_statusKaryawan.Properties.Items.Add(New RadioGroupItem("2", "Karyawan Percobaan"))
+        rdg_statusKaryawan.SelectedIndex = 0
 
         rdg_group_pegawai.Properties.Items.Add(New RadioGroupItem("1", "SPG"))
         rdg_group_pegawai.Properties.Items.Add(New RadioGroupItem("2", "Pegawai"))
         rdg_group_pegawai.EditValue = "1"
 
-
     End Sub
+
     Private Sub frm_pegawai_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Call InitData()
     End Sub
@@ -75,7 +76,7 @@ Public Class frm_pegawai_add
                 Db.SetField("atas_nama", txt_atas_nama.Text)
 
 
-                Db.SetField("status", lkp_status.Properties.GetKeyValueByDisplayText(lkp_status.Text))
+                Db.SetField("status", rdg_statusKaryawan.EditValue)
                 Db.SetField("gaji_pokok", txt_gaji_pokok.EditValue)
                 Db.SetField("premi_harian", txt_premi_harian.EditValue)
 
@@ -111,5 +112,9 @@ Public Class frm_pegawai_add
 
     Private Sub lkp_kode_costumer_EditValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles lkp_kode_costumer.EditValueChanged
 
+    End Sub
+
+    Private Sub cmd_batal_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_batal.Click
+        Me.Close()
     End Sub
 End Class

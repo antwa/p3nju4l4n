@@ -19,7 +19,6 @@ Partial Class frm_barangjadi_list
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_barangjadi_list))
         Me.GridControl1 = New DevExpress.XtraGrid.GridControl
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView
         Me.cmd_refresh = New DevExpress.XtraEditors.SimpleButton
@@ -58,7 +57,6 @@ Partial Class frm_barangjadi_list
         'cmd_refresh
         '
         Me.cmd_refresh.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.cmd_refresh.Image = CType(resources.GetObject("cmd_refresh.Image"), System.Drawing.Image)
         Me.cmd_refresh.Location = New System.Drawing.Point(330, 291)
         Me.cmd_refresh.Name = "cmd_refresh"
         Me.cmd_refresh.Size = New System.Drawing.Size(95, 26)
@@ -68,7 +66,6 @@ Partial Class frm_barangjadi_list
         'cmd_hapus
         '
         Me.cmd_hapus.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.cmd_hapus.Image = CType(resources.GetObject("cmd_hapus.Image"), System.Drawing.Image)
         Me.cmd_hapus.Location = New System.Drawing.Point(633, 291)
         Me.cmd_hapus.Name = "cmd_hapus"
         Me.cmd_hapus.Size = New System.Drawing.Size(95, 26)
@@ -78,7 +75,6 @@ Partial Class frm_barangjadi_list
         'cmd_edit
         '
         Me.cmd_edit.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.cmd_edit.Image = CType(resources.GetObject("cmd_edit.Image"), System.Drawing.Image)
         Me.cmd_edit.Location = New System.Drawing.Point(532, 291)
         Me.cmd_edit.Name = "cmd_edit"
         Me.cmd_edit.Size = New System.Drawing.Size(95, 26)
@@ -88,7 +84,6 @@ Partial Class frm_barangjadi_list
         'cmd_tambah
         '
         Me.cmd_tambah.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.cmd_tambah.Image = CType(resources.GetObject("cmd_tambah.Image"), System.Drawing.Image)
         Me.cmd_tambah.Location = New System.Drawing.Point(431, 291)
         Me.cmd_tambah.Name = "cmd_tambah"
         Me.cmd_tambah.Size = New System.Drawing.Size(95, 26)

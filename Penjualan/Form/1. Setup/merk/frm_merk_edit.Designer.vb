@@ -31,21 +31,23 @@ Partial Class frm_merk_edit
         '
         'txt_merk
         '
-        Me.txt_merk.Location = New System.Drawing.Point(121, 55)
+        Me.txt_merk.Location = New System.Drawing.Point(78, 35)
         Me.txt_merk.Name = "txt_merk"
-        Me.txt_merk.Size = New System.Drawing.Size(143, 20)
+        Me.txt_merk.Size = New System.Drawing.Size(202, 20)
         Me.txt_merk.TabIndex = 19
         '
         'txt_kode_merk
         '
-        Me.txt_kode_merk.Location = New System.Drawing.Point(120, 21)
+        Me.txt_kode_merk.Location = New System.Drawing.Point(78, 9)
         Me.txt_kode_merk.Name = "txt_kode_merk"
-        Me.txt_kode_merk.Size = New System.Drawing.Size(145, 20)
+        Me.txt_kode_merk.Properties.ReadOnly = True
+        Me.txt_kode_merk.Size = New System.Drawing.Size(55, 20)
         Me.txt_kode_merk.TabIndex = 18
         '
         'cmd_batal
         '
-        Me.cmd_batal.Location = New System.Drawing.Point(167, 92)
+        Me.cmd_batal.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.cmd_batal.Location = New System.Drawing.Point(182, 83)
         Me.cmd_batal.Name = "cmd_batal"
         Me.cmd_batal.Size = New System.Drawing.Size(98, 25)
         Me.cmd_batal.TabIndex = 17
@@ -53,7 +55,8 @@ Partial Class frm_merk_edit
         '
         'cmd_simpan
         '
-        Me.cmd_simpan.Location = New System.Drawing.Point(38, 92)
+        Me.cmd_simpan.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.cmd_simpan.Location = New System.Drawing.Point(78, 83)
         Me.cmd_simpan.Name = "cmd_simpan"
         Me.cmd_simpan.Size = New System.Drawing.Size(98, 25)
         Me.cmd_simpan.TabIndex = 16
@@ -61,7 +64,7 @@ Partial Class frm_merk_edit
         '
         'LabelControl2
         '
-        Me.LabelControl2.Location = New System.Drawing.Point(23, 58)
+        Me.LabelControl2.Location = New System.Drawing.Point(12, 38)
         Me.LabelControl2.Name = "LabelControl2"
         Me.LabelControl2.Size = New System.Drawing.Size(23, 13)
         Me.LabelControl2.TabIndex = 15
@@ -69,7 +72,7 @@ Partial Class frm_merk_edit
         '
         'LabelControl1
         '
-        Me.LabelControl1.Location = New System.Drawing.Point(23, 24)
+        Me.LabelControl1.Location = New System.Drawing.Point(12, 12)
         Me.LabelControl1.Name = "LabelControl1"
         Me.LabelControl1.Size = New System.Drawing.Size(50, 13)
         Me.LabelControl1.TabIndex = 14
@@ -79,14 +82,17 @@ Partial Class frm_merk_edit
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(292, 147)
+        Me.ClientSize = New System.Drawing.Size(292, 120)
+        Me.ControlBox = False
         Me.Controls.Add(Me.txt_merk)
         Me.Controls.Add(Me.txt_kode_merk)
         Me.Controls.Add(Me.cmd_batal)
         Me.Controls.Add(Me.cmd_simpan)
         Me.Controls.Add(Me.LabelControl2)
         Me.Controls.Add(Me.LabelControl1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "frm_merk_edit"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frm_merk_edit"
         CType(Me.txt_merk.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txt_kode_merk.Properties, System.ComponentModel.ISupportInitialize).EndInit()

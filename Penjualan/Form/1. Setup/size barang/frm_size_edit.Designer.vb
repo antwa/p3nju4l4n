@@ -31,7 +31,8 @@ Partial Class frm_size_edit
         '
         'cmd_batal
         '
-        Me.cmd_batal.Location = New System.Drawing.Point(163, 94)
+        Me.cmd_batal.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.cmd_batal.Location = New System.Drawing.Point(182, 75)
         Me.cmd_batal.Name = "cmd_batal"
         Me.cmd_batal.Size = New System.Drawing.Size(98, 25)
         Me.cmd_batal.TabIndex = 17
@@ -39,7 +40,8 @@ Partial Class frm_size_edit
         '
         'cmd_simpan
         '
-        Me.cmd_simpan.Location = New System.Drawing.Point(34, 94)
+        Me.cmd_simpan.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.cmd_simpan.Location = New System.Drawing.Point(77, 75)
         Me.cmd_simpan.Name = "cmd_simpan"
         Me.cmd_simpan.Size = New System.Drawing.Size(98, 25)
         Me.cmd_simpan.TabIndex = 16
@@ -47,7 +49,7 @@ Partial Class frm_size_edit
         '
         'LabelControl2
         '
-        Me.LabelControl2.Location = New System.Drawing.Point(34, 60)
+        Me.LabelControl2.Location = New System.Drawing.Point(12, 38)
         Me.LabelControl2.Name = "LabelControl2"
         Me.LabelControl2.Size = New System.Drawing.Size(19, 13)
         Me.LabelControl2.TabIndex = 15
@@ -55,7 +57,7 @@ Partial Class frm_size_edit
         '
         'LabelControl1
         '
-        Me.LabelControl1.Location = New System.Drawing.Point(34, 26)
+        Me.LabelControl1.Location = New System.Drawing.Point(12, 12)
         Me.LabelControl1.Name = "LabelControl1"
         Me.LabelControl1.Size = New System.Drawing.Size(46, 13)
         Me.LabelControl1.TabIndex = 14
@@ -63,31 +65,35 @@ Partial Class frm_size_edit
         '
         'txt_kode_size
         '
-        Me.txt_kode_size.Location = New System.Drawing.Point(123, 23)
+        Me.txt_kode_size.Location = New System.Drawing.Point(77, 9)
         Me.txt_kode_size.Name = "txt_kode_size"
-        Me.txt_kode_size.Size = New System.Drawing.Size(138, 20)
+        Me.txt_kode_size.Properties.ReadOnly = True
+        Me.txt_kode_size.Size = New System.Drawing.Size(55, 20)
         Me.txt_kode_size.TabIndex = 18
         '
         'txt_size
         '
-        Me.txt_size.Location = New System.Drawing.Point(123, 57)
+        Me.txt_size.Location = New System.Drawing.Point(77, 35)
         Me.txt_size.Name = "txt_size"
-        Me.txt_size.Size = New System.Drawing.Size(138, 20)
+        Me.txt_size.Size = New System.Drawing.Size(203, 20)
         Me.txt_size.TabIndex = 19
         '
         'frm_size_edit
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(292, 147)
+        Me.ClientSize = New System.Drawing.Size(292, 112)
+        Me.ControlBox = False
         Me.Controls.Add(Me.txt_size)
         Me.Controls.Add(Me.txt_kode_size)
         Me.Controls.Add(Me.cmd_batal)
         Me.Controls.Add(Me.cmd_simpan)
         Me.Controls.Add(Me.LabelControl2)
         Me.Controls.Add(Me.LabelControl1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "frm_size_edit"
-        Me.Text = "frm_size_edit"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "Edit Size"
         CType(Me.txt_kode_size.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txt_size.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

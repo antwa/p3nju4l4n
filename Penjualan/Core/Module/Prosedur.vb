@@ -211,41 +211,49 @@
         lookup.ItemIndex = 0
     End Sub
 
-    Public Sub Load_Status(ByRef lookup As DevExpress.XtraEditors.LookUpEdit)
-        'init lookup
-        Db.FlushCache()
-        Db.Selects("a.kode_status, a.status")
-        Db.From("tbl_status a")
+    'Public Sub Load_Status(ByRef lookup As DevExpress.XtraEditors.LookUpEdit)
+    '    'init lookup
+    '    Db.FlushCache()
+    '    Db.Selects("a.kode_status, a.status")
+    '    Db.From("tbl_status a")
 
 
-        lookup.Properties.DataSource = Connection.ExecuteToDataTable(Db.GetQueryString)
-        lookup.Properties.DisplayMember = "status"
-        lookup.Properties.ValueMember = "kode_status"
-        lookup.Properties.PopulateColumns()
-        lookup.Properties.Columns(0).Caption = "Kode"
-        lookup.Properties.Columns(1).Caption = "Status"
-        lookup.Properties.Columns(0).Width = 20
-        lookup.Properties.Columns(1).Width = 100
-        lookup.ItemIndex = 0
-    End Sub
+    '    lookup.Properties.DataSource = Connection.ExecuteToDataTable(Db.GetQueryString)
+    '    lookup.Properties.DisplayMember = "status"
+    '    lookup.Properties.ValueMember = "kode_status"
+    '    lookup.Properties.PopulateColumns()
+    '    lookup.Properties.Columns(0).Caption = "Kode"
+    '    lookup.Properties.Columns(1).Caption = "Status"
+    '    lookup.Properties.Columns(0).Width = 20
+    '    lookup.Properties.Columns(1).Width = 100
+    '    lookup.ItemIndex = 0
+    'End Sub
 
     Public Sub Load_Kota(ByRef lookup As DevExpress.XtraEditors.LookUpEdit)
         'init lookup
         Db.FlushCache()
-        Db.Selects("a.kode_kota, a.kota, a.kode_provinsi")
+        Db.Selects("a.kode_kota, a.kota, b.provinsi")
         Db.From("tbl_kota a")
+        Db.Join("tbl_provinsi b", "b.kode_provinsi = a.kode_provinsi")
 
         lookup.Properties.DataSource = Connection.ExecuteToDataTable(Db.GetQueryString)
+
         lookup.Properties.DisplayMember = "kota"
         lookup.Properties.ValueMember = "kode_kota"
-        lookup.Properties.ValueMember = "kode_provinsi"
+
         lookup.Properties.PopulateColumns()
+
         lookup.Properties.Columns(0).Caption = "Kode Kota"
         lookup.Properties.Columns(1).Caption = "Kota"
-        lookup.Properties.Columns(2).Caption = "Kode Provinsi"
-        lookup.Properties.Columns(0).Width = 20
-        lookup.Properties.Columns(1).Width = 100
-        lookup.Properties.Columns(2).Width = 20
+        lookup.Properties.Columns(2).Caption = "Provinsi"
+
+        lookup.Properties.Columns(0).Visible = False
+
+        lookup.Properties.Columns(1).Width = 75
+        lookup.Properties.Columns(2).Width = 45
+
+        lookup.Properties.PopupWidth = 250
+
         lookup.ItemIndex = 0
     End Sub
 
@@ -255,33 +263,42 @@
         Db.Selects("a.kode_zona, a.zona")
         Db.From("tbl_zona a")
 
-
         lookup.Properties.DataSource = Connection.ExecuteToDataTable(Db.GetQueryString)
+
         lookup.Properties.DisplayMember = "zona"
         lookup.Properties.ValueMember = "kode_zona"
+
         lookup.Properties.PopulateColumns()
-        lookup.Properties.Columns(0).Caption = "Kode"
-        lookup.Properties.Columns(1).Caption = "Zona"
-        lookup.Properties.Columns(0).Width = 20
+
+        lookup.Properties.Columns(0).Visible = False
+        lookup.Properties.Columns(1).Caption = "zona"
+
+        'lookup.Properties.Columns(0).Width = 20
         lookup.Properties.Columns(1).Width = 100
+
         lookup.ItemIndex = 0
     End Sub
 
-    Public Sub Load_Harga(ByRef lookup As DevExpress.XtraEditors.LookUpEdit)
+    Public Sub Load_TemplateHarga(ByRef lookup As DevExpress.XtraEditors.LookUpEdit)
         'init lookup
         Db.FlushCache()
-        Db.Selects("a.kode_jenis_harga, a.jenis")
-        Db.From("tbl_jenis_hargabarang a")
 
+        Db.Selects("a.kode_template_harga, a.nama_harga")
+        Db.From("tbl_template_hargajual a")
 
         lookup.Properties.DataSource = Connection.ExecuteToDataTable(Db.GetQueryString)
-        lookup.Properties.DisplayMember = "jenis"
-        lookup.Properties.ValueMember = "kode_jenis_harga"
+
+        lookup.Properties.DisplayMember = "nama_harga"
+        lookup.Properties.ValueMember = "kode_template_harga"
+
         lookup.Properties.PopulateColumns()
-        lookup.Properties.Columns(0).Caption = "Kode"
-        lookup.Properties.Columns(1).Caption = "Harga"
-        lookup.Properties.Columns(0).Width = 20
+
+        lookup.Properties.Columns(0).Visible = False
+        lookup.Properties.Columns(1).Caption = "Harga Jual"
+
+        'lookup.Properties.Columns(0).Width = 20
         lookup.Properties.Columns(1).Width = 100
+
         lookup.ItemIndex = 0
     End Sub
 
@@ -291,15 +308,19 @@
         Db.Selects("a.kode_grup, a.grup")
         Db.From("tbl_grup a")
 
-
         lookup.Properties.DataSource = Connection.ExecuteToDataTable(Db.GetQueryString)
+
         lookup.Properties.DisplayMember = "grup"
         lookup.Properties.ValueMember = "kode_grup"
+
         lookup.Properties.PopulateColumns()
-        lookup.Properties.Columns(0).Caption = "Kode"
+
+        lookup.Properties.Columns(0).Visible = False
         lookup.Properties.Columns(1).Caption = "Group"
-        lookup.Properties.Columns(0).Width = 20
+
+        'lookup.Properties.Columns(0).Width = 20
         lookup.Properties.Columns(1).Width = 100
+
         lookup.ItemIndex = 0
     End Sub
 

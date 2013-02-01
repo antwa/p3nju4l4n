@@ -18,7 +18,7 @@
         Db.From("tbl_kategori_barang")
 
         If txt_cari.Text <> "" Then
-            Db.Where("WHERE kode_kategori LIKE '" & txt_cari.Text & "%'")
+            Db.Where("WHERE kategori LIKE '" & txt_cari.Text & "%'")
         End If
 
         Db.OrderBy("kode_kategori", cls_database.sorting.Ascending)
@@ -55,14 +55,14 @@
     Private Sub cmd_hapus_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_hapus.Click
         Try
             Dim row As System.Data.DataRow = GridV_list.GetDataRow(GridV_list.FocusedRowHandle)
-            If MsgBox("Kategori : " & row("Kategori Barang") & vbCrLf & vbCrLf & vbCrLf & "Apakah anda yakin akan menghapus data di atas?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "Delete Kategori") = MsgBoxResult.Yes Then
+            If MsgBox("Kategori : " & row("kategori") & vbCrLf & vbCrLf & vbCrLf & "Apakah anda yakin akan menghapus data di atas?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "Delete Kategori") = MsgBoxResult.Yes Then
 
                 Db.FlushCache()
                 Db.Delete("tbl_kategori_barang")
-                Db.Where("kode_kategori", row("Kode Kategori Barang"))
+                Db.Where("kode_kategori", row("kode_kategori"))
 
                 If Connection.ExecuteNonQuery(Db.GetQueryString) Then
-                    MsgBox("Kategori : " & row("Kategori Barang") & ", Berhasil dihapus dari database", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Pesan")
+                    MsgBox("Kategori : " & row("Kategori") & ", Berhasil dihapus dari database", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Pesan")
                     Call InitGrid()
                 End If
 

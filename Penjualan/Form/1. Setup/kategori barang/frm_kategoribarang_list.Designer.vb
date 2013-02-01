@@ -19,7 +19,6 @@ Partial Class frm_kategoribarang_list
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_kategoribarang_list))
         Me.cmd_hapus = New DevExpress.XtraEditors.SimpleButton
         Me.cmd_edit = New DevExpress.XtraEditors.SimpleButton
         Me.cmd_tambah = New DevExpress.XtraEditors.SimpleButton
@@ -36,8 +35,7 @@ Partial Class frm_kategoribarang_list
         'cmd_hapus
         '
         Me.cmd_hapus.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.cmd_hapus.Image = CType(resources.GetObject("cmd_hapus.Image"), System.Drawing.Image)
-        Me.cmd_hapus.Location = New System.Drawing.Point(482, 343)
+        Me.cmd_hapus.Location = New System.Drawing.Point(500, 301)
         Me.cmd_hapus.Name = "cmd_hapus"
         Me.cmd_hapus.Size = New System.Drawing.Size(128, 26)
         Me.cmd_hapus.TabIndex = 20
@@ -46,8 +44,7 @@ Partial Class frm_kategoribarang_list
         'cmd_edit
         '
         Me.cmd_edit.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.cmd_edit.Image = CType(resources.GetObject("cmd_edit.Image"), System.Drawing.Image)
-        Me.cmd_edit.Location = New System.Drawing.Point(348, 343)
+        Me.cmd_edit.Location = New System.Drawing.Point(366, 301)
         Me.cmd_edit.Name = "cmd_edit"
         Me.cmd_edit.Size = New System.Drawing.Size(128, 26)
         Me.cmd_edit.TabIndex = 19
@@ -56,8 +53,7 @@ Partial Class frm_kategoribarang_list
         'cmd_tambah
         '
         Me.cmd_tambah.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.cmd_tambah.Image = CType(resources.GetObject("cmd_tambah.Image"), System.Drawing.Image)
-        Me.cmd_tambah.Location = New System.Drawing.Point(214, 343)
+        Me.cmd_tambah.Location = New System.Drawing.Point(232, 301)
         Me.cmd_tambah.Name = "cmd_tambah"
         Me.cmd_tambah.Size = New System.Drawing.Size(128, 26)
         Me.cmd_tambah.TabIndex = 18
@@ -65,7 +61,7 @@ Partial Class frm_kategoribarang_list
         '
         'SimpleButton1
         '
-        Me.SimpleButton1.Location = New System.Drawing.Point(226, 15)
+        Me.SimpleButton1.Location = New System.Drawing.Point(230, 9)
         Me.SimpleButton1.Name = "SimpleButton1"
         Me.SimpleButton1.Size = New System.Drawing.Size(75, 23)
         Me.SimpleButton1.TabIndex = 21
@@ -73,7 +69,7 @@ Partial Class frm_kategoribarang_list
         '
         'txt_cari
         '
-        Me.txt_cari.Location = New System.Drawing.Point(60, 18)
+        Me.txt_cari.Location = New System.Drawing.Point(70, 12)
         Me.txt_cari.Name = "txt_cari"
         Me.txt_cari.Size = New System.Drawing.Size(150, 20)
         Me.txt_cari.TabIndex = 22
@@ -83,10 +79,10 @@ Partial Class frm_kategoribarang_list
         Me.grid_list.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
                     Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.grid_list.Location = New System.Drawing.Point(19, 51)
+        Me.grid_list.Location = New System.Drawing.Point(12, 44)
         Me.grid_list.MainView = Me.GridV_list
         Me.grid_list.Name = "grid_list"
-        Me.grid_list.Size = New System.Drawing.Size(590, 278)
+        Me.grid_list.Size = New System.Drawing.Size(616, 251)
         Me.grid_list.TabIndex = 23
         Me.grid_list.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridV_list})
         '
@@ -94,20 +90,22 @@ Partial Class frm_kategoribarang_list
         '
         Me.GridV_list.GridControl = Me.grid_list
         Me.GridV_list.Name = "GridV_list"
+        Me.GridV_list.OptionsBehavior.Editable = False
+        Me.GridV_list.OptionsView.ShowGroupPanel = False
         '
         'LabelControl1
         '
-        Me.LabelControl1.Location = New System.Drawing.Point(19, 21)
+        Me.LabelControl1.Location = New System.Drawing.Point(12, 15)
         Me.LabelControl1.Name = "LabelControl1"
-        Me.LabelControl1.Size = New System.Drawing.Size(24, 13)
+        Me.LabelControl1.Size = New System.Drawing.Size(40, 13)
         Me.LabelControl1.TabIndex = 24
-        Me.LabelControl1.Text = "Kode"
+        Me.LabelControl1.Text = "Kategori"
         '
         'frm_kategoribarang_list
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(620, 378)
+        Me.ClientSize = New System.Drawing.Size(638, 336)
         Me.Controls.Add(Me.LabelControl1)
         Me.Controls.Add(Me.grid_list)
         Me.Controls.Add(Me.txt_cari)
@@ -116,7 +114,7 @@ Partial Class frm_kategoribarang_list
         Me.Controls.Add(Me.cmd_edit)
         Me.Controls.Add(Me.cmd_tambah)
         Me.Name = "frm_kategoribarang_list"
-        Me.Text = "frm_kategoribarang_list"
+        Me.Text = "Kategori Barang"
         CType(Me.txt_cari.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.grid_list, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridV_list, System.ComponentModel.ISupportInitialize).EndInit()

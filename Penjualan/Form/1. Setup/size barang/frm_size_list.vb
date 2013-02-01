@@ -18,7 +18,7 @@
         Db.From("tbl_size")
 
         If txt_cari.Text <> "" Then
-            Db.Where("WHERE kode_size LIKE '" & txt_cari.Text & "%'")
+            Db.Where("WHERE size LIKE '%" & txt_cari.Text & "%'")
         End If
 
         Db.OrderBy("kode_size", cls_database.sorting.Ascending)
@@ -52,7 +52,7 @@
 
                 Db.FlushCache()
                 Db.Delete("tbl_size")
-                Db.Where("kode_size", row("Kode"))
+                Db.Where("kode_size", row("kode_size"))
 
                 If Connection.ExecuteNonQuery(Db.GetQueryString) Then
                     MsgBox("Size : " & row("Size") & ", Berhasil dihapus dari database", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Pesan")
