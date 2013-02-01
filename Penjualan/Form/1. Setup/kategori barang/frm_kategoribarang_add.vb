@@ -24,7 +24,6 @@
         'Db.SetField("kode_kategori", txt_kode_kategori.Text)
         Db.SetField("kategori", txt_kategori.Text)
 
-        MsgBox(Db.GetQueryString)
         If Connection.ExecuteNonQuery(Db.GetQueryString) Then
             frm_kategoribarang_list.InitGrid()
 

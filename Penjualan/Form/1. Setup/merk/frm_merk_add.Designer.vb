@@ -28,15 +28,17 @@ Partial Class frm_merk_add
         '
         'cmd_batal
         '
-        Me.cmd_batal.Location = New System.Drawing.Point(166, 67)
+        Me.cmd_batal.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.cmd_batal.Location = New System.Drawing.Point(198, 54)
         Me.cmd_batal.Name = "cmd_batal"
-        Me.cmd_batal.Size = New System.Drawing.Size(98, 25)
+        Me.cmd_batal.Size = New System.Drawing.Size(82, 25)
         Me.cmd_batal.TabIndex = 11
         Me.cmd_batal.Text = "Batal"
         '
         'cmd_simpan
         '
-        Me.cmd_simpan.Location = New System.Drawing.Point(37, 67)
+        Me.cmd_simpan.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.cmd_simpan.Location = New System.Drawing.Point(94, 54)
         Me.cmd_simpan.Name = "cmd_simpan"
         Me.cmd_simpan.Size = New System.Drawing.Size(98, 25)
         Me.cmd_simpan.TabIndex = 10
@@ -44,7 +46,7 @@ Partial Class frm_merk_add
         '
         'LabelControl2
         '
-        Me.LabelControl2.Location = New System.Drawing.Point(23, 15)
+        Me.LabelControl2.Location = New System.Drawing.Point(12, 12)
         Me.LabelControl2.Name = "LabelControl2"
         Me.LabelControl2.Size = New System.Drawing.Size(23, 13)
         Me.LabelControl2.TabIndex = 9
@@ -52,22 +54,24 @@ Partial Class frm_merk_add
         '
         'txt_merk
         '
-        Me.txt_merk.Location = New System.Drawing.Point(121, 12)
+        Me.txt_merk.Location = New System.Drawing.Point(41, 12)
         Me.txt_merk.Name = "txt_merk"
-        Me.txt_merk.Size = New System.Drawing.Size(143, 20)
+        Me.txt_merk.Size = New System.Drawing.Size(239, 20)
         Me.txt_merk.TabIndex = 13
         '
         'frm_merk_add
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(292, 113)
+        Me.ClientSize = New System.Drawing.Size(292, 91)
+        Me.ControlBox = False
         Me.Controls.Add(Me.txt_merk)
         Me.Controls.Add(Me.cmd_batal)
         Me.Controls.Add(Me.cmd_simpan)
         Me.Controls.Add(Me.LabelControl2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "frm_merk_add"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Tambah Merk"
         CType(Me.txt_merk.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

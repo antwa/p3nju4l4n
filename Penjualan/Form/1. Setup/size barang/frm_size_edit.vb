@@ -23,6 +23,16 @@
 
 
     Private Sub cmd_simpan_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_simpan.Click
+
+        '# validation
+        Validation.clearRules()
+        Validation.addRules(txt_size.Text, "Size", "required")
+
+        If Not Validation.isValid Then
+            Validation.showMessage()
+            Exit Sub
+        End If
+
         '# Update table tbl_size
         Db.FlushCache()
         Db.Update("tbl_size")
@@ -31,8 +41,7 @@
         Db.Where("kode_size", txt_kode_size.Text)
 
         If Connection.ExecuteNonQuery(Db.GetQueryString) Then
-            frm_kategoribarang_list.InitGrid()
-
+            frm_size_list.loadData()
             Me.Close()
         End If
     End Sub

@@ -61,7 +61,8 @@ Partial Class frm_kategoribarang_add
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(289, 94)
+        Me.ClientSize = New System.Drawing.Size(289, 91)
+        Me.ControlBox = False
         Me.Controls.Add(Me.cmd_batal)
         Me.Controls.Add(Me.cmd_simpan)
         Me.Controls.Add(Me.LabelControl2)

@@ -31,7 +31,8 @@ Partial Class frm_kategoribarang_edit
         '
         'cmd_batal
         '
-        Me.cmd_batal.Location = New System.Drawing.Point(156, 90)
+        Me.cmd_batal.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.cmd_batal.Location = New System.Drawing.Point(179, 70)
         Me.cmd_batal.Name = "cmd_batal"
         Me.cmd_batal.Size = New System.Drawing.Size(98, 25)
         Me.cmd_batal.TabIndex = 11
@@ -39,7 +40,8 @@ Partial Class frm_kategoribarang_edit
         '
         'cmd_simpan
         '
-        Me.cmd_simpan.Location = New System.Drawing.Point(27, 90)
+        Me.cmd_simpan.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.cmd_simpan.Location = New System.Drawing.Point(75, 70)
         Me.cmd_simpan.Name = "cmd_simpan"
         Me.cmd_simpan.Size = New System.Drawing.Size(98, 25)
         Me.cmd_simpan.TabIndex = 10
@@ -47,7 +49,7 @@ Partial Class frm_kategoribarang_edit
         '
         'LabelControl2
         '
-        Me.LabelControl2.Location = New System.Drawing.Point(12, 56)
+        Me.LabelControl2.Location = New System.Drawing.Point(12, 38)
         Me.LabelControl2.Name = "LabelControl2"
         Me.LabelControl2.Size = New System.Drawing.Size(40, 13)
         Me.LabelControl2.TabIndex = 9
@@ -55,40 +57,43 @@ Partial Class frm_kategoribarang_edit
         '
         'LabelControl1
         '
-        Me.LabelControl1.Location = New System.Drawing.Point(12, 22)
+        Me.LabelControl1.Location = New System.Drawing.Point(12, 12)
         Me.LabelControl1.Name = "LabelControl1"
-        Me.LabelControl1.Size = New System.Drawing.Size(67, 13)
+        Me.LabelControl1.Size = New System.Drawing.Size(24, 13)
         Me.LabelControl1.TabIndex = 8
-        Me.LabelControl1.Text = "Kode Kategori"
+        Me.LabelControl1.Text = "Kode"
         '
         'txt_kategori
         '
-        Me.txt_kategori.Location = New System.Drawing.Point(128, 53)
+        Me.txt_kategori.Location = New System.Drawing.Point(67, 35)
         Me.txt_kategori.Name = "txt_kategori"
-        Me.txt_kategori.Size = New System.Drawing.Size(141, 20)
+        Me.txt_kategori.Size = New System.Drawing.Size(210, 20)
         Me.txt_kategori.TabIndex = 7
         '
         'txt_kode_kategori
         '
-        Me.txt_kode_kategori.Location = New System.Drawing.Point(128, 18)
+        Me.txt_kode_kategori.Location = New System.Drawing.Point(67, 9)
         Me.txt_kode_kategori.Name = "txt_kode_kategori"
-        Me.txt_kode_kategori.Size = New System.Drawing.Size(141, 20)
+        Me.txt_kode_kategori.Properties.ReadOnly = True
+        Me.txt_kode_kategori.Size = New System.Drawing.Size(58, 20)
         Me.txt_kode_kategori.TabIndex = 6
         '
         'frm_kategoribarang_edit
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(289, 145)
+        Me.ClientSize = New System.Drawing.Size(289, 107)
+        Me.ControlBox = False
         Me.Controls.Add(Me.cmd_batal)
         Me.Controls.Add(Me.cmd_simpan)
         Me.Controls.Add(Me.LabelControl2)
         Me.Controls.Add(Me.LabelControl1)
         Me.Controls.Add(Me.txt_kategori)
         Me.Controls.Add(Me.txt_kode_kategori)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "frm_kategoribarang_edit"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "frm_kategoribarang_edit"
+        Me.Text = "Edit Kategori Barang"
         CType(Me.txt_kategori.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txt_kode_kategori.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

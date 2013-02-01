@@ -19,7 +19,6 @@ Partial Class frm_pegawai_list
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_pegawai_list))
         Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton
         Me.cmd_hapus_user = New DevExpress.XtraEditors.SimpleButton
         Me.cmd_edit_user = New DevExpress.XtraEditors.SimpleButton
@@ -33,8 +32,7 @@ Partial Class frm_pegawai_list
         'SimpleButton1
         '
         Me.SimpleButton1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.SimpleButton1.Image = CType(resources.GetObject("SimpleButton1.Image"), System.Drawing.Image)
-        Me.SimpleButton1.Location = New System.Drawing.Point(285, 294)
+        Me.SimpleButton1.Location = New System.Drawing.Point(299, 304)
         Me.SimpleButton1.Name = "SimpleButton1"
         Me.SimpleButton1.Size = New System.Drawing.Size(101, 26)
         Me.SimpleButton1.TabIndex = 22
@@ -43,8 +41,7 @@ Partial Class frm_pegawai_list
         'cmd_hapus_user
         '
         Me.cmd_hapus_user.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.cmd_hapus_user.Image = CType(resources.GetObject("cmd_hapus_user.Image"), System.Drawing.Image)
-        Me.cmd_hapus_user.Location = New System.Drawing.Point(606, 294)
+        Me.cmd_hapus_user.Location = New System.Drawing.Point(620, 304)
         Me.cmd_hapus_user.Name = "cmd_hapus_user"
         Me.cmd_hapus_user.Size = New System.Drawing.Size(101, 26)
         Me.cmd_hapus_user.TabIndex = 21
@@ -53,8 +50,7 @@ Partial Class frm_pegawai_list
         'cmd_edit_user
         '
         Me.cmd_edit_user.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.cmd_edit_user.Image = CType(resources.GetObject("cmd_edit_user.Image"), System.Drawing.Image)
-        Me.cmd_edit_user.Location = New System.Drawing.Point(499, 294)
+        Me.cmd_edit_user.Location = New System.Drawing.Point(513, 304)
         Me.cmd_edit_user.Name = "cmd_edit_user"
         Me.cmd_edit_user.Size = New System.Drawing.Size(101, 26)
         Me.cmd_edit_user.TabIndex = 20
@@ -63,8 +59,7 @@ Partial Class frm_pegawai_list
         'cmd_tambah_user
         '
         Me.cmd_tambah_user.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.cmd_tambah_user.Image = CType(resources.GetObject("cmd_tambah_user.Image"), System.Drawing.Image)
-        Me.cmd_tambah_user.Location = New System.Drawing.Point(392, 294)
+        Me.cmd_tambah_user.Location = New System.Drawing.Point(406, 304)
         Me.cmd_tambah_user.Name = "cmd_tambah_user"
         Me.cmd_tambah_user.Size = New System.Drawing.Size(101, 26)
         Me.cmd_tambah_user.TabIndex = 19
@@ -75,10 +70,10 @@ Partial Class frm_pegawai_list
         Me.gridcontrol1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
                     Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.gridcontrol1.Location = New System.Drawing.Point(9, 16)
+        Me.gridcontrol1.Location = New System.Drawing.Point(12, 44)
         Me.gridcontrol1.MainView = Me.gridview1
         Me.gridcontrol1.Name = "gridcontrol1"
-        Me.gridcontrol1.Size = New System.Drawing.Size(698, 272)
+        Me.gridcontrol1.Size = New System.Drawing.Size(707, 250)
         Me.gridcontrol1.TabIndex = 18
         Me.gridcontrol1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.gridview1})
         '
@@ -95,7 +90,7 @@ Partial Class frm_pegawai_list
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(717, 336)
+        Me.ClientSize = New System.Drawing.Size(731, 342)
         Me.Controls.Add(Me.SimpleButton1)
         Me.Controls.Add(Me.cmd_hapus_user)
         Me.Controls.Add(Me.cmd_edit_user)

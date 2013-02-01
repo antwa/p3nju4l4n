@@ -19,7 +19,6 @@ Partial Class frm_size_list
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_size_list))
         Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl
         Me.grid_list = New DevExpress.XtraGrid.GridControl
         Me.GridV_list = New DevExpress.XtraGrid.Views.Grid.GridView
@@ -35,21 +34,21 @@ Partial Class frm_size_list
         '
         'LabelControl1
         '
-        Me.LabelControl1.Location = New System.Drawing.Point(12, 13)
+        Me.LabelControl1.Location = New System.Drawing.Point(12, 17)
         Me.LabelControl1.Name = "LabelControl1"
-        Me.LabelControl1.Size = New System.Drawing.Size(24, 13)
+        Me.LabelControl1.Size = New System.Drawing.Size(19, 13)
         Me.LabelControl1.TabIndex = 31
-        Me.LabelControl1.Text = "Kode"
+        Me.LabelControl1.Text = "Size"
         '
         'grid_list
         '
         Me.grid_list.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
                     Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.grid_list.Location = New System.Drawing.Point(7, 41)
+        Me.grid_list.Location = New System.Drawing.Point(12, 41)
         Me.grid_list.MainView = Me.GridV_list
         Me.grid_list.Name = "grid_list"
-        Me.grid_list.Size = New System.Drawing.Size(683, 294)
+        Me.grid_list.Size = New System.Drawing.Size(653, 254)
         Me.grid_list.TabIndex = 30
         Me.grid_list.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridV_list})
         '
@@ -57,17 +56,19 @@ Partial Class frm_size_list
         '
         Me.GridV_list.GridControl = Me.grid_list
         Me.GridV_list.Name = "GridV_list"
+        Me.GridV_list.OptionsBehavior.Editable = False
+        Me.GridV_list.OptionsView.ShowGroupPanel = False
         '
         'txt_cari
         '
-        Me.txt_cari.Location = New System.Drawing.Point(53, 10)
+        Me.txt_cari.Location = New System.Drawing.Point(53, 14)
         Me.txt_cari.Name = "txt_cari"
         Me.txt_cari.Size = New System.Drawing.Size(150, 20)
         Me.txt_cari.TabIndex = 29
         '
         'SimpleButton1
         '
-        Me.SimpleButton1.Location = New System.Drawing.Point(219, 7)
+        Me.SimpleButton1.Location = New System.Drawing.Point(218, 11)
         Me.SimpleButton1.Name = "SimpleButton1"
         Me.SimpleButton1.Size = New System.Drawing.Size(75, 23)
         Me.SimpleButton1.TabIndex = 28
@@ -75,9 +76,8 @@ Partial Class frm_size_list
         '
         'cmd_hapus
         '
-        Me.cmd_hapus.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.cmd_hapus.Image = CType(resources.GetObject("cmd_hapus.Image"), System.Drawing.Image)
-        Me.cmd_hapus.Location = New System.Drawing.Point(563, 341)
+        Me.cmd_hapus.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.cmd_hapus.Location = New System.Drawing.Point(537, 301)
         Me.cmd_hapus.Name = "cmd_hapus"
         Me.cmd_hapus.Size = New System.Drawing.Size(128, 26)
         Me.cmd_hapus.TabIndex = 27
@@ -86,8 +86,7 @@ Partial Class frm_size_list
         'cmd_edit
         '
         Me.cmd_edit.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.cmd_edit.Image = CType(resources.GetObject("cmd_edit.Image"), System.Drawing.Image)
-        Me.cmd_edit.Location = New System.Drawing.Point(429, 341)
+        Me.cmd_edit.Location = New System.Drawing.Point(403, 301)
         Me.cmd_edit.Name = "cmd_edit"
         Me.cmd_edit.Size = New System.Drawing.Size(128, 26)
         Me.cmd_edit.TabIndex = 26
@@ -96,8 +95,7 @@ Partial Class frm_size_list
         'cmd_tambah
         '
         Me.cmd_tambah.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.cmd_tambah.Image = CType(resources.GetObject("cmd_tambah.Image"), System.Drawing.Image)
-        Me.cmd_tambah.Location = New System.Drawing.Point(295, 341)
+        Me.cmd_tambah.Location = New System.Drawing.Point(269, 301)
         Me.cmd_tambah.Name = "cmd_tambah"
         Me.cmd_tambah.Size = New System.Drawing.Size(128, 26)
         Me.cmd_tambah.TabIndex = 25
@@ -107,7 +105,7 @@ Partial Class frm_size_list
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(702, 419)
+        Me.ClientSize = New System.Drawing.Size(677, 339)
         Me.Controls.Add(Me.LabelControl1)
         Me.Controls.Add(Me.grid_list)
         Me.Controls.Add(Me.txt_cari)
@@ -116,7 +114,7 @@ Partial Class frm_size_list
         Me.Controls.Add(Me.cmd_edit)
         Me.Controls.Add(Me.cmd_tambah)
         Me.Name = "frm_size_list"
-        Me.Text = "frm_size_list"
+        Me.Text = "Size"
         CType(Me.grid_list, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridV_list, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txt_cari.Properties, System.ComponentModel.ISupportInitialize).EndInit()

@@ -35,4 +35,8 @@
             Me.Close()
         End If
     End Sub
+
+    Private Sub cmd_batal_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_batal.Click
+        Me.Close()
+    End Sub
 End Class

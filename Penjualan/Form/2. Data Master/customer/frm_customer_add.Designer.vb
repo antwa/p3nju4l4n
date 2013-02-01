@@ -115,7 +115,7 @@ Partial Class frm_customer_add
         Me.GroupControl2.Controls.Add(Me.dte_tgl_masuk)
         Me.GroupControl2.Location = New System.Drawing.Point(409, 12)
         Me.GroupControl2.Name = "GroupControl2"
-        Me.GroupControl2.Size = New System.Drawing.Size(390, 366)
+        Me.GroupControl2.Size = New System.Drawing.Size(388, 366)
         Me.GroupControl2.TabIndex = 41
         '
         'txt_jatuh_tempo
@@ -124,7 +124,7 @@ Partial Class frm_customer_add
         Me.txt_jatuh_tempo.Name = "txt_jatuh_tempo"
         Me.txt_jatuh_tempo.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_jatuh_tempo.Properties.Appearance.Options.UseFont = True
-        Me.txt_jatuh_tempo.Size = New System.Drawing.Size(133, 21)
+        Me.txt_jatuh_tempo.Size = New System.Drawing.Size(47, 21)
         Me.txt_jatuh_tempo.TabIndex = 77
         '
         'LabelControl13
@@ -142,7 +142,7 @@ Partial Class frm_customer_add
         Me.txt_prioritas.Name = "txt_prioritas"
         Me.txt_prioritas.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_prioritas.Properties.Appearance.Options.UseFont = True
-        Me.txt_prioritas.Size = New System.Drawing.Size(134, 21)
+        Me.txt_prioritas.Size = New System.Drawing.Size(48, 21)
         Me.txt_prioritas.TabIndex = 75
         '
         'LabelControl14
@@ -210,7 +210,7 @@ Partial Class frm_customer_add
         Me.txt_dis_konsumen.Name = "txt_dis_konsumen"
         Me.txt_dis_konsumen.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_dis_konsumen.Properties.Appearance.Options.UseFont = True
-        Me.txt_dis_konsumen.Size = New System.Drawing.Size(134, 21)
+        Me.txt_dis_konsumen.Size = New System.Drawing.Size(48, 21)
         Me.txt_dis_konsumen.TabIndex = 67
         '
         'txt_margin
@@ -219,7 +219,7 @@ Partial Class frm_customer_add
         Me.txt_margin.Name = "txt_margin"
         Me.txt_margin.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_margin.Properties.Appearance.Options.UseFont = True
-        Me.txt_margin.Size = New System.Drawing.Size(133, 21)
+        Me.txt_margin.Size = New System.Drawing.Size(47, 21)
         Me.txt_margin.TabIndex = 66
         '
         'LabelControl7
@@ -247,7 +247,7 @@ Partial Class frm_customer_add
         Me.lkp_harga.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lkp_harga.Properties.Appearance.Options.UseFont = True
         Me.lkp_harga.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.lkp_harga.Size = New System.Drawing.Size(141, 21)
+        Me.lkp_harga.Size = New System.Drawing.Size(232, 21)
         Me.lkp_harga.TabIndex = 42
         '
         'LabelControl5
@@ -255,15 +255,17 @@ Partial Class frm_customer_add
         Me.LabelControl5.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelControl5.Location = New System.Drawing.Point(26, 103)
         Me.LabelControl5.Name = "LabelControl5"
-        Me.LabelControl5.Size = New System.Drawing.Size(63, 14)
+        Me.LabelControl5.Size = New System.Drawing.Size(55, 14)
         Me.LabelControl5.TabIndex = 41
-        Me.LabelControl5.Text = "Kode Harga"
+        Me.LabelControl5.Text = "Harga Jual"
         '
         'rdg_sistem_jual
         '
-        Me.rdg_sistem_jual.Location = New System.Drawing.Point(127, 63)
+        Me.rdg_sistem_jual.Location = New System.Drawing.Point(126, 65)
         Me.rdg_sistem_jual.Name = "rdg_sistem_jual"
-        Me.rdg_sistem_jual.Size = New System.Drawing.Size(194, 30)
+        Me.rdg_sistem_jual.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rdg_sistem_jual.Properties.Appearance.Options.UseFont = True
+        Me.rdg_sistem_jual.Size = New System.Drawing.Size(233, 20)
         Me.rdg_sistem_jual.TabIndex = 40
         '
         'lkp_grup
@@ -280,7 +282,7 @@ Partial Class frm_customer_add
         '
         Me.LabelControl19.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelControl19.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
-        Me.LabelControl19.Location = New System.Drawing.Point(27, 71)
+        Me.LabelControl19.Location = New System.Drawing.Point(26, 71)
         Me.LabelControl19.Name = "LabelControl19"
         Me.LabelControl19.Size = New System.Drawing.Size(60, 14)
         Me.LabelControl19.TabIndex = 38
@@ -397,18 +399,18 @@ Partial Class frm_customer_add
         Me.LabelControl16.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelControl16.Location = New System.Drawing.Point(26, 220)
         Me.LabelControl16.Name = "LabelControl16"
-        Me.LabelControl16.Size = New System.Drawing.Size(59, 14)
+        Me.LabelControl16.Size = New System.Drawing.Size(27, 14)
         Me.LabelControl16.TabIndex = 56
-        Me.LabelControl16.Text = "Kode Zona"
+        Me.LabelControl16.Text = "Zona"
         '
         'LabelControl15
         '
         Me.LabelControl15.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelControl15.Location = New System.Drawing.Point(26, 193)
         Me.LabelControl15.Name = "LabelControl15"
-        Me.LabelControl15.Size = New System.Drawing.Size(57, 14)
+        Me.LabelControl15.Size = New System.Drawing.Size(25, 14)
         Me.LabelControl15.TabIndex = 54
-        Me.LabelControl15.Text = "Kode Kota"
+        Me.LabelControl15.Text = "Kota"
         '
         'LabelControl8
         '
@@ -527,17 +529,19 @@ Partial Class frm_customer_add
         '
         'cmd_simpan
         '
-        Me.cmd_simpan.Location = New System.Drawing.Point(560, 384)
+        Me.cmd_simpan.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.cmd_simpan.Location = New System.Drawing.Point(558, 387)
         Me.cmd_simpan.Name = "cmd_simpan"
-        Me.cmd_simpan.Size = New System.Drawing.Size(109, 28)
+        Me.cmd_simpan.Size = New System.Drawing.Size(109, 25)
         Me.cmd_simpan.TabIndex = 42
         Me.cmd_simpan.Text = "Simpan"
         '
         'cmd_batal
         '
-        Me.cmd_batal.Location = New System.Drawing.Point(690, 384)
+        Me.cmd_batal.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.cmd_batal.Location = New System.Drawing.Point(688, 387)
         Me.cmd_batal.Name = "cmd_batal"
-        Me.cmd_batal.Size = New System.Drawing.Size(109, 28)
+        Me.cmd_batal.Size = New System.Drawing.Size(109, 25)
         Me.cmd_batal.TabIndex = 43
         Me.cmd_batal.Text = "Batal"
         '
@@ -552,7 +556,7 @@ Partial Class frm_customer_add
         Me.Controls.Add(Me.GroupControl1)
         Me.Name = "frm_customer_add"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "frm_customer_add"
+        Me.Text = "Tambah Customer"
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl2.ResumeLayout(False)
         Me.GroupControl2.PerformLayout()

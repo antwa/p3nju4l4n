@@ -4,7 +4,6 @@ Public Class frm_pegawai_edit
     Sub initControl()
         Load_Customer(lkp_kode_costumer, 1)
         Load_Jabatan(lkp_jabatan)
-        Load_Status(lkp_status)
 
         rdg_group_pegawai.Properties.Items.Add(New RadioGroupItem("1", "SPG"))
         rdg_group_pegawai.Properties.Items.Add(New RadioGroupItem("2", "Pegawai"))

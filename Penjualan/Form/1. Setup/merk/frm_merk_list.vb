@@ -18,7 +18,7 @@
         Db.From("tbl_merk")
 
         If txt_cari.Text <> "" Then
-            Db.Where("WHERE kode_merk LIKE '" & txt_cari.Text & "%'")
+            Db.Where("WHERE merk LIKE '%" & txt_cari.Text & "%'")
         End If
 
         Db.OrderBy("kode_merk", cls_database.sorting.Ascending)
@@ -63,7 +63,7 @@
 
                 Db.FlushCache()
                 Db.Delete("tbl_merk")
-                Db.Where("kode_merk", row("Kode Merk"))
+                Db.Where("kode_merk", row("kode_merk"))
 
                 If Connection.ExecuteNonQuery(Db.GetQueryString) Then
                     MsgBox("Merk : " & row("Merk") & ", Berhasil dihapus dari database", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Pesan")
