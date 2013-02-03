@@ -45,11 +45,14 @@ Partial Class frm_pegawai_add
         Me.txt_nik = New DevExpress.XtraEditors.TextEdit
         Me.lkp_kode_costumer = New DevExpress.XtraEditors.LookUpEdit
         Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl
+        Me.LabelControl16 = New DevExpress.XtraEditors.LabelControl
+        Me.TextEdit1 = New DevExpress.XtraEditors.TextEdit
         Me.txt_atas_nama = New DevExpress.XtraEditors.TextEdit
         Me.LabelControl19 = New DevExpress.XtraEditors.LabelControl
         Me.LabelControl20 = New DevExpress.XtraEditors.LabelControl
         Me.txt_no_rekening = New DevExpress.XtraEditors.TextEdit
         Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl
+        Me.rdg_statusKaryawan = New DevExpress.XtraEditors.RadioGroup
         Me.LabelControl5 = New DevExpress.XtraEditors.LabelControl
         Me.txt_tunjangan = New DevExpress.XtraEditors.TextEdit
         Me.LabelControl11 = New DevExpress.XtraEditors.LabelControl
@@ -63,9 +66,6 @@ Partial Class frm_pegawai_add
         Me.txt_gaji_pokok = New DevExpress.XtraEditors.TextEdit
         Me.cmd_batal = New DevExpress.XtraEditors.SimpleButton
         Me.cmd_simpan = New DevExpress.XtraEditors.SimpleButton
-        Me.TextEdit1 = New DevExpress.XtraEditors.TextEdit
-        Me.LabelControl16 = New DevExpress.XtraEditors.LabelControl
-        Me.rdg_statusKaryawan = New DevExpress.XtraEditors.RadioGroup
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
         CType(Me.rdg_group_pegawai.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -83,17 +83,17 @@ Partial Class frm_pegawai_add
         CType(Me.lkp_kode_costumer.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl2.SuspendLayout()
+        CType(Me.TextEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txt_atas_nama.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txt_no_rekening.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl3.SuspendLayout()
+        CType(Me.rdg_statusKaryawan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txt_tunjangan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txt_hari_besar.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txt_lembur_jam.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txt_premi_harian.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txt_gaji_pokok.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TextEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.rdg_statusKaryawan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupControl1
@@ -358,6 +358,26 @@ Partial Class frm_pegawai_add
         Me.GroupControl2.Size = New System.Drawing.Size(337, 114)
         Me.GroupControl2.TabIndex = 38
         '
+        'LabelControl16
+        '
+        Me.LabelControl16.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl16.Location = New System.Drawing.Point(12, 52)
+        Me.LabelControl16.Name = "LabelControl16"
+        Me.LabelControl16.Size = New System.Drawing.Size(73, 14)
+        Me.LabelControl16.TabIndex = 41
+        Me.LabelControl16.Text = "No. Rekening"
+        '
+        'TextEdit1
+        '
+        Me.TextEdit1.EditValue = ""
+        Me.TextEdit1.Location = New System.Drawing.Point(120, 25)
+        Me.TextEdit1.Name = "TextEdit1"
+        Me.TextEdit1.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextEdit1.Properties.Appearance.Options.UseFont = True
+        Me.TextEdit1.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.TextEdit1.Size = New System.Drawing.Size(145, 21)
+        Me.TextEdit1.TabIndex = 40
+        '
         'txt_atas_nama
         '
         Me.txt_atas_nama.Location = New System.Drawing.Point(120, 73)
@@ -413,6 +433,14 @@ Partial Class frm_pegawai_add
         Me.GroupControl3.Name = "GroupControl3"
         Me.GroupControl3.Size = New System.Drawing.Size(336, 249)
         Me.GroupControl3.TabIndex = 39
+        '
+        'rdg_statusKaryawan
+        '
+        Me.rdg_statusKaryawan.Location = New System.Drawing.Point(130, 25)
+        Me.rdg_statusKaryawan.Name = "rdg_statusKaryawan"
+        Me.rdg_statusKaryawan.Properties.DisplayFormat.FormatString = "aaaa"
+        Me.rdg_statusKaryawan.Size = New System.Drawing.Size(173, 44)
+        Me.rdg_statusKaryawan.TabIndex = 60
         '
         'LabelControl5
         '
@@ -541,34 +569,6 @@ Partial Class frm_pegawai_add
         Me.cmd_simpan.TabIndex = 36
         Me.cmd_simpan.Text = "Simpan"
         '
-        'TextEdit1
-        '
-        Me.TextEdit1.EditValue = ""
-        Me.TextEdit1.Location = New System.Drawing.Point(120, 25)
-        Me.TextEdit1.Name = "TextEdit1"
-        Me.TextEdit1.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextEdit1.Properties.Appearance.Options.UseFont = True
-        Me.TextEdit1.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.TextEdit1.Size = New System.Drawing.Size(145, 21)
-        Me.TextEdit1.TabIndex = 40
-        '
-        'LabelControl16
-        '
-        Me.LabelControl16.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl16.Location = New System.Drawing.Point(12, 52)
-        Me.LabelControl16.Name = "LabelControl16"
-        Me.LabelControl16.Size = New System.Drawing.Size(73, 14)
-        Me.LabelControl16.TabIndex = 41
-        Me.LabelControl16.Text = "No. Rekening"
-        '
-        'rdg_statusKaryawan
-        '
-        Me.rdg_statusKaryawan.Location = New System.Drawing.Point(130, 25)
-        Me.rdg_statusKaryawan.Name = "rdg_statusKaryawan"
-        Me.rdg_statusKaryawan.Properties.DisplayFormat.FormatString = "aaaa"
-        Me.rdg_statusKaryawan.Size = New System.Drawing.Size(173, 44)
-        Me.rdg_statusKaryawan.TabIndex = 60
-        '
         'frm_pegawai_add
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -603,18 +603,18 @@ Partial Class frm_pegawai_add
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl2.ResumeLayout(False)
         Me.GroupControl2.PerformLayout()
+        CType(Me.TextEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txt_atas_nama.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txt_no_rekening.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl3.ResumeLayout(False)
         Me.GroupControl3.PerformLayout()
+        CType(Me.rdg_statusKaryawan.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txt_tunjangan.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txt_hari_besar.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txt_lembur_jam.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txt_premi_harian.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txt_gaji_pokok.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TextEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.rdg_statusKaryawan.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

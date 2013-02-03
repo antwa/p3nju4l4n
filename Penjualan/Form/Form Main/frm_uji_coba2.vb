@@ -1,7 +1,30 @@
-﻿Public Class frm_uji_coba2 
+﻿Imports DevExpress.XtraTreeList.Nodes
+
+Public Class frm_uji_coba2
 
     Private Sub frm_uji_coba2_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
+        Dim data As New DataTable
+        data.Columns.Add("ID", GetType(String))
+        data.Columns.Add("PARENT_ID", GetType(String))
+        data.Columns.Add("NAMA", GetType(String))
+
+        data.Rows.Add(New Object() {"1", "0", "Aktiva"})
+        data.Rows.Add(New Object() {"11", "1", "Aktiva Lancar"})
+        data.Rows.Add(New Object() {"12", "1", "Aktiva Tetap"})
+        data.Rows.Add(New Object() {"111", "11", "Kas dan Bank"})
+        data.Rows.Add(New Object() {"121", "12", "Bangunan"})
+
+        data.Rows.Add(New Object() {"2", "0", "Kewajiban"})
+        data.Rows.Add(New Object() {"21", "2", "Kewajiban Lancar"})
+        data.Rows.Add(New Object() {"22", "2", "Kewajiban Tidak Lancar"})
+
+        TreeList1.DataSource = data
+        TreeList1.KeyFieldName = "ID"
+        TreeList1.ParentFieldName = "PARENT_ID"
+        TreeList1.PopulateColumns()
+        TreeList1.Columns("NAMA").Visible = True
+        TreeList1.ExpandAll()
     End Sub
 
     Private Sub SimpleButton1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SimpleButton1.Click

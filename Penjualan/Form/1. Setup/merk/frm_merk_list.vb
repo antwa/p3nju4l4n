@@ -34,7 +34,7 @@
     End Sub
 
     Private Sub frm_merk_list_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        Call InitGrid()
+        'Call InitGrid()
         Call Me.loadData()
     End Sub
 

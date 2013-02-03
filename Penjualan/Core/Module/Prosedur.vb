@@ -324,6 +324,55 @@
         lookup.ItemIndex = 0
     End Sub
 
+    '#----------------- UNTUK AKUNTANSI
+    Public Sub Load_akun_master(ByRef lookup As DevExpress.XtraEditors.LookUpEdit)
+        Db.FlushCache()
+        Db.Selects("kode_akun, nama_akun, kelompok")
+        Db.From("tbl_akun")
+        Db.Where("kode_parent", "0")
+        Db.OrderBy("kode_akun")
+
+        lookup.Properties.DataSource = Connection.ExecuteToDataTable(Db.GetQueryString)
+        lookup.Properties.PopulateColumns()
+        lookup.Properties.DisplayMember = "nama_akun"
+        lookup.Properties.ValueMember = "kelompok"
+
+        lookup.Properties.Columns("kode_akun").Caption = "Kode"
+        lookup.Properties.Columns("nama_akun").Caption = "Nama Akun"
+        lookup.Properties.Columns("kelompok").Visible = False
+
+        lookup.Properties.Columns("kode_akun").Width = 75
+        lookup.Properties.Columns("nama_akun").Width = 150
+
+        lookup.ItemIndex = 0
+    End Sub
+
+    Public Sub Load_akun_header_byKelompok(ByRef lookup As DevExpress.XtraEditors.LookUpEdit, ByVal kelompok As Integer)
+        Db.FlushCache()
+        Db.Selects("kode_akun, nama_akun, kelompok")
+        Db.From("tbl_akun")
+        Db.Where("kelompok", kelompok)
+        Db.Where("tipe", "H")
+        Db.OrderBy("kode_akun")
+
+        lookup.Properties.DataSource = Connection.ExecuteToDataTable(Db.GetQueryString)
+        lookup.Properties.PopulateColumns()
+        lookup.Properties.DisplayMember = "kode_akun"
+        lookup.Properties.ValueMember = "kode_akun"
+
+        lookup.Properties.Columns("kode_akun").Caption = "Kode"
+        lookup.Properties.Columns("nama_akun").Caption = "Nama Akun"
+        lookup.Properties.Columns("kelompok").Visible = False
+
+        lookup.Properties.Columns("kode_akun").Width = 75
+        lookup.Properties.Columns("nama_akun").Width = 150
+
+        lookup.ItemIndex = 0
+    End Sub
+
+    '#--------------- END UNTUK AKUNTANSI
+
+
     Public Sub Create_MasterDetail(ByRef GridControl1 As DevExpress.XtraGrid.GridControl, ByVal Opsi As STR_MASTERDETAIL)
         Dim Cmd As SqlClient.SqlCommand
         Dim DA As New SqlClient.SqlDataAdapter
