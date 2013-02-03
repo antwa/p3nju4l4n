@@ -242,6 +242,24 @@
     <Compile Include="Form\1. Setup\data wilayah\frm_zona_edit.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Form\1. Setup\jabatan\frm_jabatan_add.Designer.vb">
+      <DependentUpon>frm_jabatan_add.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\1. Setup\jabatan\frm_jabatan_add.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\1. Setup\jabatan\frm_jabatan_edit.Designer.vb">
+      <DependentUpon>frm_jabatan_edit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\1. Setup\jabatan\frm_jabatan_edit.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\1. Setup\jabatan\frm_jabatan_list.Designer.vb">
+      <DependentUpon>frm_jabatan_list.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\1. Setup\jabatan\frm_jabatan_list.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form\1. Setup\jenis harga\frm_jenisharga_add.Designer.vb">
       <DependentUpon>frm_jenisharga_add.vb</DependentUpon>
     </Compile>
@@ -279,6 +297,24 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form\1. Setup\kategori barang\rcd_kategori_barang.vb" />
+    <Compile Include="Form\1. Setup\kode akun\frm_kode_akun_add.Designer.vb">
+      <DependentUpon>frm_kode_akun_add.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\1. Setup\kode akun\frm_kode_akun_add.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\1. Setup\kode akun\frm_kode_akun_edit.Designer.vb">
+      <DependentUpon>frm_kode_akun_edit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\1. Setup\kode akun\frm_kode_akun_edit.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\1. Setup\kode akun\frm_kode_akun_list.Designer.vb">
+      <DependentUpon>frm_kode_akun_list.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\1. Setup\kode akun\frm_kode_akun_list.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form\1. Setup\merk\frm_merk_add.Designer.vb">
       <DependentUpon>frm_merk_add.vb</DependentUpon>
     </Compile>
@@ -313,6 +349,24 @@
       <DependentUpon>frm_size_list.vb</DependentUpon>
     </Compile>
     <Compile Include="Form\1. Setup\size barang\frm_size_list.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\1. Setup\template harga\frm_template_harga_add.Designer.vb">
+      <DependentUpon>frm_template_harga_add.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\1. Setup\template harga\frm_template_harga_add.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\1. Setup\template harga\frm_template_harga_edit.Designer.vb">
+      <DependentUpon>frm_template_harga_edit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\1. Setup\template harga\frm_template_harga_edit.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\1. Setup\template harga\frm_template_harga_list.Designer.vb">
+      <DependentUpon>frm_template_harga_list.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\1. Setup\template harga\frm_template_harga_list.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form\2. Data Master\barang jadi\frm_barangjadi_add.Designer.vb">
@@ -803,6 +857,18 @@
       <DependentUpon>frm_zona_edit.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form\1. Setup\jabatan\frm_jabatan_add.resx">
+      <DependentUpon>frm_jabatan_add.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\1. Setup\jabatan\frm_jabatan_edit.resx">
+      <DependentUpon>frm_jabatan_edit.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\1. Setup\jabatan\frm_jabatan_list.resx">
+      <DependentUpon>frm_jabatan_list.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\1. Setup\jenis harga\frm_jenisharga_add.resx">
       <DependentUpon>frm_jenisharga_add.vb</DependentUpon>
       <SubType>Designer</SubType>
@@ -827,6 +893,18 @@
       <DependentUpon>frm_kategoribarang_list.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form\1. Setup\kode akun\frm_kode_akun_add.resx">
+      <DependentUpon>frm_kode_akun_add.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\1. Setup\kode akun\frm_kode_akun_edit.resx">
+      <DependentUpon>frm_kode_akun_edit.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\1. Setup\kode akun\frm_kode_akun_list.resx">
+      <DependentUpon>frm_kode_akun_list.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\1. Setup\merk\frm_merk_add.resx">
       <DependentUpon>frm_merk_add.vb</DependentUpon>
       <SubType>Designer</SubType>
@@ -849,6 +927,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\1. Setup\size barang\frm_size_list.resx">
       <DependentUpon>frm_size_list.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\1. Setup\template harga\frm_template_harga_add.resx">
+      <DependentUpon>frm_template_harga_add.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\1. Setup\template harga\frm_template_harga_edit.resx">
+      <DependentUpon>frm_template_harga_edit.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\1. Setup\template harga\frm_template_harga_list.resx">
+      <DependentUpon>frm_template_harga_list.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\2. Data Master\barang jadi\frm_barangjadi_add.resx">
@@ -1165,7 +1255,6 @@
     <Content Include="industry128.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Form\1. Setup\kode akun\" />
     <Folder Include="Form\4. Laporan\delivery order\" />
     <Folder Include="Form\4. Laporan\sales order\" />
     <Folder Include="Form\5. Hutang Piutang\" />
