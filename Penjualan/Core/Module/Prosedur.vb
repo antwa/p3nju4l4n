@@ -194,6 +194,7 @@
     End Sub
 
     Public Sub Load_Provinsi(ByRef lookup As DevExpress.XtraEditors.LookUpEdit)
+
         'init lookup
         Db.FlushCache()
         Db.Selects("a.kode_provinsi, a.provinsi")
@@ -203,9 +204,12 @@
         lookup.Properties.DataSource = Connection.ExecuteToDataTable(Db.GetQueryString)
         lookup.Properties.DisplayMember = "provinsi"
         lookup.Properties.ValueMember = "kode_provinsi"
+
         lookup.Properties.PopulateColumns()
+
         lookup.Properties.Columns(0).Caption = "Kode"
         lookup.Properties.Columns(1).Caption = "Provinsi"
+
         lookup.Properties.Columns(0).Width = 20
         lookup.Properties.Columns(1).Width = 100
         lookup.ItemIndex = 0

@@ -44,7 +44,7 @@ Partial Class frm_group_add
         '
         'LabelControl2
         '
-        Me.LabelControl2.Location = New System.Drawing.Point(15, 15)
+        Me.LabelControl2.Location = New System.Drawing.Point(22, 15)
         Me.LabelControl2.Name = "LabelControl2"
         Me.LabelControl2.Size = New System.Drawing.Size(29, 13)
         Me.LabelControl2.TabIndex = 13
@@ -66,9 +66,12 @@ Partial Class frm_group_add
         Me.Controls.Add(Me.cmd_simpan)
         Me.Controls.Add(Me.LabelControl2)
         Me.Controls.Add(Me.txt_group)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "frm_group_add"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "frm_group_add"
+        Me.Text = "Tambah Group"
         CType(Me.txt_group.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()

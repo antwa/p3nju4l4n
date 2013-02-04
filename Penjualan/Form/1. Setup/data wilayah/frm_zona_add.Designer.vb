@@ -44,7 +44,7 @@ Partial Class frm_zona_add
         '
         'LabelControl2
         '
-        Me.LabelControl2.Location = New System.Drawing.Point(15, 15)
+        Me.LabelControl2.Location = New System.Drawing.Point(12, 15)
         Me.LabelControl2.Name = "LabelControl2"
         Me.LabelControl2.Size = New System.Drawing.Size(24, 13)
         Me.LabelControl2.TabIndex = 17
@@ -52,9 +52,9 @@ Partial Class frm_zona_add
         '
         'txt_zona
         '
-        Me.txt_zona.Location = New System.Drawing.Point(73, 12)
+        Me.txt_zona.Location = New System.Drawing.Point(58, 12)
         Me.txt_zona.Name = "txt_zona"
-        Me.txt_zona.Size = New System.Drawing.Size(199, 20)
+        Me.txt_zona.Size = New System.Drawing.Size(214, 20)
         Me.txt_zona.TabIndex = 16
         '
         'frm_zona_add
@@ -66,9 +66,12 @@ Partial Class frm_zona_add
         Me.Controls.Add(Me.cmd_simpan)
         Me.Controls.Add(Me.LabelControl2)
         Me.Controls.Add(Me.txt_zona)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "frm_zona_add"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "frm_zona_add"
+        Me.Text = "Tambah Zona"
         CType(Me.txt_zona.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()

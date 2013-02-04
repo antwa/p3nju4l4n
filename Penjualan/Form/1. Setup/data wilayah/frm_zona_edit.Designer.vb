@@ -39,14 +39,14 @@ Partial Class frm_zona_edit
         '
         'txt_zona
         '
-        Me.txt_zona.Location = New System.Drawing.Point(84, 39)
+        Me.txt_zona.Location = New System.Drawing.Point(84, 38)
         Me.txt_zona.Name = "txt_zona"
         Me.txt_zona.Size = New System.Drawing.Size(186, 20)
         Me.txt_zona.TabIndex = 26
         '
         'cmd_batal
         '
-        Me.cmd_batal.Location = New System.Drawing.Point(185, 70)
+        Me.cmd_batal.Location = New System.Drawing.Point(185, 73)
         Me.cmd_batal.Name = "cmd_batal"
         Me.cmd_batal.Size = New System.Drawing.Size(85, 25)
         Me.cmd_batal.TabIndex = 25
@@ -54,7 +54,7 @@ Partial Class frm_zona_edit
         '
         'cmd_simpan
         '
-        Me.cmd_simpan.Location = New System.Drawing.Point(84, 70)
+        Me.cmd_simpan.Location = New System.Drawing.Point(84, 73)
         Me.cmd_simpan.Name = "cmd_simpan"
         Me.cmd_simpan.Size = New System.Drawing.Size(82, 25)
         Me.cmd_simpan.TabIndex = 24
@@ -62,7 +62,7 @@ Partial Class frm_zona_edit
         '
         'LabelControl2
         '
-        Me.LabelControl2.Location = New System.Drawing.Point(13, 42)
+        Me.LabelControl2.Location = New System.Drawing.Point(13, 41)
         Me.LabelControl2.Name = "LabelControl2"
         Me.LabelControl2.Size = New System.Drawing.Size(24, 13)
         Me.LabelControl2.TabIndex = 23
@@ -72,6 +72,7 @@ Partial Class frm_zona_edit
         '
         Me.txt_kode_zona.Location = New System.Drawing.Point(84, 12)
         Me.txt_kode_zona.Name = "txt_kode_zona"
+        Me.txt_kode_zona.Properties.ReadOnly = True
         Me.txt_kode_zona.Size = New System.Drawing.Size(62, 20)
         Me.txt_kode_zona.TabIndex = 22
         '
@@ -86,9 +87,12 @@ Partial Class frm_zona_edit
         Me.Controls.Add(Me.cmd_simpan)
         Me.Controls.Add(Me.LabelControl2)
         Me.Controls.Add(Me.txt_kode_zona)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "frm_zona_edit"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "frm_zona_edit"
+        Me.Text = "Edit Zona"
         CType(Me.txt_zona.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txt_kode_zona.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

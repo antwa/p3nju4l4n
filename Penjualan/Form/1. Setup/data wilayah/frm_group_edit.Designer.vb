@@ -31,7 +31,7 @@ Partial Class frm_group_edit
         '
         'cmd_batal
         '
-        Me.cmd_batal.Location = New System.Drawing.Point(184, 70)
+        Me.cmd_batal.Location = New System.Drawing.Point(184, 79)
         Me.cmd_batal.Name = "cmd_batal"
         Me.cmd_batal.Size = New System.Drawing.Size(85, 25)
         Me.cmd_batal.TabIndex = 19
@@ -39,7 +39,7 @@ Partial Class frm_group_edit
         '
         'cmd_simpan
         '
-        Me.cmd_simpan.Location = New System.Drawing.Point(83, 70)
+        Me.cmd_simpan.Location = New System.Drawing.Point(83, 79)
         Me.cmd_simpan.Name = "cmd_simpan"
         Me.cmd_simpan.Size = New System.Drawing.Size(82, 25)
         Me.cmd_simpan.TabIndex = 18
@@ -47,7 +47,7 @@ Partial Class frm_group_edit
         '
         'LabelControl2
         '
-        Me.LabelControl2.Location = New System.Drawing.Point(12, 42)
+        Me.LabelControl2.Location = New System.Drawing.Point(12, 41)
         Me.LabelControl2.Name = "LabelControl2"
         Me.LabelControl2.Size = New System.Drawing.Size(29, 13)
         Me.LabelControl2.TabIndex = 17
@@ -57,6 +57,7 @@ Partial Class frm_group_edit
         '
         Me.txt_kode_group.Location = New System.Drawing.Point(83, 12)
         Me.txt_kode_group.Name = "txt_kode_group"
+        Me.txt_kode_group.Properties.ReadOnly = True
         Me.txt_kode_group.Size = New System.Drawing.Size(62, 20)
         Me.txt_kode_group.TabIndex = 16
         '
@@ -70,7 +71,7 @@ Partial Class frm_group_edit
         '
         'txt_group
         '
-        Me.txt_group.Location = New System.Drawing.Point(83, 39)
+        Me.txt_group.Location = New System.Drawing.Point(83, 38)
         Me.txt_group.Name = "txt_group"
         Me.txt_group.Size = New System.Drawing.Size(186, 20)
         Me.txt_group.TabIndex = 20
@@ -79,16 +80,19 @@ Partial Class frm_group_edit
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(284, 104)
+        Me.ClientSize = New System.Drawing.Size(284, 116)
         Me.Controls.Add(Me.LabelControl1)
         Me.Controls.Add(Me.txt_group)
         Me.Controls.Add(Me.cmd_batal)
         Me.Controls.Add(Me.cmd_simpan)
         Me.Controls.Add(Me.LabelControl2)
         Me.Controls.Add(Me.txt_kode_group)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "frm_group_edit"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "frm_group_edit"
+        Me.Text = "Edit Group"
         CType(Me.txt_kode_group.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txt_group.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

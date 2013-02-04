@@ -1,12 +1,14 @@
 ﻿Public Class frm_size_edit 
 
-    Public Sub initData(ByVal kode As String)
+    Public kode_size As String
+
+    Public Sub populateField()
 
         ' get data from database
         Db.FlushCache()
         Db.Selects("*")
         Db.From("tbl_size")
-        Db.Where("kode_size", kode)
+        Db.Where("kode_size", Me.kode_size)
 
         Connection.ExecuteToDataReader(Db.GetQueryString)
 
@@ -26,7 +28,8 @@
 
         '# validation
         Validation.clearRules()
-        Validation.addRules(txt_size.Text, "Size", "required")
+        Validation.addRules(txt_kode_size.Text, "Kode Size", "required|numeric|length[2-2]")
+        Validation.addRules(txt_size.Text, "Size", "required|length[1-30]")
 
         If Not Validation.isValid Then
             Validation.showMessage()
@@ -36,7 +39,6 @@
         '# Update table tbl_size
         Db.FlushCache()
         Db.Update("tbl_size")
-        ' Db.SetField("kode_size", txt_kode_size.Text)
         Db.SetField("size", txt_size.Text)
         Db.Where("kode_size", txt_kode_size.Text)
 
@@ -48,5 +50,9 @@
 
     Private Sub cmd_batal_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_batal.Click
         Me.Close()
+    End Sub
+
+    Private Sub frm_size_edit_Shown(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Shown
+        Me.populateField()
     End Sub
 End Class

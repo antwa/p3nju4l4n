@@ -67,6 +67,7 @@ Partial Class frm_size_add
         '
         Me.txt_kode_size.Location = New System.Drawing.Point(78, 9)
         Me.txt_kode_size.Name = "txt_kode_size"
+        Me.txt_kode_size.Properties.MaxLength = 2
         Me.txt_kode_size.Size = New System.Drawing.Size(48, 20)
         Me.txt_kode_size.TabIndex = 12
         '

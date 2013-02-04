@@ -6,7 +6,7 @@
         '# validation
         Validation.clearRules()
         Validation.addRules(txt_kode_size.Text, "Kode Size", "required|numeric|length[2-2]")
-        Validation.addRules(txt_size.Text, "Size", "required")
+        Validation.addRules(txt_size.Text, "Size", "required|length[1-30]")
 
         If Not Validation.isValid Then
             Validation.showMessage()
@@ -34,7 +34,7 @@
         Db.SetField("size", txt_size.Text)
 
         If Connection.ExecuteNonQuery(Db.GetQueryString) Then
-            frm_size_list.InitGrid()
+            frm_size_list.loadData()
             Me.Close()
         End If
     End Sub

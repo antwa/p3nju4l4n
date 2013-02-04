@@ -175,4 +175,5 @@
     Private Sub cSetup_kodeakun_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles cSetup_kodeakun.ItemClick
         LoadFormToTab(frm_kode_akun_list)
     End Sub
+
 End Class

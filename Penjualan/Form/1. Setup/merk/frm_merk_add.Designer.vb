@@ -46,7 +46,7 @@ Partial Class frm_merk_add
         '
         'LabelControl2
         '
-        Me.LabelControl2.Location = New System.Drawing.Point(12, 12)
+        Me.LabelControl2.Location = New System.Drawing.Point(12, 15)
         Me.LabelControl2.Name = "LabelControl2"
         Me.LabelControl2.Size = New System.Drawing.Size(23, 13)
         Me.LabelControl2.TabIndex = 9

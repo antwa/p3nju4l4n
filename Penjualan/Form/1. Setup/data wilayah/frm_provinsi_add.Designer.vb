@@ -34,7 +34,7 @@ Partial Class frm_provinsi_add
         Me.cmd_batal.Location = New System.Drawing.Point(172, 77)
         Me.cmd_batal.Name = "cmd_batal"
         Me.cmd_batal.Size = New System.Drawing.Size(98, 25)
-        Me.cmd_batal.TabIndex = 9
+        Me.cmd_batal.TabIndex = 3
         Me.cmd_batal.Text = "Batal"
         '
         'cmd_simpan
@@ -42,12 +42,12 @@ Partial Class frm_provinsi_add
         Me.cmd_simpan.Location = New System.Drawing.Point(71, 77)
         Me.cmd_simpan.Name = "cmd_simpan"
         Me.cmd_simpan.Size = New System.Drawing.Size(95, 25)
-        Me.cmd_simpan.TabIndex = 8
+        Me.cmd_simpan.TabIndex = 2
         Me.cmd_simpan.Text = "Simpan"
         '
         'LabelControl2
         '
-        Me.LabelControl2.Location = New System.Drawing.Point(13, 38)
+        Me.LabelControl2.Location = New System.Drawing.Point(13, 41)
         Me.LabelControl2.Name = "LabelControl2"
         Me.LabelControl2.Size = New System.Drawing.Size(37, 13)
         Me.LabelControl2.TabIndex = 7
@@ -55,14 +55,14 @@ Partial Class frm_provinsi_add
         '
         'txt_provinsi
         '
-        Me.txt_provinsi.Location = New System.Drawing.Point(71, 35)
+        Me.txt_provinsi.Location = New System.Drawing.Point(71, 38)
         Me.txt_provinsi.Name = "txt_provinsi"
         Me.txt_provinsi.Size = New System.Drawing.Size(199, 20)
-        Me.txt_provinsi.TabIndex = 6
+        Me.txt_provinsi.TabIndex = 1
         '
         'LabelControl1
         '
-        Me.LabelControl1.Location = New System.Drawing.Point(13, 12)
+        Me.LabelControl1.Location = New System.Drawing.Point(13, 15)
         Me.LabelControl1.Name = "LabelControl1"
         Me.LabelControl1.Size = New System.Drawing.Size(24, 13)
         Me.LabelControl1.TabIndex = 11
@@ -70,10 +70,11 @@ Partial Class frm_provinsi_add
         '
         'txt_kode
         '
-        Me.txt_kode.Location = New System.Drawing.Point(71, 9)
+        Me.txt_kode.Location = New System.Drawing.Point(71, 12)
         Me.txt_kode.Name = "txt_kode"
+        Me.txt_kode.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txt_kode.Size = New System.Drawing.Size(53, 20)
-        Me.txt_kode.TabIndex = 10
+        Me.txt_kode.TabIndex = 0
         '
         'frm_provinsi_add
         '
@@ -86,9 +87,12 @@ Partial Class frm_provinsi_add
         Me.Controls.Add(Me.cmd_simpan)
         Me.Controls.Add(Me.LabelControl2)
         Me.Controls.Add(Me.txt_provinsi)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "frm_provinsi_add"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "frm_provinsi_add"
+        Me.Text = "Tambah Provinsi"
         CType(Me.txt_provinsi.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txt_kode.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

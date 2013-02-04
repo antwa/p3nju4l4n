@@ -30,8 +30,7 @@
         Db.Where("kode_jenis_harga", txt_kode.Text)
 
         If Connection.ExecuteNonQuery(Db.GetQueryString) Then
-            frm_kategoribarang_list.InitGrid()
-
+            'frm_kategoribarang_list.loadData()
             Me.Close()
         End If
     End Sub
