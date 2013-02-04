@@ -19,281 +19,446 @@ Partial Class frm_wilayah_list
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.grid_list1 = New DevExpress.XtraGrid.GridControl
-        Me.GridV_kota = New DevExpress.XtraGrid.Views.Grid.GridView
-        Me.grid_list2 = New DevExpress.XtraGrid.GridControl
-        Me.GridV_zona = New DevExpress.XtraGrid.Views.Grid.GridView
-        Me.grid_list4 = New DevExpress.XtraGrid.GridControl
-        Me.GridV_provinsi = New DevExpress.XtraGrid.Views.Grid.GridView
-        Me.grid_list3 = New DevExpress.XtraGrid.GridControl
-        Me.GridV_group = New DevExpress.XtraGrid.Views.Grid.GridView
+        Me.SplitContainer1 = New System.Windows.Forms.SplitContainer
+        Me.SplitContainer2 = New System.Windows.Forms.SplitContainer
+        Me.gridcontrol_provinsi = New DevExpress.XtraGrid.GridControl
+        Me.gridview_provinsi = New DevExpress.XtraGrid.Views.Grid.GridView
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl
-        Me.SimpleButton2 = New DevExpress.XtraEditors.SimpleButton
-        Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton
-        Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl
-        Me.SimpleButton3 = New DevExpress.XtraEditors.SimpleButton
-        Me.SimpleButton4 = New DevExpress.XtraEditors.SimpleButton
+        Me.cmd_prov_refresh = New DevExpress.XtraEditors.SimpleButton
+        Me.cmd_prov_delete = New DevExpress.XtraEditors.SimpleButton
+        Me.cmd_prov_edit = New DevExpress.XtraEditors.SimpleButton
+        Me.cmd_prov_add = New DevExpress.XtraEditors.SimpleButton
+        Me.gridcontrol_group = New DevExpress.XtraGrid.GridControl
+        Me.gridview_group = New DevExpress.XtraGrid.Views.Grid.GridView
         Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl
-        Me.SimpleButton5 = New DevExpress.XtraEditors.SimpleButton
-        Me.SimpleButton6 = New DevExpress.XtraEditors.SimpleButton
+        Me.cmd_group_refresh = New DevExpress.XtraEditors.SimpleButton
+        Me.cmd_group_delete = New DevExpress.XtraEditors.SimpleButton
+        Me.cmd_group_edit = New DevExpress.XtraEditors.SimpleButton
+        Me.cmd_group_add = New DevExpress.XtraEditors.SimpleButton
+        Me.SplitContainer3 = New System.Windows.Forms.SplitContainer
+        Me.gridcontrol_kota = New DevExpress.XtraGrid.GridControl
+        Me.gridview_kota = New DevExpress.XtraGrid.Views.Grid.GridView
+        Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl
+        Me.cmd_kota_refresh = New DevExpress.XtraEditors.SimpleButton
+        Me.cmd_kota_delete = New DevExpress.XtraEditors.SimpleButton
+        Me.cmd_kota_edit = New DevExpress.XtraEditors.SimpleButton
+        Me.cmd_kota_add = New DevExpress.XtraEditors.SimpleButton
+        Me.gridcontrol_zona = New DevExpress.XtraGrid.GridControl
+        Me.gridview_zona = New DevExpress.XtraGrid.Views.Grid.GridView
         Me.GroupControl4 = New DevExpress.XtraEditors.GroupControl
-        Me.SimpleButton7 = New DevExpress.XtraEditors.SimpleButton
-        Me.SimpleButton8 = New DevExpress.XtraEditors.SimpleButton
-        CType(Me.grid_list1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GridV_kota, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.grid_list2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GridV_zona, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.grid_list4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GridV_provinsi, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.grid_list3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GridV_group, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.cmd_zona_refresh = New DevExpress.XtraEditors.SimpleButton
+        Me.cmd_zona_hapus = New DevExpress.XtraEditors.SimpleButton
+        Me.cmd_zona_edit = New DevExpress.XtraEditors.SimpleButton
+        Me.cmd_zona_add = New DevExpress.XtraEditors.SimpleButton
+        Me.SplitContainer1.Panel1.SuspendLayout()
+        Me.SplitContainer1.Panel2.SuspendLayout()
+        Me.SplitContainer1.SuspendLayout()
+        Me.SplitContainer2.Panel1.SuspendLayout()
+        Me.SplitContainer2.Panel2.SuspendLayout()
+        Me.SplitContainer2.SuspendLayout()
+        CType(Me.gridcontrol_provinsi, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.gridview_provinsi, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
-        CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupControl2.SuspendLayout()
+        CType(Me.gridcontrol_group, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.gridview_group, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl3.SuspendLayout()
+        Me.SplitContainer3.Panel1.SuspendLayout()
+        Me.SplitContainer3.Panel2.SuspendLayout()
+        Me.SplitContainer3.SuspendLayout()
+        CType(Me.gridcontrol_kota, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.gridview_kota, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupControl2.SuspendLayout()
+        CType(Me.gridcontrol_zona, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.gridview_zona, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl4.SuspendLayout()
         Me.SuspendLayout()
         '
-        'grid_list1
+        'SplitContainer1
         '
-        Me.grid_list1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.grid_list1.Location = New System.Drawing.Point(240, 57)
-        Me.grid_list1.MainView = Me.GridV_kota
-        Me.grid_list1.Name = "grid_list1"
-        Me.grid_list1.Size = New System.Drawing.Size(286, 348)
-        Me.grid_list1.TabIndex = 31
-        Me.grid_list1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridV_kota})
+        Me.SplitContainer1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.SplitContainer1.Location = New System.Drawing.Point(0, 0)
+        Me.SplitContainer1.Name = "SplitContainer1"
         '
-        'GridV_kota
+        'SplitContainer1.Panel1
         '
-        Me.GridV_kota.GridControl = Me.grid_list1
-        Me.GridV_kota.Name = "GridV_kota"
-        Me.GridV_kota.OptionsCustomization.AllowColumnMoving = False
-        Me.GridV_kota.OptionsCustomization.AllowFilter = False
-        Me.GridV_kota.OptionsCustomization.AllowGroup = False
-        Me.GridV_kota.OptionsCustomization.AllowRowSizing = True
-        Me.GridV_kota.OptionsCustomization.AllowSort = False
-        Me.GridV_kota.OptionsView.ShowGroupPanel = False
+        Me.SplitContainer1.Panel1.Controls.Add(Me.SplitContainer2)
         '
-        'grid_list2
+        'SplitContainer1.Panel2
         '
-        Me.grid_list2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.grid_list2.Location = New System.Drawing.Point(760, 57)
-        Me.grid_list2.MainView = Me.GridV_zona
-        Me.grid_list2.Name = "grid_list2"
-        Me.grid_list2.Size = New System.Drawing.Size(222, 348)
-        Me.grid_list2.TabIndex = 32
-        Me.grid_list2.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridV_zona})
+        Me.SplitContainer1.Panel2.Controls.Add(Me.SplitContainer3)
+        Me.SplitContainer1.Size = New System.Drawing.Size(724, 453)
+        Me.SplitContainer1.SplitterDistance = 353
+        Me.SplitContainer1.TabIndex = 0
         '
-        'GridV_zona
+        'SplitContainer2
         '
-        Me.GridV_zona.GridControl = Me.grid_list2
-        Me.GridV_zona.Name = "GridV_zona"
-        Me.GridV_zona.OptionsView.ShowGroupPanel = False
+        Me.SplitContainer2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.SplitContainer2.Location = New System.Drawing.Point(0, 0)
+        Me.SplitContainer2.Name = "SplitContainer2"
+        Me.SplitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal
         '
-        'grid_list4
+        'SplitContainer2.Panel1
         '
-        Me.grid_list4.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.grid_list4.Location = New System.Drawing.Point(12, 57)
-        Me.grid_list4.MainView = Me.GridV_provinsi
-        Me.grid_list4.Name = "grid_list4"
-        Me.grid_list4.Size = New System.Drawing.Size(222, 348)
-        Me.grid_list4.TabIndex = 34
-        Me.grid_list4.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridV_provinsi})
+        Me.SplitContainer2.Panel1.Controls.Add(Me.gridcontrol_provinsi)
+        Me.SplitContainer2.Panel1.Controls.Add(Me.GroupControl1)
         '
-        'GridV_provinsi
+        'SplitContainer2.Panel2
         '
-        Me.GridV_provinsi.GridControl = Me.grid_list4
-        Me.GridV_provinsi.Name = "GridV_provinsi"
-        Me.GridV_provinsi.OptionsView.ShowGroupPanel = False
+        Me.SplitContainer2.Panel2.Controls.Add(Me.gridcontrol_group)
+        Me.SplitContainer2.Panel2.Controls.Add(Me.GroupControl3)
+        Me.SplitContainer2.Size = New System.Drawing.Size(353, 453)
+        Me.SplitContainer2.SplitterDistance = 232
+        Me.SplitContainer2.TabIndex = 0
         '
-        'grid_list3
+        'gridcontrol_provinsi
         '
-        Me.grid_list3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.grid_list3.Location = New System.Drawing.Point(532, 57)
-        Me.grid_list3.MainView = Me.GridV_group
-        Me.grid_list3.Name = "grid_list3"
-        Me.grid_list3.Size = New System.Drawing.Size(222, 348)
-        Me.grid_list3.TabIndex = 35
-        Me.grid_list3.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridV_group})
+        Me.gridcontrol_provinsi.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.gridcontrol_provinsi.Location = New System.Drawing.Point(0, 50)
+        Me.gridcontrol_provinsi.MainView = Me.gridview_provinsi
+        Me.gridcontrol_provinsi.Name = "gridcontrol_provinsi"
+        Me.gridcontrol_provinsi.Size = New System.Drawing.Size(353, 182)
+        Me.gridcontrol_provinsi.TabIndex = 31
+        Me.gridcontrol_provinsi.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.gridview_provinsi})
         '
-        'GridV_group
+        'gridview_provinsi
         '
-        Me.GridV_group.GridControl = Me.grid_list3
-        Me.GridV_group.Name = "GridV_group"
-        Me.GridV_group.OptionsView.ShowGroupPanel = False
+        Me.gridview_provinsi.GridControl = Me.gridcontrol_provinsi
+        Me.gridview_provinsi.Name = "gridview_provinsi"
+        Me.gridview_provinsi.OptionsBehavior.Editable = False
+        Me.gridview_provinsi.OptionsCustomization.AllowColumnMoving = False
+        Me.gridview_provinsi.OptionsSelection.EnableAppearanceFocusedRow = False
+        Me.gridview_provinsi.OptionsView.ShowGroupPanel = False
+        Me.gridview_provinsi.OptionsView.ShowIndicator = False
         '
         'GroupControl1
         '
-        Me.GroupControl1.Appearance.BackColor = System.Drawing.Color.DarkGreen
-        Me.GroupControl1.Appearance.Options.UseBackColor = True
-        Me.GroupControl1.Controls.Add(Me.SimpleButton2)
-        Me.GroupControl1.Controls.Add(Me.SimpleButton1)
-        Me.GroupControl1.Location = New System.Drawing.Point(12, 3)
+        Me.GroupControl1.Controls.Add(Me.cmd_prov_refresh)
+        Me.GroupControl1.Controls.Add(Me.cmd_prov_delete)
+        Me.GroupControl1.Controls.Add(Me.cmd_prov_edit)
+        Me.GroupControl1.Controls.Add(Me.cmd_prov_add)
+        Me.GroupControl1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.GroupControl1.Location = New System.Drawing.Point(0, 0)
         Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(222, 54)
-        Me.GroupControl1.TabIndex = 36
-        Me.GroupControl1.Text = "Wilyah / Provinsi"
+        Me.GroupControl1.Size = New System.Drawing.Size(353, 50)
+        Me.GroupControl1.TabIndex = 0
+        Me.GroupControl1.Text = "Wilayah / Provinsi"
         '
-        'SimpleButton2
+        'cmd_prov_refresh
         '
-        Me.SimpleButton2.Location = New System.Drawing.Point(117, 24)
-        Me.SimpleButton2.Name = "SimpleButton2"
-        Me.SimpleButton2.Size = New System.Drawing.Size(100, 28)
-        Me.SimpleButton2.TabIndex = 1
-        Me.SimpleButton2.Text = "Edit"
+        Me.cmd_prov_refresh.Location = New System.Drawing.Point(261, 25)
+        Me.cmd_prov_refresh.Name = "cmd_prov_refresh"
+        Me.cmd_prov_refresh.Size = New System.Drawing.Size(77, 22)
+        Me.cmd_prov_refresh.TabIndex = 3
+        Me.cmd_prov_refresh.Text = "Refresh"
         '
-        'SimpleButton1
+        'cmd_prov_delete
         '
-        Me.SimpleButton1.Location = New System.Drawing.Point(5, 24)
-        Me.SimpleButton1.Name = "SimpleButton1"
-        Me.SimpleButton1.Size = New System.Drawing.Size(100, 28)
-        Me.SimpleButton1.TabIndex = 0
-        Me.SimpleButton1.Text = "Tambah"
+        Me.cmd_prov_delete.Location = New System.Drawing.Point(178, 25)
+        Me.cmd_prov_delete.Name = "cmd_prov_delete"
+        Me.cmd_prov_delete.Size = New System.Drawing.Size(77, 22)
+        Me.cmd_prov_delete.TabIndex = 2
+        Me.cmd_prov_delete.Text = "Hapus"
         '
-        'GroupControl2
+        'cmd_prov_edit
         '
-        Me.GroupControl2.Appearance.BackColor = System.Drawing.Color.DarkGreen
-        Me.GroupControl2.Appearance.Options.UseBackColor = True
-        Me.GroupControl2.Controls.Add(Me.SimpleButton3)
-        Me.GroupControl2.Controls.Add(Me.SimpleButton4)
-        Me.GroupControl2.Location = New System.Drawing.Point(240, 3)
-        Me.GroupControl2.Name = "GroupControl2"
-        Me.GroupControl2.Size = New System.Drawing.Size(286, 54)
-        Me.GroupControl2.TabIndex = 37
-        Me.GroupControl2.Text = "Kota"
+        Me.cmd_prov_edit.Location = New System.Drawing.Point(95, 25)
+        Me.cmd_prov_edit.Name = "cmd_prov_edit"
+        Me.cmd_prov_edit.Size = New System.Drawing.Size(77, 22)
+        Me.cmd_prov_edit.TabIndex = 1
+        Me.cmd_prov_edit.Text = "Edit"
         '
-        'SimpleButton3
+        'cmd_prov_add
         '
-        Me.SimpleButton3.Location = New System.Drawing.Point(150, 24)
-        Me.SimpleButton3.Name = "SimpleButton3"
-        Me.SimpleButton3.Size = New System.Drawing.Size(100, 28)
-        Me.SimpleButton3.TabIndex = 3
-        Me.SimpleButton3.Text = "Edit"
+        Me.cmd_prov_add.Location = New System.Drawing.Point(12, 25)
+        Me.cmd_prov_add.Name = "cmd_prov_add"
+        Me.cmd_prov_add.Size = New System.Drawing.Size(77, 22)
+        Me.cmd_prov_add.TabIndex = 0
+        Me.cmd_prov_add.Text = "Tambah"
         '
-        'SimpleButton4
+        'gridcontrol_group
         '
-        Me.SimpleButton4.Location = New System.Drawing.Point(38, 24)
-        Me.SimpleButton4.Name = "SimpleButton4"
-        Me.SimpleButton4.Size = New System.Drawing.Size(100, 28)
-        Me.SimpleButton4.TabIndex = 2
-        Me.SimpleButton4.Text = "Tambah"
+        Me.gridcontrol_group.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.gridcontrol_group.Location = New System.Drawing.Point(0, 50)
+        Me.gridcontrol_group.MainView = Me.gridview_group
+        Me.gridcontrol_group.Name = "gridcontrol_group"
+        Me.gridcontrol_group.Size = New System.Drawing.Size(353, 167)
+        Me.gridcontrol_group.TabIndex = 33
+        Me.gridcontrol_group.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.gridview_group})
+        '
+        'gridview_group
+        '
+        Me.gridview_group.GridControl = Me.gridcontrol_group
+        Me.gridview_group.Name = "gridview_group"
+        Me.gridview_group.OptionsBehavior.Editable = False
+        Me.gridview_group.OptionsCustomization.AllowColumnMoving = False
+        Me.gridview_group.OptionsSelection.EnableAppearanceFocusedRow = False
+        Me.gridview_group.OptionsView.ShowGroupPanel = False
+        Me.gridview_group.OptionsView.ShowIndicator = False
         '
         'GroupControl3
         '
-        Me.GroupControl3.Appearance.BackColor = System.Drawing.Color.DarkGreen
-        Me.GroupControl3.Appearance.Options.UseBackColor = True
-        Me.GroupControl3.Controls.Add(Me.SimpleButton5)
-        Me.GroupControl3.Controls.Add(Me.SimpleButton6)
-        Me.GroupControl3.Location = New System.Drawing.Point(532, 3)
+        Me.GroupControl3.Controls.Add(Me.cmd_group_refresh)
+        Me.GroupControl3.Controls.Add(Me.cmd_group_delete)
+        Me.GroupControl3.Controls.Add(Me.cmd_group_edit)
+        Me.GroupControl3.Controls.Add(Me.cmd_group_add)
+        Me.GroupControl3.Dock = System.Windows.Forms.DockStyle.Top
+        Me.GroupControl3.Location = New System.Drawing.Point(0, 0)
         Me.GroupControl3.Name = "GroupControl3"
-        Me.GroupControl3.Size = New System.Drawing.Size(222, 54)
-        Me.GroupControl3.TabIndex = 38
+        Me.GroupControl3.Size = New System.Drawing.Size(353, 50)
+        Me.GroupControl3.TabIndex = 32
         Me.GroupControl3.Text = "Group"
         '
-        'SimpleButton5
+        'cmd_group_refresh
         '
-        Me.SimpleButton5.Location = New System.Drawing.Point(117, 23)
-        Me.SimpleButton5.Name = "SimpleButton5"
-        Me.SimpleButton5.Size = New System.Drawing.Size(100, 28)
-        Me.SimpleButton5.TabIndex = 3
-        Me.SimpleButton5.Text = "Edit"
+        Me.cmd_group_refresh.Location = New System.Drawing.Point(261, 25)
+        Me.cmd_group_refresh.Name = "cmd_group_refresh"
+        Me.cmd_group_refresh.Size = New System.Drawing.Size(77, 22)
+        Me.cmd_group_refresh.TabIndex = 3
+        Me.cmd_group_refresh.Text = "Refresh"
         '
-        'SimpleButton6
+        'cmd_group_delete
         '
-        Me.SimpleButton6.Location = New System.Drawing.Point(5, 23)
-        Me.SimpleButton6.Name = "SimpleButton6"
-        Me.SimpleButton6.Size = New System.Drawing.Size(100, 28)
-        Me.SimpleButton6.TabIndex = 2
-        Me.SimpleButton6.Text = "Tambah"
+        Me.cmd_group_delete.Location = New System.Drawing.Point(178, 25)
+        Me.cmd_group_delete.Name = "cmd_group_delete"
+        Me.cmd_group_delete.Size = New System.Drawing.Size(77, 22)
+        Me.cmd_group_delete.TabIndex = 2
+        Me.cmd_group_delete.Text = "Hapus"
+        '
+        'cmd_group_edit
+        '
+        Me.cmd_group_edit.Location = New System.Drawing.Point(95, 25)
+        Me.cmd_group_edit.Name = "cmd_group_edit"
+        Me.cmd_group_edit.Size = New System.Drawing.Size(77, 22)
+        Me.cmd_group_edit.TabIndex = 1
+        Me.cmd_group_edit.Text = "Edit"
+        '
+        'cmd_group_add
+        '
+        Me.cmd_group_add.Location = New System.Drawing.Point(12, 25)
+        Me.cmd_group_add.Name = "cmd_group_add"
+        Me.cmd_group_add.Size = New System.Drawing.Size(77, 22)
+        Me.cmd_group_add.TabIndex = 0
+        Me.cmd_group_add.Text = "Tambah"
+        '
+        'SplitContainer3
+        '
+        Me.SplitContainer3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.SplitContainer3.Location = New System.Drawing.Point(0, 0)
+        Me.SplitContainer3.Name = "SplitContainer3"
+        Me.SplitContainer3.Orientation = System.Windows.Forms.Orientation.Horizontal
+        '
+        'SplitContainer3.Panel1
+        '
+        Me.SplitContainer3.Panel1.Controls.Add(Me.gridcontrol_kota)
+        Me.SplitContainer3.Panel1.Controls.Add(Me.GroupControl2)
+        '
+        'SplitContainer3.Panel2
+        '
+        Me.SplitContainer3.Panel2.Controls.Add(Me.gridcontrol_zona)
+        Me.SplitContainer3.Panel2.Controls.Add(Me.GroupControl4)
+        Me.SplitContainer3.Size = New System.Drawing.Size(367, 453)
+        Me.SplitContainer3.SplitterDistance = 233
+        Me.SplitContainer3.TabIndex = 0
+        '
+        'gridcontrol_kota
+        '
+        Me.gridcontrol_kota.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.gridcontrol_kota.Location = New System.Drawing.Point(0, 50)
+        Me.gridcontrol_kota.MainView = Me.gridview_kota
+        Me.gridcontrol_kota.Name = "gridcontrol_kota"
+        Me.gridcontrol_kota.Size = New System.Drawing.Size(367, 183)
+        Me.gridcontrol_kota.TabIndex = 33
+        Me.gridcontrol_kota.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.gridview_kota})
+        '
+        'gridview_kota
+        '
+        Me.gridview_kota.GridControl = Me.gridcontrol_kota
+        Me.gridview_kota.Name = "gridview_kota"
+        Me.gridview_kota.OptionsBehavior.Editable = False
+        Me.gridview_kota.OptionsCustomization.AllowColumnMoving = False
+        Me.gridview_kota.OptionsSelection.EnableAppearanceFocusedRow = False
+        Me.gridview_kota.OptionsView.ShowGroupPanel = False
+        Me.gridview_kota.OptionsView.ShowIndicator = False
+        '
+        'GroupControl2
+        '
+        Me.GroupControl2.Controls.Add(Me.cmd_kota_refresh)
+        Me.GroupControl2.Controls.Add(Me.cmd_kota_delete)
+        Me.GroupControl2.Controls.Add(Me.cmd_kota_edit)
+        Me.GroupControl2.Controls.Add(Me.cmd_kota_add)
+        Me.GroupControl2.Dock = System.Windows.Forms.DockStyle.Top
+        Me.GroupControl2.Location = New System.Drawing.Point(0, 0)
+        Me.GroupControl2.Name = "GroupControl2"
+        Me.GroupControl2.Size = New System.Drawing.Size(367, 50)
+        Me.GroupControl2.TabIndex = 32
+        Me.GroupControl2.Text = "Kota"
+        '
+        'cmd_kota_refresh
+        '
+        Me.cmd_kota_refresh.Location = New System.Drawing.Point(261, 25)
+        Me.cmd_kota_refresh.Name = "cmd_kota_refresh"
+        Me.cmd_kota_refresh.Size = New System.Drawing.Size(77, 22)
+        Me.cmd_kota_refresh.TabIndex = 3
+        Me.cmd_kota_refresh.Text = "Refresh"
+        '
+        'cmd_kota_delete
+        '
+        Me.cmd_kota_delete.Location = New System.Drawing.Point(178, 25)
+        Me.cmd_kota_delete.Name = "cmd_kota_delete"
+        Me.cmd_kota_delete.Size = New System.Drawing.Size(77, 22)
+        Me.cmd_kota_delete.TabIndex = 2
+        Me.cmd_kota_delete.Text = "Hapus"
+        '
+        'cmd_kota_edit
+        '
+        Me.cmd_kota_edit.Location = New System.Drawing.Point(95, 25)
+        Me.cmd_kota_edit.Name = "cmd_kota_edit"
+        Me.cmd_kota_edit.Size = New System.Drawing.Size(77, 22)
+        Me.cmd_kota_edit.TabIndex = 1
+        Me.cmd_kota_edit.Text = "Edit"
+        '
+        'cmd_kota_add
+        '
+        Me.cmd_kota_add.Location = New System.Drawing.Point(12, 25)
+        Me.cmd_kota_add.Name = "cmd_kota_add"
+        Me.cmd_kota_add.Size = New System.Drawing.Size(77, 22)
+        Me.cmd_kota_add.TabIndex = 0
+        Me.cmd_kota_add.Text = "Tambah"
+        '
+        'gridcontrol_zona
+        '
+        Me.gridcontrol_zona.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.gridcontrol_zona.Location = New System.Drawing.Point(0, 50)
+        Me.gridcontrol_zona.MainView = Me.gridview_zona
+        Me.gridcontrol_zona.Name = "gridcontrol_zona"
+        Me.gridcontrol_zona.Size = New System.Drawing.Size(367, 166)
+        Me.gridcontrol_zona.TabIndex = 33
+        Me.gridcontrol_zona.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.gridview_zona})
+        '
+        'gridview_zona
+        '
+        Me.gridview_zona.GridControl = Me.gridcontrol_zona
+        Me.gridview_zona.Name = "gridview_zona"
+        Me.gridview_zona.OptionsBehavior.Editable = False
+        Me.gridview_zona.OptionsCustomization.AllowColumnMoving = False
+        Me.gridview_zona.OptionsSelection.EnableAppearanceFocusedRow = False
+        Me.gridview_zona.OptionsView.ShowGroupPanel = False
+        Me.gridview_zona.OptionsView.ShowIndicator = False
         '
         'GroupControl4
         '
-        Me.GroupControl4.Appearance.BackColor = System.Drawing.Color.DarkGreen
-        Me.GroupControl4.Appearance.Options.UseBackColor = True
-        Me.GroupControl4.Controls.Add(Me.SimpleButton7)
-        Me.GroupControl4.Controls.Add(Me.SimpleButton8)
-        Me.GroupControl4.Location = New System.Drawing.Point(760, 3)
+        Me.GroupControl4.Controls.Add(Me.cmd_zona_refresh)
+        Me.GroupControl4.Controls.Add(Me.cmd_zona_hapus)
+        Me.GroupControl4.Controls.Add(Me.cmd_zona_edit)
+        Me.GroupControl4.Controls.Add(Me.cmd_zona_add)
+        Me.GroupControl4.Dock = System.Windows.Forms.DockStyle.Top
+        Me.GroupControl4.Location = New System.Drawing.Point(0, 0)
         Me.GroupControl4.Name = "GroupControl4"
-        Me.GroupControl4.Size = New System.Drawing.Size(222, 54)
-        Me.GroupControl4.TabIndex = 39
+        Me.GroupControl4.Size = New System.Drawing.Size(367, 50)
+        Me.GroupControl4.TabIndex = 32
         Me.GroupControl4.Text = "Zona"
         '
-        'SimpleButton7
+        'cmd_zona_refresh
         '
-        Me.SimpleButton7.Location = New System.Drawing.Point(117, 23)
-        Me.SimpleButton7.Name = "SimpleButton7"
-        Me.SimpleButton7.Size = New System.Drawing.Size(100, 28)
-        Me.SimpleButton7.TabIndex = 3
-        Me.SimpleButton7.Text = "Edit"
+        Me.cmd_zona_refresh.Location = New System.Drawing.Point(261, 25)
+        Me.cmd_zona_refresh.Name = "cmd_zona_refresh"
+        Me.cmd_zona_refresh.Size = New System.Drawing.Size(77, 22)
+        Me.cmd_zona_refresh.TabIndex = 3
+        Me.cmd_zona_refresh.Text = "Refresh"
         '
-        'SimpleButton8
+        'cmd_zona_hapus
         '
-        Me.SimpleButton8.Location = New System.Drawing.Point(5, 23)
-        Me.SimpleButton8.Name = "SimpleButton8"
-        Me.SimpleButton8.Size = New System.Drawing.Size(100, 28)
-        Me.SimpleButton8.TabIndex = 2
-        Me.SimpleButton8.Text = "Tambah"
+        Me.cmd_zona_hapus.Location = New System.Drawing.Point(178, 25)
+        Me.cmd_zona_hapus.Name = "cmd_zona_hapus"
+        Me.cmd_zona_hapus.Size = New System.Drawing.Size(77, 22)
+        Me.cmd_zona_hapus.TabIndex = 2
+        Me.cmd_zona_hapus.Text = "Hapus"
+        '
+        'cmd_zona_edit
+        '
+        Me.cmd_zona_edit.Location = New System.Drawing.Point(95, 25)
+        Me.cmd_zona_edit.Name = "cmd_zona_edit"
+        Me.cmd_zona_edit.Size = New System.Drawing.Size(77, 22)
+        Me.cmd_zona_edit.TabIndex = 1
+        Me.cmd_zona_edit.Text = "Edit"
+        '
+        'cmd_zona_add
+        '
+        Me.cmd_zona_add.Location = New System.Drawing.Point(12, 25)
+        Me.cmd_zona_add.Name = "cmd_zona_add"
+        Me.cmd_zona_add.Size = New System.Drawing.Size(77, 22)
+        Me.cmd_zona_add.TabIndex = 0
+        Me.cmd_zona_add.Text = "Tambah"
         '
         'frm_wilayah_list
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1049, 410)
-        Me.Controls.Add(Me.GroupControl4)
-        Me.Controls.Add(Me.GroupControl3)
-        Me.Controls.Add(Me.GroupControl2)
-        Me.Controls.Add(Me.GroupControl1)
-        Me.Controls.Add(Me.grid_list3)
-        Me.Controls.Add(Me.grid_list4)
-        Me.Controls.Add(Me.grid_list2)
-        Me.Controls.Add(Me.grid_list1)
+        Me.ClientSize = New System.Drawing.Size(724, 453)
+        Me.Controls.Add(Me.SplitContainer1)
         Me.Name = "frm_wilayah_list"
         Me.Text = "Wilayah"
-        CType(Me.grid_list1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GridV_kota, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.grid_list2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GridV_zona, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.grid_list4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GridV_provinsi, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.grid_list3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GridV_group, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.SplitContainer1.Panel1.ResumeLayout(False)
+        Me.SplitContainer1.Panel2.ResumeLayout(False)
+        Me.SplitContainer1.ResumeLayout(False)
+        Me.SplitContainer2.Panel1.ResumeLayout(False)
+        Me.SplitContainer2.Panel2.ResumeLayout(False)
+        Me.SplitContainer2.ResumeLayout(False)
+        CType(Me.gridcontrol_provinsi, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.gridview_provinsi, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)
-        CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupControl2.ResumeLayout(False)
+        CType(Me.gridcontrol_group, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.gridview_group, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl3.ResumeLayout(False)
+        Me.SplitContainer3.Panel1.ResumeLayout(False)
+        Me.SplitContainer3.Panel2.ResumeLayout(False)
+        Me.SplitContainer3.ResumeLayout(False)
+        CType(Me.gridcontrol_kota, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.gridview_kota, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupControl2.ResumeLayout(False)
+        CType(Me.gridcontrol_zona, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.gridview_zona, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl4.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents grid_list1 As DevExpress.XtraGrid.GridControl
-    Friend WithEvents GridV_kota As DevExpress.XtraGrid.Views.Grid.GridView
-    Friend WithEvents grid_list2 As DevExpress.XtraGrid.GridControl
-    Friend WithEvents GridV_zona As DevExpress.XtraGrid.Views.Grid.GridView
-    Friend WithEvents grid_list4 As DevExpress.XtraGrid.GridControl
-    Friend WithEvents GridV_provinsi As DevExpress.XtraGrid.Views.Grid.GridView
-    Friend WithEvents grid_list3 As DevExpress.XtraGrid.GridControl
-    Friend WithEvents GridV_group As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents SplitContainer1 As System.Windows.Forms.SplitContainer
+    Friend WithEvents SplitContainer2 As System.Windows.Forms.SplitContainer
+    Friend WithEvents SplitContainer3 As System.Windows.Forms.SplitContainer
     Friend WithEvents GroupControl1 As DevExpress.XtraEditors.GroupControl
-    Friend WithEvents SimpleButton2 As DevExpress.XtraEditors.SimpleButton
-    Friend WithEvents SimpleButton1 As DevExpress.XtraEditors.SimpleButton
-    Friend WithEvents GroupControl2 As DevExpress.XtraEditors.GroupControl
-    Friend WithEvents SimpleButton3 As DevExpress.XtraEditors.SimpleButton
-    Friend WithEvents SimpleButton4 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents cmd_prov_delete As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents cmd_prov_edit As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents cmd_prov_add As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents gridcontrol_provinsi As DevExpress.XtraGrid.GridControl
+    Friend WithEvents gridview_provinsi As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents cmd_prov_refresh As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents gridcontrol_group As DevExpress.XtraGrid.GridControl
+    Friend WithEvents gridview_group As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents GroupControl3 As DevExpress.XtraEditors.GroupControl
-    Friend WithEvents SimpleButton5 As DevExpress.XtraEditors.SimpleButton
-    Friend WithEvents SimpleButton6 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents cmd_group_refresh As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents cmd_group_delete As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents cmd_group_edit As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents cmd_group_add As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents gridcontrol_kota As DevExpress.XtraGrid.GridControl
+    Friend WithEvents gridview_kota As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents GroupControl2 As DevExpress.XtraEditors.GroupControl
+    Friend WithEvents cmd_kota_refresh As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents cmd_kota_delete As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents cmd_kota_edit As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents cmd_kota_add As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents gridcontrol_zona As DevExpress.XtraGrid.GridControl
+    Friend WithEvents gridview_zona As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents GroupControl4 As DevExpress.XtraEditors.GroupControl
-    Friend WithEvents SimpleButton7 As DevExpress.XtraEditors.SimpleButton
-    Friend WithEvents SimpleButton8 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents cmd_zona_refresh As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents cmd_zona_hapus As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents cmd_zona_edit As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents cmd_zona_add As DevExpress.XtraEditors.SimpleButton
 End Class

@@ -1,17 +1,5 @@
 ﻿Public Class frm_size_list 
 
-    Public Sub InitGrid()
-        'Dim rcd_list As System.ComponentModel.BindingList(Of rcd_kategori_barang)
-        ' init grid from database
-        'rcd_list = New System.ComponentModel.BindingList(Of rcd_kategori_barang)
-        Db.FlushCache()
-        Db.Selects("kode_size, size")
-        Db.From("tbl_size")
-
-        grid_list.DataSource = Connection.ExecuteToDataTable(Db.GetQueryString)
-
-    End Sub
-
     Public Sub loadData()
         Db.FlushCache()
         Db.Selects("kode_size, size")
@@ -36,7 +24,7 @@
     Private Sub cmd_edit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_edit.Click
         Dim row As System.Data.DataRow = GridV_list.GetDataRow(GridV_list.FocusedRowHandle)
         frm_size_edit.Dispose()
-        frm_size_edit.initData(row("kode_size"))
+        frm_size_edit.kode_size = row("kode_size")
         frm_size_edit.ShowDialog(Me)
     End Sub
 
@@ -48,7 +36,7 @@
     Private Sub cmd_hapus_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles cmd_hapus.Click
         Try
             Dim row As System.Data.DataRow = GridV_list.GetDataRow(GridV_list.FocusedRowHandle)
-            If MsgBox("Size : " & row("Size") & vbCrLf & vbCrLf & vbCrLf & "Apakah anda yakin akan menghapus data di atas?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "Delete Size") = MsgBoxResult.Yes Then
+            If MsgBox("Size : " & row("Size") & vbCrLf & vbCrLf & vbCrLf & "Apakah anda yakin akan menghapus data di atas?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "Pesan") = MsgBoxResult.Yes Then
 
                 Db.FlushCache()
                 Db.Delete("tbl_size")
@@ -56,7 +44,7 @@
 
                 If Connection.ExecuteNonQuery(Db.GetQueryString) Then
                     MsgBox("Size : " & row("Size") & ", Berhasil dihapus dari database", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Pesan")
-                    Call InitGrid()
+                    Call Me.loadData()
                 End If
 
             End If
@@ -77,7 +65,6 @@
     End Sub
 
     Private Sub frm_size_list_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        Call InitGrid()
         Call Me.loadData()
     End Sub
 End Class

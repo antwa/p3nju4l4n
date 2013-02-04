@@ -1,17 +1,5 @@
 ﻿Public Class frm_merk_list 
 
-    Public Sub InitGrid()
-
-        ' init grid from database
-
-        Db.FlushCache()
-        Db.Selects("kode_merk, merk")
-        Db.From("tbl_merk")
-
-        grid_list.DataSource = Connection.ExecuteToDataTable(Db.GetQueryString)
-
-    End Sub
-
     Public Sub loadData()
         Db.FlushCache()
         Db.Selects("kode_merk, merk")
@@ -34,14 +22,13 @@
     End Sub
 
     Private Sub frm_merk_list_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        'Call InitGrid()
         Call Me.loadData()
     End Sub
 
     Private Sub cmd_edit_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles cmd_edit.Click
         Dim row As System.Data.DataRow = GridV_list.GetDataRow(GridV_list.FocusedRowHandle)
         frm_merk_edit.Dispose()
-        frm_merk_edit.initData(row("kode_merk"))
+        frm_merk_edit.kode_merk = row("kode_merk")
         frm_merk_edit.ShowDialog(Me)
     End Sub
 
@@ -59,7 +46,7 @@
     Private Sub cmd_hapus_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles cmd_hapus.Click
         Try
             Dim row As System.Data.DataRow = GridV_list.GetDataRow(GridV_list.FocusedRowHandle)
-            If MsgBox("Merk : " & row("Merk") & vbCrLf & vbCrLf & vbCrLf & "Apakah anda yakin akan menghapus data di atas?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "Delete Kategori") = MsgBoxResult.Yes Then
+            If MsgBox("Merk : " & row("Merk") & vbCrLf & vbCrLf & vbCrLf & "Apakah anda yakin akan menghapus data di atas?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "Pesan") = MsgBoxResult.Yes Then
 
                 Db.FlushCache()
                 Db.Delete("tbl_merk")
@@ -67,7 +54,7 @@
 
                 If Connection.ExecuteNonQuery(Db.GetQueryString) Then
                     MsgBox("Merk : " & row("Merk") & ", Berhasil dihapus dari database", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Pesan")
-                    Call InitGrid()
+                    Call Me.loadData()
                 End If
 
             End If

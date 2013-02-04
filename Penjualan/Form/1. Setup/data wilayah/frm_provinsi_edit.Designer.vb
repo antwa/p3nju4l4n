@@ -31,7 +31,7 @@ Partial Class frm_provinsi_edit
         '
         'LabelControl1
         '
-        Me.LabelControl1.Location = New System.Drawing.Point(13, 12)
+        Me.LabelControl1.Location = New System.Drawing.Point(13, 15)
         Me.LabelControl1.Name = "LabelControl1"
         Me.LabelControl1.Size = New System.Drawing.Size(24, 13)
         Me.LabelControl1.TabIndex = 17
@@ -39,17 +39,18 @@ Partial Class frm_provinsi_edit
         '
         'txt_kode
         '
-        Me.txt_kode.Location = New System.Drawing.Point(71, 9)
+        Me.txt_kode.Location = New System.Drawing.Point(71, 12)
         Me.txt_kode.Name = "txt_kode"
+        Me.txt_kode.Properties.ReadOnly = True
         Me.txt_kode.Size = New System.Drawing.Size(53, 20)
-        Me.txt_kode.TabIndex = 16
+        Me.txt_kode.TabIndex = 3
         '
         'cmd_batal
         '
         Me.cmd_batal.Location = New System.Drawing.Point(172, 77)
         Me.cmd_batal.Name = "cmd_batal"
         Me.cmd_batal.Size = New System.Drawing.Size(98, 25)
-        Me.cmd_batal.TabIndex = 15
+        Me.cmd_batal.TabIndex = 2
         Me.cmd_batal.Text = "Batal"
         '
         'cmd_simpan
@@ -57,12 +58,12 @@ Partial Class frm_provinsi_edit
         Me.cmd_simpan.Location = New System.Drawing.Point(71, 77)
         Me.cmd_simpan.Name = "cmd_simpan"
         Me.cmd_simpan.Size = New System.Drawing.Size(95, 25)
-        Me.cmd_simpan.TabIndex = 14
+        Me.cmd_simpan.TabIndex = 1
         Me.cmd_simpan.Text = "Simpan"
         '
         'LabelControl2
         '
-        Me.LabelControl2.Location = New System.Drawing.Point(13, 38)
+        Me.LabelControl2.Location = New System.Drawing.Point(13, 41)
         Me.LabelControl2.Name = "LabelControl2"
         Me.LabelControl2.Size = New System.Drawing.Size(37, 13)
         Me.LabelControl2.TabIndex = 13
@@ -70,10 +71,10 @@ Partial Class frm_provinsi_edit
         '
         'txt_provinsi
         '
-        Me.txt_provinsi.Location = New System.Drawing.Point(71, 35)
+        Me.txt_provinsi.Location = New System.Drawing.Point(71, 38)
         Me.txt_provinsi.Name = "txt_provinsi"
         Me.txt_provinsi.Size = New System.Drawing.Size(199, 20)
-        Me.txt_provinsi.TabIndex = 12
+        Me.txt_provinsi.TabIndex = 0
         '
         'frm_provinsi_edit
         '
@@ -86,9 +87,12 @@ Partial Class frm_provinsi_edit
         Me.Controls.Add(Me.cmd_simpan)
         Me.Controls.Add(Me.LabelControl2)
         Me.Controls.Add(Me.txt_provinsi)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "frm_provinsi_edit"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "frm_provinsi_edit"
+        Me.Text = "Edit Provinsi"
         CType(Me.txt_kode.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txt_provinsi.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

@@ -1,24 +1,13 @@
 ﻿Public Class frm_kategoribarang_list 
 
-    Public Sub InitGrid()
-        'Dim rcd_list As System.ComponentModel.BindingList(Of rcd_kategori_barang)
-        ' init grid from database
-        'rcd_list = New System.ComponentModel.BindingList(Of rcd_kategori_barang)
-        Db.FlushCache()
-        Db.Selects("kode_kategori, kategori")
-        Db.From("tbl_kategori_barang")
-
-        grid_list.DataSource = Connection.ExecuteToDataTable(Db.GetQueryString)
-
-    End Sub
-
     Public Sub loadData()
+
         Db.FlushCache()
         Db.Selects("kode_kategori, kategori")
         Db.From("tbl_kategori_barang")
 
         If txt_cari.Text <> "" Then
-            Db.Where("WHERE kategori LIKE '" & txt_cari.Text & "%'")
+            Db.Where("WHERE kategori LIKE '%" & txt_cari.Text & "%'")
         End If
 
         Db.OrderBy("kode_kategori", cls_database.sorting.Ascending)
@@ -34,7 +23,6 @@
     End Sub
 
     Private Sub frm_kategoribarang_list_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        Call InitGrid()
         Call Me.loadData()
     End Sub
 
@@ -47,7 +35,7 @@
     Private Sub cmd_edit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_edit.Click
         Dim row As System.Data.DataRow = GridV_list.GetDataRow(GridV_list.FocusedRowHandle)
         frm_kategoribarang_edit.Dispose()
-        frm_kategoribarang_edit.initData(row("kode_kategori"))
+        frm_kategoribarang_edit.kode_kategori = row("kode_kategori")
         frm_kategoribarang_edit.ShowDialog(Me)
     End Sub
 
@@ -63,7 +51,7 @@
 
                 If Connection.ExecuteNonQuery(Db.GetQueryString) Then
                     MsgBox("Kategori : " & row("Kategori") & ", Berhasil dihapus dari database", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Pesan")
-                    Call InitGrid()
+                    Call Me.loadData()
                 End If
 
             End If
