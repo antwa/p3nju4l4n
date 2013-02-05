@@ -176,4 +176,7 @@
         LoadFormToTab(frm_kode_akun_list)
     End Sub
 
+    Private Sub BarButtonItem38_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem38.ItemClick
+        LoadFormToTab(frm_pengeluaran_kas_list)
+    End Sub
 End Class
