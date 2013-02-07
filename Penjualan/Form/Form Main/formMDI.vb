@@ -179,4 +179,9 @@
     Private Sub BarButtonItem38_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem38.ItemClick
         LoadFormToTab(frm_pengeluaran_kas_list)
     End Sub
+
+    Private Sub BarButtonItem39_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem39.ItemClick
+        LoadFormToTab(frm_mutasi_kas)
+
+    End Sub
 End Class
