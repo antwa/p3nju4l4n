@@ -1,5 +1,7 @@
 ﻿Public Class frm_rencana_distribusi 
 
+
+
     Public rcd_list As New DataTable
 
     Public Sub AddArtikelToList(ByVal mKode_barangjadi As String, ByVal mNama_barangjadi As String, ByVal mStok As Integer, ByVal mQty As Integer)
@@ -91,6 +93,7 @@
 
     Private Sub frm_rencana_distribusi_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Call initComponent()
+
     End Sub
 
     Private Sub cmd_load_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_load_customer.Click

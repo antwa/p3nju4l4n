@@ -68,6 +68,11 @@
                 Db.From("tbl_penggajian")
                 Db.OrderBy("no_slipgaji", cls_database.sorting.Descending)
 
+            Case C_FAKTUR_GLOBAL
+                Db.Selects("TOP 1 no_faktur AS nomor")
+                Db.From("tbl_fakturglobal")
+                Db.OrderBy("no_faktur", cls_database.sorting.Descending)
+
             Case Else
 
         End Select

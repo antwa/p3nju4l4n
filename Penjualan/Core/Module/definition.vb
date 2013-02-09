@@ -33,5 +33,6 @@
     Public Const C_RENCANA_DISTRIBUSI As Integer = 12
     Public Const C_KELUAR_BARANG As Integer = 13
     Public Const C_SLIP_GAJI As Integer = 14
+    Public Const C_FAKTUR_GLOBAL As Integer = 15
 
 End Module

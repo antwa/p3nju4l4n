@@ -200,18 +200,19 @@
         Db.Selects("a.kode_provinsi, a.provinsi")
         Db.From("tbl_provinsi a")
 
-
         lookup.Properties.DataSource = Connection.ExecuteToDataTable(Db.GetQueryString)
         lookup.Properties.DisplayMember = "provinsi"
         lookup.Properties.ValueMember = "kode_provinsi"
 
         lookup.Properties.PopulateColumns()
 
-        lookup.Properties.Columns(0).Caption = "Kode"
+        'MsgBox(lookup.Properties.Columns.Count)
+        lookup.Properties.Columns("kode_provinsi").Caption = "Kode"
         lookup.Properties.Columns(1).Caption = "Provinsi"
 
         lookup.Properties.Columns(0).Width = 20
         lookup.Properties.Columns(1).Width = 100
+
         lookup.ItemIndex = 0
     End Sub
 
@@ -233,12 +234,16 @@
     '    lookup.ItemIndex = 0
     'End Sub
 
-    Public Sub Load_Kota(ByRef lookup As DevExpress.XtraEditors.LookUpEdit)
+    Public Sub Load_Kota(ByRef lookup As DevExpress.XtraEditors.LookUpEdit, Optional ByVal kode_provinsi As String = vbNullString)
         'init lookup
         Db.FlushCache()
         Db.Selects("a.kode_kota, a.kota, b.provinsi")
         Db.From("tbl_kota a")
         Db.Join("tbl_provinsi b", "b.kode_provinsi = a.kode_provinsi")
+
+        If kode_provinsi <> vbNullString Then
+            Db.Where("a.kode_provinsi", kode_provinsi)
+        End If
 
         lookup.Properties.DataSource = Connection.ExecuteToDataTable(Db.GetQueryString)
 

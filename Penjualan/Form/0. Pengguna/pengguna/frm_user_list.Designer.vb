@@ -19,7 +19,6 @@ Partial Class frm_user_list
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_user_list))
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl
         Me.cmd_hapus_user = New DevExpress.XtraEditors.SimpleButton
         Me.cmd_edit_user = New DevExpress.XtraEditors.SimpleButton
@@ -60,7 +59,6 @@ Partial Class frm_user_list
         '
         'cmd_hapus_user
         '
-        Me.cmd_hapus_user.Image = CType(resources.GetObject("cmd_hapus_user.Image"), System.Drawing.Image)
         Me.cmd_hapus_user.Location = New System.Drawing.Point(273, 34)
         Me.cmd_hapus_user.Name = "cmd_hapus_user"
         Me.cmd_hapus_user.Size = New System.Drawing.Size(128, 26)
@@ -69,7 +67,6 @@ Partial Class frm_user_list
         '
         'cmd_edit_user
         '
-        Me.cmd_edit_user.Image = CType(resources.GetObject("cmd_edit_user.Image"), System.Drawing.Image)
         Me.cmd_edit_user.Location = New System.Drawing.Point(139, 34)
         Me.cmd_edit_user.Name = "cmd_edit_user"
         Me.cmd_edit_user.Size = New System.Drawing.Size(128, 26)
@@ -78,7 +75,6 @@ Partial Class frm_user_list
         '
         'cmd_tambah_user
         '
-        Me.cmd_tambah_user.Image = CType(resources.GetObject("cmd_tambah_user.Image"), System.Drawing.Image)
         Me.cmd_tambah_user.Location = New System.Drawing.Point(5, 34)
         Me.cmd_tambah_user.Name = "cmd_tambah_user"
         Me.cmd_tambah_user.Size = New System.Drawing.Size(128, 26)
@@ -132,7 +128,6 @@ Partial Class frm_user_list
         '
         'cmd_hapus_level
         '
-        Me.cmd_hapus_level.Image = CType(resources.GetObject("cmd_hapus_level.Image"), System.Drawing.Image)
         Me.cmd_hapus_level.Location = New System.Drawing.Point(273, 34)
         Me.cmd_hapus_level.Name = "cmd_hapus_level"
         Me.cmd_hapus_level.Size = New System.Drawing.Size(128, 26)
@@ -141,7 +136,6 @@ Partial Class frm_user_list
         '
         'cmd_edit_level
         '
-        Me.cmd_edit_level.Image = CType(resources.GetObject("cmd_edit_level.Image"), System.Drawing.Image)
         Me.cmd_edit_level.Location = New System.Drawing.Point(139, 34)
         Me.cmd_edit_level.Name = "cmd_edit_level"
         Me.cmd_edit_level.Size = New System.Drawing.Size(128, 26)
@@ -150,7 +144,6 @@ Partial Class frm_user_list
         '
         'cmd_tambah_level
         '
-        Me.cmd_tambah_level.Image = CType(resources.GetObject("cmd_tambah_level.Image"), System.Drawing.Image)
         Me.cmd_tambah_level.Location = New System.Drawing.Point(5, 34)
         Me.cmd_tambah_level.Name = "cmd_tambah_level"
         Me.cmd_tambah_level.Size = New System.Drawing.Size(128, 26)

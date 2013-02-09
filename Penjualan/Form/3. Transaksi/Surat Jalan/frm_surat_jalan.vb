@@ -284,4 +284,22 @@
     Private Sub no_do_EditValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles no_do.EditValueChanged
 
     End Sub
+
+    Private Sub SimpleButton1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SimpleButton1.Click
+        '# Print
+        Dim rpt As New rpt_amplop
+        
+        rpt.lbl_nama_customer.Text = lbl_nama.Text
+        rpt.lbl_alamat.Text = lbl_alamat.Text
+        rpt.lbl_kota.Text = lbl_kota.Text
+        
+        rpt.CreateDocument()
+
+        Dim fc As New FormReportControl
+        fc.Text = "Print Amplop"
+        fc.PrintControl1.PrintingSystem = rpt.PrintingSystem
+        fc.Height = 500
+        fc.ShowDialog(Me)
+
+    End Sub
 End Class

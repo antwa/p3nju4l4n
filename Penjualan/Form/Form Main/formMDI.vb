@@ -176,12 +176,23 @@
         LoadFormToTab(frm_kode_akun_list)
     End Sub
 
+    Private Sub cKasBank_Penerimaan_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles cKasBank_Penerimaan.ItemClick
+        LoadFormToTab(frm_penerimaan_kas)
+    End Sub
+
     Private Sub BarButtonItem38_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem38.ItemClick
         LoadFormToTab(frm_pengeluaran_kas_list)
     End Sub
 
     Private Sub BarButtonItem39_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem39.ItemClick
         LoadFormToTab(frm_mutasi_kas)
+    End Sub
 
+    Private Sub cTransaksi_faktur_global_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles cTransaksi_faktur_global.ItemClick
+        LoadFormToTab(frm_fakturglobal)
+    End Sub
+
+    Private Sub cTransaksi_targetpenjualan_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles cTransaksi_targetpenjualan.ItemClick
+        LoadFormToTab(frm_targetpenjualan)
     End Sub
 End Class

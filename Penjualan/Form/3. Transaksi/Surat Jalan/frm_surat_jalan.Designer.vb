@@ -207,6 +207,7 @@ Partial Class frm_surat_jalan
         Me.SimpleButton2.Size = New System.Drawing.Size(126, 24)
         Me.SimpleButton2.TabIndex = 51
         Me.SimpleButton2.Text = "Print Amplop Polos"
+        Me.SimpleButton2.Visible = False
         '
         'LabelControl5
         '

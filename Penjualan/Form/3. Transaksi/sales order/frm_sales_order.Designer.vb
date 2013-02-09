@@ -37,6 +37,7 @@ Partial Class frm_sales_order
         Me.cmd_cancel = New DevExpress.XtraEditors.SimpleButton
         Me.cmd_hapus_baris = New DevExpress.XtraEditors.SimpleButton
         Me.cmd_cari_artikel = New DevExpress.XtraEditors.SimpleButton
+        Me.cmd_load_rencana = New DevExpress.XtraEditors.SimpleButton
         CType(Me.no_so.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tgl_so.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tgl_so.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -235,11 +236,21 @@ Partial Class frm_sales_order
         Me.cmd_cari_artikel.TabIndex = 42
         Me.cmd_cari_artikel.Text = "Cari Artikel"
         '
+        'cmd_load_rencana
+        '
+        Me.cmd_load_rencana.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.cmd_load_rencana.Location = New System.Drawing.Point(224, 380)
+        Me.cmd_load_rencana.Name = "cmd_load_rencana"
+        Me.cmd_load_rencana.Size = New System.Drawing.Size(118, 24)
+        Me.cmd_load_rencana.TabIndex = 46
+        Me.cmd_load_rencana.Text = "Load Rcn Dist"
+        '
         'frm_sales_order
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(811, 416)
+        Me.Controls.Add(Me.cmd_load_rencana)
         Me.Controls.Add(Me.cmd_simpan)
         Me.Controls.Add(Me.cmd_cancel)
         Me.Controls.Add(Me.cmd_hapus_baris)
@@ -292,4 +303,5 @@ Partial Class frm_sales_order
     Friend WithEvents cmd_cancel As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents cmd_hapus_baris As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents cmd_cari_artikel As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents cmd_load_rencana As DevExpress.XtraEditors.SimpleButton
 End Class

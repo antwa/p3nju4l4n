@@ -499,6 +499,19 @@
     <Compile Include="Form\3. Transaksi\delivery order\rpt_delivery_order_satu.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Form\3. Transaksi\faktur global\frm_fakturglobal.Designer.vb">
+      <DependentUpon>frm_fakturglobal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\3. Transaksi\faktur global\frm_fakturglobal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\3. Transaksi\faktur global\rcd_fakturglobal.vb" />
+    <Compile Include="Form\3. Transaksi\faktur global\rpt_fakturglobal.Designer.vb">
+      <DependentUpon>rpt_fakturglobal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\3. Transaksi\faktur global\rpt_fakturglobal.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Form\3. Transaksi\faktur konsinyasi\frm_faktur_konsinyasi.Designer.vb">
       <DependentUpon>frm_faktur_konsinyasi.vb</DependentUpon>
     </Compile>
@@ -668,6 +681,12 @@
     <Compile Include="Form\3. Transaksi\Surat Jalan\rcd_surat_jalan.vb">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Form\3. Transaksi\Surat Jalan\rpt_amplop.Designer.vb">
+      <DependentUpon>rpt_amplop.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\3. Transaksi\Surat Jalan\rpt_amplop.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Form\3. Transaksi\Surat Jalan\rpt_invoice.Designer.vb">
       <DependentUpon>rpt_invoice.vb</DependentUpon>
     </Compile>
@@ -680,6 +699,13 @@
     <Compile Include="Form\3. Transaksi\Surat Jalan\rpt_surat_jalan.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Form\3. Transaksi\target penjualan\frm_targetpenjualan.Designer.vb">
+      <DependentUpon>frm_targetpenjualan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\3. Transaksi\target penjualan\frm_targetpenjualan.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\3. Transaksi\target penjualan\rcd_targetpenjualan_perbulan.vb" />
     <Compile Include="Form\4. Laporan\FormReportControl.Designer.vb">
       <DependentUpon>FormReportControl.vb</DependentUpon>
     </Compile>
@@ -690,6 +716,24 @@
       <DependentUpon>frm_lap_penerimaan_barang.vb</DependentUpon>
     </Compile>
     <Compile Include="Form\4. Laporan\penerimaan barang\frm_lap_penerimaan_barang.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\6. Kas dan Bank\mutasi_kas\frm_mutasi_kas_add.Designer.vb">
+      <DependentUpon>frm_mutasi_kas_add.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\6. Kas dan Bank\mutasi_kas\frm_mutasi_kas_add.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\6. Kas dan Bank\mutasi_kas\frm_mutasi_kas_list.Designer.vb">
+      <DependentUpon>frm_mutasi_kas_list.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\6. Kas dan Bank\mutasi_kas\frm_mutasi_kas_list.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\6. Kas dan Bank\penerimaan\frm_penerimaan_kas.Designer.vb">
+      <DependentUpon>frm_penerimaan_kas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\6. Kas dan Bank\penerimaan\frm_penerimaan_kas.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form\6. Kas dan Bank\pengeluaran_kas\frm_pengeluaran_kas_list.Designer.vb">
@@ -1034,6 +1078,14 @@
       <DependentUpon>rpt_delivery_order_satu.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form\3. Transaksi\faktur global\frm_fakturglobal.resx">
+      <DependentUpon>frm_fakturglobal.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\3. Transaksi\faktur global\rpt_fakturglobal.resx">
+      <DependentUpon>rpt_fakturglobal.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\3. Transaksi\faktur konsinyasi\frm_faktur_konsinyasi.resx">
       <DependentUpon>frm_faktur_konsinyasi.vb</DependentUpon>
       <SubType>Designer</SubType>
@@ -1134,6 +1186,10 @@
       <DependentUpon>frm_surat_jalan.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form\3. Transaksi\Surat Jalan\rpt_amplop.resx">
+      <DependentUpon>rpt_amplop.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\3. Transaksi\Surat Jalan\rpt_invoice.resx">
       <DependentUpon>rpt_invoice.vb</DependentUpon>
       <SubType>Designer</SubType>
@@ -1142,12 +1198,28 @@
       <DependentUpon>rpt_surat_jalan.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form\3. Transaksi\target penjualan\frm_targetpenjualan.resx">
+      <DependentUpon>frm_targetpenjualan.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\4. Laporan\FormReportControl.resx">
       <DependentUpon>FormReportControl.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\4. Laporan\penerimaan barang\frm_lap_penerimaan_barang.resx">
       <DependentUpon>frm_lap_penerimaan_barang.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\6. Kas dan Bank\mutasi_kas\frm_mutasi_kas_add.resx">
+      <DependentUpon>frm_mutasi_kas_add.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\6. Kas dan Bank\mutasi_kas\frm_mutasi_kas_list.resx">
+      <DependentUpon>frm_mutasi_kas_list.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\6. Kas dan Bank\penerimaan\frm_penerimaan_kas.resx">
+      <DependentUpon>frm_penerimaan_kas.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\6. Kas dan Bank\pengeluaran_kas\frm_pengeluaran_kas_list.resx">
@@ -1233,6 +1305,7 @@
     <None Include="My Project\DataSources\rcd_bordir_keluar.datasource" />
     <None Include="My Project\DataSources\rcd_cutting_keluar.datasource" />
     <None Include="My Project\DataSources\rcd_delivery_order_banyak.datasource" />
+    <None Include="My Project\DataSources\rcd_fakturglobal.datasource" />
     <None Include="My Project\DataSources\rcd_faktur_konsinyasi.datasource" />
     <None Include="My Project\DataSources\rcd_keluar_barang.datasource" />
     <None Include="My Project\DataSources\rcd_level.datasource" />
@@ -1285,7 +1358,6 @@
     <Folder Include="Form\4. Laporan\delivery order\" />
     <Folder Include="Form\4. Laporan\sales order\" />
     <Folder Include="Form\5. Hutang Piutang\" />
-    <Folder Include="Form\6. Kas dan Bank\mutasi_kas\" />
     <Folder Include="Form\6. Kas dan Bank\penerimaan_kas\" />
     <Folder Include="Form\7. Utility\" />
     <Folder Include="obj\Debug\" />

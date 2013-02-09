@@ -19,7 +19,6 @@ Partial Class frm_user_edit
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_user_edit))
         Me.LabelControl5 = New DevExpress.XtraEditors.LabelControl
         Me.txt_jabatan = New DevExpress.XtraEditors.TextEdit
         Me.look_levelAccess = New DevExpress.XtraEditors.LookUpEdit
@@ -74,20 +73,18 @@ Partial Class frm_user_edit
         'cmd_simpan
         '
         Me.cmd_simpan.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.cmd_simpan.Image = CType(resources.GetObject("cmd_simpan.Image"), System.Drawing.Image)
-        Me.cmd_simpan.Location = New System.Drawing.Point(223, 228)
+        Me.cmd_simpan.Location = New System.Drawing.Point(119, 219)
         Me.cmd_simpan.Name = "cmd_simpan"
-        Me.cmd_simpan.Size = New System.Drawing.Size(100, 33)
+        Me.cmd_simpan.Size = New System.Drawing.Size(100, 25)
         Me.cmd_simpan.TabIndex = 33
         Me.cmd_simpan.Text = "Simpan"
         '
         'cmd_batal
         '
         Me.cmd_batal.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.cmd_batal.Image = CType(resources.GetObject("cmd_batal.Image"), System.Drawing.Image)
-        Me.cmd_batal.Location = New System.Drawing.Point(111, 228)
+        Me.cmd_batal.Location = New System.Drawing.Point(225, 219)
         Me.cmd_batal.Name = "cmd_batal"
-        Me.cmd_batal.Size = New System.Drawing.Size(100, 33)
+        Me.cmd_batal.Size = New System.Drawing.Size(100, 25)
         Me.cmd_batal.TabIndex = 32
         Me.cmd_batal.Text = "Batal"
         '
@@ -183,7 +180,7 @@ Partial Class frm_user_edit
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(337, 268)
+        Me.ClientSize = New System.Drawing.Size(337, 256)
         Me.ControlBox = False
         Me.Controls.Add(Me.LabelControl5)
         Me.Controls.Add(Me.txt_jabatan)

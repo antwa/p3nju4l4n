@@ -111,7 +111,7 @@ Partial Class frm_wilayah_list
         Me.SplitContainer2.Panel2.Controls.Add(Me.gridcontrol_group)
         Me.SplitContainer2.Panel2.Controls.Add(Me.GroupControl3)
         Me.SplitContainer2.Size = New System.Drawing.Size(353, 453)
-        Me.SplitContainer2.SplitterDistance = 232
+        Me.SplitContainer2.SplitterDistance = 233
         Me.SplitContainer2.TabIndex = 0
         '
         'gridcontrol_provinsi
@@ -120,7 +120,7 @@ Partial Class frm_wilayah_list
         Me.gridcontrol_provinsi.Location = New System.Drawing.Point(0, 50)
         Me.gridcontrol_provinsi.MainView = Me.gridview_provinsi
         Me.gridcontrol_provinsi.Name = "gridcontrol_provinsi"
-        Me.gridcontrol_provinsi.Size = New System.Drawing.Size(353, 182)
+        Me.gridcontrol_provinsi.Size = New System.Drawing.Size(353, 183)
         Me.gridcontrol_provinsi.TabIndex = 31
         Me.gridcontrol_provinsi.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.gridview_provinsi})
         '
@@ -185,7 +185,7 @@ Partial Class frm_wilayah_list
         Me.gridcontrol_group.Location = New System.Drawing.Point(0, 50)
         Me.gridcontrol_group.MainView = Me.gridview_group
         Me.gridcontrol_group.Name = "gridcontrol_group"
-        Me.gridcontrol_group.Size = New System.Drawing.Size(353, 167)
+        Me.gridcontrol_group.Size = New System.Drawing.Size(353, 166)
         Me.gridcontrol_group.TabIndex = 33
         Me.gridcontrol_group.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.gridview_group})
         '
