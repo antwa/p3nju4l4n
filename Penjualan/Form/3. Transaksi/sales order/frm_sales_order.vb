@@ -221,17 +221,17 @@ Public Class frm_sales_order
 
     Private Sub GridControl1_MouseDoubleClick(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles GridControl1.MouseDoubleClick
         Try
-            Dim row As Integer = GridView1.FocusedRowHandle
-            Dim ghi As GridHitInfo = GridView1.CalcHitInfo(e.Location)
+            'Dim row As Integer = GridView1.FocusedRowHandle
+            'Dim ghi As GridHitInfo = GridView1.CalcHitInfo(e.Location)
 
-            If ghi.Column.FieldName = "harga" Then
-                frm_transaksi_popup_harga.Dispose()
-                frm_transaksi_popup_harga.parameter1 = C_SALES_ORDER
-                frm_transaksi_popup_harga.kode_barangjadi = rcd_list.Item(row).kode_barangjadi
-                frm_transaksi_popup_harga.nama = rcd_list.Item(row).nama
-                frm_transaksi_popup_harga.row = row
-                frm_transaksi_popup_harga.ShowDialog(Me)
-            End If
+            'If ghi.Column.FieldName = "harga" Then
+            '    frm_transaksi_popup_harga.Dispose()
+            '    frm_transaksi_popup_harga.parameter1 = C_SALES_ORDER
+            '    frm_transaksi_popup_harga.kode_barangjadi = rcd_list.Item(row).kode_barangjadi
+            '    frm_transaksi_popup_harga.nama = rcd_list.Item(row).nama
+            '    frm_transaksi_popup_harga.row = row
+            '    frm_transaksi_popup_harga.ShowDialog(Me)
+            'End If
         Catch ex As Exception
 
         End Try
@@ -307,6 +307,68 @@ Public Class frm_sales_order
     End Sub
 
     Private Sub GridControl1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GridControl1.Click
+
+    End Sub
+
+    Private Sub cmd_load_rencana_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_load_rencana.Click
+        
+        Db.FlushCache()
+        Db.Selects("a.tanggal, b.kode_barangjadi, c.nama AS nama_barangjadi, b.qty")
+        Db.From("tbl_rencana_distribusi a")
+        Db.Join("tbl_rencana_distribusi_detail b", "b.no_rencana = a.no_rencana")
+        Db.Join("tbl_barangjadi c", "c.kode_barangjadi = b.kode_barangjadi")
+        Db.Where("b.kode_customer", getValueFromLookup(kode_customer))
+        Db.Where_BetweenDate("a.tanggal", tgl_rinciandist.DateTime, tgl_rinciandist.DateTime)
+
+        Dim row As DataTable = Connection.ExecuteToDataTable(Db.GetQueryString)
+
+        If row.Rows.Count > 0 Then
+
+            rcd_list.Clear()
+
+            Dim i As Integer
+            Dim count As Integer = row.Rows.Count - 1
+
+            For i = 0 To count
+                rcd_list.Add(New rcd_sales_order)
+
+                '# get stock gudang
+                Db.FlushCache()
+                Db.Selects("*")
+                Db.From("tbl_persediaan_gudang")
+                Db.Where("kode_barangjadi", row.Rows(i).Item("kode_barangjadi"))
+
+                Dim stok As DataTable = Connection.ExecuteToDataTable(Db.GetQueryString)
+
+                If stok.Rows.Count > 0 Then
+                    rcd_list.Item(i).stok = stok.Rows(0).Item("stok")
+                End If
+
+                '# get harga barang
+                Db.FlushCache()
+                Db.Selects("kode_hargajual, kode_template_harga, harga")
+                Db.From("tbl_hargajual")
+                Db.Where("kode_barangjadi", row.Rows(i).Item("kode_barangjadi"))
+                Db.Where("kode_template_harga", kode_customer.GetColumnValue("kode_template_harga"))
+
+                Dim harga As DataTable = Connection.ExecuteToDataTable(Db.GetQueryString)
+
+                rcd_list.Item(i).kode_hargajual = harga.Rows(0).Item("kode_hargajual")
+                rcd_list.Item(i).harga = harga.Rows(0).Item("harga")
+
+                '# insert item
+                rcd_list.Item(i).kode_barangjadi = row.Rows(i).Item("kode_barangjadi")
+                rcd_list.Item(i).nama = row.Rows(i).Item("nama_barangjadi")
+                rcd_list.Item(i).qty = row.Rows(i).Item("qty")
+
+            Next
+
+
+            rcd_list.Add(New rcd_sales_order)
+            Call reIndex()
+        Else
+            MsgBox("Tidak terdapat rencana distribusi pada tanggal " & tgl_rinciandist.Text, MsgBoxStyle.Exclamation)
+        End If
 
     End Sub
 End Class

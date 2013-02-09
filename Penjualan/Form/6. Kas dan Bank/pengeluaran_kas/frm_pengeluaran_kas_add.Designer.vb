@@ -124,7 +124,7 @@ Partial Class frm_pengeluaran_kas_add
         Me.cmd_simpan.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.cmd_simpan.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmd_simpan.Appearance.Options.UseFont = True
-        Me.cmd_simpan.Location = New System.Drawing.Point(13, 502)
+        Me.cmd_simpan.Location = New System.Drawing.Point(13, 372)
         Me.cmd_simpan.Name = "cmd_simpan"
         Me.cmd_simpan.Size = New System.Drawing.Size(125, 26)
         Me.cmd_simpan.TabIndex = 54
@@ -135,7 +135,7 @@ Partial Class frm_pengeluaran_kas_add
         Me.cmd_cancel.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.cmd_cancel.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmd_cancel.Appearance.Options.UseFont = True
-        Me.cmd_cancel.Location = New System.Drawing.Point(145, 502)
+        Me.cmd_cancel.Location = New System.Drawing.Point(145, 372)
         Me.cmd_cancel.Name = "cmd_cancel"
         Me.cmd_cancel.Size = New System.Drawing.Size(113, 26)
         Me.cmd_cancel.TabIndex = 53
@@ -152,7 +152,7 @@ Partial Class frm_pengeluaran_kas_add
         Me.GridControl1.Location = New System.Drawing.Point(13, 149)
         Me.GridControl1.MainView = Me.GridView1
         Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.Size = New System.Drawing.Size(946, 334)
+        Me.GridControl1.Size = New System.Drawing.Size(696, 204)
         Me.GridControl1.TabIndex = 52
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
@@ -171,7 +171,7 @@ Partial Class frm_pengeluaran_kas_add
         Me.Appearance.Options.UseFont = True
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 14.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(971, 557)
+        Me.ClientSize = New System.Drawing.Size(721, 427)
         Me.Controls.Add(Me.cmd_simpan)
         Me.Controls.Add(Me.cmd_cancel)
         Me.Controls.Add(Me.GridControl1)

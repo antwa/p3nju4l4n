@@ -19,7 +19,6 @@ Partial Class frm_userlevel_add
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_userlevel_add))
         Me.LabelControl18 = New DevExpress.XtraEditors.LabelControl
         Me.txt_kd_level = New DevExpress.XtraEditors.TextEdit
         Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl
@@ -82,7 +81,7 @@ Partial Class frm_userlevel_add
         Me.grid_level.Location = New System.Drawing.Point(12, 66)
         Me.grid_level.MainView = Me.GridV_level
         Me.grid_level.Name = "grid_level"
-        Me.grid_level.Size = New System.Drawing.Size(610, 219)
+        Me.grid_level.Size = New System.Drawing.Size(610, 224)
         Me.grid_level.TabIndex = 14
         Me.grid_level.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridV_level})
         '
@@ -101,20 +100,18 @@ Partial Class frm_userlevel_add
         'cmd_simpan
         '
         Me.cmd_simpan.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.cmd_simpan.Image = CType(resources.GetObject("cmd_simpan.Image"), System.Drawing.Image)
-        Me.cmd_simpan.Location = New System.Drawing.Point(522, 291)
+        Me.cmd_simpan.Location = New System.Drawing.Point(416, 296)
         Me.cmd_simpan.Name = "cmd_simpan"
-        Me.cmd_simpan.Size = New System.Drawing.Size(100, 30)
+        Me.cmd_simpan.Size = New System.Drawing.Size(100, 25)
         Me.cmd_simpan.TabIndex = 21
         Me.cmd_simpan.Text = "Simpan"
         '
         'cmd_batal
         '
         Me.cmd_batal.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.cmd_batal.Image = CType(resources.GetObject("cmd_batal.Image"), System.Drawing.Image)
-        Me.cmd_batal.Location = New System.Drawing.Point(399, 291)
+        Me.cmd_batal.Location = New System.Drawing.Point(522, 296)
         Me.cmd_batal.Name = "cmd_batal"
-        Me.cmd_batal.Size = New System.Drawing.Size(100, 30)
+        Me.cmd_batal.Size = New System.Drawing.Size(100, 25)
         Me.cmd_batal.TabIndex = 20
         Me.cmd_batal.Text = "Batal"
         '

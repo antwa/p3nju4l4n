@@ -7,9 +7,10 @@
     Dim d As Boolean
     Dim v As Boolean
     Dim group As String
+    Dim aksi As String
 
 
-    Public Sub New(ByVal kd_menu As String, ByVal nama_menu As String, ByVal a As Boolean, ByVal i As Boolean, ByVal u As Boolean, ByVal d As Boolean, ByVal v As Boolean, ByVal group As String)
+    Public Sub New(ByVal kd_menu As String, ByVal nama_menu As String, ByVal a As Boolean, ByVal i As Boolean, ByVal u As Boolean, ByVal d As Boolean, ByVal v As Boolean, ByVal group As String, ByVal aksi As String)
         Me.kd_menu = kd_menu
         Me.nama_menu = nama_menu
         Me.a = a
@@ -18,6 +19,7 @@
         Me.d = d
         Me.v = v
         Me.group = group
+        Me.aksi = aksi
     End Sub
 
     Public ReadOnly Property KdMenu() As String
@@ -38,6 +40,11 @@
         End Get
         Set(ByVal value As Boolean)
             Me.a = value
+
+            Me.i = value
+            Me.u = value
+            Me.d = value
+            Me.v = value
         End Set
     End Property
 
@@ -46,7 +53,11 @@
             Return Me.i
         End Get
         Set(ByVal value As Boolean)
-            Me.i = value
+            If Me.a = False Then
+                Me.i = False
+            Else
+                Me.i = value
+            End If
         End Set
     End Property
 
@@ -55,7 +66,11 @@
             Return Me.u
         End Get
         Set(ByVal value As Boolean)
-            Me.u = value
+            If Me.a = False Then
+                Me.u = False
+            Else
+                Me.u = value
+            End If
         End Set
     End Property
 
@@ -64,7 +79,11 @@
             Return Me.d
         End Get
         Set(ByVal value As Boolean)
-            Me.d = value
+            If Me.a = False Then
+                Me.d = False
+            Else
+                Me.d = value
+            End If
         End Set
     End Property
 
@@ -73,7 +92,11 @@
             Return Me.v
         End Get
         Set(ByVal value As Boolean)
-            Me.v = value
+            If Me.a = False Then
+                Me.v = False
+            Else
+                Me.v = value
+            End If
         End Set
     End Property
 
@@ -83,6 +106,15 @@
         End Get
         Set(ByVal value As String)
             Me.group = value
+        End Set
+    End Property
+
+    Public Property Aksi_cell() As String
+        Get
+            Return Me.aksi
+        End Get
+        Set(ByVal value As String)
+            Me.aksi = value
         End Set
     End Property
 
