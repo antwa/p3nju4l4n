@@ -718,6 +718,12 @@
     <Compile Include="Form\4. Laporan\penerimaan barang\frm_lap_penerimaan_barang.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Form\4. Laporan\sales order\frm_lap_so.Designer.vb">
+      <DependentUpon>frm_lap_so.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\4. Laporan\sales order\frm_lap_so.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form\6. Kas dan Bank\mutasi_kas\frm_mutasi_kas_add.Designer.vb">
       <DependentUpon>frm_mutasi_kas_add.vb</DependentUpon>
     </Compile>
@@ -736,6 +742,7 @@
     <Compile Include="Form\6. Kas dan Bank\penerimaan\frm_penerimaan_kas.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Form\6. Kas dan Bank\penerimaan\rcd_penerimaan_kas.vb" />
     <Compile Include="Form\6. Kas dan Bank\pengeluaran_kas\frm_pengeluaran_kas_list.Designer.vb">
       <DependentUpon>frm_pengeluaran_kas_list.vb</DependentUpon>
     </Compile>
@@ -823,6 +830,12 @@
       <DependentUpon>formMDI.vb</DependentUpon>
     </Compile>
     <Compile Include="Form\Form Main\formMDI.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Form Main\frm_pendukung.Designer.vb">
+      <DependentUpon>frm_pendukung.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Form Main\frm_pendukung.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form\Form Main\frm_uji_coba.Designer.vb">
@@ -1210,6 +1223,10 @@
       <DependentUpon>frm_lap_penerimaan_barang.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form\4. Laporan\sales order\frm_lap_so.resx">
+      <DependentUpon>frm_lap_so.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\6. Kas dan Bank\mutasi_kas\frm_mutasi_kas_add.resx">
       <DependentUpon>frm_mutasi_kas_add.vb</DependentUpon>
       <SubType>Designer</SubType>
@@ -1276,6 +1293,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\Form Main\formMDI.resx">
       <DependentUpon>formMDI.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Form Main\frm_pendukung.resx">
+      <DependentUpon>frm_pendukung.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\Form Main\frm_uji_coba.resx">
@@ -1356,7 +1377,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Form\4. Laporan\delivery order\" />
-    <Folder Include="Form\4. Laporan\sales order\" />
     <Folder Include="Form\5. Hutang Piutang\" />
     <Folder Include="Form\6. Kas dan Bank\penerimaan_kas\" />
     <Folder Include="Form\7. Utility\" />

@@ -168,18 +168,12 @@ Public Class frm_konsinyasi_primer
         GridView1.Columns.Item("disc_acara_toko").AppearanceCell.BackColor = System.Drawing.Color.FromArgb(215, 255, 252)
 
         ' Create summary
-        GridView1.Columns("qty").Summary.Clear()
-        GridView1.Columns("qty").Summary.Add(DevExpress.Data.SummaryItemType.Sum, "qty", "{0:n0}")
-        GridView1.Columns("bruto").Summary.Clear()
-        GridView1.Columns("bruto").Summary.Add(DevExpress.Data.SummaryItemType.Sum, "bruto", "{0:n0}")
-        GridView1.Columns("margin").Summary.Clear()
-        GridView1.Columns("margin").Summary.Add(DevExpress.Data.SummaryItemType.Sum, "margin", "{0:n0}")
-        GridView1.Columns("acara").Summary.Clear()
-        GridView1.Columns("acara").Summary.Add(DevExpress.Data.SummaryItemType.Sum, "acara", "{0:n0}")
-        GridView1.Columns("toko").Summary.Clear()
-        GridView1.Columns("toko").Summary.Add(DevExpress.Data.SummaryItemType.Sum, "toko", "{0:n0}")
-        GridView1.Columns("netto").Summary.Clear()
-        GridView1.Columns("netto").Summary.Add(DevExpress.Data.SummaryItemType.Sum, "netto", "{0:n0}")
+        CreateColumnSummary(GridView1.Columns("qty"))
+        CreateColumnSummary(GridView1.Columns("bruto"))
+        CreateColumnSummary(GridView1.Columns("margin"))
+        CreateColumnSummary(GridView1.Columns("acara"))
+        CreateColumnSummary(GridView1.Columns("toko"))
+        CreateColumnSummary(GridView1.Columns("netto"))
 
         '# Create Band
         Dim BArtikel As New DevExpress.XtraGrid.Views.BandedGrid.GridBand
@@ -372,6 +366,7 @@ Public Class frm_konsinyasi_primer
     Private Sub cmd_simpan_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_simpan.Click
         Dim vkode_customer As String = kode_customer.Properties.GetKeyValueByDisplayText(kode_customer.Text)
         Dim i As Integer
+        Dim Query As String = vbNullString
 
         '# Cek Grid
         If GridView1.RowCount <= 1 Then
@@ -435,6 +430,15 @@ Public Class frm_konsinyasi_primer
             Db.SetField("netto", rcd_list.Item(i).netto)
 
             Connection.TRANS_ADD(Db.GetQueryString)
+
+            '# update stok customer
+            Query = ""
+            Query &= " UPDATE tbl_persediaan_customer "
+            Query &= " SET stok_primer = stok_primer - " & rcd_list.Item(i).qty
+            Query &= " WHERE kode_customer = '" & vkode_customer & "' "
+            Query &= " AND kode_barangjadi = '" & rcd_list.Item(i).kode_barangjadi & "' "
+
+            Connection.TRANS_ADD(Query)
         Next
 
         '# COMMITE TRANSAKSI

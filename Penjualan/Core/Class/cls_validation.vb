@@ -57,7 +57,8 @@ Public Class cls_validation
             ElseIf rules.IndexOf("length") <> -1 Then
                 Dim vLength As String = Me.getLength(rules)
                 If isLength(strParam, vLength) = False Then
-                    Me.Message = "Panjang karakter yang harus diisi antara " & vLength
+                    Dim L() As String = vLength.Split("-")
+                    Me.Message = "Panjang karakter yang harus diisi Min " & L(0) & " dan Max " & L(1)
                     Return False
                 End If
             ElseIf rules = "email" Then

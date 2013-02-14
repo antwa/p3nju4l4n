@@ -128,10 +128,8 @@
         pc_GridView1.Columns("keterangan").OptionsColumn.AllowEdit = True
 
         ' sumary
-        pc_GridView1.Columns("jml_pcs").Summary.Clear()
-        pc_GridView1.Columns("jml_pcs").Summary.Add(DevExpress.Data.SummaryItemType.Sum, "jml_pcs", "{0:n0}")
-        pc_GridView1.Columns("jml_rupiah").Summary.Clear()
-        pc_GridView1.Columns("jml_rupiah").Summary.Add(DevExpress.Data.SummaryItemType.Sum, "jml_rupiah", "{0:n0}")
+        CreateColumnSummary(pc_GridView1.Columns("jml_pcs"))
+        CreateColumnSummary(pc_GridView1.Columns("jml_rupiah"))
 
     End Sub
 
@@ -283,16 +281,10 @@
             pb_GridView1.Columns("keterangan").OptionsColumn.AllowEdit = True
 
             ' sumary
-            pb_GridView1.Columns("jml_pcs_lalu").Summary.Clear()
-            pb_GridView1.Columns("jml_pcs_lalu").Summary.Add(DevExpress.Data.SummaryItemType.Sum, "jml_pcs_lalu", "{0:n0}")
-            pb_GridView1.Columns("jml_rupiah_lalu").Summary.Clear()
-            pb_GridView1.Columns("jml_rupiah_lalu").Summary.Add(DevExpress.Data.SummaryItemType.Sum, "jml_rupiah_lalu", "{0:n0}")
-            pb_GridView1.Columns("jml_pcs").Summary.Clear()
-            pb_GridView1.Columns("jml_pcs").Summary.Add(DevExpress.Data.SummaryItemType.Sum, "jml_pcs", "{0:n0}")
-            pb_GridView1.Columns("jml_rupiah").Summary.Clear()
-            pb_GridView1.Columns("jml_rupiah").Summary.Add(DevExpress.Data.SummaryItemType.Sum, "jml_rupiah", "{0:n0}")
-
-
+            CreateColumnSummary(pb_GridView1.Columns("jml_pcs_lalu"))
+            CreateColumnSummary(pb_GridView1.Columns("jml_rupiah_lalu"))
+            CreateColumnSummary(pb_GridView1.Columns("jml_pcs"))
+            CreateColumnSummary(pb_GridView1.Columns("jml_rupiah"))
 
         Else
             MsgBox("Tidak terdapat data dalam database!", MsgBoxStyle.Exclamation)
@@ -497,4 +489,7 @@
 
     End Sub
 
+    Private Sub XtraTabControl1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles XtraTabControl1.Click
+
+    End Sub
 End Class

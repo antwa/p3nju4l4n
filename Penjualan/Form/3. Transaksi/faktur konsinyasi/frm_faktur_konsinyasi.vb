@@ -55,18 +55,12 @@
         Next
 
         ' Create summary
-        GridView1.Columns("qty").Summary.Clear()
-        GridView1.Columns("qty").Summary.Add(DevExpress.Data.SummaryItemType.Sum, "qty", "{0:n0}")
-        GridView1.Columns("bruto").Summary.Clear()
-        GridView1.Columns("bruto").Summary.Add(DevExpress.Data.SummaryItemType.Sum, "bruto", "{0:n0}")
-        GridView1.Columns("margin").Summary.Clear()
-        GridView1.Columns("margin").Summary.Add(DevExpress.Data.SummaryItemType.Sum, "margin", "{0:n0}")
-        GridView1.Columns("acara").Summary.Clear()
-        GridView1.Columns("acara").Summary.Add(DevExpress.Data.SummaryItemType.Sum, "acara", "{0:n0}")
-        GridView1.Columns("toko").Summary.Clear()
-        GridView1.Columns("toko").Summary.Add(DevExpress.Data.SummaryItemType.Sum, "toko", "{0:n0}")
-        GridView1.Columns("netto").Summary.Clear()
-        GridView1.Columns("netto").Summary.Add(DevExpress.Data.SummaryItemType.Sum, "netto", "{0:n0}")
+        CreateColumnSummary(GridView1.Columns("qty"))
+        CreateColumnSummary(GridView1.Columns("bruto"))
+        CreateColumnSummary(GridView1.Columns("margin"))
+        CreateColumnSummary(GridView1.Columns("acara"))
+        CreateColumnSummary(GridView1.Columns("toko"))
+        CreateColumnSummary(GridView1.Columns("netto"))
 
         '# Create Band
         Dim BArtikel As New DevExpress.XtraGrid.Views.BandedGrid.GridBand

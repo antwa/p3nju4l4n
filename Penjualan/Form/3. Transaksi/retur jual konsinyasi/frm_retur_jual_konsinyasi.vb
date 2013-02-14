@@ -42,11 +42,8 @@
         GridView1.Columns.Item("keterangan").OptionsColumn.AllowEdit = True
 
         ' Create summary
-        GridView1.Columns("jml_retur").Summary.Clear()
-        GridView1.Columns("jml_retur").Summary.Add(DevExpress.Data.SummaryItemType.Sum, "jml_retur", "{0:n0}")
-
-        GridView1.Columns("total").Summary.Clear()
-        GridView1.Columns("total").Summary.Add(DevExpress.Data.SummaryItemType.Sum, "total", "{0:n0}")
+        CreateColumnSummary(GridView1.Columns("jml_retur"))
+        CreateColumnSummary(GridView1.Columns("total"))
 
     End Sub
 

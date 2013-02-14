@@ -62,10 +62,9 @@ Public Class frm_sales_order
         'visible colum
         GridView1.Columns("kode_hargajual").Visible = False
 
-        GridView1.Columns("qty").Summary.Clear()
-        GridView1.Columns("qty").Summary.Add(DevExpress.Data.SummaryItemType.Sum, "qty", "{0:n0}")
-        GridView1.Columns("total").Summary.Clear()
-        GridView1.Columns("total").Summary.Add(DevExpress.Data.SummaryItemType.Sum, "total", "{0:n0}")
+        ' sumary
+        CreateColumnSummary(GridView1.Columns("qty"))
+        CreateColumnSummary(GridView1.Columns("total"))
 
         ' desable cell
         For i = 0 To GridView1.Columns.Count - 1
@@ -221,17 +220,17 @@ Public Class frm_sales_order
 
     Private Sub GridControl1_MouseDoubleClick(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles GridControl1.MouseDoubleClick
         Try
-            'Dim row As Integer = GridView1.FocusedRowHandle
-            'Dim ghi As GridHitInfo = GridView1.CalcHitInfo(e.Location)
+            Dim row As Integer = GridView1.FocusedRowHandle
+            Dim ghi As GridHitInfo = GridView1.CalcHitInfo(e.Location)
 
-            'If ghi.Column.FieldName = "harga" Then
-            '    frm_transaksi_popup_harga.Dispose()
-            '    frm_transaksi_popup_harga.parameter1 = C_SALES_ORDER
-            '    frm_transaksi_popup_harga.kode_barangjadi = rcd_list.Item(row).kode_barangjadi
-            '    frm_transaksi_popup_harga.nama = rcd_list.Item(row).nama
-            '    frm_transaksi_popup_harga.row = row
-            '    frm_transaksi_popup_harga.ShowDialog(Me)
-            'End If
+            If ghi.Column.FieldName = "harga" Then
+                frm_transaksi_popup_harga.Dispose()
+                frm_transaksi_popup_harga.parameter1 = C_SALES_ORDER
+                frm_transaksi_popup_harga.kode_barangjadi = rcd_list.Item(row).kode_barangjadi
+                frm_transaksi_popup_harga.nama = rcd_list.Item(row).nama
+                frm_transaksi_popup_harga.row = row
+                frm_transaksi_popup_harga.ShowDialog(Me)
+            End If
         Catch ex As Exception
 
         End Try
