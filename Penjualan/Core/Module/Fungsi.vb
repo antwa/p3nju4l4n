@@ -91,6 +91,42 @@
 
     End Function
 
+    Public Function getNomorJurnal(ByVal param As Integer) As String
+
+        Dim rcd As SqlClient.SqlDataReader
+
+        ' untuk pengkodean
+        Dim kode_awal As String = vbNullString
+        Dim tanggal As String = Now.ToString("yy") & Now.ToString("MM") & "/"
+        Dim nomor As Integer
+
+        Db.FlushCache()
+
+        Select Case param
+
+            Case C_PENERIMAAN_KAS
+                kode_awal = "AR/"
+                Db.Selects("TOP 1 id_jurnal AS nomor")
+                Db.From("tbl_jurnal")
+                Db.Where("WHERE id_jurnal LIKE '" & kode_awal & tanggal & "%'")
+                Db.OrderBy("id_jurnal", cls_database.sorting.Descending)
+
+        End Select
+
+        rcd = Connection.ExecuteToDataReader(Db.GetQueryString)
+
+        If rcd.HasRows Then
+            rcd.Read()
+            nomor = CInt(rcd.Item("nomor").ToString.Substring(8))
+            nomor += 1
+        Else
+            nomor = 1
+        End If
+
+        Return kode_awal & tanggal & Format(nomor, "000")
+
+    End Function
+
     Public Function getNomorUrut_Barang(ByVal kode_merk As String) As String
         Dim rcd As SqlClient.SqlDataReader
         Dim nomor As Integer

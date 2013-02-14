@@ -315,7 +315,7 @@ Partial Class frm_targetpenjualan
         'pb_simpan
         '
         Me.pb_simpan.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.pb_simpan.Location = New System.Drawing.Point(580, 343)
+        Me.pb_simpan.Location = New System.Drawing.Point(579, 341)
         Me.pb_simpan.Name = "pb_simpan"
         Me.pb_simpan.Size = New System.Drawing.Size(97, 24)
         Me.pb_simpan.TabIndex = 54
@@ -324,7 +324,7 @@ Partial Class frm_targetpenjualan
         'pb_print
         '
         Me.pb_print.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.pb_print.Location = New System.Drawing.Point(477, 343)
+        Me.pb_print.Location = New System.Drawing.Point(476, 341)
         Me.pb_print.Name = "pb_print"
         Me.pb_print.Size = New System.Drawing.Size(97, 24)
         Me.pb_print.TabIndex = 53
@@ -338,7 +338,7 @@ Partial Class frm_targetpenjualan
         Me.pb_GridControl1.Location = New System.Drawing.Point(10, 128)
         Me.pb_GridControl1.MainView = Me.pb_GridView1
         Me.pb_GridControl1.Name = "pb_GridControl1"
-        Me.pb_GridControl1.Size = New System.Drawing.Size(667, 209)
+        Me.pb_GridControl1.Size = New System.Drawing.Size(666, 207)
         Me.pb_GridControl1.TabIndex = 52
         Me.pb_GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.pb_GridView1})
         '

@@ -40,11 +40,8 @@
         GridView1.Columns.Item("keterangan").OptionsColumn.AllowEdit = True
 
         ' Create summary
-        GridView1.Columns("jml_retur").Summary.Clear()
-        GridView1.Columns("jml_retur").Summary.Add(DevExpress.Data.SummaryItemType.Sum, "jml_retur", "{0:n0}")
-
-        GridView1.Columns("total").Summary.Clear()
-        GridView1.Columns("total").Summary.Add(DevExpress.Data.SummaryItemType.Sum, "total", "{0:n0}")
+        CreateColumnSummary(GridView1.Columns("jml_retur"))
+        CreateColumnSummary(GridView1.Columns("total"))
 
     End Sub
 
@@ -55,13 +52,15 @@
         Db.Join("tbl_kota b", "b.kode_kota = a.kode_kota")
         Db.Where("a.kode_customer", getValueFromLookup(kode_customer))
         Dim rcd As SqlClient.SqlDataReader = Connection.ExecuteToDataReader(Db.GetQueryString)
-        rcd.Read()
 
-        lbl_nama.Text = rcd.Item("nama").ToString
-        lbl_alamat.Text = rcd.Item("alamat").ToString
-        lbl_mall.Text = rcd.Item("mall").ToString
-        lbl_kota.Text = rcd.Item("kota").ToString
+        If rcd.HasRows Then
+            rcd.Read()
 
+            lbl_nama.Text = rcd.Item("nama").ToString
+            lbl_alamat.Text = rcd.Item("alamat").ToString
+            lbl_mall.Text = rcd.Item("mall").ToString
+            lbl_kota.Text = rcd.Item("kota").ToString
+        End If
     End Sub
 
     Sub reIndex()

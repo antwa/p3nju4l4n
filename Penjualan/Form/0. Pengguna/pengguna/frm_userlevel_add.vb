@@ -33,10 +33,10 @@ Public Class frm_userlevel_add
         GridV_level.Columns.Item("NamaMenu").OptionsColumn.AllowEdit = False
 
         ' Atur warna cell
-        GridV_level.Columns.Item("Access").AppearanceCell.BackColor = Color.GreenYellow
-        GridV_level.Columns.Item("Insert").AppearanceCell.BackColor = Color.LightCyan
-        GridV_level.Columns.Item("Update").AppearanceCell.BackColor = Color.LightCyan
-        GridV_level.Columns.Item("Delete").AppearanceCell.BackColor = Color.LightCyan
+        GridV_level.Columns.Item("Access").AppearanceCell.BackColor = Color.LemonChiffon
+        GridV_level.Columns.Item("Insert").AppearanceCell.BackColor = Color.LemonChiffon
+        GridV_level.Columns.Item("Update").AppearanceCell.BackColor = Color.LemonChiffon
+        GridV_level.Columns.Item("Delete").AppearanceCell.BackColor = Color.LemonChiffon
         'GridV_level.Columns.Item("").AppearanceCell.BackColor = Color.LightCyan
 
 

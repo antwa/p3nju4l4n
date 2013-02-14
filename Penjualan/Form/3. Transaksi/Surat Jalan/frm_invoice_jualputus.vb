@@ -34,10 +34,8 @@
 
         ' sumary
         ' Create summary
-        GridView1.Columns("qty").Summary.Clear()
-        GridView1.Columns("qty").Summary.Add(DevExpress.Data.SummaryItemType.Sum, "qty", "{0:n0}")
-        GridView1.Columns("total").Summary.Clear()
-        GridView1.Columns("total").Summary.Add(DevExpress.Data.SummaryItemType.Sum, "total", "{0:n0}")
+        CreateColumnSummary(GridView1.Columns("qty"))
+        CreateColumnSummary(GridView1.Columns("total"))
 
     End Sub
 

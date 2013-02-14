@@ -25,6 +25,7 @@ Partial Class formLogin
         Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl
         Me.txt_password = New DevExpress.XtraEditors.TextEdit
         Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl
+        Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton
         CType(Me.txt_username.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txt_password.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -93,11 +94,20 @@ Partial Class formLogin
         Me.LabelControl3.TabIndex = 6
         Me.LabelControl3.Text = "Login Aplikasi Penjualan"
         '
+        'SimpleButton1
+        '
+        Me.SimpleButton1.Location = New System.Drawing.Point(27, 136)
+        Me.SimpleButton1.Name = "SimpleButton1"
+        Me.SimpleButton1.Size = New System.Drawing.Size(31, 37)
+        Me.SimpleButton1.TabIndex = 7
+        Me.SimpleButton1.Text = "SimpleButton1"
+        '
         'formLogin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(406, 210)
+        Me.Controls.Add(Me.SimpleButton1)
         Me.Controls.Add(Me.LabelControl3)
         Me.Controls.Add(Me.LabelControl2)
         Me.Controls.Add(Me.txt_password)
@@ -121,4 +131,5 @@ Partial Class formLogin
     Friend WithEvents LabelControl2 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents txt_password As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LabelControl3 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents SimpleButton1 As DevExpress.XtraEditors.SimpleButton
 End Class

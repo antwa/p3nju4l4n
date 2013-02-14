@@ -18,6 +18,7 @@
             Db.Join("tbl_barangjadi b", "b.kode_barangjadi = a.kode_barangjadi")
             Db.Join("tbl_jenis_hargabarang c", "c.kode_jenis_harga = a.kode_jenis_harga")
             Db.Where("a.kode_customer", kode_customer)
+            Db.OrderBy("a.kode_barangjadi", cls_database.sorting.Ascending)
 
             If txt_search.Text <> vbNullString Then
                 Db.Where(" AND a.kode_barangjadi LIKE '%" & txt_search.Text & "%'")
@@ -41,6 +42,7 @@
             Db.Join("tbl_barangjadi b", "b.kode_barangjadi = a.kode_barangjadi")
             Db.Join("tbl_jenis_hargabarang c", "c.kode_jenis_harga = a.kode_jenis_harga")
             Db.Where("a.kode_customer", kode_customer)
+            Db.OrderBy("a.kode_barangjadi", cls_database.sorting.Ascending)
 
             If txt_search.Text <> vbNullString Then
                 Db.Where(" AND a.kode_barangjadi LIKE '%" & txt_search.Text & "%'")
@@ -61,6 +63,7 @@
             Db.From("tbl_barangjadi a")
             Db.Join("tbl_persediaan_gudang b", "a.kode_barangjadi = b.kode_barangjadi")
             Db.Join("tbl_kategori_barang c", "a.kode_kategori = c.kode_kategori")
+            Db.OrderBy("a.kode_barangjadi", cls_database.sorting.Ascending)
 
             If txt_search.Text <> vbNullString Then
                 Db.Where(" AND a.kode_barangjadi LIKE '%" & txt_search.Text & "%'")

@@ -4,7 +4,7 @@
 
         '# validation
         Validation.clearRules()
-        Validation.addRules(txt_username.Text, "Username", "required|username|length[5-20]")
+        Validation.addRules(txt_username.Text, "Username", "required|username|length[1-20]")
         Validation.addRules(txt_password.Text, "Password", "required|password")
 
         '# cek validasi
@@ -81,4 +81,8 @@
         End If
     End Sub
 
+    Private Sub SimpleButton1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SimpleButton1.Click
+        Dim ss As String = "AR/1302/001"
+        MsgBox(ss.Substring(8))
+    End Sub
 End Class

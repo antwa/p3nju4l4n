@@ -75,11 +75,8 @@
         FormatColumnAccounting(GridView1.Columns("saldo"))
 
         ' tambah sumary dan atur formatnya pada footer
-        GridView1.Columns("masuk").Summary.Clear()
-        GridView1.Columns("masuk").Summary.Add(DevExpress.Data.SummaryItemType.Sum, "masuk", "{0:n0}")
-
-        GridView1.Columns("keluar").Summary.Clear()
-        GridView1.Columns("keluar").Summary.Add(DevExpress.Data.SummaryItemType.Sum, "keluar", "{0:n0}")
+        CreateColumnSummary(GridView1.Columns("masuk"))
+        CreateColumnSummary(GridView1.Columns("keluar"))
 
         'GridView1.Columns("saldo").Summary.Clear()
         'GridView1.Columns("saldo").Summary.Add(DevExpress.Data.SummaryItemType.Sum, "saldo", "{0:n0}")

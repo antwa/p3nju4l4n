@@ -46,6 +46,8 @@
         Gridview1.ShowEditor()
     End Sub
 
+
+
     Public Sub Load_SupplierBarang(ByRef lookup As DevExpress.XtraEditors.LookUpEdit)
         'init lookup
         Db.FlushCache()
@@ -333,6 +335,8 @@
         lookup.ItemIndex = 0
     End Sub
 
+
+
     '#----------------- UNTUK AKUNTANSI
     Public Sub Load_akun_master(ByRef lookup As DevExpress.XtraEditors.LookUpEdit)
         Db.FlushCache()
@@ -367,6 +371,31 @@
         lookup.Properties.DataSource = Connection.ExecuteToDataTable(Db.GetQueryString)
         lookup.Properties.PopulateColumns()
         lookup.Properties.DisplayMember = "kode_akun"
+        lookup.Properties.ValueMember = "kode_akun"
+
+        lookup.Properties.Columns("kode_akun").Caption = "Kode"
+        lookup.Properties.Columns("nama_akun").Caption = "Nama Akun"
+        lookup.Properties.Columns("kelompok").Visible = False
+
+        lookup.Properties.Columns("kode_akun").Width = 75
+        lookup.Properties.Columns("nama_akun").Width = 150
+
+        lookup.ItemIndex = 0
+    End Sub
+
+    Public Sub Load_akun_detail_byKelompok(ByRef lookup As DevExpress.XtraEditors.LookUpEdit, ByVal kelompok As Integer)
+        Db.FlushCache()
+        Db.Selects("kode_akun, nama_akun, kelompok")
+        Db.From("tbl_akun")
+        Db.Where("kelompok", kelompok)
+        Db.Where("tipe", "D")
+        Db.OrderBy("kode_akun")
+
+        lookup.Properties.DataSource = Connection.ExecuteToDataTable(Db.GetQueryString)
+
+        lookup.Properties.PopulateColumns()
+
+        lookup.Properties.DisplayMember = "nama_akun"
         lookup.Properties.ValueMember = "kode_akun"
 
         lookup.Properties.Columns("kode_akun").Caption = "Kode"
