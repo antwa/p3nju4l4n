@@ -63,6 +63,9 @@ Partial Class frm_customer_add
         Me.txt_kode_customer = New DevExpress.XtraEditors.TextEdit
         Me.cmd_simpan = New DevExpress.XtraEditors.SimpleButton
         Me.cmd_batal = New DevExpress.XtraEditors.SimpleButton
+        Me.LabelControl21 = New DevExpress.XtraEditors.LabelControl
+        Me.LabelControl22 = New DevExpress.XtraEditors.LabelControl
+        Me.LabelControl23 = New DevExpress.XtraEditors.LabelControl
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl2.SuspendLayout()
         CType(Me.txt_jatuh_tempo.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -93,6 +96,9 @@ Partial Class frm_customer_add
         '
         'GroupControl2
         '
+        Me.GroupControl2.Controls.Add(Me.LabelControl23)
+        Me.GroupControl2.Controls.Add(Me.LabelControl22)
+        Me.GroupControl2.Controls.Add(Me.LabelControl21)
         Me.GroupControl2.Controls.Add(Me.txt_jatuh_tempo)
         Me.GroupControl2.Controls.Add(Me.LabelControl13)
         Me.GroupControl2.Controls.Add(Me.txt_prioritas)
@@ -124,8 +130,10 @@ Partial Class frm_customer_add
         Me.txt_jatuh_tempo.Name = "txt_jatuh_tempo"
         Me.txt_jatuh_tempo.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_jatuh_tempo.Properties.Appearance.Options.UseFont = True
+        Me.txt_jatuh_tempo.Properties.Appearance.Options.UseTextOptions = True
+        Me.txt_jatuh_tempo.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
         Me.txt_jatuh_tempo.Size = New System.Drawing.Size(47, 21)
-        Me.txt_jatuh_tempo.TabIndex = 77
+        Me.txt_jatuh_tempo.TabIndex = 19
         '
         'LabelControl13
         '
@@ -142,8 +150,10 @@ Partial Class frm_customer_add
         Me.txt_prioritas.Name = "txt_prioritas"
         Me.txt_prioritas.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_prioritas.Properties.Appearance.Options.UseFont = True
+        Me.txt_prioritas.Properties.Appearance.Options.UseTextOptions = True
+        Me.txt_prioritas.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
         Me.txt_prioritas.Size = New System.Drawing.Size(48, 21)
-        Me.txt_prioritas.TabIndex = 75
+        Me.txt_prioritas.TabIndex = 18
         '
         'LabelControl14
         '
@@ -175,7 +185,7 @@ Partial Class frm_customer_add
         Me.dte_tgl_buka.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None
         Me.dte_tgl_buka.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton})
         Me.dte_tgl_buka.Size = New System.Drawing.Size(134, 21)
-        Me.dte_tgl_buka.TabIndex = 73
+        Me.dte_tgl_buka.TabIndex = 17
         '
         'txt_plafon
         '
@@ -184,7 +194,7 @@ Partial Class frm_customer_add
         Me.txt_plafon.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_plafon.Properties.Appearance.Options.UseFont = True
         Me.txt_plafon.Size = New System.Drawing.Size(133, 21)
-        Me.txt_plafon.TabIndex = 70
+        Me.txt_plafon.TabIndex = 15
         '
         'LabelControl10
         '
@@ -210,8 +220,10 @@ Partial Class frm_customer_add
         Me.txt_dis_konsumen.Name = "txt_dis_konsumen"
         Me.txt_dis_konsumen.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_dis_konsumen.Properties.Appearance.Options.UseFont = True
+        Me.txt_dis_konsumen.Properties.Appearance.Options.UseTextOptions = True
+        Me.txt_dis_konsumen.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
         Me.txt_dis_konsumen.Size = New System.Drawing.Size(48, 21)
-        Me.txt_dis_konsumen.TabIndex = 67
+        Me.txt_dis_konsumen.TabIndex = 14
         '
         'txt_margin
         '
@@ -219,8 +231,10 @@ Partial Class frm_customer_add
         Me.txt_margin.Name = "txt_margin"
         Me.txt_margin.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_margin.Properties.Appearance.Options.UseFont = True
+        Me.txt_margin.Properties.Appearance.Options.UseTextOptions = True
+        Me.txt_margin.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far
         Me.txt_margin.Size = New System.Drawing.Size(47, 21)
-        Me.txt_margin.TabIndex = 66
+        Me.txt_margin.TabIndex = 13
         '
         'LabelControl7
         '
@@ -248,7 +262,7 @@ Partial Class frm_customer_add
         Me.lkp_harga.Properties.Appearance.Options.UseFont = True
         Me.lkp_harga.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.lkp_harga.Size = New System.Drawing.Size(232, 21)
-        Me.lkp_harga.TabIndex = 42
+        Me.lkp_harga.TabIndex = 12
         '
         'LabelControl5
         '
@@ -266,7 +280,7 @@ Partial Class frm_customer_add
         Me.rdg_sistem_jual.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.rdg_sistem_jual.Properties.Appearance.Options.UseFont = True
         Me.rdg_sistem_jual.Size = New System.Drawing.Size(233, 20)
-        Me.rdg_sistem_jual.TabIndex = 40
+        Me.rdg_sistem_jual.TabIndex = 11
         '
         'lkp_grup
         '
@@ -276,7 +290,7 @@ Partial Class frm_customer_add
         Me.lkp_grup.Properties.Appearance.Options.UseFont = True
         Me.lkp_grup.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.lkp_grup.Size = New System.Drawing.Size(141, 21)
-        Me.lkp_grup.TabIndex = 39
+        Me.lkp_grup.TabIndex = 10
         '
         'LabelControl19
         '
@@ -309,7 +323,7 @@ Partial Class frm_customer_add
         Me.dte_tgl_masuk.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None
         Me.dte_tgl_masuk.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton})
         Me.dte_tgl_masuk.Size = New System.Drawing.Size(134, 21)
-        Me.dte_tgl_masuk.TabIndex = 71
+        Me.dte_tgl_masuk.TabIndex = 16
         '
         'GroupControl1
         '
@@ -345,7 +359,7 @@ Partial Class frm_customer_add
         Me.txt_fax.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_fax.Properties.Appearance.Options.UseFont = True
         Me.txt_fax.Size = New System.Drawing.Size(134, 21)
-        Me.txt_fax.TabIndex = 64
+        Me.txt_fax.TabIndex = 8
         '
         'txt_telp2
         '
@@ -354,7 +368,7 @@ Partial Class frm_customer_add
         Me.txt_telp2.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_telp2.Properties.Appearance.Options.UseFont = True
         Me.txt_telp2.Size = New System.Drawing.Size(134, 21)
-        Me.txt_telp2.TabIndex = 63
+        Me.txt_telp2.TabIndex = 7
         '
         'txt_telp1
         '
@@ -363,7 +377,7 @@ Partial Class frm_customer_add
         Me.txt_telp1.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_telp1.Properties.Appearance.Options.UseFont = True
         Me.txt_telp1.Size = New System.Drawing.Size(133, 21)
-        Me.txt_telp1.TabIndex = 62
+        Me.txt_telp1.TabIndex = 6
         '
         'lkp_zona
         '
@@ -373,7 +387,7 @@ Partial Class frm_customer_add
         Me.lkp_zona.Properties.Appearance.Options.UseFont = True
         Me.lkp_zona.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.lkp_zona.Size = New System.Drawing.Size(204, 21)
-        Me.lkp_zona.TabIndex = 61
+        Me.lkp_zona.TabIndex = 5
         '
         'lkp_kota
         '
@@ -383,7 +397,7 @@ Partial Class frm_customer_add
         Me.lkp_kota.Properties.Appearance.Options.UseFont = True
         Me.lkp_kota.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.lkp_kota.Size = New System.Drawing.Size(204, 21)
-        Me.lkp_kota.TabIndex = 60
+        Me.lkp_kota.TabIndex = 4
         '
         'LabelControl17
         '
@@ -429,7 +443,7 @@ Partial Class frm_customer_add
         Me.txt_email.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_email.Properties.Appearance.Options.UseFont = True
         Me.txt_email.Size = New System.Drawing.Size(164, 21)
-        Me.txt_email.TabIndex = 50
+        Me.txt_email.TabIndex = 9
         '
         'LabelControl6
         '
@@ -448,7 +462,7 @@ Partial Class frm_customer_add
         Me.txt_alamat.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_alamat.Properties.Appearance.Options.UseFont = True
         Me.txt_alamat.Size = New System.Drawing.Size(256, 68)
-        Me.txt_alamat.TabIndex = 42
+        Me.txt_alamat.TabIndex = 2
         '
         'LabelControl3
         '
@@ -485,7 +499,7 @@ Partial Class frm_customer_add
         Me.txt_mall.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_mall.Properties.Appearance.Options.UseFont = True
         Me.txt_mall.Size = New System.Drawing.Size(205, 21)
-        Me.txt_mall.TabIndex = 36
+        Me.txt_mall.TabIndex = 3
         '
         'LabelControl2
         '
@@ -505,7 +519,7 @@ Partial Class frm_customer_add
         Me.txt_nama.Properties.Appearance.Options.UseFont = True
         Me.txt_nama.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txt_nama.Size = New System.Drawing.Size(205, 21)
-        Me.txt_nama.TabIndex = 35
+        Me.txt_nama.TabIndex = 1
         '
         'LabelControl18
         '
@@ -525,7 +539,7 @@ Partial Class frm_customer_add
         Me.txt_kode_customer.Properties.Appearance.Options.UseFont = True
         Me.txt_kode_customer.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txt_kode_customer.Size = New System.Drawing.Size(107, 21)
-        Me.txt_kode_customer.TabIndex = 33
+        Me.txt_kode_customer.TabIndex = 0
         '
         'cmd_simpan
         '
@@ -533,7 +547,7 @@ Partial Class frm_customer_add
         Me.cmd_simpan.Location = New System.Drawing.Point(558, 387)
         Me.cmd_simpan.Name = "cmd_simpan"
         Me.cmd_simpan.Size = New System.Drawing.Size(109, 25)
-        Me.cmd_simpan.TabIndex = 42
+        Me.cmd_simpan.TabIndex = 20
         Me.cmd_simpan.Text = "Simpan"
         '
         'cmd_batal
@@ -542,8 +556,35 @@ Partial Class frm_customer_add
         Me.cmd_batal.Location = New System.Drawing.Point(688, 387)
         Me.cmd_batal.Name = "cmd_batal"
         Me.cmd_batal.Size = New System.Drawing.Size(109, 25)
-        Me.cmd_batal.TabIndex = 43
+        Me.cmd_batal.TabIndex = 21
         Me.cmd_batal.Text = "Batal"
+        '
+        'LabelControl21
+        '
+        Me.LabelControl21.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl21.Location = New System.Drawing.Point(180, 131)
+        Me.LabelControl21.Name = "LabelControl21"
+        Me.LabelControl21.Size = New System.Drawing.Size(12, 14)
+        Me.LabelControl21.TabIndex = 77
+        Me.LabelControl21.Text = "%"
+        '
+        'LabelControl22
+        '
+        Me.LabelControl22.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl22.Location = New System.Drawing.Point(180, 159)
+        Me.LabelControl22.Name = "LabelControl22"
+        Me.LabelControl22.Size = New System.Drawing.Size(12, 14)
+        Me.LabelControl22.TabIndex = 78
+        Me.LabelControl22.Text = "%"
+        '
+        'LabelControl23
+        '
+        Me.LabelControl23.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl23.Location = New System.Drawing.Point(180, 297)
+        Me.LabelControl23.Name = "LabelControl23"
+        Me.LabelControl23.Size = New System.Drawing.Size(20, 14)
+        Me.LabelControl23.TabIndex = 79
+        Me.LabelControl23.Text = "Hari"
         '
         'frm_customer_add
         '
@@ -632,4 +673,7 @@ Partial Class frm_customer_add
     Friend WithEvents LabelControl14 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents cmd_simpan As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents cmd_batal As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents LabelControl23 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents LabelControl22 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents LabelControl21 As DevExpress.XtraEditors.LabelControl
 End Class

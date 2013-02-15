@@ -61,13 +61,13 @@
 
     End Sub
 
-    Private Sub frm_lap_so_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        Call Me.initComponent()
-    End Sub
-
     
     Private Sub sistem_jual_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles sistem_jual.SelectedIndexChanged
         Load_Customer(kode_customer, sistem_jual.EditValue)
+    End Sub
+
+    Private Sub frm_lap_so_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        Call Me.initComponent()
     End Sub
 
     Sub LoadData()
