@@ -19,7 +19,6 @@ Partial Class frm_supplier_barang_add
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_supplier_barang_add))
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl
         Me.LabelControl5 = New DevExpress.XtraEditors.LabelControl
         Me.txt_plafon_debet = New DevExpress.XtraEditors.TextEdit
@@ -79,13 +78,13 @@ Partial Class frm_supplier_barang_add
         Me.GroupControl1.Controls.Add(Me.txt_kode)
         Me.GroupControl1.Location = New System.Drawing.Point(12, 12)
         Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(529, 339)
+        Me.GroupControl1.Size = New System.Drawing.Size(439, 343)
         Me.GroupControl1.TabIndex = 34
         '
         'LabelControl5
         '
         Me.LabelControl5.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl5.Location = New System.Drawing.Point(26, 305)
+        Me.LabelControl5.Location = New System.Drawing.Point(26, 301)
         Me.LabelControl5.Name = "LabelControl5"
         Me.LabelControl5.Size = New System.Drawing.Size(71, 14)
         Me.LabelControl5.TabIndex = 60
@@ -99,12 +98,12 @@ Partial Class frm_supplier_barang_add
         Me.txt_plafon_debet.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_plafon_debet.Properties.Appearance.Options.UseFont = True
         Me.txt_plafon_debet.Size = New System.Drawing.Size(164, 21)
-        Me.txt_plafon_debet.TabIndex = 59
+        Me.txt_plafon_debet.TabIndex = 8
         '
         'LabelControl4
         '
         Me.LabelControl4.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl4.Location = New System.Drawing.Point(26, 278)
+        Me.LabelControl4.Location = New System.Drawing.Point(26, 274)
         Me.LabelControl4.Name = "LabelControl4"
         Me.LabelControl4.Size = New System.Drawing.Size(106, 14)
         Me.LabelControl4.TabIndex = 58
@@ -118,12 +117,12 @@ Partial Class frm_supplier_barang_add
         Me.txt_jatuh_tempobayar.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_jatuh_tempobayar.Properties.Appearance.Options.UseFont = True
         Me.txt_jatuh_tempobayar.Size = New System.Drawing.Size(69, 21)
-        Me.txt_jatuh_tempobayar.TabIndex = 57
+        Me.txt_jatuh_tempobayar.TabIndex = 7
         '
         'LabelControl1
         '
         Me.LabelControl1.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl1.Location = New System.Drawing.Point(26, 224)
+        Me.LabelControl1.Location = New System.Drawing.Point(26, 220)
         Me.LabelControl1.Name = "LabelControl1"
         Me.LabelControl1.Size = New System.Drawing.Size(56, 14)
         Me.LabelControl1.TabIndex = 56
@@ -137,7 +136,7 @@ Partial Class frm_supplier_barang_add
         Me.txt_telp2.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_telp2.Properties.Appearance.Options.UseFont = True
         Me.txt_telp2.Size = New System.Drawing.Size(164, 21)
-        Me.txt_telp2.TabIndex = 55
+        Me.txt_telp2.TabIndex = 5
         '
         'LabelControl15
         '
@@ -156,12 +155,12 @@ Partial Class frm_supplier_barang_add
         Me.txt_kota.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_kota.Properties.Appearance.Options.UseFont = True
         Me.txt_kota.Size = New System.Drawing.Size(147, 21)
-        Me.txt_kota.TabIndex = 53
+        Me.txt_kota.TabIndex = 3
         '
         'LabelControl8
         '
         Me.LabelControl8.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl8.Location = New System.Drawing.Point(26, 251)
+        Me.LabelControl8.Location = New System.Drawing.Point(26, 247)
         Me.LabelControl8.Name = "LabelControl8"
         Me.LabelControl8.Size = New System.Drawing.Size(18, 14)
         Me.LabelControl8.TabIndex = 52
@@ -175,12 +174,12 @@ Partial Class frm_supplier_barang_add
         Me.txt_fax.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_fax.Properties.Appearance.Options.UseFont = True
         Me.txt_fax.Size = New System.Drawing.Size(134, 21)
-        Me.txt_fax.TabIndex = 50
+        Me.txt_fax.TabIndex = 6
         '
         'LabelControl9
         '
         Me.LabelControl9.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl9.Location = New System.Drawing.Point(26, 197)
+        Me.LabelControl9.Location = New System.Drawing.Point(26, 193)
         Me.LabelControl9.Name = "LabelControl9"
         Me.LabelControl9.Size = New System.Drawing.Size(56, 14)
         Me.LabelControl9.TabIndex = 51
@@ -194,7 +193,7 @@ Partial Class frm_supplier_barang_add
         Me.txt_telp1.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_telp1.Properties.Appearance.Options.UseFont = True
         Me.txt_telp1.Size = New System.Drawing.Size(164, 21)
-        Me.txt_telp1.TabIndex = 49
+        Me.txt_telp1.TabIndex = 4
         '
         'txt_alamat
         '
@@ -204,7 +203,7 @@ Partial Class frm_supplier_barang_add
         Me.txt_alamat.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_alamat.Properties.Appearance.Options.UseFont = True
         Me.txt_alamat.Size = New System.Drawing.Size(256, 68)
-        Me.txt_alamat.TabIndex = 42
+        Me.txt_alamat.TabIndex = 2
         '
         'LabelControl3
         '
@@ -232,8 +231,8 @@ Partial Class frm_supplier_barang_add
         Me.txt_nama.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_nama.Properties.Appearance.Options.UseFont = True
         Me.txt_nama.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_nama.Size = New System.Drawing.Size(190, 21)
-        Me.txt_nama.TabIndex = 35
+        Me.txt_nama.Size = New System.Drawing.Size(255, 21)
+        Me.txt_nama.TabIndex = 1
         '
         'LabelControl18
         '
@@ -252,34 +251,32 @@ Partial Class frm_supplier_barang_add
         Me.txt_kode.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_kode.Properties.Appearance.Options.UseFont = True
         Me.txt_kode.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_kode.Size = New System.Drawing.Size(163, 21)
-        Me.txt_kode.TabIndex = 33
+        Me.txt_kode.Size = New System.Drawing.Size(133, 21)
+        Me.txt_kode.TabIndex = 0
         '
         'cmd_simpan
         '
         Me.cmd_simpan.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.cmd_simpan.Image = CType(resources.GetObject("cmd_simpan.Image"), System.Drawing.Image)
-        Me.cmd_simpan.Location = New System.Drawing.Point(443, 357)
+        Me.cmd_simpan.Location = New System.Drawing.Point(249, 361)
         Me.cmd_simpan.Name = "cmd_simpan"
         Me.cmd_simpan.Size = New System.Drawing.Size(98, 26)
-        Me.cmd_simpan.TabIndex = 40
+        Me.cmd_simpan.TabIndex = 9
         Me.cmd_simpan.Text = "Simpan"
         '
         'cmd_batal
         '
         Me.cmd_batal.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.cmd_batal.Image = CType(resources.GetObject("cmd_batal.Image"), System.Drawing.Image)
-        Me.cmd_batal.Location = New System.Drawing.Point(330, 357)
+        Me.cmd_batal.Location = New System.Drawing.Point(353, 361)
         Me.cmd_batal.Name = "cmd_batal"
         Me.cmd_batal.Size = New System.Drawing.Size(98, 26)
-        Me.cmd_batal.TabIndex = 41
+        Me.cmd_batal.TabIndex = 10
         Me.cmd_batal.Text = "Batal"
         '
         'frm_supplier_barang_add
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(549, 395)
+        Me.ClientSize = New System.Drawing.Size(463, 399)
         Me.Controls.Add(Me.cmd_simpan)
         Me.Controls.Add(Me.cmd_batal)
         Me.Controls.Add(Me.GroupControl1)

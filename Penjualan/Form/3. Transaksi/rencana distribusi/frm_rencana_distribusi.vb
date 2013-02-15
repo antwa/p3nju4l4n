@@ -120,7 +120,7 @@
         If dt.Rows.Count > 0 Then
             Dim i As Integer
             For i = 0 To dt.Rows.Count - 1
-                rcd_list.Rows.Add(New Object() {2, dt.Rows(i).Item("kode_customer").ToString, dt.Rows(i).Item("nama").ToString & " [" & dt.Rows(i).Item("kota").ToString & "]", dt.Rows(i).Item("prioritas").ToString})
+                rcd_list.Rows.Add(New Object() {i + 1, dt.Rows(i).Item("kode_customer").ToString, dt.Rows(i).Item("nama").ToString & " [" & dt.Rows(i).Item("kota").ToString & "]", dt.Rows(i).Item("prioritas").ToString})
             Next
         End If
 
@@ -273,7 +273,7 @@
     End Sub
 
     Private Sub GridView1_CustomRowFilter(ByVal sender As Object, ByVal e As DevExpress.XtraGrid.Views.Base.RowFilterEventArgs) Handles GridView1.CustomRowFilter
-        If e.ListSourceRow = 0 Or e.ListSourceRow = 1 Or e.ListSourceRow = 3 Then
+        If e.ListSourceRow = 0 Or e.ListSourceRow = 1 Or e.ListSourceRow = 2 Then
             e.Visible = False
             e.Handled = True
         End If

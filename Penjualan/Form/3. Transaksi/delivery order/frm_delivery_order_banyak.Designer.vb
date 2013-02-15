@@ -72,6 +72,7 @@ Partial Class frm_delivery_order_banyak
         Me.GridView1.OptionsCustomization.AllowFilter = False
         Me.GridView1.OptionsCustomization.AllowGroup = False
         Me.GridView1.OptionsCustomization.AllowSort = False
+        Me.GridView1.OptionsView.AllowCellMerge = True
         Me.GridView1.OptionsView.ColumnAutoWidth = False
         Me.GridView1.OptionsView.ShowGroupPanel = False
         '

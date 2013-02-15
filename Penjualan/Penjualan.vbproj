@@ -826,6 +826,12 @@
     <Compile Include="Form\Form Main\formLogin.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Form\Form Main\FormLogin2.Designer.vb">
+      <DependentUpon>FormLogin2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Form Main\FormLogin2.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form\Form Main\formMDI.Designer.vb">
       <DependentUpon>formMDI.vb</DependentUpon>
     </Compile>
@@ -1289,6 +1295,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\Form Main\formLogin.resx">
       <DependentUpon>formLogin.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Form Main\FormLogin2.resx">
+      <DependentUpon>FormLogin2.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\Form Main\formMDI.resx">

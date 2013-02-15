@@ -108,6 +108,13 @@
             Exit Sub
         End If
 
+        For i = 0 To rcd_list.Count - 1
+            If rcd_list.Item(i).qty = 0 Then
+                MsgBox("Qty pada artikel yang akan diretur tidak boleh Nol!", MsgBoxStyle.Information)
+                Exit Sub
+            End If
+        Next
+
         '# cek nomor
         Db.FlushCache()
         Db.Selects("*")

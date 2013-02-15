@@ -1,4 +1,6 @@
-﻿Public Class frm_delivery_order_banyak 
+﻿Imports DevExpress.XtraGrid.Views.Grid
+
+Public Class frm_delivery_order_banyak
 
     Public sistem_jual As Integer
 
@@ -98,7 +100,7 @@
         GridView1.Columns("stok").Visible = False
         GridView1.Columns("kode_hargajual").Visible = False
         GridView1.Columns("terkirim").Visible = False
-        
+
         For i = 0 To GridView1.Columns.Count - 1
             GridView1.Columns.Item(i).OptionsColumn.AllowEdit = False
         Next
@@ -243,4 +245,19 @@
 
     End Sub
 
+    Private Sub GridView1_CellMerge(ByVal sender As Object, ByVal e As DevExpress.XtraGrid.Views.Grid.CellMergeEventArgs) Handles GridView1.CellMerge
+        If (e.Column.FieldName = "nama") Or _
+           (e.Column.FieldName = "no_do") Or _
+           (e.Column.FieldName = "kode_customer") Then
+
+            Dim view As GridView = CType(sender, GridView)
+            Dim val1 As String = view.GetRowCellValue(e.RowHandle1, e.Column)
+            Dim val2 As String = view.GetRowCellValue(e.RowHandle2, e.Column)
+            e.Merge = (val1 = val2)
+            e.Handled = True
+        Else
+            e.Merge = False
+            e.Handled = True
+        End If
+    End Sub
 End Class
