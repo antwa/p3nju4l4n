@@ -25,8 +25,12 @@ Partial Class frm_customer_list
         Me.gridview1 = New DevExpress.XtraGrid.Views.Grid.GridView
         Me.gridcontrol1 = New DevExpress.XtraGrid.GridControl
         Me.cmd_tambah_user = New DevExpress.XtraEditors.SimpleButton
+        Me.cmd_cari = New DevExpress.XtraEditors.SimpleButton
+        Me.search = New DevExpress.XtraEditors.TextEdit
+        Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl
         CType(Me.gridview1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.gridcontrol1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.search.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'SimpleButton1
@@ -86,11 +90,38 @@ Partial Class frm_customer_list
         Me.cmd_tambah_user.TabIndex = 24
         Me.cmd_tambah_user.Text = "Tambah"
         '
+        'cmd_cari
+        '
+        Me.cmd_cari.Location = New System.Drawing.Point(227, 12)
+        Me.cmd_cari.Name = "cmd_cari"
+        Me.cmd_cari.Size = New System.Drawing.Size(80, 26)
+        Me.cmd_cari.TabIndex = 28
+        Me.cmd_cari.Text = "Cari"
+        '
+        'search
+        '
+        Me.search.Location = New System.Drawing.Point(60, 18)
+        Me.search.Name = "search"
+        Me.search.Size = New System.Drawing.Size(145, 20)
+        Me.search.TabIndex = 29
+        '
+        'LabelControl1
+        '
+        Me.LabelControl1.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl1.Location = New System.Drawing.Point(12, 20)
+        Me.LabelControl1.Name = "LabelControl1"
+        Me.LabelControl1.Size = New System.Drawing.Size(30, 14)
+        Me.LabelControl1.TabIndex = 30
+        Me.LabelControl1.Text = "Nama"
+        '
         'frm_customer_list
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(700, 316)
+        Me.Controls.Add(Me.LabelControl1)
+        Me.Controls.Add(Me.search)
+        Me.Controls.Add(Me.cmd_cari)
         Me.Controls.Add(Me.SimpleButton1)
         Me.Controls.Add(Me.cmd_hapus_user)
         Me.Controls.Add(Me.cmd_edit_user)
@@ -101,7 +132,9 @@ Partial Class frm_customer_list
         Me.Text = "Customer"
         CType(Me.gridview1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.gridcontrol1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.search.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents SimpleButton1 As DevExpress.XtraEditors.SimpleButton
@@ -110,4 +143,7 @@ Partial Class frm_customer_list
     Friend WithEvents gridview1 As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents gridcontrol1 As DevExpress.XtraGrid.GridControl
     Friend WithEvents cmd_tambah_user As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents cmd_cari As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents search As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LabelControl1 As DevExpress.XtraEditors.LabelControl
 End Class

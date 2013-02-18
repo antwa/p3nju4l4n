@@ -1328,6 +1328,7 @@
   <ItemGroup>
     <None Include="bin\Debug\connection.set" />
     <None Include="bin\Debug\Penjualan.vshost.exe.manifest" />
+    <None Include="ClassDiagram1.cd" />
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>

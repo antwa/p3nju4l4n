@@ -38,13 +38,13 @@ Public Class frm_customer_edit
                 txt_telp2.Text = .Item("telp2").ToString
                 txt_email.Text = .Item("email").ToString
                 txt_fax.Text = .Item("fax").ToString
-                lkp_grup.EditValue = .Item("kode_group").ToString
+                lkp_grup.EditValue = .Item("kode_grup").ToString
                 rdg_sistem_jual.EditValue = .Item("sistem_jual").ToString
                 lkp_harga.EditValue = .Item("kode_template_harga").ToString
                 txt_margin.Text = .Item("margin_toko").ToString
                 txt_dis_konsumen.Text = .Item("dis_konsumen").ToString
                 txt_plafon.Text = .Item("plafon_kredit").ToString
-                dte_tgl_masuk.EditValue = .Item("tgl_masuk").ToString
+                dte_tgl_masuk.EditValue  = .Item("tgl_masuk").ToString
                 dte_tgl_buka.EditValue = .Item("tgl_buka").ToString
                 txt_prioritas.Text = .Item("prioritas").ToString
                 txt_jatuh_tempo.Text = .Item("jatuh_tempobayar").ToString
@@ -67,10 +67,7 @@ Public Class frm_customer_edit
 
         Dim rcd As SqlClient.SqlDataReader = Connection.ExecuteToDataReader(Db.GetQueryString)
 
-        If rcd.HasRows Then
-            MsgBox("Kode Customer '" & txt_kode_customer.Text & "' sudah terdapat dalam database!" & vbCrLf & "Ganti dengan yang lain.", MsgBoxStyle.Exclamation)
-            Exit Sub
-        End If
+      
 
         '# Update table tbl_customer
         Db.FlushCache()
@@ -85,7 +82,7 @@ Public Class frm_customer_edit
         Db.SetField("telp2", txt_telp2.Text)
         Db.SetField("fax", txt_fax.Text)
         Db.SetField("email", txt_email.Text)
-        Db.SetField("kode_group", lkp_grup.EditValue)
+        Db.SetField("kode_grup", lkp_grup.EditValue)
         Db.SetField("sistem_jual", rdg_sistem_jual.EditValue)
         Db.SetField("kode_template_harga", lkp_harga.EditValue)
         Db.SetField("margin_toko", txt_margin.Text)

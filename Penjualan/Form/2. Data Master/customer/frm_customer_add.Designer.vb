@@ -20,6 +20,9 @@ Partial Class frm_customer_add
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl
+        Me.LabelControl23 = New DevExpress.XtraEditors.LabelControl
+        Me.LabelControl22 = New DevExpress.XtraEditors.LabelControl
+        Me.LabelControl21 = New DevExpress.XtraEditors.LabelControl
         Me.txt_jatuh_tempo = New DevExpress.XtraEditors.TextEdit
         Me.LabelControl13 = New DevExpress.XtraEditors.LabelControl
         Me.txt_prioritas = New DevExpress.XtraEditors.TextEdit
@@ -63,9 +66,6 @@ Partial Class frm_customer_add
         Me.txt_kode_customer = New DevExpress.XtraEditors.TextEdit
         Me.cmd_simpan = New DevExpress.XtraEditors.SimpleButton
         Me.cmd_batal = New DevExpress.XtraEditors.SimpleButton
-        Me.LabelControl21 = New DevExpress.XtraEditors.LabelControl
-        Me.LabelControl22 = New DevExpress.XtraEditors.LabelControl
-        Me.LabelControl23 = New DevExpress.XtraEditors.LabelControl
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl2.SuspendLayout()
         CType(Me.txt_jatuh_tempo.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -123,6 +123,33 @@ Partial Class frm_customer_add
         Me.GroupControl2.Name = "GroupControl2"
         Me.GroupControl2.Size = New System.Drawing.Size(388, 366)
         Me.GroupControl2.TabIndex = 41
+        '
+        'LabelControl23
+        '
+        Me.LabelControl23.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl23.Location = New System.Drawing.Point(180, 297)
+        Me.LabelControl23.Name = "LabelControl23"
+        Me.LabelControl23.Size = New System.Drawing.Size(20, 14)
+        Me.LabelControl23.TabIndex = 79
+        Me.LabelControl23.Text = "Hari"
+        '
+        'LabelControl22
+        '
+        Me.LabelControl22.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl22.Location = New System.Drawing.Point(180, 159)
+        Me.LabelControl22.Name = "LabelControl22"
+        Me.LabelControl22.Size = New System.Drawing.Size(12, 14)
+        Me.LabelControl22.TabIndex = 78
+        Me.LabelControl22.Text = "%"
+        '
+        'LabelControl21
+        '
+        Me.LabelControl21.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl21.Location = New System.Drawing.Point(180, 131)
+        Me.LabelControl21.Name = "LabelControl21"
+        Me.LabelControl21.Size = New System.Drawing.Size(12, 14)
+        Me.LabelControl21.TabIndex = 77
+        Me.LabelControl21.Text = "%"
         '
         'txt_jatuh_tempo
         '
@@ -558,33 +585,6 @@ Partial Class frm_customer_add
         Me.cmd_batal.Size = New System.Drawing.Size(109, 25)
         Me.cmd_batal.TabIndex = 21
         Me.cmd_batal.Text = "Batal"
-        '
-        'LabelControl21
-        '
-        Me.LabelControl21.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl21.Location = New System.Drawing.Point(180, 131)
-        Me.LabelControl21.Name = "LabelControl21"
-        Me.LabelControl21.Size = New System.Drawing.Size(12, 14)
-        Me.LabelControl21.TabIndex = 77
-        Me.LabelControl21.Text = "%"
-        '
-        'LabelControl22
-        '
-        Me.LabelControl22.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl22.Location = New System.Drawing.Point(180, 159)
-        Me.LabelControl22.Name = "LabelControl22"
-        Me.LabelControl22.Size = New System.Drawing.Size(12, 14)
-        Me.LabelControl22.TabIndex = 78
-        Me.LabelControl22.Text = "%"
-        '
-        'LabelControl23
-        '
-        Me.LabelControl23.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl23.Location = New System.Drawing.Point(180, 297)
-        Me.LabelControl23.Name = "LabelControl23"
-        Me.LabelControl23.Size = New System.Drawing.Size(20, 14)
-        Me.LabelControl23.TabIndex = 79
-        Me.LabelControl23.Text = "Hari"
         '
         'frm_customer_add
         '
