@@ -1,4 +1,25 @@
 ﻿Public Class frm_customer_list 
+
+    Public Sub loadData()
+
+        Call initGrid()
+
+        If search.Text <> "" Then
+            Db.Where("WHERE nama LIKE '%" & search.Text & "%'")
+        End If
+
+        Db.OrderBy("kode_customer", cls_database.sorting.Ascending)
+
+        gridcontrol1.DataSource = Connection.ExecuteToDataTable(Db.GetQueryString)
+
+        gridview1.Columns("Kode").Caption = "Kode"
+        gridview1.Columns("Nama").Caption = "Nama"
+        gridview1.Columns("Alamat").Caption = "Alamat"
+        gridview1.Columns("Telepon 1").Caption = "Telepon 1"
+
+    End Sub
+
+
     Public Sub initGrid()
         Db.FlushCache()
         Db.Selects("tbl_customer.kode_customer AS [Kode], tbl_customer.nama AS [Nama], tbl_customer.alamat AS Alamat, tbl_customer.telp1 AS [Telepon 1]")
@@ -37,7 +58,7 @@
     Private Sub cmd_hapus_user_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_hapus_user.Click
         Try
             Dim row As System.Data.DataRow = gridview1.GetDataRow(gridview1.FocusedRowHandle)
-            If MsgBox("Kode : " & row("kode_customer") & vbCrLf & "Nama : " & row("nama") & vbCrLf & vbCrLf & _
+            If MsgBox("Kode : " & row("Kode") & vbCrLf & "Nama : " & row("Nama") & vbCrLf & vbCrLf & _
                       "Apakah akan menghapus data diatas?", MsgBoxStyle.Information + MsgBoxStyle.YesNo, "Delete Data") = MsgBoxResult.Yes Then
                 Db.FlushCache()
                 Db.Delete("tbl_customer")
@@ -53,5 +74,15 @@
         Catch ex As Exception
 
         End Try
+    End Sub
+
+    Private Sub cmd_cari_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_cari.Click
+        Me.loadData()
+    End Sub
+
+    Private Sub search_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles search.KeyPress
+        If Asc(e.KeyChar) = 13 Then
+            Call Me.loadData()
+        End If
     End Sub
 End Class

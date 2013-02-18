@@ -1,4 +1,24 @@
 ﻿Public Class frm_pegawai_list
+
+    Public Sub loadData()
+
+        Call initGrid()
+
+        If search.Text <> "" Then
+            Db.Where("WHERE nama LIKE '%" & search.Text & "%'")
+        End If
+
+        Db.OrderBy("nik", cls_database.sorting.Ascending)
+
+        gridcontrol1.DataSource = Connection.ExecuteToDataTable(Db.GetQueryString)
+
+        gridview1.Columns("NIK").Caption = "NIK"
+        gridview1.Columns("No KTP").Caption = "No KTP"
+        gridview1.Columns("Nama").Caption = "Nama"
+        gridview1.Columns("Alamat").Caption = "Alamat"
+
+    End Sub
+
     Public Sub initGrid()
         Db.FlushCache()
         Db.Selects("tbl_pegawai.nik AS [NIK], tbl_pegawai.no_ktp AS [No KTP], tbl_pegawai.nama AS Nama, tbl_pegawai.alamat AS [Alamat]")
@@ -59,5 +79,15 @@
         Catch ex As Exception
 
         End Try
+    End Sub
+
+    Private Sub cmd_cari_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_cari.Click
+        Me.loadData()
+    End Sub
+
+    Private Sub search_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles search.KeyPress
+        If Asc(e.KeyChar) = 13 Then
+            Me.loadData()
+        End If
     End Sub
 End Class

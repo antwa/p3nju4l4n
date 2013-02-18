@@ -43,10 +43,17 @@ Public Class frm_pegawai_add
         '# validation
         Validation.clearRules()
         Validation.addRules(txt_nik.Text, "NIK", "required|length[3-5]")
-        Validation.addRules(txt_noktp.Text, "No KTP", "required|length[1-50]")
+        Validation.addRules(txt_noktp.Text, "No KTP", "required|numeric|length[12-16]")
         Validation.addRules(txt_nama_pegawai.Text, "Nama Pegawai", "required")
         Validation.addRules(txt_alamat.Text, "Alamat", "required")
         Validation.addRules(lkp_jabatan.Text, "Jabatan", "required")
+        Validation.addRules(txt_telp.Text, "Telepon", "required|numeric|length[10-12]")
+        Validation.addRules(txt_email.Text, "Email", "required|email")
+        Validation.addRules(txt_bank.Text, "Nama Bank", "required")
+        Validation.addRules(txt_atas_nama.Text, "Atas Nama", "required")
+        Validation.addRules(txt_no_rekening.Text, "No Rekening", "required|numeric")
+        Validation.addRules(txt_gaji_pokok.Text, "Gaji Pokok", "required|numeric")
+
         'end Validation
 
         If Validation.isValid Then
@@ -72,6 +79,7 @@ Public Class frm_pegawai_add
                 Db.SetField("telepon", txt_telp.Text)
                 Db.SetField("email", txt_email.Text)
 
+                Db.SetField("nama_bank", txt_bank.Text)
                 Db.SetField("no_rekening", txt_no_rekening.Text)
                 Db.SetField("atas_nama", txt_atas_nama.Text)
 
@@ -116,5 +124,9 @@ Public Class frm_pegawai_add
 
     Private Sub cmd_batal_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_batal.Click
         Me.Close()
+    End Sub
+
+    Private Sub GroupControl1_Paint(ByVal sender As System.Object, ByVal e As System.Windows.Forms.PaintEventArgs) Handles GroupControl1.Paint
+
     End Sub
 End Class

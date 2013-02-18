@@ -45,7 +45,7 @@ Partial Class frm_pegawai_add
         Me.lkp_kode_costumer = New DevExpress.XtraEditors.LookUpEdit
         Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl
         Me.LabelControl16 = New DevExpress.XtraEditors.LabelControl
-        Me.TextEdit1 = New DevExpress.XtraEditors.TextEdit
+        Me.txt_bank = New DevExpress.XtraEditors.TextEdit
         Me.txt_atas_nama = New DevExpress.XtraEditors.TextEdit
         Me.LabelControl19 = New DevExpress.XtraEditors.LabelControl
         Me.LabelControl20 = New DevExpress.XtraEditors.LabelControl
@@ -82,7 +82,7 @@ Partial Class frm_pegawai_add
         CType(Me.lkp_kode_costumer.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl2.SuspendLayout()
-        CType(Me.TextEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txt_bank.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txt_atas_nama.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txt_no_rekening.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -347,7 +347,7 @@ Partial Class frm_pegawai_add
         'GroupControl2
         '
         Me.GroupControl2.Controls.Add(Me.LabelControl16)
-        Me.GroupControl2.Controls.Add(Me.TextEdit1)
+        Me.GroupControl2.Controls.Add(Me.txt_bank)
         Me.GroupControl2.Controls.Add(Me.txt_atas_nama)
         Me.GroupControl2.Controls.Add(Me.LabelControl19)
         Me.GroupControl2.Controls.Add(Me.LabelControl20)
@@ -366,16 +366,16 @@ Partial Class frm_pegawai_add
         Me.LabelControl16.TabIndex = 41
         Me.LabelControl16.Text = "No. Rekening"
         '
-        'TextEdit1
+        'txt_bank
         '
-        Me.TextEdit1.EditValue = ""
-        Me.TextEdit1.Location = New System.Drawing.Point(120, 25)
-        Me.TextEdit1.Name = "TextEdit1"
-        Me.TextEdit1.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextEdit1.Properties.Appearance.Options.UseFont = True
-        Me.TextEdit1.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.TextEdit1.Size = New System.Drawing.Size(145, 21)
-        Me.TextEdit1.TabIndex = 12
+        Me.txt_bank.EditValue = ""
+        Me.txt_bank.Location = New System.Drawing.Point(120, 25)
+        Me.txt_bank.Name = "txt_bank"
+        Me.txt_bank.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_bank.Properties.Appearance.Options.UseFont = True
+        Me.txt_bank.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txt_bank.Size = New System.Drawing.Size(145, 21)
+        Me.txt_bank.TabIndex = 12
         '
         'txt_atas_nama
         '
@@ -625,7 +625,7 @@ Partial Class frm_pegawai_add
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl2.ResumeLayout(False)
         Me.GroupControl2.PerformLayout()
-        CType(Me.TextEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txt_bank.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txt_atas_nama.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txt_no_rekening.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).EndInit()
@@ -684,6 +684,6 @@ Partial Class frm_pegawai_add
     Friend WithEvents cmd_simpan As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents lkp_kode_costumer As DevExpress.XtraEditors.LookUpEdit
     Friend WithEvents LabelControl16 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents TextEdit1 As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents txt_bank As DevExpress.XtraEditors.TextEdit
     Friend WithEvents rdg_statusKaryawan As DevExpress.XtraEditors.RadioGroup
 End Class
