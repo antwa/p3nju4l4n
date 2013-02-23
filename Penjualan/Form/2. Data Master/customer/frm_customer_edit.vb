@@ -3,6 +3,8 @@
 
 Public Class frm_customer_edit
 
+    Public kode As String
+
     Public Sub initControl()
         Load_Kota(lkp_kota)
         Load_Zona(lkp_zona)
@@ -15,13 +17,13 @@ Public Class frm_customer_edit
 
     End Sub
 
-    Public Sub initData(ByVal kode As String)
+    Public Sub initData()
 
         Db.FlushCache()
         Db.Selects("*")
         Db.From("tbl_customer")
         'Db.Join("PRO_AKSESORIS_DETAIL", "PRO_AKSESORIS.AKS_KODE = PRO_AKSESORIS_DETAIL.AKS_KODE")
-        Db.Where("kode_customer", kode)
+        Db.Where("kode_customer", Me.kode)
 
         Dim rcd As SqlClient.SqlDataReader = Connection.ExecuteToDataReader(Db.GetQueryString)
 
@@ -44,7 +46,7 @@ Public Class frm_customer_edit
                 txt_margin.Text = .Item("margin_toko").ToString
                 txt_dis_konsumen.Text = .Item("dis_konsumen").ToString
                 txt_plafon.Text = .Item("plafon_kredit").ToString
-                dte_tgl_masuk.EditValue  = .Item("tgl_masuk").ToString
+                dte_tgl_masuk.EditValue = .Item("tgl_masuk").ToString
                 dte_tgl_buka.EditValue = .Item("tgl_buka").ToString
                 txt_prioritas.Text = .Item("prioritas").ToString
                 txt_jatuh_tempo.Text = .Item("jatuh_tempobayar").ToString
@@ -54,7 +56,7 @@ Public Class frm_customer_edit
 
     End Sub
     Private Sub frm_customer_edit_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        Call initControl()
+
     End Sub
 
     Private Sub cmd_simpan_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_simpan.Click
@@ -107,5 +109,10 @@ Public Class frm_customer_edit
 
     Private Sub cmd_batal_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_batal.Click
         Me.Close()
+    End Sub
+
+    Private Sub frm_customer_edit_Shown(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Shown
+        Call initControl()
+        Call initData()
     End Sub
 End Class

@@ -40,15 +40,19 @@
     Private Sub cmd_edit_user_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_edit_user.Click
         Dim row As System.Data.DataRow = gridview1.GetDataRow(gridview1.FocusedRowHandle)
         frm_customer_edit.Dispose()
-        frm_customer_edit.initData(row("Kode"))
+        frm_customer_edit.kode = row("Kode")
         frm_customer_edit.ShowDialog(Me)
     End Sub
 
     Private Sub gridcontrol1_DoubleClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles gridcontrol1.DoubleClick
-        Dim row As System.Data.DataRow = gridview1.GetDataRow(gridview1.FocusedRowHandle)
-        frm_customer_edit.Dispose()
-        frm_customer_edit.initData(row("Kode"))
-        frm_customer_edit.ShowDialog(Me)
+        Try
+            Dim row As System.Data.DataRow = gridview1.GetDataRow(gridview1.FocusedRowHandle)
+            frm_customer_edit.Dispose()
+            frm_customer_edit.kode = row("Kode")
+            frm_customer_edit.ShowDialog(Me)
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     Private Sub SimpleButton1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SimpleButton1.Click

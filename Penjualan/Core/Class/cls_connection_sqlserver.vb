@@ -18,7 +18,7 @@ Public Class cls_connection_sqlserver
 
     Public Function openConnection() As Boolean
         'Server=myServerAddress;Database=myDataBase;User ID=myUsername;Password=myPassword;Trusted_Connection=False;
-        'strConnection = "Server=BANDUNG-B800F40\SQLEXPRESS;Database=penjualan;Trusted_Connection=True;"
+        'strConnection = "Server=KIMOCHI\SQLEXPRESS;Database=penjualan;Trusted_Connection=True;"
 
         Try
             Cnt = New SqlClient.SqlConnection(strConnection)
