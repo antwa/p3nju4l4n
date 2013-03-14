@@ -42,7 +42,7 @@ Partial Class frm_pegawai_add
         Me.txt_noktp = New DevExpress.XtraEditors.TextEdit
         Me.LabelControl18 = New DevExpress.XtraEditors.LabelControl
         Me.txt_nik = New DevExpress.XtraEditors.TextEdit
-        Me.lkp_kode_costumer = New DevExpress.XtraEditors.LookUpEdit
+        Me.lkp_kode_costumer_parent = New DevExpress.XtraEditors.LookUpEdit
         Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl
         Me.LabelControl16 = New DevExpress.XtraEditors.LabelControl
         Me.txt_bank = New DevExpress.XtraEditors.TextEdit
@@ -79,7 +79,7 @@ Partial Class frm_pegawai_add
         CType(Me.txt_nama_pegawai.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txt_noktp.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txt_nik.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.lkp_kode_costumer.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.lkp_kode_costumer_parent.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl2.SuspendLayout()
         CType(Me.txt_bank.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -119,7 +119,7 @@ Partial Class frm_pegawai_add
         Me.GroupControl1.Controls.Add(Me.txt_noktp)
         Me.GroupControl1.Controls.Add(Me.LabelControl18)
         Me.GroupControl1.Controls.Add(Me.txt_nik)
-        Me.GroupControl1.Controls.Add(Me.lkp_kode_costumer)
+        Me.GroupControl1.Controls.Add(Me.lkp_kode_costumer_parent)
         Me.GroupControl1.Location = New System.Drawing.Point(12, 12)
         Me.GroupControl1.Name = "GroupControl1"
         Me.GroupControl1.Size = New System.Drawing.Size(421, 369)
@@ -333,16 +333,16 @@ Partial Class frm_pegawai_add
         Me.txt_nik.Size = New System.Drawing.Size(107, 21)
         Me.txt_nik.TabIndex = 0
         '
-        'lkp_kode_costumer
+        'lkp_kode_costumer_parent
         '
-        Me.lkp_kode_costumer.Location = New System.Drawing.Point(123, 220)
-        Me.lkp_kode_costumer.Name = "lkp_kode_costumer"
-        Me.lkp_kode_costumer.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lkp_kode_costumer.Properties.Appearance.Options.UseFont = True
-        Me.lkp_kode_costumer.Properties.AutoHeight = False
-        Me.lkp_kode_costumer.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.lkp_kode_costumer.Size = New System.Drawing.Size(205, 21)
-        Me.lkp_kode_costumer.TabIndex = 6
+        Me.lkp_kode_costumer_parent.Location = New System.Drawing.Point(123, 220)
+        Me.lkp_kode_costumer_parent.Name = "lkp_kode_costumer_parent"
+        Me.lkp_kode_costumer_parent.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lkp_kode_costumer_parent.Properties.Appearance.Options.UseFont = True
+        Me.lkp_kode_costumer_parent.Properties.AutoHeight = False
+        Me.lkp_kode_costumer_parent.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.lkp_kode_costumer_parent.Size = New System.Drawing.Size(205, 21)
+        Me.lkp_kode_costumer_parent.TabIndex = 6
         '
         'GroupControl2
         '
@@ -621,7 +621,7 @@ Partial Class frm_pegawai_add
         CType(Me.txt_nama_pegawai.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txt_noktp.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txt_nik.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.lkp_kode_costumer.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.lkp_kode_costumer_parent.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl2.ResumeLayout(False)
         Me.GroupControl2.PerformLayout()
@@ -682,7 +682,7 @@ Partial Class frm_pegawai_add
     Friend WithEvents rdg_group_pegawai As DevExpress.XtraEditors.RadioGroup
     Friend WithEvents cmd_batal As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents cmd_simpan As DevExpress.XtraEditors.SimpleButton
-    Friend WithEvents lkp_kode_costumer As DevExpress.XtraEditors.LookUpEdit
+    Friend WithEvents lkp_kode_costumer_parent As DevExpress.XtraEditors.LookUpEdit
     Friend WithEvents LabelControl16 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents txt_bank As DevExpress.XtraEditors.TextEdit
     Friend WithEvents rdg_statusKaryawan As DevExpress.XtraEditors.RadioGroup

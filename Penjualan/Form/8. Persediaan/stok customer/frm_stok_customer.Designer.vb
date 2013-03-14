@@ -35,15 +35,11 @@ Partial Class frm_stok_customer
         Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl
         Me.chk_semua_customer = New DevExpress.XtraEditors.CheckEdit
         Me.LabelControl6 = New DevExpress.XtraEditors.LabelControl
-        Me.kode_customer = New DevExpress.XtraEditors.LookUpEdit
+        Me.kode_customer_parent = New DevExpress.XtraEditors.LookUpEdit
         Me.lbl_nama_artikel = New DevExpress.XtraEditors.LabelControl
         Me.kode_barangjadi = New DevExpress.XtraEditors.TextEdit
-        Me.cmd_edit = New DevExpress.XtraEditors.SimpleButton
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl
-        Me.chk_semua_jenisharga = New DevExpress.XtraEditors.CheckEdit
-        Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl
-        Me.kode_jenis_harga = New DevExpress.XtraEditors.LookUpEdit
-        Me.cmd_simpan = New DevExpress.XtraEditors.SimpleButton
+        Me.cmb_tipecustomer = New DevExpress.XtraEditors.ComboBoxEdit
         Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog
         Me.PrintingSystem1 = New DevExpress.XtraPrinting.PrintingSystem(Me.components)
         Me.PrintableComponentLink1 = New DevExpress.XtraPrinting.PrintableComponentLink(Me.components)
@@ -54,12 +50,11 @@ Partial Class frm_stok_customer
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl2.SuspendLayout()
         CType(Me.chk_semua_customer.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.kode_customer.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.kode_customer_parent.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.kode_barangjadi.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
-        CType(Me.chk_semua_jenisharga.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.kode_jenis_harga.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cmb_tipecustomer.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PrintingSystem1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PrintableComponentLink1.ImageCollection, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -74,7 +69,7 @@ Partial Class frm_stok_customer
         '
         'stok
         '
-        Me.stok.Location = New System.Drawing.Point(86, 26)
+        Me.stok.Location = New System.Drawing.Point(57, 26)
         Me.stok.Name = "stok"
         Me.stok.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.stok.Properties.Appearance.Options.UseFont = True
@@ -85,7 +80,7 @@ Partial Class frm_stok_customer
         '
         'cmd_load
         '
-        Me.cmd_load.Location = New System.Drawing.Point(12, 131)
+        Me.cmd_load.Location = New System.Drawing.Point(12, 124)
         Me.cmd_load.Name = "cmd_load"
         Me.cmd_load.Size = New System.Drawing.Size(88, 24)
         Me.cmd_load.TabIndex = 43
@@ -111,7 +106,6 @@ Partial Class frm_stok_customer
         '
         'cmd_cari
         '
-        Me.cmd_cari.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.cmd_cari.Location = New System.Drawing.Point(258, 25)
         Me.cmd_cari.Name = "cmd_cari"
         Me.cmd_cari.Size = New System.Drawing.Size(79, 21)
@@ -121,7 +115,7 @@ Partial Class frm_stok_customer
         'LabelControl5
         '
         Me.LabelControl5.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl5.Location = New System.Drawing.Point(16, 59)
+        Me.LabelControl5.Location = New System.Drawing.Point(16, 55)
         Me.LabelControl5.Name = "LabelControl5"
         Me.LabelControl5.Size = New System.Drawing.Size(68, 14)
         Me.LabelControl5.TabIndex = 31
@@ -141,10 +135,10 @@ Partial Class frm_stok_customer
         Me.GridControl1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
                     Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GridControl1.Location = New System.Drawing.Point(12, 161)
+        Me.GridControl1.Location = New System.Drawing.Point(12, 154)
         Me.GridControl1.MainView = Me.GridView1
         Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.Size = New System.Drawing.Size(772, 230)
+        Me.GridControl1.Size = New System.Drawing.Size(772, 237)
         Me.GridControl1.TabIndex = 46
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
@@ -153,7 +147,6 @@ Partial Class frm_stok_customer
         Me.GridView1.GridControl = Me.GridControl1
         Me.GridView1.Name = "GridView1"
         Me.GridView1.OptionsBehavior.Editable = False
-        Me.GridView1.OptionsCustomization.AllowColumnMoving = False
         Me.GridView1.OptionsCustomization.AllowFilter = False
         Me.GridView1.OptionsCustomization.AllowGroup = False
         Me.GridView1.OptionsCustomization.AllowSort = False
@@ -172,7 +165,7 @@ Partial Class frm_stok_customer
         '
         Me.GroupControl2.Controls.Add(Me.chk_semua_customer)
         Me.GroupControl2.Controls.Add(Me.LabelControl6)
-        Me.GroupControl2.Controls.Add(Me.kode_customer)
+        Me.GroupControl2.Controls.Add(Me.kode_customer_parent)
         Me.GroupControl2.Controls.Add(Me.chk_semua_artikel)
         Me.GroupControl2.Controls.Add(Me.cmd_cari)
         Me.GroupControl2.Controls.Add(Me.LabelControl5)
@@ -181,12 +174,12 @@ Partial Class frm_stok_customer
         Me.GroupControl2.Controls.Add(Me.LabelControl4)
         Me.GroupControl2.Location = New System.Drawing.Point(12, 12)
         Me.GroupControl2.Name = "GroupControl2"
-        Me.GroupControl2.Size = New System.Drawing.Size(413, 113)
+        Me.GroupControl2.Size = New System.Drawing.Size(413, 106)
         Me.GroupControl2.TabIndex = 45
         '
         'chk_semua_customer
         '
-        Me.chk_semua_customer.Location = New System.Drawing.Point(343, 80)
+        Me.chk_semua_customer.Location = New System.Drawing.Point(343, 75)
         Me.chk_semua_customer.Name = "chk_semua_customer"
         Me.chk_semua_customer.Properties.Caption = "Semua"
         Me.chk_semua_customer.Size = New System.Drawing.Size(59, 19)
@@ -195,26 +188,26 @@ Partial Class frm_stok_customer
         'LabelControl6
         '
         Me.LabelControl6.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl6.Location = New System.Drawing.Point(16, 82)
+        Me.LabelControl6.Location = New System.Drawing.Point(16, 77)
         Me.LabelControl6.Name = "LabelControl6"
         Me.LabelControl6.Size = New System.Drawing.Size(52, 14)
         Me.LabelControl6.TabIndex = 78
         Me.LabelControl6.Text = "Customer"
         '
-        'kode_customer
+        'kode_customer_parent
         '
-        Me.kode_customer.Location = New System.Drawing.Point(103, 79)
-        Me.kode_customer.Name = "kode_customer"
-        Me.kode_customer.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.kode_customer.Properties.Appearance.Options.UseFont = True
-        Me.kode_customer.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.kode_customer.Size = New System.Drawing.Size(234, 21)
-        Me.kode_customer.TabIndex = 77
+        Me.kode_customer_parent.Location = New System.Drawing.Point(103, 74)
+        Me.kode_customer_parent.Name = "kode_customer_parent"
+        Me.kode_customer_parent.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.kode_customer_parent.Properties.Appearance.Options.UseFont = True
+        Me.kode_customer_parent.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.kode_customer_parent.Size = New System.Drawing.Size(234, 21)
+        Me.kode_customer_parent.TabIndex = 77
         '
         'lbl_nama_artikel
         '
         Me.lbl_nama_artikel.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_nama_artikel.Location = New System.Drawing.Point(103, 59)
+        Me.lbl_nama_artikel.Location = New System.Drawing.Point(103, 55)
         Me.lbl_nama_artikel.Name = "lbl_nama_artikel"
         Me.lbl_nama_artikel.Size = New System.Drawing.Size(12, 14)
         Me.lbl_nama_artikel.TabIndex = 30
@@ -229,65 +222,30 @@ Partial Class frm_stok_customer
         Me.kode_barangjadi.Size = New System.Drawing.Size(149, 21)
         Me.kode_barangjadi.TabIndex = 29
         '
-        'cmd_edit
-        '
-        Me.cmd_edit.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.cmd_edit.Location = New System.Drawing.Point(115, 397)
-        Me.cmd_edit.Name = "cmd_edit"
-        Me.cmd_edit.Size = New System.Drawing.Size(105, 24)
-        Me.cmd_edit.TabIndex = 49
-        Me.cmd_edit.Text = "Edit Jenis Barang"
-        '
         'GroupControl1
         '
         Me.GroupControl1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupControl1.Controls.Add(Me.chk_semua_jenisharga)
-        Me.GroupControl1.Controls.Add(Me.LabelControl1)
-        Me.GroupControl1.Controls.Add(Me.kode_jenis_harga)
+        Me.GroupControl1.Controls.Add(Me.cmb_tipecustomer)
         Me.GroupControl1.Controls.Add(Me.stok)
         Me.GroupControl1.Controls.Add(Me.LabelControl2)
         Me.GroupControl1.Location = New System.Drawing.Point(431, 12)
         Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(353, 113)
+        Me.GroupControl1.Size = New System.Drawing.Size(353, 106)
         Me.GroupControl1.TabIndex = 80
         '
-        'chk_semua_jenisharga
+        'cmb_tipecustomer
         '
-        Me.chk_semua_jenisharga.Location = New System.Drawing.Point(264, 57)
-        Me.chk_semua_jenisharga.Name = "chk_semua_jenisharga"
-        Me.chk_semua_jenisharga.Properties.Caption = "Semua"
-        Me.chk_semua_jenisharga.Size = New System.Drawing.Size(59, 19)
-        Me.chk_semua_jenisharga.TabIndex = 79
-        '
-        'LabelControl1
-        '
-        Me.LabelControl1.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl1.Location = New System.Drawing.Point(16, 59)
-        Me.LabelControl1.Name = "LabelControl1"
-        Me.LabelControl1.Size = New System.Drawing.Size(61, 14)
-        Me.LabelControl1.TabIndex = 78
-        Me.LabelControl1.Text = "Jenis Harga"
-        '
-        'kode_jenis_harga
-        '
-        Me.kode_jenis_harga.Location = New System.Drawing.Point(86, 56)
-        Me.kode_jenis_harga.Name = "kode_jenis_harga"
-        Me.kode_jenis_harga.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.kode_jenis_harga.Properties.Appearance.Options.UseFont = True
-        Me.kode_jenis_harga.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.kode_jenis_harga.Size = New System.Drawing.Size(172, 21)
-        Me.kode_jenis_harga.TabIndex = 77
-        '
-        'cmd_simpan
-        '
-        Me.cmd_simpan.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.cmd_simpan.Enabled = False
-        Me.cmd_simpan.Location = New System.Drawing.Point(226, 397)
-        Me.cmd_simpan.Name = "cmd_simpan"
-        Me.cmd_simpan.Size = New System.Drawing.Size(66, 24)
-        Me.cmd_simpan.TabIndex = 81
-        Me.cmd_simpan.Text = "Simpan"
+        Me.cmb_tipecustomer.EditValue = "Normal"
+        Me.cmb_tipecustomer.Location = New System.Drawing.Point(57, 53)
+        Me.cmb_tipecustomer.Name = "cmb_tipecustomer"
+        Me.cmb_tipecustomer.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmb_tipecustomer.Properties.Appearance.Options.UseFont = True
+        Me.cmb_tipecustomer.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.cmb_tipecustomer.Properties.Items.AddRange(New Object() {"Semua", "Normal", "Obral", "SP"})
+        Me.cmb_tipecustomer.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor
+        Me.cmb_tipecustomer.Size = New System.Drawing.Size(110, 21)
+        Me.cmb_tipecustomer.TabIndex = 80
         '
         'PrintingSystem1
         '
@@ -310,9 +268,7 @@ Partial Class frm_stok_customer
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(796, 433)
-        Me.Controls.Add(Me.cmd_simpan)
         Me.Controls.Add(Me.GroupControl1)
-        Me.Controls.Add(Me.cmd_edit)
         Me.Controls.Add(Me.cmd_load)
         Me.Controls.Add(Me.cmd_print)
         Me.Controls.Add(Me.cmd_excel)
@@ -328,13 +284,12 @@ Partial Class frm_stok_customer
         Me.GroupControl2.ResumeLayout(False)
         Me.GroupControl2.PerformLayout()
         CType(Me.chk_semua_customer.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.kode_customer.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.kode_customer_parent.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.kode_barangjadi.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)
         Me.GroupControl1.PerformLayout()
-        CType(Me.chk_semua_jenisharga.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.kode_jenis_harga.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cmb_tipecustomer.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PrintingSystem1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PrintableComponentLink1.ImageCollection, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -355,15 +310,11 @@ Partial Class frm_stok_customer
     Friend WithEvents lbl_nama_artikel As DevExpress.XtraEditors.LabelControl
     Friend WithEvents kode_barangjadi As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LabelControl6 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents kode_customer As DevExpress.XtraEditors.LookUpEdit
+    Friend WithEvents kode_customer_parent As DevExpress.XtraEditors.LookUpEdit
     Friend WithEvents chk_semua_customer As DevExpress.XtraEditors.CheckEdit
-    Friend WithEvents cmd_edit As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents GroupControl1 As DevExpress.XtraEditors.GroupControl
-    Friend WithEvents chk_semua_jenisharga As DevExpress.XtraEditors.CheckEdit
-    Friend WithEvents LabelControl1 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents kode_jenis_harga As DevExpress.XtraEditors.LookUpEdit
-    Friend WithEvents cmd_simpan As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents SaveFileDialog1 As System.Windows.Forms.SaveFileDialog
     Friend WithEvents PrintingSystem1 As DevExpress.XtraPrinting.PrintingSystem
     Friend WithEvents PrintableComponentLink1 As DevExpress.XtraPrinting.PrintableComponentLink
+    Friend WithEvents cmb_tipecustomer As DevExpress.XtraEditors.ComboBoxEdit
 End Class

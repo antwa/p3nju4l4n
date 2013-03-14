@@ -2,7 +2,7 @@
 
     Public p_no_so As String
 
-    Dim kode_customer As String
+    Dim kode_customer_child As String
     Dim sistem_jual As Integer
 
     Public rcd_list As System.ComponentModel.BindingList(Of rcd_delivery_order_satu)
@@ -15,13 +15,14 @@
         rcd_list = New System.ComponentModel.BindingList(Of rcd_delivery_order_satu)
 
         Db.FlushCache()
-        Db.Selects("a.kode_customer, d.nama AS nama_customer, d.alamat, d.mall, f.kota, a.sistem_jual, b.kode_barangjadi, b.qty, e.stok, b.terkirim, b.kode_hargajual, c.harga")
+        Db.Selects("a.kode_customer_child, e.nama AS nama_customer, e.alamat, e.mall, g.kota, a.sistem_jual, b.kode_barangjadi, b.qty, f.stok, b.terkirim, b.kode_hargajual, c.harga")
         Db.From("tbl_salesorder a")
         Db.Join("tbl_salesorder_detail b", "b.no_so = a.no_so")
         Db.Join("tbl_hargajual c", "c.kode_hargajual = b.kode_hargajual")
-        Db.Join("tbl_customer d", "d.kode_customer = a.kode_customer")
-        Db.Join("tbl_persediaan_gudang e", "e.kode_barangjadi = b.kode_barangjadi")
-        Db.Join("tbl_kota f", "f.kode_kota = d.kode_kota")
+        Db.Join("tbl_customer_child d", "d.kode_customer_child = a.kode_customer_child")
+        Db.Join("tbl_customer_parent e", "e.kode_customer_parent = d.kode_customer_parent")
+        Db.Join("tbl_persediaan_gudang f", "f.kode_barangjadi = b.kode_barangjadi")
+        Db.Join("tbl_kota g", "g.kode_kota = e.kode_kota")
 
         Db.Where("a.no_so", p_no_so)
 
@@ -45,7 +46,7 @@
                     lbl_mall.Text = .Item("mall").ToString
                     lbl_kota.Text = .Item("kota").ToString
 
-                    kode_customer = .Item("kode_customer").ToString
+                    kode_customer_child = .Item("kode_customer_child").ToString
                     sistem_jual = .Item("sistem_jual").ToString
 
                 End While
@@ -130,7 +131,7 @@
         Db.SetField("tgl_do", tgl_do.DateTime)
         Db.SetField("no_so", no_so.Text)
         Db.SetField("sistem_jual", sistem_jual)
-        Db.SetField("kode_customer", kode_customer)
+        Db.SetField("kode_customer_child", kode_customer_child)
         Db.SetField("username", Auth.Username)
         Db.SetField("status", "0")
 
@@ -153,7 +154,7 @@
             Db.SetField("kode_barangjadi", rcd_list.Item(i).kode_barangjadi)
             Db.SetField("qty", rcd_list.Item(i).qty_do)
             Db.SetField("kode_hargajual", rcd_list.Item(i).kode_hargajual)
-            Db.SetField("total", (rcd_list.Item(i).qty_do + rcd_list.Item(i).harga))
+            Db.SetField("total", (rcd_list.Item(i).qty_do * rcd_list.Item(i).harga))
             Db.SetField("keterangan", rcd_list.Item(i).keterangan)
 
             Connection.TRANS_ADD(Db.GetQueryString)
@@ -181,10 +182,11 @@
             '# Print
             'ambil informasi customer
             Db.FlushCache()
-            Db.Selects("a.nama, b.kota, a.mall, a.alamat")
-            Db.From("tbl_customer a")
-            Db.Join("tbl_kota b", "b.kode_kota = a.kode_kota")
-            Db.Where("a.kode_customer", kode_customer)
+            Db.Selects("a.nama, c.kota, a.mall, a.alamat")
+            Db.From("tbl_customer_parent a")
+            Db.Join("tbl_customer_child b", "b.kode_customer_parent = a.kode_customer_parent")
+            Db.Join("tbl_kota c", "c.kode_kota = a.kode_kota")
+            Db.Where("b.kode_customer_child", kode_customer_child)
 
             Dim rcustomer As SqlClient.SqlDataReader = Connection.ExecuteToDataReader(Db.GetQueryString)
             rcustomer.Read()

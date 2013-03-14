@@ -2,7 +2,7 @@
 
     Dim mtgl_so As Date
     Dim mno_so As String
-    Dim mkode_customer As String
+    Dim mkode_customer_child As String
     Dim mnama As String
     Dim mtotal_qty As Integer
     Dim mtotal_value As Integer
@@ -12,7 +12,7 @@
     Public Sub New( _
         ByVal tgl_so As Date, _
         ByVal no_so As String, _
-        ByVal kode_customer As String, _
+        ByVal kode_customer_child As String, _
         ByVal nama As String, _
         ByVal total_qty As Integer, _
         ByVal total_value As Integer, _
@@ -21,7 +21,7 @@
 
         Me.mtgl_so = tgl_so
         Me.mno_so = no_so
-        Me.mkode_customer = kode_customer
+        Me.mkode_customer_child = kode_customer_child
         Me.mnama = nama
         Me.mtotal_qty = total_qty
         Me.mtotal_value = total_value
@@ -41,9 +41,9 @@
         End Get
     End Property
 
-    Public ReadOnly Property kode_customer() As String
+    Public ReadOnly Property kode_customer_child() As String
         Get
-            Return Me.mkode_customer
+            Return Me.mkode_customer_child
         End Get
     End Property
 

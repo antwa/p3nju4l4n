@@ -1,6 +1,6 @@
 ﻿Public Class frm_invoice_jualputus 
 
-    Public kode_customer As String
+    Public kode_customer_child As String
 
     Public Sub initComponent()
         GridView1.Columns("no").Caption = "No."
@@ -57,6 +57,7 @@
     End Sub
 
     Private Sub cmd_simpan_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_simpan.Click
+        Dim kode_customer_parent As String = kode_customer_child.Split(".")(0)
         Dim tgl_terbit As DateTime = Now
         Dim i As Integer
 
@@ -66,9 +67,9 @@
         Db.SetField("no_faktur", no_faktur.Text)
         Db.SetField("tgl_terbit", tgl_terbit)
         Db.SetField("tgl_jatuhtempo", tgl_jatuhtempo.DateTime)
-        Db.SetField("kode_customer", kode_customer)
-        Db.SetField("margin_toko", "0")
-        Db.SetField("margin_konsumen", "0")
+        Db.SetField("kode_customer_parent", kode_customer_parent)
+        'Db.SetField("margin_toko", "0")
+        'Db.SetField("margin_konsumen", "0")
         Db.SetField("total_qty", GridView1.Columns("qty").Summary.Item(0).SummaryValue)
         Db.SetField("total_bruto", GridView1.Columns("total").Summary.Item(0).SummaryValue)
         Db.SetField("total_margin", "0")
@@ -95,8 +96,8 @@
                 Db.SetField("no_faktur", no_faktur.Text)
                 Db.SetField("tgl_konsinyasi", tgl_terbit)
                 Db.SetField("no_penjualan", no_suratjalan.Text)
-                Db.SetField("disc_acara_kita", "0")
-                Db.SetField("disc_acara_toko", "0")
+                'Db.SetField("disc_acara_kita", "0")
+                'Db.SetField("disc_acara_toko", "0")
                 Db.SetField("qty", .rcd_list.Item(i).qty)
                 Db.SetField("bruto", .rcd_list.Item(i).total)
                 Db.SetField("margin", "0")

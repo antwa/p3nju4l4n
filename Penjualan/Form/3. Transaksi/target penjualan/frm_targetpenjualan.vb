@@ -10,7 +10,7 @@
         Dim i As Integer
 
         '@ per customer
-        Load_Customer(pc_kode_customer, 1)
+        Load_CustomerParent(pc_kode_customer_parent, 1)
         For i = tahun To tahun + 4
             pc_tahun.Properties.Items.Add(i)
         Next
@@ -65,7 +65,7 @@
         Db.Selects("*")
         Db.From("tbl_targetpenjualan")
         Db.Where("tahun", pc_tahun.Text)
-        Db.Where("kode_customer", getValueFromLookup(pc_kode_customer))
+        Db.Where("kode_customer_parent", getValueFromLookup(pc_kode_customer_parent))
         Db.OrderBy("bulan")
 
         Dim r As DataTable = Connection.ExecuteToDataTable(Db.GetQueryString)
@@ -142,8 +142,8 @@
 
         '# get customer
         Db.FlushCache()
-        Db.Selects("a.kode_customer, a.nama as nama_customer")
-        Db.From("tbl_customer a")
+        Db.Selects("a.kode_customer_parent, a.nama as nama_customer")
+        Db.From("tbl_customer_parent a")
         Db.Join("tbl_kota b", "b.kode_kota = a.kode_kota")
 
         If chk_all_provinsi.Checked = False Then
@@ -163,23 +163,24 @@
         ' jika terdapat customer
         If cust.Rows.Count > 0 Then
             Dim count_cust As Integer = cust.Rows.Count - 1
-            
+
             For i = 0 To count_cust
                 rcd_perbulan.Add(New rcd_targetpenjualan_perbulan)
 
                 rcd_perbulan.Item(i).no = i + 1
-                rcd_perbulan.Item(i).kode_customer = cust.Rows(i).Item("kode_customer")
+                rcd_perbulan.Item(i).kode_customer_parent = cust.Rows(i).Item("kode_customer_parent")
                 rcd_perbulan.Item(i).nama_customer = cust.Rows(i).Item("nama_customer")
 
                 '# get pcs bulan lalu dari primer ato sekunder
                 If pb_data_lalu.EditValue = 1 Then ' primer
                     Db.FlushCache()
-                    Db.Selects("kode_customer, SUM(total_qty) AS qty, SUM(total_netto) as rupiah")
-                    Db.From("tbl_konsinyasiprimer")
-                    Db.Where("kode_customer", cust.Rows(i).Item("kode_customer"))
-                    Db.Where("MONTH(tgl_terbit)", pb_bulan.SelectedIndex + 1)
-                    Db.Where("YEAR(tgl_terbit)", pb_tahun.Text)
-                    Db.GroupBy("kode_customer")
+                    Db.Selects("b.kode_customer_parent, SUM(a.total_qty) AS qty, SUM(a.total_netto) as rupiah")
+                    Db.From("tbl_konsinyasiprimer a")
+                    Db.Join("tbl_customer_child b", "b.kode_customer_parent = a.kode_customer_parent")
+                    Db.Where("b.kode_customer_parent", cust.Rows(i).Item("kode_customer_parent"))
+                    Db.Where("MONTH(a.tgl_terbit)", pb_bulan.SelectedIndex + 1)
+                    Db.Where("YEAR(a.tgl_terbit)", pb_tahun.Text)
+                    Db.GroupBy("b.kode_customer_parent")
 
                     Dim row As DataTable = Connection.ExecuteToDataTable(Db.GetQueryString)
 
@@ -195,12 +196,13 @@
 
                 Else ' sekunder
                     Db.FlushCache()
-                    Db.Selects("kode_customer, SUM(qty) AS qty, SUM(total) as rupiah")
-                    Db.From("tbl_konsinyasisekunder")
-                    Db.Where("kode_customer", cust.Rows(i).Item("kode_customer"))
-                    Db.Where("MONTH(tgl_transaksi)", pb_bulan.SelectedIndex + 1)
-                    Db.Where("YEAR(tgl_transaksi)", pb_tahun.Text)
-                    Db.GroupBy("kode_customer")
+                    Db.Selects("b.kode_customer_parent, SUM(a.qty) AS qty, SUM(a.total) as rupiah")
+                    Db.From("tbl_konsinyasisekunder a")
+                    Db.Join("tbl_customer_child b", "b.kode_customer_child = a.kode_customer_child")
+                    Db.Where("b.kode_customer_parent", cust.Rows(i).Item("kode_customer_parent"))
+                    Db.Where("MONTH(a.tgl_transaksi)", pb_bulan.SelectedIndex + 1)
+                    Db.Where("YEAR(a.tgl_transaksi)", pb_tahun.Text)
+                    Db.GroupBy("b.kode_customer_parent")
 
                     Dim row As DataTable = Connection.ExecuteToDataTable(Db.GetQueryString)
 
@@ -223,7 +225,7 @@
                 Db.From("tbl_targetpenjualan")
                 Db.Where("bulan", pb_bulan.SelectedIndex + 1)
                 Db.Where("tahun", pb_tahun.Text)
-                Db.Where("kode_customer", cust.Rows(i).Item("kode_customer"))
+                Db.Where("kode_customer_parent", cust.Rows(i).Item("kode_customer_parent"))
 
                 Dim r As DataTable = Connection.ExecuteToDataTable(Db.GetQueryString)
 
@@ -246,7 +248,7 @@
             ' format
             pb_GridView1.Columns("id").Visible = False
             pb_GridView1.Columns("no").Caption = "No."
-            pb_GridView1.Columns("kode_customer").Caption = "Kode Customer"
+            pb_GridView1.Columns("kode_customer_parent").Caption = "Kode Customer"
             pb_GridView1.Columns("nama_customer").Caption = "Nama Customer"
             pb_GridView1.Columns("jml_pcs_lalu").Caption = "Bln Lalu (Pcs)"
             pb_GridView1.Columns("jml_rupiah_lalu").Caption = "Bln Lalu (Rp.)"
@@ -257,7 +259,7 @@
 
             'pb_GridView1.Columns("id").Width = 20
             pb_GridView1.Columns("no").Width = 30
-            pb_GridView1.Columns("kode_customer").Width = 90
+            pb_GridView1.Columns("kode_customer_parent").Width = 90
             pb_GridView1.Columns("nama_customer").Width = 210
             pb_GridView1.Columns("jml_pcs_lalu").Width = 80
             pb_GridView1.Columns("jml_rupiah_lalu").Width = 90
@@ -299,7 +301,7 @@
     Private Sub pc_print_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles pc_print.Click
         '# Create Header
         Dim StrHeader As String = PrintableComponentLink1.RtfReportHeader
-        StrHeader = StrHeader.Replace("$nama_customer", pc_kode_customer.Text)
+        StrHeader = StrHeader.Replace("$nama_customer", pc_kode_customer_parent.Text)
         StrHeader = StrHeader.Replace("$tahun", pc_tahun.Text)
 
         ' set header and create document print
@@ -334,19 +336,19 @@
                         '# insert to table tbl_targetpenjualan
                         Db.FlushCache()
                         Db.Insert("tbl_targetpenjualan")
-                        Db.SetField("kode_customer", getValueFromLookup(pc_kode_customer))
+                        Db.SetField("kode_customer_parent", getValueFromLookup(pc_kode_customer_parent))
                         Db.SetField("tgl_input", Now)
                         Db.SetField("bulan", .Rows(i).Item("no"))
                         Db.SetField("tahun", pc_tahun.Text)
                         Db.SetField("jml_pcs", .Rows(i).Item("jml_pcs"))
                         Db.SetField("jml_rupiah", .Rows(i).Item("jml_rupiah"))
-                        Db.SetField("keterangan", .Rows(i).Item("keterangan"))
+                        Db.SetField("keterangan", .Rows(i).Item("keterangan").ToString)
                         Db.SetField("username", Auth.Username)
 
                         Connection.TRANS_ADD(Db.GetQueryString)
 
                     Else
-                        '# insert to table tbl_targetpenjualan
+                        '# update to table tbl_targetpenjualan
                         Db.FlushCache()
                         Db.Update("tbl_targetpenjualan")
                         'Db.SetField("kode_customer", getValueFromLookup(pc_kode_customer))
@@ -444,7 +446,7 @@
                         '# insert to table tbl_targetpenjualan
                         Db.FlushCache()
                         Db.Insert("tbl_targetpenjualan")
-                        Db.SetField("kode_customer", rcd_perbulan.Item(i).kode_customer)
+                        Db.SetField("kode_customer_parent", rcd_perbulan.Item(i).kode_customer_parent)
                         Db.SetField("tgl_input", Now)
                         Db.SetField("bulan", pb_bulan.SelectedIndex + 1)
                         Db.SetField("tahun", pb_tahun.Text)
@@ -455,7 +457,7 @@
 
                         Connection.TRANS_ADD(Db.GetQueryString)
                     Else
-                        '# insert to table tbl_targetpenjualan
+                        '# update to table tbl_targetpenjualan
                         Db.FlushCache()
                         Db.Update("tbl_targetpenjualan")
                         'Db.SetField("kode_customer", rcd_perbulan.Item(i).kode_customer)
@@ -491,5 +493,13 @@
 
     Private Sub XtraTabControl1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles XtraTabControl1.Click
 
+    End Sub
+
+    Private Sub pc_kode_customer_parent_EditValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles pc_kode_customer_parent.EditValueChanged
+        Call Me.loadData_percustomer()
+    End Sub
+
+    Private Sub pc_tahun_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles pc_tahun.SelectedIndexChanged
+        Call Me.loadData_percustomer()
     End Sub
 End Class

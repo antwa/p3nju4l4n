@@ -7,13 +7,14 @@
     Sub loadData()
 
         Db.FlushCache()
-        Db.Selects("a.tgl_so, a.kode_customer, d.nama AS nama_customer, d.alamat, d.mall, f.kota, a.sistem_jual, b.kode_barangjadi, b.qty, e.stok, b.terkirim, b.kode_hargajual, c.harga")
+        Db.Selects("a.tgl_so, a.kode_customer_child, e.nama AS nama_customer, e.alamat, e.mall, g.kota, a.sistem_jual, b.kode_barangjadi, b.qty, f.stok, b.terkirim, b.kode_hargajual, c.harga")
         Db.From("tbl_salesorder a")
         Db.Join("tbl_salesorder_detail b", "b.no_so = a.no_so")
         Db.Join("tbl_hargajual c", "c.kode_hargajual = b.kode_hargajual")
-        Db.Join("tbl_customer d", "d.kode_customer = a.kode_customer")
-        Db.Join("tbl_persediaan_gudang e", "e.kode_barangjadi = b.kode_barangjadi")
-        Db.Join("tbl_kota f", "f.kode_kota = d.kode_kota")
+        Db.Join("tbl_customer_child d", "d.kode_customer_child = a.kode_customer_child")
+        Db.Join("tbl_customer_parent e", "e.kode_customer_parent = d.kode_customer_parent")
+        Db.Join("tbl_persediaan_gudang f", "f.kode_barangjadi = b.kode_barangjadi")
+        Db.Join("tbl_kota g", "g.kode_kota = e.kode_kota")
 
         Db.Where("a.no_so", p_no_so)
 
@@ -32,7 +33,7 @@
         GridView1.Columns("harga").Width = 75
 
         GridView1.Columns("tgl_so").Visible = False
-        GridView1.Columns("kode_customer").Visible = False
+        GridView1.Columns("kode_customer_child").Visible = False
         GridView1.Columns("nama_customer").Visible = False
         GridView1.Columns("alamat").Visible = False
         GridView1.Columns("mall").Visible = False

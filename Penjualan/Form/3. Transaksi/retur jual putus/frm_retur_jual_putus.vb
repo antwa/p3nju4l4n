@@ -6,7 +6,7 @@
         'load nomor
         no_retur.Text = getNomorUrut(C_RETUR_JUAL_PUTUS)
         tgl_retur.DateTime = Now
-        Load_Customer(kode_customer, 2)
+        Load_CustomerParent(kode_customer_parent, 2)
         Call CustomerDetail()
 
         rcd_list = New System.ComponentModel.BindingList(Of rcd_retur_jual_putus)
@@ -47,10 +47,10 @@
 
     Sub CustomerDetail()
         Db.FlushCache()
-        Db.Selects("a.kode_customer, a.nama, a.alamat, b.kota, a.mall")
-        Db.From("tbl_customer a")
+        Db.Selects("a.kode_customer_parent, a.nama, a.alamat, b.kota, a.mall")
+        Db.From("tbl_customer_parent a")
         Db.Join("tbl_kota b", "b.kode_kota = a.kode_kota")
-        Db.Where("a.kode_customer", getValueFromLookup(kode_customer))
+        Db.Where("a.kode_customer_parent", getValueFromLookup(kode_customer_parent))
         Dim rcd As SqlClient.SqlDataReader = Connection.ExecuteToDataReader(Db.GetQueryString)
 
         If rcd.HasRows Then
@@ -67,10 +67,10 @@
         Try
             If rcd_list.Count > 0 Then
                 tgl_retur.Properties.ReadOnly = True
-                kode_customer.Properties.ReadOnly = True
+                kode_customer_parent.Properties.ReadOnly = True
             Else
                 tgl_retur.Properties.ReadOnly = False
-                kode_customer.Properties.ReadOnly = False
+                kode_customer_parent.Properties.ReadOnly = False
             End If
 
             Dim i As Integer
@@ -80,7 +80,7 @@
         Catch ex As Exception
 
         End Try
-        
+
     End Sub
 
     Private Sub frm_retur_jual_putus_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
@@ -101,14 +101,14 @@
         End Try
     End Sub
 
-    Private Sub kode_customer_EditValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles kode_customer.EditValueChanged
+    Private Sub kode_customer_EditValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles kode_customer_parent.EditValueChanged
         Call Me.CustomerDetail()
     End Sub
 
     Private Sub SimpleButton1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SimpleButton1.Click
         frm_transaksi_popup_artkel.Dispose()
         frm_transaksi_popup_artkel.parameter1 = C_RETUR_JUAL_PUTUS
-        frm_transaksi_popup_artkel.kode_customer = getValueFromLookup(kode_customer)
+        frm_transaksi_popup_artkel.kode_customer_child = getValueFromLookup(kode_customer_parent) & ".4"
         frm_transaksi_popup_artkel.ShowDialog(Me)
         Call Me.reIndex()
     End Sub
@@ -136,7 +136,7 @@
         Db.Insert("tbl_retur_jualputus")
         Db.SetField("no_retur", no_retur.Text)
         Db.SetField("tgl_retur", tgl_retur.DateTime)
-        Db.SetField("kode_customer", getValueFromLookup(kode_customer))
+        Db.SetField("kode_customer_child", getValueFromLookup(kode_customer_parent) & ".4")
         Db.SetField("total_qty", GridView1.Columns("jml_retur").Summary(0).SummaryValue)
         Db.SetField("total", GridView1.Columns("total").Summary(0).SummaryValue)
         Db.SetField("username", Auth.Username)

@@ -87,6 +87,61 @@
         lookup.ItemIndex = 0
     End Sub
 
+    Public Sub Load_CustomerParent(ByRef lookup As DevExpress.XtraEditors.LookUpEdit, ByVal sistem_jual As Integer)
+        'init lookup
+        Db.FlushCache()
+        Db.Selects("a.kode_customer_parent, a.nama, a.kode_template_harga")
+        Db.From("tbl_customer_parent a")
+        Db.Where("a.sistem_jual", sistem_jual)
+
+        lookup.Properties.DataSource = Connection.ExecuteToDataTable(Db.GetQueryString)
+        lookup.Properties.DisplayMember = "nama"
+        lookup.Properties.ValueMember = "kode_customer_parent"
+        lookup.Properties.PopulateColumns()
+
+        lookup.Properties.Columns("kode_customer_parent").Caption = "Kode"
+        lookup.Properties.Columns("nama").Caption = "Nama"
+
+        lookup.Properties.Columns("kode_customer_parent").Width = 40
+        lookup.Properties.Columns("nama").Width = 130
+
+        lookup.Properties.Columns("kode_template_harga").Visible = False
+
+        lookup.Properties.PopupWidth = 400
+
+        lookup.ItemIndex = 0
+    End Sub
+
+    Public Sub Load_CustomerFull(ByRef lookup As DevExpress.XtraEditors.LookUpEdit, ByVal sistem_jual As Integer)
+        'init lookup
+        Db.FlushCache()
+        Db.Selects("a.kode_customer_parent, b.kode_customer_child, a.nama, b.deskripsi ,a.kode_template_harga")
+        Db.From("tbl_customer_parent a")
+        Db.Join("tbl_customer_child b", "b.kode_customer_parent = a.kode_customer_parent")
+        Db.Where("a.sistem_jual", sistem_jual)
+
+        lookup.Properties.DataSource = Connection.ExecuteToDataTable(Db.GetQueryString)
+        lookup.Properties.DisplayMember = "nama"
+        lookup.Properties.ValueMember = "kode_customer_child"
+        lookup.Properties.PopulateColumns()
+
+        lookup.Properties.Columns("kode_customer_child").Caption = "Kode"
+        lookup.Properties.Columns("nama").Caption = "Nama"
+        lookup.Properties.Columns("deskripsi").Caption = "Tipe"
+
+        lookup.Properties.Columns("kode_customer_child").Width = 40
+        lookup.Properties.Columns("nama").Width = 130
+        lookup.Properties.Columns("deskripsi").Width = 30
+
+        lookup.Properties.Columns("kode_customer_parent").Visible = False
+        lookup.Properties.Columns("kode_template_harga").Visible = False
+
+
+        lookup.Properties.PopupWidth = 400
+
+        lookup.ItemIndex = 0
+    End Sub
+
     Public Sub Load_SPG(ByRef lookup As DevExpress.XtraEditors.LookUpEdit, Optional ByVal kode_customer As String = vbNullString)
         Dim i As Integer
         If kode_customer <> vbNullString Then

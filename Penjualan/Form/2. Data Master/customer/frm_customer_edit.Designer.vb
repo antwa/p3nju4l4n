@@ -158,9 +158,9 @@ Partial Class frm_customer_edit
         '
         'cmd_batal
         '
-        Me.cmd_batal.Location = New System.Drawing.Point(689, 384)
+        Me.cmd_batal.Location = New System.Drawing.Point(689, 387)
         Me.cmd_batal.Name = "cmd_batal"
-        Me.cmd_batal.Size = New System.Drawing.Size(109, 28)
+        Me.cmd_batal.Size = New System.Drawing.Size(109, 25)
         Me.cmd_batal.TabIndex = 47
         Me.cmd_batal.Text = "Batal"
         '
@@ -270,9 +270,9 @@ Partial Class frm_customer_edit
         '
         'cmd_simpan
         '
-        Me.cmd_simpan.Location = New System.Drawing.Point(559, 384)
+        Me.cmd_simpan.Location = New System.Drawing.Point(574, 387)
         Me.cmd_simpan.Name = "cmd_simpan"
-        Me.cmd_simpan.Size = New System.Drawing.Size(109, 28)
+        Me.cmd_simpan.Size = New System.Drawing.Size(109, 25)
         Me.cmd_simpan.TabIndex = 46
         Me.cmd_simpan.Text = "Simpan"
         '
@@ -288,6 +288,7 @@ Partial Class frm_customer_edit
         'txt_kode_customer
         '
         Me.txt_kode_customer.EditValue = ""
+        Me.txt_kode_customer.Enabled = False
         Me.txt_kode_customer.Location = New System.Drawing.Point(123, 35)
         Me.txt_kode_customer.Name = "txt_kode_customer"
         Me.txt_kode_customer.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -466,6 +467,7 @@ Partial Class frm_customer_edit
         '
         'rdg_sistem_jual
         '
+        Me.rdg_sistem_jual.Enabled = False
         Me.rdg_sistem_jual.Location = New System.Drawing.Point(127, 63)
         Me.rdg_sistem_jual.Name = "rdg_sistem_jual"
         Me.rdg_sistem_jual.Size = New System.Drawing.Size(194, 30)

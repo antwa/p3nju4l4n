@@ -2,13 +2,15 @@
 
     Public Sub loadData()
 
-        Call initGrid()
+        Db.FlushCache()
+        Db.Selects("kode_customer_parent AS [Kode], nama AS [Nama], alamat AS Alamat, telp1 AS [Telepon 1]")
+        Db.From("tbl_customer_parent")
 
         If search.Text <> "" Then
             Db.Where("WHERE nama LIKE '%" & search.Text & "%'")
         End If
 
-        Db.OrderBy("kode_customer", cls_database.sorting.Ascending)
+        Db.OrderBy("kode_customer_parent", cls_database.sorting.Ascending)
 
         gridcontrol1.DataSource = Connection.ExecuteToDataTable(Db.GetQueryString)
 
@@ -19,17 +21,8 @@
 
     End Sub
 
-
-    Public Sub initGrid()
-        Db.FlushCache()
-        Db.Selects("tbl_customer.kode_customer AS [Kode], tbl_customer.nama AS [Nama], tbl_customer.alamat AS Alamat, tbl_customer.telp1 AS [Telepon 1]")
-        Db.From("tbl_customer")
-
-        gridcontrol1.DataSource = Connection.ExecuteToDataTable(Db.GetQueryString)
-
-    End Sub
     Private Sub frm_customer_list_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        Call initGrid()
+        Call Me.loadData()
     End Sub
 
     Private Sub cmd_tambah_user_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_tambah_user.Click
@@ -56,7 +49,7 @@
     End Sub
 
     Private Sub SimpleButton1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SimpleButton1.Click
-        Call initGrid()
+        Call Me.loadData()
     End Sub
 
     Private Sub cmd_hapus_user_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_hapus_user.Click
@@ -64,15 +57,26 @@
             Dim row As System.Data.DataRow = gridview1.GetDataRow(gridview1.FocusedRowHandle)
             If MsgBox("Kode : " & row("Kode") & vbCrLf & "Nama : " & row("Nama") & vbCrLf & vbCrLf & _
                       "Apakah akan menghapus data diatas?", MsgBoxStyle.Information + MsgBoxStyle.YesNo, "Delete Data") = MsgBoxResult.Yes Then
-                Db.FlushCache()
-                Db.Delete("tbl_customer")
-                Db.Where("kode_customer", row("Kode"))
 
-                If Connection.ExecuteNonQuery(Db.GetQueryString) Then
+                Connection.TRANS_START()
+
+                ' delete in customer parent
+                Db.FlushCache()
+                Db.Delete("tbl_customer_parent")
+                Db.Where("kode_customer_parent", row("Kode"))
+                Connection.TRANS_ADD(Db.GetQueryString)
+
+                ' delete in customer child
+                Db.FlushCache()
+                Db.Delete("tbl_customer_child")
+                Db.Where("kode_customer_parent", row("Kode"))
+                Connection.TRANS_ADD(Db.GetQueryString)
+
+                If Connection.TRANS_SUCCESS Then
                     MsgBox("Data berhasil dihapus", MsgBoxStyle.Information)
-                    Call Me.initGrid()
+                    Call Me.loadData()
                 Else
-                    MsgBox("Data gagal dihapus", MsgBoxStyle.Exclamation)
+                    MsgBox("Data gagal dihapus" & vbCrLf & Connection.TRANS_MESSAGE, MsgBoxStyle.Exclamation)
                 End If
             End If
         Catch ex As Exception

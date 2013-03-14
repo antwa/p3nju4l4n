@@ -35,5 +35,6 @@
     Public Const C_SLIP_GAJI As Integer = 14
     Public Const C_FAKTUR_GLOBAL As Integer = 15
     Public Const C_PENERIMAAN_KAS As Integer = 16
+    Public Const C_RETUR_FORMALITAS As Integer = 17
 
 End Module

@@ -7,7 +7,7 @@
         tgl_dari.DateTime = DateAdd(DateInterval.Month, -1, Now)
         tgl_sampai.DateTime = Now
 
-        Load_Customer(kode_customer, sistem_jual.EditValue)
+        Load_CustomerParent(kode_customer_parent, sistem_jual.EditValue)
 
     End Sub
 
@@ -44,7 +44,7 @@
                 chk_all_kota.Enabled = False
                 kode_group.Enabled = False
                 chk_all_group.Enabled = False
-                kode_customer.Enabled = False
+                kode_customer_parent.Enabled = False
             Case 1
                 kode_provinsi.Enabled = Not chk_all_provinsi.Checked
                 chk_all_provinsi.Enabled = True
@@ -52,7 +52,7 @@
                 chk_all_kota.Enabled = True
                 kode_group.Enabled = Not chk_all_group.Checked
                 chk_all_group.Enabled = True
-                kode_customer.Enabled = False
+                kode_customer_parent.Enabled = False
             Case 2
                 kode_provinsi.Enabled = False
                 chk_all_provinsi.Enabled = False
@@ -60,11 +60,11 @@
                 chk_all_kota.Enabled = False
                 kode_group.Enabled = False
                 chk_all_group.Enabled = False
-                kode_customer.Enabled = True
+                kode_customer_parent.Enabled = True
         End Select
 
     End Sub
-    '#--------------------------------
+    '#-------------------------------- end tujuan
 
     Public Sub loadData()
         Dim i As Integer
@@ -72,10 +72,11 @@
         rcd_list = New System.ComponentModel.BindingList(Of rcd_delivery_order)
 
         Db.FlushCache()
-        Db.Selects("a.tgl_so, a.no_so, a.kode_customer, b.nama, a.total_qty, a.total_value, b.prioritas")
+        Db.Selects("a.tgl_so, a.no_so, a.kode_customer_child, c.nama, a.total_qty, a.total_value, c.prioritas")
         Db.From("tbl_salesorder a")
-        Db.Join("tbl_customer b", "b.kode_customer = a.kode_customer")
-        Db.Join("tbl_kota c", "c.kode_kota = b.kode_kota")
+        Db.Join("tbl_customer_child b", "b.kode_customer_child = a.kode_customer_child")
+        Db.Join("tbl_customer_parent c", "c.kode_customer_parent = b.kode_customer_parent")
+        Db.Join("tbl_kota d", "d.kode_kota = c.kode_kota")
         'Db.Where(" WHERE (a.status = '0' OR a.status = '3') ")
         Db.Where(" WHERE (a.status = '0') ")
         Db.Where("a.sistem_jual", sistem_jual.EditValue)
@@ -84,18 +85,18 @@
 
         If rdo_tujuan.EditValue = 1 Then
             If chk_all_provinsi.Checked = False Then
-                Db.Where("c.kode_provinsi", getValueFromLookup(kode_provinsi))
+                Db.Where("d.kode_provinsi", getValueFromLookup(kode_provinsi))
             End If
 
             If chk_all_kota.Checked = False Then
-                Db.Where("b.kode_kota", getValueFromLookup(kode_kota))
+                Db.Where("c.kode_kota", getValueFromLookup(kode_kota))
             End If
 
             If chk_all_group.Checked = False Then
-                Db.Where("b.kode_grup", getValueFromLookup(kode_group))
+                Db.Where("c.kode_grup", getValueFromLookup(kode_group))
             End If
         ElseIf rdo_tujuan.EditValue = 2 Then
-            Db.Where("a.kode_customer", getValueFromLookup(kode_customer))
+            Db.Where("c.kode_customer_parent", getValueFromLookup(kode_customer_parent))
         End If
 
         Dim rcd As SqlClient.SqlDataReader = Connection.ExecuteToDataReader(Db.GetQueryString)
@@ -107,7 +108,7 @@
                 While .Read
                     rcd_list.Add(New rcd_delivery_order(.Item("tgl_so").ToString, _
                                                         .Item("no_so").ToString, _
-                                                        .Item("kode_customer").ToString, _
+                                                        .Item("kode_customer_child").ToString, _
                                                         .Item("nama").ToString, _
                                                         .Item("total_qty").ToString, _
                                                         .Item("total_value").ToString, _
@@ -144,7 +145,7 @@
     End Sub
 
     Private Sub sistem_jual_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles sistem_jual.SelectedIndexChanged
-        Load_Customer(kode_customer, sistem_jual.EditValue)
+        Load_CustomerParent(kode_customer_parent, sistem_jual.EditValue)
     End Sub
 
     Private Sub cmd_input_satu_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_input_satu.Click

@@ -2,7 +2,7 @@
 
     Dim mno_so As String
     Dim mno_do As String
-    Dim mkode_customer As String
+    Dim mkode_customer_child As String
     Dim mnama As String
     Dim mkode_barangjadi As String
     Dim mjml_so As Integer
@@ -16,7 +16,7 @@
     Public Sub New( _
         ByVal no_so As String, _
         ByVal no_do As String, _
-        ByVal kode_customer As String, _
+        ByVal kode_customer_child As String, _
         ByVal nama As String, _
         ByVal kode_barangjadi As String, _
         ByVal jml_so As Integer, _
@@ -29,7 +29,7 @@
 
         Me.mno_so = no_so
         Me.mno_do = no_do
-        Me.mkode_customer = kode_customer
+        Me.mkode_customer_child = kode_customer_child
         Me.mnama = nama
         Me.mkode_barangjadi = kode_barangjadi
         Me.mjml_so = jml_so
@@ -59,12 +59,12 @@
         End Set
     End Property
 
-    Public Property kode_customer() As String
+    Public Property kode_customer_child() As String
         Get
-            Return Me.mkode_customer
+            Return Me.mkode_customer_child
         End Get
         Set(ByVal value As String)
-            Me.mkode_customer = value
+            Me.mkode_customer_child = value
         End Set
     End Property
 

@@ -7,24 +7,11 @@ Public Class frm_stok_customer
     Public rcd_list As New System.ComponentModel.BindingList(Of rcd_stok_customer)
 
     Sub initComponent()
-        Load_Customer(kode_customer, 1)
-
-        kode_jenis_harga.Properties.DataSource = Connection.ExecuteToDataTable("SELECT * FROM tbl_jenis_hargabarang ORDER BY kode_jenis_harga ASC")
-        kode_jenis_harga.Properties.DisplayMember = "jenis"
-        kode_jenis_harga.Properties.ValueMember = "kode_jenis_harga"
-        kode_jenis_harga.Properties.PopulateColumns()
-
-        kode_jenis_harga.Properties.Columns(0).Caption = "Kode"
-        kode_jenis_harga.Properties.Columns(1).Caption = "Jenis Harga"
-        kode_jenis_harga.Properties.Columns(0).Width = 50
-        kode_jenis_harga.Properties.Columns(1).Width = 100
-
-        kode_jenis_harga.ItemIndex = 0
+        Load_CustomerParent(kode_customer_parent, 1)
 
         stok.Properties.Items.Add("Semua Stok")
         stok.Properties.Items.Add("Stok Kosong")
         stok.Properties.Items.Add("Stok Lebih Dari Nol")
-
         stok.SelectedIndex = 0
 
         GridControl1.DataSource = rcd_list
@@ -36,7 +23,7 @@ Public Class frm_stok_customer
         GridView1.Columns("nama_barangjadi").Caption = "Nama Artikel"
         GridView1.Columns("stok_sekunder").Caption = "Stok (S)"
         GridView1.Columns("stok_primier").Caption = "Stok (P)"
-        GridView1.Columns("kode_jenis_barang").Caption = "Jenis Barang"
+        GridView1.Columns("kode_jenis_barang").Visible = False
 
         GridView1.Columns("id").Width = 29
         GridView1.Columns("kode_customer").Width = 90
@@ -45,27 +32,27 @@ Public Class frm_stok_customer
         GridView1.Columns("nama_barangjadi").Width = 125
         GridView1.Columns("stok_sekunder").Width = 65
         GridView1.Columns("stok_primier").Width = 65
-        GridView1.Columns("kode_jenis_barang").Width = 225
+        'GridView1.Columns("kode_jenis_barang").Width = 225
 
         ' Allow Edit
         For i = 0 To GridView1.Columns.Count - 1
             GridView1.Columns.Item(i).OptionsColumn.AllowEdit = False
         Next
-        GridView1.Columns.Item("kode_jenis_barang").OptionsColumn.AllowEdit = True
+        'GridView1.Columns.Item("kode_jenis_barang").OptionsColumn.AllowEdit = True
 
         ' visible
         GridView1.Columns("id").Visible = False
 
         ' repositori grid
-        Dim jenis_harga As New RepositoryItemRadioGroup
-        Dim rc As DataTable = Connection.ExecuteToDataTable("SELECT * FROM tbl_jenis_hargabarang ORDER BY kode_jenis_harga ASC")
-        If rc.Rows.Count > 0 Then
-            For i = 0 To rc.Rows.Count - 1
-                jenis_harga.Items.Add(New RadioGroupItem(rc.Rows(i).Item("kode_jenis_harga"), rc.Rows(i).Item("jenis").ToString))
-            Next
-        End If
-        GridView1.Columns.Item("kode_jenis_barang").ColumnEdit = jenis_harga
-        GridView1.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways
+        'Dim jenis_harga As New RepositoryItemRadioGroup
+        'Dim rc As DataTable = Connection.ExecuteToDataTable("SELECT * FROM tbl_jenis_hargabarang ORDER BY kode_jenis_harga ASC")
+        'If rc.Rows.Count > 0 Then
+        '    For i = 0 To rc.Rows.Count - 1
+        '        jenis_harga.Items.Add(New RadioGroupItem(rc.Rows(i).Item("kode_jenis_harga"), rc.Rows(i).Item("jenis").ToString))
+        '    Next
+        'End If
+        'GridView1.Columns.Item("kode_jenis_barang").ColumnEdit = jenis_harga
+        'GridView1.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways
 
 
     End Sub
@@ -74,25 +61,30 @@ Public Class frm_stok_customer
         rcd_list.Clear()
 
         Db.FlushCache()
-        Db.Selects("a.id, a.kode_customer, b.nama AS nama_customer, a.kode_barangjadi, c.nama AS nama_barangjadi, a.stok_sekunder, a.stok_primer, a.kode_jenis_harga")
+        Db.Selects("a.id, a.kode_customer_child, c.nama AS nama_customer, a.kode_barangjadi, d.nama AS nama_barangjadi, a.stok_sekunder, a.stok_primer")
         Db.From("tbl_persediaan_customer a")
-        Db.Join("tbl_customer b", "b.kode_customer = a.kode_customer")
-        Db.Join("tbl_barangjadi c", "c.kode_barangjadi = a.kode_barangjadi")
-        Db.Join("tbl_jenis_hargabarang d", "d.kode_jenis_harga = a.kode_jenis_harga")
+        Db.Join("tbl_customer_child b", "b.kode_customer_child = a.kode_customer_child")
+        Db.Join("tbl_customer_parent c", "c.kode_customer_parent = b.kode_customer_parent")
+        Db.Join("tbl_barangjadi d", "d.kode_barangjadi = a.kode_barangjadi")
 
-        Db.OrderBy("a.kode_customer", cls_database.sorting.Ascending)
+        Db.OrderBy("a.kode_customer_child", cls_database.sorting.Ascending)
         Db.OrderBy("a.kode_barangjadi", cls_database.sorting.Ascending)
+
+
+        If chk_semua_customer.Checked = False Then
+            If cmb_tipecustomer.SelectedIndex = 0 Then
+                Db.Where(" WHERE a.kode_customer_child LIKE '" & getValueFromLookup(kode_customer_parent) & "%'")
+            Else
+                Db.Where("a.kode_customer_child", getValueFromLookup(kode_customer_parent) & "." & cmb_tipecustomer.SelectedIndex)
+            End If
+        Else
+            If Not cmb_tipecustomer.SelectedIndex = 0 Then
+                Db.Where(" WHERE a.kode_customer_child LIKE '%." & cmb_tipecustomer.SelectedIndex & "'")
+            End If
+        End If
 
         If chk_semua_artikel.Checked = False Then
             Db.Where("a.kode_barangjadi", kode_barangjadi.Text)
-        End If
-
-        If chk_semua_customer.Checked = False Then
-            Db.Where("a.kode_customer", getValueFromLookup(kode_customer))
-        End If
-
-        If chk_semua_jenisharga.Checked = False Then
-            Db.Where("a.kode_jenis_harga", getValueFromLookup(kode_jenis_harga))
         End If
 
         If stok.SelectedIndex = 1 Then
@@ -108,15 +100,15 @@ Public Class frm_stok_customer
             Dim i As Integer
             Dim x As Integer = dt.Rows.Count - 1
             For i = 0 To x
-                rcd_list.Add(New rcd_stok_customer(dt.Rows(i).Item("id").ToString, dt.Rows(i).Item("kode_customer").ToString, dt.Rows(i).Item("nama_customer").ToString, dt.Rows(i).Item("kode_barangjadi").ToString, dt.Rows(i).Item("nama_barangjadi").ToString, dt.Rows(i).Item("stok_sekunder").ToString, dt.Rows(i).Item("stok_primer").ToString, dt.Rows(i).Item("kode_jenis_harga").ToString))
+                rcd_list.Add(New rcd_stok_customer(dt.Rows(i).Item("id").ToString, dt.Rows(i).Item("kode_customer_child").ToString, dt.Rows(i).Item("nama_customer").ToString, dt.Rows(i).Item("kode_barangjadi").ToString, dt.Rows(i).Item("nama_barangjadi").ToString, dt.Rows(i).Item("stok_sekunder").ToString, dt.Rows(i).Item("stok_primer").ToString, 0))
             Next
         End If
 
         ' Grouping
         GridView1.ClearGrouping()
-        If chk_semua_customer.Checked Then
-            GridView1.Columns("kode_customer").GroupIndex = 0
-        End If
+        'If chk_semua_customer.Checked Then
+        '    GridView1.Columns("a.kode_customer_child").GroupIndex = 0
+        'End If
 
         GridView1.ExpandAllGroups()
     End Sub
@@ -164,45 +156,41 @@ Public Class frm_stok_customer
     End Sub
 
     Private Sub chk_semua_customer_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chk_semua_customer.CheckedChanged
-        kode_customer.Enabled = Not chk_semua_customer.Checked
+        kode_customer_parent.Enabled = Not chk_semua_customer.Checked
     End Sub
 
-    Private Sub chk_semua_jenisharga_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chk_semua_jenisharga.CheckedChanged
-        kode_jenis_harga.Enabled = Not chk_semua_jenisharga.Checked
-    End Sub
+    'Private Sub cmd_edit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_edit.Click
+    '    cmd_simpan.Enabled = True
+    '    cmd_edit.Enabled = False
+    '    GridView1.OptionsBehavior.Editable = True
+    'End Sub
 
-    Private Sub cmd_edit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_edit.Click
-        cmd_simpan.Enabled = True
-        cmd_edit.Enabled = False
-        GridView1.OptionsBehavior.Editable = True
-    End Sub
+    'Private Sub cmd_simpan_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_simpan.Click
+    '    cmd_simpan.Enabled = False
+    '    cmd_edit.Enabled = True
+    '    GridView1.OptionsBehavior.Editable = False
 
-    Private Sub cmd_simpan_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_simpan.Click
-        cmd_simpan.Enabled = False
-        cmd_edit.Enabled = True
-        GridView1.OptionsBehavior.Editable = False
+    '    Connection.TRANS_START()
 
-        Connection.TRANS_START()
+    '    Dim i As Integer
+    '    For i = 0 To rcd_list.Count - 1
+    '        Db.FlushCache()
+    '        Db.Update("tbl_persediaan_customer")
+    '        Db.SetField("kode_jenis_harga", rcd_list.Item(i).kode_jenis_barang)
+    '        Db.Where("kode_barangjadi", rcd_list.Item(i).kode_barangjadi)
+    '        Db.Where("kode_customer", rcd_list.Item(i).kode_customer)
 
-        Dim i As Integer
-        For i = 0 To rcd_list.Count - 1
-            Db.FlushCache()
-            Db.Update("tbl_persediaan_customer")
-            Db.SetField("kode_jenis_harga", rcd_list.Item(i).kode_jenis_barang)
-            Db.Where("kode_barangjadi", rcd_list.Item(i).kode_barangjadi)
-            Db.Where("kode_customer", rcd_list.Item(i).kode_customer)
+    '        Connection.TRANS_ADD(Db.GetQueryString)
+    '    Next
 
-            Connection.TRANS_ADD(Db.GetQueryString)
-        Next
+    '    If Connection.TRANS_SUCCESS Then
+    '        Call Me.LoadData()
+    '        MsgBox("Data Berhasil disimpan", MsgBoxStyle.Information)
+    '    Else
+    '        MsgBox(Connection.TRANS_MESSAGE, MsgBoxStyle.Exclamation, "Error")
+    '    End If
 
-        If Connection.TRANS_SUCCESS Then
-            Call Me.LoadData()
-            MsgBox("Data Berhasil disimpan", MsgBoxStyle.Information)
-        Else
-            MsgBox(Connection.TRANS_MESSAGE, MsgBoxStyle.Exclamation, "Error")
-        End If
-
-    End Sub
+    'End Sub
 
     Private Sub cmd_excel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_excel.Click
         With SaveFileDialog1

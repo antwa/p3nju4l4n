@@ -19,13 +19,12 @@ Partial Class frm_pegawai_edit
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_pegawai_edit))
         Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl
+        Me.rdg_statusKaryawan = New DevExpress.XtraEditors.RadioGroup
         Me.LabelControl5 = New DevExpress.XtraEditors.LabelControl
         Me.txt_tunjangan = New DevExpress.XtraEditors.TextEdit
         Me.LabelControl11 = New DevExpress.XtraEditors.LabelControl
         Me.txt_hari_besar = New DevExpress.XtraEditors.TextEdit
-        Me.lkp_status = New DevExpress.XtraEditors.LookUpEdit
         Me.LabelControl10 = New DevExpress.XtraEditors.LabelControl
         Me.LabelControl12 = New DevExpress.XtraEditors.LabelControl
         Me.txt_lembur_jam = New DevExpress.XtraEditors.TextEdit
@@ -40,7 +39,7 @@ Partial Class frm_pegawai_edit
         Me.txt_no_rekening = New DevExpress.XtraEditors.TextEdit
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl
         Me.rdg_group_pegawai = New DevExpress.XtraEditors.RadioGroup
-        Me.lkp_kode_costumer = New DevExpress.XtraEditors.LookUpEdit
+        Me.lkp_kode_costumer_parent = New DevExpress.XtraEditors.LookUpEdit
         Me.LabelControl17 = New DevExpress.XtraEditors.LabelControl
         Me.LabelControl16 = New DevExpress.XtraEditors.LabelControl
         Me.LabelControl15 = New DevExpress.XtraEditors.LabelControl
@@ -67,9 +66,9 @@ Partial Class frm_pegawai_edit
         Me.cmd_batal = New DevExpress.XtraEditors.SimpleButton
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl3.SuspendLayout()
+        CType(Me.rdg_statusKaryawan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txt_tunjangan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txt_hari_besar.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.lkp_status.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txt_lembur_jam.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txt_premi_harian.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txt_gaji_pokok.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -80,7 +79,7 @@ Partial Class frm_pegawai_edit
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
         CType(Me.rdg_group_pegawai.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.lkp_kode_costumer.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.lkp_kode_costumer_parent.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txt_kota.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txt_email.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txt_telp.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -97,11 +96,11 @@ Partial Class frm_pegawai_edit
         'GroupControl3
         '
         Me.GroupControl3.AllowDrop = True
+        Me.GroupControl3.Controls.Add(Me.rdg_statusKaryawan)
         Me.GroupControl3.Controls.Add(Me.LabelControl5)
         Me.GroupControl3.Controls.Add(Me.txt_tunjangan)
         Me.GroupControl3.Controls.Add(Me.LabelControl11)
         Me.GroupControl3.Controls.Add(Me.txt_hari_besar)
-        Me.GroupControl3.Controls.Add(Me.lkp_status)
         Me.GroupControl3.Controls.Add(Me.LabelControl10)
         Me.GroupControl3.Controls.Add(Me.LabelControl12)
         Me.GroupControl3.Controls.Add(Me.txt_lembur_jam)
@@ -111,8 +110,16 @@ Partial Class frm_pegawai_edit
         Me.GroupControl3.Controls.Add(Me.txt_gaji_pokok)
         Me.GroupControl3.Location = New System.Drawing.Point(439, 148)
         Me.GroupControl3.Name = "GroupControl3"
-        Me.GroupControl3.Size = New System.Drawing.Size(359, 309)
+        Me.GroupControl3.Size = New System.Drawing.Size(359, 272)
         Me.GroupControl3.TabIndex = 41
+        '
+        'rdg_statusKaryawan
+        '
+        Me.rdg_statusKaryawan.Location = New System.Drawing.Point(130, 25)
+        Me.rdg_statusKaryawan.Name = "rdg_statusKaryawan"
+        Me.rdg_statusKaryawan.Properties.DisplayFormat.FormatString = "aaaa"
+        Me.rdg_statusKaryawan.Size = New System.Drawing.Size(173, 44)
+        Me.rdg_statusKaryawan.TabIndex = 49
         '
         'LabelControl5
         '
@@ -152,16 +159,6 @@ Partial Class frm_pegawai_edit
         Me.txt_hari_besar.Properties.Appearance.Options.UseFont = True
         Me.txt_hari_besar.Size = New System.Drawing.Size(173, 21)
         Me.txt_hari_besar.TabIndex = 45
-        '
-        'lkp_status
-        '
-        Me.lkp_status.Location = New System.Drawing.Point(130, 40)
-        Me.lkp_status.Name = "lkp_status"
-        Me.lkp_status.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lkp_status.Properties.Appearance.Options.UseFont = True
-        Me.lkp_status.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.lkp_status.Size = New System.Drawing.Size(205, 21)
-        Me.lkp_status.TabIndex = 43
         '
         'LabelControl10
         '
@@ -214,7 +211,7 @@ Partial Class frm_pegawai_edit
         'LabelControl14
         '
         Me.LabelControl14.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl14.Location = New System.Drawing.Point(26, 71)
+        Me.LabelControl14.Location = New System.Drawing.Point(26, 78)
         Me.LabelControl14.Name = "LabelControl14"
         Me.LabelControl14.Size = New System.Drawing.Size(56, 14)
         Me.LabelControl14.TabIndex = 34
@@ -223,7 +220,7 @@ Partial Class frm_pegawai_edit
         'txt_gaji_pokok
         '
         Me.txt_gaji_pokok.EditValue = ""
-        Me.txt_gaji_pokok.Location = New System.Drawing.Point(130, 71)
+        Me.txt_gaji_pokok.Location = New System.Drawing.Point(130, 75)
         Me.txt_gaji_pokok.Name = "txt_gaji_pokok"
         Me.txt_gaji_pokok.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_gaji_pokok.Properties.Appearance.Options.UseFont = True
@@ -281,7 +278,7 @@ Partial Class frm_pegawai_edit
         'GroupControl1
         '
         Me.GroupControl1.Controls.Add(Me.rdg_group_pegawai)
-        Me.GroupControl1.Controls.Add(Me.lkp_kode_costumer)
+        Me.GroupControl1.Controls.Add(Me.lkp_kode_costumer_parent)
         Me.GroupControl1.Controls.Add(Me.LabelControl17)
         Me.GroupControl1.Controls.Add(Me.LabelControl16)
         Me.GroupControl1.Controls.Add(Me.LabelControl15)
@@ -306,30 +303,30 @@ Partial Class frm_pegawai_edit
         Me.GroupControl1.Controls.Add(Me.txt_nik)
         Me.GroupControl1.Location = New System.Drawing.Point(12, 11)
         Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(421, 445)
+        Me.GroupControl1.Size = New System.Drawing.Size(421, 409)
         Me.GroupControl1.TabIndex = 42
         '
         'rdg_group_pegawai
         '
-        Me.rdg_group_pegawai.Location = New System.Drawing.Point(123, 217)
+        Me.rdg_group_pegawai.Location = New System.Drawing.Point(123, 202)
         Me.rdg_group_pegawai.Name = "rdg_group_pegawai"
         Me.rdg_group_pegawai.Size = New System.Drawing.Size(205, 25)
         Me.rdg_group_pegawai.TabIndex = 59
         '
-        'lkp_kode_costumer
+        'lkp_kode_costumer_parent
         '
-        Me.lkp_kode_costumer.Location = New System.Drawing.Point(123, 248)
-        Me.lkp_kode_costumer.Name = "lkp_kode_costumer"
-        Me.lkp_kode_costumer.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lkp_kode_costumer.Properties.Appearance.Options.UseFont = True
-        Me.lkp_kode_costumer.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.lkp_kode_costumer.Size = New System.Drawing.Size(205, 21)
-        Me.lkp_kode_costumer.TabIndex = 57
+        Me.lkp_kode_costumer_parent.Location = New System.Drawing.Point(123, 230)
+        Me.lkp_kode_costumer_parent.Name = "lkp_kode_costumer_parent"
+        Me.lkp_kode_costumer_parent.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lkp_kode_costumer_parent.Properties.Appearance.Options.UseFont = True
+        Me.lkp_kode_costumer_parent.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.lkp_kode_costumer_parent.Size = New System.Drawing.Size(205, 21)
+        Me.lkp_kode_costumer_parent.TabIndex = 57
         '
         'LabelControl17
         '
         Me.LabelControl17.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl17.Location = New System.Drawing.Point(26, 251)
+        Me.LabelControl17.Location = New System.Drawing.Point(24, 233)
         Me.LabelControl17.Name = "LabelControl17"
         Me.LabelControl17.Size = New System.Drawing.Size(84, 14)
         Me.LabelControl17.TabIndex = 58
@@ -338,7 +335,7 @@ Partial Class frm_pegawai_edit
         'LabelControl16
         '
         Me.LabelControl16.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl16.Location = New System.Drawing.Point(26, 220)
+        Me.LabelControl16.Location = New System.Drawing.Point(24, 208)
         Me.LabelControl16.Name = "LabelControl16"
         Me.LabelControl16.Size = New System.Drawing.Size(33, 14)
         Me.LabelControl16.TabIndex = 56
@@ -347,7 +344,7 @@ Partial Class frm_pegawai_edit
         'LabelControl15
         '
         Me.LabelControl15.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl15.Location = New System.Drawing.Point(26, 193)
+        Me.LabelControl15.Location = New System.Drawing.Point(24, 180)
         Me.LabelControl15.Name = "LabelControl15"
         Me.LabelControl15.Size = New System.Drawing.Size(25, 14)
         Me.LabelControl15.TabIndex = 54
@@ -356,7 +353,7 @@ Partial Class frm_pegawai_edit
         'txt_kota
         '
         Me.txt_kota.EditValue = ""
-        Me.txt_kota.Location = New System.Drawing.Point(123, 190)
+        Me.txt_kota.Location = New System.Drawing.Point(123, 178)
         Me.txt_kota.Name = "txt_kota"
         Me.txt_kota.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_kota.Properties.Appearance.Options.UseFont = True
@@ -366,7 +363,7 @@ Partial Class frm_pegawai_edit
         'LabelControl8
         '
         Me.LabelControl8.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl8.Location = New System.Drawing.Point(26, 417)
+        Me.LabelControl8.Location = New System.Drawing.Point(24, 381)
         Me.LabelControl8.Name = "LabelControl8"
         Me.LabelControl8.Size = New System.Drawing.Size(27, 14)
         Me.LabelControl8.TabIndex = 52
@@ -375,7 +372,7 @@ Partial Class frm_pegawai_edit
         'txt_email
         '
         Me.txt_email.EditValue = ""
-        Me.txt_email.Location = New System.Drawing.Point(123, 414)
+        Me.txt_email.Location = New System.Drawing.Point(123, 378)
         Me.txt_email.Name = "txt_email"
         Me.txt_email.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_email.Properties.Appearance.Options.UseFont = True
@@ -385,7 +382,7 @@ Partial Class frm_pegawai_edit
         'LabelControl9
         '
         Me.LabelControl9.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl9.Location = New System.Drawing.Point(26, 390)
+        Me.LabelControl9.Location = New System.Drawing.Point(24, 357)
         Me.LabelControl9.Name = "LabelControl9"
         Me.LabelControl9.Size = New System.Drawing.Size(45, 14)
         Me.LabelControl9.TabIndex = 51
@@ -394,7 +391,7 @@ Partial Class frm_pegawai_edit
         'txt_telp
         '
         Me.txt_telp.EditValue = ""
-        Me.txt_telp.Location = New System.Drawing.Point(123, 387)
+        Me.txt_telp.Location = New System.Drawing.Point(123, 354)
         Me.txt_telp.Name = "txt_telp"
         Me.txt_telp.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_telp.Properties.Appearance.Options.UseFont = True
@@ -404,7 +401,7 @@ Partial Class frm_pegawai_edit
         'LabelControl7
         '
         Me.LabelControl7.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl7.Location = New System.Drawing.Point(24, 364)
+        Me.LabelControl7.Location = New System.Drawing.Point(24, 336)
         Me.LabelControl7.Name = "LabelControl7"
         Me.LabelControl7.Size = New System.Drawing.Size(80, 14)
         Me.LabelControl7.TabIndex = 48
@@ -413,7 +410,7 @@ Partial Class frm_pegawai_edit
         'LabelControl6
         '
         Me.LabelControl6.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl6.Location = New System.Drawing.Point(24, 317)
+        Me.LabelControl6.Location = New System.Drawing.Point(24, 281)
         Me.LabelControl6.Name = "LabelControl6"
         Me.LabelControl6.Size = New System.Drawing.Size(71, 14)
         Me.LabelControl6.TabIndex = 47
@@ -422,7 +419,7 @@ Partial Class frm_pegawai_edit
         'dte_tgl_masuk
         '
         Me.dte_tgl_masuk.EditValue = Nothing
-        Me.dte_tgl_masuk.Location = New System.Drawing.Point(123, 361)
+        Me.dte_tgl_masuk.Location = New System.Drawing.Point(123, 331)
         Me.dte_tgl_masuk.Name = "dte_tgl_masuk"
         Me.dte_tgl_masuk.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.dte_tgl_masuk.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton})
@@ -431,7 +428,7 @@ Partial Class frm_pegawai_edit
         '
         'rdg_jk
         '
-        Me.rdg_jk.Location = New System.Drawing.Point(123, 305)
+        Me.rdg_jk.Location = New System.Drawing.Point(123, 278)
         Me.rdg_jk.Name = "rdg_jk"
         Me.rdg_jk.Properties.DisplayFormat.FormatString = "aaaa"
         Me.rdg_jk.Size = New System.Drawing.Size(220, 50)
@@ -440,7 +437,7 @@ Partial Class frm_pegawai_edit
         'txt_alamat
         '
         Me.txt_alamat.EditValue = ""
-        Me.txt_alamat.Location = New System.Drawing.Point(123, 116)
+        Me.txt_alamat.Location = New System.Drawing.Point(123, 107)
         Me.txt_alamat.Name = "txt_alamat"
         Me.txt_alamat.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_alamat.Properties.Appearance.Options.UseFont = True
@@ -450,7 +447,7 @@ Partial Class frm_pegawai_edit
         'LabelControl3
         '
         Me.LabelControl3.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl3.Location = New System.Drawing.Point(26, 119)
+        Me.LabelControl3.Location = New System.Drawing.Point(24, 110)
         Me.LabelControl3.Name = "LabelControl3"
         Me.LabelControl3.Size = New System.Drawing.Size(37, 14)
         Me.LabelControl3.TabIndex = 41
@@ -458,7 +455,7 @@ Partial Class frm_pegawai_edit
         '
         'lkp_jabatan
         '
-        Me.lkp_jabatan.Location = New System.Drawing.Point(123, 278)
+        Me.lkp_jabatan.Location = New System.Drawing.Point(123, 254)
         Me.lkp_jabatan.Name = "lkp_jabatan"
         Me.lkp_jabatan.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lkp_jabatan.Properties.Appearance.Options.UseFont = True
@@ -469,7 +466,7 @@ Partial Class frm_pegawai_edit
         'LabelControl4
         '
         Me.LabelControl4.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl4.Location = New System.Drawing.Point(26, 281)
+        Me.LabelControl4.Location = New System.Drawing.Point(24, 257)
         Me.LabelControl4.Name = "LabelControl4"
         Me.LabelControl4.Size = New System.Drawing.Size(42, 14)
         Me.LabelControl4.TabIndex = 40
@@ -478,7 +475,7 @@ Partial Class frm_pegawai_edit
         'LabelControl1
         '
         Me.LabelControl1.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl1.Location = New System.Drawing.Point(26, 92)
+        Me.LabelControl1.Location = New System.Drawing.Point(24, 86)
         Me.LabelControl1.Name = "LabelControl1"
         Me.LabelControl1.Size = New System.Drawing.Size(79, 14)
         Me.LabelControl1.TabIndex = 39
@@ -487,7 +484,7 @@ Partial Class frm_pegawai_edit
         'txt_nama_pegawai
         '
         Me.txt_nama_pegawai.EditValue = ""
-        Me.txt_nama_pegawai.Location = New System.Drawing.Point(123, 89)
+        Me.txt_nama_pegawai.Location = New System.Drawing.Point(123, 83)
         Me.txt_nama_pegawai.Name = "txt_nama_pegawai"
         Me.txt_nama_pegawai.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_nama_pegawai.Properties.Appearance.Options.UseFont = True
@@ -497,7 +494,7 @@ Partial Class frm_pegawai_edit
         'LabelControl2
         '
         Me.LabelControl2.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl2.Location = New System.Drawing.Point(26, 65)
+        Me.LabelControl2.Location = New System.Drawing.Point(24, 62)
         Me.LabelControl2.Name = "LabelControl2"
         Me.LabelControl2.Size = New System.Drawing.Size(45, 14)
         Me.LabelControl2.TabIndex = 38
@@ -506,7 +503,7 @@ Partial Class frm_pegawai_edit
         'txt_noktp
         '
         Me.txt_noktp.EditValue = ""
-        Me.txt_noktp.Location = New System.Drawing.Point(123, 62)
+        Me.txt_noktp.Location = New System.Drawing.Point(123, 59)
         Me.txt_noktp.Name = "txt_noktp"
         Me.txt_noktp.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_noktp.Properties.Appearance.Options.UseFont = True
@@ -517,7 +514,7 @@ Partial Class frm_pegawai_edit
         'LabelControl18
         '
         Me.LabelControl18.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl18.Location = New System.Drawing.Point(26, 38)
+        Me.LabelControl18.Location = New System.Drawing.Point(24, 38)
         Me.LabelControl18.Name = "LabelControl18"
         Me.LabelControl18.Size = New System.Drawing.Size(19, 14)
         Me.LabelControl18.TabIndex = 34
@@ -526,6 +523,7 @@ Partial Class frm_pegawai_edit
         'txt_nik
         '
         Me.txt_nik.EditValue = ""
+        Me.txt_nik.Enabled = False
         Me.txt_nik.Location = New System.Drawing.Point(123, 35)
         Me.txt_nik.Name = "txt_nik"
         Me.txt_nik.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -537,8 +535,7 @@ Partial Class frm_pegawai_edit
         'cmd_simpan
         '
         Me.cmd_simpan.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.cmd_simpan.Image = CType(resources.GetObject("cmd_simpan.Image"), System.Drawing.Image)
-        Me.cmd_simpan.Location = New System.Drawing.Point(686, 472)
+        Me.cmd_simpan.Location = New System.Drawing.Point(596, 434)
         Me.cmd_simpan.Name = "cmd_simpan"
         Me.cmd_simpan.Size = New System.Drawing.Size(98, 26)
         Me.cmd_simpan.TabIndex = 43
@@ -547,8 +544,7 @@ Partial Class frm_pegawai_edit
         'cmd_batal
         '
         Me.cmd_batal.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.cmd_batal.Image = CType(resources.GetObject("cmd_batal.Image"), System.Drawing.Image)
-        Me.cmd_batal.Location = New System.Drawing.Point(569, 472)
+        Me.cmd_batal.Location = New System.Drawing.Point(700, 434)
         Me.cmd_batal.Name = "cmd_batal"
         Me.cmd_batal.Size = New System.Drawing.Size(98, 26)
         Me.cmd_batal.TabIndex = 44
@@ -558,21 +554,22 @@ Partial Class frm_pegawai_edit
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(836, 521)
+        Me.ClientSize = New System.Drawing.Size(806, 472)
         Me.Controls.Add(Me.cmd_simpan)
         Me.Controls.Add(Me.cmd_batal)
         Me.Controls.Add(Me.GroupControl1)
         Me.Controls.Add(Me.GroupControl3)
         Me.Controls.Add(Me.GroupControl2)
+        Me.MinimumSize = New System.Drawing.Size(822, 510)
         Me.Name = "frm_pegawai_edit"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form Edit Data Pegawai"
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl3.ResumeLayout(False)
         Me.GroupControl3.PerformLayout()
+        CType(Me.rdg_statusKaryawan.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txt_tunjangan.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txt_hari_besar.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.lkp_status.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txt_lembur_jam.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txt_premi_harian.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txt_gaji_pokok.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -585,7 +582,7 @@ Partial Class frm_pegawai_edit
         Me.GroupControl1.ResumeLayout(False)
         Me.GroupControl1.PerformLayout()
         CType(Me.rdg_group_pegawai.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.lkp_kode_costumer.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.lkp_kode_costumer_parent.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txt_kota.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txt_email.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txt_telp.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -605,7 +602,6 @@ Partial Class frm_pegawai_edit
     Friend WithEvents txt_tunjangan As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LabelControl11 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents txt_hari_besar As DevExpress.XtraEditors.TextEdit
-    Friend WithEvents lkp_status As DevExpress.XtraEditors.LookUpEdit
     Friend WithEvents LabelControl10 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl12 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents txt_lembur_jam As DevExpress.XtraEditors.TextEdit
@@ -620,7 +616,7 @@ Partial Class frm_pegawai_edit
     Friend WithEvents txt_no_rekening As DevExpress.XtraEditors.TextEdit
     Friend WithEvents GroupControl1 As DevExpress.XtraEditors.GroupControl
     Friend WithEvents rdg_group_pegawai As DevExpress.XtraEditors.RadioGroup
-    Friend WithEvents lkp_kode_costumer As DevExpress.XtraEditors.LookUpEdit
+    Friend WithEvents lkp_kode_costumer_parent As DevExpress.XtraEditors.LookUpEdit
     Friend WithEvents LabelControl17 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl16 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl15 As DevExpress.XtraEditors.LabelControl
@@ -645,4 +641,5 @@ Partial Class frm_pegawai_edit
     Friend WithEvents txt_nik As DevExpress.XtraEditors.TextEdit
     Friend WithEvents cmd_simpan As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents cmd_batal As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents rdg_statusKaryawan As DevExpress.XtraEditors.RadioGroup
 End Class

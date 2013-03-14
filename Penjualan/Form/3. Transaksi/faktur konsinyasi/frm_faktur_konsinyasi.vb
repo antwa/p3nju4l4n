@@ -6,7 +6,7 @@
 
         no_faktur.Text = getNomorUrut(C_FAKTUR_KONSINYASI)
         tgl_terbit.DateTime = Now
-        Load_Customer(kode_customer, 1)
+        Load_CustomerParent(kode_customer_parent, 1)
         tgl_jatuhtempo.DateTime = DateAdd(DateInterval.Month, 1, Now)
 
         tgl_dari.DateTime = DateAdd(DateInterval.Day, -30, Now)
@@ -29,8 +29,8 @@
         GridView1.Columns("acara").Caption = "Acara (Rp.)"
         GridView1.Columns("toko").Caption = "Toko (Rp.)"
         GridView1.Columns("netto").Caption = "Netto (Rp.)"
-        GridView1.Columns("disc_acara_kita").Caption = "Kita"
-        GridView1.Columns("disc_acara_toko").Caption = "Toko"
+        'GridView1.Columns("disc_acara_kita").Caption = "Kita"
+        'GridView1.Columns("disc_acara_toko").Caption = "Toko"
 
         GridView1.Columns("tgl_terbit").Width = 85
         GridView1.Columns("no_penjualan").Width = 90
@@ -40,8 +40,8 @@
         GridView1.Columns("acara").Width = 80
         GridView1.Columns("toko").Width = 80
         GridView1.Columns("netto").Width = 80
-        GridView1.Columns("disc_acara_kita").Width = 55
-        GridView1.Columns("disc_acara_toko").Width = 55
+        'GridView1.Columns("disc_acara_kita").Width = 55
+        'GridView1.Columns("disc_acara_toko").Width = 55
 
         FormatColumnNumeric(GridView1.Columns("bruto"))
         FormatColumnNumeric(GridView1.Columns("margin"))
@@ -64,22 +64,22 @@
 
         '# Create Band
         Dim BArtikel As New DevExpress.XtraGrid.Views.BandedGrid.GridBand
-        Dim BAcara As New DevExpress.XtraGrid.Views.BandedGrid.GridBand
+        'Dim BAcara As New DevExpress.XtraGrid.Views.BandedGrid.GridBand
 
         With BArtikel
             .AppearanceHeader.Options.UseTextOptions = True
             .AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
             .Caption = " "
         End With
-        With BAcara
-            .AppearanceHeader.Options.UseTextOptions = True
-            .AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
-            .Caption = "Disc Acara"
-        End With
+        'With BAcara
+        '    .AppearanceHeader.Options.UseTextOptions = True
+        '    .AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
+        '    .Caption = "Disc Acara"
+        'End With
 
         GridView1.Bands.Clear()
         GridView1.Bands.Add(BArtikel)
-        GridView1.Bands.Add(BAcara)
+        'GridView1.Bands.Add(BAcara)
 
         '#  atur aparance
         For i = 0 To GridView1.Columns.Count - 1
@@ -97,8 +97,8 @@
         BArtikel.Columns.Add(GridView1.Columns("toko"))
         BArtikel.Columns.Add(GridView1.Columns("netto"))
 
-        BAcara.Columns.Add(GridView1.Columns("disc_acara_kita"))
-        BAcara.Columns.Add(GridView1.Columns("disc_acara_toko"))
+        'BAcara.Columns.Add(GridView1.Columns("disc_acara_kita"))
+        'BAcara.Columns.Add(GridView1.Columns("disc_acara_toko"))
 
 
     End Sub
@@ -109,7 +109,7 @@
         Db.FlushCache()
         Db.Selects("*")
         Db.From("tbl_konsinyasiprimer")
-        Db.Where("kode_customer", kode_customer.Properties.GetKeyValueByDisplayText(kode_customer.Text))
+        Db.Where("kode_customer_parent", kode_customer_parent.Properties.GetKeyValueByDisplayText(kode_customer_parent.Text))
         Db.Where("status", "0") ' statusnya yg belum dibuat faktur
         Db.Where_BetweenDate("tgl_terbit", tgl_dari.DateTime, tgl_sampai.DateTime)
         Db.OrderBy("no_penjualan", cls_database.sorting.Ascending)
@@ -125,9 +125,7 @@
                                                            .Item("total_margin").ToString, _
                                                            .Item("total_acara").ToString, _
                                                            .Item("total_toko").ToString, _
-                                                           .Item("total_netto").ToString, _
-                                                           .Item("disc_acara_kita").ToString, _
-                                                           .Item("disc_acara_toko").ToString))
+                                                           .Item("total_netto").ToString))
                 End While
             End With
 
@@ -167,7 +165,6 @@
     End Sub
 
     Private Sub cmd_simpan_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_simpan.Click
-        Dim vkode_customer As String = kode_customer.Properties.GetKeyValueByDisplayText(kode_customer.Text)
         Dim i As Integer
 
         '# Cek Grid
@@ -196,7 +193,7 @@
         Db.SetField("no_faktur", no_faktur.Text)
         Db.SetField("tgl_terbit", tgl_terbit.DateTime)
         Db.SetField("tgl_jatuhtempo", tgl_jatuhtempo.DateTime)
-        Db.SetField("kode_customer", vkode_customer)
+        Db.SetField("kode_customer_parent", getValueFromLookup(kode_customer_parent))
         'Db.SetField("margin_toko", )
         'Db.SetField("margin_konsumen", )
         Db.SetField("total_qty", GridView1.Columns("qty").Summary.Item(0).SummaryValue)
@@ -220,8 +217,6 @@
             Db.SetField("no_faktur", no_faktur.Text)
             Db.SetField("tgl_konsinyasi", rcd_list.Item(i).tgl_terbit)
             Db.SetField("no_penjualan", rcd_list.Item(i).no_penjualan)
-            Db.SetField("disc_acara_kita", rcd_list.Item(i).disc_acara_kita)
-            Db.SetField("disc_acara_toko", rcd_list.Item(i).disc_acara_toko)
             Db.SetField("qty", rcd_list.Item(i).qty)
             Db.SetField("bruto", rcd_list.Item(i).bruto)
             Db.SetField("margin", rcd_list.Item(i).margin)
@@ -249,8 +244,8 @@
             '# Print
             Dim rpt As New rpt_faktur_konsinyasi_primer
             rpt.BindingSource1.DataSource = rcd_list
-            rpt.lbl_kode_customer.Text = getValueFromLookup(kode_customer)
-            rpt.lbl_nama_customer.Text = kode_customer.Text
+            rpt.lbl_kode_customer.Text = getValueFromLookup(kode_customer_parent)
+            rpt.lbl_nama_customer.Text = kode_customer_parent.Text
             rpt.lbl_no_faktur.Text = no_faktur.Text
             rpt.lbl_potongan.Text = potongan_deskripsi.Text & " : " & potongan_harga.EditValue
             rpt.lbl_tanggal_terbit.Text = tgl_terbit.Text
