@@ -29,7 +29,7 @@ Partial Class frm_targetpenjualan
         Me.pc_GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView
         Me.pc_tahun = New DevExpress.XtraEditors.ComboBoxEdit
         Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl
-        Me.pc_kode_customer = New DevExpress.XtraEditors.LookUpEdit
+        Me.pc_kode_customer_parent = New DevExpress.XtraEditors.LookUpEdit
         Me.LabelControl6 = New DevExpress.XtraEditors.LabelControl
         Me.XtraTabPage2 = New DevExpress.XtraTab.XtraTabPage
         Me.chk_all_group = New DevExpress.XtraEditors.CheckEdit
@@ -61,7 +61,7 @@ Partial Class frm_targetpenjualan
         CType(Me.pc_GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pc_GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pc_tahun.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pc_kode_customer.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pc_kode_customer_parent.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.XtraTabPage2.SuspendLayout()
         CType(Me.chk_all_group.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.chk_all_kota.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -98,11 +98,11 @@ Partial Class frm_targetpenjualan
         Me.XtraTabPage1.Controls.Add(Me.pc_GridControl1)
         Me.XtraTabPage1.Controls.Add(Me.pc_tahun)
         Me.XtraTabPage1.Controls.Add(Me.LabelControl1)
-        Me.XtraTabPage1.Controls.Add(Me.pc_kode_customer)
+        Me.XtraTabPage1.Controls.Add(Me.pc_kode_customer_parent)
         Me.XtraTabPage1.Controls.Add(Me.LabelControl6)
         Me.XtraTabPage1.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.XtraTabPage1.Name = "XtraTabPage1"
-        Me.XtraTabPage1.Size = New System.Drawing.Size(684, 374)
+        Me.XtraTabPage1.Size = New System.Drawing.Size(685, 376)
         Me.XtraTabPage1.Text = "Per Customer"
         '
         'pc_simpan
@@ -167,15 +167,15 @@ Partial Class frm_targetpenjualan
         Me.LabelControl1.TabIndex = 44
         Me.LabelControl1.Text = "Tahun"
         '
-        'pc_kode_customer
+        'pc_kode_customer_parent
         '
-        Me.pc_kode_customer.Location = New System.Drawing.Point(82, 16)
-        Me.pc_kode_customer.Name = "pc_kode_customer"
-        Me.pc_kode_customer.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.pc_kode_customer.Properties.Appearance.Options.UseFont = True
-        Me.pc_kode_customer.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.pc_kode_customer.Size = New System.Drawing.Size(262, 21)
-        Me.pc_kode_customer.TabIndex = 43
+        Me.pc_kode_customer_parent.Location = New System.Drawing.Point(82, 16)
+        Me.pc_kode_customer_parent.Name = "pc_kode_customer_parent"
+        Me.pc_kode_customer_parent.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.pc_kode_customer_parent.Properties.Appearance.Options.UseFont = True
+        Me.pc_kode_customer_parent.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.pc_kode_customer_parent.Size = New System.Drawing.Size(262, 21)
+        Me.pc_kode_customer_parent.TabIndex = 43
         '
         'LabelControl6
         '
@@ -208,7 +208,7 @@ Partial Class frm_targetpenjualan
         Me.XtraTabPage2.Controls.Add(Me.pb_bulan)
         Me.XtraTabPage2.Controls.Add(Me.LabelControl2)
         Me.XtraTabPage2.Name = "XtraTabPage2"
-        Me.XtraTabPage2.Size = New System.Drawing.Size(684, 374)
+        Me.XtraTabPage2.Size = New System.Drawing.Size(685, 376)
         Me.XtraTabPage2.Text = "Per Bulan"
         '
         'chk_all_group
@@ -453,7 +453,7 @@ Partial Class frm_targetpenjualan
         CType(Me.pc_GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pc_GridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pc_tahun.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pc_kode_customer.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pc_kode_customer_parent.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.XtraTabPage2.ResumeLayout(False)
         Me.XtraTabPage2.PerformLayout()
         CType(Me.chk_all_group.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -476,7 +476,7 @@ Partial Class frm_targetpenjualan
     Friend WithEvents XtraTabControl1 As DevExpress.XtraTab.XtraTabControl
     Friend WithEvents XtraTabPage1 As DevExpress.XtraTab.XtraTabPage
     Friend WithEvents XtraTabPage2 As DevExpress.XtraTab.XtraTabPage
-    Friend WithEvents pc_kode_customer As DevExpress.XtraEditors.LookUpEdit
+    Friend WithEvents pc_kode_customer_parent As DevExpress.XtraEditors.LookUpEdit
     Friend WithEvents LabelControl6 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents pc_tahun As DevExpress.XtraEditors.ComboBoxEdit
     Friend WithEvents LabelControl1 As DevExpress.XtraEditors.LabelControl

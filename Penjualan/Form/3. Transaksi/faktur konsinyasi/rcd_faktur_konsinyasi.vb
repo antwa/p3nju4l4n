@@ -8,9 +8,7 @@
     Dim macara As Integer
     Dim mtoko As Integer
     Dim mnetto As Integer
-    Dim mdisc_acara_kita As Integer
-    Dim mdisc_acara_toko As Integer
-
+    
     Public Sub New( _
         ByVal tgl_terbit As Date, _
         ByVal no_penjualan As String, _
@@ -19,9 +17,7 @@
         ByVal margin As Integer, _
         ByVal acara As Integer, _
         ByVal toko As Integer, _
-        ByVal netto As Integer, _
-        ByVal disc_acara_kita As Integer, _
-        ByVal disc_acara_toko As Integer)
+        ByVal netto As Integer)
 
         Me.mtgl_terbit = tgl_terbit
         Me.mno_penjualan = no_penjualan
@@ -31,8 +27,6 @@
         Me.macara = acara
         Me.mtoko = toko
         Me.mnetto = netto
-        Me.mdisc_acara_kita = disc_acara_kita
-        Me.mdisc_acara_toko = disc_acara_toko
     End Sub
 
     Public Property tgl_terbit() As Date
@@ -106,25 +100,6 @@
             Me.mnetto = value
         End Set
     End Property
-
-    Public Property disc_acara_kita() As Integer
-        Get
-            Return Me.mdisc_acara_kita
-        End Get
-        Set(ByVal value As Integer)
-            Me.mdisc_acara_kita = value
-        End Set
-    End Property
-
-    Public Property disc_acara_toko() As Integer
-        Get
-            Return Me.mdisc_acara_toko
-        End Get
-        Set(ByVal value As Integer)
-            Me.mdisc_acara_toko = value
-        End Set
-    End Property
-
 
 End Class
 

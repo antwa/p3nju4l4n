@@ -21,9 +21,9 @@ Public Class frm_customer_edit
 
         Db.FlushCache()
         Db.Selects("*")
-        Db.From("tbl_customer")
+        Db.From("tbl_customer_parent")
         'Db.Join("PRO_AKSESORIS_DETAIL", "PRO_AKSESORIS.AKS_KODE = PRO_AKSESORIS_DETAIL.AKS_KODE")
-        Db.Where("kode_customer", Me.kode)
+        Db.Where("kode_customer_parent", Me.kode)
 
         Dim rcd As SqlClient.SqlDataReader = Connection.ExecuteToDataReader(Db.GetQueryString)
 
@@ -61,20 +61,20 @@ Public Class frm_customer_edit
 
     Private Sub cmd_simpan_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_simpan.Click
 
-        '# validatoin
-        Db.FlushCache()
-        Db.Selects("*")
-        Db.From("tbl_customer")
-        Db.Where("kode_customer", txt_kode_customer.Text)
+        ''# validatoin
+        'Db.FlushCache()
+        'Db.Selects("*")
+        'Db.From("tbl_customer")
+        'Db.Where("kode_customer", txt_kode_customer.Text)
 
-        Dim rcd As SqlClient.SqlDataReader = Connection.ExecuteToDataReader(Db.GetQueryString)
+        'Dim rcd As SqlClient.SqlDataReader = Connection.ExecuteToDataReader(Db.GetQueryString)
 
       
 
         '# Update table tbl_customer
         Db.FlushCache()
-        Db.Update("tbl_customer")
-        Db.SetField("kode_customer", txt_kode_customer.Text)
+        Db.Update("tbl_customer_parent")
+        'Db.SetField("kode_customer_parent", txt_kode_customer.Text)
         Db.SetField("nama", txt_nama.Text)
         Db.SetField("alamat", txt_alamat.Text)
         Db.SetField("mall", txt_mall.Text)
@@ -85,22 +85,22 @@ Public Class frm_customer_edit
         Db.SetField("fax", txt_fax.Text)
         Db.SetField("email", txt_email.Text)
         Db.SetField("kode_grup", lkp_grup.EditValue)
-        Db.SetField("sistem_jual", rdg_sistem_jual.EditValue)
+        'Db.SetField("sistem_jual", rdg_sistem_jual.EditValue)
         Db.SetField("kode_template_harga", lkp_harga.EditValue)
         Db.SetField("margin_toko", txt_margin.Text)
         Db.SetField("dis_konsumen", txt_dis_konsumen.Text)
         Db.SetField("plafon_kredit", txt_plafon.Text)
-        Db.SetField("tgl_masuk", dte_tgl_masuk.EditValue)
-        Db.SetField("tgl_buka", dte_tgl_buka.EditValue)
+        Db.SetField("tgl_masuk", dte_tgl_masuk.DateTime)
+        Db.SetField("tgl_buka", dte_tgl_buka.DateTime)
         Db.SetField("prioritas", txt_prioritas.Text)
         Db.SetField("jatuh_tempobayar", txt_jatuh_tempo.Text)
         'Db.SetField("hidden", )
-        Db.Where("kode_customer", txt_kode_customer.Text)
+        Db.Where("kode_customer_parent", txt_kode_customer.Text)
 
 
         If Connection.ExecuteNonQuery(Db.GetQueryString) Then
             MsgBox("Data berhasil diperbaharui.", MsgBoxStyle.Information)
-            frm_customer_list.initGrid()
+            frm_customer_list.loadData()
             Me.Close()
         Else
             MsgBox("Data gagal disimpan!", MsgBoxStyle.Exclamation)

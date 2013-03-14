@@ -6,12 +6,12 @@
 
         no_faktur.Text = getNomorUrut(C_FAKTUR_GLOBAL)
         tgl_terbit.DateTime = Now
-        Load_Customer(kode_customer, 1)
+        Load_CustomerParent(kode_customer_parent, 1)
         tgl_dari.DateTime = Now
         tgl_sampai.DateTime = Now
 
         tgl_terbit.Enabled = True
-        kode_customer.Enabled = True
+        kode_customer_parent.Enabled = True
 
         '# Grid
         rcd_list.Clear()
@@ -60,8 +60,7 @@
         Db.From("tbl_suratjalan a")
         Db.Join("tbl_suratjalan_detail b", "a.no_surat = b.no_surat")
         Db.Join("tbl_barangjadi c", "c.kode_barangjadi = b.kode_barangjadi")
-
-        Db.Where("a.kode_customer", getValueFromLookup(kode_customer))
+        Db.Where(" WHERE a.kode_customer_child LIKE '" & getValueFromLookup(kode_customer_parent) & "%'")
         Db.Where_BetweenDate("a.tgl_surat", tgl_dari.DateTime, tgl_sampai.DateTime)
 
         Db.GroupBy("b.kode_barangjadi, c.nama, b.harga")
@@ -75,7 +74,7 @@
                 rcd_list.Add(New rcd_fakturglobal(i + 1, dt.Rows(i).Item("kode_barangjadi"), dt.Rows(i).Item("nama"), dt.Rows(i).Item("qty"), dt.Rows(i).Item("harga")))
             Next
 
-            kode_customer.Enabled = False
+            kode_customer_parent.Enabled = False
             tgl_terbit.Enabled = False
 
             GridView1.RefreshData()
@@ -91,7 +90,7 @@
 
     Private Sub SimpleButton2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_reset.Click
         rcd_list.Clear()
-        kode_customer.Enabled = True
+        kode_customer_parent.Enabled = True
         tgl_terbit.Enabled = True
     End Sub
 
@@ -120,7 +119,7 @@
         Db.FlushCache()
         Db.Insert("tbl_fakturglobal")
         Db.SetField("no_faktur", no_faktur.Text)
-        Db.SetField("kode_customer", getValueFromLookup(kode_customer))
+        Db.SetField("kode_customer_parent", getValueFromLookup(kode_customer_parent))
         Db.SetField("tgl_terbit", tgl_terbit.DateTime)
         Db.SetField("total_qty", GridView1.Columns.Item("qty").Summary.Item(0).SummaryValue)
         Db.SetField("total_harga", GridView1.Columns.Item("total").Summary.Item(0).SummaryValue)
@@ -147,9 +146,9 @@
             'ambil informasi customer
             Db.FlushCache()
             Db.Selects("a.nama, b.kota, a.mall, a.alamat")
-            Db.From("tbl_customer a")
+            Db.From("tbl_customer_parent a")
             Db.Join("tbl_kota b", "b.kode_kota = a.kode_kota")
-            Db.Where("a.kode_customer", getValueFromLookup(kode_customer))
+            Db.Where("a.kode_customer_parent", getValueFromLookup(kode_customer_parent))
 
             Dim rcustomer As SqlClient.SqlDataReader = Connection.ExecuteToDataReader(Db.GetQueryString)
             rcustomer.Read()
@@ -185,7 +184,7 @@
         Db.Selects("a.nama AS nama_customer, a.alamat, b.kota")
         Db.From("tbl_customer a")
         Db.Join("tbl_kota b", "b.kode_kota = a.kode_kota")
-        Db.Where("kode_customer", getValueFromLookup(kode_customer))
+        Db.Where("kode_customer", getValueFromLookup(kode_customer_parent))
 
         Dim r As DataTable = Connection.ExecuteToDataTable(Db.GetQueryString)
 
@@ -205,6 +204,6 @@
             fc.Height = 500
             fc.ShowDialog(Me)
         End If
-        
+
     End Sub
 End Class

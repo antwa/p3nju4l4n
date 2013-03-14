@@ -38,21 +38,22 @@
     End Sub
 
     Private Sub gridcontrol1_DoubleClick(ByVal sender As Object, ByVal e As System.EventArgs) Handles gridcontrol1.DoubleClick
-        'Try
-        Dim row As System.Data.DataRow = gridview1.GetDataRow(gridview1.FocusedRowHandle)
-        frm_pegawai_edit.Dispose()
-        frm_pegawai_edit.initData(row("NIK"))
-        frm_pegawai_edit.ShowDialog(Me)
+        Try
+            Dim row As System.Data.DataRow = gridview1.GetDataRow(gridview1.FocusedRowHandle)
+            frm_pegawai_edit.Dispose()
+            frm_pegawai_edit.kode = row("NIK")
+            frm_pegawai_edit.ShowDialog(Me)
 
-        'Catch ex As Exception
+        Catch ex As Exception
 
-        'End Try
+        End Try
     End Sub
 
     Private Sub cmd_edit_user_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_edit_user.Click
         Dim row As System.Data.DataRow = gridview1.GetDataRow(gridview1.FocusedRowHandle)
         frm_pegawai_edit.Dispose()
-        frm_pegawai_edit.initData(row("NIK"))
+        frm_pegawai_edit.kode = row("NIK")
+        'frm_pegawai_edit.initData(row("NIK"))
         frm_pegawai_edit.ShowDialog(Me)
     End Sub
 

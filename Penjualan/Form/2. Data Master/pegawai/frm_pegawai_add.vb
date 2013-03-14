@@ -6,7 +6,7 @@ Public Class frm_pegawai_add
 
         'Load_Status(lkp_status)
         Load_Jabatan(lkp_jabatan)
-        Load_Customer(lkp_kode_costumer, "1")
+        Load_CustomerParent(lkp_kode_costumer_parent, "1")
 
         rdg_jk.Properties.Items.Add(New RadioGroupItem("L", "Laki - Laki"))
         rdg_jk.Properties.Items.Add(New RadioGroupItem("P", "Perempuan"))
@@ -43,12 +43,12 @@ Public Class frm_pegawai_add
         '# validation
         Validation.clearRules()
         Validation.addRules(txt_nik.Text, "NIK", "required|length[3-5]")
-        Validation.addRules(txt_noktp.Text, "No KTP", "required|numeric|length[12-16]")
+        Validation.addRules(txt_noktp.Text, "No KTP", "required|numeric|length[5-16]")
         Validation.addRules(txt_nama_pegawai.Text, "Nama Pegawai", "required")
         Validation.addRules(txt_alamat.Text, "Alamat", "required")
         Validation.addRules(lkp_jabatan.Text, "Jabatan", "required")
-        Validation.addRules(txt_telp.Text, "Telepon", "required|numeric|length[10-12]")
-        Validation.addRules(txt_email.Text, "Email", "required|email")
+        Validation.addRules(txt_telp.Text, "Telepon", "required|numeric|length[6-12]")
+        'Validation.addRules(txt_email.Text, "Email", "required|email")
         Validation.addRules(txt_bank.Text, "Nama Bank", "required")
         Validation.addRules(txt_atas_nama.Text, "Atas Nama", "required")
         Validation.addRules(txt_no_rekening.Text, "No Rekening", "required|numeric")
@@ -69,10 +69,10 @@ Public Class frm_pegawai_add
                 Db.SetField("alamat", txt_alamat.Text)
                 Db.SetField("kota", txt_kota.Text)
 
-                Db.SetField("kode_customer", lkp_kode_costumer.Properties.GetKeyValueByDisplayText(lkp_kode_costumer.Text))
-                Db.SetField("jabatan", lkp_jabatan.Properties.GetKeyValueByDisplayText(lkp_jabatan.Text))
-                Db.SetField("jk", rdg_jk.Text)
-                Db.SetField("tgl_masuk", dte_tgl_masuk.DateTime.ToString("yyyy-MM-dd HH:mm:ss"))
+                Db.SetField("kode_customer_parent", getValueFromLookup(lkp_kode_costumer_parent))
+                Db.SetField("jabatan", getValueFromLookup(lkp_jabatan))
+                Db.SetField("jk", rdg_jk.EditValue)
+                Db.SetField("tgl_masuk", dte_tgl_masuk.DateTime)
 
                 'Db.SetField("tanggal", tanggal.DateTime.ToString("yyyy-MM-dd HH:mm:ss"))
 
@@ -115,10 +115,10 @@ Public Class frm_pegawai_add
     End Sub
 
     Private Sub rdg_group_pegawai_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rdg_group_pegawai.SelectedIndexChanged
-        lkp_kode_costumer.Enabled = IIf(rdg_group_pegawai.EditValue = "1", True, False)
+        lkp_kode_costumer_parent.Enabled = IIf(rdg_group_pegawai.EditValue = "1", True, False)
     End Sub
 
-    Private Sub lkp_kode_costumer_EditValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles lkp_kode_costumer.EditValueChanged
+    Private Sub lkp_kode_costumer_EditValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles lkp_kode_costumer_parent.EditValueChanged
 
     End Sub
 

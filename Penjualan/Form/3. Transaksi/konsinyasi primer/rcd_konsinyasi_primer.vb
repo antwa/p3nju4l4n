@@ -2,8 +2,11 @@
 
     Dim mno As Integer
     Dim mtgl_transaksi As DateTime = Now
+    Dim mkelompok As Integer
+    Dim mkelompok_desk As String
     Dim mkode_barangjadi As String
     Dim mnama As String
+    Dim mstok As Integer
     Dim mqty As Integer = 0
     Dim mharga As Integer = 0
     Dim mdiskon As Integer = 0
@@ -68,6 +71,25 @@
         End Set
     End Property
 
+    Public Property kelompok() As Integer
+        Get
+            Return Me.mkelompok
+        End Get
+        Set(ByVal value As Integer)
+            Me.mkelompok = value
+        End Set
+    End Property
+
+    Public Property kelompok_desk() As String
+        Get
+            Return Me.mkelompok_desk
+        End Get
+        Set(ByVal value As String)
+            Me.mkelompok_desk = value
+        End Set
+    End Property
+
+
     Public Property kode_barangjadi() As String
         Get
             Return Me.mkode_barangjadi
@@ -83,6 +105,15 @@
         End Get
         Set(ByVal value As String)
             Me.mnama = value
+        End Set
+    End Property
+
+    Public Property stok() As Integer
+        Get
+            Return Me.mstok
+        End Get
+        Set(ByVal value As Integer)
+            Me.mstok = value
         End Set
     End Property
 

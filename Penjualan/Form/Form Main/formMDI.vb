@@ -223,4 +223,12 @@
     Private Sub CM_frm_lap_so_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles CM_frm_lap_so.ItemClick
         LoadFormToTab(frm_lap_so)
     End Sub
+
+    Private Sub CM_frm_margin_customer_list_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles CM_frm_margin_customer_list.ItemClick
+        LoadFormToTab(frm_margin_customer_list)
+    End Sub
+
+    Private Sub CM_frm_retur_formalitas_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles CM_frm_retur_formalitas.ItemClick
+        LoadFormToTab(frm_retur_formalitas)
+    End Sub
 End Class

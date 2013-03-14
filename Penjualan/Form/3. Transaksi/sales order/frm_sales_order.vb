@@ -16,10 +16,10 @@ Public Class frm_sales_order
 
         If rcd_list.Count > 1 Then
             sistem_jual.Properties.ReadOnly = True
-            kode_customer.Properties.ReadOnly = True
+            kode_customer_parent.Properties.ReadOnly = True
         Else
             sistem_jual.Properties.ReadOnly = False
-            kode_customer.Properties.ReadOnly = False
+            kode_customer_parent.Properties.ReadOnly = False
         End If
 
         GridView1.RefreshData()
@@ -78,7 +78,7 @@ Public Class frm_sales_order
         tgl_kirim.DateTime = Now
         tgl_rinciandist.DateTime = Now
 
-        Load_Customer(kode_customer, sistem_jual.EditValue)
+        Load_CustomerParent(kode_customer_parent, sistem_jual.EditValue)
 
     End Sub
 
@@ -87,7 +87,12 @@ Public Class frm_sales_order
     End Sub
 
     Private Sub sistem_jual_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles sistem_jual.SelectedIndexChanged
-        Load_Customer(kode_customer, sistem_jual.EditValue)
+        If sistem_jual.EditValue = "1" Then
+            cmb_tipecustomer.Enabled = True
+        Else
+            cmb_tipecustomer.Enabled = False
+        End If
+        Load_CustomerParent(kode_customer_parent, sistem_jual.EditValue)
     End Sub
 
     Private Sub cmd_hapus_baris_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_hapus_baris.Click
@@ -115,7 +120,14 @@ Public Class frm_sales_order
     End Sub
 
     Private Sub cmd_simpan_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_simpan.Click
-        Dim vkode_customer As String = kode_customer.Properties.GetKeyValueByDisplayText(kode_customer.Text)
+        Dim vkode_customer As String
+
+        If sistem_jual.EditValue = "1" Then
+            vkode_customer = getValueFromLookup(kode_customer_parent) & "." & (CInt(cmb_tipecustomer.SelectedIndex) + 1)
+        Else
+            vkode_customer = getValueFromLookup(kode_customer_parent) & ".4"
+        End If
+
         Dim i As Integer
 
         '# Cek Grid
@@ -147,7 +159,7 @@ Public Class frm_sales_order
         Db.SetField("tgl_rinciandist", tgl_rinciandist.DateTime)
         Db.SetField("tgl_kirim", tgl_kirim.DateTime)
         Db.SetField("sistem_jual", sistem_jual.EditValue)
-        Db.SetField("kode_customer", vkode_customer)
+        Db.SetField("kode_customer_child", vkode_customer)
         Db.SetField("total_qty", GridView1.Columns.Item("qty").Summary.Item(0).SummaryValue)
         Db.SetField("total_value", GridView1.Columns.Item("total").Summary.Item(0).SummaryValue)
         Db.SetField("status", "0")
@@ -177,9 +189,9 @@ Public Class frm_sales_order
             'ambil informasi customer
             Db.FlushCache()
             Db.Selects("a.nama, b.kota, a.mall, a.alamat")
-            Db.From("tbl_customer a")
+            Db.From("tbl_customer_parent a")
             Db.Join("tbl_kota b", "b.kode_kota = a.kode_kota")
-            Db.Where("a.kode_customer", getValueFromLookup(kode_customer))
+            Db.Where("a.kode_customer_parent", getValueFromLookup(kode_customer_parent))
 
             Dim rcustomer As SqlClient.SqlDataReader = Connection.ExecuteToDataReader(Db.GetQueryString)
             rcustomer.Read()
@@ -214,7 +226,7 @@ Public Class frm_sales_order
     End Sub
 
 
-    Private Sub kode_customer_EditValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles kode_customer.EditValueChanged
+    Private Sub kode_customer_EditValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles kode_customer_parent.EditValueChanged
         'MsgBox(kode_customer.GetColumnValue("kode_template_harga"))
     End Sub
 
@@ -280,7 +292,7 @@ Public Class frm_sales_order
                             Db.Selects("kode_hargajual, kode_template_harga, harga")
                             Db.From("tbl_hargajual")
                             Db.Where("kode_barangjadi", rcd_list.Item(row).kode_barangjadi)
-                            Db.Where("kode_template_harga", kode_customer.GetColumnValue("kode_template_harga"))
+                            Db.Where("kode_template_harga", kode_customer_parent.GetColumnValue("kode_template_harga"))
 
                             Dim dt2 As DataTable = Connection.ExecuteToDataTable(Db.GetQueryString)
 
@@ -310,13 +322,13 @@ Public Class frm_sales_order
     End Sub
 
     Private Sub cmd_load_rencana_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_load_rencana.Click
-        
+
         Db.FlushCache()
         Db.Selects("a.tanggal, b.kode_barangjadi, c.nama AS nama_barangjadi, b.qty")
         Db.From("tbl_rencana_distribusi a")
         Db.Join("tbl_rencana_distribusi_detail b", "b.no_rencana = a.no_rencana")
         Db.Join("tbl_barangjadi c", "c.kode_barangjadi = b.kode_barangjadi")
-        Db.Where("b.kode_customer", getValueFromLookup(kode_customer))
+        Db.Where("b.kode_customer", getValueFromLookup(kode_customer_parent))
         Db.Where_BetweenDate("a.tanggal", tgl_rinciandist.DateTime, tgl_rinciandist.DateTime)
 
         Dim row As DataTable = Connection.ExecuteToDataTable(Db.GetQueryString)
@@ -348,7 +360,7 @@ Public Class frm_sales_order
                 Db.Selects("kode_hargajual, kode_template_harga, harga")
                 Db.From("tbl_hargajual")
                 Db.Where("kode_barangjadi", row.Rows(i).Item("kode_barangjadi"))
-                Db.Where("kode_template_harga", kode_customer.GetColumnValue("kode_template_harga"))
+                Db.Where("kode_template_harga", kode_customer_parent.GetColumnValue("kode_template_harga"))
 
                 Dim harga As DataTable = Connection.ExecuteToDataTable(Db.GetQueryString)
 

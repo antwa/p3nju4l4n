@@ -26,11 +26,11 @@ Partial Class frm_konsinyasi_sekunder
         Me.GridControl1 = New DevExpress.XtraGrid.GridControl
         Me.GridView1 = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridView
         Me.GridBand1 = New DevExpress.XtraGrid.Views.BandedGrid.GridBand
-        Me.kode_customer = New DevExpress.XtraEditors.LookUpEdit
+        Me.kode_customer_parent = New DevExpress.XtraEditors.LookUpEdit
         Me.LabelControl6 = New DevExpress.XtraEditors.LabelControl
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.kode_customer.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.kode_customer_parent.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'cmd_simpan
@@ -63,6 +63,7 @@ Partial Class frm_konsinyasi_sekunder
         'cmd_cari_artikel
         '
         Me.cmd_cari_artikel.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.cmd_cari_artikel.Enabled = False
         Me.cmd_cari_artikel.Location = New System.Drawing.Point(12, 280)
         Me.cmd_cari_artikel.Name = "cmd_cari_artikel"
         Me.cmd_cari_artikel.Size = New System.Drawing.Size(97, 24)
@@ -99,15 +100,15 @@ Partial Class frm_konsinyasi_sekunder
         Me.GridBand1.Caption = "GridBand1"
         Me.GridBand1.Name = "GridBand1"
         '
-        'kode_customer
+        'kode_customer_parent
         '
-        Me.kode_customer.Location = New System.Drawing.Point(80, 9)
-        Me.kode_customer.Name = "kode_customer"
-        Me.kode_customer.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.kode_customer.Properties.Appearance.Options.UseFont = True
-        Me.kode_customer.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.kode_customer.Size = New System.Drawing.Size(262, 21)
-        Me.kode_customer.TabIndex = 46
+        Me.kode_customer_parent.Location = New System.Drawing.Point(80, 9)
+        Me.kode_customer_parent.Name = "kode_customer_parent"
+        Me.kode_customer_parent.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.kode_customer_parent.Properties.Appearance.Options.UseFont = True
+        Me.kode_customer_parent.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.kode_customer_parent.Size = New System.Drawing.Size(262, 21)
+        Me.kode_customer_parent.TabIndex = 46
         '
         'LabelControl6
         '
@@ -123,7 +124,7 @@ Partial Class frm_konsinyasi_sekunder
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(683, 316)
-        Me.Controls.Add(Me.kode_customer)
+        Me.Controls.Add(Me.kode_customer_parent)
         Me.Controls.Add(Me.LabelControl6)
         Me.Controls.Add(Me.cmd_simpan)
         Me.Controls.Add(Me.cmd_cancel)
@@ -134,7 +135,7 @@ Partial Class frm_konsinyasi_sekunder
         Me.Text = "Input Konsinyasi Sekunder"
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.kode_customer.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.kode_customer_parent.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -144,7 +145,7 @@ Partial Class frm_konsinyasi_sekunder
     Friend WithEvents cmd_hapus_baris As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents cmd_cari_artikel As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents GridControl1 As DevExpress.XtraGrid.GridControl
-    Friend WithEvents kode_customer As DevExpress.XtraEditors.LookUpEdit
+    Friend WithEvents kode_customer_parent As DevExpress.XtraEditors.LookUpEdit
     Friend WithEvents LabelControl6 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.BandedGrid.BandedGridView
     Friend WithEvents GridBand1 As DevExpress.XtraGrid.Views.BandedGrid.GridBand

@@ -14,9 +14,9 @@ Public Class frm_konsinyasi_sekunder
         rcd_list.Item(rcd_list.Count - 1).no = 0
 
         If rcd_list.Count > 1 Then
-            kode_customer.Properties.ReadOnly = True
+            kode_customer_parent.Properties.ReadOnly = True
         Else
-            kode_customer.Properties.ReadOnly = False
+            kode_customer_parent.Properties.ReadOnly = False
         End If
 
         GridView1.RefreshData()
@@ -25,7 +25,7 @@ Public Class frm_konsinyasi_sekunder
     Public Sub initComponent()
         Dim i As Integer
 
-        Load_Customer(kode_customer, 1)
+        Load_CustomerParent(kode_customer_parent, 1)
 
         rcd_list = New System.ComponentModel.BindingList(Of rcd_konsinyasi_sekunder)
         GridControl1.DataSource = rcd_list
@@ -38,6 +38,7 @@ Public Class frm_konsinyasi_sekunder
         '# atur grid
         GridView1.Columns("no").Caption = "No."
         GridView1.Columns("tgl_transaksi").Caption = "Tanggal"
+        GridView1.Columns("kelompok_desk").Caption = "Customer"
         GridView1.Columns("kode_barangjadi").Caption = "Kode"
         GridView1.Columns("nama").Caption = "Nama"
         GridView1.Columns("stok").Caption = "Stok"
@@ -66,6 +67,7 @@ Public Class frm_konsinyasi_sekunder
         GridView1.Columns("kode_hargajual").Visible = False
         GridView1.Columns("kode_hargajual2").Visible = False
         GridView1.Columns("beban_spg").Visible = False
+        GridView1.Columns("kelompok").Visible = False
 
         FormatColumnNumeric(GridView1.Columns("harga"))
         FormatColumnNumeric(GridView1.Columns("total"))
@@ -100,7 +102,7 @@ Public Class frm_konsinyasi_sekunder
         With BDijual
             .AppearanceHeader.Options.UseTextOptions = True
             .AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center
-            .Caption = "Yang Dijual"
+            .Caption = "Penjualan"
         End With
         With BDitetapkan
             .AppearanceHeader.Options.UseTextOptions = True
@@ -117,7 +119,7 @@ Public Class frm_konsinyasi_sekunder
         GridView1.Bands.Clear()
         GridView1.Bands.Add(BArtikel)
         GridView1.Bands.Add(BDijual)
-        GridView1.Bands.Add(BDitetapkan)
+        'GridView1.Bands.Add(BDitetapkan)
         GridView1.Bands.Add(Bketerangan)
 
         '#  atur aparance
@@ -129,6 +131,7 @@ Public Class frm_konsinyasi_sekunder
         ' Artikel
         BArtikel.Columns.Add(GridView1.Columns("no"))
         BArtikel.Columns.Add(GridView1.Columns("tgl_transaksi"))
+        BArtikel.Columns.Add(GridView1.Columns("kelompok_desk"))
         BArtikel.Columns.Add(GridView1.Columns("kode_barangjadi"))
         BArtikel.Columns.Add(GridView1.Columns("nama"))
         BArtikel.Columns.Add(GridView1.Columns("stok"))
@@ -138,8 +141,8 @@ Public Class frm_konsinyasi_sekunder
         BDijual.Columns.Add(GridView1.Columns("diskon"))
         BDijual.Columns.Add(GridView1.Columns("total"))
 
-        BDitetapkan.Columns.Add(GridView1.Columns("harga2"))
-        BDitetapkan.Columns.Add(GridView1.Columns("diskon2"))
+        'BDitetapkan.Columns.Add(GridView1.Columns("harga2"))
+        'BDitetapkan.Columns.Add(GridView1.Columns("diskon2"))
 
         Bketerangan.Columns.Add(GridView1.Columns("keterangan"))
 
@@ -156,7 +159,7 @@ Public Class frm_konsinyasi_sekunder
     Private Sub cmd_cari_artikel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_cari_artikel.Click
         frm_transaksi_popup_artkel.Dispose()
         frm_transaksi_popup_artkel.parameter1 = C_KONSINYASI_SEKUNDER
-        frm_transaksi_popup_artkel.kode_customer = kode_customer.Properties.GetKeyValueByDisplayText(kode_customer.Text)
+        frm_transaksi_popup_artkel.kode_customer_child = kode_customer_parent.Properties.GetKeyValueByDisplayText(kode_customer_parent.Text)
         frm_transaksi_popup_artkel.ShowDialog(Me)
         Call reIndex()
     End Sub
@@ -175,7 +178,8 @@ Public Class frm_konsinyasi_sekunder
     End Sub
 
     Private Sub cmd_simpan_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_simpan.Click
-        Dim vkode_customer As String = kode_customer.Properties.GetKeyValueByDisplayText(kode_customer.Text)
+        Dim vkode_customer_parent As String = getValueFromLookup(kode_customer_parent)
+        Dim vkode_customer_child As String = ""
         Dim i As Integer
         Dim Query As String
 
@@ -185,15 +189,25 @@ Public Class frm_konsinyasi_sekunder
             Exit Sub
         End If
 
+        For i = 0 To rcd_list.Count - 2
+            If rcd_list.Item(i).qty = 0 Then
+                MsgBox("Qty barang tidak boleh Nol", MsgBoxStyle.Exclamation)
+                Exit Sub
+            End If
+        Next
+
         '# START TRANSAKSI
         Connection.TRANS_START()
 
         For i = 0 To rcd_list.Count - 2
+
+            vkode_customer_child = vkode_customer_parent & "." & rcd_list.Item(i).kelompok
+
             '# insert to table tbl_konsinyasisekunder
             Db.FlushCache()
             Db.Insert("tbl_konsinyasisekunder")
             Db.SetField("tgl_transaksi", rcd_list.Item(i).tgl_transaksi)
-            Db.SetField("kode_customer", vkode_customer)
+            Db.SetField("kode_customer_child", vkode_customer_child)
             Db.SetField("kode_barangjadi", rcd_list.Item(i).kode_barangjadi)
             Db.SetField("qty", rcd_list.Item(i).qty)
             Db.SetField("harga", rcd_list.Item(i).harga)
@@ -208,7 +222,7 @@ Public Class frm_konsinyasi_sekunder
             Query = ""
             Query &= " UPDATE tbl_persediaan_customer "
             Query &= " SET stok_sekunder = stok_sekunder - " & rcd_list.Item(i).qty
-            Query &= " WHERE kode_customer = '" & vkode_customer & "' "
+            Query &= " WHERE kode_customer_child = '" & vkode_customer_child & "' "
             Query &= " AND kode_barangjadi = '" & rcd_list.Item(i).kode_barangjadi & "' "
 
             Connection.TRANS_ADD(Query)
@@ -230,27 +244,17 @@ Public Class frm_konsinyasi_sekunder
             Dim Row As Integer = e.RowHandle
             Dim tgl As DateTime = e.Value
 
-            '# ambil harga yg ditetapkan
-            Db.FlushCache()
-            Db.Selects("TOP 1 a.harga, a.diskon")
-            Db.From("tbl_histori_hargacustomer a")
-            Db.Where("a.kode_barangjadi", rcd_list.Item(row).kode_barangjadi)
-            Db.Where("a.kode_customer", getValueFromLookup(kode_customer))
-            Db.Where("a.tanggal", tgl.ToString("yyyy-MM-dd HH:mm:ss"), "<=", "AND")
-            Db.OrderBy("a.tanggal", cls_database.sorting.Descending)
+            Dim data() As String = getHargaFromHistori(tgl, _
+                                                       getValueFromLookup(kode_customer_parent), _
+                                                       rcd_list.Item(Row).kode_barangjadi)
 
-            Dim dt2 As DataTable = Connection.ExecuteToDataTable(Db.GetQueryString)
-            If dt2.Rows.Count > 0 Then
-                rcd_list.Item(row).harga = dt2.Rows(0).Item("harga").ToString
-                rcd_list.Item(row).diskon = dt2.Rows(0).Item("diskon").ToString
-                rcd_list.Item(row).harga2 = dt2.Rows(0).Item("harga").ToString
-                rcd_list.Item(row).diskon2 = dt2.Rows(0).Item("diskon").ToString
-            Else
-                rcd_list.Item(row).harga = 0
-                rcd_list.Item(row).diskon = 0
-                rcd_list.Item(row).harga2 = 0
-                rcd_list.Item(row).diskon2 = 0
-            End If
+            rcd_list.Item(Row).harga = data(0)
+            rcd_list.Item(Row).diskon = data(1)
+            rcd_list.Item(Row).harga2 = data(0)
+            rcd_list.Item(Row).diskon2 = data(1)
+
+            rcd_list.Item(Row).kelompok = data(2)
+            rcd_list.Item(Row).kelompok_desk = data(3)
 
             '# refres data
             'setFocusCell(GridView1, Row, "qty")
@@ -285,52 +289,39 @@ Public Class frm_konsinyasi_sekunder
                     Else
                         tmp_kode_barangjadi = tmp_kode_barangjadi.Substring(0, 1) & "." & tmp_kode_barangjadi.Substring(1, 3) & "." & tmp_kode_barangjadi.Substring(4, 2)
 
-                        '# get barang jadi
-                        Db.FlushCache()
-                        Db.Selects("a.kode_barangjadi, b.nama, c.jenis, a.stok_sekunder as stok")
-                        Db.From("tbl_persediaan_customer a")
-                        Db.Join("tbl_barangjadi b", "b.kode_barangjadi = a.kode_barangjadi")
-                        Db.Join("tbl_jenis_hargabarang c", "c.kode_jenis_harga = a.kode_jenis_harga")
-                        Db.Where("a.kode_customer", getValueFromLookup(kode_customer))
-                        Db.Where(" AND a.kode_barangjadi LIKE '" & tmp_kode_barangjadi & "%'")
+                        '# get histori barang
+                        Dim data() As String = getHargaFromHistori(rcd_list.Item(row).tgl_transaksi, _
+                                                       getValueFromLookup(kode_customer_parent), _
+                                                       tmp_kode_barangjadi)
 
-                        Dim dt1 As DataTable = Connection.ExecuteToDataTable(Db.GetQueryString)
+                        If data(2) <> "0" Then
+                            '# get Info barangjadi di persediaan customer
+                            Dim data1() As String = getInfoBarangjadiInCustomer(getValueFromLookup(kode_customer_parent) & "." & data(2), data(4))
 
-                        If dt1.Rows.Count > 0 Then
-                            rcd_list.Item(row).kode_barangjadi = dt1.Rows(0).Item("kode_barangjadi").ToString
-                            rcd_list.Item(row).nama = dt1.Rows(0).Item("nama").ToString
-                            rcd_list.Item(row).stok = dt1.Rows(0).Item("stok").ToString
+                            rcd_list.Item(row).kode_barangjadi = data1(0)
+                            rcd_list.Item(row).nama = data1(1)
+                            rcd_list.Item(row).stok = data1(2)
 
-                            '# ambil harga yg ditetapkan
-                            Db.FlushCache()
-                            Db.Selects("TOP 1 a.harga, a.diskon")
-                            Db.From("tbl_histori_hargacustomer a")
-                            Db.Where("a.kode_barangjadi", rcd_list.Item(row).kode_barangjadi)
-                            Db.Where("a.kode_customer", getValueFromLookup(kode_customer))
-                            Db.Where("a.tanggal", rcd_list.Item(row).tgl_transaksi.ToString("yyyy-MM-dd HH:mm:ss"), "<=", "AND")
-                            Db.OrderBy("a.tanggal", cls_database.sorting.Descending)
+                            rcd_list.Item(row).harga = data(0)
+                            rcd_list.Item(row).diskon = data(1)
+                            rcd_list.Item(row).harga2 = data(0)
+                            rcd_list.Item(row).diskon2 = data(1)
 
-                            Dim dt2 As DataTable = Connection.ExecuteToDataTable(Db.GetQueryString)
-                            If dt2.Rows.Count > 0 Then
-                                rcd_list.Item(row).harga = dt2.Rows(0).Item("harga").ToString
-                                rcd_list.Item(row).diskon = dt2.Rows(0).Item("diskon").ToString
-                                rcd_list.Item(row).harga2 = dt2.Rows(0).Item("harga").ToString
-                                rcd_list.Item(row).diskon2 = dt2.Rows(0).Item("diskon").ToString
-                            Else
-                                rcd_list.Item(row).harga = 0
-                                rcd_list.Item(row).diskon = 0
-                                rcd_list.Item(row).harga2 = 0
-                                rcd_list.Item(row).diskon2 = 0
-                            End If
+                            rcd_list.Item(row).kelompok = data(2)
+                            rcd_list.Item(row).kelompok_desk = data(3)
 
                             '# refres data
                             rcd_list.Add(New rcd_konsinyasi_sekunder)
                             Call Me.reIndex()
                             setFocusCell(GridView1, row, "qty")
                             GridView1.RefreshData()
+
                         Else
                             MsgBox("Tidak terdapat kode barang '" & tmp_kode_barangjadi & "'", MsgBoxStyle.Exclamation)
                         End If
+
+                        '----------------------------------------------------------
+
                     End If
 
                 Case "qty"

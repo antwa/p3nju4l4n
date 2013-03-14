@@ -36,7 +36,7 @@ Partial Class frm_delivery_order
         Me.chk_cek_uncek = New DevExpress.XtraEditors.CheckEdit
         Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl
         Me.LabelControl6 = New DevExpress.XtraEditors.LabelControl
-        Me.kode_customer = New DevExpress.XtraEditors.LookUpEdit
+        Me.kode_customer_parent = New DevExpress.XtraEditors.LookUpEdit
         Me.rdo_tujuan = New DevExpress.XtraEditors.RadioGroup
         Me.chk_all_group = New DevExpress.XtraEditors.CheckEdit
         Me.chk_all_kota = New DevExpress.XtraEditors.CheckEdit
@@ -59,7 +59,7 @@ Partial Class frm_delivery_order
         CType(Me.chk_cek_uncek.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl2.SuspendLayout()
-        CType(Me.kode_customer.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.kode_customer_parent.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.rdo_tujuan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.chk_all_group.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.chk_all_kota.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -230,7 +230,7 @@ Partial Class frm_delivery_order
         Me.GroupControl2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupControl2.Controls.Add(Me.LabelControl6)
-        Me.GroupControl2.Controls.Add(Me.kode_customer)
+        Me.GroupControl2.Controls.Add(Me.kode_customer_parent)
         Me.GroupControl2.Controls.Add(Me.rdo_tujuan)
         Me.GroupControl2.Controls.Add(Me.chk_all_group)
         Me.GroupControl2.Controls.Add(Me.chk_all_kota)
@@ -255,16 +255,16 @@ Partial Class frm_delivery_order
         Me.LabelControl6.TabIndex = 75
         Me.LabelControl6.Text = "Customer"
         '
-        'kode_customer
+        'kode_customer_parent
         '
-        Me.kode_customer.Enabled = False
-        Me.kode_customer.Location = New System.Drawing.Point(214, 108)
-        Me.kode_customer.Name = "kode_customer"
-        Me.kode_customer.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.kode_customer.Properties.Appearance.Options.UseFont = True
-        Me.kode_customer.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.kode_customer.Size = New System.Drawing.Size(193, 20)
-        Me.kode_customer.TabIndex = 76
+        Me.kode_customer_parent.Enabled = False
+        Me.kode_customer_parent.Location = New System.Drawing.Point(214, 108)
+        Me.kode_customer_parent.Name = "kode_customer_parent"
+        Me.kode_customer_parent.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.kode_customer_parent.Properties.Appearance.Options.UseFont = True
+        Me.kode_customer_parent.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.kode_customer_parent.Size = New System.Drawing.Size(193, 20)
+        Me.kode_customer_parent.TabIndex = 76
         '
         'rdo_tujuan
         '
@@ -401,7 +401,7 @@ Partial Class frm_delivery_order
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl2.ResumeLayout(False)
         Me.GroupControl2.PerformLayout()
-        CType(Me.kode_customer.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.kode_customer_parent.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.rdo_tujuan.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.chk_all_group.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.chk_all_kota.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -428,7 +428,7 @@ Partial Class frm_delivery_order
     Friend WithEvents chk_cek_uncek As DevExpress.XtraEditors.CheckEdit
     Friend WithEvents GroupControl2 As DevExpress.XtraEditors.GroupControl
     Friend WithEvents LabelControl6 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents kode_customer As DevExpress.XtraEditors.LookUpEdit
+    Friend WithEvents kode_customer_parent As DevExpress.XtraEditors.LookUpEdit
     Friend WithEvents rdo_tujuan As DevExpress.XtraEditors.RadioGroup
     Friend WithEvents chk_all_group As DevExpress.XtraEditors.CheckEdit
     Friend WithEvents chk_all_kota As DevExpress.XtraEditors.CheckEdit

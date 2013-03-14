@@ -19,7 +19,7 @@ Public Class frm_delivery_order_banyak
         'rcd_master.Columns.Add("tgl_do", GetType(Date))
         rcd_master.Columns.Add("no_so", GetType(String))
         rcd_master.Columns.Add("sistem_jual", GetType(String))
-        rcd_master.Columns.Add("kode_customer", GetType(String))
+        rcd_master.Columns.Add("kode_customer_child", GetType(String))
 
         ' input ke record master dan detail
         With frm_delivery_order.rcd_list
@@ -27,16 +27,17 @@ Public Class frm_delivery_order_banyak
                 If .Item(i).cek = True Then
 
                     '# input ke master
-                    rcd_master.Rows.Add(New Object() {no_do, .Item(i).no_so, sistem_jual, .Item(i).kode_customer})
+                    rcd_master.Rows.Add(New Object() {no_do, .Item(i).no_so, sistem_jual, .Item(i).kode_customer_child})
 
                     '# input ke detail
                     Db.FlushCache()
-                    Db.Selects("a.kode_customer, d.nama AS nama_customer, a.sistem_jual, b.kode_barangjadi, b.qty, e.stok, b.terkirim, b.kode_hargajual, c.harga")
+                    Db.Selects("a.kode_customer_child, e.nama AS nama_customer, a.sistem_jual, b.kode_barangjadi, b.qty, f.stok, b.terkirim, b.kode_hargajual, c.harga")
                     Db.From("tbl_salesorder a")
                     Db.Join("tbl_salesorder_detail b", "b.no_so = a.no_so")
                     Db.Join("tbl_hargajual c", "c.kode_hargajual = b.kode_hargajual")
-                    Db.Join("tbl_customer d", "d.kode_customer = a.kode_customer")
-                    Db.Join("tbl_persediaan_gudang e", "e.kode_barangjadi = b.kode_barangjadi")
+                    Db.Join("tbl_customer_child d", "d.kode_customer_child = a.kode_customer_child")
+                    Db.Join("tbl_customer_parent e", "e.kode_customer_parent = d.kode_customer_parent")
+                    Db.Join("tbl_persediaan_gudang f", "f.kode_barangjadi = b.kode_barangjadi")
 
                     Db.Where("a.no_so", .Item(i).no_so)
                     Db.Where("a.status", "0")
@@ -46,7 +47,7 @@ Public Class frm_delivery_order_banyak
                     If rcd.HasRows Then
                         While rcd.Read
                             rcd_detail.Add(New rcd_delivery_order_banyak(.Item(i).no_so, no_do, _
-                                                                     rcd.Item("kode_customer").ToString, rcd.Item("nama_customer").ToString, rcd.Item("kode_barangjadi").ToString, _
+                                                                     rcd.Item("kode_customer_child").ToString, rcd.Item("nama_customer").ToString, rcd.Item("kode_barangjadi").ToString, _
                                                                      rcd.Item("qty").ToString, _
                                                                      rcd.Item("qty").ToString, _
                                                                       CInt(rcd.Item("stok").ToString), _
@@ -71,7 +72,7 @@ Public Class frm_delivery_order_banyak
 
         GridView1.Columns("no_so").Caption = "No. SO"
         GridView1.Columns("no_do").Caption = "No. DO"
-        GridView1.Columns("kode_customer").Caption = "Kode Customer"
+        GridView1.Columns("kode_customer_child").Caption = "Kode Customer"
         GridView1.Columns("nama").Caption = "Nama"
         GridView1.Columns("kode_barangjadi").Caption = "Kode Artikel"
         GridView1.Columns("jml_so").Caption = "Jml SO"
@@ -84,7 +85,7 @@ Public Class frm_delivery_order_banyak
 
         GridView1.Columns("no_so").Width = 50
         GridView1.Columns("no_do").Width = 75
-        GridView1.Columns("kode_customer").Width = 90
+        GridView1.Columns("kode_customer_child").Width = 90
         GridView1.Columns("nama").Width = 100
         GridView1.Columns("kode_barangjadi").Width = 100
         GridView1.Columns("jml_so").Width = 45
@@ -129,11 +130,23 @@ Public Class frm_delivery_order_banyak
         Dim i As Integer
         Dim x As Integer
         Dim query As String
+        Dim tersisa = False
 
         Connection.TRANS_START()
 
         '# insert ke master
         For i = 0 To rcd_master.Rows.Count - 1
+
+            '# cek apakah DO akan ada sisa
+            tersisa = False
+            For x = 0 To rcd_detail.Count - 1
+                If rcd_detail.Item(x).kode_customer_child = rcd_master.Rows(i).Item("kode_customer_child") Then
+                    If rcd_detail.Item(x).jml_do < (rcd_detail.Item(x).jml_so - rcd_detail.Item(x).terkirim) Then
+                        tersisa = True
+                    End If
+                End If
+            Next
+
             '# insert to table tbl_deliveryorder
             Db.FlushCache()
             Db.Insert("tbl_deliveryorder")
@@ -141,7 +154,7 @@ Public Class frm_delivery_order_banyak
             Db.SetField("tgl_do", tgl_do.DateTime)
             Db.SetField("no_so", rcd_master.Rows(i).Item("no_so"))
             Db.SetField("sistem_jual", sistem_jual)
-            Db.SetField("kode_customer", rcd_master.Rows(i).Item("kode_customer"))
+            Db.SetField("kode_customer_child", rcd_master.Rows(i).Item("kode_customer_child"))
             Db.SetField("username", Auth.Username)
             Db.SetField("status", "0")
 
@@ -150,7 +163,7 @@ Public Class frm_delivery_order_banyak
             '# update status SO
             Db.FlushCache()
             Db.Update("tbl_salesorder")
-            Db.SetField("status", "1")
+            Db.SetField("status", IIf(tersisa = True, "3", "1"))
             Db.Where("no_so", rcd_master.Rows(i).Item("no_so"))
 
             Connection.TRANS_ADD(Db.GetQueryString)
@@ -207,10 +220,11 @@ Public Class frm_delivery_order_banyak
                 '# buat page print
                 'ambil informasi customer
                 Db.FlushCache()
-                Db.Selects("a.nama, b.kota, a.mall, a.alamat")
-                Db.From("tbl_customer a")
-                Db.Join("tbl_kota b", "b.kode_kota = a.kode_kota")
-                Db.Where("a.kode_customer", rcd_master.Rows(i).Item("kode_customer"))
+                Db.Selects("a.nama, c.kota, a.mall, a.alamat")
+                Db.From("tbl_customer_parent a")
+                Db.Join("tbl_customer_child b", "b.kode_customer_parent = a.kode_customer_parent")
+                Db.Join("tbl_kota c", "c.kode_kota = a.kode_kota")
+                Db.Where("b.kode_customer_child", rcd_master.Rows(i).Item("kode_customer_child"))
 
                 Dim rcustomer As SqlClient.SqlDataReader = Connection.ExecuteToDataReader(Db.GetQueryString)
                 rcustomer.Read()
@@ -248,7 +262,7 @@ Public Class frm_delivery_order_banyak
     Private Sub GridView1_CellMerge(ByVal sender As Object, ByVal e As DevExpress.XtraGrid.Views.Grid.CellMergeEventArgs) Handles GridView1.CellMerge
         If (e.Column.FieldName = "nama") Or _
            (e.Column.FieldName = "no_do") Or _
-           (e.Column.FieldName = "kode_customer") Then
+           (e.Column.FieldName = "kode_customer_child") Then
 
             Dim view As GridView = CType(sender, GridView)
             Dim val1 As String = view.GetRowCellValue(e.RowHandle1, e.Column)

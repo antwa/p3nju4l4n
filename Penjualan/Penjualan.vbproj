@@ -73,6 +73,7 @@
     <Reference Include="DevExpress.Utils.v11.1, Version=11.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
+    <Reference Include="DevExpress.Xpo.v11.1, Version=11.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraBars.v11.1, Version=11.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
@@ -103,15 +104,25 @@
     <Reference Include="DevExpress.XtraRichEdit.v11.1, Version=11.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
       <Private>True</Private>
     </Reference>
+    <Reference Include="DevExpress.XtraScheduler.v11.1, Version=11.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v11.1.Core, Version=11.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraTreeList.v11.1, Version=11.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
       <Private>True</Private>
     </Reference>
     <Reference Include="DevExpress.XtraVerticalGrid.v11.1, Version=11.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core">
@@ -142,6 +153,7 @@
     <Compile Include="Core\Class\cls_connection_sqlserver.vb" />
     <Compile Include="Core\Class\cls_database.vb" />
     <Compile Include="Core\Class\cls_validation.vb" />
+    <Compile Include="Core\Module\Cls_Calendar.vb" />
     <Compile Include="Core\Module\definition.vb" />
     <Compile Include="Core\Module\Fungsi.vb" />
     <Compile Include="Core\Module\Helper.vb" />
@@ -420,6 +432,19 @@
     <Compile Include="Form\2. Data Master\customer\frm_customer_list.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Form\2. Data Master\margin customer\frm_margin_customer_add.Designer.vb">
+      <DependentUpon>frm_margin_customer_add.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\2. Data Master\margin customer\frm_margin_customer_add.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\2. Data Master\margin customer\frm_margin_customer_list.Designer.vb">
+      <DependentUpon>frm_margin_customer_list.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\2. Data Master\margin customer\frm_margin_customer_list.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\2. Data Master\margin customer\rcd_margin_customer.vb" />
     <Compile Include="Form\2. Data Master\pegawai\frm_pegawai_add.Designer.vb">
       <DependentUpon>frm_pegawai_add.vb</DependentUpon>
     </Compile>
@@ -615,6 +640,19 @@
     </Compile>
     <Compile Include="Form\3. Transaksi\rencana distribusi\frm_rencana_distribusi.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\3. Transaksi\retur formalitas\frm_retur_formalitas.Designer.vb">
+      <DependentUpon>frm_retur_formalitas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\3. Transaksi\retur formalitas\frm_retur_formalitas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\3. Transaksi\retur formalitas\rcd_retur_formalitas.vb" />
+    <Compile Include="Form\3. Transaksi\retur formalitas\rpt_retur_formalitas.Designer.vb">
+      <DependentUpon>rpt_retur_formalitas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\3. Transaksi\retur formalitas\rpt_retur_formalitas.vb">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Form\3. Transaksi\retur jual konsinyasi\frm_retur_jual_konsinyasi.Designer.vb">
       <DependentUpon>frm_retur_jual_konsinyasi.vb</DependentUpon>
@@ -856,6 +894,12 @@
     <Compile Include="Form\Form Main\frm_uji_coba2.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Form\Form Main\frm_uji_coba3.Designer.vb">
+      <DependentUpon>frm_uji_coba3.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Form Main\frm_uji_coba3.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -1049,6 +1093,14 @@
       <DependentUpon>frm_customer_list.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form\2. Data Master\margin customer\frm_margin_customer_add.resx">
+      <DependentUpon>frm_margin_customer_add.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\2. Data Master\margin customer\frm_margin_customer_list.resx">
+      <DependentUpon>frm_margin_customer_list.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\2. Data Master\pegawai\frm_pegawai_add.resx">
       <DependentUpon>frm_pegawai_add.vb</DependentUpon>
       <SubType>Designer</SubType>
@@ -1167,6 +1219,14 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form\3. Transaksi\rencana distribusi\frm_rencana_distribusi.resx">
       <DependentUpon>frm_rencana_distribusi.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\3. Transaksi\retur formalitas\frm_retur_formalitas.resx">
+      <DependentUpon>frm_retur_formalitas.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\3. Transaksi\retur formalitas\rpt_retur_formalitas.resx">
+      <DependentUpon>rpt_retur_formalitas.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\3. Transaksi\retur jual konsinyasi\frm_retur_jual_konsinyasi.resx">
@@ -1317,6 +1377,10 @@
       <DependentUpon>frm_uji_coba2.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form\Form Main\frm_uji_coba3.resx">
+      <DependentUpon>frm_uji_coba3.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\licenses.licx" />
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -1328,7 +1392,6 @@
   <ItemGroup>
     <None Include="bin\Debug\connection.set" />
     <None Include="bin\Debug\Penjualan.vshost.exe.manifest" />
-    <None Include="ClassDiagram1.cd" />
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
@@ -1346,6 +1409,7 @@
     <None Include="My Project\DataSources\rcd_po_bb.datasource" />
     <None Include="My Project\DataSources\rcd_rekap_gaji.datasource" />
     <None Include="My Project\DataSources\rcd_rekap_transfer.datasource" />
+    <None Include="My Project\DataSources\rcd_retur_formalitas.datasource" />
     <None Include="My Project\DataSources\rcd_sj_cutting.datasource" />
     <None Include="My Project\DataSources\rcd_sj_sablon.datasource" />
     <None Include="My Project\DataSources\rcd_sj_sablon1.datasource" />

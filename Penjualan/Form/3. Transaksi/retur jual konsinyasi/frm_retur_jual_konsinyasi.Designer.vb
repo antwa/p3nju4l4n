@@ -30,21 +30,23 @@ Partial Class frm_retur_jual_konsinyasi
         Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl
         Me.tgl_retur = New DevExpress.XtraEditors.DateEdit
         Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton
-        Me.kode_customer = New DevExpress.XtraEditors.LookUpEdit
+        Me.kode_customer_parent = New DevExpress.XtraEditors.LookUpEdit
         Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl
         Me.lbl_kota = New DevExpress.XtraEditors.LabelControl
         Me.lbl_mall = New DevExpress.XtraEditors.LabelControl
         Me.lbl_alamat = New DevExpress.XtraEditors.LabelControl
         Me.lbl_nama = New DevExpress.XtraEditors.LabelControl
         Me.LabelControl6 = New DevExpress.XtraEditors.LabelControl
+        Me.cmb_tipecustomer = New DevExpress.XtraEditors.ComboBoxEdit
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.no_retur.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tgl_retur.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tgl_retur.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.kode_customer.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.kode_customer_parent.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl2.SuspendLayout()
+        CType(Me.cmb_tipecustomer.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'cmd_hapus_baris
@@ -156,15 +158,15 @@ Partial Class frm_retur_jual_konsinyasi
         Me.SimpleButton1.TabIndex = 62
         Me.SimpleButton1.Text = "Cari Artikel"
         '
-        'kode_customer
+        'kode_customer_parent
         '
-        Me.kode_customer.Location = New System.Drawing.Point(107, 66)
-        Me.kode_customer.Name = "kode_customer"
-        Me.kode_customer.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.kode_customer.Properties.Appearance.Options.UseFont = True
-        Me.kode_customer.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.kode_customer.Size = New System.Drawing.Size(221, 21)
-        Me.kode_customer.TabIndex = 63
+        Me.kode_customer_parent.Location = New System.Drawing.Point(107, 66)
+        Me.kode_customer_parent.Name = "kode_customer_parent"
+        Me.kode_customer_parent.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.kode_customer_parent.Properties.Appearance.Options.UseFont = True
+        Me.kode_customer_parent.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.kode_customer_parent.Size = New System.Drawing.Size(221, 21)
+        Me.kode_customer_parent.TabIndex = 63
         '
         'GroupControl2
         '
@@ -225,13 +227,27 @@ Partial Class frm_retur_jual_konsinyasi
         Me.LabelControl6.TabIndex = 30
         Me.LabelControl6.Text = "Kpd : "
         '
+        'cmb_tipecustomer
+        '
+        Me.cmb_tipecustomer.EditValue = "Normal"
+        Me.cmb_tipecustomer.Location = New System.Drawing.Point(107, 93)
+        Me.cmb_tipecustomer.Name = "cmb_tipecustomer"
+        Me.cmb_tipecustomer.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmb_tipecustomer.Properties.Appearance.Options.UseFont = True
+        Me.cmb_tipecustomer.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.cmb_tipecustomer.Properties.Items.AddRange(New Object() {"Normal", "Obral", "SP"})
+        Me.cmb_tipecustomer.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor
+        Me.cmb_tipecustomer.Size = New System.Drawing.Size(110, 21)
+        Me.cmb_tipecustomer.TabIndex = 65
+        '
         'frm_retur_jual_konsinyasi
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(765, 406)
+        Me.Controls.Add(Me.cmb_tipecustomer)
         Me.Controls.Add(Me.GroupControl2)
-        Me.Controls.Add(Me.kode_customer)
+        Me.Controls.Add(Me.kode_customer_parent)
         Me.Controls.Add(Me.SimpleButton1)
         Me.Controls.Add(Me.cmd_hapus_baris)
         Me.Controls.Add(Me.cmd_simpan)
@@ -249,10 +265,11 @@ Partial Class frm_retur_jual_konsinyasi
         CType(Me.no_retur.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.tgl_retur.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.tgl_retur.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.kode_customer.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.kode_customer_parent.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl2.ResumeLayout(False)
         Me.GroupControl2.PerformLayout()
+        CType(Me.cmb_tipecustomer.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -268,11 +285,12 @@ Partial Class frm_retur_jual_konsinyasi
     Friend WithEvents LabelControl3 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents tgl_retur As DevExpress.XtraEditors.DateEdit
     Friend WithEvents SimpleButton1 As DevExpress.XtraEditors.SimpleButton
-    Friend WithEvents kode_customer As DevExpress.XtraEditors.LookUpEdit
+    Friend WithEvents kode_customer_parent As DevExpress.XtraEditors.LookUpEdit
     Friend WithEvents GroupControl2 As DevExpress.XtraEditors.GroupControl
     Friend WithEvents lbl_kota As DevExpress.XtraEditors.LabelControl
     Friend WithEvents lbl_mall As DevExpress.XtraEditors.LabelControl
     Friend WithEvents lbl_alamat As DevExpress.XtraEditors.LabelControl
     Friend WithEvents lbl_nama As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl6 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents cmb_tipecustomer As DevExpress.XtraEditors.ComboBoxEdit
 End Class

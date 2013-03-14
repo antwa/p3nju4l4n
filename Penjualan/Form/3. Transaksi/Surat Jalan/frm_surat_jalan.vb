@@ -3,7 +3,7 @@
     Public rcd_list As System.ComponentModel.BindingList(Of rcd_surat_jalan)
     Public rpt_multi As New DevExpress.XtraReports.UI.XtraReport
 
-    Dim kode_customer As String
+    Dim kode_customer_child As String
     Dim sistem_jual As String
 
     Sub initComponent()
@@ -79,13 +79,14 @@
         '# Get Data
         Db.FlushCache()
         Db.Selects("a.no_so, b.kode_barangjadi, c.nama AS nama_barangjadi, b.qty, b.kode_hargajual, d.harga ")
-        Db.Selects("a.kode_customer, e.sistem_jual, e.nama AS nama_customer, e.alamat, f.kota, e.mall")
+        Db.Selects("a.kode_customer_child, f.sistem_jual, f.nama AS nama_customer, f.alamat, g.kota, f.mall")
         Db.From("tbl_deliveryorder a")
         Db.Join("tbl_deliveryorder_detail b", "b.no_do = a.no_do")
         Db.Join("tbl_barangjadi c", "c.kode_barangjadi = b.kode_barangjadi")
         Db.Join("tbl_hargajual d", "d.kode_hargajual = b.kode_hargajual")
-        Db.Join("tbl_customer e", "e.kode_customer = a.kode_customer")
-        Db.Join("tbl_kota f", "f.kode_kota = e.kode_kota")
+        Db.Join("tbl_customer_child e", "e.kode_customer_child = a.kode_customer_child")
+        Db.Join("tbl_customer_parent f", "f.kode_customer_parent = e.kode_customer_parent")
+        Db.Join("tbl_kota g", "g.kode_kota = f.kode_kota")
         Db.Where("WHERE a.no_do LIKE '%" & no_do.Text & "'")
         'Db.Where("a.status", "0")
 
@@ -102,7 +103,7 @@
                                                      .Item("harga").ToString))
 
                     no_so.Text = .Item("no_so").ToString
-                    kode_customer = .Item("kode_customer").ToString
+                    kode_customer_child = .Item("kode_customer_child").ToString
                     sistem_jual = .Item("sistem_jual").ToString
 
                     lbl_alamat.Text = .Item("alamat").ToString
@@ -153,6 +154,10 @@
             Exit Sub
         End If
 
+        Dim str() As String = kode_customer_child.Split(".")
+        Dim kode_customer_parent As String = str(0)
+        Dim kelompok As String = str(1)
+
         Connection.TRANS_START()
 
         '# simpan ke surat jalan
@@ -163,7 +168,7 @@
         Db.SetField("tgl_surat", tgl_surat.DateTime.ToString("yyyy-MM-dd HH:mm:ss"))
         Db.SetField("no_do", no_do.Text)
         Db.SetField("no_so", no_so.Text)
-        Db.SetField("kode_customer", kode_customer)
+        Db.SetField("kode_customer_child", kode_customer_child)
         Db.SetField("username", Auth.Username)
 
         Connection.TRANS_ADD(Db.GetQueryString)
@@ -195,17 +200,17 @@
                 '  jika sudah ada update stok customer, jika belum ada insert ke table persediaan customer dan insert ke table histori harga jual customer
                 '------------------------------------------
                 query = ""
-                query &= " IF EXISTS (SELECT * FROM tbl_persediaan_customer WHERE kode_customer = '" & kode_customer & "' AND kode_barangjadi = '" & rcd_list.Item(i).kode_barangjadi & "') "
+                query &= " IF EXISTS (SELECT * FROM tbl_persediaan_customer WHERE kode_customer_child = '" & kode_customer_child & "' AND kode_barangjadi = '" & rcd_list.Item(i).kode_barangjadi & "') "
                 query &= "    UPDATE tbl_persediaan_customer "
                 query &= "    SET stok_sekunder = stok_sekunder + " & rcd_list.Item(i).qty & ", stok_primer = stok_primer + " & rcd_list.Item(i).qty & " "
-                query &= "    WHERE kode_customer = '" & kode_customer & "' AND kode_barangjadi = '" & rcd_list.Item(i).kode_barangjadi & "' "
+                query &= "    WHERE kode_customer_child = '" & kode_customer_child & "' AND kode_barangjadi = '" & rcd_list.Item(i).kode_barangjadi & "' "
                 query &= " ELSE "
                 query &= "   BEGIN "
-                query &= "    INSERT INTO tbl_persediaan_customer ([kode_customer],[kode_barangjadi],[stok_sekunder],[stok_primer],[kode_jenis_harga]) "
-                query &= "    VALUES ('" & kode_customer & "', '" & rcd_list.Item(i).kode_barangjadi & "', '" & rcd_list.Item(i).qty & "', '" & rcd_list.Item(i).qty & "', '1');"
+                query &= "    INSERT INTO tbl_persediaan_customer ([kode_customer_child],[kode_barangjadi],[stok_sekunder],[stok_primer]) "
+                query &= "    VALUES ('" & kode_customer_child & "', '" & rcd_list.Item(i).kode_barangjadi & "', '" & rcd_list.Item(i).qty & "', '" & rcd_list.Item(i).qty & "');"
 
-                query &= "    INSERT INTO tbl_histori_hargacustomer ([tanggal],[kode_customer],[kode_barangjadi],[harga],[diskon]) "
-                query &= "    VALUES ('" & tgl_surat.DateTime.ToString("yyyy-MM-dd 00:00:00") & "', '" & kode_customer & "', '" & rcd_list.Item(i).kode_barangjadi & "', '" & rcd_list.Item(i).harga & "', '0'); "
+                query &= "    INSERT INTO tbl_histori_hargacustomer ([tanggal],[kode_customer_parent],[kode_customer_child],[kelompok],[kode_barangjadi],[harga],[diskon]) "
+                query &= "    VALUES ('" & tgl_surat.DateTime.ToString("yyyy-MM-dd 00:00:00") & "', '" & kode_customer_parent & "', '" & kode_customer_child & "', '" & kelompok & "','" & rcd_list.Item(i).kode_barangjadi & "', '" & rcd_list.Item(i).harga & "', '0'); "
                 query &= "   END "
                 query &= "; "
 
@@ -232,7 +237,7 @@
             Dim no_faktur As String = getNomorUrut(C_FAKTUR_KONSINYASI)
 
             frm_invoice_jualputus.Dispose()
-            frm_invoice_jualputus.kode_customer = Me.kode_customer
+            frm_invoice_jualputus.kode_customer_child = Me.kode_customer_child
             frm_invoice_jualputus.GridControl1.DataSource = Me.rcd_list
             frm_invoice_jualputus.no_faktur.Text = no_faktur
             frm_invoice_jualputus.no_suratjalan.Text = Me.no_surat.Text
@@ -297,6 +302,10 @@
         fc.PrintControl1.PrintingSystem = rpt.PrintingSystem
         fc.Height = 500
         fc.ShowDialog(Me)
+
+    End Sub
+
+    Private Sub SimpleButton2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SimpleButton2.Click
 
     End Sub
 End Class

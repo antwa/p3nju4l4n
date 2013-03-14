@@ -21,7 +21,7 @@ Partial Class frm_fakturglobal
     Private Sub InitializeComponent()
         Me.no_faktur = New DevExpress.XtraEditors.TextEdit
         Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl
-        Me.kode_customer = New DevExpress.XtraEditors.LookUpEdit
+        Me.kode_customer_parent = New DevExpress.XtraEditors.LookUpEdit
         Me.LabelControl6 = New DevExpress.XtraEditors.LabelControl
         Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl
         Me.tgl_dari = New DevExpress.XtraEditors.DateEdit
@@ -37,7 +37,7 @@ Partial Class frm_fakturglobal
         Me.tgl_terbit = New DevExpress.XtraEditors.DateEdit
         Me.cmd_print_amplop = New DevExpress.XtraEditors.SimpleButton
         CType(Me.no_faktur.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.kode_customer.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.kode_customer_parent.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tgl_dari.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tgl_dari.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tgl_sampai.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -67,15 +67,15 @@ Partial Class frm_fakturglobal
         Me.LabelControl1.TabIndex = 39
         Me.LabelControl1.Text = "No. Faktur"
         '
-        'kode_customer
+        'kode_customer_parent
         '
-        Me.kode_customer.Location = New System.Drawing.Point(100, 66)
-        Me.kode_customer.Name = "kode_customer"
-        Me.kode_customer.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.kode_customer.Properties.Appearance.Options.UseFont = True
-        Me.kode_customer.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.kode_customer.Size = New System.Drawing.Size(268, 21)
-        Me.kode_customer.TabIndex = 43
+        Me.kode_customer_parent.Location = New System.Drawing.Point(100, 66)
+        Me.kode_customer_parent.Name = "kode_customer_parent"
+        Me.kode_customer_parent.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.kode_customer_parent.Properties.Appearance.Options.UseFont = True
+        Me.kode_customer_parent.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.kode_customer_parent.Size = New System.Drawing.Size(268, 21)
+        Me.kode_customer_parent.TabIndex = 43
         '
         'LabelControl6
         '
@@ -234,14 +234,14 @@ Partial Class frm_fakturglobal
         Me.Controls.Add(Me.LabelControl2)
         Me.Controls.Add(Me.LabelControl3)
         Me.Controls.Add(Me.tgl_dari)
-        Me.Controls.Add(Me.kode_customer)
+        Me.Controls.Add(Me.kode_customer_parent)
         Me.Controls.Add(Me.LabelControl6)
         Me.Controls.Add(Me.no_faktur)
         Me.Controls.Add(Me.LabelControl1)
         Me.Name = "frm_fakturglobal"
         Me.Text = "Faktur Global"
         CType(Me.no_faktur.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.kode_customer.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.kode_customer_parent.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.tgl_dari.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.tgl_dari.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.tgl_sampai.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -256,7 +256,7 @@ Partial Class frm_fakturglobal
     End Sub
     Friend WithEvents no_faktur As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LabelControl1 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents kode_customer As DevExpress.XtraEditors.LookUpEdit
+    Friend WithEvents kode_customer_parent As DevExpress.XtraEditors.LookUpEdit
     Friend WithEvents LabelControl6 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl3 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents tgl_dari As DevExpress.XtraEditors.DateEdit

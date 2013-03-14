@@ -70,14 +70,14 @@
                                                      TDiskon))
             Dim lastrow As Integer = .rcd_list.Count - 1
 
-            .rcd_list.Item(lastrow).sebelum_disc_acara = IIf(.sebelum_disc_acara.EditValue = "1", True, False)
+            '.rcd_list.Item(lastrow).sebelum_disc_acara = IIf(.sebelum_disc_acara.EditValue = "1", True, False)
 
-            .rcd_list.Item(lastrow).disc_acara = .disc_acara.Text
-            .rcd_list.Item(lastrow).disc_acara_kita = .disc_acara_kita.Text
-            .rcd_list.Item(lastrow).disc_acara_toko = .disc_acara_toko.Text
+            '.rcd_list.Item(lastrow).disc_acara = .disc_acara.Text
+            '.rcd_list.Item(lastrow).disc_acara_kita = .disc_acara_kita.Text
+            '.rcd_list.Item(lastrow).disc_acara_toko = .disc_acara_toko.Text
 
-            .rcd_list.Item(lastrow).margin_toko = .margin_toko.Text
-            .rcd_list.Item(lastrow).margin_konsumen = .margin_konsumen.Text
+            '.rcd_list.Item(lastrow).margin_toko = .margin_toko.Text
+            '.rcd_list.Item(lastrow).margin_konsumen = .margin_konsumen.Text
 
             .rcd_list.Item(lastrow).Sumary()
             .GridView1.RefreshData()

@@ -31,13 +31,14 @@ Partial Class frm_sales_order
         Me.tgl_rinciandist = New DevExpress.XtraEditors.DateEdit
         Me.LabelControl5 = New DevExpress.XtraEditors.LabelControl
         Me.tgl_kirim = New DevExpress.XtraEditors.DateEdit
-        Me.kode_customer = New DevExpress.XtraEditors.LookUpEdit
+        Me.kode_customer_parent = New DevExpress.XtraEditors.LookUpEdit
         Me.LabelControl6 = New DevExpress.XtraEditors.LabelControl
         Me.cmd_simpan = New DevExpress.XtraEditors.SimpleButton
         Me.cmd_cancel = New DevExpress.XtraEditors.SimpleButton
         Me.cmd_hapus_baris = New DevExpress.XtraEditors.SimpleButton
         Me.cmd_cari_artikel = New DevExpress.XtraEditors.SimpleButton
         Me.cmd_load_rencana = New DevExpress.XtraEditors.SimpleButton
+        Me.cmb_tipecustomer = New DevExpress.XtraEditors.ComboBoxEdit
         CType(Me.no_so.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tgl_so.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tgl_so.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -48,7 +49,8 @@ Partial Class frm_sales_order
         CType(Me.tgl_rinciandist.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tgl_kirim.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tgl_kirim.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.kode_customer.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.kode_customer_parent.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cmb_tipecustomer.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'no_so
@@ -64,7 +66,7 @@ Partial Class frm_sales_order
         'LabelControl1
         '
         Me.LabelControl1.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl1.Location = New System.Drawing.Point(10, 15)
+        Me.LabelControl1.Location = New System.Drawing.Point(12, 15)
         Me.LabelControl1.Name = "LabelControl1"
         Me.LabelControl1.Size = New System.Drawing.Size(56, 14)
         Me.LabelControl1.TabIndex = 29
@@ -73,7 +75,7 @@ Partial Class frm_sales_order
         'LabelControl3
         '
         Me.LabelControl3.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl3.Location = New System.Drawing.Point(10, 42)
+        Me.LabelControl3.Location = New System.Drawing.Point(12, 39)
         Me.LabelControl3.Name = "LabelControl3"
         Me.LabelControl3.Size = New System.Drawing.Size(43, 14)
         Me.LabelControl3.TabIndex = 32
@@ -82,7 +84,7 @@ Partial Class frm_sales_order
         'tgl_so
         '
         Me.tgl_so.EditValue = Nothing
-        Me.tgl_so.Location = New System.Drawing.Point(84, 39)
+        Me.tgl_so.Location = New System.Drawing.Point(84, 36)
         Me.tgl_so.Name = "tgl_so"
         Me.tgl_so.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tgl_so.Properties.Appearance.Options.UseFont = True
@@ -95,7 +97,7 @@ Partial Class frm_sales_order
         '
         Me.sistem_jual.AutoSizeInLayoutControl = True
         Me.sistem_jual.EditValue = 1
-        Me.sistem_jual.Location = New System.Drawing.Point(84, 66)
+        Me.sistem_jual.Location = New System.Drawing.Point(84, 61)
         Me.sistem_jual.Name = "sistem_jual"
         Me.sistem_jual.Properties.Appearance.BackColor = System.Drawing.Color.Transparent
         Me.sistem_jual.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -109,7 +111,7 @@ Partial Class frm_sales_order
         'LabelControl2
         '
         Me.LabelControl2.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl2.Location = New System.Drawing.Point(12, 70)
+        Me.LabelControl2.Location = New System.Drawing.Point(12, 64)
         Me.LabelControl2.Name = "LabelControl2"
         Me.LabelControl2.Size = New System.Drawing.Size(60, 14)
         Me.LabelControl2.TabIndex = 34
@@ -120,10 +122,10 @@ Partial Class frm_sales_order
         Me.GridControl1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
                     Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GridControl1.Location = New System.Drawing.Point(12, 95)
+        Me.GridControl1.Location = New System.Drawing.Point(12, 111)
         Me.GridControl1.MainView = Me.GridView1
         Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.Size = New System.Drawing.Size(787, 279)
+        Me.GridControl1.Size = New System.Drawing.Size(787, 263)
         Me.GridControl1.TabIndex = 35
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
@@ -163,7 +165,7 @@ Partial Class frm_sales_order
         'LabelControl5
         '
         Me.LabelControl5.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl5.Location = New System.Drawing.Point(311, 42)
+        Me.LabelControl5.Location = New System.Drawing.Point(311, 39)
         Me.LabelControl5.Name = "LabelControl5"
         Me.LabelControl5.Size = New System.Drawing.Size(72, 14)
         Me.LabelControl5.TabIndex = 39
@@ -172,7 +174,7 @@ Partial Class frm_sales_order
         'tgl_kirim
         '
         Me.tgl_kirim.EditValue = Nothing
-        Me.tgl_kirim.Location = New System.Drawing.Point(408, 39)
+        Me.tgl_kirim.Location = New System.Drawing.Point(408, 36)
         Me.tgl_kirim.Name = "tgl_kirim"
         Me.tgl_kirim.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tgl_kirim.Properties.Appearance.Options.UseFont = True
@@ -181,20 +183,20 @@ Partial Class frm_sales_order
         Me.tgl_kirim.Size = New System.Drawing.Size(167, 21)
         Me.tgl_kirim.TabIndex = 38
         '
-        'kode_customer
+        'kode_customer_parent
         '
-        Me.kode_customer.Location = New System.Drawing.Point(408, 66)
-        Me.kode_customer.Name = "kode_customer"
-        Me.kode_customer.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.kode_customer.Properties.Appearance.Options.UseFont = True
-        Me.kode_customer.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.kode_customer.Size = New System.Drawing.Size(262, 21)
-        Me.kode_customer.TabIndex = 41
+        Me.kode_customer_parent.Location = New System.Drawing.Point(408, 61)
+        Me.kode_customer_parent.Name = "kode_customer_parent"
+        Me.kode_customer_parent.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.kode_customer_parent.Properties.Appearance.Options.UseFont = True
+        Me.kode_customer_parent.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.kode_customer_parent.Size = New System.Drawing.Size(238, 21)
+        Me.kode_customer_parent.TabIndex = 41
         '
         'LabelControl6
         '
         Me.LabelControl6.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl6.Location = New System.Drawing.Point(311, 69)
+        Me.LabelControl6.Location = New System.Drawing.Point(311, 64)
         Me.LabelControl6.Name = "LabelControl6"
         Me.LabelControl6.Size = New System.Drawing.Size(52, 14)
         Me.LabelControl6.TabIndex = 40
@@ -239,23 +241,38 @@ Partial Class frm_sales_order
         'cmd_load_rencana
         '
         Me.cmd_load_rencana.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.cmd_load_rencana.Enabled = False
         Me.cmd_load_rencana.Location = New System.Drawing.Point(224, 380)
         Me.cmd_load_rencana.Name = "cmd_load_rencana"
         Me.cmd_load_rencana.Size = New System.Drawing.Size(118, 24)
         Me.cmd_load_rencana.TabIndex = 46
         Me.cmd_load_rencana.Text = "Load Rcn Dist"
         '
+        'cmb_tipecustomer
+        '
+        Me.cmb_tipecustomer.EditValue = "Normal"
+        Me.cmb_tipecustomer.Location = New System.Drawing.Point(408, 85)
+        Me.cmb_tipecustomer.Name = "cmb_tipecustomer"
+        Me.cmb_tipecustomer.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmb_tipecustomer.Properties.Appearance.Options.UseFont = True
+        Me.cmb_tipecustomer.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.cmb_tipecustomer.Properties.Items.AddRange(New Object() {"Normal", "Obral", "SP"})
+        Me.cmb_tipecustomer.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor
+        Me.cmb_tipecustomer.Size = New System.Drawing.Size(110, 21)
+        Me.cmb_tipecustomer.TabIndex = 47
+        '
         'frm_sales_order
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(811, 416)
+        Me.Controls.Add(Me.cmb_tipecustomer)
         Me.Controls.Add(Me.cmd_load_rencana)
         Me.Controls.Add(Me.cmd_simpan)
         Me.Controls.Add(Me.cmd_cancel)
         Me.Controls.Add(Me.cmd_hapus_baris)
         Me.Controls.Add(Me.cmd_cari_artikel)
-        Me.Controls.Add(Me.kode_customer)
+        Me.Controls.Add(Me.kode_customer_parent)
         Me.Controls.Add(Me.LabelControl6)
         Me.Controls.Add(Me.LabelControl5)
         Me.Controls.Add(Me.tgl_kirim)
@@ -280,7 +297,8 @@ Partial Class frm_sales_order
         CType(Me.tgl_rinciandist.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.tgl_kirim.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.tgl_kirim.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.kode_customer.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.kode_customer_parent.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cmb_tipecustomer.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -297,11 +315,12 @@ Partial Class frm_sales_order
     Friend WithEvents tgl_rinciandist As DevExpress.XtraEditors.DateEdit
     Friend WithEvents LabelControl5 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents tgl_kirim As DevExpress.XtraEditors.DateEdit
-    Friend WithEvents kode_customer As DevExpress.XtraEditors.LookUpEdit
+    Friend WithEvents kode_customer_parent As DevExpress.XtraEditors.LookUpEdit
     Friend WithEvents LabelControl6 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents cmd_simpan As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents cmd_cancel As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents cmd_hapus_baris As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents cmd_cari_artikel As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents cmd_load_rencana As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents cmb_tipecustomer As DevExpress.XtraEditors.ComboBoxEdit
 End Class

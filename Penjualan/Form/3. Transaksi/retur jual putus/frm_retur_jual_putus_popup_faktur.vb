@@ -1,13 +1,15 @@
 ﻿Public Class frm_retur_jual_putus_popup_faktur 
 
-    Public kode_customer As String
+    Public kode_customer_child As String
     Public kode_barangjadi As String
     Public Kembali As Boolean = False
 
     Public Sub loadData()
 
+        Dim kode_customer_parent As String = kode_customer_child.Split(".")(0)
+
         Db.FlushCache()
-        Db.Selects("a.no_faktur, a.kode_customer, b.no_penjualan, c.kode_barangjadi, c.harga")
+        Db.Selects("a.no_faktur, a.kode_customer_parent, b.no_penjualan, c.kode_barangjadi, c.harga")
         Db.From("tbl_fakturkonsinyasi a")
         Db.Join("tbl_fakturkonsinyasi_detail b", "a.no_faktur = b.no_faktur")
         Db.Join("tbl_suratjalan_detail c", "b.no_penjualan = c.no_surat")
@@ -15,7 +17,7 @@
             Db.Where("WHERE a.no_faktur LIKE '%" & txt_search.Text & "%'")
         End If
         Db.Where("c.kode_barangjadi", kode_barangjadi)
-        Db.Where("a.kode_customer", kode_customer)
+        Db.Where("a.kode_customer_parent", kode_customer_parent)
         Db.OrderBy("a.no_faktur", cls_database.sorting.Ascending)
 
         GridControl1.DataSource = Connection.ExecuteToDataTable(Db.GetQueryString)
