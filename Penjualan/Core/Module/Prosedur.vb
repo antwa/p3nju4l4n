@@ -438,12 +438,16 @@
         lookup.ItemIndex = 0
     End Sub
 
-    Public Sub Load_akun_detail_byKelompok(ByRef lookup As DevExpress.XtraEditors.LookUpEdit, ByVal kelompok As Integer)
+    Public Sub Load_akun_detail_byKelompok(ByRef lookup As DevExpress.XtraEditors.LookUpEdit, ByVal kelompok As Integer, Optional ByVal kode_akun As String = "")
         Db.FlushCache()
         Db.Selects("kode_akun, nama_akun, kelompok")
         Db.From("tbl_akun")
         Db.Where("kelompok", kelompok)
         Db.Where("tipe", "D")
+        If kode_akun <> "" Then
+            Db.Where(" AND kode_akun LIKE '" & kode_akun & "%'")
+        End If
+
         Db.OrderBy("kode_akun")
 
         lookup.Properties.DataSource = Connection.ExecuteToDataTable(Db.GetQueryString)
