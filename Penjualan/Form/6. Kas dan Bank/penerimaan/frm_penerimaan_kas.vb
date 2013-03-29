@@ -16,10 +16,11 @@
         Load_akun_detail_byKelompok(akun_debet, 1)
         tanggal.DateTime = Now
         keterangan.Text = ""
-        Load_Customer(lookup_kode, 1)
+        Load_CustomerParent(lookup_kode, 1)
         jumlah.Text = "0"
         Load_akun_detail_byKelompok(akun_kredit, 4)
 
+        Load_akun_detail_byKelompok(akun_potongan, 4, "4-200")
 
 
     End Sub
@@ -31,7 +32,7 @@
         Db.FlushCache()
         Db.Selects("no_faktur AS referensi, tgl_terbit, tgl_jatuhtempo, total")
         Db.From("tbl_fakturkonsinyasi")
-        Db.Where("kode_customer", getValueFromLookup(lookup_kode))
+        Db.Where("kode_customer_parent", getValueFromLookup(lookup_kode))
         Db.Where("status", "0")
 
         Dim dt As DataTable = Connection.ExecuteToDataTable(Db.GetQueryString)
@@ -88,6 +89,9 @@
     End Sub
 
     Sub SaveData_Barangjadi()
+        Dim getIdJunal As String
+        Dim arrGetIdJurnal() As String
+        Dim getIdJurnalPotongan As String
 
         '# validation
         If Not rcd_list.Count > 0 Then
@@ -130,27 +134,68 @@
         Db.SetField("keterangan", "")
         Connection.TRANS_ADD(Db.GetQueryString)
 
-        For i = 0 To rcd_list.Count - 1
-            '# insert to table tbl_jurnal_detail
-            Db.FlushCache()
-            Db.Insert("tbl_jurnal_detail")
-            Db.SetField("id_jurnal", id_jurnal.Text)
-            Db.SetField("kode_akun", getValueFromLookup(akun_kredit))
-            Db.SetField("referensi", rcd_list.Item(i).referensi)
-            Db.SetField("debet", "0")
-            Db.SetField("kredit", rcd_list(i).nominal)
-            Db.SetField("keterangan", rcd_list(i).keterangan)
-            Connection.TRANS_ADD(Db.GetQueryString)
 
-            '# update faktur
-            '# Update table tbl_fakturkonsinyasi
-            Db.FlushCache()
-            Db.Update("tbl_fakturkonsinyasi")
-            Db.SetField("status", "1")
-            Db.Where("no_faktur", rcd_list.Item(i).referensi)
-            Connection.TRANS_ADD(Db.GetQueryString)
+
+        For i = 0 To rcd_list.Count - 1
+
+            '# cek value checklist
+            If rcd_list.Item(i).cheked = True Then
+
+                '# insert to table tbl_jurnal_detail
+                Db.FlushCache()
+                Db.Insert("tbl_jurnal_detail")
+                Db.SetField("id_jurnal", id_jurnal.Text)
+                Db.SetField("kode_akun", getValueFromLookup(akun_kredit))
+                Db.SetField("referensi", rcd_list.Item(i).referensi)
+                Db.SetField("debet", "0")
+                Db.SetField("kredit", rcd_list(i).nominal)
+                Db.SetField("keterangan", rcd_list(i).keterangan)
+                Connection.TRANS_ADD(Db.GetQueryString)
+
+                '# update faktur
+                '# Update table tbl_fakturkonsi
+                Db.FlushCache()
+                Db.Update("tbl_fakturkonsinyasi")
+                Db.SetField("status", "1")
+                Db.Where("no_faktur", rcd_list.Item(i).referensi)
+                Connection.TRANS_ADD(Db.GetQueryString)
+            End If
 
         Next
+
+        getIdJunal = id_jurnal.Text
+        arrGetIdJurnal = getIdJunal.Split("/")
+        getIdJurnalPotongan = arrGetIdJurnal(0) & "/" & arrGetIdJurnal(1) & "/" & Format((arrGetIdJurnal(2) + 1), "000")
+
+        '#insert to table tbl_jurnal
+        Db.FlushCache()
+        Db.Insert("tbl_jurnal")
+        Db.SetField("id_jurnal", getIdJurnalPotongan)
+        Db.SetField("id_jurnal_parent", "")
+        Db.SetField("tanggal", tanggal.DateTime)
+        Db.SetField("jumlah", jumlah.EditValue)
+        Db.SetField("keterangan", keterangan.Text)
+        Db.SetField("username", Auth.Username)
+        Connection.TRANS_ADD(Db.GetQueryString)
+
+        '# insert to table tbl_jurnal_detail
+        Db.FlushCache()
+        Db.Insert("tbl_jurnal_detail")
+        Db.SetField("id_jurnal", getIdJurnalPotongan)
+        Db.SetField("kode_akun", getValueFromLookup(akun_debet))
+        Db.SetField("debet", "0")
+        Db.SetField("kredit", potongan.EditValue)
+        Connection.TRANS_ADD(Db.GetQueryString)
+
+
+        '# insert to table tbl_jurnal_detail
+        Db.FlushCache()
+        Db.Insert("tbl_jurnal_detail")
+        Db.SetField("id_jurnal", getIdJurnalPotongan)
+        Db.SetField("kode_akun", getValueFromLookup(akun_potongan))
+        Db.SetField("debet", potongan.EditValue)
+        Db.SetField("kredit", "0")
+        Connection.TRANS_ADD(Db.GetQueryString)
 
         If Connection.TRANS_SUCCESS Then
             MsgBox("Data berhasil disimpan")
@@ -232,9 +277,6 @@
 
     End Sub
 
-    Private Sub GroupControl2_Paint(ByVal sender As System.Object, ByVal e As System.Windows.Forms.PaintEventArgs) Handles GroupControl2.Paint
-
-    End Sub
 
     Private Sub GridView1_CellValueChanged(ByVal sender As Object, ByVal e As DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs) Handles GridView1.CellValueChanged
         Dim i As Integer
@@ -263,6 +305,14 @@
         End Select
 
         Me.jumlah.Text = total
+
+    End Sub
+
+
+
+   
+    Private Sub potongan_EditValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles potongan.EditValueChanged
+        total_bersih.Text = CInt(jumlah.Text) - CInt(potongan.Text)
 
     End Sub
 End Class
