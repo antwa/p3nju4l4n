@@ -60,7 +60,7 @@ Partial Public Class rpt_keluar_barang_non_harga
         '
         'XrLabel7
         '
-        Me.XrLabel7.Borders = CType((DevExpress.XtraPrinting.BorderSide.Right Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide)
+        Me.XrLabel7.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrLabel7.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "qty", "{0:n0}")})
         Me.XrLabel7.LocationFloat = New DevExpress.Utils.PointFloat(321.5422!, 0.0!)
         Me.XrLabel7.Name = "XrLabel7"
@@ -73,7 +73,7 @@ Partial Public Class rpt_keluar_barang_non_harga
         '
         'XrLabel6
         '
-        Me.XrLabel6.Borders = CType((DevExpress.XtraPrinting.BorderSide.Right Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide)
+        Me.XrLabel6.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrLabel6.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "nama_barang")})
         Me.XrLabel6.LocationFloat = New DevExpress.Utils.PointFloat(104.6241!, 0.0!)
         Me.XrLabel6.Name = "XrLabel6"
@@ -86,8 +86,7 @@ Partial Public Class rpt_keluar_barang_non_harga
         '
         'XrLabel5
         '
-        Me.XrLabel5.Borders = CType(((DevExpress.XtraPrinting.BorderSide.Left Or DevExpress.XtraPrinting.BorderSide.Right) _
-                    Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide)
+        Me.XrLabel5.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrLabel5.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "kode_barangjadi")})
         Me.XrLabel5.LocationFloat = New DevExpress.Utils.PointFloat(0.0!, 0.0!)
         Me.XrLabel5.Name = "XrLabel5"
@@ -120,8 +119,7 @@ Partial Public Class rpt_keluar_barang_non_harga
         '
         'XrLabel22
         '
-        Me.XrLabel22.Borders = CType(((DevExpress.XtraPrinting.BorderSide.Top Or DevExpress.XtraPrinting.BorderSide.Right) _
-                    Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide)
+        Me.XrLabel22.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
         Me.XrLabel22.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.XrLabel22.LocationFloat = New DevExpress.Utils.PointFloat(321.5422!, 88.9583!)
         Me.XrLabel22.Name = "XrLabel22"
@@ -135,8 +133,7 @@ Partial Public Class rpt_keluar_barang_non_harga
         '
         'XrLabel20
         '
-        Me.XrLabel20.Borders = CType(((DevExpress.XtraPrinting.BorderSide.Top Or DevExpress.XtraPrinting.BorderSide.Right) _
-                    Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide)
+        Me.XrLabel20.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
         Me.XrLabel20.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.XrLabel20.LocationFloat = New DevExpress.Utils.PointFloat(104.6241!, 88.9583!)
         Me.XrLabel20.Name = "XrLabel20"
@@ -210,9 +207,7 @@ Partial Public Class rpt_keluar_barang_non_harga
         '
         'XrLabel11
         '
-        Me.XrLabel11.Borders = CType((((DevExpress.XtraPrinting.BorderSide.Left Or DevExpress.XtraPrinting.BorderSide.Top) _
-                    Or DevExpress.XtraPrinting.BorderSide.Right) _
-                    Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide)
+        Me.XrLabel11.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
         Me.XrLabel11.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.XrLabel11.LocationFloat = New DevExpress.Utils.PointFloat(0.0!, 88.95829!)
         Me.XrLabel11.Name = "XrLabel11"
@@ -286,9 +281,8 @@ Partial Public Class rpt_keluar_barang_non_harga
         '
         'XrLabel23
         '
-        Me.XrLabel23.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.XrLabel23.Borders = CType(((DevExpress.XtraPrinting.BorderSide.Left Or DevExpress.XtraPrinting.BorderSide.Right) _
-                    Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide)
+        Me.XrLabel23.BackColor = System.Drawing.Color.Transparent
+        Me.XrLabel23.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrLabel23.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.XrLabel23.LocationFloat = New DevExpress.Utils.PointFloat(104.6241!, 0.0!)
         Me.XrLabel23.Name = "XrLabel23"
@@ -309,15 +303,17 @@ Partial Public Class rpt_keluar_barang_non_harga
         '
         'XrLabel15
         '
-        Me.XrLabel15.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.XrLabel15.Borders = CType((DevExpress.XtraPrinting.BorderSide.Right Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide)
+        Me.XrLabel15.BackColor = System.Drawing.Color.Transparent
+        Me.XrLabel15.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.XrLabel15.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "qty")})
+        Me.XrLabel15.Font = New System.Drawing.Font("Times New Roman", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.XrLabel15.LocationFloat = New DevExpress.Utils.PointFloat(321.5422!, 0.0!)
         Me.XrLabel15.Name = "XrLabel15"
         Me.XrLabel15.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel15.SizeF = New System.Drawing.SizeF(69.79166!, 22.79166!)
         Me.XrLabel15.StylePriority.UseBackColor = False
         Me.XrLabel15.StylePriority.UseBorders = False
+        Me.XrLabel15.StylePriority.UseFont = False
         Me.XrLabel15.StylePriority.UseTextAlignment = False
         XrSummary1.FormatString = "{0:n0}"
         XrSummary1.Running = DevExpress.XtraReports.UI.SummaryRunning.Page
@@ -339,9 +335,7 @@ Partial Public Class rpt_keluar_barang_non_harga
         '
         'lbl_keterangan
         '
-        Me.lbl_keterangan.Borders = CType((((DevExpress.XtraPrinting.BorderSide.Left Or DevExpress.XtraPrinting.BorderSide.Top) _
-                    Or DevExpress.XtraPrinting.BorderSide.Right) _
-                    Or DevExpress.XtraPrinting.BorderSide.Bottom), DevExpress.XtraPrinting.BorderSide)
+        Me.lbl_keterangan.Borders = DevExpress.XtraPrinting.BorderSide.None
         Me.lbl_keterangan.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_keterangan.LocationFloat = New DevExpress.Utils.PointFloat(0.0!, 43.12497!)
         Me.lbl_keterangan.Name = "lbl_keterangan"

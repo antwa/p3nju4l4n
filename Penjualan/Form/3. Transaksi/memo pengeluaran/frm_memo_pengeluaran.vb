@@ -182,10 +182,10 @@ Public Class frm_memo_pengeluaran
                 Case "kode_barangjadi"
                     Dim tmp_kode_barangjadi As String = rcd_list.Item(row).kode_barangjadi
                     tmp_kode_barangjadi = tmp_kode_barangjadi.Replace(".", vbNullString)
-                    If tmp_kode_barangjadi.Length < 6 Then
+                    If tmp_kode_barangjadi.Length < 7 Then
                         MsgBox("Masukan kode dengan benar!", MsgBoxStyle.Exclamation)
                     Else
-                        tmp_kode_barangjadi = tmp_kode_barangjadi.Substring(0, 1) & "." & tmp_kode_barangjadi.Substring(1, 3) & "." & tmp_kode_barangjadi.Substring(4, 2)
+                        tmp_kode_barangjadi = tmp_kode_barangjadi.Substring(0, 2) & "." & tmp_kode_barangjadi.Substring(2, 3) & "." & tmp_kode_barangjadi.Substring(5, 2)
 
                         '# get barang jadi
                         Db.FlushCache()

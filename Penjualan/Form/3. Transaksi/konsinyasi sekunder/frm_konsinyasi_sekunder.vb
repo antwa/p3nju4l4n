@@ -5,7 +5,7 @@ Public Class frm_konsinyasi_sekunder
 
     Public rcd_list As System.ComponentModel.BindingList(Of rcd_konsinyasi_sekunder)
 
-    Sub reIndex()
+    Public Sub reIndex()
         Dim i As Integer = 1
         For i = 1 To rcd_list.Count
             rcd_list.Item(i - 1).no = i
@@ -159,7 +159,7 @@ Public Class frm_konsinyasi_sekunder
     Private Sub cmd_cari_artikel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_cari_artikel.Click
         frm_transaksi_popup_artkel.Dispose()
         frm_transaksi_popup_artkel.parameter1 = C_KONSINYASI_SEKUNDER
-        frm_transaksi_popup_artkel.kode_customer_child = kode_customer_parent.Properties.GetKeyValueByDisplayText(kode_customer_parent.Text)
+        frm_transaksi_popup_artkel.kode_customer_parent = getValueFromLookup(kode_customer_parent)
         frm_transaksi_popup_artkel.ShowDialog(Me)
         Call reIndex()
     End Sub
@@ -284,10 +284,10 @@ Public Class frm_konsinyasi_sekunder
                 Case "kode_barangjadi"
                     Dim tmp_kode_barangjadi As String = rcd_list.Item(row).kode_barangjadi
                     tmp_kode_barangjadi = tmp_kode_barangjadi.Replace(".", vbNullString)
-                    If tmp_kode_barangjadi.Length < 6 Then
+                    If tmp_kode_barangjadi.Length < 7 Then
                         MsgBox("Masukan kode dengan benar!", MsgBoxStyle.Exclamation)
                     Else
-                        tmp_kode_barangjadi = tmp_kode_barangjadi.Substring(0, 1) & "." & tmp_kode_barangjadi.Substring(1, 3) & "." & tmp_kode_barangjadi.Substring(4, 2)
+                        tmp_kode_barangjadi = tmp_kode_barangjadi.Substring(0, 2) & "." & tmp_kode_barangjadi.Substring(2, 3) & "." & tmp_kode_barangjadi.Substring(5, 2)
 
                         '# get histori barang
                         Dim data() As String = getHargaFromHistori(rcd_list.Item(row).tgl_transaksi, _

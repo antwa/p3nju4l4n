@@ -203,4 +203,8 @@
         End If
 
     End Sub
+
+    Private Sub GridControl1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GridControl1.Click
+
+    End Sub
 End Class

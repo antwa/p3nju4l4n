@@ -185,6 +185,20 @@
 
     Private Sub cmd_input_n_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_input_n.Click
         Try
+            ' periksa apakah ada data yg diceklis
+            Dim chek As Boolean = False
+            For i = 0 To rcd_list.Count - 1
+                If rcd_list.Item(i).cek = True Then
+                    chek = True
+                    Exit For
+                End If
+            Next
+            If chek = False Then
+                MsgBox("Tidak ada data yang akan dibuat DO!", MsgBoxStyle.Exclamation)
+                Exit Sub
+            End If
+
+
             frm_delivery_order_banyak.Dispose()
             frm_delivery_order_banyak.sistem_jual = sistem_jual.EditValue
             frm_delivery_order_banyak.ShowDialog(Me)

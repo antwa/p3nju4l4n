@@ -23,7 +23,7 @@
         CM_frm_konsinyasi_sekunder.Enabled = Auth.canAccess(frm_konsinyasi_sekunder.Name)
         CM_frm_memo_pengeluaran.Enabled = Auth.canAccess(frm_memo_pengeluaran.Name)
         CM_frm_penerimaanbarang.Enabled = Auth.canAccess(frm_penerimaanbarang.Name)
-        CM_frm_rencana_distribusi.Enabled = Auth.canAccess(frm_rencana_distribusi.Name)
+        CM_frm_rencana_distribusi.Enabled = False 'Auth.canAccess(frm_rencana_distribusi.Name)
         CM_frm_retur_jual_konsinyasi.Enabled = Auth.canAccess(frm_retur_jual_konsinyasi.Name)
         CM_frm_retur_jual_putus.Enabled = Auth.canAccess(frm_retur_jual_putus.Name)
         CM_frm_retur_penerimaanbarang.Enabled = Auth.canAccess(frm_retur_penerimaanbarang.Name)

@@ -4,8 +4,10 @@
 
     Sub initComponent()
 
-        Load_Merk(kode_merk)
-        no_urut.Text = getNomorUrut_Barang(getValueFromLookup(kode_merk))
+        '# load kategori
+        Load_KategoriBarang(kode_kategori)
+
+        no_urut.Text = getNomorUrut_Barang(getValueFromLookup(kode_kategori))
 
         '# load size
         rcd_list = New System.ComponentModel.BindingList(Of rcd_barangjadi_add)
@@ -45,9 +47,6 @@
         Next
         tahun_produksi.Text = Now.ToString("yyyy")
 
-        '# kategori barang
-        Load_KategoriBarang(kode_kategori)
-
         '# bulan Produksi
         bulan_produksi.Properties.Items.Add("Januari")
         bulan_produksi.Properties.Items.Add("Februari")
@@ -68,25 +67,14 @@
 
     Sub PriviewKode()
         Try
-            kode_artikel_priview.Text = getValueFromLookup(kode_merk) & "." & _
+            kode_artikel_priview.Text = getValueFromLookup(kode_kategori) & "." & _
                                         no_urut.Text & "." & _
                                         "XX" & "." & _
                                         tahun_produksi.Text.Substring(2, 2) & "." & _
-                                        getValueFromLookup(kode_kategori) & "." & _
                                         CStr(bulan_produksi.SelectedIndex + 1)
         Catch ex As Exception
 
         End Try
-    End Sub
-
-    Private Sub frm_barangjadi_add_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        Call Me.initComponent()
-        kode_merk.Focus()
-    End Sub
-
-    Private Sub kode_merk_EditValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles kode_merk.EditValueChanged
-        no_urut.Text = getNomorUrut_Barang(getValueFromLookup(kode_merk))
-        Call Me.PriviewKode()
     End Sub
 
     Private Sub tahun_produksi_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tahun_produksi.SelectedIndexChanged
@@ -94,6 +82,7 @@
     End Sub
 
     Private Sub kode_kategori_EditValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles kode_kategori.EditValueChanged
+        no_urut.Text = getNomorUrut_Barang(getValueFromLookup(kode_kategori))
         Call Me.PriviewKode()
     End Sub
 
@@ -162,18 +151,16 @@
 
             For i = 0 To rcd_list.Count - 1
                 If rcd_list.Item(i).cheked = True Then
-                    kode_barangjadi = getValueFromLookup(kode_merk) & "." & _
+                    kode_barangjadi = getValueFromLookup(kode_kategori) & "." & _
                                         no_urut.Text & "." & _
-                                        Format(rcd_list.Item(i).kode_size, "00") & "." & _
+                                        rcd_list.Item(i).kode_size & "." & _
                                         tahun_produksi.Text.Substring(2, 2) & "." & _
-                                        getValueFromLookup(kode_kategori) & "." & _
                                         CStr(bulan_produksi.SelectedIndex + 1)
 
                     '# insert to table tbl_barangjadi
                     Db.FlushCache()
                     Db.Insert("tbl_barangjadi")
                     Db.SetField("kode_barangjadi", kode_barangjadi)
-                    Db.SetField("kode_merk", getValueFromLookup(kode_merk))
                     Db.SetField("nama", nama.Text)
                     Db.SetField("kode_kategori", getValueFromLookup(kode_kategori))
                     Db.SetField("harga_pokok", harga_pokok.EditValue)
@@ -183,13 +170,12 @@
 
                     Connection.TRANS_ADD(Db.GetQueryString)
 
-
                     '# Formula Harga
                     frm_barangjadi_add_formula.Dispose()
                     frm_barangjadi_add_formula.vkode_barangjadi = kode_barangjadi
                     frm_barangjadi_add_formula.vnama = nama.Text
+                    frm_barangjadi_add_formula.lbl_ukuran.Text = rcd_list.Item(i).size
                     frm_barangjadi_add_formula.ShowDialog(Me)
-
 
                     '# insert to Stok Gudang
                     '  insert to table tbl_persediaan_gudang
@@ -223,7 +209,8 @@
         Me.Close()
     End Sub
 
-    Private Sub no_urut_EditValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles no_urut.EditValueChanged
-
+    Private Sub frm_barangjadi_add_Shown(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Shown
+        Call Me.initComponent()
+        kode_kategori.Focus()
     End Sub
 End Class

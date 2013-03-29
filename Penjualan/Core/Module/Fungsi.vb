@@ -131,7 +131,7 @@
 
     End Function
 
-    Public Function getNomorUrut_Barang(ByVal kode_merk As String) As String
+    Public Function getNomorUrut_Barang(ByVal kode_kategori As String) As String
         Dim rcd As SqlClient.SqlDataReader
         Dim nomor As Integer
 
@@ -139,14 +139,14 @@
 
         Db.Selects("TOP 1 kode_barangjadi AS nomor")
         Db.From("tbl_barangjadi")
-        Db.Where("kode_merk", kode_merk)
+        Db.Where("kode_kategori", kode_kategori)
         Db.OrderBy("kode_barangjadi", cls_database.sorting.Descending)
 
         rcd = Connection.ExecuteToDataReader(Db.GetQueryString)
 
         If rcd.HasRows Then
             rcd.Read()
-            nomor = CInt(rcd.Item("nomor").ToString.Substring(2, 3)) + 1
+            nomor = CInt(rcd.Item("nomor").ToString.Substring(3, 3)) + 1
             Return Format(CInt(nomor), "000")
         Else
             Return Format(CInt(1), "000")
