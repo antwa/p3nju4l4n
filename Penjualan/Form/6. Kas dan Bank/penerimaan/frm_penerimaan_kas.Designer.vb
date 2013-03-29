@@ -34,6 +34,8 @@ Partial Class frm_penerimaan_kas
         Me.lookup_kode = New DevExpress.XtraEditors.LookUpEdit
         Me.lbl_customer = New DevExpress.XtraEditors.LabelControl
         Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl
+        Me.LabelControl9 = New DevExpress.XtraEditors.LabelControl
+        Me.akun_potongan = New DevExpress.XtraEditors.LookUpEdit
         Me.total_bersih = New DevExpress.XtraEditors.TextEdit
         Me.LabelControl8 = New DevExpress.XtraEditors.LabelControl
         Me.potongan = New DevExpress.XtraEditors.TextEdit
@@ -45,8 +47,6 @@ Partial Class frm_penerimaan_kas
         Me.akun_kredit = New DevExpress.XtraEditors.LookUpEdit
         Me.GridControl1 = New DevExpress.XtraGrid.GridControl
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView
-        Me.LabelControl9 = New DevExpress.XtraEditors.LabelControl
-        Me.akun_potongan = New DevExpress.XtraEditors.LookUpEdit
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
         CType(Me.keterangan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -60,13 +60,13 @@ Partial Class frm_penerimaan_kas
         CType(Me.lookup_kode.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl2.SuspendLayout()
+        CType(Me.akun_potongan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.total_bersih.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.potongan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.jumlah.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.akun_kredit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.akun_potongan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupControl1
@@ -169,7 +169,7 @@ Partial Class frm_penerimaan_kas
         Me.rdo_transakasi.EditValue = "barang jadi"
         Me.rdo_transakasi.Location = New System.Drawing.Point(5, 6)
         Me.rdo_transakasi.Name = "rdo_transakasi"
-        Me.rdo_transakasi.Properties.Items.AddRange(New DevExpress.XtraEditors.Controls.RadioGroupItem() {New DevExpress.XtraEditors.Controls.RadioGroupItem("bahan baku", "Bahan Baku"), New DevExpress.XtraEditors.Controls.RadioGroupItem("barang jadi", "Barang Jadi"), New DevExpress.XtraEditors.Controls.RadioGroupItem("aksesoris", "Aksesoris"), New DevExpress.XtraEditors.Controls.RadioGroupItem("lain lain", "Lain-Lain")})
+        Me.rdo_transakasi.Properties.Items.AddRange(New DevExpress.XtraEditors.Controls.RadioGroupItem() {New DevExpress.XtraEditors.Controls.RadioGroupItem("bahan baku", "Bahan Baku"), New DevExpress.XtraEditors.Controls.RadioGroupItem("barang jadi", "Barang Jadi"), New DevExpress.XtraEditors.Controls.RadioGroupItem("aksesoris", "Aksesoris"), New DevExpress.XtraEditors.Controls.RadioGroupItem("lain-lain", "Lain-Lain")})
         Me.rdo_transakasi.Size = New System.Drawing.Size(465, 25)
         Me.rdo_transakasi.TabIndex = 1
         '
@@ -232,6 +232,25 @@ Partial Class frm_penerimaan_kas
         Me.GroupControl2.Size = New System.Drawing.Size(709, 143)
         Me.GroupControl2.TabIndex = 3
         Me.GroupControl2.Text = "GroupControl2"
+        '
+        'LabelControl9
+        '
+        Me.LabelControl9.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl9.Location = New System.Drawing.Point(12, 64)
+        Me.LabelControl9.Name = "LabelControl9"
+        Me.LabelControl9.Size = New System.Drawing.Size(85, 14)
+        Me.LabelControl9.TabIndex = 19
+        Me.LabelControl9.Text = "Akun Potongan"
+        '
+        'akun_potongan
+        '
+        Me.akun_potongan.Location = New System.Drawing.Point(148, 61)
+        Me.akun_potongan.Name = "akun_potongan"
+        Me.akun_potongan.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.akun_potongan.Properties.Appearance.Options.UseFont = True
+        Me.akun_potongan.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.akun_potongan.Size = New System.Drawing.Size(320, 21)
+        Me.akun_potongan.TabIndex = 18
         '
         'total_bersih
         '
@@ -354,25 +373,6 @@ Partial Class frm_penerimaan_kas
         Me.GridView1.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.Never
         Me.GridView1.OptionsView.ShowGroupPanel = False
         '
-        'LabelControl9
-        '
-        Me.LabelControl9.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl9.Location = New System.Drawing.Point(12, 64)
-        Me.LabelControl9.Name = "LabelControl9"
-        Me.LabelControl9.Size = New System.Drawing.Size(85, 14)
-        Me.LabelControl9.TabIndex = 19
-        Me.LabelControl9.Text = "Akun Potongan"
-        '
-        'akun_potongan
-        '
-        Me.akun_potongan.Location = New System.Drawing.Point(148, 61)
-        Me.akun_potongan.Name = "akun_potongan"
-        Me.akun_potongan.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.akun_potongan.Properties.Appearance.Options.UseFont = True
-        Me.akun_potongan.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.akun_potongan.Size = New System.Drawing.Size(320, 21)
-        Me.akun_potongan.TabIndex = 18
-        '
         'frm_penerimaan_kas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -400,13 +400,13 @@ Partial Class frm_penerimaan_kas
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl2.ResumeLayout(False)
         Me.GroupControl2.PerformLayout()
+        CType(Me.akun_potongan.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.total_bersih.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.potongan.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.jumlah.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.akun_kredit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.akun_potongan.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
