@@ -365,7 +365,7 @@
                 cmd_load.Visible = True
                 Load_Customer(lookup_kode, 1)
 
-            Case "lain lain"
+            Case "lain-lain"
                 lbl_customer.Visible = False
                 lookup_kode.Visible = False
                 cmd_load.Visible = False

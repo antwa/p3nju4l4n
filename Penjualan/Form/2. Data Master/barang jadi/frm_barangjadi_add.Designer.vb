@@ -25,6 +25,8 @@ Partial Class frm_barangjadi_add
         Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl
         Me.bulan_produksi = New DevExpress.XtraEditors.ComboBoxEdit
         Me.tahun_produksi = New DevExpress.XtraEditors.ComboBoxEdit
+        Me.kode_kategori = New DevExpress.XtraEditors.LookUpEdit
+        Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl
         Me.GridControl1 = New DevExpress.XtraGrid.GridControl
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView
         Me.no_urut = New DevExpress.XtraEditors.TextEdit
@@ -45,12 +47,11 @@ Partial Class frm_barangjadi_add
         Me.cmd_simpan = New DevExpress.XtraEditors.SimpleButton
         Me.cmd_cancel = New DevExpress.XtraEditors.SimpleButton
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog
-        Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl
-        Me.kode_kategori = New DevExpress.XtraEditors.LookUpEdit
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
         CType(Me.bulan_produksi.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tahun_produksi.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.kode_kategori.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.no_urut.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -61,7 +62,6 @@ Partial Class frm_barangjadi_add
         CType(Me.nama.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.harga_pokok.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.keterangan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.kode_kategori.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupControl1
@@ -130,6 +130,25 @@ Partial Class frm_barangjadi_add
         Me.tahun_produksi.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor
         Me.tahun_produksi.Size = New System.Drawing.Size(121, 21)
         Me.tahun_produksi.TabIndex = 1
+        '
+        'kode_kategori
+        '
+        Me.kode_kategori.Location = New System.Drawing.Point(105, 27)
+        Me.kode_kategori.Name = "kode_kategori"
+        Me.kode_kategori.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.kode_kategori.Properties.Appearance.Options.UseFont = True
+        Me.kode_kategori.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.kode_kategori.Size = New System.Drawing.Size(209, 21)
+        Me.kode_kategori.TabIndex = 2
+        '
+        'LabelControl2
+        '
+        Me.LabelControl2.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl2.Location = New System.Drawing.Point(12, 30)
+        Me.LabelControl2.Name = "LabelControl2"
+        Me.LabelControl2.Size = New System.Drawing.Size(86, 14)
+        Me.LabelControl2.TabIndex = 49
+        Me.LabelControl2.Text = "Kategori Barang"
         '
         'GridControl1
         '
@@ -235,7 +254,7 @@ Partial Class frm_barangjadi_add
         'pct_gambar
         '
         Me.pct_gambar.Dock = System.Windows.Forms.DockStyle.Top
-        Me.pct_gambar.Location = New System.Drawing.Point(2, 22)
+        Me.pct_gambar.Location = New System.Drawing.Point(2, 21)
         Me.pct_gambar.Name = "pct_gambar"
         Me.pct_gambar.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch
         Me.pct_gambar.Size = New System.Drawing.Size(356, 193)
@@ -321,25 +340,6 @@ Partial Class frm_barangjadi_add
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
-        'LabelControl2
-        '
-        Me.LabelControl2.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl2.Location = New System.Drawing.Point(12, 30)
-        Me.LabelControl2.Name = "LabelControl2"
-        Me.LabelControl2.Size = New System.Drawing.Size(86, 14)
-        Me.LabelControl2.TabIndex = 49
-        Me.LabelControl2.Text = "Kategori Barang"
-        '
-        'kode_kategori
-        '
-        Me.kode_kategori.Location = New System.Drawing.Point(105, 27)
-        Me.kode_kategori.Name = "kode_kategori"
-        Me.kode_kategori.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.kode_kategori.Properties.Appearance.Options.UseFont = True
-        Me.kode_kategori.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.kode_kategori.Size = New System.Drawing.Size(209, 21)
-        Me.kode_kategori.TabIndex = 2
-        '
         'frm_barangjadi_add
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -367,6 +367,7 @@ Partial Class frm_barangjadi_add
         Me.GroupControl1.PerformLayout()
         CType(Me.bulan_produksi.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.tahun_produksi.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.kode_kategori.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.no_urut.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -378,7 +379,6 @@ Partial Class frm_barangjadi_add
         CType(Me.nama.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.harga_pokok.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.keterangan.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.kode_kategori.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
