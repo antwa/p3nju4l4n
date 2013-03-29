@@ -207,6 +207,125 @@
 
     End Sub
 
+    Sub SaveData_lainlain()
+        Dim getIdJunal As String
+        Dim arrGetIdJurnal() As String
+        Dim getIdJurnalPotongan As String
+
+        '# validation
+        If Not rcd_list.Count > 0 Then
+            MsgBox("Tidak ada data yang akan disimpan", MsgBoxStyle.Exclamation)
+            Exit Sub
+        End If
+
+        Dim i As Integer
+
+        '# begin transaksi
+        Connection.TRANS_START()
+
+        '# insert to table tbl_jurnal
+        Db.FlushCache()
+        Db.Insert("tbl_jurnal")
+        Db.SetField("id_jurnal", id_jurnal.Text)
+        Db.SetField("id_jurnal_parent", "")
+        Db.SetField("tanggal", tanggal.DateTime)
+        Db.SetField("jumlah", jumlah.EditValue)
+        Db.SetField("keterangan", keterangan.Text)
+        Db.SetField("username", Auth.Username)
+        Connection.TRANS_ADD(Db.GetQueryString)
+
+        ''# insert to table tbl_penerimaan_kas
+        'Db.FlushCache()
+        'Db.Insert("tbl_penerimaan_kas")
+        'Db.SetField("id_jurnal", id_jurnal.Text)
+        'Db.SetField("jumlah", jumlah.Text)
+        'Db.SetField("tanggal", tanggal.DateTime)
+        'Db.SetField("username", Auth.Username)
+
+        '# insert to table tbl_jurnal_detail
+        Db.FlushCache()
+        Db.Insert("tbl_jurnal_detail")
+        Db.SetField("id_jurnal", id_jurnal.Text)
+        Db.SetField("kode_akun", getValueFromLookup(akun_debet))
+        Db.SetField("referensi", "")
+        Db.SetField("debet", jumlah.EditValue)
+        Db.SetField("kredit", "0")
+        Db.SetField("keterangan", "")
+        Connection.TRANS_ADD(Db.GetQueryString)
+
+
+
+        For i = 0 To rcd_list.Count - 1
+
+            '# cek value checklist
+            If rcd_list.Item(i).cheked = True Then
+
+                '# insert to table tbl_jurnal_detail
+                Db.FlushCache()
+                Db.Insert("tbl_jurnal_detail")
+                Db.SetField("id_jurnal", id_jurnal.Text)
+                Db.SetField("kode_akun", getValueFromLookup(akun_kredit))
+                Db.SetField("referensi", rcd_list.Item(i).referensi)
+                Db.SetField("debet", "0")
+                Db.SetField("kredit", rcd_list(i).nominal)
+                Db.SetField("keterangan", rcd_list(i).keterangan)
+                Connection.TRANS_ADD(Db.GetQueryString)
+
+                '# update faktur
+                '# Update table tbl_fakturkonsi
+                Db.FlushCache()
+                Db.Update("tbl_fakturkonsinyasi")
+                Db.SetField("status", "1")
+                Db.Where("no_faktur", rcd_list.Item(i).referensi)
+                Connection.TRANS_ADD(Db.GetQueryString)
+            End If
+
+        Next
+
+        getIdJunal = id_jurnal.Text
+        arrGetIdJurnal = getIdJunal.Split("/")
+        getIdJurnalPotongan = arrGetIdJurnal(0) & "/" & arrGetIdJurnal(1) & "/" & Format((arrGetIdJurnal(2) + 1), "000")
+
+        '#insert to table tbl_jurnal
+        Db.FlushCache()
+        Db.Insert("tbl_jurnal")
+        Db.SetField("id_jurnal", getIdJurnalPotongan)
+        Db.SetField("id_jurnal_parent", "")
+        Db.SetField("tanggal", tanggal.DateTime)
+        Db.SetField("jumlah", jumlah.EditValue)
+        Db.SetField("keterangan", keterangan.Text)
+        Db.SetField("username", Auth.Username)
+        Connection.TRANS_ADD(Db.GetQueryString)
+
+        '# insert to table tbl_jurnal_detail
+        Db.FlushCache()
+        Db.Insert("tbl_jurnal_detail")
+        Db.SetField("id_jurnal", getIdJurnalPotongan)
+        Db.SetField("kode_akun", getValueFromLookup(akun_debet))
+        Db.SetField("debet", "0")
+        Db.SetField("kredit", potongan.EditValue)
+        Connection.TRANS_ADD(Db.GetQueryString)
+
+
+        '# insert to table tbl_jurnal_detail
+        Db.FlushCache()
+        Db.Insert("tbl_jurnal_detail")
+        Db.SetField("id_jurnal", getIdJurnalPotongan)
+        Db.SetField("kode_akun", getValueFromLookup(akun_potongan))
+        Db.SetField("debet", potongan.EditValue)
+        Db.SetField("kredit", "0")
+        Connection.TRANS_ADD(Db.GetQueryString)
+
+        If Connection.TRANS_SUCCESS Then
+            MsgBox("Data berhasil disimpan")
+            Call initComponent()
+        Else
+            MsgBox(Connection.TRANS_MESSAGE, MsgBoxStyle.Exclamation)
+        End If
+
+
+    End Sub
+
     Sub LoadData_Lainnya()
         rcd_lainnya.Clear()
         GridView1.Columns.Clear()
@@ -268,11 +387,15 @@
 
         Select Case rdo_transakasi.EditValue
 
+            Case "bahan baku"
+                MsgBox("Belum berfungsi")
             Case "barang jadi"
                 Call SaveData_Barangjadi()
 
-            Case "lain lain"
-
+            Case "aksesoris"
+                MsgBox("Belum berfungsi")
+            Case "lain-lain"
+                Call SaveData_lainlain()
         End Select
 
     End Sub
