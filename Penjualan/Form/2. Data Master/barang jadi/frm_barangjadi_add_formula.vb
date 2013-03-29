@@ -77,15 +77,6 @@ Public Class frm_barangjadi_add_formula
         Me.Close()
     End Sub
 
-    Private Sub cmd_hapus_baris_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_hapus_baris.Click
-        Dim row As Integer = GridView1.FocusedRowHandle
-        Try
-            rcd_list.Rows.RemoveAt(row)
-        Catch ex As Exception
-
-        End Try
-    End Sub
-
     Private Sub GridControl1_EditorKeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles GridControl1.EditorKeyPress
         Dim grid As GridControl = CType(sender, GridControl)
         GridView1_KeyPress(grid.FocusedView, e)

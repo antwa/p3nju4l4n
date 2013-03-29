@@ -141,6 +141,10 @@ Public Class cls_connection_sqlserver
         closeConnection()
     End Function
 
+    Public Function HasRows(ByVal query As String) As Boolean
+        Dim rcd As SqlClient.SqlDataReader = Me.ExecuteToDataReader(query)
+        Return rcd.HasRows
+    End Function
 
     '# Untuk Transaksi database
     '---------------------------------------------------------------------------------

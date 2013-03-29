@@ -1,4 +1,7 @@
-﻿Public Class frm_retur_jual_konsinyasi 
+﻿Imports DevExpress.XtraGrid.Views.Grid
+Imports DevExpress.XtraGrid
+
+Public Class frm_retur_jual_konsinyasi
 
     Public rcd_list As System.ComponentModel.BindingList(Of rcd_retur_jual_konsinyasi)
 
@@ -10,6 +13,7 @@
         Call CustomerDetail()
 
         rcd_list = New System.ComponentModel.BindingList(Of rcd_retur_jual_konsinyasi)
+        rcd_list.Add(New rcd_retur_jual_konsinyasi)
 
         GridControl1.DataSource = rcd_list
 
@@ -38,6 +42,7 @@
         For i = 0 To GridView1.Columns.Count - 1
             GridView1.Columns.Item(i).OptionsColumn.AllowEdit = False
         Next
+        GridView1.Columns.Item("kode_barangjadi").OptionsColumn.AllowEdit = True
         GridView1.Columns.Item("jml_retur").OptionsColumn.AllowEdit = True
         GridView1.Columns.Item("keterangan").OptionsColumn.AllowEdit = True
 
@@ -63,9 +68,17 @@
 
     End Sub
 
-    Sub reIndex()
+    Public Sub reIndex()
         Try
-            If rcd_list.Count > 0 Then
+
+            Dim i As Integer = 1
+            For i = 1 To rcd_list.Count
+                rcd_list.Item(i - 1).no = i
+            Next
+
+            rcd_list.Item(rcd_list.Count - 1).no = 0
+
+            If rcd_list.Count > 1 Then
                 tgl_retur.Properties.ReadOnly = True
                 kode_customer_parent.Properties.ReadOnly = True
                 cmb_tipecustomer.Properties.ReadOnly = True
@@ -75,14 +88,11 @@
                 cmb_tipecustomer.Properties.ReadOnly = False
             End If
 
-            Dim i As Integer
-            For i = 1 To rcd_list.Count
-                rcd_list.Item(i).no = i
-            Next
+            GridView1.RefreshData()
+
         Catch ex As Exception
 
         End Try
-
     End Sub
 
     Private Sub frm_retur_jual_konsinyasi_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
@@ -95,9 +105,12 @@
 
     Private Sub cmd_hapus_baris_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_hapus_baris.Click
         Dim row As Integer = GridView1.FocusedRowHandle
+        Dim rowNewItem As Integer = rcd_list.Count - 1
         Try
-            rcd_list.RemoveAt(row)
-            Call Me.reIndex()
+            If row <> rowNewItem Then
+                rcd_list.RemoveAt(row)
+                Call Me.reIndex()
+            End If
         Catch ex As Exception
 
         End Try
@@ -120,12 +133,12 @@
         Dim query As String
 
         'Cek Grid
-        If rcd_list.Count <= 0 Then
+        If rcd_list.Count <= 1 Then
             MsgBox("Isi data yang akan diretur!", MsgBoxStyle.Exclamation)
             Exit Sub
         End If
 
-        For i = 0 To rcd_list.Count - 1
+        For i = 0 To rcd_list.Count - 2
             If rcd_list.Item(i).jml_retur <= 0 Then
                 MsgBox("Jumlah Retur tidak boleh Nol!", MsgBoxStyle.Exclamation)
                 Exit Sub
@@ -148,7 +161,7 @@
 
         Connection.TRANS_ADD(Db.GetQueryString)
 
-        For i = 0 To rcd_list.Count - 1
+        For i = 0 To rcd_list.Count - 2
             '# insert to table tbl_retur_konsinyasi_detail
             Db.FlushCache()
             Db.Insert("tbl_retur_konsinyasi_detail")
@@ -214,7 +227,91 @@
 
     End Sub
 
-    Private Sub GridControl1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GridControl1.Click
-
+    Private Sub GridControl1_EditorKeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles GridControl1.EditorKeyPress
+        Dim grid As GridControl = CType(sender, GridControl)
+        GridView1_KeyPress(grid.FocusedView, e)
     End Sub
+
+    Private Sub GridView1_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles GridView1.KeyPress
+        Dim view As GridView = CType(sender, GridView)
+        Dim row As Integer = view.FocusedRowHandle
+        Dim rowItemNew As Integer = rcd_list.Count - 1
+
+        If view.FocusedColumn.FieldName = "kode_barangjadi" And row <> rowItemNew Then
+            e.Handled = True
+            Exit Sub
+        End If
+
+        If Asc(e.KeyChar) = 13 Then
+            Select Case view.FocusedColumn.FieldName
+                Case "kode_barangjadi"
+                    Dim tmp_kode_barangjadi As String = rcd_list.Item(row).kode_barangjadi
+                    tmp_kode_barangjadi = tmp_kode_barangjadi.Replace(".", vbNullString)
+                    If tmp_kode_barangjadi.Length < 7 Then
+                        MsgBox("Masukan kode dengan benar!", MsgBoxStyle.Exclamation)
+                    Else
+                        tmp_kode_barangjadi = tmp_kode_barangjadi.Substring(0, 2) & "." & tmp_kode_barangjadi.Substring(2, 3) & "." & tmp_kode_barangjadi.Substring(5, 2)
+
+                        Dim vKode_customer_child As String = getValueFromLookup(kode_customer_parent) & "." & (cmb_tipecustomer.SelectedIndex + 1)
+
+                        '# get barang jadi
+                        Db.FlushCache()
+                        Db.Selects("a.kode_barangjadi, b.nama, a.stok_sekunder as stok")
+                        Db.From("tbl_persediaan_customer a")
+                        Db.Join("tbl_barangjadi b", "b.kode_barangjadi = a.kode_barangjadi")
+                        Db.Where("a.kode_customer_child", vKode_customer_child)
+                        Db.Where(" AND a.kode_barangjadi LIKE '" & tmp_kode_barangjadi & "%'")
+                        Dim dt1 As DataTable = Connection.ExecuteToDataTable(Db.GetQueryString)
+
+                        If dt1.Rows.Count > 0 Then
+
+                            '# cek list, takut ada yg sama (^-^)
+                            For i = 0 To rcd_list.Count - 1
+                                If rcd_list.Item(i).kode_barangjadi = dt1.Rows(0).Item("kode_barangjadi") Then
+                                    MsgBox("Kode Atikel : " & dt1.Rows(0).Item("kode_barangjadi") & " , sudah diinput. Ganti dengan yang lain", MsgBoxStyle.Exclamation, "Pesan")
+                                    Exit Sub
+                                End If
+                            Next
+
+                            '# insert to list
+                            rcd_list.Item(rowItemNew).kode_barangjadi = dt1.Rows(0).Item("kode_barangjadi")
+                            rcd_list.Item(rowItemNew).nama = dt1.Rows(0).Item("nama")
+                            rcd_list.Item(rowItemNew).stok = dt1.Rows(0).Item("stok")
+
+                            '# ambil harga yg ditetapkan
+                            Db.FlushCache()
+                            Db.Selects("TOP 1 a.harga, a.diskon")
+                            Db.From("tbl_histori_hargacustomer a")
+                            Db.Where("a.kode_barangjadi", dt1.Rows(0).Item("kode_barangjadi"))
+                            Db.Where("a.kode_customer_child", vKode_customer_child)
+                            Db.Where("a.tanggal", tgl_retur.DateTime.ToString("yyyy-MM-dd HH:mm:ss"), "<=", "AND")
+                            Db.OrderBy("a.tanggal", cls_database.sorting.Descending)
+
+                            Dim rc As SqlClient.SqlDataReader = Connection.ExecuteToDataReader(Db.GetQueryString)
+                            If rc.HasRows Then
+                                rc.Read()
+                                rcd_list.Item(rowItemNew).harga = rc.Item("harga").ToString
+                            Else
+                                rcd_list.Item(rowItemNew).harga = 0
+                            End If
+
+                            '# refres data
+                            rcd_list.Add(New rcd_retur_jual_konsinyasi)
+                            Call Me.reIndex()
+                            setFocusCell(GridView1, row, "jml_retur")
+                            GridView1.RefreshData()
+                        Else
+                            MsgBox("Tidak terdapat kode barang '" & tmp_kode_barangjadi & "'", MsgBoxStyle.Exclamation)
+                        End If
+                    End If
+
+                Case "jml_retur"
+                    If row < rowItemNew Then
+                        setFocusCell(GridView1, row + 1, "kode_barangjadi")
+                    End If
+            End Select
+        End If
+    End Sub
+
+
 End Class

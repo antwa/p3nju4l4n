@@ -26,7 +26,8 @@ Partial Class frm_barangjadi_add_formula
         Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl
         Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl
         Me.lbl_nama = New DevExpress.XtraEditors.LabelControl
-        Me.cmd_hapus_baris = New DevExpress.XtraEditors.SimpleButton
+        Me.lbl_ukuran = New DevExpress.XtraEditors.LabelControl
+        Me.LabelControl4 = New DevExpress.XtraEditors.LabelControl
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.kode_barangjadi.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -37,10 +38,10 @@ Partial Class frm_barangjadi_add_formula
         Me.GridControl1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
                     Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GridControl1.Location = New System.Drawing.Point(12, 56)
+        Me.GridControl1.Location = New System.Drawing.Point(12, 76)
         Me.GridControl1.MainView = Me.GridView1
         Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.Size = New System.Drawing.Size(532, 221)
+        Me.GridControl1.Size = New System.Drawing.Size(532, 201)
         Me.GridControl1.TabIndex = 45
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
@@ -101,15 +102,23 @@ Partial Class frm_barangjadi_add_formula
         Me.lbl_nama.TabIndex = 53
         Me.lbl_nama.Text = "---"
         '
-        'cmd_hapus_baris
+        'lbl_ukuran
         '
-        Me.cmd_hapus_baris.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.cmd_hapus_baris.Location = New System.Drawing.Point(12, 283)
-        Me.cmd_hapus_baris.Name = "cmd_hapus_baris"
-        Me.cmd_hapus_baris.Size = New System.Drawing.Size(97, 24)
-        Me.cmd_hapus_baris.TabIndex = 54
-        Me.cmd_hapus_baris.Text = "Hapus"
-        Me.cmd_hapus_baris.Visible = False
+        Me.lbl_ukuran.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_ukuran.Location = New System.Drawing.Point(84, 56)
+        Me.lbl_ukuran.Name = "lbl_ukuran"
+        Me.lbl_ukuran.Size = New System.Drawing.Size(12, 14)
+        Me.lbl_ukuran.TabIndex = 56
+        Me.lbl_ukuran.Text = "---"
+        '
+        'LabelControl4
+        '
+        Me.LabelControl4.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl4.Location = New System.Drawing.Point(12, 56)
+        Me.LabelControl4.Name = "LabelControl4"
+        Me.LabelControl4.Size = New System.Drawing.Size(38, 14)
+        Me.LabelControl4.TabIndex = 55
+        Me.LabelControl4.Text = "Ukuran"
         '
         'frm_barangjadi_add_formula
         '
@@ -117,7 +126,8 @@ Partial Class frm_barangjadi_add_formula
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(556, 319)
         Me.ControlBox = False
-        Me.Controls.Add(Me.cmd_hapus_baris)
+        Me.Controls.Add(Me.lbl_ukuran)
+        Me.Controls.Add(Me.LabelControl4)
         Me.Controls.Add(Me.lbl_nama)
         Me.Controls.Add(Me.LabelControl2)
         Me.Controls.Add(Me.kode_barangjadi)
@@ -141,5 +151,6 @@ Partial Class frm_barangjadi_add_formula
     Friend WithEvents LabelControl1 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl2 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents lbl_nama As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents cmd_hapus_baris As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents lbl_ukuran As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents LabelControl4 As DevExpress.XtraEditors.LabelControl
 End Class

@@ -9,6 +9,10 @@
     Dim mtotal As Integer
     Dim mketerangan As String
 
+    Public Sub New()
+
+    End Sub
+
     Public Sub New( _
         ByVal no As Integer, _
         ByVal kode_barangjadi As String, _

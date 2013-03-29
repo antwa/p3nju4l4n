@@ -1,11 +1,11 @@
 ﻿Public Class rcd_barangjadi_add
 
-    Dim mkode_size As Integer
+    Dim mkode_size As String
     Dim mcheked As Boolean
     Dim msize As String
 
     Public Sub New( _
-        ByVal kode_size As Integer, _
+        ByVal kode_size As String, _
         ByVal cheked As Boolean, _
         ByVal size As String)
 
@@ -14,7 +14,7 @@
         Me.msize = size
     End Sub
 
-    Public ReadOnly Property kode_size() As Integer
+    Public ReadOnly Property kode_size() As String
         Get
             Return Me.mkode_size
         End Get
