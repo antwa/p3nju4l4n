@@ -205,7 +205,7 @@
     End Sub
 
     Private Sub BarButtonItem38_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles cKasBank_pengeluaran.ItemClick
-        LoadFormToTab(frm_pengeluaran_kas_list)
+        LoadFormToTab(frm_pengeluaran_kas_add)
     End Sub
 
     Private Sub BarButtonItem39_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles cKasBank_mutasi_kas.ItemClick
