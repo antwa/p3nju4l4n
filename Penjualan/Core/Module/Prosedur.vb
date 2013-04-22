@@ -88,13 +88,31 @@
     End Sub
 
     Public Sub Load_CustomerParent(ByRef lookup As DevExpress.XtraEditors.LookUpEdit, ByVal sistem_jual As Integer)
-        'init lookup
+        'init datatable
+        Dim dt As New DataTable
+        dt.Columns.Add("kode_customer_parent", GetType(String))
+        dt.Columns.Add("nama", GetType(String))
+        dt.Columns.Add("kode_template_harga", GetType(Integer))
+
+        dt.Rows.Add(New Object() {"-1", "Semua Customer", "0"})
+
+        'query
         Db.FlushCache()
         Db.Selects("a.kode_customer_parent, a.nama, a.kode_template_harga")
         Db.From("tbl_customer_parent a")
         Db.Where("a.sistem_jual", sistem_jual)
 
-        lookup.Properties.DataSource = Connection.ExecuteToDataTable(Db.GetQueryString)
+        Dim r As DataTable = Connection.ExecuteToDataTable(Db.GetQueryString)
+
+        If r.Rows.Count > 0 Then
+            Dim count As Integer = r.Rows.Count - 1
+            For i = 0 To count
+                dt.Rows.Add(New Object() {r.Rows(i).Item("kode_customer_parent"), r.Rows(i).Item("nama"), r.Rows(i).Item("kode_template_harga")})
+            Next
+        End If
+
+        ' init lookup
+        lookup.Properties.DataSource = dt
         lookup.Properties.DisplayMember = "nama"
         lookup.Properties.ValueMember = "kode_customer_parent"
         lookup.Properties.PopulateColumns()
@@ -216,12 +234,29 @@
     End Sub
 
     Public Sub Load_KategoriBarang(ByRef lookup As DevExpress.XtraEditors.LookUpEdit)
-        'init lookup
+        ' init datatable
+        Dim dt As New DataTable
+        dt.Columns.Add("kode_kategori", GetType(String))
+        dt.Columns.Add("kategori", GetType(String))
+
+        dt.Rows.Add(New Object() {"-1", "Semua Kategori"})
+
+        'query
         Db.FlushCache()
         Db.Selects("a.kode_kategori, a.kategori")
         Db.From("tbl_kategori_barang a")
+        Dim r As DataTable = Connection.ExecuteToDataTable(Db.GetQueryString)
 
-        lookup.Properties.DataSource = Connection.ExecuteToDataTable(Db.GetQueryString)
+        'add to dt
+        If r.Rows.Count > 0 Then
+            Dim count As Integer = r.Rows.Count - 1
+            For i = 0 To count
+                dt.Rows.Add(New Object() {r.Rows(i).Item("kode_kategori"), r.Rows(i).Item("kategori")})
+            Next
+        End If
+
+        'init lookup
+        lookup.Properties.DataSource = dt
         lookup.Properties.DisplayMember = "kategori"
         lookup.Properties.ValueMember = "kode_kategori"
         lookup.Properties.PopulateColumns()

@@ -83,7 +83,7 @@ Public Class frm_stok_customer
             End If
         End If
 
-        If chk_semua_artikel.Checked = False Then
+        If kode_barangjadi.Text <> "" = False Then
             Db.Where("a.kode_barangjadi", kode_barangjadi.Text)
         End If
 
@@ -150,9 +150,9 @@ Public Class frm_stok_customer
         frm_transaksi_popup_artkel.ShowDialog(Me)
     End Sub
 
-    Private Sub chk_semua_artikel_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chk_semua_artikel.CheckedChanged
-        kode_barangjadi.Enabled = Not chk_semua_artikel.Checked
-        cmd_cari.Enabled = Not chk_semua_artikel.Checked
+    Private Sub chk_semua_artikel_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
+        'kode_barangjadi.Enabled = Not chk_semua_artikel.Checked
+        'cmd_cari.Enabled = Not chk_semua_artikel.Checked
     End Sub
 
     Private Sub chk_semua_customer_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chk_semua_customer.CheckedChanged

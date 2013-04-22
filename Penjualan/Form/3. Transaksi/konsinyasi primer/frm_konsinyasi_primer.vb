@@ -8,7 +8,7 @@ Public Class frm_konsinyasi_primer
     Dim sebelum_margin As New DataTable
     Dim repo_sebelum_margin As New RepositoryItemGridLookUpEdit
 
-    Sub reIndex()
+    Public Sub reIndex()
         Dim i As Integer = 1
         For i = 1 To rcd_list.Count
             rcd_list.Item(i - 1).no = i
@@ -293,7 +293,7 @@ Public Class frm_konsinyasi_primer
     Private Sub cmd_cari_artikel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_cari_artikel.Click
         frm_transaksi_popup_artkel.Dispose()
         frm_transaksi_popup_artkel.parameter1 = C_KONSINYASI_PRIMER
-        frm_transaksi_popup_artkel.kode_customer_child = kode_customer_parent.Properties.GetKeyValueByDisplayText(kode_customer_parent.Text)
+        frm_transaksi_popup_artkel.kode_customer_parent = getValueFromLookup(kode_customer_parent)
         frm_transaksi_popup_artkel.ShowDialog(Me)
         Call reIndex()
     End Sub

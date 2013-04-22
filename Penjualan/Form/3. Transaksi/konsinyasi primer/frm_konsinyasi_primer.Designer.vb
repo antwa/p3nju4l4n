@@ -205,7 +205,6 @@ Partial Class frm_konsinyasi_primer
         'cmd_cari_artikel
         '
         Me.cmd_cari_artikel.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.cmd_cari_artikel.Enabled = False
         Me.cmd_cari_artikel.Location = New System.Drawing.Point(12, 307)
         Me.cmd_cari_artikel.Name = "cmd_cari_artikel"
         Me.cmd_cari_artikel.Size = New System.Drawing.Size(97, 24)

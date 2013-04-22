@@ -10,7 +10,7 @@
     
     Sub initGrid()
 
-        If parameter1 = C_KONSINYASI_SEKUNDER Then
+        If parameter1 = C_KONSINYASI_SEKUNDER Or parameter1 = C_KONSINYASI_PRIMER Then
             Db.FlushCache()
             Db.Selects("a.kode_barangjadi, b.nama")
             Db.From("tbl_persediaan_customer a")
@@ -226,70 +226,52 @@
                 End With
 
             Case C_KONSINYASI_PRIMER
-                'With frm_konsinyasi_primer
+                With frm_konsinyasi_primer
+                    Dim RowItemNew As Integer = .rcd_list.Count - 1
 
-                '    '# delete list row new item
-                '    .rcd_list.RemoveAt(.rcd_list.Count - 1)
+                    '# get histori barang
+                    Dim data() As String = getHargaFromHistori(.rcd_list.Item(RowItemNew).tgl_transaksi, _
+                                                   kode_customer_parent, _
+                                                   row("kode_barangjadi"))
 
-                '    .rcd_list.Add(New rcd_konsinyasi_primer(.tgl_terbit.DateTime, _
-                '                                    row("kode_barangjadi"), _
-                '                                    row("nama"), _
-                '                                    0, _
-                '                                    0, _
-                '                                    0, _
-                '                                    0, _
-                '                                    0))
+                    If data(2) <> "0" Then
+                        '# get Info barangjadi di persediaan customer
+                        Dim data1() As String = getInfoBarangjadiInCustomer(kode_customer_parent & "." & data(2), data(4))
 
-                '    '# ambil harga yg ditetapkan
-                '    Db.FlushCache()
-                '    Db.Selects("TOP 1 a.harga, a.diskon")
-                '    Db.From("tbl_histori_hargacustomer a")
-                '    Db.Where("a.kode_barangjadi", row("kode_barangjadi"))
-                '    Db.Where("a.kode_customer", kode_customer_child)
-                '    Db.Where("a.tanggal", .tgl_terbit.DateTime.ToString("yyyy-MM-dd HH:mm:ss"), "<=", "AND")
-                '    Db.OrderBy("a.tanggal", cls_database.sorting.Descending)
+                        '# get margin
+                        Dim margin() As String = getMarginCustomer(.rcd_list.Item(RowItemNew).tgl_transaksi, kode_customer_parent & "." & data(2))
 
-                '    Dim rc As SqlClient.SqlDataReader = Connection.ExecuteToDataReader(Db.GetQueryString)
-                '    Dim lastrow As Integer = .rcd_list.Count - 1
+                        .rcd_list.Item(RowItemNew).kode_barangjadi = data1(0)
+                        .rcd_list.Item(RowItemNew).nama = data1(1)
+                        .rcd_list.Item(RowItemNew).stok = data1(3)
 
-                '    If rc.HasRows Then
-                '        rc.Read()
-                '        .rcd_list.Item(lastrow).harga = rc.Item("harga").ToString
-                '        .rcd_list.Item(lastrow).diskon = rc.Item("diskon").ToString
+                        .rcd_list.Item(RowItemNew).harga = data(0)
+                        .rcd_list.Item(RowItemNew).diskon = data(1)
+                        .rcd_list.Item(RowItemNew).harga2 = data(0)
+                        .rcd_list.Item(RowItemNew).diskon2 = data(1)
 
-                '        '.rcd_list.Item(lastrow).kode_hargajual2 = rc.Item("kode_hargajual").ToString
-                '        .rcd_list.Item(lastrow).harga2 = rc.Item("harga").ToString
-                '        .rcd_list.Item(lastrow).diskon2 = rc.Item("diskon").ToString
-                '    Else
-                '        .rcd_list.Item(lastrow).harga = 0
-                '        .rcd_list.Item(lastrow).diskon = 0
+                        .rcd_list.Item(RowItemNew).kelompok = data(2)
+                        .rcd_list.Item(RowItemNew).kelompok_desk = data(3)
 
-                '        '.rcd_list.Item(lastrow).kode_hargajual2 = rc.Item("kode_hargajual").ToString
-                '        .rcd_list.Item(lastrow).harga2 = 0
-                '        .rcd_list.Item(lastrow).diskon2 = 0
-                '    End If
+                        '# margin
+                        .rcd_list.Item(RowItemNew).sebelum_disc_acara = margin(0)
+                        .rcd_list.Item(RowItemNew).disc_acara = margin(1)
+                        .rcd_list.Item(RowItemNew).disc_acara_kita = margin(2)
+                        .rcd_list.Item(RowItemNew).disc_acara_toko = margin(3)
+                        .rcd_list.Item(RowItemNew).margin_toko = margin(4)
+                        .rcd_list.Item(RowItemNew).margin_konsumen = margin(5)
 
-                '    .rcd_list.Item(lastrow).sebelum_disc_acara = IIf(.sebelum_disc_acara.EditValue = "1", True, False)
-
-                '    .rcd_list.Item(lastrow).disc_acara = .disc_acara.Text
-                '    .rcd_list.Item(lastrow).disc_acara_kita = .disc_acara_kita.Text
-                '    .rcd_list.Item(lastrow).disc_acara_toko = .disc_acara_toko.Text
-
-                '    .rcd_list.Item(lastrow).margin_toko = .margin_toko.Text
-                '    .rcd_list.Item(lastrow).margin_konsumen = .margin_konsumen.Text
-
-                '    .rcd_list.Item(lastrow).Sumary()
-
-                '    .rcd_list.Add(New rcd_konsinyasi_primer)
-                '    .GridView1.RefreshData()
-                'End With
-
-                'frm_konsinyasi_primer_isian.Dispose()
-                'frm_konsinyasi_primer_isian.kode_barangjadi = row("kode_barangjadi")
-                'frm_konsinyasi_primer_isian.nama = row("nama")
-                'frm_konsinyasi_primer_isian.kode_customer = kode_customer
-                'frm_konsinyasi_primer_isian.ShowDialog(Me)
-
+                        '# refres data
+                        .rcd_list.Add(New rcd_konsinyasi_primer)
+                        .reIndex()
+                        setFocusCell(.GridView1, RowItemNew, "qty")
+                        .GridView1.RefreshData()
+                    Else
+                        MsgBox("Tidak terdapat kode barang '" & row("kode_barangjadi") & "'", MsgBoxStyle.Exclamation)
+                        Exit Sub
+                    End If
+                End With
+                
             Case C_RETUR_JUAL_KONSINYASI
                 With frm_retur_jual_konsinyasi
                     '# cek list, takut ada yg sama (^-^)
