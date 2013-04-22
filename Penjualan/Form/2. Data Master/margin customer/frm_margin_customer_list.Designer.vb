@@ -51,6 +51,7 @@ Partial Class frm_margin_customer_list
         Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog
         Me.PrintingSystem1 = New DevExpress.XtraPrinting.PrintingSystem(Me.components)
         Me.PrintableComponentLink1 = New DevExpress.XtraPrinting.PrintableComponentLink(Me.components)
+        Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl2.SuspendLayout()
         CType(Me.tipe_customer.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -382,11 +383,21 @@ Partial Class frm_margin_customer_list
         Me.PrintableComponentLink1.PrintingSystemBase = Me.PrintingSystem1
         Me.PrintableComponentLink1.RtfReportHeader = resources.GetString("PrintableComponentLink1.RtfReportHeader")
         '
+        'SimpleButton1
+        '
+        Me.SimpleButton1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.SimpleButton1.Location = New System.Drawing.Point(273, 380)
+        Me.SimpleButton1.Name = "SimpleButton1"
+        Me.SimpleButton1.Size = New System.Drawing.Size(81, 24)
+        Me.SimpleButton1.TabIndex = 48
+        Me.SimpleButton1.Text = "Hapus"
+        '
         'frm_margin_customer_list
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(796, 416)
+        Me.Controls.Add(Me.SimpleButton1)
         Me.Controls.Add(Me.cmd_print)
         Me.Controls.Add(Me.cmd_excel)
         Me.Controls.Add(Me.cmd_simpan)
@@ -454,4 +465,5 @@ Partial Class frm_margin_customer_list
     Friend WithEvents SaveFileDialog1 As System.Windows.Forms.SaveFileDialog
     Friend WithEvents PrintingSystem1 As DevExpress.XtraPrinting.PrintingSystem
     Friend WithEvents PrintableComponentLink1 As DevExpress.XtraPrinting.PrintableComponentLink
+    Friend WithEvents SimpleButton1 As DevExpress.XtraEditors.SimpleButton
 End Class

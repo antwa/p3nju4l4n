@@ -289,4 +289,9 @@ Public Class frm_margin_customer_list
             e.Handled = True
         End If
     End Sub
+
+    Private Sub SimpleButton1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SimpleButton1.Click
+        frm_margin_customer_delete.Dispose()
+        frm_margin_customer_delete.ShowDialog(Me)
+    End Sub
 End Class

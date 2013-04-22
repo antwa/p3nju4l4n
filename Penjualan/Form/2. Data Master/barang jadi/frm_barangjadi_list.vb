@@ -10,6 +10,10 @@
             Db.Where("WHERE a.kode_barangjadi LIKE '" & search.Text & "%'")
         End If
 
+        If getValueFromLookup(kode_kategori) <> "-1" Then
+            Db.Where("a.kode_kategori", getValueFromLookup(kode_kategori))
+        End If
+
         Db.OrderBy("a.kode_barangjadi", cls_database.sorting.Ascending)
 
         GridControl1.DataSource = Connection.ExecuteToDataTable(Db.GetQueryString)
@@ -31,6 +35,7 @@
     End Sub
 
     Private Sub frm_barangjadi_list_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        Call Load_KategoriBarang(kode_kategori)
         Call Me.loadData()
     End Sub
 

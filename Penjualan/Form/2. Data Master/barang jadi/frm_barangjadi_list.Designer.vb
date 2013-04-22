@@ -30,9 +30,11 @@ Partial Class frm_barangjadi_list
         Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl
         Me.search = New DevExpress.XtraEditors.TextEdit
         Me.cmd_cari = New DevExpress.XtraEditors.SimpleButton
+        Me.kode_kategori = New DevExpress.XtraEditors.LookUpEdit
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.search.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.kode_kategori.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GridControl1
@@ -119,24 +121,35 @@ Partial Class frm_barangjadi_list
         '
         'search
         '
-        Me.search.Location = New System.Drawing.Point(87, 9)
+        Me.search.Location = New System.Drawing.Point(46, 9)
         Me.search.Name = "search"
-        Me.search.Size = New System.Drawing.Size(154, 20)
+        Me.search.Size = New System.Drawing.Size(124, 20)
         Me.search.TabIndex = 67
         '
         'cmd_cari
         '
-        Me.cmd_cari.Location = New System.Drawing.Point(247, 8)
+        Me.cmd_cari.Location = New System.Drawing.Point(345, 8)
         Me.cmd_cari.Name = "cmd_cari"
         Me.cmd_cari.Size = New System.Drawing.Size(80, 21)
         Me.cmd_cari.TabIndex = 68
         Me.cmd_cari.Text = "Cari"
+        '
+        'kode_kategori
+        '
+        Me.kode_kategori.Location = New System.Drawing.Point(176, 8)
+        Me.kode_kategori.Name = "kode_kategori"
+        Me.kode_kategori.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.kode_kategori.Properties.Appearance.Options.UseFont = True
+        Me.kode_kategori.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.kode_kategori.Size = New System.Drawing.Size(155, 21)
+        Me.kode_kategori.TabIndex = 69
         '
         'frm_barangjadi_list
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(740, 329)
+        Me.Controls.Add(Me.kode_kategori)
         Me.Controls.Add(Me.cmd_cari)
         Me.Controls.Add(Me.search)
         Me.Controls.Add(Me.LabelControl1)
@@ -152,6 +165,7 @@ Partial Class frm_barangjadi_list
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.search.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.kode_kategori.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -167,4 +181,5 @@ Partial Class frm_barangjadi_list
     Friend WithEvents LabelControl1 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents search As DevExpress.XtraEditors.TextEdit
     Friend WithEvents cmd_cari As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents kode_kategori As DevExpress.XtraEditors.LookUpEdit
 End Class

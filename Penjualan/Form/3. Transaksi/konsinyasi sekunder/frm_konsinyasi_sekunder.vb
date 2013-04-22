@@ -1,7 +1,24 @@
 ﻿Imports DevExpress.XtraGrid
 Imports DevExpress.XtraGrid.Views.Grid
+Imports System.Reflection
 
 Public Class frm_konsinyasi_sekunder
+
+    Public Shared Function ListToDataTable(Of T)(ByVal list As List(Of T)) As DataTable
+        Dim dt As New DataTable()
+
+        For Each info As PropertyInfo In GetType(T).GetProperties()
+            dt.Columns.Add(New DataColumn(info.Name, info.PropertyType))
+        Next
+        For Each r As T In list
+            Dim row As DataRow = dt.NewRow()
+            For Each info As PropertyInfo In GetType(T).GetProperties()
+                row(info.Name) = info.GetValue(r, Nothing)
+            Next
+            dt.Rows.Add(row)
+        Next
+        Return dt
+    End Function
 
     Public rcd_list As System.ComponentModel.BindingList(Of rcd_konsinyasi_sekunder)
 
@@ -153,6 +170,8 @@ Public Class frm_konsinyasi_sekunder
     End Sub
 
     Private Sub cmd_cancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_cancel.Click
+        'Dim a As DataTable = ListToDataTable(rcd_list.ToList)
+        'MsgBox(a.Rows(0).Item("kode_barangjadi"))
         Me.Close()
     End Sub
 

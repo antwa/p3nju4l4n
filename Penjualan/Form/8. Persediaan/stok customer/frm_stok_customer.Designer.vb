@@ -21,7 +21,6 @@ Partial Class frm_stok_customer
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_stok_customer))
-        Me.chk_semua_artikel = New DevExpress.XtraEditors.CheckEdit
         Me.stok = New DevExpress.XtraEditors.ComboBoxEdit
         Me.cmd_load = New DevExpress.XtraEditors.SimpleButton
         Me.cmd_print = New DevExpress.XtraEditors.SimpleButton
@@ -43,7 +42,6 @@ Partial Class frm_stok_customer
         Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog
         Me.PrintingSystem1 = New DevExpress.XtraPrinting.PrintingSystem(Me.components)
         Me.PrintableComponentLink1 = New DevExpress.XtraPrinting.PrintableComponentLink(Me.components)
-        CType(Me.chk_semua_artikel.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.stok.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -58,14 +56,6 @@ Partial Class frm_stok_customer
         CType(Me.PrintingSystem1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PrintableComponentLink1.ImageCollection, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'chk_semua_artikel
-        '
-        Me.chk_semua_artikel.Location = New System.Drawing.Point(343, 27)
-        Me.chk_semua_artikel.Name = "chk_semua_artikel"
-        Me.chk_semua_artikel.Properties.Caption = "Semua"
-        Me.chk_semua_artikel.Size = New System.Drawing.Size(59, 19)
-        Me.chk_semua_artikel.TabIndex = 37
         '
         'stok
         '
@@ -166,7 +156,6 @@ Partial Class frm_stok_customer
         Me.GroupControl2.Controls.Add(Me.chk_semua_customer)
         Me.GroupControl2.Controls.Add(Me.LabelControl6)
         Me.GroupControl2.Controls.Add(Me.kode_customer_parent)
-        Me.GroupControl2.Controls.Add(Me.chk_semua_artikel)
         Me.GroupControl2.Controls.Add(Me.cmd_cari)
         Me.GroupControl2.Controls.Add(Me.LabelControl5)
         Me.GroupControl2.Controls.Add(Me.lbl_nama_artikel)
@@ -276,7 +265,6 @@ Partial Class frm_stok_customer
         Me.Controls.Add(Me.GroupControl2)
         Me.Name = "frm_stok_customer"
         Me.Text = "Stok Customer"
-        CType(Me.chk_semua_artikel.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.stok.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -295,7 +283,6 @@ Partial Class frm_stok_customer
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents chk_semua_artikel As DevExpress.XtraEditors.CheckEdit
     Friend WithEvents stok As DevExpress.XtraEditors.ComboBoxEdit
     Friend WithEvents cmd_load As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents cmd_print As DevExpress.XtraEditors.SimpleButton

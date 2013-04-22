@@ -108,7 +108,7 @@ Partial Class frm_retur_formalitas
         '
         'no_retur
         '
-        Me.no_retur.Location = New System.Drawing.Point(89, 9)
+        Me.no_retur.Location = New System.Drawing.Point(98, 9)
         Me.no_retur.Name = "no_retur"
         Me.no_retur.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.no_retur.Properties.Appearance.Options.UseFont = True
@@ -127,7 +127,7 @@ Partial Class frm_retur_formalitas
         '
         'kode_customer_parent
         '
-        Me.kode_customer_parent.Location = New System.Drawing.Point(89, 63)
+        Me.kode_customer_parent.Location = New System.Drawing.Point(98, 63)
         Me.kode_customer_parent.Name = "kode_customer_parent"
         Me.kode_customer_parent.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.kode_customer_parent.Properties.Appearance.Options.UseFont = True
@@ -149,14 +149,14 @@ Partial Class frm_retur_formalitas
         Me.LabelControl3.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelControl3.Location = New System.Drawing.Point(12, 39)
         Me.LabelControl3.Name = "LabelControl3"
-        Me.LabelControl3.Size = New System.Drawing.Size(43, 14)
+        Me.LabelControl3.Size = New System.Drawing.Size(77, 14)
         Me.LabelControl3.TabIndex = 37
-        Me.LabelControl3.Text = "Tanggal"
+        Me.LabelControl3.Text = "Tanggal Retur"
         '
         'tgl_retur
         '
         Me.tgl_retur.EditValue = Nothing
-        Me.tgl_retur.Location = New System.Drawing.Point(89, 36)
+        Me.tgl_retur.Location = New System.Drawing.Point(98, 36)
         Me.tgl_retur.Name = "tgl_retur"
         Me.tgl_retur.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tgl_retur.Properties.Appearance.Options.UseFont = True
@@ -177,7 +177,7 @@ Partial Class frm_retur_formalitas
         'sumber
         '
         Me.sumber.EditValue = "NORMAL"
-        Me.sumber.Location = New System.Drawing.Point(89, 90)
+        Me.sumber.Location = New System.Drawing.Point(98, 90)
         Me.sumber.Name = "sumber"
         Me.sumber.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.sumber.Properties.Appearance.Options.UseFont = True
@@ -190,7 +190,7 @@ Partial Class frm_retur_formalitas
         'LabelControl5
         '
         Me.LabelControl5.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl5.Location = New System.Drawing.Point(183, 93)
+        Me.LabelControl5.Location = New System.Drawing.Point(192, 93)
         Me.LabelControl5.Name = "LabelControl5"
         Me.LabelControl5.Size = New System.Drawing.Size(14, 14)
         Me.LabelControl5.TabIndex = 49
@@ -199,7 +199,7 @@ Partial Class frm_retur_formalitas
         'tujuan
         '
         Me.tujuan.EditValue = "OBRAL"
-        Me.tujuan.Location = New System.Drawing.Point(203, 90)
+        Me.tujuan.Location = New System.Drawing.Point(212, 90)
         Me.tujuan.Name = "tujuan"
         Me.tujuan.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tujuan.Properties.Appearance.Options.UseFont = True

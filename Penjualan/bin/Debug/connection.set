@@ -1,1 +1,1 @@
-Server=SCRIPTS\SQLEXPRESS;Database=penjualan;Trusted_Connection=True;Pooling=false;
+Server=KIMOCHI\SQLEXPRESS;Database=penjualan;Trusted_Connection=True;Pooling=false;
