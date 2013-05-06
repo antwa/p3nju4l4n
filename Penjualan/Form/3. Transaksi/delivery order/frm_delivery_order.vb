@@ -7,59 +7,35 @@
         tgl_dari.DateTime = DateAdd(DateInterval.Month, -1, Now)
         tgl_sampai.DateTime = Now
 
+        Load_Provinsi(kode_provinsi)
+        Load_Kota(kode_kota)
+        Load_Grup(kode_group)
         Load_CustomerParent(kode_customer_parent, sistem_jual.EditValue)
 
     End Sub
 
     '#------------------------- Tujuan
-    Private Sub chk_all_provinsi_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chk_all_provinsi.CheckedChanged
-        If chk_all_provinsi.Checked = False Then
-            Load_Provinsi(kode_provinsi)
-        End If
-        kode_provinsi.Enabled = Not chk_all_provinsi.Checked
-        chk_all_kota.Checked = chk_all_provinsi.Checked
-    End Sub
 
     Private Sub kode_provinsi_EditValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles kode_provinsi.EditValueChanged
         Load_Kota(kode_kota, getValueFromLookup(kode_provinsi))
-    End Sub
-
-    Private Sub chk_all_kota_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chk_all_kota.CheckedChanged
-        kode_kota.Enabled = Not chk_all_kota.Checked
-    End Sub
-
-    Private Sub chk_all_group_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chk_all_group.CheckedChanged
-        If chk_all_group.Checked = False Then
-            Load_Grup(kode_group)
-        End If
-        kode_group.Enabled = Not chk_all_group.Checked
     End Sub
 
     Private Sub rdo_tujuan_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rdo_tujuan.SelectedIndexChanged
         Select Case rdo_tujuan.EditValue
             Case 0
                 kode_provinsi.Enabled = False
-                chk_all_provinsi.Enabled = False
                 kode_kota.Enabled = False
-                chk_all_kota.Enabled = False
                 kode_group.Enabled = False
-                chk_all_group.Enabled = False
                 kode_customer_parent.Enabled = False
             Case 1
-                kode_provinsi.Enabled = Not chk_all_provinsi.Checked
-                chk_all_provinsi.Enabled = True
-                kode_kota.Enabled = Not chk_all_kota.Checked
-                chk_all_kota.Enabled = True
-                kode_group.Enabled = Not chk_all_group.Checked
-                chk_all_group.Enabled = True
+                kode_provinsi.Enabled = True
+                kode_kota.Enabled = True
+                kode_group.Enabled = True
                 kode_customer_parent.Enabled = False
             Case 2
                 kode_provinsi.Enabled = False
-                chk_all_provinsi.Enabled = False
                 kode_kota.Enabled = False
-                chk_all_kota.Enabled = False
                 kode_group.Enabled = False
-                chk_all_group.Enabled = False
                 kode_customer_parent.Enabled = True
         End Select
 
@@ -84,15 +60,15 @@
         Db.Where_BetweenDate("a.tgl_so", tgl_dari.DateTime, tgl_sampai.DateTime)
 
         If rdo_tujuan.EditValue = 1 Then
-            If chk_all_provinsi.Checked = False Then
+            If Not getValueFromLookup(kode_provinsi) = "-1" Then
                 Db.Where("d.kode_provinsi", getValueFromLookup(kode_provinsi))
             End If
 
-            If chk_all_kota.Checked = False Then
+            If Not getValueFromLookup(kode_kota) = "-1" Then
                 Db.Where("c.kode_kota", getValueFromLookup(kode_kota))
             End If
 
-            If chk_all_group.Checked = False Then
+            If Not getValueFromLookup(kode_group) = "-1" Then
                 Db.Where("c.kode_grup", getValueFromLookup(kode_group))
             End If
         ElseIf rdo_tujuan.EditValue = 2 Then
@@ -243,5 +219,13 @@
         Catch ex As Exception
 
         End Try
+    End Sub
+
+    Private Sub GroupControl1_Paint(ByVal sender As System.Object, ByVal e As System.Windows.Forms.PaintEventArgs) Handles GroupControl1.Paint
+
+    End Sub
+
+    Private Sub GroupControl2_Paint(ByVal sender As System.Object, ByVal e As System.Windows.Forms.PaintEventArgs) Handles GroupControl2.Paint
+
     End Sub
 End Class

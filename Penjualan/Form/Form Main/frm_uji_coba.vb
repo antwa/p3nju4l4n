@@ -44,4 +44,8 @@
         End If
 
     End Sub
+
+    Private Sub GroupControl2_Paint(ByVal sender As System.Object, ByVal e As System.Windows.Forms.PaintEventArgs) Handles GroupControl2.Paint
+
+    End Sub
 End Class

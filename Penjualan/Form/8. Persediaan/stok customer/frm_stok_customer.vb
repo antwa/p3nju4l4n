@@ -71,7 +71,7 @@ Public Class frm_stok_customer
         Db.OrderBy("a.kode_barangjadi", cls_database.sorting.Ascending)
 
 
-        If chk_semua_customer.Checked = False Then
+        If Not getValueFromLookup(kode_customer_parent) = "-1" Then
             If cmb_tipecustomer.SelectedIndex = 0 Then
                 Db.Where(" WHERE a.kode_customer_child LIKE '" & getValueFromLookup(kode_customer_parent) & "%'")
             Else
@@ -83,7 +83,7 @@ Public Class frm_stok_customer
             End If
         End If
 
-        If kode_barangjadi.Text <> "" = False Then
+        If kode_barangjadi.Text <> "" Then
             Db.Where("a.kode_barangjadi", kode_barangjadi.Text)
         End If
 
@@ -153,10 +153,6 @@ Public Class frm_stok_customer
     Private Sub chk_semua_artikel_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
         'kode_barangjadi.Enabled = Not chk_semua_artikel.Checked
         'cmd_cari.Enabled = Not chk_semua_artikel.Checked
-    End Sub
-
-    Private Sub chk_semua_customer_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chk_semua_customer.CheckedChanged
-        kode_customer_parent.Enabled = Not chk_semua_customer.Checked
     End Sub
 
     'Private Sub cmd_edit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_edit.Click

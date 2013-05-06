@@ -236,6 +236,7 @@ Partial Class formMDI
         Me.CM_frm_merk_list.Caption = "Merk"
         Me.CM_frm_merk_list.Id = 128
         Me.CM_frm_merk_list.Name = "CM_frm_merk_list"
+        Me.CM_frm_merk_list.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
         '
         'CM_frm_kategoribarang_list
         '

@@ -33,10 +33,6 @@ Partial Class frm_pegawai_edit
         Me.LabelControl14 = New DevExpress.XtraEditors.LabelControl
         Me.txt_gaji_pokok = New DevExpress.XtraEditors.TextEdit
         Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl
-        Me.txt_atas_nama = New DevExpress.XtraEditors.TextEdit
-        Me.LabelControl19 = New DevExpress.XtraEditors.LabelControl
-        Me.LabelControl20 = New DevExpress.XtraEditors.LabelControl
-        Me.txt_no_rekening = New DevExpress.XtraEditors.TextEdit
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl
         Me.rdg_group_pegawai = New DevExpress.XtraEditors.RadioGroup
         Me.lkp_kode_costumer_parent = New DevExpress.XtraEditors.LookUpEdit
@@ -64,6 +60,12 @@ Partial Class frm_pegawai_edit
         Me.txt_nik = New DevExpress.XtraEditors.TextEdit
         Me.cmd_simpan = New DevExpress.XtraEditors.SimpleButton
         Me.cmd_batal = New DevExpress.XtraEditors.SimpleButton
+        Me.LabelControl19 = New DevExpress.XtraEditors.LabelControl
+        Me.txt_bank = New DevExpress.XtraEditors.TextEdit
+        Me.txt_atas_nama = New DevExpress.XtraEditors.TextEdit
+        Me.LabelControl20 = New DevExpress.XtraEditors.LabelControl
+        Me.LabelControl21 = New DevExpress.XtraEditors.LabelControl
+        Me.txt_no_rekening = New DevExpress.XtraEditors.TextEdit
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl3.SuspendLayout()
         CType(Me.rdg_statusKaryawan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -74,8 +76,6 @@ Partial Class frm_pegawai_edit
         CType(Me.txt_gaji_pokok.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl2.SuspendLayout()
-        CType(Me.txt_atas_nama.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txt_no_rekening.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
         CType(Me.rdg_group_pegawai.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -91,6 +91,9 @@ Partial Class frm_pegawai_edit
         CType(Me.txt_nama_pegawai.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txt_noktp.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txt_nik.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txt_bank.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txt_atas_nama.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txt_no_rekening.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupControl3
@@ -230,50 +233,16 @@ Partial Class frm_pegawai_edit
         '
         'GroupControl2
         '
-        Me.GroupControl2.Controls.Add(Me.txt_atas_nama)
         Me.GroupControl2.Controls.Add(Me.LabelControl19)
+        Me.GroupControl2.Controls.Add(Me.txt_bank)
+        Me.GroupControl2.Controls.Add(Me.txt_atas_nama)
         Me.GroupControl2.Controls.Add(Me.LabelControl20)
+        Me.GroupControl2.Controls.Add(Me.LabelControl21)
         Me.GroupControl2.Controls.Add(Me.txt_no_rekening)
         Me.GroupControl2.Location = New System.Drawing.Point(439, 12)
         Me.GroupControl2.Name = "GroupControl2"
         Me.GroupControl2.Size = New System.Drawing.Size(360, 121)
         Me.GroupControl2.TabIndex = 40
-        '
-        'txt_atas_nama
-        '
-        Me.txt_atas_nama.Location = New System.Drawing.Point(130, 63)
-        Me.txt_atas_nama.Name = "txt_atas_nama"
-        Me.txt_atas_nama.Size = New System.Drawing.Size(205, 20)
-        Me.txt_atas_nama.TabIndex = 39
-        '
-        'LabelControl19
-        '
-        Me.LabelControl19.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl19.Location = New System.Drawing.Point(26, 65)
-        Me.LabelControl19.Name = "LabelControl19"
-        Me.LabelControl19.Size = New System.Drawing.Size(58, 14)
-        Me.LabelControl19.TabIndex = 38
-        Me.LabelControl19.Text = "Atas Nama"
-        '
-        'LabelControl20
-        '
-        Me.LabelControl20.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl20.Location = New System.Drawing.Point(26, 38)
-        Me.LabelControl20.Name = "LabelControl20"
-        Me.LabelControl20.Size = New System.Drawing.Size(73, 14)
-        Me.LabelControl20.TabIndex = 34
-        Me.LabelControl20.Text = "No. Rekening"
-        '
-        'txt_no_rekening
-        '
-        Me.txt_no_rekening.EditValue = ""
-        Me.txt_no_rekening.Location = New System.Drawing.Point(130, 31)
-        Me.txt_no_rekening.Name = "txt_no_rekening"
-        Me.txt_no_rekening.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_no_rekening.Properties.Appearance.Options.UseFont = True
-        Me.txt_no_rekening.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_no_rekening.Size = New System.Drawing.Size(173, 21)
-        Me.txt_no_rekening.TabIndex = 33
         '
         'GroupControl1
         '
@@ -550,6 +519,62 @@ Partial Class frm_pegawai_edit
         Me.cmd_batal.TabIndex = 44
         Me.cmd_batal.Text = "Batal"
         '
+        'LabelControl19
+        '
+        Me.LabelControl19.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl19.Location = New System.Drawing.Point(22, 61)
+        Me.LabelControl19.Name = "LabelControl19"
+        Me.LabelControl19.Size = New System.Drawing.Size(73, 14)
+        Me.LabelControl19.TabIndex = 47
+        Me.LabelControl19.Text = "No. Rekening"
+        '
+        'txt_bank
+        '
+        Me.txt_bank.EditValue = ""
+        Me.txt_bank.Location = New System.Drawing.Point(130, 34)
+        Me.txt_bank.Name = "txt_bank"
+        Me.txt_bank.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_bank.Properties.Appearance.Options.UseFont = True
+        Me.txt_bank.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txt_bank.Size = New System.Drawing.Size(145, 21)
+        Me.txt_bank.TabIndex = 42
+        '
+        'txt_atas_nama
+        '
+        Me.txt_atas_nama.Location = New System.Drawing.Point(130, 82)
+        Me.txt_atas_nama.Name = "txt_atas_nama"
+        Me.txt_atas_nama.Size = New System.Drawing.Size(205, 20)
+        Me.txt_atas_nama.TabIndex = 44
+        '
+        'LabelControl20
+        '
+        Me.LabelControl20.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl20.Location = New System.Drawing.Point(21, 84)
+        Me.LabelControl20.Name = "LabelControl20"
+        Me.LabelControl20.Size = New System.Drawing.Size(58, 14)
+        Me.LabelControl20.TabIndex = 46
+        Me.LabelControl20.Text = "Atas Nama"
+        '
+        'LabelControl21
+        '
+        Me.LabelControl21.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelControl21.Location = New System.Drawing.Point(21, 37)
+        Me.LabelControl21.Name = "LabelControl21"
+        Me.LabelControl21.Size = New System.Drawing.Size(26, 14)
+        Me.LabelControl21.TabIndex = 45
+        Me.LabelControl21.Text = "Bank"
+        '
+        'txt_no_rekening
+        '
+        Me.txt_no_rekening.EditValue = ""
+        Me.txt_no_rekening.Location = New System.Drawing.Point(130, 58)
+        Me.txt_no_rekening.Name = "txt_no_rekening"
+        Me.txt_no_rekening.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_no_rekening.Properties.Appearance.Options.UseFont = True
+        Me.txt_no_rekening.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txt_no_rekening.Size = New System.Drawing.Size(145, 21)
+        Me.txt_no_rekening.TabIndex = 43
+        '
         'frm_pegawai_edit
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -576,8 +601,6 @@ Partial Class frm_pegawai_edit
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl2.ResumeLayout(False)
         Me.GroupControl2.PerformLayout()
-        CType(Me.txt_atas_nama.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txt_no_rekening.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)
         Me.GroupControl1.PerformLayout()
@@ -594,6 +617,9 @@ Partial Class frm_pegawai_edit
         CType(Me.txt_nama_pegawai.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txt_noktp.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txt_nik.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txt_bank.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txt_atas_nama.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txt_no_rekening.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -610,10 +636,6 @@ Partial Class frm_pegawai_edit
     Friend WithEvents LabelControl14 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents txt_gaji_pokok As DevExpress.XtraEditors.TextEdit
     Friend WithEvents GroupControl2 As DevExpress.XtraEditors.GroupControl
-    Friend WithEvents txt_atas_nama As DevExpress.XtraEditors.TextEdit
-    Friend WithEvents LabelControl19 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents LabelControl20 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents txt_no_rekening As DevExpress.XtraEditors.TextEdit
     Friend WithEvents GroupControl1 As DevExpress.XtraEditors.GroupControl
     Friend WithEvents rdg_group_pegawai As DevExpress.XtraEditors.RadioGroup
     Friend WithEvents lkp_kode_costumer_parent As DevExpress.XtraEditors.LookUpEdit
@@ -642,4 +664,10 @@ Partial Class frm_pegawai_edit
     Friend WithEvents cmd_simpan As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents cmd_batal As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents rdg_statusKaryawan As DevExpress.XtraEditors.RadioGroup
+    Friend WithEvents LabelControl19 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents txt_bank As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents txt_atas_nama As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LabelControl20 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents LabelControl21 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents txt_no_rekening As DevExpress.XtraEditors.TextEdit
 End Class

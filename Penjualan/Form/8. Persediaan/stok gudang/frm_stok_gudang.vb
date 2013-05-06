@@ -22,7 +22,7 @@
 
         Db.OrderBy("a.kode_barangjadi")
 
-        If chk_all_aartikel.Checked = False Then
+        If kode_barangjadi.Text <> "" Then
             Db.Where("a.kode_barangjadi", kode_barangjadi.Text)
         End If
 
@@ -60,11 +60,6 @@
         frm_transaksi_popup_artkel.txt_artikel = kode_barangjadi
         frm_transaksi_popup_artkel.lbl_nama_artikel = lbl_nama_artikel
         frm_transaksi_popup_artkel.ShowDialog(Me)
-    End Sub
-
-    Private Sub CheckEdit1_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chk_all_aartikel.CheckedChanged
-        kode_barangjadi.Enabled = Not chk_all_aartikel.Checked
-        cmd_cari.Enabled = Not chk_all_aartikel.Checked
     End Sub
 
     Private Sub frm_stok_gudang_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load

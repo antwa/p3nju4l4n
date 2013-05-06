@@ -20,7 +20,7 @@ Partial Class frm_input_gaji_spg
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl
-        Me.kode_customer = New DevExpress.XtraEditors.LookUpEdit
+        Me.kode_customer_parent = New DevExpress.XtraEditors.LookUpEdit
         Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl
         Me.id_pegawai = New DevExpress.XtraEditors.LookUpEdit
         Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl
@@ -71,14 +71,13 @@ Partial Class frm_input_gaji_spg
         Me.grand_total = New DevExpress.XtraEditors.TextEdit
         Me.LabelControl24 = New DevExpress.XtraEditors.LabelControl
         Me.cmd_simpan = New DevExpress.XtraEditors.SimpleButton
-        Me.chk_semua_customer = New DevExpress.XtraEditors.CheckEdit
         Me.gaji_pokok = New DevExpress.XtraEditors.TextEdit
         Me.LabelControl25 = New DevExpress.XtraEditors.LabelControl
         Me.GridControl1 = New DevExpress.XtraGrid.GridControl
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView
         Me.GridControl2 = New DevExpress.XtraGrid.GridControl
         Me.GridView2 = New DevExpress.XtraGrid.Views.Grid.GridView
-        CType(Me.kode_customer.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.kode_customer_parent.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.id_pegawai.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tgl_input.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tgl_input.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -106,7 +105,6 @@ Partial Class frm_input_gaji_spg
         CType(Me.TextEdit17.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.total_salah_bayar.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.grand_total.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.chk_semua_customer.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.gaji_pokok.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -123,15 +121,15 @@ Partial Class frm_input_gaji_spg
         Me.LabelControl1.TabIndex = 38
         Me.LabelControl1.Text = "Customer"
         '
-        'kode_customer
+        'kode_customer_parent
         '
-        Me.kode_customer.Location = New System.Drawing.Point(116, 9)
-        Me.kode_customer.Name = "kode_customer"
-        Me.kode_customer.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.kode_customer.Properties.Appearance.Options.UseFont = True
-        Me.kode_customer.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.kode_customer.Size = New System.Drawing.Size(200, 21)
-        Me.kode_customer.TabIndex = 44
+        Me.kode_customer_parent.Location = New System.Drawing.Point(116, 9)
+        Me.kode_customer_parent.Name = "kode_customer_parent"
+        Me.kode_customer_parent.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.kode_customer_parent.Properties.Appearance.Options.UseFont = True
+        Me.kode_customer_parent.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.kode_customer_parent.Size = New System.Drawing.Size(200, 21)
+        Me.kode_customer_parent.TabIndex = 44
         '
         'LabelControl2
         '
@@ -742,14 +740,6 @@ Partial Class frm_input_gaji_spg
         Me.cmd_simpan.TabIndex = 98
         Me.cmd_simpan.Text = "Simpan"
         '
-        'chk_semua_customer
-        '
-        Me.chk_semua_customer.Location = New System.Drawing.Point(322, 10)
-        Me.chk_semua_customer.Name = "chk_semua_customer"
-        Me.chk_semua_customer.Properties.Caption = "Semua"
-        Me.chk_semua_customer.Size = New System.Drawing.Size(74, 19)
-        Me.chk_semua_customer.TabIndex = 99
-        '
         'gaji_pokok
         '
         Me.gaji_pokok.EditValue = "0"
@@ -840,7 +830,6 @@ Partial Class frm_input_gaji_spg
         Me.Controls.Add(Me.GridControl1)
         Me.Controls.Add(Me.LabelControl25)
         Me.Controls.Add(Me.gaji_pokok)
-        Me.Controls.Add(Me.chk_semua_customer)
         Me.Controls.Add(Me.cmd_simpan)
         Me.Controls.Add(Me.LabelControl24)
         Me.Controls.Add(Me.grand_total)
@@ -891,12 +880,12 @@ Partial Class frm_input_gaji_spg
         Me.Controls.Add(Me.tgl_input)
         Me.Controls.Add(Me.id_pegawai)
         Me.Controls.Add(Me.LabelControl2)
-        Me.Controls.Add(Me.kode_customer)
+        Me.Controls.Add(Me.kode_customer_parent)
         Me.Controls.Add(Me.LabelControl1)
         Me.MinimumSize = New System.Drawing.Size(777, 537)
         Me.Name = "frm_input_gaji_spg"
         Me.Text = "Input Gaji SPG"
-        CType(Me.kode_customer.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.kode_customer_parent.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.id_pegawai.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.tgl_input.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.tgl_input.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -924,7 +913,6 @@ Partial Class frm_input_gaji_spg
         CType(Me.TextEdit17.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.total_salah_bayar.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.grand_total.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.chk_semua_customer.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.gaji_pokok.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -935,7 +923,7 @@ Partial Class frm_input_gaji_spg
 
     End Sub
     Friend WithEvents LabelControl1 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents kode_customer As DevExpress.XtraEditors.LookUpEdit
+    Friend WithEvents kode_customer_parent As DevExpress.XtraEditors.LookUpEdit
     Friend WithEvents LabelControl2 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents id_pegawai As DevExpress.XtraEditors.LookUpEdit
     Friend WithEvents LabelControl3 As DevExpress.XtraEditors.LabelControl
@@ -986,7 +974,6 @@ Partial Class frm_input_gaji_spg
     Friend WithEvents grand_total As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LabelControl24 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents cmd_simpan As DevExpress.XtraEditors.SimpleButton
-    Friend WithEvents chk_semua_customer As DevExpress.XtraEditors.CheckEdit
     Friend WithEvents gaji_pokok As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LabelControl25 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents GridControl1 As DevExpress.XtraGrid.GridControl

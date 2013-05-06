@@ -97,6 +97,10 @@ Public Class cls_validation
                     Me.Message = "Nilai yang diisi tidak sama dengan field " & matchesField
                     Return False
                 End If
+            ElseIf rules.IndexOf("[") <> -1 Then
+                If isEquals(strParam, rules) = False Then
+                    Return False
+                End If
             Else
                 Me.Message = "[Error Rules]"
                 Return False
@@ -232,6 +236,34 @@ Public Class cls_validation
         Dim finish As Integer = strParam.IndexOf("]")
 
         Return strParam.Substring((start + 1), (finish - start) - 1)
+    End Function
+
+    Private Function isEquals(ByVal strParam As String, ByVal strRule As String)
+        Dim posTutup As Integer = strRule.IndexOf("]")
+        Dim logic As String = strRule.Substring(1, posTutup - 1)
+        Dim value As Integer = strRule.Substring(posTutup + 1)
+        Try
+            Dim nilai As Integer = CInt(strParam)
+
+            Select Case logic
+                Case "!="
+                    If Not nilai <> value Then : Me.Message = "Nilai yang diisi tidak boleh " & value : Return False : End If
+                Case "=="
+                    If Not nilai = value Then : Me.Message = "Nilai yang diisi harus sama dengan " & value : Return False : End If
+                Case "<="
+                    If Not nilai <= value Then : Me.Message = "Nilai yang diisi tidak boleh <= " & value : Return False : End If
+                Case "<"
+                    If Not nilai < value Then : Me.Message = "Nilai yang diisi tidak boleh < " & value : Return False : End If
+                Case ">="
+                    If Not nilai >= value Then : Me.Message = "Nilai yang diisi tidak boleh >= " & value : Return False : End If
+                Case ">"
+                    If Not nilai > value Then : Me.Message = "Nilai yang diisi tidak boleh > " & value : Return False : End If
+            End Select
+
+            Return True
+        Catch ex As Exception
+            Return True
+        End Try
     End Function
 
 End Class

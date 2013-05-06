@@ -1,4 +1,4 @@
-﻿Public Class frm_lap_so 
+﻿Public Class frm_lap_do 
 
     Sub initComponent()
 
@@ -43,61 +43,72 @@
         Load_CustomerParent(kode_customer_parent, sistem_jual.EditValue)
     End Sub
 
-    Private Sub frm_lap_so_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+    Private Sub frm_lap_do_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
     End Sub
 
     Sub LoadData()
 
         Db.FlushCache()
-        Db.Selects("a.tgl_so, a.no_so, a.kode_customer_child, c.nama AS nama_customer, e.grup, a.total_qty")
-        Db.From("tbl_salesorder a")
-        Db.Join("tbl_customer_child b", "b.kode_customer_child = a.kode_customer_child")
-        Db.Join("tbl_customer_parent c", "c.kode_customer_parent = b.kode_customer_parent")
-        Db.Join("tbl_kota d", "d.kode_kota = c.kode_kota")
-        Db.Join("tbl_grup e", "e.kode_grup = c.kode_grup")
+        Db.Selects("a.tgl_do, a.no_do, a.no_so, c.kode_customer_child, d.nama AS nama_customer, SUM(b.qty) AS qty, SUM(b.total) AS total")
+        Db.From("tbl_deliveryorder a")
+        Db.Join("tbl_deliveryorder_detail b", "b.no_do = a.no_do")
+        Db.Join("tbl_customer_child c", "c.kode_customer_child = a.kode_customer_child")
+        Db.Join("tbl_customer_parent d", "d.kode_customer_parent = c.kode_customer_parent")
+        Db.Join("tbl_kota e", "e.kode_kota = d.kode_kota")
+        Db.Join("tbl_grup f", "f.kode_grup = d.kode_grup")
 
+        Db.GroupBy("a.tgl_do, a.no_do, a.no_so, c.kode_customer_child, d.nama")
+        
         Db.Where("a.sistem_jual", sistem_jual.EditValue)
+
+        If chk_belumjadi_sj.Checked Then
+            Db.Where("a.status", "0")
+        End If
 
         If rdo_tujuan.EditValue = 1 Then
             If Not getValueFromLookup(kode_provinsi) = "-1" Then
-                Db.Where("d.kode_provinsi", getValueFromLookup(kode_provinsi))
+                Db.Where("e.kode_provinsi", getValueFromLookup(kode_provinsi))
             End If
 
             If Not getValueFromLookup(kode_kota) = "-1" Then
-                Db.Where("c.kode_kota", getValueFromLookup(kode_kota))
+                Db.Where("d.kode_kota", getValueFromLookup(kode_kota))
             End If
 
             If Not getValueFromLookup(kode_group) = "-1" Then
-                Db.Where("c.kode_grup", getValueFromLookup(kode_group))
+                Db.Where("d.kode_grup", getValueFromLookup(kode_group))
             End If
         ElseIf rdo_tujuan.EditValue = 2 Then
 
             Db.Where(" AND a.kode_customer_child LIKE '" & getValueFromLookup(kode_customer_parent) & "%'")
         End If
 
-        Db.Where_BetweenDate("a.tgl_so", tgl_dari.DateTime, tgl_sampai.DateTime)
+        Db.Where_BetweenDate("a.tgl_do", tgl_dari.DateTime, tgl_sampai.DateTime)
 
         GridControl1.DataSource = Connection.ExecuteToDataTable(Db.GetQueryString)
 
         'format
-        GridView1.Columns("tgl_so").Caption = "Tanggal Terbit"
-        GridView1.Columns("no_so").Caption = "Nomor SO"
+        GridView1.Columns("tgl_do").Caption = "Tanggal"
+        GridView1.Columns("no_do").Caption = "No. DO"
+        GridView1.Columns("no_so").Caption = "No. SO"
         GridView1.Columns("kode_customer_child").Caption = "Kode Customer"
         GridView1.Columns("nama_customer").Caption = "Nama Customer"
-        GridView1.Columns("grup").Caption = "Group"
-        GridView1.Columns("total_qty").Caption = "Jumlah (Pcs)"
+        GridView1.Columns("qty").Caption = "Qty (Pcs)"
+        GridView1.Columns("total").Caption = "Total (Rp.)"
 
-        GridView1.Columns("tgl_so").Width = 90
+        GridView1.Columns("tgl_do").Width = 90
+        GridView1.Columns("no_do").Width = 75
         GridView1.Columns("no_so").Width = 75
-        GridView1.Columns("kode_customer_child").Width = 100
-        GridView1.Columns("nama_customer").Width = 130
-        GridView1.Columns("grup").Width = 50
-        GridView1.Columns("total_qty").Width = 75
+        GridView1.Columns("kode_customer_child").Width = 105
+        GridView1.Columns("nama_customer").Width = 160
+        GridView1.Columns("qty").Width = 65
+        GridView1.Columns("total").Width = 75
 
-        FormatColumnNumeric(GridView1.Columns("total_qty"))
+        FormatColumnNumeric(GridView1.Columns("qty"))
+        FormatColumnNumeric(GridView1.Columns("total"))
 
-        CreateColumnSummary(GridView1.Columns("total_qty"))
+        CreateColumnSummary(GridView1.Columns("qty"))
+        CreateColumnSummary(GridView1.Columns("total"))
 
     End Sub
 
@@ -126,14 +137,14 @@
         PrintableComponentLink1.CreateDocument()
         ' set printable to form report control
         Dim fc As New FormReportControl
-        fc.Text = "Print Laporan Sales Order"
+        fc.Text = "Print Laporan Delivery Order"
         fc.PrintControl1.PrintingSystem = PrintableComponentLink1.PrintingSystem
         fc.MdiParent = formMDI
         fc.Show()
     End Sub
 
 
-    Private Sub frm_lap_so_Shown(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Shown
+    Private Sub frm_lap_do_Shown(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Shown
         Call Me.initComponent()
     End Sub
 End Class

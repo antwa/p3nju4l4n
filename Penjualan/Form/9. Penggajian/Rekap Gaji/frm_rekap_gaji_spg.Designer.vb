@@ -22,7 +22,7 @@ Partial Class frm_rekap_gaji_spg
         Me.components = New System.ComponentModel.Container
         Me.GridControl1 = New DevExpress.XtraGrid.GridControl
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView
-        Me.kode_customer = New DevExpress.XtraEditors.LookUpEdit
+        Me.kode_customer_parent = New DevExpress.XtraEditors.LookUpEdit
         Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl
         Me.LabelControl4 = New DevExpress.XtraEditors.LabelControl
         Me.txt_nama_bank = New DevExpress.XtraEditors.TextEdit
@@ -41,7 +41,6 @@ Partial Class frm_rekap_gaji_spg
         Me.SimpleButton3 = New DevExpress.XtraEditors.SimpleButton
         Me.SimpleButton4 = New DevExpress.XtraEditors.SimpleButton
         Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton
-        Me.chk_semua_customer = New DevExpress.XtraEditors.CheckEdit
         Me.cmb_tahun = New DevExpress.XtraEditors.ComboBoxEdit
         Me.cmb_bulan = New DevExpress.XtraEditors.ComboBoxEdit
         Me.chk_check = New DevExpress.XtraEditors.CheckEdit
@@ -49,14 +48,13 @@ Partial Class frm_rekap_gaji_spg
         Me.PrintingSystem1 = New DevExpress.XtraPrinting.PrintingSystem(Me.components)
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.kode_customer.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.kode_customer_parent.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txt_nama_bank.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.rdo_status.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.rdo_berdasarkan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ComboBoxEdit3.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ComboBoxEdit4.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ComboBoxEdit5.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.chk_semua_customer.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmb_tahun.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmb_bulan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.chk_check.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -88,15 +86,15 @@ Partial Class frm_rekap_gaji_spg
         Me.GridView1.OptionsView.ColumnAutoWidth = False
         Me.GridView1.OptionsView.ShowGroupPanel = False
         '
-        'kode_customer
+        'kode_customer_parent
         '
-        Me.kode_customer.Location = New System.Drawing.Point(455, 38)
-        Me.kode_customer.Name = "kode_customer"
-        Me.kode_customer.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.kode_customer.Properties.Appearance.Options.UseFont = True
-        Me.kode_customer.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.kode_customer.Size = New System.Drawing.Size(200, 21)
-        Me.kode_customer.TabIndex = 46
+        Me.kode_customer_parent.Location = New System.Drawing.Point(455, 38)
+        Me.kode_customer_parent.Name = "kode_customer_parent"
+        Me.kode_customer_parent.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.kode_customer_parent.Properties.Appearance.Options.UseFont = True
+        Me.kode_customer_parent.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.kode_customer_parent.Size = New System.Drawing.Size(200, 21)
+        Me.kode_customer_parent.TabIndex = 46
         '
         'LabelControl1
         '
@@ -264,14 +262,6 @@ Partial Class frm_rekap_gaji_spg
         Me.SimpleButton1.TabIndex = 103
         Me.SimpleButton1.Text = "Print Lap Transfer"
         '
-        'chk_semua_customer
-        '
-        Me.chk_semua_customer.Location = New System.Drawing.Point(661, 39)
-        Me.chk_semua_customer.Name = "chk_semua_customer"
-        Me.chk_semua_customer.Properties.Caption = "Semua"
-        Me.chk_semua_customer.Size = New System.Drawing.Size(74, 19)
-        Me.chk_semua_customer.TabIndex = 104
-        '
         'cmb_tahun
         '
         Me.cmb_tahun.Location = New System.Drawing.Point(225, 7)
@@ -311,7 +301,6 @@ Partial Class frm_rekap_gaji_spg
         Me.Controls.Add(Me.chk_check)
         Me.Controls.Add(Me.cmb_tahun)
         Me.Controls.Add(Me.cmb_bulan)
-        Me.Controls.Add(Me.chk_semua_customer)
         Me.Controls.Add(Me.SimpleButton1)
         Me.Controls.Add(Me.SimpleButton4)
         Me.Controls.Add(Me.SimpleButton3)
@@ -329,21 +318,20 @@ Partial Class frm_rekap_gaji_spg
         Me.Controls.Add(Me.txt_nama_bank)
         Me.Controls.Add(Me.LabelControl17)
         Me.Controls.Add(Me.LabelControl4)
-        Me.Controls.Add(Me.kode_customer)
+        Me.Controls.Add(Me.kode_customer_parent)
         Me.Controls.Add(Me.LabelControl1)
         Me.Controls.Add(Me.GridControl1)
         Me.Name = "frm_rekap_gaji_spg"
         Me.Text = "Rekap Gaji SPG"
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.kode_customer.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.kode_customer_parent.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txt_nama_bank.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.rdo_status.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.rdo_berdasarkan.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ComboBoxEdit3.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ComboBoxEdit4.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ComboBoxEdit5.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.chk_semua_customer.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cmb_tahun.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cmb_bulan.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.chk_check.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -354,7 +342,7 @@ Partial Class frm_rekap_gaji_spg
     End Sub
     Friend WithEvents GridControl1 As DevExpress.XtraGrid.GridControl
     Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView
-    Friend WithEvents kode_customer As DevExpress.XtraEditors.LookUpEdit
+    Friend WithEvents kode_customer_parent As DevExpress.XtraEditors.LookUpEdit
     Friend WithEvents LabelControl1 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl4 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents txt_nama_bank As DevExpress.XtraEditors.TextEdit
@@ -373,7 +361,6 @@ Partial Class frm_rekap_gaji_spg
     Friend WithEvents SimpleButton3 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents SimpleButton4 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents SimpleButton1 As DevExpress.XtraEditors.SimpleButton
-    Friend WithEvents chk_semua_customer As DevExpress.XtraEditors.CheckEdit
     Friend WithEvents cmb_tahun As DevExpress.XtraEditors.ComboBoxEdit
     Friend WithEvents cmb_bulan As DevExpress.XtraEditors.ComboBoxEdit
     Friend WithEvents chk_check As DevExpress.XtraEditors.CheckEdit

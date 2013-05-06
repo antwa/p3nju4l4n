@@ -81,6 +81,7 @@ Partial Class frm_faktur_konsinyasi
         Me.GridView1.Bands.AddRange(New DevExpress.XtraGrid.Views.BandedGrid.GridBand() {Me.GridBand1})
         Me.GridView1.GridControl = Me.GridControl1
         Me.GridView1.Name = "GridView1"
+        Me.GridView1.OptionsCustomization.AllowBandMoving = False
         Me.GridView1.OptionsCustomization.AllowColumnMoving = False
         Me.GridView1.OptionsCustomization.AllowFilter = False
         Me.GridView1.OptionsCustomization.AllowGroup = False

@@ -59,13 +59,13 @@ Public Class frm_retur_jual_konsinyasi
         Db.Join("tbl_kota b", "b.kode_kota = a.kode_kota")
         Db.Where("a.kode_customer_parent", getValueFromLookup(kode_customer_parent))
         Dim rcd As SqlClient.SqlDataReader = Connection.ExecuteToDataReader(Db.GetQueryString)
-        rcd.Read()
-
-        lbl_nama.Text = rcd.Item("nama").ToString
-        lbl_alamat.Text = rcd.Item("alamat").ToString
-        lbl_mall.Text = rcd.Item("mall").ToString
-        lbl_kota.Text = rcd.Item("kota").ToString
-
+        If rcd.HasRows Then
+            rcd.Read()
+            lbl_nama.Text = rcd.Item("nama").ToString
+            lbl_alamat.Text = rcd.Item("alamat").ToString
+            lbl_mall.Text = rcd.Item("mall").ToString
+            lbl_kota.Text = rcd.Item("kota").ToString
+        End If
     End Sub
 
     Public Sub reIndex()

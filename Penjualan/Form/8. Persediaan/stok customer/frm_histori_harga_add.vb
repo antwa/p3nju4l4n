@@ -3,7 +3,7 @@
     Dim rcd_list As New System.ComponentModel.BindingList(Of rcd_histori_harga_add)
 
     Sub initComponent()
-        Load_Customer(kode_customer, 1)
+        'Load_Customer(kode_customer, 1)
         tanggal.DateTime = Now
     End Sub
 

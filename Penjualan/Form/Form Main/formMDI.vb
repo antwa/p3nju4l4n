@@ -231,4 +231,8 @@
     Private Sub CM_frm_retur_formalitas_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles CM_frm_retur_formalitas.ItemClick
         LoadFormToTab(frm_retur_formalitas)
     End Sub
+
+    Private Sub cLaporan_do_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles cLaporan_do.ItemClick
+        LoadFormToTab(frm_lap_do)
+    End Sub
 End Class

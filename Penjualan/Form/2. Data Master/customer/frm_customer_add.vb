@@ -49,7 +49,9 @@ Public Class frm_customer_add
         Validation.addRules(txt_dis_konsumen.Text, "Dis Konsumen", "required|numeric")
         Validation.addRules(txt_plafon.Text, "Plafon", "required")
         Validation.addRules(txt_jatuh_tempo.Text, "Jatuh Tempo", "required|numeric")
-        Validation.addRules(lkp_harga.EditValue, "Harga Jual", "required")
+        Validation.addRules(getValueFromLookup(lkp_harga), "Harga Jual", "required")
+        Validation.addRules(getValueFromLookup(lkp_kota), "Kota", "[!=]-1")
+        Validation.addRules(getValueFromLookup(lkp_grup), "Group", "[!=]-1")
 
         If Validation.isValid Then
 

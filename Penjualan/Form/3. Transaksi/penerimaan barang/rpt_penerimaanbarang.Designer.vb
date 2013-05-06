@@ -116,7 +116,7 @@ Partial Public Class rpt_penerimaanbarang
         Me.no_suratjalan.LocationFloat = New DevExpress.Utils.PointFloat(110.1658!, 95.29165!)
         Me.no_suratjalan.Name = "no_suratjalan"
         Me.no_suratjalan.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.no_suratjalan.SizeF = New System.Drawing.SizeF(99.74873!, 17.70834!)
+        Me.no_suratjalan.SizeF = New System.Drawing.SizeF(142.4571!, 17.70834!)
         Me.no_suratjalan.StylePriority.UseFont = False
         Me.no_suratjalan.StylePriority.UseTextAlignment = False
         Me.no_suratjalan.Text = "No. Surat Jalan"
@@ -128,7 +128,7 @@ Partial Public Class rpt_penerimaanbarang
         Me.kode_supplier_barang.LocationFloat = New DevExpress.Utils.PointFloat(110.1656!, 77.58331!)
         Me.kode_supplier_barang.Name = "kode_supplier_barang"
         Me.kode_supplier_barang.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.kode_supplier_barang.SizeF = New System.Drawing.SizeF(99.74854!, 17.70833!)
+        Me.kode_supplier_barang.SizeF = New System.Drawing.SizeF(282.8342!, 17.70834!)
         Me.kode_supplier_barang.StylePriority.UseFont = False
         Me.kode_supplier_barang.StylePriority.UseTextAlignment = False
         Me.kode_supplier_barang.Text = "Supplier"
@@ -140,7 +140,7 @@ Partial Public Class rpt_penerimaanbarang
         Me.tanggal.LocationFloat = New DevExpress.Utils.PointFloat(110.1654!, 59.87498!)
         Me.tanggal.Name = "tanggal"
         Me.tanggal.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.tanggal.SizeF = New System.Drawing.SizeF(99.74873!, 17.70833!)
+        Me.tanggal.SizeF = New System.Drawing.SizeF(142.4575!, 17.70833!)
         Me.tanggal.StylePriority.UseFont = False
         Me.tanggal.StylePriority.UseTextAlignment = False
         Me.tanggal.Text = "Tanggal"

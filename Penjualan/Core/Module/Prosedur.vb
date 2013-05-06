@@ -65,27 +65,27 @@
         lookup.ItemIndex = 0
     End Sub
 
-    Public Sub Load_Customer(ByRef lookup As DevExpress.XtraEditors.LookUpEdit, ByVal sistem_jual As Integer)
-        'init lookup
-        Db.FlushCache()
-        Db.Selects("a.kode_customer, a.nama, a.kode_template_harga")
-        Db.From("tbl_customer a")
-        Db.Where("a.sistem_jual", sistem_jual)
+    'Public Sub Load_Customer(ByRef lookup As DevExpress.XtraEditors.LookUpEdit, ByVal sistem_jual As Integer)
+    '    'init lookup
+    '    Db.FlushCache()
+    '    Db.Selects("a.kode_customer, a.nama, a.kode_template_harga")
+    '    Db.From("tbl_customer a")
+    '    Db.Where("a.sistem_jual", sistem_jual)
 
-        lookup.Properties.DataSource = Connection.ExecuteToDataTable(Db.GetQueryString)
-        lookup.Properties.DisplayMember = "nama"
-        lookup.Properties.ValueMember = "kode_customer"
-        lookup.Properties.PopulateColumns()
+    '    lookup.Properties.DataSource = Connection.ExecuteToDataTable(Db.GetQueryString)
+    '    lookup.Properties.DisplayMember = "nama"
+    '    lookup.Properties.ValueMember = "kode_customer"
+    '    lookup.Properties.PopulateColumns()
 
-        lookup.Properties.Columns(0).Caption = "Kode"
-        lookup.Properties.Columns(1).Caption = "Nama"
-        lookup.Properties.Columns(0).Width = 50
-        lookup.Properties.Columns(1).Width = 100
+    '    lookup.Properties.Columns(0).Caption = "Kode"
+    '    lookup.Properties.Columns(1).Caption = "Nama"
+    '    lookup.Properties.Columns(0).Width = 50
+    '    lookup.Properties.Columns(1).Width = 100
 
-        lookup.Properties.Columns("kode_template_harga").Visible = False
+    '    lookup.Properties.Columns("kode_template_harga").Visible = False
 
-        lookup.ItemIndex = 0
-    End Sub
+    '    lookup.ItemIndex = 0
+    'End Sub
 
     Public Sub Load_CustomerParent(ByRef lookup As DevExpress.XtraEditors.LookUpEdit, ByVal sistem_jual As Integer)
         'init datatable
@@ -168,7 +168,7 @@
             Db.Selects("a.id_pegawai, a.nama")
             Db.From("tbl_pegawai a")
             Db.Where("a.[group]", "2")
-            Db.Where("a.kode_customer", kode_customer)
+            Db.Where("a.kode_customer_parent", kode_customer)
 
             lookup.Properties.DataSource = Connection.ExecuteToDataTable(Db.GetQueryString)
             lookup.Properties.DisplayMember = "nama"
@@ -190,7 +190,7 @@
             Db.FlushCache()
             Db.Selects("a.id_pegawai, b.nama AS nama_customer, a.nama")
             Db.From("tbl_pegawai a")
-            Db.Join("tbl_customer b", "b.kode_customer = a.kode_customer")
+            Db.Join("tbl_customer_parent b", "b.kode_customer_parent = a.kode_customer_parent")
             Db.Where("a.[group]", "2")
 
             lookup.Properties.DataSource = Connection.ExecuteToDataTable(Db.GetQueryString)
@@ -287,12 +287,26 @@
 
     Public Sub Load_Provinsi(ByRef lookup As DevExpress.XtraEditors.LookUpEdit)
 
-        'init lookup
+        Dim dt As New DataTable
+        dt.Columns.Add("kode_provinsi", GetType(String))
+        dt.Columns.Add("provinsi", GetType(String))
+
+        dt.Rows.Add(New Object() {"-1", "Semua Provinsi"})
+
         Db.FlushCache()
         Db.Selects("a.kode_provinsi, a.provinsi")
         Db.From("tbl_provinsi a")
 
-        lookup.Properties.DataSource = Connection.ExecuteToDataTable(Db.GetQueryString)
+        Dim r As DataTable = Connection.ExecuteToDataTable(Db.GetQueryString)
+
+        If r.Rows.Count > 0 Then
+            Dim count As Integer = r.Rows.Count - 1
+            For i = 0 To count
+                dt.Rows.Add(New Object() {r.Rows(i).Item("kode_provinsi"), r.Rows(i).Item("provinsi")})
+            Next
+        End If
+
+        lookup.Properties.DataSource = dt
         lookup.Properties.DisplayMember = "provinsi"
         lookup.Properties.ValueMember = "kode_provinsi"
 
@@ -327,7 +341,14 @@
     'End Sub
 
     Public Sub Load_Kota(ByRef lookup As DevExpress.XtraEditors.LookUpEdit, Optional ByVal kode_provinsi As String = vbNullString)
-        'init lookup
+
+        Dim dt As New DataTable
+        dt.Columns.Add("kode_kota", GetType(String))
+        dt.Columns.Add("kota", GetType(String))
+        dt.Columns.Add("provinsi", GetType(String))
+
+        dt.Rows.Add(New Object() {"-1", "Semua Kota", "-"})
+
         Db.FlushCache()
         Db.Selects("a.kode_kota, a.kota, b.provinsi")
         Db.From("tbl_kota a")
@@ -337,8 +358,16 @@
             Db.Where("a.kode_provinsi", kode_provinsi)
         End If
 
-        lookup.Properties.DataSource = Connection.ExecuteToDataTable(Db.GetQueryString)
+        Dim r As DataTable = Connection.ExecuteToDataTable(Db.GetQueryString)
 
+        If r.Rows.Count > 0 Then
+            Dim count As Integer = r.Rows.Count - 1
+            For i = 0 To count
+                dt.Rows.Add(New Object() {r.Rows(i).Item("kode_kota"), r.Rows(i).Item("kota"), r.Rows(i).Item("provinsi")})
+            Next
+        End If
+
+        lookup.Properties.DataSource = dt
         lookup.Properties.DisplayMember = "kota"
         lookup.Properties.ValueMember = "kode_kota"
 
@@ -404,12 +433,27 @@
     End Sub
 
     Public Sub Load_Grup(ByRef lookup As DevExpress.XtraEditors.LookUpEdit)
-        'init lookup
+        ' init datatable
+        Dim dt As New DataTable
+        dt.Columns.Add("kode_grup", GetType(String))
+        dt.Columns.Add("grup", GetType(String))
+
+        dt.Rows.Add(New Object() {"-1", "Semua Group"})
+
         Db.FlushCache()
         Db.Selects("a.kode_grup, a.grup")
         Db.From("tbl_grup a")
 
-        lookup.Properties.DataSource = Connection.ExecuteToDataTable(Db.GetQueryString)
+        Dim r As DataTable = Connection.ExecuteToDataTable(Db.GetQueryString)
+
+        If r.Rows.Count > 0 Then
+            Dim count As Integer = r.Rows.Count - 1
+            For i = 0 To count
+                dt.Rows.Add(New Object() {r.Rows(i).Item("kode_grup"), r.Rows(i).Item("grup")})
+            Next
+        End If
+
+        lookup.Properties.DataSource = dt
 
         lookup.Properties.DisplayMember = "grup"
         lookup.Properties.ValueMember = "kode_grup"

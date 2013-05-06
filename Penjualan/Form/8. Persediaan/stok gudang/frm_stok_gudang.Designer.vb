@@ -26,7 +26,6 @@ Partial Class frm_stok_gudang
         Me.GridControl1 = New DevExpress.XtraGrid.GridControl
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView
         Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl
-        Me.chk_all_aartikel = New DevExpress.XtraEditors.CheckEdit
         Me.stok = New DevExpress.XtraEditors.ComboBoxEdit
         Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl
         Me.cmd_cari = New DevExpress.XtraEditors.SimpleButton
@@ -47,7 +46,6 @@ Partial Class frm_stok_gudang
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl2.SuspendLayout()
-        CType(Me.chk_all_aartikel.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.stok.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.kode_barangjadi.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -107,7 +105,6 @@ Partial Class frm_stok_gudang
         '
         Me.GroupControl2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupControl2.Controls.Add(Me.chk_all_aartikel)
         Me.GroupControl2.Controls.Add(Me.stok)
         Me.GroupControl2.Controls.Add(Me.LabelControl2)
         Me.GroupControl2.Controls.Add(Me.cmd_cari)
@@ -119,14 +116,6 @@ Partial Class frm_stok_gudang
         Me.GroupControl2.Name = "GroupControl2"
         Me.GroupControl2.Size = New System.Drawing.Size(438, 112)
         Me.GroupControl2.TabIndex = 39
-        '
-        'chk_all_aartikel
-        '
-        Me.chk_all_aartikel.Location = New System.Drawing.Point(343, 27)
-        Me.chk_all_aartikel.Name = "chk_all_aartikel"
-        Me.chk_all_aartikel.Properties.Caption = "Semua"
-        Me.chk_all_aartikel.Size = New System.Drawing.Size(59, 19)
-        Me.chk_all_aartikel.TabIndex = 37
         '
         'stok
         '
@@ -289,7 +278,6 @@ Partial Class frm_stok_gudang
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl2.ResumeLayout(False)
         Me.GroupControl2.PerformLayout()
-        CType(Me.chk_all_aartikel.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.stok.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.kode_barangjadi.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -322,7 +310,6 @@ Partial Class frm_stok_gudang
     Friend WithEvents tgl_dari As DevExpress.XtraEditors.DateEdit
     Friend WithEvents stok As DevExpress.XtraEditors.ComboBoxEdit
     Friend WithEvents LabelControl2 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents chk_all_aartikel As DevExpress.XtraEditors.CheckEdit
     Friend WithEvents SaveFileDialog1 As System.Windows.Forms.SaveFileDialog
     Friend WithEvents PrintingSystem1 As DevExpress.XtraPrinting.PrintingSystem
     Friend WithEvents PrintableComponentLink1 As DevExpress.XtraPrinting.PrintableComponentLink

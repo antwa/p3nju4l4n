@@ -31,7 +31,7 @@
         '# start transaksi
         Connection.TRANS_START()
 
-        If chk_semua_customer.Checked Then ' jika semua customer
+        If getValueFromLookup(kode_customer_parent) = "-1" Then ' jika semua customer
             Dim row() As String = Kalender.getItem
             Dim count As Integer = row.Count - 1
             Dim cus As DataTable = Connection.ExecuteToDataTable("Select kode_customer_parent from tbl_customer_parent where sistem_jual = '1'")
@@ -122,10 +122,6 @@
         Catch ex As Exception
 
         End Try
-    End Sub
-
-    Private Sub chk_semua_customer_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chk_semua_customer.CheckedChanged
-        kode_customer_parent.Enabled = Not chk_semua_customer.Checked
     End Sub
 
     Private Sub disc_acara_EditValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles disc_acara.EditValueChanged

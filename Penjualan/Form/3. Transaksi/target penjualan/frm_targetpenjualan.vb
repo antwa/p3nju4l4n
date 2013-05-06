@@ -502,4 +502,8 @@
     Private Sub pc_tahun_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles pc_tahun.SelectedIndexChanged
         Call Me.loadData_percustomer()
     End Sub
+
+    Private Sub XtraTabPage1_Paint(ByVal sender As System.Object, ByVal e As System.Windows.Forms.PaintEventArgs) Handles XtraTabPage1.Paint
+
+    End Sub
 End Class

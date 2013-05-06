@@ -102,6 +102,7 @@ Partial Public Class rpt_faktur_konsinyasi_primer
         Me.XrLabel33.StylePriority.UseTextAlignment = False
         Me.XrLabel33.Text = "XrLabel33"
         Me.XrLabel33.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+        Me.XrLabel33.Visible = False
         '
         'XrLabel32
         '
@@ -116,6 +117,7 @@ Partial Public Class rpt_faktur_konsinyasi_primer
         Me.XrLabel32.StylePriority.UseTextAlignment = False
         Me.XrLabel32.Text = "/"
         Me.XrLabel32.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
+        Me.XrLabel32.Visible = False
         '
         'XrLabel31
         '
@@ -131,6 +133,7 @@ Partial Public Class rpt_faktur_konsinyasi_primer
         Me.XrLabel31.StylePriority.UseTextAlignment = False
         Me.XrLabel31.Text = "XrLabel31"
         Me.XrLabel31.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+        Me.XrLabel31.Visible = False
         '
         'XrLabel30
         '
@@ -566,6 +569,7 @@ Partial Public Class rpt_faktur_konsinyasi_primer
         Me.XrLabel25.StylePriority.UseTextAlignment = False
         Me.XrLabel25.Text = "Kita/Toko"
         Me.XrLabel25.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
+        Me.XrLabel25.Visible = False
         '
         'TopMarginBand1
         '

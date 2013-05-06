@@ -183,11 +183,11 @@ Partial Public Class rpt_delivery_order_banyak
         '
         'kota
         '
-        Me.kota.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.kota.LocationFloat = New DevExpress.Utils.PointFloat(210.9594!, 130.7083!)
+        Me.kota.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.kota.LocationFloat = New DevExpress.Utils.PointFloat(180.7479!, 130.7083!)
         Me.kota.Name = "kota"
         Me.kota.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.kota.SizeF = New System.Drawing.SizeF(182.0404!, 17.70834!)
+        Me.kota.SizeF = New System.Drawing.SizeF(212.2519!, 17.70834!)
         Me.kota.StylePriority.UseFont = False
         Me.kota.StylePriority.UseTextAlignment = False
         Me.kota.Text = "Kota"
@@ -195,11 +195,11 @@ Partial Public Class rpt_delivery_order_banyak
         '
         'mall
         '
-        Me.mall.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.mall.LocationFloat = New DevExpress.Utils.PointFloat(210.9596!, 113.0!)
+        Me.mall.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.mall.LocationFloat = New DevExpress.Utils.PointFloat(180.7481!, 113.0!)
         Me.mall.Name = "mall"
         Me.mall.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.mall.SizeF = New System.Drawing.SizeF(182.0404!, 17.70834!)
+        Me.mall.SizeF = New System.Drawing.SizeF(212.2519!, 17.70834!)
         Me.mall.StylePriority.UseFont = False
         Me.mall.StylePriority.UseTextAlignment = False
         Me.mall.Text = "Mall"
@@ -207,11 +207,11 @@ Partial Public Class rpt_delivery_order_banyak
         '
         'alamat
         '
-        Me.alamat.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.alamat.LocationFloat = New DevExpress.Utils.PointFloat(210.9594!, 95.29165!)
+        Me.alamat.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.alamat.LocationFloat = New DevExpress.Utils.PointFloat(180.7479!, 95.29165!)
         Me.alamat.Name = "alamat"
         Me.alamat.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.alamat.SizeF = New System.Drawing.SizeF(182.0404!, 17.70834!)
+        Me.alamat.SizeF = New System.Drawing.SizeF(212.2519!, 17.70833!)
         Me.alamat.StylePriority.UseFont = False
         Me.alamat.StylePriority.UseTextAlignment = False
         Me.alamat.Text = "Alamat"
@@ -219,11 +219,11 @@ Partial Public Class rpt_delivery_order_banyak
         '
         'nama
         '
-        Me.nama.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.nama.LocationFloat = New DevExpress.Utils.PointFloat(210.9594!, 77.58331!)
+        Me.nama.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.nama.LocationFloat = New DevExpress.Utils.PointFloat(180.7479!, 77.58331!)
         Me.nama.Name = "nama"
         Me.nama.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.nama.SizeF = New System.Drawing.SizeF(182.0404!, 17.70834!)
+        Me.nama.SizeF = New System.Drawing.SizeF(212.2519!, 17.70834!)
         Me.nama.StylePriority.UseFont = False
         Me.nama.StylePriority.UseTextAlignment = False
         Me.nama.Text = "Nama"
@@ -231,8 +231,8 @@ Partial Public Class rpt_delivery_order_banyak
         '
         'XrLabel5
         '
-        Me.XrLabel5.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel5.LocationFloat = New DevExpress.Utils.PointFloat(210.9594!, 59.87498!)
+        Me.XrLabel5.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel5.LocationFloat = New DevExpress.Utils.PointFloat(180.7479!, 59.87498!)
         Me.XrLabel5.Name = "XrLabel5"
         Me.XrLabel5.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel5.SizeF = New System.Drawing.SizeF(99.74873!, 17.70833!)
@@ -243,8 +243,8 @@ Partial Public Class rpt_delivery_order_banyak
         '
         'no_so
         '
-        Me.no_so.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.no_so.LocationFloat = New DevExpress.Utils.PointFloat(92.45745!, 77.58331!)
+        Me.no_so.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.no_so.LocationFloat = New DevExpress.Utils.PointFloat(70.58245!, 77.58331!)
         Me.no_so.Name = "no_so"
         Me.no_so.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.no_so.SizeF = New System.Drawing.SizeF(99.74873!, 17.70833!)
@@ -255,8 +255,8 @@ Partial Public Class rpt_delivery_order_banyak
         '
         'XrLabel6
         '
-        Me.XrLabel6.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel6.LocationFloat = New DevExpress.Utils.PointFloat(82.0406!, 77.58331!)
+        Me.XrLabel6.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel6.LocationFloat = New DevExpress.Utils.PointFloat(60.1656!, 77.58331!)
         Me.XrLabel6.Name = "XrLabel6"
         Me.XrLabel6.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel6.SizeF = New System.Drawing.SizeF(10.41685!, 17.70833!)
@@ -267,11 +267,11 @@ Partial Public Class rpt_delivery_order_banyak
         '
         'XrLabel4
         '
-        Me.XrLabel4.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel4.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.XrLabel4.LocationFloat = New DevExpress.Utils.PointFloat(0.0!, 77.58331!)
         Me.XrLabel4.Name = "XrLabel4"
         Me.XrLabel4.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel4.SizeF = New System.Drawing.SizeF(82.0404!, 17.70833!)
+        Me.XrLabel4.SizeF = New System.Drawing.SizeF(60.1654!, 17.70833!)
         Me.XrLabel4.StylePriority.UseFont = False
         Me.XrLabel4.StylePriority.UseTextAlignment = False
         Me.XrLabel4.Text = "Nomor SO"
@@ -279,8 +279,8 @@ Partial Public Class rpt_delivery_order_banyak
         '
         'tgl_do
         '
-        Me.tgl_do.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tgl_do.LocationFloat = New DevExpress.Utils.PointFloat(92.45726!, 59.87498!)
+        Me.tgl_do.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tgl_do.LocationFloat = New DevExpress.Utils.PointFloat(70.58226!, 59.87498!)
         Me.tgl_do.Name = "tgl_do"
         Me.tgl_do.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.tgl_do.SizeF = New System.Drawing.SizeF(99.74873!, 17.70833!)
@@ -291,8 +291,8 @@ Partial Public Class rpt_delivery_order_banyak
         '
         'XrLabel10
         '
-        Me.XrLabel10.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel10.LocationFloat = New DevExpress.Utils.PointFloat(82.04041!, 59.87498!)
+        Me.XrLabel10.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel10.LocationFloat = New DevExpress.Utils.PointFloat(60.16541!, 59.87498!)
         Me.XrLabel10.Name = "XrLabel10"
         Me.XrLabel10.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel10.SizeF = New System.Drawing.SizeF(10.41685!, 17.70833!)
@@ -303,11 +303,11 @@ Partial Public Class rpt_delivery_order_banyak
         '
         'XrLabel3
         '
-        Me.XrLabel3.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel3.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.XrLabel3.LocationFloat = New DevExpress.Utils.PointFloat(0.0!, 59.87498!)
         Me.XrLabel3.Name = "XrLabel3"
         Me.XrLabel3.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel3.SizeF = New System.Drawing.SizeF(82.0404!, 17.70833!)
+        Me.XrLabel3.SizeF = New System.Drawing.SizeF(60.1654!, 17.70833!)
         Me.XrLabel3.StylePriority.UseFont = False
         Me.XrLabel3.StylePriority.UseTextAlignment = False
         Me.XrLabel3.Text = "Tgl Terbit"

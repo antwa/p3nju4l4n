@@ -62,14 +62,20 @@ Public Class frm_customer_edit
     Private Sub cmd_simpan_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_simpan.Click
 
         ''# validatoin
-        'Db.FlushCache()
-        'Db.Selects("*")
-        'Db.From("tbl_customer")
-        'Db.Where("kode_customer", txt_kode_customer.Text)
-
-        'Dim rcd As SqlClient.SqlDataReader = Connection.ExecuteToDataReader(Db.GetQueryString)
-
-      
+        'Validation
+        Validation.clearRules()
+        Validation.addRules(txt_nama.Text, "Nama", "required")
+        Validation.addRules(txt_alamat.Text, "Alamat", "required")
+        Validation.addRules(txt_mall.Text, "Mall", "required")
+        Validation.addRules(txt_telp1.Text, "Telepon", "required|numeric|length[6-12]")
+        'Validation.addRules(txt_email.Text, "Email", "required|email")
+        Validation.addRules(txt_margin.Text, "Margin Toko", "required|numeric")
+        Validation.addRules(txt_dis_konsumen.Text, "Dis Konsumen", "required|numeric")
+        Validation.addRules(txt_plafon.Text, "Plafon", "required")
+        Validation.addRules(txt_jatuh_tempo.Text, "Jatuh Tempo", "required|numeric")
+        Validation.addRules(lkp_harga.EditValue, "Harga Jual", "required")
+        Validation.addRules(getValueFromLookup(lkp_kota), "Kota", "[!=]-1")
+        Validation.addRules(getValueFromLookup(lkp_grup), "Group", "[!=]-1")
 
         '# Update table tbl_customer
         Db.FlushCache()

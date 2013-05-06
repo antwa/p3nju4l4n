@@ -32,7 +32,6 @@ Partial Class frm_stok_customer
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView
         Me.LabelControl4 = New DevExpress.XtraEditors.LabelControl
         Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl
-        Me.chk_semua_customer = New DevExpress.XtraEditors.CheckEdit
         Me.LabelControl6 = New DevExpress.XtraEditors.LabelControl
         Me.kode_customer_parent = New DevExpress.XtraEditors.LookUpEdit
         Me.lbl_nama_artikel = New DevExpress.XtraEditors.LabelControl
@@ -47,7 +46,6 @@ Partial Class frm_stok_customer
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl2.SuspendLayout()
-        CType(Me.chk_semua_customer.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.kode_customer_parent.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.kode_barangjadi.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -153,7 +151,6 @@ Partial Class frm_stok_customer
         '
         'GroupControl2
         '
-        Me.GroupControl2.Controls.Add(Me.chk_semua_customer)
         Me.GroupControl2.Controls.Add(Me.LabelControl6)
         Me.GroupControl2.Controls.Add(Me.kode_customer_parent)
         Me.GroupControl2.Controls.Add(Me.cmd_cari)
@@ -165,14 +162,6 @@ Partial Class frm_stok_customer
         Me.GroupControl2.Name = "GroupControl2"
         Me.GroupControl2.Size = New System.Drawing.Size(413, 106)
         Me.GroupControl2.TabIndex = 45
-        '
-        'chk_semua_customer
-        '
-        Me.chk_semua_customer.Location = New System.Drawing.Point(343, 75)
-        Me.chk_semua_customer.Name = "chk_semua_customer"
-        Me.chk_semua_customer.Properties.Caption = "Semua"
-        Me.chk_semua_customer.Size = New System.Drawing.Size(59, 19)
-        Me.chk_semua_customer.TabIndex = 79
         '
         'LabelControl6
         '
@@ -271,7 +260,6 @@ Partial Class frm_stok_customer
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl2.ResumeLayout(False)
         Me.GroupControl2.PerformLayout()
-        CType(Me.chk_semua_customer.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.kode_customer_parent.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.kode_barangjadi.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -298,7 +286,6 @@ Partial Class frm_stok_customer
     Friend WithEvents kode_barangjadi As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LabelControl6 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents kode_customer_parent As DevExpress.XtraEditors.LookUpEdit
-    Friend WithEvents chk_semua_customer As DevExpress.XtraEditors.CheckEdit
     Friend WithEvents GroupControl1 As DevExpress.XtraEditors.GroupControl
     Friend WithEvents SaveFileDialog1 As System.Windows.Forms.SaveFileDialog
     Friend WithEvents PrintingSystem1 As DevExpress.XtraPrinting.PrintingSystem

@@ -29,7 +29,6 @@ Partial Class frm_lap_penerimaan_barang
         Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl
         Me.tgl_dari = New DevExpress.XtraEditors.DateEdit
         Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl
-        Me.chk_semua_artikel = New DevExpress.XtraEditors.CheckEdit
         Me.cmd_load = New DevExpress.XtraEditors.SimpleButton
         Me.cmd_cari = New DevExpress.XtraEditors.SimpleButton
         Me.LabelControl5 = New DevExpress.XtraEditors.LabelControl
@@ -52,7 +51,6 @@ Partial Class frm_lap_penerimaan_barang
         CType(Me.tgl_dari.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl2.SuspendLayout()
-        CType(Me.chk_semua_artikel.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.kode_barangjadi.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PrintingSystem1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PrintableComponentLink1.ImageCollection, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -135,7 +133,6 @@ Partial Class frm_lap_penerimaan_barang
         '
         Me.GroupControl2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupControl2.Controls.Add(Me.chk_semua_artikel)
         Me.GroupControl2.Controls.Add(Me.cmd_load)
         Me.GroupControl2.Controls.Add(Me.cmd_cari)
         Me.GroupControl2.Controls.Add(Me.LabelControl5)
@@ -146,15 +143,6 @@ Partial Class frm_lap_penerimaan_barang
         Me.GroupControl2.Name = "GroupControl2"
         Me.GroupControl2.Size = New System.Drawing.Size(479, 82)
         Me.GroupControl2.TabIndex = 1
-        '
-        'chk_semua_artikel
-        '
-        Me.chk_semua_artikel.EditValue = True
-        Me.chk_semua_artikel.Location = New System.Drawing.Point(361, 26)
-        Me.chk_semua_artikel.Name = "chk_semua_artikel"
-        Me.chk_semua_artikel.Properties.Caption = "Semua"
-        Me.chk_semua_artikel.Size = New System.Drawing.Size(59, 19)
-        Me.chk_semua_artikel.TabIndex = 38
         '
         'cmd_load
         '
@@ -168,7 +156,6 @@ Partial Class frm_lap_penerimaan_barang
         'cmd_cari
         '
         Me.cmd_cari.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.cmd_cari.Enabled = False
         Me.cmd_cari.Location = New System.Drawing.Point(276, 25)
         Me.cmd_cari.Name = "cmd_cari"
         Me.cmd_cari.Size = New System.Drawing.Size(79, 21)
@@ -199,7 +186,6 @@ Partial Class frm_lap_penerimaan_barang
         Me.kode_barangjadi.Name = "kode_barangjadi"
         Me.kode_barangjadi.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.kode_barangjadi.Properties.Appearance.Options.UseFont = True
-        Me.kode_barangjadi.Properties.ReadOnly = True
         Me.kode_barangjadi.Size = New System.Drawing.Size(167, 21)
         Me.kode_barangjadi.TabIndex = 29
         '
@@ -244,7 +230,9 @@ Partial Class frm_lap_penerimaan_barang
         Me.PrintableComponentLink1.PaperKind = System.Drawing.Printing.PaperKind.A4
         Me.PrintableComponentLink1.PrintingSystem = Me.PrintingSystem1
         Me.PrintableComponentLink1.PrintingSystemBase = Me.PrintingSystem1
-        Me.PrintableComponentLink1.RtfReportHeader = resources.GetString("PrintableComponentLink1.RtfReportHeader")
+        Me.PrintableComponentLink1.RtfReportHeader = "{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fnil\fcharset0 Times New R" & _
+            "oman;}}" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "\viewkind4\uc1\pard\qc\b\f0\fs24 LAPORAN PENERIMAAN BARANG JADI\par" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "\b" & _
+            "0\fs20 $tanggal\par" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "\par" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "}" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
         'SimpleButton1
         '
@@ -280,7 +268,6 @@ Partial Class frm_lap_penerimaan_barang
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl2.ResumeLayout(False)
         Me.GroupControl2.PerformLayout()
-        CType(Me.chk_semua_artikel.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.kode_barangjadi.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PrintingSystem1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PrintableComponentLink1.ImageCollection, System.ComponentModel.ISupportInitialize).EndInit()
@@ -306,6 +293,5 @@ Partial Class frm_lap_penerimaan_barang
     Friend WithEvents SaveFileDialog1 As System.Windows.Forms.SaveFileDialog
     Friend WithEvents PrintingSystem1 As DevExpress.XtraPrinting.PrintingSystem
     Friend WithEvents PrintableComponentLink1 As DevExpress.XtraPrinting.PrintableComponentLink
-    Friend WithEvents chk_semua_artikel As DevExpress.XtraEditors.CheckEdit
     Friend WithEvents SimpleButton1 As DevExpress.XtraEditors.SimpleButton
 End Class

@@ -4,7 +4,7 @@
         tgl_dari.DateTime = DateAdd(DateInterval.Month, -3, Now)
         tgl_sampai.DateTime = Now
 
-        Load_Customer(kode_customer, 1)
+        'Load_Customer(kode_customer, 1)
 
     End Sub
 

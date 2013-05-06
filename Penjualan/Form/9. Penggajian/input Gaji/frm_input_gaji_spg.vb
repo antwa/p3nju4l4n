@@ -6,10 +6,15 @@
     Sub initComponent()
 
         'Load customer
-        Load_Customer(kode_customer, "1")
+        Load_CustomerParent(kode_customer_parent, "1")
 
         'load pegawai
-        Load_SPG(id_pegawai, getValueFromLookup(kode_customer))
+        If getValueFromLookup(kode_customer_parent) = "-1" Then
+            Load_SPG(id_pegawai)
+        Else
+            Load_SPG(id_pegawai, getValueFromLookup(kode_customer_parent))
+        End If
+
 
         Call Me.getInformasiSPG()
 
@@ -131,21 +136,19 @@
     End Sub
 
     Private Sub frm_input_gaji_spg_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        Call Me.initComponent()
+        'Call Me.initComponent()
     End Sub
 
-    Private Sub kode_customer_EditValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles kode_customer.EditValueChanged
-        Load_SPG(id_pegawai, getValueFromLookup(kode_customer))
-    End Sub
+    Private Sub kode_customer_EditValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles kode_customer_parent.EditValueChanged
+        Try
+            If getValueFromLookup(kode_customer_parent) = "-1" Then
+                Load_SPG(id_pegawai)
+            Else
+                Load_SPG(id_pegawai, getValueFromLookup(kode_customer_parent))
+            End If
+        Catch ex As Exception
 
-    Private Sub chk_semua_customer_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chk_semua_customer.CheckedChanged
-        If chk_semua_customer.Checked Then
-            kode_customer.Enabled = False
-            Load_SPG(id_pegawai)
-        Else
-            kode_customer.Enabled = True
-            Load_SPG(id_pegawai, getValueFromLookup(kode_customer))
-        End If
+        End Try
     End Sub
 
     Private Sub id_pegawai_EditValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles id_pegawai.EditValueChanged
@@ -273,5 +276,9 @@
 
     Private Sub total_pengembalian_jaminan_EditValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles total_pengembalian_jaminan.EditValueChanged
         Call Me.Sumary()
+    End Sub
+
+    Private Sub frm_input_gaji_spg_Shown(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Shown
+        Call Me.initComponent()
     End Sub
 End Class

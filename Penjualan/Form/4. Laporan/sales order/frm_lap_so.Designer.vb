@@ -30,11 +30,8 @@ Partial Class frm_lap_so
         Me.tgl_dari = New DevExpress.XtraEditors.DateEdit
         Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl
         Me.LabelControl6 = New DevExpress.XtraEditors.LabelControl
-        Me.kode_customer = New DevExpress.XtraEditors.LookUpEdit
+        Me.kode_customer_parent = New DevExpress.XtraEditors.LookUpEdit
         Me.rdo_tujuan = New DevExpress.XtraEditors.RadioGroup
-        Me.chk_all_group = New DevExpress.XtraEditors.CheckEdit
-        Me.chk_all_kota = New DevExpress.XtraEditors.CheckEdit
-        Me.chk_all_provinsi = New DevExpress.XtraEditors.CheckEdit
         Me.LabelControl8 = New DevExpress.XtraEditors.LabelControl
         Me.kode_group = New DevExpress.XtraEditors.LookUpEdit
         Me.LabelControl7 = New DevExpress.XtraEditors.LabelControl
@@ -58,11 +55,8 @@ Partial Class frm_lap_so
         CType(Me.tgl_dari.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl2.SuspendLayout()
-        CType(Me.kode_customer.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.kode_customer_parent.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.rdo_tujuan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.chk_all_group.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.chk_all_kota.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.chk_all_provinsi.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.kode_group.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.kode_kota.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.kode_provinsi.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -155,11 +149,8 @@ Partial Class frm_lap_so
         Me.GroupControl2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupControl2.Controls.Add(Me.LabelControl6)
-        Me.GroupControl2.Controls.Add(Me.kode_customer)
+        Me.GroupControl2.Controls.Add(Me.kode_customer_parent)
         Me.GroupControl2.Controls.Add(Me.rdo_tujuan)
-        Me.GroupControl2.Controls.Add(Me.chk_all_group)
-        Me.GroupControl2.Controls.Add(Me.chk_all_kota)
-        Me.GroupControl2.Controls.Add(Me.chk_all_provinsi)
         Me.GroupControl2.Controls.Add(Me.LabelControl8)
         Me.GroupControl2.Controls.Add(Me.kode_group)
         Me.GroupControl2.Controls.Add(Me.LabelControl7)
@@ -174,22 +165,22 @@ Partial Class frm_lap_so
         'LabelControl6
         '
         Me.LabelControl6.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl6.Location = New System.Drawing.Point(214, 94)
+        Me.LabelControl6.Location = New System.Drawing.Point(166, 92)
         Me.LabelControl6.Name = "LabelControl6"
         Me.LabelControl6.Size = New System.Drawing.Size(46, 13)
         Me.LabelControl6.TabIndex = 75
         Me.LabelControl6.Text = "Customer"
         '
-        'kode_customer
+        'kode_customer_parent
         '
-        Me.kode_customer.Enabled = False
-        Me.kode_customer.Location = New System.Drawing.Point(214, 108)
-        Me.kode_customer.Name = "kode_customer"
-        Me.kode_customer.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.kode_customer.Properties.Appearance.Options.UseFont = True
-        Me.kode_customer.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.kode_customer.Size = New System.Drawing.Size(193, 20)
-        Me.kode_customer.TabIndex = 76
+        Me.kode_customer_parent.Enabled = False
+        Me.kode_customer_parent.Location = New System.Drawing.Point(166, 106)
+        Me.kode_customer_parent.Name = "kode_customer_parent"
+        Me.kode_customer_parent.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.kode_customer_parent.Properties.Appearance.Options.UseFont = True
+        Me.kode_customer_parent.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.kode_customer_parent.Size = New System.Drawing.Size(241, 20)
+        Me.kode_customer_parent.TabIndex = 76
         '
         'rdo_tujuan
         '
@@ -200,46 +191,10 @@ Partial Class frm_lap_so
         Me.rdo_tujuan.Size = New System.Drawing.Size(397, 21)
         Me.rdo_tujuan.TabIndex = 74
         '
-        'chk_all_group
-        '
-        Me.chk_all_group.EditValue = True
-        Me.chk_all_group.Enabled = False
-        Me.chk_all_group.Location = New System.Drawing.Point(331, 69)
-        Me.chk_all_group.Name = "chk_all_group"
-        Me.chk_all_group.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chk_all_group.Properties.Appearance.Options.UseFont = True
-        Me.chk_all_group.Properties.Caption = "Semua"
-        Me.chk_all_group.Size = New System.Drawing.Size(57, 19)
-        Me.chk_all_group.TabIndex = 73
-        '
-        'chk_all_kota
-        '
-        Me.chk_all_kota.EditValue = True
-        Me.chk_all_kota.Enabled = False
-        Me.chk_all_kota.Location = New System.Drawing.Point(148, 108)
-        Me.chk_all_kota.Name = "chk_all_kota"
-        Me.chk_all_kota.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chk_all_kota.Properties.Appearance.Options.UseFont = True
-        Me.chk_all_kota.Properties.Caption = "Semua"
-        Me.chk_all_kota.Size = New System.Drawing.Size(57, 19)
-        Me.chk_all_kota.TabIndex = 72
-        '
-        'chk_all_provinsi
-        '
-        Me.chk_all_provinsi.EditValue = True
-        Me.chk_all_provinsi.Enabled = False
-        Me.chk_all_provinsi.Location = New System.Drawing.Point(148, 68)
-        Me.chk_all_provinsi.Name = "chk_all_provinsi"
-        Me.chk_all_provinsi.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chk_all_provinsi.Properties.Appearance.Options.UseFont = True
-        Me.chk_all_provinsi.Properties.Caption = "Semua"
-        Me.chk_all_provinsi.Size = New System.Drawing.Size(57, 19)
-        Me.chk_all_provinsi.TabIndex = 71
-        '
         'LabelControl8
         '
         Me.LabelControl8.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelControl8.Location = New System.Drawing.Point(214, 53)
+        Me.LabelControl8.Location = New System.Drawing.Point(166, 51)
         Me.LabelControl8.Name = "LabelControl8"
         Me.LabelControl8.Size = New System.Drawing.Size(29, 13)
         Me.LabelControl8.TabIndex = 70
@@ -248,7 +203,7 @@ Partial Class frm_lap_so
         'kode_group
         '
         Me.kode_group.Enabled = False
-        Me.kode_group.Location = New System.Drawing.Point(214, 68)
+        Me.kode_group.Location = New System.Drawing.Point(166, 66)
         Me.kode_group.Name = "kode_group"
         Me.kode_group.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.kode_group.Properties.Appearance.Options.UseFont = True
@@ -387,11 +342,8 @@ Partial Class frm_lap_so
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl2.ResumeLayout(False)
         Me.GroupControl2.PerformLayout()
-        CType(Me.kode_customer.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.kode_customer_parent.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.rdo_tujuan.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.chk_all_group.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.chk_all_kota.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.chk_all_provinsi.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.kode_group.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.kode_kota.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.kode_provinsi.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -408,9 +360,6 @@ Partial Class frm_lap_so
     Friend WithEvents LabelControl3 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents tgl_dari As DevExpress.XtraEditors.DateEdit
     Friend WithEvents GroupControl2 As DevExpress.XtraEditors.GroupControl
-    Friend WithEvents chk_all_group As DevExpress.XtraEditors.CheckEdit
-    Friend WithEvents chk_all_kota As DevExpress.XtraEditors.CheckEdit
-    Friend WithEvents chk_all_provinsi As DevExpress.XtraEditors.CheckEdit
     Friend WithEvents LabelControl8 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents kode_group As DevExpress.XtraEditors.LookUpEdit
     Friend WithEvents LabelControl7 As DevExpress.XtraEditors.LabelControl
@@ -418,7 +367,7 @@ Partial Class frm_lap_so
     Friend WithEvents LabelControl5 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents kode_provinsi As DevExpress.XtraEditors.LookUpEdit
     Friend WithEvents rdo_tujuan As DevExpress.XtraEditors.RadioGroup
-    Friend WithEvents kode_customer As DevExpress.XtraEditors.LookUpEdit
+    Friend WithEvents kode_customer_parent As DevExpress.XtraEditors.LookUpEdit
     Friend WithEvents LabelControl6 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl2 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents sistem_jual As DevExpress.XtraEditors.RadioGroup
