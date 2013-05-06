@@ -192,8 +192,8 @@ Partial Public Class rpt_retur_penerimaanbarang
         '
         'XrLabel16
         '
-        Me.XrLabel16.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel16.LocationFloat = New DevExpress.Utils.PointFloat(280.9167!, 82.79165!)
+        Me.XrLabel16.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel16.LocationFloat = New DevExpress.Utils.PointFloat(301.5842!, 82.79165!)
         Me.XrLabel16.Multiline = True
         Me.XrLabel16.Name = "XrLabel16"
         Me.XrLabel16.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
@@ -205,11 +205,11 @@ Partial Public Class rpt_retur_penerimaanbarang
         '
         'nomor_terima
         '
-        Me.nomor_terima.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.nomor_terima.LocationFloat = New DevExpress.Utils.PointFloat(291.3337!, 65.08331!)
+        Me.nomor_terima.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.nomor_terima.LocationFloat = New DevExpress.Utils.PointFloat(312.0012!, 65.08331!)
         Me.nomor_terima.Name = "nomor_terima"
         Me.nomor_terima.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.nomor_terima.SizeF = New System.Drawing.SizeF(99.74873!, 17.70833!)
+        Me.nomor_terima.SizeF = New System.Drawing.SizeF(80.99875!, 17.70833!)
         Me.nomor_terima.StylePriority.UseFont = False
         Me.nomor_terima.StylePriority.UseTextAlignment = False
         Me.nomor_terima.Text = "Tanggal"
@@ -217,11 +217,11 @@ Partial Public Class rpt_retur_penerimaanbarang
         '
         'lbl_tanggal_terima
         '
-        Me.lbl_tanggal_terima.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_tanggal_terima.LocationFloat = New DevExpress.Utils.PointFloat(291.3339!, 82.79165!)
+        Me.lbl_tanggal_terima.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_tanggal_terima.LocationFloat = New DevExpress.Utils.PointFloat(312.0014!, 82.79165!)
         Me.lbl_tanggal_terima.Name = "lbl_tanggal_terima"
         Me.lbl_tanggal_terima.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.lbl_tanggal_terima.SizeF = New System.Drawing.SizeF(99.74854!, 17.70833!)
+        Me.lbl_tanggal_terima.SizeF = New System.Drawing.SizeF(80.99854!, 17.70833!)
         Me.lbl_tanggal_terima.StylePriority.UseFont = False
         Me.lbl_tanggal_terima.StylePriority.UseTextAlignment = False
         Me.lbl_tanggal_terima.Text = "Supplier"
@@ -229,8 +229,8 @@ Partial Public Class rpt_retur_penerimaanbarang
         '
         'XrLabel6
         '
-        Me.XrLabel6.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel6.LocationFloat = New DevExpress.Utils.PointFloat(210.3348!, 65.08331!)
+        Me.XrLabel6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel6.LocationFloat = New DevExpress.Utils.PointFloat(231.0023!, 65.08331!)
         Me.XrLabel6.Name = "XrLabel6"
         Me.XrLabel6.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel6.SizeF = New System.Drawing.SizeF(70.58206!, 17.70833!)
@@ -241,8 +241,8 @@ Partial Public Class rpt_retur_penerimaanbarang
         '
         'XrLabel7
         '
-        Me.XrLabel7.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel7.LocationFloat = New DevExpress.Utils.PointFloat(210.3348!, 82.79165!)
+        Me.XrLabel7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel7.LocationFloat = New DevExpress.Utils.PointFloat(231.0023!, 82.79165!)
         Me.XrLabel7.Name = "XrLabel7"
         Me.XrLabel7.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel7.SizeF = New System.Drawing.SizeF(70.58187!, 17.70833!)
@@ -253,8 +253,8 @@ Partial Public Class rpt_retur_penerimaanbarang
         '
         'XrLabel15
         '
-        Me.XrLabel15.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel15.LocationFloat = New DevExpress.Utils.PointFloat(280.9168!, 65.08331!)
+        Me.XrLabel15.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel15.LocationFloat = New DevExpress.Utils.PointFloat(301.5844!, 65.08331!)
         Me.XrLabel15.Name = "XrLabel15"
         Me.XrLabel15.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel15.SizeF = New System.Drawing.SizeF(10.41685!, 17.70833!)
@@ -265,11 +265,11 @@ Partial Public Class rpt_retur_penerimaanbarang
         '
         'lbl_nama_supplier
         '
-        Me.lbl_nama_supplier.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_nama_supplier.LocationFloat = New DevExpress.Utils.PointFloat(80.99912!, 82.79165!)
+        Me.lbl_nama_supplier.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_nama_supplier.LocationFloat = New DevExpress.Utils.PointFloat(67.45745!, 82.79165!)
         Me.lbl_nama_supplier.Name = "lbl_nama_supplier"
         Me.lbl_nama_supplier.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.lbl_nama_supplier.SizeF = New System.Drawing.SizeF(99.74854!, 17.70833!)
+        Me.lbl_nama_supplier.SizeF = New System.Drawing.SizeF(155.0!, 17.70833!)
         Me.lbl_nama_supplier.StylePriority.UseFont = False
         Me.lbl_nama_supplier.StylePriority.UseTextAlignment = False
         Me.lbl_nama_supplier.Text = "Supplier"
@@ -277,11 +277,11 @@ Partial Public Class rpt_retur_penerimaanbarang
         '
         'tanggal
         '
-        Me.tanggal.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tanggal.LocationFloat = New DevExpress.Utils.PointFloat(80.99893!, 65.08331!)
+        Me.tanggal.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tanggal.LocationFloat = New DevExpress.Utils.PointFloat(67.45726!, 65.0833!)
         Me.tanggal.Name = "tanggal"
         Me.tanggal.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.tanggal.SizeF = New System.Drawing.SizeF(99.74873!, 17.70833!)
+        Me.tanggal.SizeF = New System.Drawing.SizeF(163.545!, 17.70834!)
         Me.tanggal.StylePriority.UseFont = False
         Me.tanggal.StylePriority.UseTextAlignment = False
         Me.tanggal.Text = "Tanggal"
@@ -289,8 +289,8 @@ Partial Public Class rpt_retur_penerimaanbarang
         '
         'XrLabel25
         '
-        Me.XrLabel25.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel25.LocationFloat = New DevExpress.Utils.PointFloat(70.58226!, 82.79165!)
+        Me.XrLabel25.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel25.LocationFloat = New DevExpress.Utils.PointFloat(57.0406!, 82.79163!)
         Me.XrLabel25.Multiline = True
         Me.XrLabel25.Name = "XrLabel25"
         Me.XrLabel25.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
@@ -302,8 +302,8 @@ Partial Public Class rpt_retur_penerimaanbarang
         '
         'XrLabel10
         '
-        Me.XrLabel10.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XrLabel10.LocationFloat = New DevExpress.Utils.PointFloat(70.58207!, 65.08331!)
+        Me.XrLabel10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel10.LocationFloat = New DevExpress.Utils.PointFloat(57.04041!, 65.0833!)
         Me.XrLabel10.Name = "XrLabel10"
         Me.XrLabel10.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel10.SizeF = New System.Drawing.SizeF(10.41685!, 17.70833!)
@@ -314,11 +314,11 @@ Partial Public Class rpt_retur_penerimaanbarang
         '
         'XrLabel4
         '
-        Me.XrLabel4.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.XrLabel4.LocationFloat = New DevExpress.Utils.PointFloat(0.0001907349!, 82.79165!)
         Me.XrLabel4.Name = "XrLabel4"
         Me.XrLabel4.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel4.SizeF = New System.Drawing.SizeF(70.58187!, 17.70833!)
+        Me.XrLabel4.SizeF = New System.Drawing.SizeF(55.99854!, 17.70833!)
         Me.XrLabel4.StylePriority.UseFont = False
         Me.XrLabel4.StylePriority.UseTextAlignment = False
         Me.XrLabel4.Text = "Supplier"
@@ -326,11 +326,11 @@ Partial Public Class rpt_retur_penerimaanbarang
         '
         'XrLabel3
         '
-        Me.XrLabel3.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XrLabel3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.XrLabel3.LocationFloat = New DevExpress.Utils.PointFloat(0.0!, 65.08331!)
         Me.XrLabel3.Name = "XrLabel3"
         Me.XrLabel3.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
-        Me.XrLabel3.SizeF = New System.Drawing.SizeF(70.58206!, 17.70833!)
+        Me.XrLabel3.SizeF = New System.Drawing.SizeF(55.99873!, 17.70833!)
         Me.XrLabel3.StylePriority.UseFont = False
         Me.XrLabel3.StylePriority.UseTextAlignment = False
         Me.XrLabel3.Text = "Tgl Retur"

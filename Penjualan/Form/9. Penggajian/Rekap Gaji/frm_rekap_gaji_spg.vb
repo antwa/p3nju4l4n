@@ -39,14 +39,14 @@ Public Class frm_rekap_gaji_spg
         rdo_berdasarkan.SelectedIndex = 0
 
         '# load customer
-        Load_Customer(kode_customer, "1")
+        Load_CustomerParent(kode_customer_parent, "1")
 
     End Sub
 
     Sub loadData()
         Db.FlushCache()
         Db.Selects("b.nama, (a.j_hadir*a.p_hadir) AS t_hadir, (a.j_lembur1*a.p_lembur1) AS lembur, (a.j_lembur2*a.p_lembur2) AS h_besar, (a.j_bonus*a.p_bonus) AS bonus, a.total_insentif AS insentif, a.pengembalian_jaminan, a.total_potongan AS potongan, a.jaminan_kerja, a.total_utang AS utang, a.grand_total AS total, b.nama_bank, b.no_rekening, b.atas_nama")
-        Db.Selects("a.j_hadir, a.p_hadir, a.j_lembur1, a.p_lembur1, a.j_lembur2, a.p_lembur2, a.j_bonus, a.p_bonus, a.periode, b.kode_customer, a.tgl_transfer, a.id_pegawai")
+        Db.Selects("a.j_hadir, a.p_hadir, a.j_lembur1, a.p_lembur1, a.j_lembur2, a.p_lembur2, a.j_bonus, a.p_bonus, a.periode, b.kode_customer_parent, a.tgl_transfer, a.id_pegawai")
         Db.From("tbl_penggajian a")
         Db.Join("tbl_pegawai b", "b.id_pegawai = a.id_pegawai")
         Db.Where("b.[group]", "2") ' berdasarkan SPG
@@ -61,8 +61,8 @@ Public Class frm_rekap_gaji_spg
         End If
 
         If rdo_berdasarkan.SelectedIndex = 0 Then ' berdasarkan customer
-            If Not chk_semua_customer.Checked Then
-                Db.Where("b.kode_customer", getValueFromLookup(kode_customer))
+            If Not getValueFromLookup(kode_customer_parent) = "-1" Then
+                Db.Where("b.kode_customer_parent", getValueFromLookup(kode_customer_parent))
             End If
 
         Else ' berdasarkan wilayah
@@ -140,10 +140,6 @@ Public Class frm_rekap_gaji_spg
         Call Me.initComponent()
     End Sub
 
-    Private Sub chk_semua_customer_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chk_semua_customer.CheckedChanged
-        kode_customer.Enabled = Not chk_semua_customer.Checked
-    End Sub
-
     Private Sub cmd_load_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_load.Click
         Call Me.loadData()
     End Sub
@@ -161,15 +157,9 @@ Public Class frm_rekap_gaji_spg
 
     Private Sub rdo_berdasarkan_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rdo_berdasarkan.SelectedIndexChanged
         If rdo_berdasarkan.SelectedIndex = 0 Then
-            chk_semua_customer.Enabled = True
-            kode_customer.Enabled = Not chk_semua_customer.Checked
-
-
+            kode_customer_parent.Enabled = True
         Else
-            chk_semua_customer.Enabled = False
-            kode_customer.Enabled = False
-
-
+            kode_customer_parent.Enabled = False
         End If
     End Sub
 
@@ -196,7 +186,7 @@ Public Class frm_rekap_gaji_spg
                         Dim rpt As New rpt_slip_gaji
                         'rpt.BindingSource1.DataSource = rcd_tmp
                         rpt.lbl_nama.Text = .Rows(i).Item("nama")
-                        rpt.lbl_toko.Text = getNamacustomer(.Rows(i).Item("kode_customer"))
+                        rpt.lbl_toko.Text = getNamaCustomer(.Rows(i).Item("kode_customer_parent"))
                         rpt.lbl_periode.Text = .Rows(i).Item("periode")
 
                         rpt.lbl_j_hadir.Text = Format(.Rows(i).Item("j_hadir"), "n0")
@@ -278,7 +268,7 @@ Public Class frm_rekap_gaji_spg
                     rcd_rekap.Add(New rcd_rekap_transfer)
 
                     rcd_rekap.Item(i).no = i + 1
-                    rcd_rekap.Item(i).nama_toko = getNamacustomer(rcd_list.Rows(i).Item("kode_customer"))
+                    rcd_rekap.Item(i).nama_toko = getNamaCustomer(rcd_list.Rows(i).Item("kode_customer_parent"))
                     rcd_rekap.Item(i).nama_spg = rcd_list.Rows(i).Item("nama")
                     rcd_rekap.Item(i).total = rcd_list.Rows(i).Item("total")
                     rcd_rekap.Item(i).nama_bank = rcd_list.Rows(i).Item("nama_bank")
@@ -319,7 +309,7 @@ Public Class frm_rekap_gaji_spg
                     rcd_rekap.Add(New rcd_rekap_gaji)
 
                     rcd_rekap.Item(i).no = i + 1
-                    rcd_rekap.Item(i).nama_toko = getNamacustomer(rcd_list.Rows(i).Item("kode_customer"))
+                    rcd_rekap.Item(i).nama_toko = getNamaCustomer(rcd_list.Rows(i).Item("kode_customer_parent"))
                     rcd_rekap.Item(i).nama_spg = rcd_list.Rows(i).Item("nama")
 
                     rcd_rekap.Item(i).t_hadir = rcd_list.Rows(i).Item("t_hadir")

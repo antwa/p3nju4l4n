@@ -264,6 +264,12 @@ Public Class frm_sales_order
         End If
 
         If Asc(e.KeyChar) = 13 Then
+            '# cek customer
+            If getValueFromLookup(kode_customer_parent) = "-1" Then
+                MsgBox("Pilih Customer dengan benar!" & vbCrLf & vbCrLf & "Jangan pilih semua customer", MsgBoxStyle.Exclamation)
+                Exit Sub
+            End If
+
             Select Case view.FocusedColumn.FieldName
                 Case "kode_barangjadi"
                     Dim tmp_kode_barangjadi As String = rcd_list.Item(row).kode_barangjadi
@@ -283,7 +289,17 @@ Public Class frm_sales_order
                         Dim dt1 As DataTable = Connection.ExecuteToDataTable(Db.GetQueryString)
 
                         If dt1.Rows.Count > 0 Then
-                            rcd_list.Item(row).kode_barangjadi = dt1.Rows(0).Item("kode_barangjadi").ToString
+                            Dim kode_barangjadi As String = dt1.Rows(0).Item("kode_barangjadi").ToString
+
+                            ' cek artikel, takut kalo ada yang sama
+                            For i = 0 To rcd_list.Count - 1
+                                If rcd_list.Item(i).kode_barangjadi = kode_barangjadi Then
+                                    MsgBox("Kode artikel " & kode_barangjadi & ", Sudah diinputkan. ganti dengan yang lain", MsgBoxStyle.Exclamation)
+                                    Exit Sub
+                                End If
+                            Next
+
+                            rcd_list.Item(row).kode_barangjadi = kode_barangjadi
                             rcd_list.Item(row).nama = dt1.Rows(0).Item("nama").ToString
                             rcd_list.Item(row).stok = dt1.Rows(0).Item("stok").ToString
 

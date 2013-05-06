@@ -189,8 +189,8 @@
     Public Function getNamaCustomer(ByVal kode_customer As String) As String
         Db.FlushCache()
         Db.Selects("nama")
-        Db.From("tbl_customer")
-        Db.Where("kode_customer", kode_customer)
+        Db.From("tbl_customer_parent")
+        Db.Where("kode_customer_parent", kode_customer)
 
         Dim dt As DataTable = Connection.ExecuteToDataTable(Db.GetQueryString)
 

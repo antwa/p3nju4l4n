@@ -46,13 +46,16 @@ Public Class frm_pegawai_add
         Validation.addRules(txt_noktp.Text, "No KTP", "required|numeric|length[5-16]")
         Validation.addRules(txt_nama_pegawai.Text, "Nama Pegawai", "required")
         Validation.addRules(txt_alamat.Text, "Alamat", "required")
-        Validation.addRules(lkp_jabatan.Text, "Jabatan", "required")
+        'Validation.addRules(lkp_jabatan.Text, "Jabatan", "required")
+        If rdg_group_pegawai.EditValue = "1" Then
+            Validation.addRules(getValueFromLookup(lkp_kode_costumer_parent), "Customer", "[!=]-1")
+        End If
         Validation.addRules(txt_telp.Text, "Telepon", "required|numeric|length[6-12]")
         'Validation.addRules(txt_email.Text, "Email", "required|email")
         Validation.addRules(txt_bank.Text, "Nama Bank", "required")
         Validation.addRules(txt_atas_nama.Text, "Atas Nama", "required")
         Validation.addRules(txt_no_rekening.Text, "No Rekening", "required|numeric")
-        Validation.addRules(txt_gaji_pokok.Text, "Gaji Pokok", "required|numeric")
+        Validation.addRules(txt_gaji_pokok.EditValue, "Gaji Pokok", "required|numeric")
 
         'end Validation
 
@@ -69,6 +72,7 @@ Public Class frm_pegawai_add
                 Db.SetField("alamat", txt_alamat.Text)
                 Db.SetField("kota", txt_kota.Text)
 
+                Db.SetField("[group]", rdg_group_pegawai.EditValue)
                 Db.SetField("kode_customer_parent", getValueFromLookup(lkp_kode_costumer_parent))
                 Db.SetField("jabatan", getValueFromLookup(lkp_jabatan))
                 Db.SetField("jk", rdg_jk.EditValue)

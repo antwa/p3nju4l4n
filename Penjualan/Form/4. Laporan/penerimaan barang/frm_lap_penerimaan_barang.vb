@@ -18,6 +18,12 @@ Public Class frm_lap_penerimaan_barang
         Db.Join("tbl_barangjadi c", "c.kode_barangjadi = b.kode_barangjadi")
         Db.Join("tbl_supplier_barang d", "d.kode_supplier_barang = a.kode_supplier_barang")
 
+        Db.Where_BetweenDate("a.tanggal", tgl_dari.DateTime, tgl_sampai.DateTime)
+
+        If kode_barangjadi.Text <> "" Then
+            Db.Where(" AND b.kode_barangjadi LIKE '" & kode_barangjadi.Text & "%'")
+        End If
+
         GridControl1.DataSource = Connection.ExecuteToDataTable(Db.GetQueryString)
 
         '# format grid
@@ -46,13 +52,10 @@ Public Class frm_lap_penerimaan_barang
 
     Private Sub cmd_print_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_print.Click
         '# Create Header
-        'Dim StrHeader As String = "{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fnil\fcharset0 Times New Roman;}}\viewkind4\uc1\pard\qc\b\f0\fs24 KARTU STOK BARANG JADI\par\b0\fs20 $tgl_print\par\parKode Artikel : \b $kode_barangjadi\b0    ($tgl_dari - $tgl_sampai)\par\par}"
-        'StrHeader = StrHeader.Replace("$tgl_print", Now)
-        'StrHeader = StrHeader.Replace("$kode_barangjadi", kode_barangjadi.Text)
-        'StrHeader = StrHeader.Replace("$tgl_dari", tgl_dari.Text)
-        'StrHeader = StrHeader.Replace("$tgl_sampai", tgl_sampai.Text)
-        '' set header and create document print
-        'PrintableComponentLink1.RtfReportHeader = StrHeader
+        Dim StrHeader As String = PrintableComponentLink1.RtfReportHeader
+        StrHeader = StrHeader.Replace("$tannggal", tgl_dari.Text & "/" & tgl_sampai.Text)
+        
+        PrintableComponentLink1.RtfReportHeader = StrHeader
         PrintableComponentLink1.Landscape = True
         PrintableComponentLink1.PaperKind = Printing.PaperKind.A4
         PrintableComponentLink1.Margins = New System.Drawing.Printing.Margins(50, 50, 75, 50)
@@ -84,10 +87,6 @@ Public Class frm_lap_penerimaan_barang
 
     Private Sub cmd_load_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmd_load.Click
         load_data()
-    End Sub
-
-    Private Sub chk_semua_artikel_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chk_semua_artikel.CheckedChanged
-        cmd_cari.Enabled = Not chk_semua_artikel.Checked
     End Sub
 
     Private Sub SimpleButton1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SimpleButton1.Click

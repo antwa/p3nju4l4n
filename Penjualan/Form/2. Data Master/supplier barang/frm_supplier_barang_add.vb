@@ -17,12 +17,13 @@
         End If
 
         '#validasi
+        Validation.clearRules()
         Validation.addRules(txt_kode.Text, "Kode", "required|length[1-6]")
         Validation.addRules(txt_nama.Text, "Nama", "required")
         Validation.addRules(txt_alamat.Text, "Alamat", "required")
         Validation.addRules(txt_telp1.Text, "Telepon", "required|numeric|length[1-12]")
-        Validation.addRules(txt_jatuh_tempobayar.Text, "Jatuh Tempo Bayar", "required")
-        Validation.addRules(txt_plafon_debet.Text, "Plafon Debet", "required")
+        Validation.addRules(txt_jatuh_tempobayar.EditValue, "Jatuh Tempo Bayar", "required")
+        Validation.addRules(txt_plafon_debet.EditValue, "Plafon Debet", "required")
 
         If Validation.isValid Then
             If Connection.ExecuteNonQuery(Db.GetQueryString) Then

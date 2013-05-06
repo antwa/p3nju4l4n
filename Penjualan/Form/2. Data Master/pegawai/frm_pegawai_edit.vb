@@ -16,8 +16,8 @@ Public Class frm_pegawai_edit
         rdg_statusKaryawan.SelectedIndex = 0
 
 
-        rdg_jk.Properties.Items.Add(New RadioGroupItem("1", "Laki - Laki"))
-        rdg_jk.Properties.Items.Add(New RadioGroupItem("2", "Perempuan"))
+        rdg_jk.Properties.Items.Add(New RadioGroupItem("L", "Laki - Laki"))
+        rdg_jk.Properties.Items.Add(New RadioGroupItem("P", "Perempuan"))
     End Sub
 
     Public Sub initData()
@@ -45,6 +45,7 @@ Public Class frm_pegawai_edit
                 dte_tgl_masuk.EditValue = .Item("tgl_masuk").ToString
                 txt_telp.Text = .Item("telepon").ToString
                 txt_email.Text = .Item("email").ToString
+                txt_bank.Text = .Item("nama_bank").ToString
                 txt_no_rekening.Text = .Item("no_rekening").ToString
                 txt_atas_nama.Text = .Item("atas_nama").ToString
                 rdg_statusKaryawan.EditValue = .Item("status").ToString
@@ -67,7 +68,7 @@ Public Class frm_pegawai_edit
         Db.SetField("nama", txt_nama_pegawai.Text)
         Db.SetField("alamat", txt_alamat.Text)
         Db.SetField("kota", txt_kota.Text)
-        'Db.SetField("group", rdg_group_pegawai.EditValue)
+        Db.SetField("[group]", rdg_group_pegawai.EditValue)
         Db.SetField("kode_customer_parent", getValueFromLookup(lkp_kode_costumer_parent))
         Db.SetField("jk", rdg_jk.EditValue)
         Db.SetField("tgl_masuk", dte_tgl_masuk.DateTime)

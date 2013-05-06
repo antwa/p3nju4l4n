@@ -750,6 +750,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form\3. Transaksi\target penjualan\rcd_targetpenjualan_perbulan.vb" />
+    <Compile Include="Form\4. Laporan\delivery order\frm_lap_do.Designer.vb">
+      <DependentUpon>frm_lap_do.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\4. Laporan\delivery order\frm_lap_do.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form\4. Laporan\FormReportControl.Designer.vb">
       <DependentUpon>FormReportControl.vb</DependentUpon>
     </Compile>
@@ -1291,6 +1297,10 @@
       <DependentUpon>frm_targetpenjualan.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form\4. Laporan\delivery order\frm_lap_do.resx">
+      <DependentUpon>frm_lap_do.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\4. Laporan\FormReportControl.resx">
       <DependentUpon>FormReportControl.vb</DependentUpon>
       <SubType>Designer</SubType>
@@ -1461,7 +1471,6 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Form\4. Laporan\delivery order\" />
     <Folder Include="Form\5. Hutang Piutang\" />
     <Folder Include="Form\6. Kas dan Bank\penerimaan_kas\" />
     <Folder Include="Form\7. Utility\" />

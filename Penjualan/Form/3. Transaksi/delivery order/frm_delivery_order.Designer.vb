@@ -38,9 +38,6 @@ Partial Class frm_delivery_order
         Me.LabelControl6 = New DevExpress.XtraEditors.LabelControl
         Me.kode_customer_parent = New DevExpress.XtraEditors.LookUpEdit
         Me.rdo_tujuan = New DevExpress.XtraEditors.RadioGroup
-        Me.chk_all_group = New DevExpress.XtraEditors.CheckEdit
-        Me.chk_all_kota = New DevExpress.XtraEditors.CheckEdit
-        Me.chk_all_provinsi = New DevExpress.XtraEditors.CheckEdit
         Me.LabelControl8 = New DevExpress.XtraEditors.LabelControl
         Me.kode_group = New DevExpress.XtraEditors.LookUpEdit
         Me.LabelControl7 = New DevExpress.XtraEditors.LabelControl
@@ -61,9 +58,6 @@ Partial Class frm_delivery_order
         Me.GroupControl2.SuspendLayout()
         CType(Me.kode_customer_parent.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.rdo_tujuan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.chk_all_group.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.chk_all_kota.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.chk_all_provinsi.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.kode_group.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.kode_kota.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.kode_provinsi.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -232,9 +226,6 @@ Partial Class frm_delivery_order
         Me.GroupControl2.Controls.Add(Me.LabelControl6)
         Me.GroupControl2.Controls.Add(Me.kode_customer_parent)
         Me.GroupControl2.Controls.Add(Me.rdo_tujuan)
-        Me.GroupControl2.Controls.Add(Me.chk_all_group)
-        Me.GroupControl2.Controls.Add(Me.chk_all_kota)
-        Me.GroupControl2.Controls.Add(Me.chk_all_provinsi)
         Me.GroupControl2.Controls.Add(Me.LabelControl8)
         Me.GroupControl2.Controls.Add(Me.kode_group)
         Me.GroupControl2.Controls.Add(Me.LabelControl7)
@@ -274,42 +265,6 @@ Partial Class frm_delivery_order
         Me.rdo_tujuan.Properties.Items.AddRange(New DevExpress.XtraEditors.Controls.RadioGroupItem() {New DevExpress.XtraEditors.Controls.RadioGroupItem(0, "Semua"), New DevExpress.XtraEditors.Controls.RadioGroupItem(1, "Wilayah"), New DevExpress.XtraEditors.Controls.RadioGroupItem(2, "Customer")})
         Me.rdo_tujuan.Size = New System.Drawing.Size(397, 21)
         Me.rdo_tujuan.TabIndex = 74
-        '
-        'chk_all_group
-        '
-        Me.chk_all_group.EditValue = True
-        Me.chk_all_group.Enabled = False
-        Me.chk_all_group.Location = New System.Drawing.Point(331, 69)
-        Me.chk_all_group.Name = "chk_all_group"
-        Me.chk_all_group.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chk_all_group.Properties.Appearance.Options.UseFont = True
-        Me.chk_all_group.Properties.Caption = "Semua"
-        Me.chk_all_group.Size = New System.Drawing.Size(57, 19)
-        Me.chk_all_group.TabIndex = 73
-        '
-        'chk_all_kota
-        '
-        Me.chk_all_kota.EditValue = True
-        Me.chk_all_kota.Enabled = False
-        Me.chk_all_kota.Location = New System.Drawing.Point(148, 108)
-        Me.chk_all_kota.Name = "chk_all_kota"
-        Me.chk_all_kota.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chk_all_kota.Properties.Appearance.Options.UseFont = True
-        Me.chk_all_kota.Properties.Caption = "Semua"
-        Me.chk_all_kota.Size = New System.Drawing.Size(57, 19)
-        Me.chk_all_kota.TabIndex = 72
-        '
-        'chk_all_provinsi
-        '
-        Me.chk_all_provinsi.EditValue = True
-        Me.chk_all_provinsi.Enabled = False
-        Me.chk_all_provinsi.Location = New System.Drawing.Point(148, 68)
-        Me.chk_all_provinsi.Name = "chk_all_provinsi"
-        Me.chk_all_provinsi.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chk_all_provinsi.Properties.Appearance.Options.UseFont = True
-        Me.chk_all_provinsi.Properties.Caption = "Semua"
-        Me.chk_all_provinsi.Size = New System.Drawing.Size(57, 19)
-        Me.chk_all_provinsi.TabIndex = 71
         '
         'LabelControl8
         '
@@ -403,9 +358,6 @@ Partial Class frm_delivery_order
         Me.GroupControl2.PerformLayout()
         CType(Me.kode_customer_parent.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.rdo_tujuan.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.chk_all_group.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.chk_all_kota.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.chk_all_provinsi.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.kode_group.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.kode_kota.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.kode_provinsi.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -430,9 +382,6 @@ Partial Class frm_delivery_order
     Friend WithEvents LabelControl6 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents kode_customer_parent As DevExpress.XtraEditors.LookUpEdit
     Friend WithEvents rdo_tujuan As DevExpress.XtraEditors.RadioGroup
-    Friend WithEvents chk_all_group As DevExpress.XtraEditors.CheckEdit
-    Friend WithEvents chk_all_kota As DevExpress.XtraEditors.CheckEdit
-    Friend WithEvents chk_all_provinsi As DevExpress.XtraEditors.CheckEdit
     Friend WithEvents LabelControl8 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents kode_group As DevExpress.XtraEditors.LookUpEdit
     Friend WithEvents LabelControl7 As DevExpress.XtraEditors.LabelControl

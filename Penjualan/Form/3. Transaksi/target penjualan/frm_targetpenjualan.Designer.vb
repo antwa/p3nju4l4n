@@ -102,7 +102,7 @@ Partial Class frm_targetpenjualan
         Me.XtraTabPage1.Controls.Add(Me.LabelControl6)
         Me.XtraTabPage1.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.XtraTabPage1.Name = "XtraTabPage1"
-        Me.XtraTabPage1.Size = New System.Drawing.Size(685, 376)
+        Me.XtraTabPage1.Size = New System.Drawing.Size(684, 374)
         Me.XtraTabPage1.Text = "Per Customer"
         '
         'pc_simpan
@@ -208,7 +208,7 @@ Partial Class frm_targetpenjualan
         Me.XtraTabPage2.Controls.Add(Me.pb_bulan)
         Me.XtraTabPage2.Controls.Add(Me.LabelControl2)
         Me.XtraTabPage2.Name = "XtraTabPage2"
-        Me.XtraTabPage2.Size = New System.Drawing.Size(685, 376)
+        Me.XtraTabPage2.Size = New System.Drawing.Size(684, 374)
         Me.XtraTabPage2.Text = "Per Bulan"
         '
         'chk_all_group
