@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class frm_lap_do
+Partial Class frm_lap_sj
     Inherits DevExpress.XtraEditors.XtraForm
 
     'Form overrides dispose to clean up the component list.
@@ -20,7 +20,7 @@ Partial Class frm_lap_do
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_lap_do))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_lap_sj))
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl
         Me.sistem_jual = New DevExpress.XtraEditors.RadioGroup
         Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl
@@ -29,7 +29,6 @@ Partial Class frm_lap_do
         Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl
         Me.tgl_dari = New DevExpress.XtraEditors.DateEdit
         Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl
-        Me.chk_belumjadi_sj = New DevExpress.XtraEditors.CheckEdit
         Me.LabelControl6 = New DevExpress.XtraEditors.LabelControl
         Me.kode_customer_parent = New DevExpress.XtraEditors.LookUpEdit
         Me.rdo_tujuan = New DevExpress.XtraEditors.RadioGroup
@@ -56,7 +55,6 @@ Partial Class frm_lap_do
         CType(Me.tgl_dari.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl2.SuspendLayout()
-        CType(Me.chk_belumjadi_sj.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.kode_customer_parent.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.rdo_tujuan.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.kode_group.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -150,7 +148,6 @@ Partial Class frm_lap_do
         '
         Me.GroupControl2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupControl2.Controls.Add(Me.chk_belumjadi_sj)
         Me.GroupControl2.Controls.Add(Me.LabelControl6)
         Me.GroupControl2.Controls.Add(Me.kode_customer_parent)
         Me.GroupControl2.Controls.Add(Me.rdo_tujuan)
@@ -164,14 +161,6 @@ Partial Class frm_lap_do
         Me.GroupControl2.Name = "GroupControl2"
         Me.GroupControl2.Size = New System.Drawing.Size(570, 135)
         Me.GroupControl2.TabIndex = 2
-        '
-        'chk_belumjadi_sj
-        '
-        Me.chk_belumjadi_sj.Location = New System.Drawing.Point(307, 66)
-        Me.chk_belumjadi_sj.Name = "chk_belumjadi_sj"
-        Me.chk_belumjadi_sj.Properties.Caption = "Belum Jadi SJ"
-        Me.chk_belumjadi_sj.Size = New System.Drawing.Size(100, 19)
-        Me.chk_belumjadi_sj.TabIndex = 77
         '
         'LabelControl6
         '
@@ -325,10 +314,10 @@ Partial Class frm_lap_do
         Me.PrintableComponentLink1.PrintingSystem = Me.PrintingSystem1
         Me.PrintableComponentLink1.PrintingSystemBase = Me.PrintingSystem1
         Me.PrintableComponentLink1.RtfReportHeader = "{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fnil\fcharset0 Times New R" & _
-            "oman;}}" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "\viewkind4\uc1\pard\qc\b\f0\fs28 LAPORAN DELIVERY ORDER\par" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "\b0\fs22 $" & _
-            "tanggal\fs16\par" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "\fs20\par" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "}" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+            "oman;}}" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "\viewkind4\uc1\pard\qc\b\f0\fs28 LAPORAN SURAT JALAN\par" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "\b0\fs22 $tan" & _
+            "ggal\fs16\par" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "\fs20\par" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "}" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
-        'frm_lap_do
+        'frm_lap_sj
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -340,8 +329,8 @@ Partial Class frm_lap_do
         Me.Controls.Add(Me.GroupControl2)
         Me.Controls.Add(Me.GroupControl1)
         Me.MinimumSize = New System.Drawing.Size(810, 462)
-        Me.Name = "frm_lap_do"
-        Me.Text = "Laporan Delivery Order"
+        Me.Name = "frm_lap_sj"
+        Me.Text = "Laporan Surat Jalan"
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)
         Me.GroupControl1.PerformLayout()
@@ -353,7 +342,6 @@ Partial Class frm_lap_do
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl2.ResumeLayout(False)
         Me.GroupControl2.PerformLayout()
-        CType(Me.chk_belumjadi_sj.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.kode_customer_parent.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.rdo_tujuan.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.kode_group.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -391,5 +379,4 @@ Partial Class frm_lap_do
     Friend WithEvents SaveFileDialog1 As System.Windows.Forms.SaveFileDialog
     Friend WithEvents PrintingSystem1 As DevExpress.XtraPrinting.PrintingSystem
     Friend WithEvents PrintableComponentLink1 As DevExpress.XtraPrinting.PrintableComponentLink
-    Friend WithEvents chk_belumjadi_sj As DevExpress.XtraEditors.CheckEdit
 End Class

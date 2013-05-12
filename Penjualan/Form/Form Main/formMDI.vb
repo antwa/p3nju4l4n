@@ -156,7 +156,7 @@
         LoadFormToTab(frm_pegawai_list)
     End Sub
 
-    Private Sub cLaporan_penerimaanbarang_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles cLaporan_penerimaanbarang.ItemClick
+    Private Sub cLaporan_penerimaanbarang_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles CM_frm_lap_penerimaan_barang.ItemClick
         LoadFormToTab(frm_lap_penerimaan_barang)
     End Sub
 
@@ -232,7 +232,21 @@
         LoadFormToTab(frm_retur_formalitas)
     End Sub
 
-    Private Sub cLaporan_do_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles cLaporan_do.ItemClick
+    Private Sub cLaporan_do_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles CM_frm_lap_do.ItemClick
         LoadFormToTab(frm_lap_do)
     End Sub
+
+    Private Sub CM_frm_lap_sj_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles CM_frm_lap_sj.ItemClick
+        LoadFormToTab(frm_lap_sj)
+    End Sub
+
+    Private Sub CM_frm_lap_konsinyasi_sekunder_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles CM_frm_lap_konsinyasi_sekunder.ItemClick
+        LoadFormToTab(frm_lap_konsinyasi_sekunder)
+    End Sub
+
+    Private Sub CM_frm_lap_konsinyasi_primer_ItemClick(ByVal sender As System.Object, ByVal e As DevExpress.XtraBars.ItemClickEventArgs) Handles CM_frm_lap_konsinyasi_primer.ItemClick
+        LoadFormToTab(frm_lap_konsinyasi_primer)
+    End Sub
+
+
 End Class

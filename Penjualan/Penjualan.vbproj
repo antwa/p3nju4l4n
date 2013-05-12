@@ -762,6 +762,18 @@
     <Compile Include="Form\4. Laporan\FormReportControl.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Form\4. Laporan\konsinyasi primer\frm_lap_konsinyasi_primer.Designer.vb">
+      <DependentUpon>frm_lap_konsinyasi_primer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\4. Laporan\konsinyasi primer\frm_lap_konsinyasi_primer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\4. Laporan\konsinyasi sekunder\frm_lap_konsinyasi_sekunder.Designer.vb">
+      <DependentUpon>frm_lap_konsinyasi_sekunder.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\4. Laporan\konsinyasi sekunder\frm_lap_konsinyasi_sekunder.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form\4. Laporan\penerimaan barang\frm_lap_penerimaan_barang.Designer.vb">
       <DependentUpon>frm_lap_penerimaan_barang.vb</DependentUpon>
     </Compile>
@@ -772,6 +784,12 @@
       <DependentUpon>frm_lap_so.vb</DependentUpon>
     </Compile>
     <Compile Include="Form\4. Laporan\sales order\frm_lap_so.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\4. Laporan\surat jalan\frm_lap_sj.Designer.vb">
+      <DependentUpon>frm_lap_sj.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form\4. Laporan\surat jalan\frm_lap_sj.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form\6. Kas dan Bank\mutasi_kas\frm_mutasi_kas_add.Designer.vb">
@@ -1305,12 +1323,24 @@
       <DependentUpon>FormReportControl.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form\4. Laporan\konsinyasi primer\frm_lap_konsinyasi_primer.resx">
+      <DependentUpon>frm_lap_konsinyasi_primer.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\4. Laporan\konsinyasi sekunder\frm_lap_konsinyasi_sekunder.resx">
+      <DependentUpon>frm_lap_konsinyasi_sekunder.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\4. Laporan\penerimaan barang\frm_lap_penerimaan_barang.resx">
       <DependentUpon>frm_lap_penerimaan_barang.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\4. Laporan\sales order\frm_lap_so.resx">
       <DependentUpon>frm_lap_so.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\4. Laporan\surat jalan\frm_lap_sj.resx">
+      <DependentUpon>frm_lap_sj.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Form\6. Kas dan Bank\mutasi_kas\frm_mutasi_kas_add.resx">
