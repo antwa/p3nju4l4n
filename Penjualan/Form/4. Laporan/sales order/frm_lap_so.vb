@@ -72,32 +72,33 @@
                 Db.Where("c.kode_grup", getValueFromLookup(kode_group))
             End If
         ElseIf rdo_tujuan.EditValue = 2 Then
-
-            Db.Where(" AND a.kode_customer_child LIKE '" & getValueFromLookup(kode_customer_parent) & "%'")
+            If Not getValueFromLookup(kode_customer_parent) = "-1" Then
+                Db.Where(" AND a.kode_customer_child LIKE '" & getValueFromLookup(kode_customer_parent) & "%'")
+            End If
         End If
 
-        Db.Where_BetweenDate("a.tgl_so", tgl_dari.DateTime, tgl_sampai.DateTime)
+            Db.Where_BetweenDate("a.tgl_so", tgl_dari.DateTime, tgl_sampai.DateTime)
 
-        GridControl1.DataSource = Connection.ExecuteToDataTable(Db.GetQueryString)
+            GridControl1.DataSource = Connection.ExecuteToDataTable(Db.GetQueryString)
 
-        'format
-        GridView1.Columns("tgl_so").Caption = "Tanggal Terbit"
-        GridView1.Columns("no_so").Caption = "Nomor SO"
-        GridView1.Columns("kode_customer_child").Caption = "Kode Customer"
-        GridView1.Columns("nama_customer").Caption = "Nama Customer"
-        GridView1.Columns("grup").Caption = "Group"
-        GridView1.Columns("total_qty").Caption = "Jumlah (Pcs)"
+            'format
+            GridView1.Columns("tgl_so").Caption = "Tanggal Terbit"
+            GridView1.Columns("no_so").Caption = "Nomor SO"
+            GridView1.Columns("kode_customer_child").Caption = "Kode Customer"
+            GridView1.Columns("nama_customer").Caption = "Nama Customer"
+            GridView1.Columns("grup").Caption = "Group"
+            GridView1.Columns("total_qty").Caption = "Jumlah (Pcs)"
 
-        GridView1.Columns("tgl_so").Width = 90
-        GridView1.Columns("no_so").Width = 75
-        GridView1.Columns("kode_customer_child").Width = 100
-        GridView1.Columns("nama_customer").Width = 130
-        GridView1.Columns("grup").Width = 50
-        GridView1.Columns("total_qty").Width = 75
+            GridView1.Columns("tgl_so").Width = 90
+            GridView1.Columns("no_so").Width = 75
+            GridView1.Columns("kode_customer_child").Width = 100
+            GridView1.Columns("nama_customer").Width = 130
+            GridView1.Columns("grup").Width = 50
+            GridView1.Columns("total_qty").Width = 75
 
-        FormatColumnNumeric(GridView1.Columns("total_qty"))
+            FormatColumnNumeric(GridView1.Columns("total_qty"))
 
-        CreateColumnSummary(GridView1.Columns("total_qty"))
+            CreateColumnSummary(GridView1.Columns("total_qty"))
 
     End Sub
 

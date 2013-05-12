@@ -255,7 +255,7 @@ Partial Class frm_lap_penerimaan_barang
         Me.Controls.Add(Me.GroupControl2)
         Me.Controls.Add(Me.GroupControl1)
         Me.Name = "frm_lap_penerimaan_barang"
-        Me.Text = "Kartu Stok Gudang"
+        Me.Text = "Laporan Penerimaan Barang"
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
